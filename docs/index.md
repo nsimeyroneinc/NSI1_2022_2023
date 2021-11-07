@@ -1,6 +1,6 @@
-Ceci est la page d'accueil d'un site de base généré avec le framework MkDocs et le thème Material.
+Ceci est la page d'accueil du site pour les élèves de première NSI au Lycée Murat d'Issoire.
 
-> Pour voir le code MarkDown sous jacent, cliquer sur le crayon en haut à droite.
+
 
 # Voici un titre de niveau 1
 ## Et voici un titre de niveau 2
