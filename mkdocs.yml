@@ -23,7 +23,7 @@ nav:
     
 
     # Référencer vos autres pages ci-dessus...
-    - TP 08 : Les tableaux : TP08_TuplesTableauxExercices.ipynb
+    - TP 08 Les tableaux : TP08_TuplesTableauxExercices.ipynb
 
 
 # Définition du thème https://squidfunk.github.io/mkdocs-material/creating-your-site/
