@@ -19,11 +19,12 @@ docs_dir: docs
 # Menu de navigation
 nav: 
     - La page d'accueil : index.md
-    - Un notebook jupyter : Notebook.ipynb
+    
     
 
     # Référencer vos autres pages ci-dessus...
-    - TP 08 Les tableaux : TP08_TuplesTableauxExercices.ipynb
+    - TP 07 Les tableaux Cours : TP07_TuplesTableauxCours.ipynb
+    - TP 08 Les tableaux Exercices : TP08_TuplesTableauxExercices.ipynb
 
 
 # Définition du thème https://squidfunk.github.io/mkdocs-material/creating-your-site/
