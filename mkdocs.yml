@@ -20,7 +20,7 @@ docs_dir: docs
 nav: 
     - La page d'accueil : index.md
     - Un notebook jupyter : Notebook.ipynb
-    - Les tableaux - Parcours séquentiel : TP08_TuplesTableauxExercices.ipynb
+    - TP 08 : Les tableaux : TP08_TuplesTableauxExercices.ipynb
 
 
     # Référencer vos autres pages ci-dessus...
