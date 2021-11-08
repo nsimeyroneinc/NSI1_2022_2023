@@ -19,15 +19,18 @@ docs_dir: docs
 # Menu de navigation
 nav: 
     - La page d'accueil : index.md
-    
+    - Les Tableaux :  
+      - TP 07 Les tableaux Cours : Tableaux/TP07_TuplesTableauxCours.ipynb
+      - TP 08 Les tableaux Exercices : Tableaux/TP08_TuplesTableauxExercices.ipynb
+      - TP 09 Parcours séquentiel d'un tableau : Tableaux/TD09_Parcours_Sequentiel_Tableaux_Corrige.ipynb
 
     # Référencer vos autres pages ci-dessus...
-    - TP 07 Les tableaux Cours : TP07_TuplesTableauxCours.ipynb
-    - TP 08 Les tableaux Exercices : TP08_TuplesTableauxExercices.ipynb
+    
 
 
 # Définition du thème https://squidfunk.github.io/mkdocs-material/creating-your-site/
 theme:
+
     name: material
     custom_dir: overrides
     font: false  # RGPD ; pas de fonte Google
@@ -37,7 +40,7 @@ theme:
 
     palette: # Palettes de couleurs jour/nuit, cf : https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
       - scheme: default # nom du thème clair
-        primary: lime # couleur primaire des titres, des liens, ..., à prendre dans la liste
+        primary: indigo # couleur primaire des titres, des liens, ..., à prendre dans la liste
         accent: amber # couleur d'accentuation au survol des boutons, desliens, ..., à prendre dans la liste
         toggle: # définition du bouton pour switcher de palette
           icon: material/weather-sunny # apparence
@@ -54,8 +57,12 @@ theme:
         - navigation.tabs
         - navigation.expand
         - navigation.top
-        - toc.integrate
+        - navigation.sections
+        - navigation.indexes
+        - navigation.tracking
+        #- toc.integrate
         - header.autohide
+     
 
 
 markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abbreviations/
