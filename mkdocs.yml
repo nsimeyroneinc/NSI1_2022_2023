@@ -20,7 +20,6 @@ docs_dir: docs
 nav: 
     - La page d'accueil : index.md
     
-    
 
     # Référencer vos autres pages ci-dessus...
     - TP 07 Les tableaux Cours : TP07_TuplesTableauxCours.ipynb
