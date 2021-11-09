@@ -1,2 +1,3 @@
-Ceci est la page d'accueil du site pour les élèves de première NSI au Lycée Murat d'Issoire.
+Ce site est à destination des élèves de première NSI au Lycée Murat d'Issoire.<br>
+Il permettra de retrouver les TP&TD traités en classes.
 

@@ -4,7 +4,7 @@
 site_name: Site NSI 1ére Lycée Murat ISSOIRE
 site_description: Cours et TD de l'année en cours
 site_author: "Michael Meyroneinc-condy" 
-copyright: copy; 2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a> <br> Illustrations par <a href="https://undraw.co/" target="_blank">UnDraw</a>
+copyright: 2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a> 
 site_url: 
 
 # Dépot du projet 
@@ -20,10 +20,10 @@ docs_dir: docs
 nav: 
     - La page d'accueil : index.md
     - Les Tableaux :  
-      - TP 07 Les tableaux Cours : Tableaux/TP07_TuplesTableauxCours.ipynb
-      - TP 08 Les tableaux Exercices : Tableaux/TP08_TuplesTableauxExercices.ipynb
-      - TP 09 Parcours séquentiel d'un tableau : Tableaux/TD09_Parcours_Sequentiel_Tableaux_Corrige.ipynb
-      - TP 10 Parcours séquentiel d'un tableau : Tableaux/TD10_Parcours_Sequentiel_Tableaux_Corrige.ipynb
+      - TP 07 Les tableaux Cours : Tableaux/TP07_TuplesTableauxCours.md
+      - TP 08 Les tableaux Exercices : Tableaux/TP08_TuplesTableauxExercicesCorrige.md
+      - TP 09 - Parcours séquentiel d'un tableau : Tableaux/TD09_Parcours_Sequentiel_Tableaux_Corrige.md
+      - TP 10 - Parcours séquentiel d'un tableau bis : Tableaux/TD10_Parcours_Sequentiel_Tableaux_Corrige.md
 
     # Référencer vos autres pages ci-dessus...
     
@@ -77,7 +77,7 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
     - admonition                    # Blocs colorés  !!! info "ma remarque"
     - toc: # Table des matières
         permalink: ⚓︎
-        toc_depth: 3
+        toc_depth: 4
     # extensions de python-markdown https://facelessuser.github.io/pymdown-extensions/
     - pymdownx.details              #   qui peuvent se plier/déplier.
     - pymdownx.caret                # Passage ^^souligné^^ ou en ^exposant^.
@@ -112,14 +112,14 @@ plugins:
 extra:
   social: # A personaliser...
     - icon: fontawesome/solid/paper-plane
-      link: mailto:eric.madec@ecmorlaix.fr
+      link: mailto:nsi.meyroneinc@gmail.com
       name: Pour toute question, suggestion ou commentaire, écrire à l'auteur
     - icon: fontawesome/brands/github
-      link: https://github.com/ericECmorlaix/base_mkdocs_material
+      link: 
       name: dépôt github
     - icon: fontawesome/solid/university
-      link: https://www.ecmorlaix.fr/nos-etablissements/lycee-notre-dame-du-mur/
-      name: Lycée Notre Dame du Mur
+      link: https://murat-issoire.ent.auvergnerhonealpes.fr/
+      name: Lycée Murat Issoire
 
 
 extra_javascript:
