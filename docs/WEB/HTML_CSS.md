@@ -21,7 +21,9 @@ Je vous mets à disposition des vidéos de cours disponible en ligne, ainsi qu'u
 
 **NSI4NOOBS**
 
-# Cours complet en vidéos du HTML et CSS en 3 parties de Pierre Giraud
+# Cours complet en vidéos du HTML et CSS en 3 parties de Pierre Giraud et son format web :
+
+[Cours html - css de Pierre Giraud](https://www.pierre-giraud.com/html-css-apprendre-coder-cours/){:target="_blank"}
 
 ## Partie 1 : (1h23)
 
