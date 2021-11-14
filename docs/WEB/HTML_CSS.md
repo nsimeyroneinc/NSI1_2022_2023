@@ -11,7 +11,7 @@
     </thead>
 </table>
 
-Les langages informatique HTML et CSS sont les langages des pages Web. Ce sont deux langages com- plémentaires compris par les navigateurs. Ce ne sont pas des langages de programmation mais des langages de description.
+Les langages informatique HTML et CSS sont les langages des pages Web. Ce sont deux langages complémentaires compris par les navigateurs. Ce ne sont pas des langages de programmation mais des langages de description.
 
 Je vous mets à disposition des vidéos de cours disponible en ligne, ainsi qu'un résumé du cours fait en classe (Les bases de SNT de seconde)
 
@@ -161,7 +161,7 @@ Voici les éléments les plus courants mais il en existe d’autres. Ils peuvent
 - les éléments en ligne (**inline** en anglais) qui s’affichent dans la ligne courante. Un élément inline doit obligatoirement être à l’intérieur d’un bloc.
 
 
-** &#x25B6; Balises de type block** :
+**&#x25B6; Balises de type block** :
 
 ```html
 
