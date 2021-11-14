@@ -24,8 +24,8 @@ nav:
       - TP 08 Les tableaux Exercices : Tableaux/TP08_TuplesTableauxExercicesCorrige.md
       - TP 09 - Parcours séquentiel d'un tableau : Tableaux/TD09_Parcours_Sequentiel_Tableaux_Corrige.md
       - TP 10 - Parcours séquentiel d'un tableau bis : Tableaux/TD10_Parcours_Sequentiel_Tableaux_Corrige.md
-    - WEB :
-      - TD html et css : WEB/HTML_CSS.md
+    #- WEB :
+    #  - TD html et css : WEB/HTML_CSS.md
     # Référencer vos autres pages ci-dessus...
     
 
