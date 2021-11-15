@@ -41,7 +41,6 @@ Je vous mets à disposition des vidéos de cours disponible en ligne, ainsi qu'u
 
 
 
-
 # I. Qu'est ce que le HTML ?
 
 Quand on consulte un site web, notre ordinateur se connecte à un serveur distant et celui-ci lui envoie une page web, que le navigateur va pouvoir afficher. En général la page est constituée de plusieurs fichiers :
@@ -57,7 +56,7 @@ Plusieurs versions du langage HTML se sont succédées depuis la première en 19
 ![Tim Berners-Lee](../images/Tim_Berners-LeeN.jpg)
 
 
-!!! info "Un peu d’histoire :"
+!!! history "Un peu d’histoire :"
     **TimBerners-Lee** est considéré comme l’inventeur du HTML en1992. C’est un informaticien britannique, qui a aussi inventé le Web (World Wide Web ou WWW) en 1989 lors de ses travaux au CERN. En juillet 2004, il est fait chevalier par la reine Élisa- beth II pour ce travail et son nom officiel devient Sir Timothy John Berners-Lee. Depuis 1994, il préside le World Wide Web Consortium (W3C), organisme qu’il a fondé et qui est en charge de promouvoir la compatibilité des technologies du Web. Il est également lauréat du prix Turing 2016.
 
 
@@ -522,4 +521,3 @@ Voici un exemple avec un entête de page, une barre de navigation, un pied de pa
     </body>
     </html>
     ```
-
