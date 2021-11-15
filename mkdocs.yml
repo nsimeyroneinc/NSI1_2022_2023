@@ -18,7 +18,7 @@ docs_dir: docs
 
 # Menu de navigation
 nav: 
-    - La page d'accueil : index.md
+    - Accueil : index.md
     - Les Tableaux :  
       - TP 07 Les tableaux Cours : Tableaux/TP07_TuplesTableauxCours.md
       - TP 08 Les tableaux Exercices : Tableaux/TP08_TuplesTableauxExercicesCorrige.md

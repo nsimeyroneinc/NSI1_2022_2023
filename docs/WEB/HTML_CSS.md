@@ -17,9 +17,10 @@ Je vous mets à disposition des vidéos de cours disponible en ligne, ainsi qu'u
 
 # Une vidéo résumant l'essentiel du html et du css (18min29)
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/Q-WXtlz_ZHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+??? video "Vidéo"
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/Q-WXtlz_ZHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-**NSI4NOOBS**
+    **NSI4NOOBS**
 
 # Cours complet en vidéos du HTML et CSS en 3 parties de Pierre Giraud et son format web :
 
@@ -56,11 +57,9 @@ Plusieurs versions du langage HTML se sont succédées depuis la première en 19
 ![Tim Berners-Lee](../images/Tim_Berners-LeeN.jpg)
 
 
-<blockquote style="background-color: #DAF7A6; border-left: 7px solid rgb(0 0 0);">
-    <span style="font-size:25px">&#x1F4D8;   Un peu d’histoire: </span> <br>
+!!! info "Un peu d’histoire :"
+    **TimBerners-Lee** est considéré comme l’inventeur du HTML en1992. C’est un informaticien britannique, qui a aussi inventé le Web (World Wide Web ou WWW) en 1989 lors de ses travaux au CERN. En juillet 2004, il est fait chevalier par la reine Élisa- beth II pour ce travail et son nom officiel devient Sir Timothy John Berners-Lee. Depuis 1994, il préside le World Wide Web Consortium (W3C), organisme qu’il a fondé et qui est en charge de promouvoir la compatibilité des technologies du Web. Il est également lauréat du prix Turing 2016.
 
-<strong>TimBerners-Lee</strong> est considéré comme l’inventeur du HTML en1992. C’est un informaticien britannique, qui a aussi inventé le Web (World Wide Web ou WWW) en 1989 lors de ses travaux au CERN. En juillet 2004, il est fait chevalier par la reine Élisa- beth II pour ce travail et son nom officiel devient Sir Timothy John Berners-Lee. Depuis 1994, il préside le World Wide Web Consortium (W3C), organisme qu’il a fondé et qui est en charge de promouvoir la compatibilité des technologies du Web. Il est également lauréat du prix Turing 2016.
-</blockquote>
 
  
 
@@ -70,11 +69,9 @@ La description du contenu et de la structure d’une page Cette description se f
 Ce sont ces balises qui vont indiquer si telle partie du document est un titre, oubien un paragraphe, ou bien une image, ...
 
 
-<blockquote style="background-color: #DAF7A6; border-left: 7px solid rgb(0 0 0);">
-    <span style="font-size:25px">&#x1F4D8;  Les balises </span><br>
+!!! abstract "Les balises"
+    Une balise est un mot-clef permettant d’indiquer au navigateur ce qu’il doit faire avec le contenu. Les balises contrôlent tout. Elles permettent de gérer la structure, les images, les liens, la police d’affichage utilisée, les titres, ...
 
-Une balise est un mot-clef permettant d’indiquer au navigateur ce qu’il doit faire avec le contenu. Les balises contrôlent tout. Elles permettent de gérer la structure, les images, les liens, la police d’affichage utilisée, les titres, ¢¢¢
-</blockquote>
 
 On écrit <balise> pour ouvrir une balise (appelée **balise ouvrante**) et </balise> pour la fermer appelée **balisefermante**). De manière générale, toute balise ouverte doit être fermée.
 
@@ -120,14 +117,12 @@ Ces balises sont obligatoires dans tout document HTML.
 
 On peut remarquer que certaines balises particulières ne se ferment pas (comme la balise `<meta/>` ). Dans ce cas il y a un “/” avant le “>”.
 
-<blockquote style="background-color: #DAF7A6; border-left: 7px solid rgb(0 0 0);">
-    <span style="font-size:25px">&#x1F58B;   Définition </span><br>
+!!! abstract "&#x1F58B;   Définition :"
+    Le nom d’une balise s’appelle un <strong>élément</strong> (exemple ici body, p ou meta). 
+    Certains éléments peuvent avoir des attributs pour définir des paramètres. Dans ce cas les attributs sont toujours donnés entre guillemets " " ou apostrophes ‘ ’.   
 
-Le nom d’une balise s’appelle un <strong>élément</strong> (exemple ici body, p ou meta). 
-Certains éléments peuvent avoir des attributs pour définir des paramètres. Dans ce cas les attributs sont toujours donnés entre guillemets " " ou apostrophes ‘ ’.   
+    De plus des balises peuvent être imbriquées les une dans les autres mais pas se chevaucher ! 
 
-De plus des balises peuvent être imbriquées les une dans les autres mais pas se chevaucher ! 
-</blockquote>
 
 ** &#x27A1; Remarque** 
 
@@ -136,24 +131,23 @@ Les commentaires sont délimités par les caractères <!-- et --> , ils ne sont 
 
 
 
-**Exemple 6. 1:**
+!!! example "**Exemple :**"
+    ```html
+    <p>
 
-```html
-<p>
+    Bienvenue en <em> cours </em> de NSI.<br/>
 
-Bienvenue en <em> cours </em> de NSI.<br/>
+    Ici les balises sont correctement imbriquées </p>
+    ```
 
-Ici les balises sont correctement imbriquées </p>
-```
+    ```html
+    <p>
 
-```html
-<p>
-
-Bienvenue en <em> cours de NSI.<br/>
+    Bienvenue en <em> cours de NSI.<br/>
 
 
-Problème, la balise em est fermé après la balise p !! </p></em>
-```
+    Problème, la balise em est fermé après la balise p !! </p></em>
+    ```
 
 # III. Block / Inline
 
@@ -212,66 +206,63 @@ Un bloc quelconque, utile pour la mise en forme
 |`<img/>`|Permet d’insérer une image|<p>- src = ’emplacement de l’image’</p><p>- alt = ’texte à afficher si problème’</p>|
 |`<a>`|Ancre, permet de créer un lien|<p>- name = ’nom de l’ancre’</p><p>&emsp;- href = ’lien’</p>|
 
-**Exemple 6. 2:**
-```html
-<body>
+!!! example "**Exemple :**"
+    ```html
+    <body>
 
-<h1>
+    <h1>
 
-Un exemple avec des éléments inline
+    Un exemple avec des éléments inline
 
-</h1>
+    </h1>
 
-<p>
+    <p>
 
-Voici un paragraphe. Pas d'élément br donc pas de retour à la ligne.<br/>
+    Voici un paragraphe. Pas d'élément br donc pas de retour à la ligne.<br/>
 
-Après la balise une nouvelle ligne commence.<br/>
+    Après la balise une nouvelle ligne commence.<br/>
 
-Une ligne avec une image : <img src= ' adresse image ' alt= ' Mon image' /><br/>
+    Une ligne avec une image : <img src= ' adresse image ' alt= ' Mon image' /><br/>
 
 
-Et maintenant un lien vers un autre site : <a href= ' url souhaitée ' > Le site du prof ! </a>
-</p>
+    Et maintenant un lien vers un autre site : <a href= ' url souhaitée ' > Le site du prof ! </a>
+    </p>
 
-</body>
+    </body>
 
-</html>
-```
+    </html>
+    ```
 
 # IV. Et le CSS alors ?
 
-<blockquote style="background-color: #DAF7A6; border-left: 7px solid rgb(0 0 0);">
-    <span style="font-size:25px" > &#x1F58B;   Langage CSS </span><br>
-Le format CSS (de l’anglais Cascading Style Sheets,ou «feuilles de styles en cascade») est un format textuel qui permet de décrire la mise en forme des documents HTML (et XML). La première version du langage CSS date de 1996. Celui-ci est pris en charge par tous les navigateurs depuis les années 2000. La version utilisée actuellement est CSS3.
-</blockquote>
+!!! abstract "&#x1F58B;   Langage CSS"
+    Le format CSS (de l’anglais Cascading Style Sheets,ou «feuilles de styles en cascade») est un format textuel qui permet de décrire la mise en forme des documents HTML (et XML). La première version du langage CSS date de 1996. Celui-ci est pris en charge par tous les navigateurs depuis les années 2000. La version utilisée actuellement est CSS3.
 
 
-<blockquote style="background-color: #DAF7A6; border-left: 7px solid rgb(0 0 0);">
-    <span style="font-size:25px" > &#x1F58B;  Un langage de style </span><br>
 
+!!! abstract "&#x1F58B;  Un langage de style"
+     Le langage CSS permet de définir les propriétés graphiques des éléments HTML constituant une page Web : les polices utilisées, leurs tailles, les couleurs utilisées, la position des éléments dans la page, etc. Ce langage permet de séparer le contenu (décrit en HTML) de la forme (décrit en CSS) d’une page Web. En pratique, le fichier CSS sera associé au fichier HTML et le navigateur pourra alors savoir comment il doit mettre en forme le contenu de la page Web.
 
-Le langage CSS permet de définir les propriétés graphiques des éléments HTML constituant une page Web : les polices utilisées, leurs tailles, les couleurs utilisées, la position des éléments dans la page, etc. Ce langage permet de séparer le contenu (décrit en HTML) de la forme (décrit en CSS) d’une page Web. En pratique, le fichier CSS sera associé au fichier HTML et le navigateur pourra alors savoir comment il doit mettre en forme le contenu de la page Web.
-</blockquote>
 
 Le fichier ‘.css’ (cascading style sheet) qui accompagne souvent une page html sert à définir tout ce qui concernelaformedudocument(là où la partie HTML s’occupe plutôt du contenu). Il gère donc la taille de la police, la couleur, le positionnement des blocs, des images, ...
 
 
 
-Exemple de page internet [sans CSS](https://jsfiddle.net/meyroneinc/skp8c3u5/2/){:target="_blank"} et [avec CSS.](https://jsfiddle.net/meyroneinc/dkswnha8/1/){:target="_blank"}
+!!! example "Exemple d'utilisation"
+    Exemple de page internet [sans CSS](https://jsfiddle.net/meyroneinc/skp8c3u5/2/){:target="_blank"} et [avec CSS.](https://jsfiddle.net/meyroneinc/dkswnha8/1/){:target="_blank"}
 
 Un fichier contenant du code CSS permet de donner des informations sur la forme que doit avoir une page internet (couleur de la police, position et taille des images, fond de page, menus, ...). Ce fichier peutavoirlenomquel’onsouhaite(onutiliseranéanmoinspréféremmentl’extension.css). Dansnotre exemple ce fichier s’appellera “style.css”.
 
-<blockquote style="background-color: #F5B7B1; border-left: 7px solid rgb(0 0 0);">
-    <span style="font-size:25px" > &#x1F58B; <strong>Ce qu’il faut retenir</strong></span><br/>
+!!! warning  "**&#x1F58B; Ce qu’il faut retenir**"
+    **Modifications à apporter dans le fichier HTML :**  
+    - il faut donner le nom (et le chemin si nécessaire) du(des) fichier(s) CSS à utiliser. Cela se fait à l’aide de la balise suivante dans l’en-tête :  <link href="style.css" rel="stylesheet" type="text/css">`  
 
-<strong>Modifications à apporter dans le fichier HTML :</strong> <br>
+    - on peut maintenant utiliser 2 nouveaux attributs dans les balises HTML,  
 
-- il faut donner le nom (et le chemin si nécessaire) du(des) fichier(s) CSS à utiliser. Cela se fait à l’aide de la balise suivante dans l’en-tête : `<link href="style.css" rel="stylesheet" type="text/css">`
-- on peut maintenant utiliser 2 nouveaux attributs dans les balises HTML,
-    - `id="nomUnique"` : permet de donner un nom unique à un élément pour lui appliquer un style particulier,
+    - `id="nomUnique"` : permet de donner un nom unique à un élément pour lui appliquer un style particulier,  
+
     - `class="nom"` : permet de donner le même nom à un ensemble d’éléments auxquels on veut appliquer le même style.
-</blockquote>
+    
 
 Dans le fichier CSS on peut maintenant créer un ensemble de règles à appliquer. Une règle est composée d’un sélecteur (l’objet auquel la règle doit s’appliquer) et de déclarations de propriétés. Les déclarations se trouvent entre accolades et les propriétés sont séparées par des points-virgules.
 
@@ -286,118 +277,118 @@ On peut mélanger plusieurs sélecteurs pour une même règle.
 
 Il existe une très grande variété de propriétés, la liste dépendant du sélecteur choisi ! 
 
-**Exemple 6. 3:**
+!!! example "**Exemple :**"
 
+    **fichier HTML**  
+    ```html
+    <!DOCTYPE html> <!-- langage utilisé, html pour html5 -->
 
-```html
-<!DOCTYPE html> <!-- langage utilisé, html pour html5 -->
+    <html lang="fr"> <!-- début de la page web -->
 
-<html lang="fr"> <!-- début de la page web -->
+    <head> <!-- En tête de la page, la balise n ' est pas affiché, mais ,! elle permet de donner des informations telles que le titre de la page ou ,! la police de caractères utilisée -->
 
-<head> <!-- En tête de la page, la balise n ' est pas affiché, mais ,! elle permet de donner des informations telles que le titre de la page ou ,! la police de caractères utilisée -->
+    <title> Le CSS en 1ère NSI</title>
 
-<title> Le CSS en 1ère NSI</title>
+    <meta charset="utf-8"/>
 
-<meta charset="utf-8"/>
+    <link rel="stylesheet" href="style.css"> <!-- import le CSS de la page cible -->
 
-<link rel="stylesheet" href="style.css"> <!-- import le CSS de la page cible -->
+    </head>
 
-</head>
+    <body>
 
-<body>
+    <h1>Un joli titre centrée, en rouge et en italique.</h1>
 
-<h1>Un joli titre centrée, en rouge et en italique.</h1>
+    <p>
 
-<p>
+    Un beau paragraphe générique.
 
-Un beau paragraphe générique.
+    </p>
 
-</p>
+    <p class="important">
 
-<p class="important">
+    Un paragraphe de la classe "important" que je vais faire apparaitre en gras.
 
-Un paragraphe de la classe "important" que je vais faire apparaitre en gras.
+    ,!
 
-,!
+    </p>
 
-</p>
+    <p>
 
-<p>
+    Un paragraphe normal dans lequel <a href="adresse de la page web" class="important"> le ,! lien est important </a>.
 
-Un paragraphe normal dans lequel <a href="adresse de la page web" class="important"> le ,! lien est important </a>.
+    </p>
 
-</p>
+    <p id="fin">
 
-<p id="fin">
+    Un paragraphe unique avec le texte en bleu.
 
-Un paragraphe unique avec le texte en bleu.
+    </p>
 
-</p>
+    <img src= 'adresse de mon image' style= ' height: 150px ' alt= ' image mac ,! ' id=' logo ' />
 
-<img src= 'adresse de mon image' style= ' height: 150px ' alt= ' image mac ,! ' id=' logo ' />
+    </body>
 
-</body>
+    </html>
+    ```
 
-</html>
-```
+    **fichier CSS**
 
-**fichier CSS**
+    ```css
+    body{
 
-```css
-body{
+    font-family: helvetica, arial, sans-serif; margin: 2em;
 
-font-family: helvetica, arial, sans-serif; margin: 2em;
+    background-color: beige;
 
-background-color: beige;
+    }
 
-}
+    h1{ /* tous les titres h1 */
 
-h1{ /* tous les titres h1 */
+    font-style: italic;
 
-font-style: italic;
+    text-align: center;
 
-text-align: center;
+    color: red;
 
-color: red;
+    }
 
-}
+    p{ /* tous les paragraphes */
 
-p{ /* tous les paragraphes */
+    margin-left: 280px;
 
-margin-left: 280px;
+    }
 
-}
+    #fin{ /* l ' unique élément d ' id fin */
 
-#fin{ /* l ' unique élément d ' id fin */
+    color: darkblue;
 
-color: darkblue;
+    }
 
-}
+    .important{ /* tous les éléments de la classe important */
 
-.important{ /* tous les éléments de la classe important */
+    font-weight: bold;
 
-font-weight: bold;
+    }
 
-}
+    img#logo{ /* élément img avec l ' id logo */
 
-img#logo{ /* élément img avec l ' id logo */
+    display: block;
 
-display: block;
+    border-radius: 20px;
 
-border-radius: 20px;
+    width: 150px;
 
-width: 150px;
+    margin-left: auto;
 
-margin-left: auto;
+    left: 20px;
 
-left: 20px;
+    top: 20px;
 
-top: 20px;
+    position: fixed;
 
-position: fixed;
-
-}
-```
+    }
+    ```
 
 Rendu des pages [sans CSS](https://jsfiddle.net/meyroneinc/a2tgu8bo/){:target="_blank"} et [avec CSS](https://jsfiddle.net/meyroneinc/9z86kprh/1/){:target="_blank"}
 
@@ -424,111 +415,111 @@ Voici un exemple avec un entête de page, une barre de navigation, un pied de pa
 
 ![résumé boite](../images/web02.png)
 
-**Exemple 6. 4:**
+!!! example "**Exemple :**"
 
-Une version sans la barre de navigation :
+    Une version sans la barre de navigation :
 
-**le code CSS associé :**
-```css
-html {
-height: 100%;
-box-sizing: border-box;
-}
+    **le code CSS associé :**
+    ```css
+    html {
+    height: 100%;
+    box-sizing: border-box;
+    }
 
-body {
-box-sizing: border-box;
-font-family: helvetica, arial, sans-serif;
-margin: 0em;
-background-color: beige; 
-min-height: 100%;
-padding-bottom: 30px;
-}
+    body {
+    box-sizing: border-box;
+    font-family: helvetica, arial, sans-serif;
+    margin: 0em;
+    background-color: beige; 
+    min-height: 100%;
+    padding-bottom: 30px;
+    }
 
-section { 
-padding: 20px;
-height: auto;
-float: left;
-width: 85%;
-}
+    section { 
+    padding: 20px;
+    height: auto;
+    float: left;
+    width: 85%;
+    }
 
-header {
-height : 5%;
-padding: 20px;
-text-align: center;
-background-color: grey;
-}
+    header {
+    height : 5%;
+    padding: 20px;
+    text-align: center;
+    background-color: grey;
+    }
 
-footer {
-height : 30px;
-padding: 10px;
-text-align: center;
-background-color: grey;
-position : absolute;
-left: : 0;
-right : 0;
-bottom: 0;
-clear: both;
-}
+    footer {
+    height : 30px;
+    padding: 10px;
+    text-align: center;
+    background-color: grey;
+    position : absolute;
+    left: : 0;
+    right : 0;
+    bottom: 0;
+    clear: both;
+    }
 
-aside { 
-padding 10 px;
-float: right
-width: 10%;
-}
+    aside { 
+    padding 10 px;
+    float: right
+    width: 10%;
+    }
 
-h4 {
-text-align: center;
-}
-```
+    h4 {
+    text-align: center;
+    }
+    ```
 
-**Et le code HTML associé** 
+    **Et le code HTML associé** 
 
-```html
-<!DOCTYPE html>
+    ```html
+    <!DOCTYPE html>
 
-<html lang="fr">
+    <html lang="fr">
 
-<<head>
+    <<head>
 
-<link rel="stylesheet" href="style1.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <meta charset="utf-8">
+    </head>
 
-</head>
+    <body>
 
-<body>
+    <header>
+    Une jolie bannière, un menu, ...
+    </header>
+    <section>
+        <article>
+        <h1>Contenu 1</h1>
+            Voici le contenu de la page, on peut le faire changer grâce aux liens par exemple.
+        </article>
+        <article>
+            <h1>Contenu 2</h1>
+            Il peut y a voir plusieurs articles
+        </article>
+        <article>
+            <h1>Contenu 3</h1> 
+            L' informaticien logiciel et programmation.<br/>
+            Le travail d'un ... <br>
+            Il propose également des ... <br />
+            Source : wikipédia
+        </article>
+    </section>
+    <aside>
+        <h4>Un menu</h4>
+        <ul>
+            <li><a href="">Page 1</a></li> 
+            <li><a href="">Page 2</a></li>
+            <li><a href="">Page 3</a></li>
+        </ul>
+    </aside>
 
-  <header>
-  Une jolie bannière, un menu, ...
-  </header>
-  <section>
-    <article>
-      <h1>Contenu 1</h1>
-        Voici le contenu de la page, on peut le faire changer grâce aux liens par exemple.
-    </article>
-    <article>
-        <h1>Contenu 2</h1>
-        Il peut y a voir plusieurs articles
-    </article>
-    <article>
-        <h1>Contenu 3</h1> 
-        L' informaticien logiciel et programmation.<br/>
-        Le travail d'un ... <br>
-        Il propose également des ... <br />
-        Source : wikipédia
-    </article>
-  </section>
-<aside>
-    <h4>Un menu</h4>
-    <ul>
-        <li><a href="">Page 1</a></li> 
-        <li><a href="">Page 2</a></li>
-        <li><a href="">Page 3</a></li>
-    </ul>
-</aside>
-
-<footer>
-Un pied de page ...
-</footer>
-</body>
-</html>
-```
+    <footer>
+    Un pied de page ...
+    </footer>
+    </body>
+    </html>
+    ```
 
