@@ -473,8 +473,8 @@ Voici un exemple avec un entête de page, une barre de navigation, un pied de pa
     }
 
     aside { 
-    padding 10 px;
-    float: right
+    padding: 10 px;
+    float: right;
     width: 10%;
     }
 
