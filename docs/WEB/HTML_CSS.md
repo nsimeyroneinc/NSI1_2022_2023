@@ -22,24 +22,36 @@ Je vous mets à disposition des vidéos de cours disponible en ligne, ainsi qu'u
 
     **NSI4NOOBS**
 
+# Cours : Apprenez à créer votre site web avec HTML5 et CSS3
+
+
+[Openclassroom : Apprenez à créer votre site web avec HTML5 et CSS3](https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3){:target="_blank"}
+
 # Cours complet en vidéos du HTML et CSS en 3 parties de Pierre Giraud et son format web :
 
 [Cours html - css de Pierre Giraud](https://www.pierre-giraud.com/html-css-apprendre-coder-cours/){:target="_blank"}
 
 ## Partie 1 : (1h23)
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/8FqZZrbnwkM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+??? video "Vidéo Partie 1"
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/8FqZZrbnwkM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Partie 2 : (1h15)
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/HN4-7k0zC-Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+??? video "Vidéo partie 2"
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/HN4-7k0zC-Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Partie 3 : (1h42)
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/RUFK0mT0q2E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+??? video "Vidéo partie 3"
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/RUFK0mT0q2E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+# Un site avec toutes les possibilités pour le HTML et le CSS
 
+
+[Tutoriel HTML](https://www.w3schools.com/html/default.asp){:target="_blank"}
+
+[Tutoriel CSS](https://www.w3schools.com/css/default.asp){:target="_blank"}
 
 # I. Qu'est ce que le HTML ?
 
@@ -130,7 +142,7 @@ Les commentaires sont délimités par les caractères <!-- et --> , ils ne sont 
 
 
 
-!!! example "**Exemple :**"
+!!! bug "**Exemple :**"
     ```html
     <p>
 
@@ -521,3 +533,7 @@ Voici un exemple avec un entête de page, une barre de navigation, un pied de pa
     </body>
     </html>
     ```
+
+
+!!! example "Exercice :"
+
