@@ -13,41 +13,30 @@
 
 # Exercices
 
-## Exercice 5.1
+!!! example "Exercice 8.1"
+    === "Enoncé"
 
-On considère la variable `repertoire` suivante.
+        On considère la variable `repertoire` suivante.
 
 
-```python
-repertoire = [('Michel', '0210101010'), ('Marjorie', '0211111111'), ('Perrine', '0212121212')]
-```
+        ```python
+        repertoire = [('Michel', '0210101010'), ('Marjorie', '0211111111'), ('Perrine', '0212121212')]
+        ```
 
-1. Quel est le type de la variable repertoire ?
-2. Quel est le type de la variable repertoire[0] ?
-3. Qu'affiche l'instruction repertoire[1][1] ?
-4. Quelle instruction permet d'accéder au numéro de téléphone de Michel ?
-5. Quel est le type de la variable repertoire[2][0] ?
+        1. Quel est le type de la variable repertoire ?
+        2. Quel est le type de la variable repertoire[0] ?
+        3. Qu'affiche l'instruction repertoire[1][1] ?
+        4. Quelle instruction permet d'accéder au numéro de téléphone de Michel ?
+        5. Quel est le type de la variable repertoire[2][0] ?
 
-Réponse :  
-1. 
-2. 
-3. 
-4. 
-5. 
+    === "Solution" 
 
-<details>
-<summary style="border:1pt solid slateblue; border-radius:5pt; width:15%; color:slateblue; padding:3px; background-color: lightcyan"> Solution </summary>  
-    
-<div style="border:1pt solid slateblue; border-radius:5pt; color:slateblue; padding:3px; background-color: lightcyan"> 
-<ul>
-<li> La variable repertoire est de type list</li>
-<li> La variable repertoire[0] est de type tuple</li>
-<li> L'instruction repertoire[1][1] affiche 0211111111</li>
-<li> Pour accéder au numéro de téléphone de Michel, il faut utiliser l'instruction repertoire[0][1]</li>
-<li> La variable repertoire[2][0] est de type str</li>
-</ul>
-</div>
-</details>
+        - La variable repertoire est de type list
+        - La variable repertoire[0] est de type tuple
+        - L'instruction repertoire[1][1] affiche 0211111111
+        - Pour accéder au numéro de téléphone de Michel, il faut utiliser l'instruction repertoire[0][1]
+        - La variable repertoire[2][0] est de type str
+
 
 ## Exercice 5.2
 
