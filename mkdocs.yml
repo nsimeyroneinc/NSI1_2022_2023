@@ -28,7 +28,7 @@ nav:
     - WEB :
       - TD html et css : WEB/HTML_CSS.md
     # Référencer vos autres pages ci-dessus...
-    
+    - Liens Utiles : Divers/Liens_utiles.md
 
 
 # Définition du thème https://squidfunk.github.io/mkdocs-material/creating-your-site/
