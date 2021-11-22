@@ -11,6 +11,9 @@
     </thead>
 </table>
 
+
+[Lein Capytale](https://capytale2.ac-paris.fr/web/c-auth/list?returnto=/web/code/c078-101747)
+
 !!! example "Exercice 9.1 :"  
     === "Enoncé" 
         Ecrire une fonction qui prend en paramètre un tableau d'entiers non vide et qui renvoie la moyenne de ces  entiers. La fonction est spécifiée ci-après et doit passer les assertions fournies.

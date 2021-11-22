@@ -11,6 +11,8 @@
     </thead>
 </table>
 
+[Lien Capytale](https://capytale2.ac-paris.fr/web/c-auth/list?returnto=/web/code/5871-77105)
+
 !!! example "Exercice 8.1"
     === "Enoncé"
 

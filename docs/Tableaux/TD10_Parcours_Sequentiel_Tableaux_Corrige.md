@@ -11,6 +11,9 @@
     </thead>
 </table>
 
+
+[Lien Capytale](https://capytale2.ac-paris.fr/web/c-auth/list?returnto=/web/code/5871-77105)
+
 ## Exercice n°1 : Tableaux et extremums - plus grand écart
 
 !!! example "Exercice n°1 :"

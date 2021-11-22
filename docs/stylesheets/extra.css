@@ -29,7 +29,7 @@
 }
 .md-typeset .fabquestion > .admonition-title,
 .md-typeset .fabquestion > summary {
-  background-color: rgba(96, 80, 189, 0.1);
+  background-color: rgba(96, 80, 189, 0.25);
   border-color: rgb(96, 80, 189);
 }
 .md-typeset .fabquestion > .admonition-title::before,
