@@ -74,7 +74,8 @@ assert plus_grand_ecart([7]) == 0
 
 !!! example "Exxercice n°2 :"
     === "Enoncé"
-        On dispose de tableaux **de taille paire** dont les valeurs correspondent à des mesures effectuées aux bornes d'une résistance. Plus précisément :
+        On dispose de tableaux **de taille paire** dont les valeurs correspondent à des mesures effectuées aux bornes d'une résistance. Plus précisément :  
+
         - les valeurs d'indices pairs correspondent à la tension `U`,
         - les valeurs d'indices impairs correspondent à l'intensité `I`.
 
@@ -83,6 +84,7 @@ assert plus_grand_ecart([7]) == 0
         [19, 6, 23, 5, 20, 4]
         ```
         on dispose de trois mesures :
+
         - la première avec une tension de 19 V et une intensité de 6 A (soit une puissance de 19 * 6 = 114 Watts),
         - la seconde avec une tension de 23 V et une intensité de 5 A (soit une puissance de 23 * 5 = 115 Watts),
         - la troisième avec une tension de 20 V et une intensité de 4 A (soit une puissance de 20 * 4 = 80 Watts).
@@ -92,6 +94,7 @@ assert plus_grand_ecart([7]) == 0
         <hr/>
 
         Compléter la fonction `plus_grand_produit` ci-dessous qui :
+
         - prend en paramètre un tableau de nombres `mesures` de taille paire non nulle,
         - qui renvoie le plus grand produit de la forme `mesures[i] * mesures[i+1]` avec l'indice `i` pair.
         ```python
@@ -235,6 +238,7 @@ assert produit(tab) == 1145612160
         [7, 4, 3, 6, 7, 4, 3, 1, 8, 8]
         ```
         il y a trois sauts en hauteur : 
+
         - entre les indices 2 et 3 (pour passer de la valeur 3 à la valeur 6), 
         - entre les indices 3 et 4 (pour passer de la valeur 6 à la valeur 7),
         - et entre les indices 7 et 8 (pour passer de la valeur 1 à la valeur 8).
@@ -372,6 +376,7 @@ assert compter_differences(tab_1, tab_2) == 0
 !!! example "Exercice n°7 :"
     === "Enoncé"
         Un site de petites annonces prend des frais sur les mises en vente.
+        
         - Si le prix net vendeur est inférieur ou égal à 15 euros, l'acheteur doit payer 0,50 euro de frais de gestion en plus.
         - si le prix net vendeur est strictement supérieur à 15 euros, l'acheteur doit payer 1 euro de frais de gestion en plus.
 
