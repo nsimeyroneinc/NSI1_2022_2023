@@ -25,6 +25,15 @@
             pass
         ```
 
+    === "Solution"  
+        ```python
+        def match(tab_a, tab_b):
+            for i in range(len(tab_a)):
+                if tab_a[i] == tab_b[i] :
+                    return i
+            return -1
+        ```
+
 Tester votre fonction grâce au jeu de tests ci-dessous.
 
 
@@ -107,6 +116,29 @@ assert match([], []) == -1
         assert plus_petit_denivele([5, 28, 54, 103, 187, 218]) == 23
         assert plus_petit_denivele([22, 28]) == 6     
         ```
+    === "Solution"
+        ```python
+        def plus_grand_denivele(tab):
+            denivele_max = tab[1] - tab[0]
+
+            for i in range(1, len(tab)-1) :
+                if tab[i+1] - tab[i] > denivele_max :
+                    denivele_max = tab[i+1] - tab[i]
+
+            return denivele_max
+        ```
+
+        ```python
+        def plus_petit_denivele(tab):
+            assert len(tab) >= 2, "Le tableau doit contenir au moins deux valeurs."
+            denivele_min = tab[1] - tab[0]
+
+            for i in range(1, len(tab)-1) :
+                if tab[i+1] - tab[i] < denivele_min :
+                    denivele_min = tab[i+1] - tab[i]
+
+            return denivele_min
+        ```
 
 !!! example "Exercice n°3 :  tableaux et accumulation : dénivelés"
     === "Enoncé"
@@ -187,6 +219,22 @@ assert match([], []) == -1
         assert compter_deniveles(tab) == (0, 0)
         ```
 
+    === "Solution"
+        ```python
+        def compter_deniveles(tab):
+            cumul_plus = 0
+            cumul_moins = 0
+
+            for i in range(len(tab)-1):
+                denivele = tab[i+1] - tab[i]
+                if denivele > 0 :
+                    cumul_plus = cumul_plus + denivele
+                else:
+                    cumul_moins = cumul_moins + denivele
+
+            return cumul_plus, cumul_moins
+        ```
+
 !!! example "Exercice n°4 : tableaux et accumulation : moyenne coefficientée"
     === "Enoncé"
         On dispose ici de deux tableaux de même longueur : un tableau de notes (sur 20) et un tableau de coefficients. Il s'agit de calculer la moyenne coefficientée correspondante. Par exemple avec :
@@ -226,6 +274,21 @@ assert match([], []) == -1
         notes = [8, 8, 8, 8, 12]
         coeffs = [1, 1, 1, 1, 4]
         assert moyenne_coefficientee(notes, coeffs) == 10.0
+        ```
+
+    === "Solution"
+        ```python
+        def moyenne_coefficientee(notes, coeffs):
+            num = 0
+            denom = 0
+
+            for i in range(len(notes)) :
+                num = num + coeffs[i] * notes[i]
+                denom = denom + coeffs[i]
+
+            moyenne = num / denom
+
+            return moyenne
         ```
 
 !!! example "Exercice n°5 : tableaux et accumulation : produit des valeurs"
@@ -270,6 +333,17 @@ assert match([], []) == -1
         assert produit(tab) == 1145612160
         ```
 
+    === "Solution" 
+        ```python
+        def produit(tab):
+            prod = 1
+
+            for elt in tab :
+                prod = prod * elt
+
+            return prod
+        ```        
+
 !!! example "Exercice n°6 : "
     === "Enoncé"
 
@@ -283,6 +357,14 @@ assert match([], []) == -1
         ```python
 
         ```
+    === "Solution"
+        ```python
+        def smul(n,tab):
+            nv_tab=[]
+            for elt in tab:
+                nv_tab.append(n*elt)
+            return nv_tab
+        ```       
 
 !!! example "Exercice n°7 :"
     === "Enoncé"
@@ -298,6 +380,15 @@ assert match([], []) == -1
         ```python
 
         ```
+    === "Solution"
+        ```python
+        def vsom(tab1,tab2):
+            nv_tab=[]
+            for indice in range(len(tab1)):
+                nv_tab.append(tab1[indice]+tab2[indice])
+            return nv_tab
+        ``` 
+
 
 !!! example "Exercice n°8 :  tableaux et mutations : écrêtage"
     === "Enoncé"
@@ -335,4 +426,15 @@ assert match([], []) == -1
         assert ecrete([7, 8, 3, 9, 8, 7, 2, 4, 8, 9, 0, 1, 5, 8, 8, 8, 4, 5, 4, 5], 0, 10) == [7, 8, 3, 9, 8, 7, 2, 4, 8, 9, 0, 1, 5, 8, 8, 8, 4, 5, 4, 5]
 
         assert ecrete([], 0, 10) == []
+        ```
+
+    === "Solution"
+        ```python
+        def ecrete(tab, a, b):
+            for i in range(len(tab)):
+                if tab[i]<a:
+                    tab[i] = a
+                 elif tab[i]>b:
+                    tab[i] = b
+            return tab
         ```
