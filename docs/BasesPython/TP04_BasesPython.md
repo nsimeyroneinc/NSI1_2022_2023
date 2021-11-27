@@ -11,6 +11,7 @@
     </thead>
 </table>
 
+[Lien Capytale](https://capytale2.ac-paris.fr/web/c-auth/list?returnto=/web/code/d43c-43836)
 
 Ce document recense les informations essentielles (donc à connaître absolument) pour démarrer en Python.
 

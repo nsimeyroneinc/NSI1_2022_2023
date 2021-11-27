@@ -13,6 +13,7 @@
 
 
 
+[Lien Capytale](https://capytale2.ac-paris.fr/web/c-auth/list?returnto=/web/code/0cef-43873)
 
 ---
 
@@ -366,8 +367,9 @@
 
         ```
     === "Solution"
-        L'idée est la suivante : avec une boucle Tant que, on retranche B à A jusqu'à obtenir un nombre < B. Le nombre de fois que l'on a pu faire cela est le quotient cherché, c'est donc le nombre de passages dans la boucle Tant que. On utilise une variable q qui compte le nombre de passages comme dans l'exercice précédent.
-         ```python
+        L'idée est la suivante : avec une boucle Tant que, on retranche B à A jusqu'à obtenir un nombre < B. Le nombre de fois que l'on a pu faire cela est le quotient cherché, c'est donc le nombre de passages dans la boucle Tant que. On utilise une variable q qui compte le nombre de passages comme dans l'exercice précédent.  
+
+        ```python
         # valeurs pour tester
         A = 25
         B = 3
