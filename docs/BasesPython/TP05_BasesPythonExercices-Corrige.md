@@ -215,11 +215,11 @@
     === "Solution"
 
         ```python
-        A = 1  ## initialisation de A
+        A = 1  # initialisation de A
         for i in range(4):  ## ou range(0, 4)
             for j in range(3):
                 A = A + i*j
-        print(A)  ## pour voir la valeur finale de A
+        print(A)  # pour voir la valeur finale de A
 
         ```
 
@@ -275,7 +275,7 @@
 
 
         ```python
-        ## à vous de jouer !
+        # à vous de jouer !
 
         ```
 
@@ -283,7 +283,7 @@
 
 
         ```python
-        ## à vous de jouer !
+        # à vous de jouer !
 
         ```
     === "Solution" 
@@ -311,7 +311,7 @@
 
 
         ```python
-        ## écrivez le programme Python correspondant
+        # écrivez le programme Python correspondant
 
         ```
     === "Solution"
@@ -336,19 +336,19 @@
 
 
         ```python
-        ## ajoutez une variable qui compte le nombre d'itérations dans la répétitive tant que
+        # ajoutez une variable qui compte le nombre d'itérations dans la répétitive tant que
 
         ```
     === "Solution" 
         On ajoute la variable `iter` qui vaut 0 au départ et que l'on augmente de 1 à chaque tour de boucle. On remplace aussi la valeur intiale de D par 25.  
 
         ```python
-        D = 25  ## valeur initiale de D
+        D = 25  # valeur initiale de D
         iter = 0
         while D > 3:
             iter = iter + 1
             D = D - 3
-        print(iter, D)  ## pour voir le nombre total d'itérations
+        print(iter, D)  # pour voir le nombre total d'itérations
         ```
 
 
@@ -362,7 +362,7 @@
 
 
         ```python
-        ## écrivez le programme Python correspondant
+        # écrivez le programme Python correspondant
 
         ```
     === "Solution"
@@ -394,7 +394,7 @@
 
 
         ```python
-        ## écrivez la fonction en Python
+        # écrivez la fonction en Python
 
         ```
     === "Solution"
@@ -426,7 +426,7 @@
 
 
         ```python
-        ## écrivez la fonction en Python
+        # écrivez la fonction en Python
 
         ```
     === "Solution"
@@ -453,7 +453,7 @@
 
 
         ```python
-        ## à vous de jouer !
+        # à vous de jouer !
 
         ```
     === "Solution" 
