@@ -19,6 +19,9 @@ docs_dir: docs
 # Menu de navigation
 nav: 
     - Accueil : index.md
+    - Python - Les bases :
+      - TP 04 - Les bases en Python : BasesPython/TP04_BasesPython.md
+      - TP 05 - Les bases en Python/Exercices : BasesPython/TP05_BasesPythonExercices-Corrige.md
     - Les Tableaux :  
       - TP 07 Les tableaux Cours : Tableaux/TP07_TuplesTableauxCours.md
       - TP 08 Les tableaux Exercices : Tableaux/TP08_TuplesTableauxExercicesCorrige.md
@@ -79,7 +82,7 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
     - admonition                    # Blocs colorés  !!! info "ma remarque"
     - toc: # Table des matières
         permalink: ⚓︎
-        toc_depth: 4
+        toc_depth: 3
     # extensions de python-markdown https://facelessuser.github.io/pymdown-extensions/
     - pymdownx.details              #   qui peuvent se plier/déplier.
     - pymdownx.caret                # Passage ^^souligné^^ ou en ^exposant^.
