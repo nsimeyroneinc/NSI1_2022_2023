@@ -30,6 +30,8 @@ nav:
       - TP 11 - Parcours séquentiel d'un tableau ter : Tableaux/TD11_Parcours_Sequentiel_Tableaux_Ter.md
     - WEB :
       - TD html et css : WEB/HTML_CSS.md
+    - Devoirs :
+      - DS 3 Groupe 1 : Devoirs/DS03_Tableau.md
     # Référencer vos autres pages ci-dessus...
     - Liens Utiles : Divers/Liens_utiles.md
 
@@ -112,7 +114,13 @@ plugins:
       kernel_name: python3
       execute: False
       include_source: True
-
+  - page-to-pdf : 
+      disableOnServe : False
+      scale : 1.0
+      margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
+      headerTemplate : 
+          pageNumber
+          totalPages
 
 extra:
   social: # A personaliser...
