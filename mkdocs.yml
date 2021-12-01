@@ -116,13 +116,13 @@ plugins:
       kernel_name: python3
       execute: False
       include_source: True
-  - page-to-pdf : 
-      disableOnServe : False
-      scale : 1.0
-      margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
-      headerTemplate : 
-          pageNumber
-          totalPages
+  #- page-to-pdf : 
+  #    disableOnServe : False
+  #    scale : 1.0
+  #    margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
+  #    headerTemplate : 
+  #        pageNumber
+  #        totalPages
 
 extra:
   social: # A personaliser...
