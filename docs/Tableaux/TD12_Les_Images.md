@@ -14,7 +14,7 @@
 <blockquote style="background-color: #E32636; border-left: 7px solid rgb(0 0 0);"> 
     <span style="font-size:30px; color:white;"> I. Notion d'images </span></blockquote>
 
-## VOCABULAIRE  
+## &#9193; VOCABULAIRE  
 
 - Un carré est appelé pixel (abréviation de picture element, élément d’image).
 - Chaque pixel est repéré par ses coordonnées dans un repère dont l’origine est en haut à gauche de l’image :
@@ -38,6 +38,7 @@ Parmi les différents encodages de couleur, on distinguera :
 
 <blockquote style="background-color: #E32636; border-left: 7px solid rgb(0 0 0);"> 
     <span style="font-size:30px; color:white;"> III. Matricielle vs Vectorielle </span></blockquote>
+
 
 !!! abstract "Matricielle"
     Comme indiquée ci-dessus, une image créée pixel par pixel est appelée image bitmap ou ma-
@@ -77,6 +78,8 @@ et en fin de programme
 ```python
 basthon.download("nom de l'image")
 ```
+
+## &#9193; Mise en pratique du module PIL
 
 !!! example "Exercice n°1 :"
     Le module PIL permet de créer très facilement l’image représentée ci-contre qui est un rectangle de 100 pixels de largeur et 256 pixels de hauteur, de couleur dégradée du noir (en haut) vers le rouge.  
