@@ -653,7 +653,7 @@ Le procédé d’incrustation sur fond vert consiste à remplacer tous les pixel
 
 
 
-    ![visageN.jpg](data/visage1.jpg){:.center width=350px} - > ![visagemilieuN.jpg](data/visagemilieu1.jpg){:.center width=350px}
+    ![visageN.jpg](data/visage1.jpg){:.center width=200px} - > ![visagemilieuN.jpg](data/visagemilieu1.jpg){:.center width=200px}
 
 
 
