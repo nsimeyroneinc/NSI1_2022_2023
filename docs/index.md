@@ -2,6 +2,10 @@ Ce site est à destination des élèves de première NSI au Lycée Murat d'Issoi
 Il permettra de retrouver les TP&TD traités en classes.<br>
 Ces TD sont corrigés dans la mesure du possible.
 
+## Thème en cours : 
+
+TD sur les images : [Lien Capytale](https://capytale2.ac-paris.fr/web/c-auth/list?returnto=/web/code/8c92-181057) et [lien site](Tableaux/TD12_Les_Images/)
+
 ## Les thèmes du programme
 
 ![image](Divers/7themes2.png)

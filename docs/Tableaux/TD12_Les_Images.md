@@ -566,7 +566,7 @@ Le procédé d’incrustation sur fond vert consiste à remplacer tous les pixel
 ![Illu_incrustation_fond_vert.png](data/Illu_incrustation_fond_vert.png){:.center}
 
 
-!!! exameple 
+!!! example "Incrustation"
     a. Écrire la fonction Python <mark>incrustation</mark> qui convient.
 
     On utilisera les images : 
