@@ -74,7 +74,6 @@ theme:
         - header.autohide
      
 
-
 markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abbreviations/
     # extensions de la bibliothèque markdown standard
     - abbr                          # infobulles sur abbréviations 
@@ -86,7 +85,7 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
     - admonition                    # Blocs colorés  !!! info "ma remarque"
     - toc: # Table des matières
         permalink: ⚓︎
-        toc_depth: 3
+        toc_depth: 1
     # extensions de python-markdown https://facelessuser.github.io/pymdown-extensions/
     - pymdownx.details              #   qui peuvent se plier/déplier.
     - pymdownx.caret                # Passage ^^souligné^^ ou en ^exposant^.
@@ -98,8 +97,8 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
     - pymdownx.tasklist:            # Cases à cocher  - [ ]  et - [x]
         custom_checkbox:    false   #   avec cases d'origine
         clickable_checkbox: true    #   et cliquables.
-    - pymdownx.tabbed               # Volets glissants.  === "Mon volet"
-        alternate_style: true
+    - pymdownx.tabbed:               # Volets glissants.  === "Mon volet"
+        alternate_style: true 
     - pymdownx.superfences          # Imbrication de blocs.
     - pymdownx.keys:                # Touches du clavier.  ++ctrl+d++
         separator: "\uff0b"
@@ -108,9 +107,8 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
         emoji_generator: !!python/name:materialx.emoji.to_svg
     - pymdownx.arithmatex:  # Formules en LaTeX 
         generic: true
-
     
-  
+
 
 plugins:
   - search # Inclure une barre de recherche
@@ -118,36 +116,49 @@ plugins:
       kernel_name: python3
       execute: False
       include_source: True
-
+  #- mkpdfs:
+  #      company: The War Company Inc.
+  #      author: Monsieur Silvestre
   #- page-to-pdf : 
   #    disableOnServe: False
   #    displayHeaderFooter: true
-  #    printBackground: true
+  #    printBackground: True
   #    scale : 1.0
   #    landscape : False
   #    margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
-  #    headerTemplate: '<header style="width:100%;heigth:50px;font-size:15px;font-weight:600;color:white;background:#E32636;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
-  #                      <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px">N.S.I : Spécialité Première - 2021 - 2022</span>
+  #    headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
+  #                      <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : Terminale 2021 - 2022</span>
   #                    </header>'
   #    footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#999999;margin:10px 20px;-webkit-print-color-adjust: exact">
   #                      <span>M.Meyroneinc-Condy | CCBY | 2021</span>
-  #                      <span class="page" style="position:absolute;bottom:0;right:0">
-  #                        <span class="pageNumber"></span>/<span class="totalPages"></span>
+  #                      <span class="page" style="position:absolute;bottom:0;right:0;">
+  #                       <span class="pageNumber"></span>/<span class="totalPages"></span>
   #                      </span>
   #                    </footer>'
+  #   headerTemplate : 
+  #      title
+  #      date
+  #      pageNumber
+  #      totalPages
+  #    footerTemplate : True
+  #      pageNumber
+  #      totalPages
+      
+
 
 extra:
   social: # A personaliser...
     - icon: fontawesome/solid/paper-plane
       link: mailto:nsi.meyroneinc@gmail.com
       name: Pour toute question, suggestion ou commentaire, écrire à l'auteur
+
     - icon: fontawesome/brands/github
       link: 
       name: dépôt github
+
     - icon: fontawesome/solid/university
       link: https://murat-issoire.ent.auvergnerhonealpes.fr/
       name: Lycée Murat Issoire
-
 
 
 extra_javascript:
