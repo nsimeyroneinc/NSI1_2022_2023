@@ -116,7 +116,7 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
         emoji_generator: !!python/name:materialx.emoji.to_svg
     - pymdownx.arithmatex:  # Formules en LaTeX 
         generic: true
-    - mkdocs_graphviz  #https://gitlab.com/rodrigo.schwencke/mkdocs-graphviz
+    #- mkdocs_graphviz  #https://gitlab.com/rodrigo.schwencke/mkdocs-graphviz
    
 
 
@@ -128,7 +128,7 @@ plugins:
       kernel_name: python3
       execute: False
       include_source: True
-  - kroki
+
  
   #- plugins:
   #  - search
