@@ -2,14 +2,78 @@ Ce site est à destination des élèves de première NSI au Lycée Murat d'Issoi
 Il permettra de retrouver les TP&TD traités en classes.<br>
 Ces TD sont corrigés dans la mesure du possible.
 
-## Thème en cours : 
+!!! info 
+    **Thème en cours** : [Les réseaux](./Archi_Materielle/TD13_Reseaux.md)
 
-TD sur les images : [Lien Capytale](https://capytale2.ac-paris.fr/web/c-auth/list?returnto=/web/code/8c92-181057) et [lien site](Tableaux/TD12_Les_Images/)
+
 
 ## Les thèmes du programme
 
 ![image](Divers/7themes2.png)
 
+
+## Programme
+!!! abstract "Programme"
+    Nous traiterons les différentes entrées du programme dans les chapitres suivants :
+    
+    === "T1 Rep. des données"
+        **Thème  :  Types et valeurs de base**  
+
+        - 🗹 Codage des entiers
+        - □ Codage des non-entiers
+        - 🗹 Bases
+        - □ Codage des caractères
+        - □ Booléens
+
+    === "T2 Types construits"
+
+        **Thème 2 :  Types construits**  
+
+        - 🗹 Listes - Tableaux 
+        - 🗹 Tuples    
+        - □ Dictionnaires  
+
+
+    === "T3 Tables"
+        **Thème 3 : Traitements de données en tables**
+
+        - □ Recherche dans une table
+        - □ Tri d'une table
+        - □ Fusion de tables
+    
+    === "T4 IHM"
+        **Thème 3 : Interactions entre l'homme et la machine sur le web**
+
+        - 🗹 Modalités de l'interaction entre l'homme et la machine
+        - □ Interaction 
+
+
+    === "T5 Arch. matérielle"
+        **Thème 5 : Architecture matérielle**
+
+        - □ Architecture Von Neumann
+        - □ Architecture réseau
+        - □ Protocoles de communication dans un réseau
+        - □ Découverte des commandes Linux
+
+    === "T6 Python"
+        **Thème 6 : Langages et programmation - Python**
+
+        - 🗹 Variables
+        - 🗹 Boucle For
+        - 🗹 Boucle While
+        - 🗹 Instruction conditionnelle If
+        - 🗹 Fonctions
+
+
+    === "T7 Algo."
+        **Thème 7 : Algorithmique**
+
+        - 🗹 Extremums et moyennes
+        - □ Tri par insertion - Tri par sélection
+        - □ Dichotomie
+        - □ Algorithmes gloutons
+        - □ Algorithme KNN
 
 ## Les compétences transversales 
 

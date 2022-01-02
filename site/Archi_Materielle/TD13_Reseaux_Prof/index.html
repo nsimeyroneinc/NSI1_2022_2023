@@ -1,0 +1,1331 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Michael Meyroneinc-condy">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+    
+    
+      
+        <title>TD13 Reseaux Prof - Site NSI 1ére Lycée Murat ISSOIRE</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Site NSI 1ére Lycée Murat ISSOIRE" class="md-header__button md-logo" aria-label="Site NSI 1ére Lycée Murat ISSOIRE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="m278.9 511.5-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2 43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6 144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Site NSI 1ére Lycée Murat ISSOIRE
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TD13 Reseaux Prof
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Tableaux/TP07_TuplesTableauxCours/" class="md-tabs__link">
+        T2 Types construits
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../WEB/HTML_CSS/" class="md-tabs__link">
+        T4 IHM
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../TD13_Reseaux/" class="md-tabs__link">
+        T5 Arch. Matérielle
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../BasesPython/TP04_BasesPython/" class="md-tabs__link">
+        T6 Programmation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Tableaux/TP07_TuplesTableauxCours/" class="md-tabs__link">
+        T7 Algorithmique
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Tableaux/TD12_Les_Images/" class="md-tabs__link">
+        Transversal
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Devoirs/DS03_Tableau/" class="md-tabs__link">
+        Devoirs
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../Divers/Liens_utiles/" class="md-tabs__link">
+      Liens Utiles
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Site NSI 1ére Lycée Murat ISSOIRE" class="md-nav__button md-logo" aria-label="Site NSI 1ére Lycée Murat ISSOIRE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="m278.9 511.5-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2 43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6 144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"/></svg>
+
+    </a>
+    Site NSI 1ére Lycée Murat ISSOIRE
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T2 Types construits
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T2 Types construits" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T2 Types construits
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TP07_TuplesTableauxCours/" class="md-nav__link">
+        TP 07 Les tableaux Cours
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TP08_TuplesTableauxExercicesCorrige/" class="md-nav__link">
+        TP 08 Les tableaux Exercices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          T4 IHM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T4 IHM" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          T4 IHM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/HTML_CSS/" class="md-nav__link">
+        TD html et css
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          T5 Arch. Matérielle
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T5 Arch. Matérielle" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          T5 Arch. Matérielle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TD13_Reseaux/" class="md-nav__link">
+        TP 13 Réseaux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          T6 Programmation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T6 Programmation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          T6 Programmation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesPython/TP04_BasesPython/" class="md-nav__link">
+        TP 04 - Les bases en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesPython/TP05_BasesPythonExercices-Corrige/" class="md-nav__link">
+        TP 05 - Les bases en Python/Exercices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          T7 Algorithmique
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T7 Algorithmique" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          T7 Algorithmique
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TP07_TuplesTableauxCours/" class="md-nav__link">
+        TP 07 Les tableaux Cours
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TP08_TuplesTableauxExercicesCorrige/" class="md-nav__link">
+        TP 08 Les tableaux Exercices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TD09_Parcours_Sequentiel_Tableaux_Corrige/" class="md-nav__link">
+        TP 09 - Parcours séquentiel d'un tableau
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TD10_Parcours_Sequentiel_Tableaux_Corrige/" class="md-nav__link">
+        TP 10 - Parcours séquentiel d'un tableau bis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TD11_Parcours_Sequentiel_Tableaux_Ter/" class="md-nav__link">
+        TP 11 - Parcours séquentiel d'un tableau ter
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Transversal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transversal" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Transversal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TD12_Les_Images/" class="md-nav__link">
+        TP 12 - Les images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Devoirs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Devoirs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Devoirs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS03_Tableau/" class="md-nav__link">
+        DS 3 Groupe 1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Divers/Liens_utiles/" class="md-nav__link">
+        Liens Utiles
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="TD13_Reseaux_Prof.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+              
+
+
+
+
+
+                
+
+  <h1>TD13 Reseaux Prof</h1>
+
+<table  style="background-color: #CD7F32; width:100%;color:white;">
+    <thead>
+        <tr>
+            <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;">TD n°13 : Architecture d'un réseau</th>
+            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%">Thème  3 : Architecture Matérielle</th>
+        </tr>
+          <tr>
+            <th style="text-align:center;border:solid;border-width:1px;font-size:15pt;width:70%;"></th>
+            <th style="text-align:center;border:solid;border-width:1px;font-size:14pt;width:30%">TD Filius</th>
+        </tr>
+    </thead>
+</table>
+
+<h2 id="programme-officiel">Programme officiel<a class="headerlink" href="#programme-officiel" title="Permanent link">⚓︎</a></h2>
+<p><img alt="image" class="center" src="../data/BO.png" /></p>
+<p>Ce cours a pour but de présenter la constitution classique d'un réseau, et les équipements associés. La partie relative aux protocoles utilisés lors des échanges entre deux machines est détaillée dans un cours ultérieur sur les protocoles de communication.</p>
+<blockquote style="background-color: #CD7F32; border-left: 7px solid rgb(0 0 0);"> 
+    <span style="font-size:30px; color:white;"> I. Découverte de Filius </span></blockquote>
+
+<blockquote>
+<p><a href="https://www.lernsoftware-filius.de/Herunterladen">lien</a> de téléchargement de Filius.</p>
+</blockquote>
+<p><img alt="image" class="center" src="../data/filius_documentation.png" /></p>
+<p>Il existe deux modes d’utilisation.  </p>
+<ul>
+<li>Pour réaliser le circuit, on utilise le mode conception en cliquant sur l’icône <img alt="image" class="center" src="../data/conception.png" /> Les éléments disponibles sont disposés sur le bord vertical gauche de la fenêtre et il suffit de les glisser/déposer dans la zone centrale de conception.</li>
+<li>Pour effectuer une simulation et installer des logiciels sur les éléments du réseau, on utilise le mode simulation en cliquant sur l’icône <img alt="image" class="center" src="../data/simulation.png" />.  </li>
+</ul>
+<p>Pour visualiser correctement le trajet des données sur le réseau, il faut régler la vitesse sur une petite valeur : 10 % ou 20 %.  </p>
+<blockquote style="background-color: #CD7F32; border-left: 7px solid rgb(0 0 0);"> 
+    <span style="font-size:30px; color:white;"> II. Connexion pair à pair de deux machines</span></blockquote>
+
+<p>L’objectif de cette partie est de relier en réseau deux machines. Une telle connexion est dite pair à pair.<br />
+Créer un nouveau projet Filius et l’enregistrer dans un dossier de son espace personnel sous le mon de TD13_exercice1.fls.</p>
+<ol>
+<li>Passer en mode conception et créer un réseau de deux machines hôtes de type portable reliées par un câble.</li>
+<li>Faire un clic droit sur une machine et lui attribuer l’adresse IP 192.168.1.1 comme ci-dessous, en sélectionnant l’option Utiliser l’adresse IP comme nom.  Attribuer de même l’adresse IP 192.168.1.2 à l’autre machine.</li>
+<li>Passer en mode simulation, faire un clic droit sur la machine 192.168.1.1, sélectionner Afficher le bureau et installer l’application ligne de commandes en la faisant glisser vers la zone des applications installées à gauche comme ci-dessous.
+<img alt="image" class="center" src="../data/pair_a_pair.png" /><img alt="image" class="center" src="../data/filius_appli.png" /></li>
+<li>Lancer l’application ligne de commandes sur la machine 192.168.1.1 puis exécuter la commande ipconfig.
+Repérer les divers informations données.</li>
+<li>Dans l’application ligne de commandes sur la machine 192.168.1.1 exécuter la commande ping 192.168.1.2 pour tester la connexion vers la machine ping 192.168.1.2.
+Le cable devrait se colorer en vert si la connexion est correcte et les quatre paquets de données envoyés par ping devraient recevoir un écho pong retourné par ping 192.168.1.2.
+<img alt="image" class="center" src="../data/ping.png" /></li>
+</ol>
+<div class="admonition abstract">
+<p class="admonition-title">Ce qu’il faut retenir</p>
+<ul>
+<li>"ipconfig" ous Windows permet de connaître son adresse IP locale et son adresse MAC</li>
+<li>"ping" qui permet d’envoyer des paquets de données d’une machine A vers une machine B.<br />
+Si la commande est exécutée sur la machine A, le "ping" devra être suivi par l’adresse IP de la machine B (par exemple, si l’adresse IP de B est "192.168.1.1", on aura "ping 192.168.1.2")</li>
+</ul>
+</div>
+<blockquote style="background-color: #CD7F32; border-left: 7px solid rgb(0 0 0);"> 
+    <span style="font-size:30px; color:white;"> III. Premier réseau local </span></blockquote>
+
+<blockquote>
+<p><a href="https://www.lernsoftware-filius.de/downloads/Setup/filius_1.9.0_all.deb">lien</a> de téléchargement de Filius sous Linux</p>
+</blockquote>
+<p>Créer le réseau local ci-dessous :</p>
+<p><img alt="" class="center" src="../data/f1.png" /></p>
+<p>Pour interconnecter plus de deux machines on utilise un <code>commutateur ou switch</code> en Anglais.<br />
+Créer un switch relié aux trois machines.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Switch</p>
+<p>Un switch ressemble à une multiprise avec plusieurs ports Ethernet RJ45 auxquels sont reliés les machines du réseau local. Il établit une table de correspondances entre adresse physique MAC et ports.<br />
+Lorsqu’il reçoit un paquet, il lit l’adresse MAC du destinataire et transmet le paquet sur le port correspondant.</p>
+</div>
+<p>Tester le <code>ping</code> de la machine <code>192.168.0.1</code>  vers la machine <code>192.168.0.3</code>.</p>
+<details class="tip">
+<summary>Résultat du ping</summary>
+<p><img alt="" class="center" src="../data/ft1.png" /></p>
+</details>
+<h2 id="iii1-la-carte-reseau-et-son-adresse-mac">III.1. La carte réseau et son adresse MAC<a class="headerlink" href="#iii1-la-carte-reseau-et-son-adresse-mac" title="Permanent link">⚓︎</a></h2>
+<p>Chaque ordinateur sur le réseau dispose d'une adresse MAC, qui une valeur <strong>unique</strong> attribuée à sa carte réseau (Ethernet, Wifi, 4G, 5G, ...) lors de sa fabrication en usine.</p>
+<p>Cette adresse est codée sur 48 bits, présentés sous la forme de 6 octets en hexadécimal. Exemple : <code>fc:aa:14:75:45:a5</code></p>
+<p>Les trois premiers octets correspondent au code du fabricant.<br />
+Un site comme https://www.macvendorlookup.com/ vous permet de retrouver le fabricant d'une adresse MAC quelconque.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Ce qu’il faut retenir</p>
+<p>Toutes les interfaces réseau possèdent une <strong>adresse physique MAC</strong> qui est *<em>unique</em> et attribuée par le constructeur. Elle est constituée sur 48 bits ou 6 octets représentés en notation hexadécimale et séparés par le caractère : (colon en anglais).<br />
+L’adresse MAC est nécessaire pour la liaison réseau entre deux équipements tandis que l’adresse IP est nécessaire pour le routage sur Internet.</p>
+</div>
+<h2 id="iii2-switch-hub-quelle-difference">III.2. Switch, hub, quelle différence ?<a class="headerlink" href="#iii2-switch-hub-quelle-difference" title="Permanent link">⚓︎</a></h2>
+<ul>
+<li>Au sein d'un <strong>hub Ethernet</strong> (de moins en moins vendus), il n'y a <strong>aucune analyse</strong> des données qui transitent : il s'agit simplement d'un dédoublement des fils de cuivre (tout comme une multiprise électrique). L'intégralité des messages est donc envoyée à l'intégralité des ordinateurs du réseau, même s'ils ne sont pas concernés.</li>
+</ul>
+<p><img alt="" class="center" src="../data/hub.png" /></p>
+<ul>
+<li>Au sein d'un <strong>switch Ethernet</strong> , une analyse est effectuée sur la trame qui est à distribuer. Lors d'un branchement d'un nouvel ordinateur sur le switch, celui-ci récupère son adresse MAC, ce qui lui permet de <strong>trier</strong> les messages et de ne les distribuer qu'au bon destinataire.</li>
+</ul>
+<p><img alt="" class="center" src="../data/switch.png" /></p>
+<blockquote style="background-color: #CD7F32; border-left: 7px solid rgb(0 0 0);"> 
+    <span style="font-size:30px; color:white;"> IV. Un deuxième sous-réseau</span></blockquote>
+
+<p>Rajouter un deuxième sous-réseau de la manière suivante (penser à bien renommer les switchs).</p>
+<p><img alt="" class="center" src="../data/f2.png" /></p>
+<p><strong>Comment relier ces deux sous-réseaux ?</strong></p>
+<p>Une réponse pas si bête : avec un cable entre les deux switchs !</p>
+<p><img alt="" class="center" src="../data/f3.png" /></p>
+<p>Tester cette hypothèse en essayant de pinger la machine <code>192.168.1.2</code> depuis la machine <code>192.168.0.1</code>.  </p>
+<details class="tip">
+<summary>Résultat du ping</summary>
+<p><img alt="" class="center" src="../data/ft2.png" />
+Cela ne marche pas. L'ordinateur <strong>refuse</strong> d'envoyer le ping vers la machine <code>192.168.1.2</code>.<br />
+<em>(spoil : car elle n'est pas dans son sous-réseau)</em></p>
+</details>
+<p>Temporairement, renommons la machine <code>192.168.1.2</code> en <code>192.168.0.33</code>. Testons à nouveau le ping depuis la machine <code>192.168.0.1</code>.</p>
+<details class="tip">
+<summary>Résultat du ping</summary>
+<p><img alt="" class="center" src="../data/ft3.png" />
+Cela marche. Les paquets sont bien acheminés.</p>
+</details>
+<p><strong>Intuition</strong> : la notion de sous-réseau n'est pas <em>topologique</em> («il suffit de relier les ordinateurs entre eux») mais obéit à des règles numériques.</p>
+<h2 id="iii21-notion-de-masque-de-sous-reseau">III.2.1. Notion de masque de sous-réseau<a class="headerlink" href="#iii21-notion-de-masque-de-sous-reseau" title="Permanent link">⚓︎</a></h2>
+<p>Dans Filius, lors de l'attribution de l'adresse IP à une machine, une ligne nous permet de spécifier le <strong>masque de sous-réseau</strong> (appelé simplement « Masque » dans Filius). C'est ce masque qui va permettre de déterminer si une machine appartient à un sous-réseau ou non, en fonction de son adresse IP.</p>
+<p><img alt="" class="center" src="../data/f4.png" /></p>
+<h3 id="iii211-explication-basique">III.2.1.1 Explication basique<a class="headerlink" href="#iii211-explication-basique" title="Permanent link">⚓︎</a></h3>
+<ul>
+<li>Si le masque est <code>255.255.255.0</code>, toutes les machines partageant les mêmes <strong>trois</strong> premiers nombres de leur adresse IP appartiendront au même sous-réseau. Comme ceci est le réglage par défaut de Filius, cela explique pourquoi  <code>192.168.0.33</code> et <code>192.168.0.1</code> sont sur le même sous-réseau, et pourquoi  <code>192.168.1.2</code> et <code>192.168.0.1</code> ne sont pas sur le même sous-réseau.</li>
+</ul>
+<p>Dans cette configuration, 256 machines peuvent donc appartenir au même sous-réseau (ce n'est pas tout à fait le cas car des adresses finissant par 0 ou par 255 sont réservées).</p>
+<ul>
+<li>Si le masque est <code>255.255.0.0</code>, toutes les machines partageant les mêmes <strong>deux</strong> premiers nombres de leur adresse IP appartiendront au même sous-réseau.<br />
+Dans cette configuration, 65536 machines peuvent être dans le même sous-réseau. (car <span class="arithmatex">\(256^2=65536\)</span>)</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Enoncé</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Renommons <code>192.168.0.33</code> en <code>192.168.1.2</code> et modifions son masque en <code>255.255.0.0</code>.</li>
+<li>Modifions aussi le masque de <code>192.168.0.1</code> en <code>255.255.0.0</code>.</li>
+<li>Testons le ping de <code>192.168.0.1</code> vers <code>192.168.1.2</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<details class="tip">
+<summary>Résultat du ping</summary>
+<p><img alt="" class="center" src="../data/ft4.png" />
+Cela marche. Les deux machines appartiennent maintenant au même sous-réseau.</p>
+</details>
+<h3 id="iii212-explication-avancee">III.2.1.2 Explication avancée<a class="headerlink" href="#iii212-explication-avancee" title="Permanent link">⚓︎</a></h3>
+<p>Lorsqu'une machine A veut envoyer un message à une machine B, elle doit déterminer si cette machine :</p>
+<ul>
+<li>appartient au même sous-réseau : auquel cas le message est envoyé directement via un ou plusieurs switchs.</li>
+<li>n'appartient pas au même sous-réseau : auquel cas le message doit d'abord transiter par un routeur (voir V.)</li>
+</ul>
+<p>Quelle opération permet de distinguer cette appartenance à un même sous-réseau ?</p>
+<p>Appelons <code>IP_A</code> et <code>IP_B</code> les adresses IP respectives des machines A et B.<br />
+Appelons <code>M</code> le masque de sous-réseau.<br />
+Nommons <code>&amp;</code> l'opérateur de conjonction entre nombres binaires : </p>
+<table>
+<thead>
+<tr>
+<th>E1</th>
+<th>E2</th>
+<th>E1 &amp; E2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition abstract">
+<p class="admonition-title">Propriété :</p>
+<p>A et B appartiennent au même sous-réseau ⇔ <code>IP_A &amp; M = IP_B &amp; M</code></p>
+</div>
+<p><strong>Exemple :</strong> considérons trois machines A, B, C d'IP respectives <code>192.168.129.10</code>, <code>192.168.135.200</code> et <code>192.168.145.1</code>, configurées avec un masque de sous-réseau égal à <code>255.255.248.0</code>.  </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>machine A</th>
+<th>machine B</th>
+<th>machine C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP</td>
+<td>192.168.129.10</td>
+<td>192.168.135.200</td>
+<td>192.168.145.1</td>
+</tr>
+<tr>
+<td>M</td>
+<td>255.255.248.0</td>
+<td>255.255.248.0</td>
+<td>255.255.248.0</td>
+</tr>
+<tr>
+<td>Adresse réseau :IP &amp; M</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[comment]: &lt;&gt; (</td>
+<td>Adresse réseau :IP &amp; M</td>
+<td>192.168.128.0</td>
+<td>192.168.128.0</td>
+</tr>
+</tbody>
+</table>
+<p>Vérifions si ces trois machines sont sur le même réseau.  </p>
+<div class="admonition info">
+<p class="admonition-title">Règles de calcul :</p>
+<ul>
+<li>pour tout octet <code>x</code>, <code>x &amp; 255 = x</code>  et <code>x &amp; 0 = 0</code>.</li>
+<li><code>129 &amp; 248</code> s'écrit en binaire <code>10000001 &amp; 11111000</code> qui vaut <code>10000000</code>, soit <code>128</code> en décimal.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice :</p>
+<p>Faite de même pour les machines A et C</p>
+</div>
+<details class="tip">
+<summary>Tip</summary>
+<p>Conclusion : les machines A et B sont sous le même sous-réseau, mais pas la machine C.</p>
+</details>
+<h3 id="213-coherence-entre-les-deux-explications">2.1.3 Cohérence entre les deux explications<a class="headerlink" href="#213-coherence-entre-les-deux-explications" title="Permanent link">⚓︎</a></h3>
+<p>Lorsqu'un masque de sous-réseau est égal à <code>255.255.255.0</code>, l'opération de conjonction <code>&amp;</code> avec chaque IP ne laissera intacts que les 3 premiers octets, le dernier sera égal à 0. Donc si deux adresses s'écrivent <code>A.B.C.X</code> et   <code>A.B.C.Y</code>, elles appartiendront forcément au même sous-réseau (typiquement, c'est le cas de <code>192.168.0.33</code> et <code>192.168.0.1</code>).</p>
+<h2 id="22-ecriture-des-masques-de-sous-reseau-notation-cidr">2.2 Écriture des masques de sous-réseau : notation CIDR<a class="headerlink" href="#22-ecriture-des-masques-de-sous-reseau-notation-cidr" title="Permanent link">⚓︎</a></h2>
+<p>D'après ce qui précède, 2 informations sont nécessaires pour déterminer le sous-réseau auquel appartient une machine : son IP et le masque de sous-réseau.   </p>
+<p>Une convention de notation permet d'écrire simplement ces deux renseignements : <strong>la notation CIDR</strong>.</p>
+<p><strong>Exemple</strong> :<br />
+- Une machine d'IP <code>192.168.0.33</code> avec un masque de sous-réseau <code>255.255.255.0</code> sera désignée par <code>192.168.0.33 / 24</code> en notation CIDR.
+- Le suffixe <code>/ 24</code> signifie que le masque de sous-réseau commence par  24 bits consécutifs de valeur 1 : le reste des bits (donc 8 bits) est à mis à 0.<br />
+- Autrement dit, ce masque vaut <code>11111111.11111111.11111111.00000000</code> , soit <code>255.255.255.0</code>.  </p>
+<p>De la même manière, le suffixe <code>/ 16</code> donnera un masque de <code>11111111.11111111.00000000.00000000</code> , soit <code>255.255.0.0</code>.<br />
+Ou encore, un suffixe <code>/ 21</code> donnera un masque de <code>11111111.11111111.11111000.00000000</code> , soit <code>255.255.248.0</code>. </p>
+<blockquote style="background-color: #CD7F32; border-left: 7px solid rgb(0 0 0);"> 
+    <span style="font-size:30px; color:white;">V. Un vrai réseau contenant deux sous-réseaux distincts : la nécessité d'un routeur</span></blockquote>
+
+<p>Notre solution initiale (relier les deux switchs par un cable pour unifier les deux sous-réseaux) n'est pas viable à l'échelle d'un réseau planétaire.</p>
+<p>Pour que les machines de deux réseaux différents puissent être connectées, on va utiliser un dispositif équipé de <strong>deux cartes réseaux</strong>, situé à cheval entre les deux sous-réseaux. Cet équipement de réseau est appelé <strong>routeur</strong> ou <strong>passerelle</strong>.</p>
+<p><img alt="" class="center" src="../data/routeur.png" /></p>
+<h2 id="v1-principe-de-fonctionnement">V.1 Principe de fonctionnement<a class="headerlink" href="#v1-principe-de-fonctionnement" title="Permanent link">⚓︎</a></h2>
+<p>Imaginons que la machine <code>192.168.0.1 / 24</code> veuille communiquer avec la machine  <code>172.16.52.3 / 24</code>.<br />
+L'observation du masque de sous-réseau de la machine <code>192.168.0.1 / 24</code> nous apprend qu'elle ne peut communiquer qu'avec les adresses de la forme <code>192.168.0.X / 24</code>, où <code>X</code> est un nombre entre 0 et 255. </p>
+<p>Les 3 étapes du <strong>routage</strong> :</p>
+<ul>
+<li>Lorsque qu'une machine A veut envoyer un message à une machine B, elle va tout d'abord vérifier si cette machine appartient à son réseau local. si c'est le cas, le message est envoyé par l'intermédiaire du switch qui relie les deux machines.  </li>
+<li>Si la machine B n'est pas trouvée sur le réseau local de la machine A, le message va être acheminé vers le routeur, par l'intermédiaire de son adresse de passerelle (qui est bien une adresse appartenant au sous-réseau de A).  </li>
+<li>De là, le routeur va regarder si la machine B appartient au deuxième sous-réseau auquel il est connecté. Si c'est le cas, le message est distribué, sinon, le routeur va donner le message à un autre routeur auquel il est connecté et va le charger de distribuer ce message : c'est le procédé de <a href="https://openclassrooms.com/fr/courses/857447-apprenez-le-fonctionnement-des-reseaux-tcp-ip/854659-le-routage">routage</a>, qui sera vu en classe de Terminale.</li>
+</ul>
+<p>Dans notre exemple, l'adresse <code>172.16.52.3</code> n'est pas dans le sous-réseau de <code>192.168.0.1</code>. Le message va donc transiter par le routeur.<br />
+<img alt="" class="center" src="../data/routeur2.png" /> </p>
+<h2 id="v2-illustration-avec-filius">V.2 Illustration avec Filius<a class="headerlink" href="#v2-illustration-avec-filius" title="Permanent link">⚓︎</a></h2>
+<ul>
+<li>
+<p>Rajoutons un routeur entre le SwitchA et le SwitchB.
+<img alt="" class="center" src="../data/f5.png" /></p>
+</li>
+<li>
+<p><strong>Configuration du routeur :</strong><br />
+     L'interface reliée au Switch A doit avoir une adresse du sous-réseau A. On donne souvent une adresse finissant par <code>254</code>, qui est en quelque sorte la dernière adresse du réseau (en effet l'adresse en <code>255</code> est appelée adresse de <strong>broadcast</strong>, utilisée pour pinger en une seule fois l'intégralité d'un sous-réseau).<br />
+     On donne donc l'adresse <code>192.168.0.254</code> pour l'interface reliée au Switch A, et <code>192.168.1.254</code> pour l'interface reliée au Switch B.<br />
+<img alt="" class="center" src="../data/flsrouteur.png" /><br />
+     Dans l'onglet général, sélectionner « Routage automatique ».<br />
+     Ainsi configuré notre routeur peut jouer le rôle de <strong>passerelle</strong> entre les deux sous-réseaux.</p>
+</li>
+</ul>
+<details class="tip">
+<summary> Test du ping entre <code>192.168.0.1</code> et <code>192.168.1.2</code></summary>
+<p><img alt="" class="center" src="../data/ft2.png" />
+Cela ne marche pas. Les paquets sont perdus.</p>
+</details>
+<p>Pourquoi cet échec ? Parce que nous devons dire à chaque machine qu'une passerelle est maintenant disponible pour pouvoir sortir de son propre sous-réseau. Il faut donc aller sur la machine <code>192.168.0.1</code> et lui donner l'adresse de sa passerelle, qui est <code>192.168.0.254</code>.</p>
+<p><img alt="" class="center" src="../data/passerelle.png" /></p>
+<p>Attention, il faut faire de même pour <code>192.168.1.2</code> (avec la bonne passerelle...)<br />
+Testons à nouveau le ping... Cette fois cela marche.</p>
+<p>Plus intéressant : effectuons un <code>traceroute</code> entre  <code>192.168.0.1</code> et <code>192.168.1.2</code>.</p>
+<p><img alt="" class="center" src="../data/traceroute.png" /></p>
+<p>On y aperçoit que la machine <code>192.168.1.2</code> est atteignable en deux sauts depuis <code>192.168.0.1</code>, en passant par la passerelle <code>192.168.0.254</code></p>
+<p><strong>Cas d'un réseau domestique</strong>  </p>
+<p>Chez vous, la box de votre opérateur joue simultanément le rôle de switch et de routeur :  </p>
+<ul>
+<li>switch car elle répartit la connexion entre les différents dispositifs (ordinateurs branchés en ethernet, smartphone en wifi, tv connectée...)  </li>
+<li>routeur car elle fait le lien entre ce sous-réseau domestique (les appareils de votre maison) et le réseau internet.</li>
+</ul>
+<p><img alt="" class="center" src="../data/boxmaison.png" /></p>
+<p>L'image ci-dessous présente le résultat de la commande <code>ipconfig</code> sous Windows. On y retrouve l'adresse IP locale <code>192.168.9.103</code>, le masque de sous-réseau <code>255.255.255.0</code> et l'adresse de la passerelle <code>192.168.9.1</code>.<br />
+<img alt="" class="center" src="../data/imgpasserelle.jpg" /></p>
+<h2 id="33-annexe-rajout-dun-serveur-dns">3.3 Annexe : rajout d'un serveur DNS<a class="headerlink" href="#33-annexe-rajout-dun-serveur-dns" title="Permanent link">⚓︎</a></h2>
+<h3 id="331-rajout-dun-serveur-web">3.3.1 Rajout d'un serveur web<a class="headerlink" href="#331-rajout-dun-serveur-web" title="Permanent link">⚓︎</a></h3>
+<ul>
+<li>
+<p>Connectons un ordinateur au SwitchB, sur l'adresse <code>192.168.1.30</code> et installons dessus un Serveur web et démarrons-le. 
+<img alt="" class="center" src="../data/serveurweb.png" /></p>
+</li>
+<li>
+<p>Sur la machine <code>192.168.0.1</code>, rajoutons un Navigateur Web. En tapant dans la barre d'adresse l'adresse IP du Serveur web, la page d'accueil de Filius s'affiche.<br />
+<img alt="" class="center" src="../data/nav1.png" /></p>
+</li>
+</ul>
+<p>Lors d'une utilisation classique d'un navigateur web, c'est une url mémorisable qui s'affiche, et non une adresse IP : on retient en effet plus facilement <code>https://www.google.com/</code> que <code>http://216.58.213.131</code>, qui renvoient pourtant à la même adresse. 
+La machine qui assure ce rôle d'annuaire entre les serveurs web et leur adresse IP s'appelle un <strong>serveur DNS</strong>. Pour pouvoir indexer la totalité des sites internet, son rôle est structuré de manière hiérarchique. Vous trouverez des détails <a href="https://openclassrooms.com/fr/courses/857447-apprenez-le-fonctionnement-des-reseaux-tcp-ip/857163-le-service-dns">ici</a></p>
+<h3 id="v31-rajout-dun-serveur-dns">V.3.1 Rajout d'un serveur DNS<a class="headerlink" href="#v31-rajout-dun-serveur-dns" title="Permanent link">⚓︎</a></h3>
+<ul>
+<li>Rajoutons un serveur DNS minimal, qui n'aura dans son annuaire d'un seul site. Il faut pour cela raccorder une nouvelle machine (mais une machine déjà sur le réseau aurait très bien pu jouer ce rôle), et installer dessus un serveur DNS.<br />
+<img alt="" class="center" src="../data/dns.png" /> </li>
+<li>
+<p>Sur ce serveur DNS, associons l'adresse <code>http://www.vivelansi.fr</code>  à l'adresse IP <code>192.168.1.30</code>.<br />
+<img alt="" class="center" src="../data/vivelansi.png" /> </p>
+</li>
+<li>
+<p>De retour sur notre machine <code>192.168.0.1</code>, spécifions maintenant l'adresse du serveur DNS :<br />
+<img alt="" class="center" src="../data/specdns.png" /></p>
+</li>
+<li>
+<p>Depuis le navigateur web de la machine <code>192.168.0.1</code>, le site <code>http://www.vivelansi.fr</code> est maintenant accessible.<br />
+<img alt="" class="center" src="../data/dnsex.png" /> </p>
+</li>
+</ul>
+<blockquote style="background-color: #CD7F32; border-left: 7px solid rgb(0 0 0);"> 
+    <span style="font-size:30px; color:white;">VI. Routage dans une interconnexion de réseaux</span></blockquote>
+
+<p>Récupérer le fichier <a href="https://drive.google.com/file/d/1HM1gD5_AR9lvYEI3FY2ppTncDGyEXP3E/view?usp=sharing">exercice_ressources.fls</a> puis l’ouvrir avec Filius.   </p>
+<p><img alt="" class="center" src="../data/Exo_routeur.png" /></p>
+<ol>
+<li>Récupérer les adresses IP des machines M14 et M9.  </li>
+<li>En mode simulation, faire un ping de la machine M14 vers M9 pour vérifier la connexion.<br />
+Faire un traceroute de la machine M14 vers M9 . Noter le chemin parcouru pour aller de M14 vers M9 .</li>
+<li>Supprimer le câble réseau (clic droit sur le câble) qui relie le routeur F au routeur E (simulation de panne) et refaire un traceroute de M14 et M9.<br />
+Attendre un peu pour que les tables de routage des routeurs se mettent à jour.<br />
+Que constate-t-on ?</li>
+</ol>
+<p><br></p>
+<hr />
+<p><strong>Bibliographie</strong></p>
+<ul>
+<li>Cours d'OpenClassrooms : <ul>
+<li>https://openclassrooms.com/fr/courses/857447-apprenez-le-fonctionnement-des-reseaux-tcp-ip/854659-le-routage</li>
+<li>https://openclassrooms.com/fr/courses/1561696-les-reseaux-de-zero/3607286-ladressage-cidr</li>
+</ul>
+</li>
+</ul>
+<hr />
+
+              
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="mailto:nsi.meyroneinc@gmail.com" target="_blank" rel="noopener" title="Pour toute question, suggestion ou commentaire, écrire à l&#39;auteur" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M476 3.2 12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="None" target="_blank" rel="noopener" title="dépôt github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://murat-issoire.ent.auvergnerhonealpes.fr/" target="_blank" rel="noopener" title="Lycée Murat Issoire" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M496 128v16a8 8 0 0 1-8 8h-24v12c0 6.627-5.373 12-12 12H60c-6.627 0-12-5.373-12-12v-12H24a8 8 0 0 1-8-8v-16a8 8 0 0 1 4.941-7.392l232-88a7.996 7.996 0 0 1 6.118 0l232 88A8 8 0 0 1 496 128zm-24 304H40c-13.255 0-24 10.745-24 24v16a8 8 0 0 0 8 8h464a8 8 0 0 0 8-8v-16c0-13.255-10.745-24-24-24zM96 192v192H60c-6.627 0-12 5.373-12 12v20h416v-20c0-6.627-5.373-12-12-12h-36V192h-64v192h-64V192h-64v192h-64V192H96z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

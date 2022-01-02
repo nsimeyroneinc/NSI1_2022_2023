@@ -1,0 +1,1702 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Michael Meyroneinc-condy">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+    
+    
+      
+        <title>TP 08 Les tableaux Exercices - Site NSI 1ére Lycée Murat ISSOIRE</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Site NSI 1ére Lycée Murat ISSOIRE" class="md-header__button md-logo" aria-label="Site NSI 1ére Lycée Murat ISSOIRE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="m278.9 511.5-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2 43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6 144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Site NSI 1ére Lycée Murat ISSOIRE
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TP 08 Les tableaux Exercices
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../TP07_TuplesTableauxCours/" class="md-tabs__link">
+        T2 Types construits
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../WEB/HTML_CSS/" class="md-tabs__link">
+        T4 IHM
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Archi_Materielle/TD13_Reseaux/" class="md-tabs__link">
+        T5 Arch. Matérielle
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../BasesPython/TP04_BasesPython/" class="md-tabs__link">
+        T6 Programmation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../TP07_TuplesTableauxCours/" class="md-tabs__link md-tabs__link--active">
+        T7 Algorithmique
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../TD12_Les_Images/" class="md-tabs__link">
+        Transversal
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Devoirs/DS03_Tableau/" class="md-tabs__link">
+        Devoirs
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../Divers/Liens_utiles/" class="md-tabs__link">
+      Liens Utiles
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Site NSI 1ére Lycée Murat ISSOIRE" class="md-nav__button md-logo" aria-label="Site NSI 1ére Lycée Murat ISSOIRE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="m278.9 511.5-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2 43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6 144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"/></svg>
+
+    </a>
+    Site NSI 1ére Lycée Murat ISSOIRE
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T2 Types construits
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T2 Types construits" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T2 Types construits
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP07_TuplesTableauxCours/" class="md-nav__link">
+        TP 07 Les tableaux Cours
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP 08 Les tableaux Exercices
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          T4 IHM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T4 IHM" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          T4 IHM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/HTML_CSS/" class="md-nav__link">
+        TD html et css
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          T5 Arch. Matérielle
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T5 Arch. Matérielle" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          T5 Arch. Matérielle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archi_Materielle/TD13_Reseaux/" class="md-nav__link">
+        TP 13 Réseaux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          T6 Programmation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T6 Programmation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          T6 Programmation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesPython/TP04_BasesPython/" class="md-nav__link">
+        TP 04 - Les bases en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesPython/TP05_BasesPythonExercices-Corrige/" class="md-nav__link">
+        TP 05 - Les bases en Python/Exercices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          T7 Algorithmique
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T7 Algorithmique" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          T7 Algorithmique
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP07_TuplesTableauxCours/" class="md-nav__link">
+        TP 07 Les tableaux Cours
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP 08 Les tableaux Exercices
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TD09_Parcours_Sequentiel_Tableaux_Corrige/" class="md-nav__link">
+        TP 09 - Parcours séquentiel d'un tableau
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TD10_Parcours_Sequentiel_Tableaux_Corrige/" class="md-nav__link">
+        TP 10 - Parcours séquentiel d'un tableau bis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TD11_Parcours_Sequentiel_Tableaux_Ter/" class="md-nav__link">
+        TP 11 - Parcours séquentiel d'un tableau ter
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Transversal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transversal" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Transversal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TD12_Les_Images/" class="md-nav__link">
+        TP 12 - Les images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Devoirs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Devoirs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Devoirs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS03_Tableau/" class="md-nav__link">
+        DS 3 Groupe 1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Divers/Liens_utiles/" class="md-nav__link">
+        Liens Utiles
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="TP08_TuplesTableauxExercicesCorrige.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+              
+
+
+
+
+
+                
+
+  <h1>TP 08 Les tableaux Exercices</h1>
+
+<table  style="background-color:  #ED872D; width:100%;">
+    <thead>
+        <tr>
+            <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;">TD n°8 : Les types construits : tuples et tableaux</th>
+            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%">Thème 4 : Langages et Programmation</th>
+        </tr>
+               <tr>
+            <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;"></th>
+            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%">EXERCICES</th>
+        </tr>
+    </thead>
+</table>
+
+<p><a href="https://capytale2.ac-paris.fr/web/c-auth/list?returnto=/web/code/5871-77105">Lien Capytale</a></p>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.1</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Enoncé</label><label for="__tabbed_1_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On considère la variable <code>repertoire</code> suivante.</p>
+<div class="highlight"><pre><span></span><code><span class="n">repertoire</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Michel&#39;</span><span class="p">,</span> <span class="s1">&#39;0210101010&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Marjorie&#39;</span><span class="p">,</span> <span class="s1">&#39;0211111111&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Perrine&#39;</span><span class="p">,</span> <span class="s1">&#39;0212121212&#39;</span><span class="p">)]</span>
+</code></pre></div>
+<ol>
+<li>Quel est le type de la variable repertoire ?</li>
+<li>Quel est le type de la variable repertoire[0] ?</li>
+<li>Qu'affiche l'instruction repertoire[1][1] ?</li>
+<li>Quelle instruction permet d'accéder au numéro de téléphone de Michel ?</li>
+<li>Quel est le type de la variable repertoire[2][0] ?</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>La variable repertoire est de type list</li>
+<li>La variable repertoire[0] est de type tuple</li>
+<li>L'instruction repertoire[1][1] affiche 0211111111</li>
+<li>Pour accéder au numéro de téléphone de Michel, il faut utiliser l'instruction repertoire[0][1]</li>
+<li>La variable repertoire[2][0] est de type str</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.2</p>
+<p>Répondez aux questions suivantes <strong>puis</strong> exécutez la cellule pour vérifier.</p>
+<ol>
+<li>Quel est le tableau construit par les instructions suivantes ?</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">t1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+</code></pre></div>
+<ol>
+<li>Quel est le tableau construit par les instructions suivantes ?</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">t2</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>
+</code></pre></div>
+<ol>
+<li>Quel est le tableau construit par les instructions suivantes ?</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">t3</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+</code></pre></div>
+<ol>
+<li>Quel est le tableau construit par les instructions suivantes ?</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">t4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">50</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t4</span><span class="p">)):</span>
+    <span class="n">t4</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span>
+</code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.3</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Enoncé</label><label for="__tabbed_2_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Complétez la fonction suivante pour qu'elle échange les valeurs d'index <code>i</code> et <code>j</code> du tableau <code>tab</code>.</p>
+<p>Exemple
+<div class="highlight"><pre><span></span><code><span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">41</span><span class="p">]</span>
+<span class="n">echange</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">T</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">41</span><span class="p">]</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">echange</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">):</span>
+    <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">tab</span>
+
+<span class="c1"># Tests</span>
+<span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">41</span><span class="p">]</span>
+<span class="n">echange</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">T</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">echange</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">):</span>
+    <span class="n">temp</span><span class="o">=</span><span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+    <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">temp</span>
+    <span class="k">return</span> <span class="n">tab</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.4</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Enoncé</label><label for="__tabbed_3_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On considère le tableau <code>t</code> suivant.</p>
+<div class="highlight"><pre><span></span><code><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</code></pre></div>
+<ol>
+<li>Ecrivez un programme qui parcourt <em>par indice</em> le tableau et affiche tous ses éléments.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<ol>
+<li>Ecrivez un programme qui parcourt <em>par valeur</em> le tableau et affiche ses éléments.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<ol>
+<li>Ecrire un programme qui calcule la somme des élèments du tableau.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Parcours par indice  </li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">indice</span><span class="p">])</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Parcours par valeur<br />
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elt</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Calcul de la somme des termes d'une suite <br />
+<div class="highlight"><pre><span></span><code><span class="n">somme</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+    <span class="n">somme</span><span class="o">=</span><span class="n">somme</span><span class="o">+</span><span class="n">valeur</span>  <span class="c1"># ou somme+=valeur</span>
+</code></pre></div></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.5 :</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Enoncé</label><label for="__tabbed_4_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On considère le tableau défini par compréhension suivant.</p>
+<div class="highlight"><pre><span></span><code><span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">)]</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Que contient le tableau <code>T</code> ?</p>
+</li>
+<li>
+<p>Ecrivez un programme qui parcourt le tableau <code>T</code> et qui affiche uniquement les multiples de 2 qu'il contient.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">T</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">valeur</span> <span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>   <span class="c1">#on teste si valeur est pair que montrant que le reste de la division euclidienne par 2 vaut 0</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">valeur</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.6 :</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Enoncé</label><label for="__tabbed_5_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On rappelle que l'on peut construire un tableau en utilisant une boucle <code>for</code> (en ayant au préalable créé un tableau de la bonne taille avec une valeur arbitraire) ou en le définissant par compréhension.</p>
+<p>Utilisez les deux méthodes pour construire les tableaux demandés.</p>
+<ol>
+<li>Un tableau qui contient tous les entiers compris entre 0 et 1000.</li>
+<li>Un tableau qui contient tous les entiers compris entre 5 et 15.</li>
+<li>Un tableau qui contient tous les nombres pairs compris entre 0 et 50.</li>
+<li>Un tableau qui contient les carrés de tous les entiers compris entre 1 et 100 (c'est-à-dire 1, 4, 9, 16, etc.)</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># Q1 avec méthode 1</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Q1 avec méthode 2</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Q2 avec méthode 1</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Q2 avec méthode 2</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Q3 avec méthode 1</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Q3 avec méthode 2</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Q4 avec méthode 1</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Q4 avec méthode 2</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">#Q1 Méthode 1</span>
+<span class="n">tab1</span><span class="o">=</span><span class="p">[]</span>  <span class="c1">#initialisation</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1001</span><span class="p">):</span>
+    <span class="n">tab1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#Q1 Méthode 2 par compréhension</span>
+<span class="n">tab1</span><span class="o">=</span><span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1001</span><span class="p">)]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#Q2 Méthode 1</span>
+<span class="n">tab2</span><span class="o">=</span><span class="p">[]</span>  <span class="c1">#initialisation</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">16</span><span class="p">):</span>
+    <span class="n">tab2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#Q2 Méthode 2 par compréhension</span>
+<span class="n">tab2</span><span class="o">=</span><span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">16</span><span class="p">)]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#Q3 Méthode 1</span>
+<span class="n">tab3</span><span class="o">=</span><span class="p">[]</span>  <span class="c1">#initialisation</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">tab3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><span class="c1">#Q3 Méthode 2 par compréhension</span>
+<span class="n">tab3</span><span class="o">=</span><span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">2</span><span class="p">)]</span>
+</code></pre></div>
+ou 
+<div class="highlight"><pre><span></span><code><span class="c1">#Q3 Méthode 2 par compréhension</span>
+<span class="n">tab3</span><span class="o">=</span><span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">51</span><span class="p">)</span> <span class="k">if</span> <span class="n">k</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Q4 Méthode 1</span>
+<span class="n">tab4</span><span class="o">=</span><span class="p">[]</span>  <span class="c1">#initialisation</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="n">tab4</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#Q4 Méthode 2 par compréhension</span>
+<span class="n">tab4</span><span class="o">=</span><span class="p">[</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)]</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.7 : Moyenne annuelle</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Enoncé</label><label for="__tabbed_6_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Compléter la fonction <code>moyenne</code> qui prend en argument un tableau de notes et qui renvoie la moyenne de ce tableau.</p>
+<div class="highlight"><pre><span></span><code><span class="n">notes</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">moyenne</span><span class="p">(</span><span class="n">notes</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span><span class="mf">12.6</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="n">notes</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="o">...</span>
+    <span class="o">...</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="n">notes</span><span class="p">):</span>
+    <span class="n">somme</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">nb_notes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">notes</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">notes</span><span class="p">:</span>
+        <span class="n">somme</span><span class="o">+=</span><span class="n">note</span>
+    <span class="n">moy</span><span class="o">=</span><span class="n">somme</span><span class="o">/</span><span class="n">nb_notes</span>
+    <span class="k">return</span> <span class="n">moy</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.8 : Moyenne coefficientée</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Enoncé</label><label for="__tabbed_7_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Voici les premières notes de l'année obtenues par un élève en NSI :</p>
+<table>
+<thead>
+<tr>
+<th><strong>Note</strong></th>
+<th><strong>coefficient</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15</td>
+<td>1</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1</td>
+</tr>
+<tr>
+<td>18</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>Ces notes et coefficients sont d'abord stockées dans deux tableaux comme ci-dessous.  </p>
+<p>a. Quelle instruction permet d'accéder la troisième note ?<br />
+b. Quelle instruction permet d'accéder au coefficient de la deuxième note ?</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">18</span><span class="p">]</span>
+<span class="n">coeff</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+<p>2.Ecrire une fonction <code>moyenneCoeff(notes,coeffs)</code> qui prend en paramètres deux tableaux et qui renvoie la moyenne coefficientée correspondante.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">moyenneCoeff</span><span class="p">(</span><span class="n">notes</span><span class="p">,</span><span class="n">coeffs</span><span class="p">):</span>
+    <span class="n">sommenotes</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">sommecoeffs</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+        <span class="o">...</span>
+</code></pre></div>
+3. Ces notes et coefficient sont maintenant stockées dans un tableau de tableaux.  </p>
+<p>Quelle instruction permet d'accéder à la troisième paire note-coefficient ?<br />
+Quelle instruction permet d'accéder la troisième note ?<br />
+Quelle instruction permet d'accéder au coefficient de la deuxième note ?</p>
+<div class="highlight"><pre><span></span><code><span class="n">notes_coeff</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+</code></pre></div>
+<p>4.Ecrire une fonction <code>moyenneCoeff(tab)</code> qui prend en paramètre un tableau et qui renvoie la moyenne coefficientée correspondante.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="n">notes</span><span class="p">,</span><span class="n">coeffs</span><span class="p">):</span>
+    <span class="n">sommenotes</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">sommecoeffs</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">nb2notes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">notes</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb2notes</span><span class="p">):</span>
+        <span class="n">sommenotes</span><span class="o">+=</span><span class="n">notes</span><span class="p">[</span><span class="n">indice</span><span class="p">]</span>
+        <span class="n">sommecoeffs</span><span class="o">+=</span><span class="n">coeffs</span><span class="p">[</span><span class="n">indice</span><span class="p">]</span>
+    <span class="n">moy</span><span class="o">=</span><span class="n">sommenotes</span><span class="o">/</span><span class="n">sommecoeffs</span>
+    <span class="k">return</span> <span class="n">moy</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">moyenneCoeff</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="n">sommenotes</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">sommecoeffs</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">nb2notes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb2notes</span><span class="p">):</span>
+        <span class="n">sommenotes</span><span class="o">+=</span><span class="n">tab</span><span class="p">[</span><span class="n">indice</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">tab</span><span class="p">[</span><span class="n">indice</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>   <span class="c1">#les notes ont toujours pour position 0 dans le tableau extrait et les coeffs ont pour position1</span>
+        <span class="n">sommecoeffs</span><span class="o">+=</span><span class="n">tab</span><span class="p">[</span><span class="n">indice</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">moy</span><span class="o">=</span><span class="n">sommenotes</span><span class="o">/</span><span class="n">sommecoeffs</span>
+    <span class="k">return</span> <span class="n">moy</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice 5.9 :</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Enoncé</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Répondez aux questions suivantes <strong>puis</strong> exécutez la cellule pour vérifier.</p>
+<ol>
+<li>Quel est le tableau construit par compréhension de la façon suivante ?</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">tab</span> <span class="o">=</span> <span class="p">[[</span><span class="n">j</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="n">tab</span>
+</code></pre></div>
+<ol>
+<li>Quel est le tableau construit par compréhension de la façon suivante ?</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">tab</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">tab</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.10 :</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Enoncé</label><label for="__tabbed_9_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On a mémorise dans le tableau <code>grille</code> l'état d'un jeu de morpion. Voici le contenu du jeu après deux tours.</p>
+<div class="highlight"><pre><span></span><code><span class="n">grille</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">]]</span>
+</code></pre></div>
+<ol>
+<li>C'est au joueur &laquo; O &raquo; de jouer et il compte mettre un <code>'O'</code> au centre de la grille. Quelle instruction faut-il écrire ? Vérifiez.</li>
+<li>Vous avez du constater qu'en affichant le tableau, celui ne s'affiche pas comme on souhaiterait (comme la grille du jeu). Pour pallier à ce souci, il suffit de parcourir le tableau ligne par ligne et afficher cette ligne. Ecrivez le programme correspondant.</li>
+<li><strong>Approfondissement</strong><br />
+Pour ceux qui le désire, écrire un programme permettant de joueur au morpion.</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">grille</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">grille</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="parcours-tableaux-a-plusieurs-dimensions">Parcours tableaux à plusieurs dimensions<a class="headerlink" href="#parcours-tableaux-a-plusieurs-dimensions" title="Permanent link">⚓︎</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.11 :</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Enoncé</label><label for="__tabbed_10_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Ecrire une fonction <code>ajoutNumero(rep,nom,numero)</code> qui prend pour paramètre un répertoire, un nomn et un numero de téléphone et qui permet d'enregistrer un nouveau nom ainsi que son numéro dans le répertoire</p>
+<div class="highlight"><pre><span></span><code><span class="n">repertoire</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Michel&#39;</span><span class="p">,</span> <span class="s1">&#39;0210101010&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Marjorie&#39;</span><span class="p">,</span> <span class="s1">&#39;0211111111&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Perrine&#39;</span><span class="p">,</span> <span class="s1">&#39;0212121212&#39;</span><span class="p">]]</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">ajoutNumero</span><span class="p">(</span><span class="n">rep</span><span class="p">,</span><span class="n">nom</span><span class="p">,</span><span class="n">numero</span><span class="p">):</span>
+    <span class="n">rep</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">nom</span><span class="p">,</span><span class="n">numero</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">rep</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.12 :</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Enoncé</label><label for="__tabbed_11_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Ecrivez une fonction <code>somme(t)</code> qui renvoie la somme des éléments du tableau d'entiers <code>t</code>.</p>
+<p>Exemple :
+<div class="highlight"><pre><span></span><code><span class="n">t</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">somme</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">28</span>
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">ajoutNumero</span><span class="p">(</span><span class="n">rep</span><span class="p">,</span><span class="n">nom</span><span class="p">,</span><span class="n">numero</span><span class="p">):</span>
+    <span class="n">rep</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">nom</span><span class="p">,</span><span class="n">numero</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">rep</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.13 : cadavre exquis</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Enoncé</label><label for="__tabbed_12_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Le <a href="https://fr.wikipedia.org/wiki/Cadavre_exquis">cadavre exquis</a> est un « jeu qui consiste à faire composer une phrase, ou un dessin, par plusieurs personnes sans qu'aucune d'elles ne puisse tenir compte de la collaboration ou des collaborations précédentes.»</p>
+<p><em>Remarque :</em> la méthode <code>choice</code> du module <code>random</code> permet de tirer au sort un élément dans un itérable non vide (et donc dans un tableau non vide). Vous pouvez exécuter plusieurs fois la cellule de code ci-dessous pour tester :</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+
+<span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chat&#39;</span><span class="p">,</span> <span class="s1">&#39;chien&#39;</span><span class="p">,</span> <span class="s1">&#39;cheval&#39;</span><span class="p">,</span> <span class="s1">&#39;vache&#39;</span><span class="p">,</span> <span class="s1">&#39;cochon&#39;</span><span class="p">]</span>
+<span class="n">animal</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="n">animal</span>
+</code></pre></div>
+<p>Compléter la fonction <code>cadavre_exquis</code> ci-dessous qui prend en argument :
+- un tableau de noms non vide,
+- un tableau de verbes non vide,
+- un tableau de compléments non vide,  </p>
+<p>et qui renvoie une phrase aléatoire construite selon le principe du cadavre exquis : en piochant un nom dans le tableau de noms, puis en piochant un verbe dans le tableau de verbes et enfin en piochant un complément dans le tableau de compléments.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+
+<span class="k">def</span> <span class="nf">cadavre_exquis</span><span class="p">(</span><span class="n">noms</span><span class="p">,</span> <span class="n">verbes</span><span class="p">,</span> <span class="n">complements</span><span class="p">):</span>
+    <span class="n">nom</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="n">verbe</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="n">complement</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="n">phrase</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="o">...</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+
+<span class="k">def</span> <span class="nf">cadavre_exquis</span><span class="p">(</span><span class="n">noms</span><span class="p">,</span> <span class="n">verbes</span><span class="p">,</span> <span class="n">complements</span><span class="p">):</span>
+    <span class="n">nom</span> <span class="o">=</span> <span class="n">noms</span>
+    <span class="n">verbe</span> <span class="o">=</span> <span class="n">verbes</span>
+    <span class="n">complement</span> <span class="o">=</span> <span class="n">complements</span>
+    <span class="n">phrase</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">nom</span><span class="p">)</span><span class="o">+</span><span class="n">choice</span><span class="p">(</span><span class="n">verbe</span><span class="p">)</span><span class="o">+</span><span class="n">choice</span><span class="p">(</span><span class="n">complement</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">phrase</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>Tester votre fonction en complétant l'exemple ci-dessous.</p>
+<div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Le chasseur &#39;</span><span class="p">,</span> <span class="s1">&#39;La présidente &#39;</span><span class="p">,</span> <span class="s1">&#39;Le lapin &#39;</span><span class="p">,</span> <span class="s1">&#39;Pikachu &#39;</span><span class="p">,</span> <span class="s1">&#39;La comète &#39;</span><span class="p">,</span> <span class="s1">&#39;La licorne &#39;</span><span class="p">]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mange &#39;</span><span class="p">,</span> <span class="s1">&#39;cherche &#39;</span><span class="p">,</span> <span class="s1">&#39;entretient &#39;</span><span class="p">,</span> <span class="s1">&#39;admire &#39;</span><span class="p">,</span> <span class="s1">&#39;vénère &#39;</span><span class="p">,</span> <span class="s1">&#39;admoneste &#39;</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;la saucisse.&#39;</span><span class="p">,</span> <span class="s1">&#39;la forêt.&#39;</span><span class="p">,</span> <span class="s1">&#39;la casquette.&#39;</span><span class="p">,</span> <span class="s1">&#39;la bicyclette.&#39;</span><span class="p">,</span> <span class="s1">&#39;le micro-processeur.&#39;</span><span class="p">]</span>
+
+<span class="n">cadavre_exquis</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.14 : Travail sur les listes en compréhension</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Enoncé</label><label for="__tabbed_13_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Créez une liste <code>Liste1</code> de 15 entiers aléatoires compris entre 0 et 20 à l'aide d'une boucle.</strong><br />
+<em>Aide :</em> Nous allons utiliser le module random qui génère des nombres pseudo-alétoires.</p>
+<p>Commencez par importer la fonction <code>randint</code> du module avec l'instruction :<br />
+<code>from random import randint</code> à placer en début de cellule.  </p>
+<p>L'instruction <code>randint(a,b)</code>  retournera un entier alétoire compris entre a et b (bornes comprises)</p>
+<p><a href="https://docs.python.org/fr/3/library/random.html">Vers la documentation du module</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#un exemple : </span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">Liste1</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">):</span>
+    <span class="n">alea</span><span class="o">=</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">Liste1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alea</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Liste1</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Créez une liste <code>Liste2</code> de 30 entiers aléatoires compris entre 0 et 20 à l'aide d'une compréhension de liste.</strong> </p>
+<div class="highlight"><pre><span></span><code><span class="n">Liste2</span> <span class="o">=</span> <span class="c1"># Votre code ici</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Liste2</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Créez une fonction <code>moyenne</code> qui prend en paramètre une liste de nombres et qui renvoie la moyenne de cette liste.</strong><br />
+Testez votre fonction à l'aide des <code>assert</code> de la cellule suivante.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+    <span class="k">pass</span>
+<span class="k">return</span> <span class="n">moyenne</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Méthode de TEST</span>
+
+<span class="k">assert</span> <span class="n">moyenne</span><span class="p">(</span><span class="n">Liste1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Liste1</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">Liste1</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">moyenne</span><span class="p">(</span><span class="n">Liste2</span><span class="p">)</span> <span class="o">==</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Liste2</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">Liste2</span><span class="p">)</span>
+</code></pre></div>
+<p>Un méchant professeur veut baisser le notes de ses élèves de 10 %<br />
+<strong>Créez une liste <code>Liste3</code> obtenue en diminuant de 10 % les nombres de la liste <code>Liste1</code> avec une compréhension de liste</strong><br />
+Testez votre fonction à l'aide des <code>assert</code> de la cellule suivante.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Liste3</span> <span class="o">=</span> <span class="c1"># Votre code ici</span>
+<span class="n">Liste3</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Liste1</span><span class="p">)):</span>
+    <span class="k">assert</span> <span class="n">Liste3</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">Liste1</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">*</span><span class="mf">0.9</span>
+</code></pre></div>
+<p>Le même professeur cherche à écrire des appréciation automatiques en fonction de la note.<br />
+Il souhaite voir écrit "Pas terrible" si la note est inférieure ou égale à 10 et "Pas mal" sinon.<br />
+<strong>Créez une liste <code>Appreciations</code> à partir de la liste <code>Liste1</code> à l'aide d'une comprehension de liste</strong><br />
+<em>Aide</em> : <code>[&lt;expression&gt; if &lt;condition&gt; else &lt;autre_expression&gt; for &lt;element&gt; in &lt;iterable&gt;]</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">Appreciations</span> <span class="o">=</span> <span class="c1"># Votre code ici</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">Liste1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Appreciations</span><span class="p">)</span>
+</code></pre></div>
+<p>Le professeur souhaite maintenant créer une fonction <code>app2</code> qui prend en paramètre un nombre et qui renvoie un tuple constitué de ce nombre et d'une appréciation.
+L'appréciation sera :
+- "Bon travail" si la note est supérieure ou égale à 15;
+- "Fais encore des efforts" si la note est entre 10 et 15 (non compris);
+- "Au travail !" si la note est inférieure ou égale à 10.</p>
+<p><strong>Ecrivez la fonction ci-dessous</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">app2</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+    <span class="k">pass</span> 
+    <span class="c1"># Votre code ici</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>    Créez une liste Appreciations2 à partir de la liste Liste2 contenant les notes et les appréciation à l&#39;aide d&#39;une compréhension de liste
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">Appreciations2</span> <span class="o">=</span> <span class="p">[</span><span class="n">app2</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span> <span class="k">for</span> <span class="n">nb</span> <span class="ow">in</span> <span class="n">Liste2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Appreciations2</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">liste2</span><span class="o">=</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">)]</span> 
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+    <span class="n">somme</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+        <span class="n">somme</span><span class="o">+=</span><span class="n">elt</span>
+    <span class="n">moy</span><span class="o">=</span><span class="n">somme</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">moy</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">Appreciations</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pas terrible&#39;</span> <span class="k">if</span> <span class="n">elt</span><span class="o">&lt;</span><span class="mi">10</span> <span class="k">else</span> <span class="s1">&#39;Pas mal&#39;</span> <span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">Liste1</span> <span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">app2</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">nombre</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="s1">&#39;Au travail !&#39;</span>
+    <span class="k">elif</span> <span class="n">nombre</span> <span class="o">&gt;=</span><span class="mi">15</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="s1">&#39;Bon travail&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="s1">&#39;Fais encore des efforts&#39;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice 8.15 : Travail sur les listes de listes.</p>
+<p>Les carrés magiques : prolongement de l'exercice vu dans la leçon.</p>
+<p><strong>Première étape - Créer une fonction <code>Gen_carre</code> qui prend en paramètre un entier naturel non nul <span class="arithmatex">\(n\)</span>, et qui renvoie un tableau carré (liste de liste) contenant les entiers de 1 à <span class="arithmatex">\(n^2\)</span> entiers "mélangés"</strong> </p>
+<p>Par exemple : <code>Gen_carre(3)</code> porra retourner<br />
+<code>[[2,7,6],
+[9,5,1],
+[4,3,8]]</code></p>
+<p>Vous allez utiliser le module <code>random</code> et  en particulier la fonction <code>shuffle</code> qui prend en paramètre une liste et qui la mélange "sur place". Par exemple <code>liste = [0,1,2,3]</code> suivi de <code>shuffle(liste)</code> va mélanger les éléments de liste et, par exemple, on obtiendra <code>liste = [3,0,1,2]</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">shuffle</span><span class="p">,</span><span class="n">randint</span>
+
+<span class="k">def</span> <span class="nf">Gen_carre</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">carre3</span> <span class="o">=</span> <span class="n">Gen_carre</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">carre3</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Deuxième étape : Ecrire une fonction <code>somme_ligne</code> qui prend en paramètres un tableau carré d'entiers et un entier <span class="arithmatex">\(n\)</span> et qui retourne la somme de la ligne d'index <span class="arithmatex">\(n\)</span></strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">somme_ligne</span><span class="p">(</span><span class="n">carre</span> <span class="p">:</span> <span class="nb">list</span><span class="p">,</span><span class="n">n</span> <span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Tests de la fonction somme_ligne</span>
+
+<span class="n">carre3</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]</span>
+
+<span class="n">carre4</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+
+<span class="k">assert</span> <span class="n">somme_ligne</span><span class="p">(</span><span class="n">carre3</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">15</span>
+<span class="k">assert</span> <span class="n">somme_ligne</span><span class="p">(</span><span class="n">carre3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">15</span>
+<span class="k">assert</span> <span class="n">somme_ligne</span><span class="p">(</span><span class="n">carre3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">15</span>
+<span class="k">assert</span> <span class="n">somme_ligne</span><span class="p">(</span><span class="n">carre4</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">34</span>
+<span class="k">assert</span> <span class="n">somme_ligne</span><span class="p">(</span><span class="n">carre4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">33</span>
+</code></pre></div>
+<p><strong>Troisième étape : Ecrire une fonction <code>verif_lignes</code> qui prend en paramètres un tableau carré d'entiers et qui retourne un booléen indiquant si toutes les lignes ont la même somme.</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">verif_lignes</span><span class="p">(</span><span class="n">carre</span> <span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Tests de la fonction verif_lignes</span>
+
+<span class="k">assert</span> <span class="n">verif_lignes</span><span class="p">(</span><span class="n">carre3</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="n">verif_lignes</span><span class="p">(</span><span class="n">carre4</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+</code></pre></div>
+<p><strong>Quatrième étape : Faire de même avec les colonnes.</strong><br />
+Vous avez la liberté pour construire les fonctions que vous souhaitez, ajoutez des docstrings et des tests à vos fonctions.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">somme_colonne</span><span class="p">(</span><span class="n">carre</span> <span class="p">:</span> <span class="nb">list</span><span class="p">,</span><span class="n">index_colonne</span> <span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+
+
+<span class="k">assert</span> <span class="n">somme_colonne</span><span class="p">(</span><span class="n">carre3</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">15</span>
+<span class="k">assert</span> <span class="n">somme_colonne</span><span class="p">(</span><span class="n">carre3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">15</span>
+<span class="k">assert</span> <span class="n">somme_colonne</span><span class="p">(</span><span class="n">carre3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">15</span>
+<span class="k">assert</span> <span class="n">somme_colonne</span><span class="p">(</span><span class="n">carre4</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">35</span>
+<span class="k">assert</span> <span class="n">somme_colonne</span><span class="p">(</span><span class="n">carre4</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">34</span>
+
+<span class="k">def</span> <span class="nf">verif_colonnes</span><span class="p">(</span><span class="n">carre</span> <span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+
+
+<span class="k">assert</span> <span class="n">verif_colonnes</span><span class="p">(</span><span class="n">carre3</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="n">verif_colonnes</span><span class="p">(</span><span class="n">carre4</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+</code></pre></div>
+<p><strong>Cinquième étape : Vérifier de même les deux diagonales</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">verif_diag</span><span class="p">(</span><span class="n">carre</span> <span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+
+
+
+<span class="k">assert</span> <span class="n">verif_diag</span><span class="p">(</span><span class="n">carre3</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="n">verif_diag</span><span class="p">(</span><span class="n">carre4</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+</code></pre></div>
+<p><strong>Dernière étape : Ecrire une fonction qui prend en paramètre un tableau carré d'entiers et qui retourne un booléen indiquant si le carré est magique</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">verif_carre</span><span class="p">(</span><span class="n">carre</span><span class="p">):</span>
+
+
+<span class="k">assert</span> <span class="n">verif_carre</span><span class="p">(</span><span class="n">carre3</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="n">verif_carre</span><span class="p">(</span><span class="n">carre4</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+</code></pre></div>
+<p><strong>Bonus : à l'aide de votre fonction <code>Gen_carre</code>, trouvez des carrés magiques d'ordre 3, puis 4.</strong><br />
+<em>Conseil : soyez patient !</em></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Voici une exemple de solution (Aucune inquiétude, je ne demandais pas de trouver ce type de programme mais d&#39;essayer à la main</span>
+<span class="k">def</span> <span class="nf">carre_magique_ordre3</span><span class="p">():</span>
+
+
+<span class="n">carre_magique_ordre3</span><span class="p">()</span>
+</code></pre></div>
+</div>
+
+              
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="../TP07_TuplesTableauxCours/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: TP 07 Les tableaux Cours" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              TP 07 Les tableaux Cours
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../TD09_Parcours_Sequentiel_Tableaux_Corrige/" class="md-footer__link md-footer__link--next" aria-label="Suivant: TP 09 - Parcours séquentiel d&#39;un tableau" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              TP 09 - Parcours séquentiel d'un tableau
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="mailto:nsi.meyroneinc@gmail.com" target="_blank" rel="noopener" title="Pour toute question, suggestion ou commentaire, écrire à l&#39;auteur" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M476 3.2 12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="None" target="_blank" rel="noopener" title="dépôt github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://murat-issoire.ent.auvergnerhonealpes.fr/" target="_blank" rel="noopener" title="Lycée Murat Issoire" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M496 128v16a8 8 0 0 1-8 8h-24v12c0 6.627-5.373 12-12 12H60c-6.627 0-12-5.373-12-12v-12H24a8 8 0 0 1-8-8v-16a8 8 0 0 1 4.941-7.392l232-88a7.996 7.996 0 0 1 6.118 0l232 88A8 8 0 0 1 496 128zm-24 304H40c-13.255 0-24 10.745-24 24v16a8 8 0 0 0 8 8h464a8 8 0 0 0 8-8v-16c0-13.255-10.745-24-24-24zM96 192v192H60c-6.627 0-12 5.373-12 12v20h416v-20c0-6.627-5.373-12-12-12h-36V192h-64v192h-64V192h-64v192h-64V192H96z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
