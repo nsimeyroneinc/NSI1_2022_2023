@@ -111,14 +111,13 @@ La puissance du JavaScript permet de réaliser aujourd'hui des interfaces utilis
 
 
 
+
 ### **&#x1F4CE; Exemple 2 de couple html / javascript** :
 
 Il est également possible de modifier le style d’une balise, de modifier la classe (CSS) d’une balise, voici quelques exemples :  
 
-> &#x27A1;  querySelector()  
-
-!!! savoir "A Retenir"  
-  La méthode querySelector() sélectionne le premier élément dans le document correspondant au sélecteur - ou groupe de sélecteurs - spécifié(s), ou null si aucune correspondance n’est trouvée.
+!!! voc "querySelector()"
+    La méthode ```querySelector()``` sélectionne le premier élément dans le document correspondant au sélecteur - ou groupe de sélecteurs - spécifié(s), ou null si aucune correspondance n’est trouvée.
 
 
 - fichier ```index.html``` : 
@@ -440,12 +439,12 @@ user-scalable=no">
 
 <br>
 
-<input type="button" value="Score" onClick="getScore(this.form)">
-<input type="reset" value="RAZ"><p>
-Score = <input type=text size=15 name="percentage"><br>
-Réponses correctes :<br>
-<textarea name="solutions" wrap="virtual" rows="4" cols="40"></textarea>
-</form>
+    <input type="button" value="Score" onClick="getScore(this.form)">
+    <input type="reset" value="RAZ"><p>
+    Score = <input type=text size=15 name="percentage"><br>
+    Réponses correctes :<br>
+    <textarea name="solutions" wrap="virtual" rows="4" cols="40"></textarea>
+  </form>
 
 </body>
  <script language="JavaScript" src="qcm.js"></script>
@@ -518,11 +517,11 @@ body{
 
 span{
   background-color: #e7b4a0;
- border-width:2px;
- border-style:outset;
- border-color:black;
- border-radius: 10px;
- padding: 5px;
+  border-width:2px;
+  border-style:outset;
+  border-color:black;
+  border-radius: 10px;
+  padding: 5px;
   }
 ```
 
@@ -530,11 +529,11 @@ Le résultat de cette page peut être consulté à l'adresse [https://qcmscore.n
 
 
 **En savoir plus** 
-- le guide JavaScript de la fondation Mozilla : https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide
-- le cours d'OpenClassrooms : https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript
+- le guide JavaScript de la fondation Mozilla : [https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide)
+- le cours d'OpenClassrooms : [https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript](https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript)
 
 
-##### Exercice 4
+##### Exercice
 - Reprenez votre site et rajoutez du JavaScript pour la rendre dynamique. Faites ce que vous voulez !
 
 

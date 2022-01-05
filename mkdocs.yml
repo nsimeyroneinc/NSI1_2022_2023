@@ -7,10 +7,6 @@ site_author: "Michael Meyroneinc-condy"
 copyright: 2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a> 
 site_url: 
 
-# Dépot du projet 
-#repo_name: 'base_mkdocs_material' 
-#repo_url: https://github.com/ericECmorlaix/base_mkdocs_material # Ajoute l'icone et le lien vers le dépot GitHub en haut à droite pour afficher et permettre d'éditer le fichier source
-#edit_uri: tree/main/docs/
 
 
 # Structure des dossiers :
@@ -46,7 +42,7 @@ nav:
     - Liens Utiles : Divers/Liens_utiles.md
 
 
-# Définition du thème https://squidfunk.github.io/mkdocs-material/creating-your-site/
+
 theme:
 
     name: material

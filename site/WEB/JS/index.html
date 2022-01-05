@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#61-pages-web-et-interactions" class="md-skip">
+        <a href="#i1-le-cas-le-plus-simple-la-meme-page-pour-tout-le-monde" class="md-skip">
           Aller au contenu
         </a>
       
@@ -901,119 +901,48 @@
 
                 
 
-<table  style="background-color:  #66CC33; width:100%;">
+<table  style="background-color:  #87A96B; width:100%;">
     <thead>
         <tr>
             <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;">TD n°14 : HTML - CSS - JS - PHP</th>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%">Thème  : INTERACTIONS ENTRE HOMME ET LA MACHINE</th>
+            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:40%">Thème  : INTERACTIONS ENTRE HOMME ET LA MACHINE</th>
         </tr>
                     <tr>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;"></th>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%">COURS et TP</th>
+            <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;"> 
+Pages web et interactions</th>
+            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:40%">COURS et TP</th>
         </tr>
     </thead>
 </table>
 
-<h1 id="61-pages-web-et-interactions">6.1 Pages web et interactions<a class="headerlink" href="#61-pages-web-et-interactions" title="Permanent link">⚓︎</a></h1>
 <p><img alt="image" class="center" src="../data/BO.png" /></p>
-<h3 id="1-le-cas-le-plus-simple-la-meme-page-pour-tout-le-monde">1. Le cas le plus simple : la même page pour tout le monde<a class="headerlink" href="#1-le-cas-le-plus-simple-la-meme-page-pour-tout-le-monde" title="Permanent link">⚓︎</a></h3>
+<h1 id="i1-le-cas-le-plus-simple-la-meme-page-pour-tout-le-monde">I.1. Le cas le plus simple : la même page pour tout le monde<a class="headerlink" href="#i1-le-cas-le-plus-simple-la-meme-page-pour-tout-le-monde" title="Permanent link">⚓︎</a></h1>
 <p><img alt="" class="center" src="../data/stat.png" /></p>
 <p>Nous allons tout d'abord considérer le cas où le serveur renvoie une page unique, identique pour tous les utilisateurs. De plus, l'utilisateur ne pourra pas agir sur sa page : il n'y a aucune interactivité.</p>
-<p>Exemple de page statique côté serveur et côté utilisateur :
-- cette <a href="http://glassus1.free.fr/interesting.html">merveille</a> de page web.
-- plus complète, mais tout aussi statique : cette page <a href="https://fr.wikipedia.org/wiki/John_Horton_Conway">Wikipedia</a> consacrée à John Conway.</p>
-<h4 id="11-html-pur">1.1 HTML pur<a class="headerlink" href="#11-html-pur" title="Permanent link">⚓︎</a></h4>
+<p>Exemple de page statique côté serveur et côté utilisateur :  </p>
+<ul>
+<li>cette <a href="https://pagesimple.michaelmeyrone1.repl.co">merveille</a> de page web.  </li>
+<li>plus complète, mais tout aussi statique : cette page <a href="https://fr.wikipedia.org/wiki/John_Horton_Conway">Wikipedia</a> consacrée à John Conway.</li>
+</ul>
+<h2 id="i1-html-pur">I.1 HTML pur<a class="headerlink" href="#i1-html-pur" title="Permanent link">⚓︎</a></h2>
 <p>Lorsque le client demande au serveur le contenu d'une page web, celui-ci lui renvoie, dans le cas le plus simple, une simple page html.<br />
 HTML est un langage dit « à balises ».  Ce n'est pas à proprement parler un langage de programmation, mais plutôt un langage de description de contenu. 
 Il a été inventé en 1992 par <a href="https://fr.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a>. La version actuellement utilisée est le <code>html5</code>.</p>
-<p><strong>Exemple de page web minimale</strong></p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#39;fr&#39;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Un titre très original<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-
-    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Ceci est le texte introductif de ma page.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-           <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>  Ceci est un titre de niveau 1 <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-           Mais sans rien d&#39;intéressant.
-           <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>  Ceci est un titre de niveau 2 <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-              <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-                  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> le début d&#39;une liste indentée <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-                  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> la suite ... <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-              <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>  
-        Pour apprendre le fonctionnement des balises, voir <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Getting_started&quot;</span><span class="p">&gt;</span> ici<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> par exemple !
-        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Vous pouvez contempler <a href="https://exemplehtmlpur--g-lassus.repl.co">ici</a> le rendu de cette magnifique page.</p>
-<h5 id="exercice-1">Exercice 1<a class="headerlink" href="#exercice-1" title="Permanent link">⚓︎</a></h5>
-<ul>
-<li>Créez un dossier contenant un fichier <code>mapage.html</code>.</li>
-<li>Créez une page contenant une image et un lien vers le site du lycée.</li>
-<li>Vous pouvez aussi utiliser un éditeur en ligne avec rendu instantané, du type <a href="https://www.w3schools.com/tryit/">https://www.w3schools.com/tryit/</a></li>
-</ul>
-<h4 id="12-html-css">1.2 HTML + CSS<a class="headerlink" href="#12-html-css" title="Permanent link">⚓︎</a></h4>
+<h2 id="i2-html-css">I.2 HTML + CSS<a class="headerlink" href="#i2-html-css" title="Permanent link">⚓︎</a></h2>
 <p>L'acronyme CSS signifie <em>Cascading Style Sheets</em>. L'idée est de regrouper dans un seul fichier toutes les informations relatives à la mise en forme des éléments de la page html. 
 De manière très simplifiée, on peut dire que le fichier <code>html</code> s'occupe <em>du fond</em> tandis que le fichier <code>css</code> s'occupe de la <em>forme</em>.</p>
-<p>Le fichier CSS (souvent nommé <code>style.css</code>) doit être référencé au début du fichier <code>html</code> , au sein de la balise <code>&lt;head&gt;</code>.</p>
-<p><strong>Exemple minimal de couple html / css</strong> :</p>
-<ul>
-<li>
-<p>fichier <code>index.html</code> : 
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>page test<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-         <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-           <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>  Ceci est un titre de niveau 1 <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-           Mais sans rien d&#39;intéressant.
-           <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>  Ceci est un titre de niveau 2 <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>fichier <code>style.css</code> :</p>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="nt">html</span> <span class="p">{</span>
-    <span class="k">font-size</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">font-family</span><span class="p">:</span>  <span class="kc">sans-serif</span><span class="p">;</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="kc">lightgray</span><span class="p">;</span> 
-  <span class="p">}</span>
-
-<span class="nt">h1</span> <span class="p">{</span>
-    <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Vous pouvez contempler à l'adresse <a href="https://exemplehtmlcss--g-lassus.repl.co">https://exemplehtmlcss--g-lassus.repl.co</a> le nouveau rendu de cette encore plus magnifique page.</p>
-<p><strong>En savoir plus</strong> 
-- le cours d'OpenClassrooms : https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3</p>
-<h5 id="exercice-2">Exercice 2<a class="headerlink" href="#exercice-2" title="Permanent link">⚓︎</a></h5>
-<p>Reprenez votre page de l'exercice 1 et rajoutez une feuille de style.</p>
-<h5 id="exercice-3">Exercice 3<a class="headerlink" href="#exercice-3" title="Permanent link">⚓︎</a></h5>
-<ul>
-<li>Allez sur le site http://sudouest.fr, et affichez l'inspecteur d'élement de votre navigateur (généralement accessible en appuyant sur <code>F12</code> )</li>
-<li>Modifiez le plus possible les attributs de style de la page.</li>
-</ul>
-<h3 id="2-quand-le-client-peut-agir-sur-sa-page-exemple-avec-javascript">2. Quand le client peut agir sur sa page : exemple avec JavaScript<a class="headerlink" href="#2-quand-le-client-peut-agir-sur-sa-page-exemple-avec-javascript" title="Permanent link">⚓︎</a></h3>
+<p>Le fichier CSS (souvent nommé <code>style.css</code>) doit être référencé au début du fichier <code>html</code> , au sein de la balise <code>&lt;head&gt;</code> avec la balise <code>&lt;link href="style.css" rel="stylesheet" type="text/css" /&gt;</code> par exemple.</p>
+<h1 id="ii-quand-le-client-peut-agir-sur-sa-page-exemple-avec-javascript">II. Quand le client peut agir sur sa page : exemple avec JavaScript<a class="headerlink" href="#ii-quand-le-client-peut-agir-sur-sa-page-exemple-avec-javascript" title="Permanent link">⚓︎</a></h1>
 <p><img alt="" class="center" src="../data/dynclient.png" /></p>
-<p>Jusqu'à présent, la page web envoyée par le serveur est :
-1. identique quel que soit le client.
-2. statique après réception sur l'ordinateur du client.</p>
+<p>Jusqu'à présent, la page web envoyée par le serveur est :  </p>
+<ol>
+<li>identique quel que soit le client.  </li>
+<li>statique après réception sur l'ordinateur du client.  </li>
+</ol>
 <p>Le JavaScript va venir régler le problème n°2 : il est possible de fabriquer une page sur laquelle le client va pouvoir agir <strong>localement</strong>, sans avoir à redemander une nouvelle page au serveur.</p>
 <p>Inventé en 1995 par <a href="https://fr.wikipedia.org/wiki/Brendan_Eich">Brendan Eich</a> pour le navigateur Netscape, le langage JavaScript s'est imposé comme la norme auprès de tous les navigateurs pour apporter de l'interactivité aux pages web.</p>
-<p><strong>Exemple minimal de couple html / javascript</strong> :
-Notre fichier <code>index.html</code> fait référence, au sein d'une balise <code>&lt;script&gt;</code>, à un fichier externe <code>script.js</code> qui contiendra notre code JavaScript.   </p>
+<h3 id="exemple-1-de-couple-html-javascript"><strong>&#x1F4CE; Exemple 1 de couple html / javascript</strong> :<a class="headerlink" href="#exemple-1-de-couple-html-javascript" title="Permanent link">⚓︎</a></h3>
+<p>Notre fichier <code>index.html</code> fait référence, au sein d'une balise <code>&lt;script&gt;</code>, à un fichier externe <code>script.js</code> qui contiendra notre code JavaScript.   </p>
 <ul>
 <li>
 <p>fichier <code>index.html</code> : 
@@ -1033,15 +962,15 @@ Notre fichier <code>index.html</code> fait référence, au sein d'une balise <co
 
         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Changez la couleur d&#39;arrière-plan:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;choix(&#39;yellow&#39;);&quot;</span><span class="p">&gt;</span>jaune<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;choix(&#39;#CD9575&#39;);&quot;</span><span class="p">&gt;</span>Antique brass<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;choix(&#39;green&#39;);&quot;</span><span class="p">&gt;</span>vert<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;choix(&#39;#8DB600&#39;);&quot;</span><span class="p">&gt;</span>Apple green<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;choix(&#39;purple&#39;);&quot;</span><span class="p">&gt;</span>violet<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> 
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;choix(&#39;#9966CC&#39;);&quot;</span><span class="p">&gt;</span>Amethyst<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> 
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-      En JavaScript, le nom de la couleur choisie est :
+      En JavaScript, le codage de la couleur choisie est :
       <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;resultat&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1058,72 +987,413 @@ Notre fichier <code>index.html</code> fait référence, au sein d'une balise <co
 </code></pre></div></p>
 </li>
 </ul>
-<p>Le résultat de cette page peut être consulté à l'adresse <a href="https://exemplejs.g-lassus.repl.co">https://exemplejs.g-lassus.repl.co</a>.</p>
+<p>Le résultat de cette page peut être consulté à l'adresse <a href="https://pagejs1.nsimeyroneinc.repl.co">https://pagejs1.nsimeyroneinc.repl.co</a>.</p>
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>Au sein du bouton déclaré par la balise <code>button</code>, l'attribut  <code>onclick</code> reçoit le nom d'une fonction déclarée à l'intérieur du fichier <code>script.js</code>, ici la fonction <code>choix()</code>.</li>
 <li>Cette fonction nous permet de modifier à la fois l'aspect esthétique de la page (changement de la couleur de background) mais aussi le contenu de cette page, en faisant afficher le nom de la couleur.</li>
 </ul>
-<p>La puissance du JavaScript permet de réaliser aujourd'hui des interfaces utilisateurs très complexes au sein d'un navigateur, équivalentes à celles produites par des logiciels externes (pensez à Discord, par ex.). Bien sûr, dans ces cas complexes, le serveur est aussi sollicité pour modifier la page, comme nous le verrons en partie 3.</p>
-<p><strong>En savoir plus</strong> 
-- le guide JavaScript de la fondation Mozilla : https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide
-- le cours d'OpenClassrooms : https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript</p>
-<h5 id="exercice-4">Exercice 4<a class="headerlink" href="#exercice-4" title="Permanent link">⚓︎</a></h5>
+<p>La puissance du JavaScript permet de réaliser aujourd'hui des interfaces utilisateurs très complexes au sein d'un navigateur, équivalentes à celles produites par des logiciels externes (pensez à Discord, par ex.).</p>
+<h3 id="exemple-2-de-couple-html-javascript"><strong>&#x1F4CE; Exemple 2 de couple html / javascript</strong> :<a class="headerlink" href="#exemple-2-de-couple-html-javascript" title="Permanent link">⚓︎</a></h3>
+<p>Il est également possible de modifier le style d’une balise, de modifier la classe (CSS) d’une balise, voici quelques exemples :  </p>
+<div class="admonition voc">
+<p class="admonition-title">querySelector()</p>
+<p>La méthode <code>querySelector()</code> sélectionne le premier élément dans le document correspondant au sélecteur - ou groupe de sélecteurs - spécifié(s), ou null si aucune correspondance n’est trouvée.</p>
+</div>
 <ul>
-<li>Reprenez votre page créée sur repl<i></i>.it aux exercices précédents et rajoutez du JavaScript pour la rendre dynamique. Faites ce que vous voulez !</li>
+<li>
+<p>fichier <code>index.html</code> : 
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!doctype html&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;fr&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Le trio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Le trio : HTML, CSS et JavaScript<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;monPara&quot;</span><span class="p">&gt;</span>
+    Voici une page web qui ne fait pas grand-chose
+  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;foncRouge()&quot;</span><span class="p">&gt;</span>Rouge<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;foncBlanc()&quot;</span><span class="p">&gt;</span>Blanc sur fond bleu<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;modif.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>fichier <code>script.js</code> :
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">foncRouge</span><span class="p">()</span> 
+<span class="p">{</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#monPara&quot;</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;blanc&quot;</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#monPara&quot;</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;rouge&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">foncBlanc</span><span class="p">()</span> 
+<span class="p">{</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#monPara&quot;</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;rouge&quot;</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#monPara&quot;</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;blanc&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>fichier <code>style.css</code> :<br />
+<div class="highlight"><pre><span></span><code><span class="nt">h1</span>
+<span class="p">{</span>
+  <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">rouge</span> 
+<span class="p">{</span>
+<span class="k">color</span><span class="p">:</span><span class="kc">red</span><span class="p">;</span>
+<span class="k">font-size</span><span class="p">:</span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">blanc</span> 
+<span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span><span class="kc">blue</span><span class="p">;</span>
+<span class="k">color</span><span class="p">:</span><span class="kc">white</span><span class="p">;</span>
+<span class="k">font-size</span><span class="p">:</span><span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
 </ul>
-<h3 id="3-quand-la-page-est-fabriquee-a-la-demande-pour-le-client-exemple-avec-php">3. Quand la page est fabriquée à la demande pour le client : exemple avec PHP<a class="headerlink" href="#3-quand-la-page-est-fabriquee-a-la-demande-pour-le-client-exemple-avec-php" title="Permanent link">⚓︎</a></h3>
-<p><img alt="" class="center" src="../data/dynserveur.png" /></p>
-<p>Rappelons que toutes les pages que nous avons créées jusqu'à présent sont uniformément envoyées par le serveur au client. Aucune «préparation» de la page en amont n'a lieu sur le serveur, aucun dialogue n'a lieu avec le serveur une fois que la page a été livrée. 
-Évidemment, si le web était comme ceci, il ne serait qu'une gigantesque bibliothèque en consultation seule (ce fut le cas pendant longtemps, et ce qui n'était déjà pas si mal).</p>
-<p>Les langages serveurs, parmi lesquels PHP (présent sur environ 80% des serveurs), Python (via le framework Django), Java, Ruby, C#, permettent de rajouter de l'interactivité côté serveur.</p>
-<p><strong>Il convient de rappeler la différence fondamentale entre une page statique (côté serveur) et une page dynamique (côté serveur) :</strong></p>
-<h4 id="31-page-statique-cote-serveur">3.1 Page statique (côté serveur) :<a class="headerlink" href="#31-page-statique-cote-serveur" title="Permanent link">⚓︎</a></h4>
-<p>Lors d'une requête d'un client vers un serveur, si le client demande la page <code>index.html</code>, une <strong>copie exacte</strong> du fichier <code>index.html</code> est transmise au client sur sa machine.  </p>
-<p><strong>Exemple :</strong> la page http://glassus1.free.fr/interesting.html que vous avez déjà consultée se trouve <strong>telle quelle</strong> sur le serveur mis à disposition par Free pour l'hébergement des pages personnelles :</p>
-<p><img alt="" class="center" src="data/extraitfree1.png" /></p>
-<p>Depuis votre navigateur, l'affichage du code-source (par Ctrl-U) vous donnera le fichier html tel qu'il était stocké sur le serveur.</p>
-<h4 id="32-page-dynamique-cote-serveur">3.2  Page dynamique (côté serveur) :<a class="headerlink" href="#32-page-dynamique-cote-serveur" title="Permanent link">⚓︎</a></h4>
-<p>Lors d'une requête d'un client vers un serveur, si le client demande la page <code>test.php</code>, un code html est généré à partir  du fichier <code>test.php</code>  puis est transmise au client sur sa machine. Le fichier transmis ne contient plus de balises <code>php</code>, il ne comporte que des balises <code>html</code> classiques.  </p>
-<p><strong>Exemple :</strong> la consultation de la page http://glassus1.free.fr/test.php va renvoyer la page suivante :</p>
-<p><img alt="" class="center" src="../data/php1.png" /></p>
-<p>dont le code-source est :</p>
-<p><img alt="" class="center" src="../data/php2.png" /></p>
-<p>Notez bien que ce code-source ne contient que du <code>html</code>.</p>
-<p>Allons regarder cette page <strong>du côté du serveur</strong> :</p>
-<p><img alt="" class="center" src="../data/php3.png" /></p>
-<p>Le contenu de cette page est :</p>
-<div class="highlight"><pre><span></span><code><span class="x">&lt;!DOCTYPE html&gt;</span>
-<span class="x">&lt;html&gt;</span>
-<span class="x">    &lt;head&gt;</span>
-<span class="x">        &lt;meta charset=&quot;utf-8&quot; /&gt;</span>
-<span class="x">        &lt;title&gt;Quel jour sommes-nous&lt;/title&gt;</span>
-<span class="x">    &lt;/head&gt;</span>
-<span class="x">    &lt;body&gt;</span>
-<span class="x">    &lt;p&gt;</span>
-<span class="x">    </span><span class="cp">&lt;?php</span>
-    <span class="nv">$date</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">&quot;d-m-Y&quot;</span><span class="p">);</span>
-    <span class="k">Print</span><span class="p">(</span><span class="s2">&quot;Nous sommes le </span><span class="si">$date</span><span class="s2">&quot;</span><span class="p">);</span>
-    <span class="cp">?&gt;</span><span class="x"></span>
-<span class="x">    &lt;/p&gt;</span>
-<span class="x">&lt;/body&gt;</span>
-<span class="x">&lt;/html&gt;</span>
-</code></pre></div>
-<p>On y repère la balise <code>&lt;?php&gt;</code> :
-<div class="highlight"><pre><span></span><code><span class="x">    </span><span class="cp">&lt;?php</span>
-    <span class="nv">$date</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">&quot;d-m-Y&quot;</span><span class="p">);</span>
-    <span class="k">Print</span><span class="p">(</span><span class="s2">&quot;Nous sommes le </span><span class="si">$date</span><span class="s2">&quot;</span><span class="p">);</span>
-    <span class="cp">?&gt;</span><span class="x"></span>
-</code></pre></div>
-Ce code <code>php</code> a donc généré, lors de l'appel au serveur, le code <code>html</code> :</p>
-<div class="highlight"><pre><span></span><code>Nous sommes le 13-04-2020
-</code></pre></div>
-<p>Voilà comment un serveur peut adapter la page qu'il renvoie, suivant l'utilisateur qui la demande. Nous verrons prochainement comment par des requêtes le client peut envoyer des paramètres au serveur, et comment celui-ci modifie sa réponse en conséquence.</p>
-<p><strong>En savoir plus :</strong> https://www.php.net/manual/fr/tutorial.firstpage.php</p>
-<h5 id="exercice-5">Exercice 5<a class="headerlink" href="#exercice-5" title="Permanent link">⚓︎</a></h5>
+<p>Le résultat de cette page peut être consulté à l'adresse <a href="https://pagejs2.nsimeyroneinc.repl.co">https://pagejs2.nsimeyroneinc.repl.co</a>.</p>
+<p><strong>Commentaire :</strong>  </p>
+<p>Dans l’exemple ci-dessus, nous avons maintenant 2 boutons :</p>
 <ul>
-<li>Allez sur https://repl.it/ , et créez un nouveau repl.it en choisissant PHP Web Server.</li>
-<li>Créez une page renvoyant le système d'exploitation de l'utilisateur.</li>
+<li>un clic sur le bouton <code>blanc</code>, permet d’exécuter la fonction <code>foncBlanc()</code>,  </li>
+<li>un clic sur le bouton <code>rouge</code>, permet d’exécuter la fonction <code>foncRouge()</code>, jusque là, rien de vraiment nouveau.  </li>
+</ul>
+<p>La fonction JavaScript <code>foncBlanc()</code> permet de modifier la classe CSS de la balise ayant pour id <code>monPara</code>. Dans un premier temps, la ligne</p>
+<p><div class="highlight"><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#monPara&quot;</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;rouge&quot;</span><span class="p">);</span>
+</code></pre></div>
+permet de supprimer l’association entre la balise d’id <code>monPara</code> et la classe CSS <code>rouge</code> (si cette association n’existe pas, cette ligne n’a aucun effet). <br />
+Dans un deuxième temps, on associe la classe CSS <code>blanc</code> avec la balise d’id <code>monPara</code> avec la ligne</p>
+<div class="highlight"><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#monPara&quot;</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;blanc&quot;</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="exemple-3-de-couple-html-javascript"><strong>&#x1F4CE; Exemple 3 de couple html / javascript</strong> :<a class="headerlink" href="#exemple-3-de-couple-html-javascript" title="Permanent link">⚓︎</a></h3>
+<ul>
+<li>
+<p>fichier <code>index.html</code> : 
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Afficher / Cacher une boite div en javascript<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>  Question 1 : <span class="p">&lt;/</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bouton&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;bouton_texte&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;afficher_cacher(&#39;texte&#39;);&quot;</span><span class="p">&gt;</span>Afficher la réponse<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;texte&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;texte&quot;</span><span class="p">&gt;</span>
+      Texte caché
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+    <span class="c1">//&lt;!--</span>
+        <span class="nx">afficher_cacher</span><span class="p">(</span><span class="s1">&#39;texte&#39;</span><span class="p">);</span>
+    <span class="c1">//--&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>fichier <code>script.js</code> :
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">afficher_cacher</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">visibility</span><span class="o">==</span><span class="s2">&quot;hidden&quot;</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">visibility</span><span class="o">=</span><span class="s2">&quot;visible&quot;</span><span class="p">;</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;bouton_&#39;</span><span class="o">+</span><span class="nx">id</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s1">&#39;Cacher la réponse&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">visibility</span><span class="o">=</span><span class="s2">&quot;hidden&quot;</span><span class="p">;</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;bouton_&#39;</span><span class="o">+</span><span class="nx">id</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s1">&#39;Afficher la réponse&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>fichier <code>style.css</code> :<br />
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">bouton</span>
+<span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span><span class="mh">#00AAff</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">cursor</span><span class="p">:</span><span class="kc">pointer</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">bouton</span><span class="p">:</span><span class="nd">hover</span>
+<span class="p">{</span>
+    <span class="k">text-decoration</span><span class="p">:</span><span class="n">None</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">texte</span>
+<span class="p">{</span>
+    <span class="k">border</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#333333</span><span class="p">;</span>
+    <span class="k">background</span><span class="p">:</span><span class="mh">#eeeeee</span><span class="p">;</span>
+    <span class="k">padding</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span><span class="mh">#333333</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">texte</span><span class="p">:</span><span class="nd">hover</span>
+<span class="p">{</span>
+    <span class="k">border</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#000000</span><span class="p">;</span>
+    <span class="k">background</span><span class="p">:</span><span class="mh">#cccccc</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span><span class="mh">#000000</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ul>
+<p>Le résultat de cette page peut être consulté à l'adresse <a href="https://pagejs3.nsimeyroneinc.repl.co">https://pagejs3.nsimeyroneinc.repl.co</a>.</p>
+<h3 id="exemple-4-de-couple-html-javascript"><strong>&#x1F4CE; Exemple 4 de couple html / javascript</strong> :<a class="headerlink" href="#exemple-4-de-couple-html-javascript" title="Permanent link">⚓︎</a></h3>
+<ul>
+<li>
+<p>fichier <code>index.html</code> : 
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Cours JavaScript<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1,</span>
+<span class="s">user-scalable=no&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Question 1 : Donner l&#39;écriture binaire du nombre décimal 29 <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;R1&#39;</span><span class="p">&gt;</span>Afficher la réponse<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;d1&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display:None&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span> Réponse :<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> L&#39;écriture binaire de 29 est : 11101 <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>puissance de 2 <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>64<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>32<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>16<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>8<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Décomposition <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Reste <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>29<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>29<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>13<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>5<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Question 2 : Donner l&#39;écriture binaire du nombre décimal 42 <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;R2&#39;</span> <span class="p">&gt;</span>Afficher la réponse<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;d2&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display:None&quot;</span><span class="p">&gt;</span>
+    Réponse : L&#39;écriture binaire de 42 est : 101010
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;JavaScript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;qcm.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>fichier <code>script.js</code> :
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">d1</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;d1&quot;</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nx">togg1</span><span class="p">(){</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">d1</span><span class="p">).</span><span class="nx">display</span> <span class="o">!=</span> <span class="s2">&quot;none&quot;</span><span class="p">){</span>
+  <span class="nx">d1</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">d1</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">R1</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">togg1</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">d2</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;d2&quot;</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">togg2</span><span class="p">(){</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">d2</span><span class="p">).</span><span class="nx">display</span> <span class="o">!=</span> <span class="s2">&quot;none&quot;</span><span class="p">){</span>
+  <span class="nx">d2</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">d2</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">R2</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">togg2</span><span class="p">;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>fichier <code>style.css</code> :<br />
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">d1</span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span> <span class="mh">#EECC44</span><span class="mi">99</span><span class="p">;}</span>
+<span class="p">#</span><span class="nn">d2</span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span> <span class="mh">#44EEAA</span><span class="mi">99</span><span class="p">;}</span>
+<span class="nt">table</span><span class="p">{</span>
+  <span class="k">border-collapse</span><span class="p">:</span> <span class="kc">collapse</span>
+<span class="p">}</span>
+<span class="nt">td</span><span class="p">{</span>
+  <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">black</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ul>
+<p>Le résultat de cette page peut être consulté à l'adresse <a href="https://pagejs4.nsimeyroneinc.repl.co">https://pagejs4.nsimeyroneinc.repl.co</a>.</p>
+<h3 id="exemple-5-de-couple-html-javascript"><strong>&#x1F4CE; Exemple 5 de couple html / javascript</strong> :<a class="headerlink" href="#exemple-5-de-couple-html-javascript" title="Permanent link">⚓︎</a></h3>
+<ul>
+<li>
+<p>fichier <code>index.html</code> : 
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Cours JavaScript<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1,</span>
+<span class="s">user-scalable=no&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;quiz&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Question 1 : Quelle est la couleur du cheval blanc d&#39;Henri 4<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;position:absolute;left:300px&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;t1&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;4&quot;</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q1&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;r1&quot;</span><span class="p">&gt;</span>Brun<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q1&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;r2&quot;</span><span class="p">&gt;</span>Noir<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q1&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;r3&quot;</span><span class="p">&gt;</span>Blanc<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q1&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;r4&quot;</span><span class="p">&gt;</span>Rouge<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Question 2 : Qui a gagné la coupe du monde 1998 ?<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;position:absolute;left:300px&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;t2&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;4&quot;</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q2&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;r1&quot;</span><span class="p">&gt;</span>Le Brésil<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q2&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;r2&quot;</span><span class="p">&gt;</span>L&#39;Argentine<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q2&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;r3&quot;</span><span class="p">&gt;</span>L&#39;Angleterre<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q2&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;r4&quot;</span><span class="p">&gt;</span>La France<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Question 3 : Qui a remporté la médaille d&#39;Or de Basket au JO 2021<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;position:absolute;left:300px&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;t3&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;4&quot;</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q3&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;r1&quot;</span><span class="p">&gt;</span>France<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q3&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;r2&quot;</span><span class="p">&gt;</span>USA<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q3&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;r3&quot;</span><span class="p">&gt;</span>Australie<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q3&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;r4&quot;</span><span class="p">&gt;</span>Serbie<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Score&quot;</span> <span class="na">onClick</span><span class="o">=</span><span class="s">&quot;getScore(this.form)&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;reset&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;RAZ&quot;</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+    Score = <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">text</span> <span class="na">size</span><span class="o">=</span><span class="s">15</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;percentage&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    Réponses correctes :<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;solutions&quot;</span> <span class="na">wrap</span><span class="o">=</span><span class="s">&quot;virtual&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;4&quot;</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;40&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;JavaScript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;qcm.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>fichier <code>script.js</code> :
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">numQues</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">numChoi</span> <span class="o">=</span> <span class="mf">4</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">answers</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">answers_true</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">answers_false</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span>
+
+<span class="nx">answers</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;r3&quot;</span><span class="p">;</span>
+<span class="nx">answers_true</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Bravo&quot;</span><span class="p">;</span>
+<span class="nx">answers_false</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Lit l&#39;énoncé correctement&quot;</span><span class="p">;</span>
+
+<span class="nx">answers</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;r4&quot;</span><span class="p">;</span>
+<span class="nx">answers_true</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Bravo&quot;</span><span class="p">;</span>
+<span class="nx">answers_false</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;La France bien sur&quot;</span><span class="p">;</span>
+
+<span class="nx">answers</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;r2&quot;</span><span class="p">;</span>
+<span class="nx">answers_true</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Bravo&quot;</span><span class="p">;</span>
+<span class="nx">answers_false</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Hélas c&#39;est faux, c&#39;est les USA&quot;</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">getScore</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">score</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">currElt</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">currSelection</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">numQues</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">currElt</span> <span class="o">=</span> <span class="nx">i</span><span class="o">*</span><span class="p">(</span><span class="nx">numChoi</span><span class="o">+</span><span class="mf">1</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nx">j</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span> <span class="nx">j</span><span class="o">&lt;</span><span class="nx">numChoi</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">currSelection</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="nx">currElt</span> <span class="o">+</span> <span class="nx">j</span><span class="o">+</span><span class="mf">1</span><span class="p">];</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">currSelection</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">currSelection</span><span class="p">.</span><span class="nx">value</span> <span class="o">==</span> <span class="nx">answers</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="p">{</span>
+          <span class="nx">score</span><span class="o">++</span><span class="p">;</span>
+          <span class="nx">form</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="nx">currElt</span><span class="p">].</span><span class="nx">value</span><span class="o">=</span><span class="nx">answers_true</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">form</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="nx">currElt</span><span class="p">].</span><span class="nx">value</span><span class="o">=</span><span class="nx">answers_false</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nx">score</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">score</span><span class="o">/</span><span class="nx">numQues</span><span class="o">*</span><span class="mf">100</span><span class="p">);</span>
+  <span class="nx">form</span><span class="p">.</span><span class="nx">percentage</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">score</span> <span class="o">+</span> <span class="s2">&quot;%&quot;</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">correctAnswers</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;=</span><span class="nx">numQues</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">correctAnswers</span> <span class="o">+=</span> <span class="nx">i</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span> <span class="o">+</span> <span class="nx">answers</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;\r\n&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">form</span><span class="p">.</span><span class="nx">solutions</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">correctAnswers</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>fichier <code>style.css</code> :<br />
+<div class="highlight"><pre><span></span><code><span class="nt">body</span><span class="p">{</span> 
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#a0b6e7</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="nt">span</span><span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#e7b4a0</span><span class="p">;</span>
+  <span class="k">border-width</span><span class="p">:</span><span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">border-style</span><span class="p">:</span><span class="kc">outset</span><span class="p">;</span>
+  <span class="k">border-color</span><span class="p">:</span><span class="kc">black</span><span class="p">;</span>
+  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ul>
+<p>Le résultat de cette page peut être consulté à l'adresse <a href="https://qcmscore.nsimeyroneinc.repl.co">https://qcmscore.nsimeyroneinc.repl.co</a>.</p>
+<p><strong>En savoir plus</strong> 
+- le guide JavaScript de la fondation Mozilla : <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide">https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide</a>
+- le cours d'OpenClassrooms : <a href="https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript">https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript</a></p>
+<h5 id="exercice">Exercice<a class="headerlink" href="#exercice" title="Permanent link">⚓︎</a></h5>
+<ul>
+<li>Reprenez votre site et rajoutez du JavaScript pour la rendre dynamique. Faites ce que vous voulez !</li>
 </ul>
 
               
