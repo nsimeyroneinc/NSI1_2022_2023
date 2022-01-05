@@ -123,7 +123,7 @@ plugins:
   - search # Inclure une barre de recherche
   - mkdocs-jupyter: # Convertir les fichiers .ipynb et .py en pages du site https://github.com/danielfrg/mkdocs-jupyter
       kernel_name: python3
-      execute: True
+      execute: False
       include_source: True
 
  
