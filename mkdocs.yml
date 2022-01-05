@@ -24,6 +24,7 @@ nav:
       - TP 08 Les tableaux Exercices : Tableaux/TP08_TuplesTableauxExercicesCorrige.md 
     - T4 IHM :
       - TD html et css : WEB/HTML_CSS.md
+      - TD 14 JavaScript : WEB/JS.md
     - T5 Arch. Matérielle :
       - TP 13 Réseaux : Archi_Materielle/TD13_Reseaux.md
     - T6 Programmation :
@@ -126,7 +127,7 @@ plugins:
   - search # Inclure une barre de recherche
   - mkdocs-jupyter: # Convertir les fichiers .ipynb et .py en pages du site https://github.com/danielfrg/mkdocs-jupyter
       kernel_name: python3
-      execute: False
+      execute: True
       include_source: True
 
  
@@ -139,8 +140,8 @@ plugins:
   #    disableOnServe: True
   #    displayHeaderFooter: true
   #    printBackground: False
-      #scale : 1.0
-      #landscape : False
+  #   #scale : 1.0
+  #   #landscape : False
   #    margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
   #    headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
   #                      <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : 2021 - 2022</span>
