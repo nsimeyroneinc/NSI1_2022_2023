@@ -1,25 +1,35 @@
-<table  style="background-color:  #87A96B; width:100%;">
-    <thead>
-        <tr>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;">TD n°14 : HTML - CSS - JS - PHP</th>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:40%">Thème  : INTERACTIONS ENTRE HOMME ET LA MACHINE</th>
-        </tr>
-                    <tr>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;"> 
-Pages web et interactions</th>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:40%">COURS et TP</th>
-        </tr>
-    </thead>
-</table>
+---
+Marp:true:
+theme: gaia
+size: 4:3
+marp: true
+---
+
+<style>
+    :root {
+    --color-background: #101010 !important;
+	--color-foreground: #FFFFFF !important;
+     font-size: 1.25rem;
+    }
+blockquote {
+  background: #C3B091;
+  border-left: 15px solid #CC0000;
+  margin: 1.5em 10px;
+  color: black;
+  padding: 0.5em 10px;
+}
+</style>
 
 
+# TD n°14 : HTML - CSS - JS - PHP
 
-![image](data/BO.png){: .center}
 
+![image](data/BO.png)
 
+---
 # I.1. Le cas le plus simple : la même page pour tout le monde
 
-![](data/stat.png){: .center}
+![](data/stat.png)
 
 Nous allons tout d'abord considérer le cas où le serveur renvoie une page unique, identique pour tous les utilisateurs. De plus, l'utilisateur ne pourra pas agir sur sa page : il n'y a aucune interactivité.
 
@@ -28,6 +38,7 @@ Exemple de page statique côté serveur et côté utilisateur :
 - cette [merveille](https://pagesimple.michaelmeyrone1.repl.co) de page web.  
 - plus complète, mais tout aussi statique : cette page [Wikipedia](https://fr.wikipedia.org/wiki/John_Horton_Conway) consacrée à John Conway.
 
+---
 ## I.1 HTML pur
 
 Lorsque le client demande au serveur le contenu d'une page web, celui-ci lui renvoie, dans le cas le plus simple, une simple page html.  
@@ -40,9 +51,11 @@ L'acronyme CSS signifie _Cascading Style Sheets_. L'idée est de regrouper dans 
 De manière très simplifiée, on peut dire que le fichier ```html``` s'occupe _du fond_ tandis que le fichier ```css``` s'occupe de la _forme_.
 
 Le fichier CSS (souvent nommé ```style.css```) doit être référencé au début du fichier ```html``` , au sein de la balise ```<head>``` avec la balise ``` <link href="style.css" rel="stylesheet" type="text/css" />``` par exemple.
+
+---
 # II. Quand le client peut agir sur sa page : exemple avec JavaScript
 
-![](data/dynclient.png){: .center}
+![](data/dynclient.png)
 
 Jusqu'à présent, la page web envoyée par le serveur est :  
 
@@ -53,9 +66,11 @@ Le JavaScript va venir régler le problème n°2 : il est possible de fabriquer 
 
 Inventé en 1995 par [Brendan Eich](https://fr.wikipedia.org/wiki/Brendan_Eich) pour le navigateur Netscape, le langage JavaScript s'est imposé comme la norme auprès de tous les navigateurs pour apporter de l'interactivité aux pages web.
 
+---
 ### **&#x1F4CE; Exemple 1 de couple html / javascript** :
 Notre fichier ```index.html``` fait référence, au sein d'une balise ```<script>```, à un fichier externe ```script.js``` qui contiendra notre code JavaScript.   
 
+---
 - fichier ```index.html``` : 
 ```html
 <!DOCTYPE html>
@@ -90,7 +105,7 @@ Notre fichier ```index.html``` fait référence, au sein d'une balise ```<script
 </html>
 ```
 
-
+---
 - fichier ```script.js``` :
 ```javascript
 function choix(color){
@@ -110,7 +125,7 @@ Le résultat de cette page peut être consulté à l'adresse [https://pagejs1.ns
 La puissance du JavaScript permet de réaliser aujourd'hui des interfaces utilisateurs très complexes au sein d'un navigateur, équivalentes à celles produites par des logiciels externes (pensez à Discord, par ex.).
 
 
-
+---
 
 ### **&#x1F4CE; Exemple 2 de couple html / javascript** :
 
@@ -119,7 +134,7 @@ Il est également possible de modifier le style d’une balise, de modifier la c
 !!! voc "querySelector()"
     La méthode ```querySelector()``` sélectionne le premier élément dans le document correspondant au sélecteur - ou groupe de sélecteurs - spécifié(s), ou null si aucune correspondance n’est trouvée.
 
-
+---
 - fichier ```index.html``` : 
 ```html
 <!doctype html>
@@ -147,7 +162,7 @@ Il est également possible de modifier le style d’une balise, de modifier la c
 </html>
 ```
 
-
+---
 - fichier ```script.js``` :
 ```javascript
 function foncRouge() 
@@ -181,7 +196,7 @@ color:white;
 font-size:25px;
 }
 ```
-
+---
 Le résultat de cette page peut être consulté à l'adresse [https://pagejs2.nsimeyroneinc.repl.co](https://pagejs2.nsimeyroneinc.repl.co).
 
 
@@ -204,6 +219,7 @@ Dans un deuxième temps, on associe la classe CSS ```blanc``` avec la balise d�
 document.querySelector("#monPara").classList.add("blanc");
 ```
 
+---
 ### **&#x1F4CE; Exemple 3 de couple html / javascript** :
 
 
@@ -219,7 +235,7 @@ document.querySelector("#monPara").classList.add("blanc");
     <script type="text/javascript" src="script.js"></script>
   </head>
 <body>
-    <div>  Question 1 : </br>
+    <div>  Question 1 : <br>
     <span class="bouton" id="bouton_texte" onclick="afficher_cacher('texte');">Afficher la réponse</span>
 
     <div id="texte" class="texte">
@@ -235,7 +251,7 @@ document.querySelector("#monPara").classList.add("blanc");
 </html>
 ```
 
-
+---
 - fichier ```script.js``` :
 ```javascript
 function afficher_cacher(id)
@@ -254,6 +270,7 @@ function afficher_cacher(id)
 }
 ```
 
+---
 - fichier ```style.css``` :  
 ```css
 .bouton
@@ -284,32 +301,24 @@ function afficher_cacher(id)
 Le résultat de cette page peut être consulté à l'adresse [https://pagejs3.nsimeyroneinc.repl.co](https://pagejs3.nsimeyroneinc.repl.co).
 
 
+---
 
 ### **&#x1F4CE; Exemple 4 de couple html / javascript** :
 
 
-- fichier ```index.html``` : 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Cours JavaScript</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,
-user-scalable=no">
+    <title>Cours JavaScript</title>  <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
   </head>
-
 <body>
-  <div>
-    <p> Question 1 : Donner l'écriture binaire du nombre décimal 29 </p>
-      <button id='R1'>Afficher la réponse</button>
-  </div>
-
+  <div> <p> Question 1 : Donner l'écriture binaire du nombre décimal 29 </p>
+      <button id='R1'>Afficher la réponse</button></div>
   <div id="d1" style="display:None">
     <strong> Réponse :</strong> L'écriture binaire de 29 est : 11101 <br>
-      <table>
-        <tr>
+     <table> <tr> 
           <td>puissance de 2 </td>
           <td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td>
         </tr>
@@ -319,25 +328,20 @@ user-scalable=no">
         </tr>
         <tr>
           <td>Reste </td>
-          <td>29</td><td>29</td><td>13</td><td>5</td><td>1</td><td>1</td><td>0</td>
-        </tr>
-      </table>
+          <td>29</td><td>29</td><td>13</td><td>5</td><td>1</td><td>1</td><td>0</td> 
+        </tr> </table>
   </div>
-
   <div>
     <p> Question 2 : Donner l'écriture binaire du nombre décimal 42 </p>
       <button id='R2' >Afficher la réponse</button>
   </div>
-  <div id="d2" style="display:None">
-    Réponse : L'écriture binaire de 42 est : 101010
-  </div>
-
+  <div id="d2" style="display:None"> Réponse : L'écriture binaire de 42 est : 101010 </div>
 </body>
   <script language="JavaScript" src="qcm.js"></script>
 </html>
 ```
 
-
+---
 - fichier ```script.js``` :
 ```javascript
 let d1 = document.getElementById("d1");
@@ -365,6 +369,7 @@ function togg2(){
 R2.onclick = togg2;
 ```
 
+---
 - fichier ```style.css``` :  
 ```css
 #d1{background-color: #EECC4499;}
@@ -378,9 +383,10 @@ td{
 }
 ```
 
-Le résultat de cette page peut être consulté à l'adresse [https://quiz.nsimeyroneinc.repl.co](https://quiz.nsimeyroneinc.repl.co).
+Le résultat de cette page peut être consulté à l'adresse [https://pagejs4.nsimeyroneinc.repl.co](https://pagejs4.nsimeyroneinc.repl.co).
 
 
+---
 
 ### **&#x1F4CE; Exemple 5 de couple html / javascript** :
 
@@ -392,65 +398,48 @@ Le résultat de cette page peut être consulté à l'adresse [https://quiz.nsime
   <head>
     <title>Cours JavaScript</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,
-user-scalable=no">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<form name="quiz">
-<span><b>Question 1 : Quelle est la couleur du cheval blanc d'Henri 4</b></span>
-  <br>
-<div style="position:absolute;left:300px"><br>
-  <textarea name="t1" rows="4" cols="20" >
-  </textarea>
-</div>
-<br>
-  <input type="radio" name="q1" value="r1">Brun<br>
-  <input type="radio" name="q1" value="r2">Noir<br>
-  <input type="radio" name="q1" value="r3">Blanc<br>
-  <input type="radio" name="q1" value="r4">Rouge<br>
-
-<br>
-
-<span><b>Question 2 : Qui a gagné la coupe du monde 1998 ?</b><br></span>
-<div style="position:absolute;left:300px"><br>
-  <textarea name="t2" rows="4" cols="20" >
-  </textarea>
-</div>
-<br>
-  <input type="radio" name="q2" value="r1">Le Brésil<br>
-  <input type="radio" name="q2" value="r2">L'Argentine<br>
-  <input type="radio" name="q2" value="r3">L'Angleterre<br>
-  <input type="radio" name="q2" value="r4">La France<br>
-
-<br>
-<span><b>Question 3 : Qui a remporté la médaille d'Or de Basket au JO 2021</b><br></span>
-<div style="position:absolute;left:300px"><br>
-  <textarea name="t3" rows="4" cols="20" >
-  </textarea>
-</div>
-<br>
-  <input type="radio" name="q3" value="r1">France<br>
-  <input type="radio" name="q3" value="r2">USA<br>
-  <input type="radio" name="q3" value="r3">Australie<br>
-  <input type="radio" name="q3" value="r4">Serbie<br>
-
-<br>
-
+  <form name="quiz">
+    <span><b>Question 1 : Quelle est la couleur du cheval blanc d'Henri 4</b></span>
+    <div style="position:absolute;left:300px"><br>
+      <textarea name="t1" rows="4" cols="20" > </textarea>
+    </div>
+    <input type="radio" name="q1" value="r1">Brun<br>
+    <input type="radio" name="q1" value="r2">Noir<br>
+    <input type="radio" name="q1" value="r3">Blanc<br>
+    <input type="radio" name="q1" value="r4">Rouge<br>
+    <br>
+    <span><b>Question 2 : Qui a gagné la coupe du monde 1998 ?</b><br></span>
+     <div style="position:absolute;left:300px"><br>
+      <textarea name="t2" rows="4" cols="20" ></textarea>
+    </div>
+    <input type="radio" name="q2" value="r1">Le Brésil<br>
+    <input type="radio" name="q2" value="r2">L'Argentine<br>
+    <input type="radio" name="q2" value="r3">L'Angleterre<br>
+    <input type="radio" name="q2" value="r4">La France<br>
+    <span><b>Question 3 : Qui a remporté la médaille d'Or de Basket au JO 2021</b><br></span>
+    <div style="position:absolute;left:300px"><br>
+    <textarea name="t3" rows="4" cols="20" > </textarea>
+    </div>
+    <input type="radio" name="q3" value="r1">France<br>
+    <input type="radio" name="q3" value="r2">USA<br>
+    <input type="radio" name="q3" value="r3">Australie<br>
+    <input type="radio" name="q3" value="r4">Serbie<br>
+    <br>
     <input type="button" value="Score" onClick="getScore(this.form)">
     <input type="reset" value="RAZ"><p>
     Score = <input type=text size=15 name="percentage"><br>
     Réponses correctes :<br>
     <textarea name="solutions" wrap="virtual" rows="4" cols="40"></textarea>
   </form>
-
-</body>
  <script language="JavaScript" src="qcm.js"></script>
+</body>
 </html>
 ```
 
+---
 
 - fichier ```script.js``` :
 ```javascript
@@ -509,6 +498,7 @@ function getScore(form) {
 
 ```
 
+---
 - fichier ```style.css``` :  
 ```css
 body{ 
@@ -527,6 +517,7 @@ span{
 
 Le résultat de cette page peut être consulté à l'adresse [https://qcmscore.nsimeyroneinc.repl.co](https://qcmscore.nsimeyroneinc.repl.co).
 
+---
 
 **En savoir plus** 
 - le guide JavaScript de la fondation Mozilla : [https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide)
