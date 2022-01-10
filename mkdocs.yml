@@ -15,9 +15,10 @@ docs_dir: docs
 # Menu de navigation
 nav: 
     - Accueil : index.md
-    - T2 Types construits :      
+    - T2 Types construits :
       - TP 07 Les tableaux Cours : Tableaux/TP07_TuplesTableauxCours.md
       - TP 08 Les tableaux Exercices : Tableaux/TP08_TuplesTableauxExercicesCorrige.md 
+      - TP 14 Les Dictionnaires: Dictionnaire/TP14_Dictionnaires.md
     - T4 IHM :
       - TD html et css : WEB/HTML_CSS.md
       - TD 14 JavaScript : WEB/JS.md
@@ -27,8 +28,6 @@ nav:
       - TP 04 - Les bases en Python : BasesPython/TP04_BasesPython.md
       - TP 05 - Les bases en Python/Exercices : BasesPython/TP05_BasesPythonExercices-Corrige.md
     - T7 Algorithmique :  
-      - TP 07 Les tableaux Cours : Tableaux/TP07_TuplesTableauxCours.md
-      - TP 08 Les tableaux Exercices : Tableaux/TP08_TuplesTableauxExercicesCorrige.md
       - TP 09 - Parcours séquentiel d'un tableau : Tableaux/TD09_Parcours_Sequentiel_Tableaux_Corrige.md
       - TP 10 - Parcours séquentiel d'un tableau bis : Tableaux/TD10_Parcours_Sequentiel_Tableaux_Corrige.md
       - TP 11 - Parcours séquentiel d'un tableau ter : Tableaux/TD11_Parcours_Sequentiel_Tableaux_Ter.md
