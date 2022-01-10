@@ -1,7 +1,7 @@
 <table  style="background-color: #9966CC; width:100%;color:white;">
     <thead>
         <tr>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;">TD n°14 : Structures de données - Les Dictionnaires</th>
+            <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;">TD n°15 : Structures de données - Les Dictionnaires</th>
             <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%">Thème 1 : Structures de données</th>
         </tr>
           <tr>

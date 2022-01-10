@@ -22,7 +22,7 @@ blockquote {
 
 
 
-# TD n°14 : Structures de données - Les Dictionnaires
+# TD n°15 : Structures de données - Les Dictionnaires
 
 
 ![BO.png](data/BO.png)
