@@ -52,7 +52,7 @@ De même, la modification ou l'ajout d'un information nécessiterait de devoir f
 
 C'est ce que les dictionnaires permettent !
 
-# II. Les dictionnaires en Python
+# Les dictionnaires en Python
      
 ## Définitions et premiers exemples 
 
