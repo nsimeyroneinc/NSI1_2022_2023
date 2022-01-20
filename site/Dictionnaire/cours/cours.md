@@ -1,3 +1,20 @@
+---
+documentclass: report
+title : TD n°15 - Structures de données - Les Dictionnaires
+geometry:
+- margin=1.5cm
+- a4paper
+fontsize: 11pt
+toc: true
+toc_depth: 3
+lang: fr
+numbersections: true
+links-as-notes: false
+linkcolor: red
+lof: false
+lot: false
+---
+
 # 2.3 Dictionnaires
 
 ![image](data/BO.png){: .center}

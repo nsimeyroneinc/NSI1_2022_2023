@@ -18,6 +18,8 @@ blockquote {
   color: black;
   padding: 0.5em 10px;
 }
+
+
 </style>
 
 
@@ -30,7 +32,7 @@ blockquote {
 
 ---
 
-# I. Introduction : nécessité d'un dictionnaiaire
+# I. Introduction : nécessité d'un dictionnaire
 
 Prenons l'exemple d'un répertoire téléhonique. Nous pouvons le mémoriser simplement comme un tableau (ou liste) de tableaux `[nom,numéro]`
 

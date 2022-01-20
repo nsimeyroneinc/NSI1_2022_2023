@@ -1,3 +1,5 @@
+
+
 <table  style="background-color: #9966CC; width:100%;color:white;">
     <thead>
         <tr>
@@ -11,10 +13,11 @@
     </thead>
 </table>
 
+
+
 ![BO.png](data/BO.png)
 
-<blockquote style="background-color: #9966CC; border-left: 7px solid rgb(0 0 0);"> 
-    <span style="font-size:30px; color:white;"> I. Introduction : nécessité d'un dictionnaire</span></blockquote>
+# Introduction : nécessité d'un dictionnaire
 
 Prenons l'exemple d'un répertoire téléhonique. Nous pouvons le mémoriser simplement comme un tableau (ou liste) de tableaux `[nom,numéro]`
 
@@ -49,10 +52,9 @@ De même, la modification ou l'ajout d'un information nécessiterait de devoir f
 
 C'est ce que les dictionnaires permettent !
 
-<blockquote style="background-color: #9966CC; border-left: 7px solid rgb(0 0 0);"> 
-    <span style="font-size:30px; color:white;">  II. Les dictionnaires en Python</span></blockquote>
+# II. Les dictionnaires en Python
      
-## II.1 Définitions et premiers exemples 
+## Définitions et premiers exemples 
 
 &#x1F49C; Un dictionnaire, de **type dict** en Python,  est un ensemble **non ordonné** de paires (clé, valeur) avec un accès très rapide à la valeur à partir de la clé.  
 
@@ -101,9 +103,9 @@ Imaginons que je fasse l'inventaire de mon dressing :
 !!! fabquestion "Question 2 :"
     Donner le script permettant d'accéder au nombre de pulls présent dans mon dressing.
 
-## II.2. Définitions et propriétés d'un dictionnaire
+## Définitions et propriétés d'un dictionnaire
 
-### II.2.1 Définitions  
+### Définitions  
 
 
 !!! savoir "&#x1F4D8;    Définition"    
@@ -119,7 +121,7 @@ _Rappel :_
 - **accolades `{ }` -> dictionnaires**
 
 
-### II.2.2 Méthodes ```.keys()``` et   ```.values()```
+### Méthodes ```.keys()``` et   ```.values()```
 
 
 **&#x1F4CE; Exemple n°2 :**  
@@ -157,7 +159,7 @@ dict_values('0650523454','0684515345','0651355186','0611245678','0774845432')
 
 
 
-### II.2.3 Parcours d'un dictionnaire :
+### Parcours d'un dictionnaire :
 
 Il est possible de parcourir un dictionnaire de trois manières :
 
@@ -257,7 +259,7 @@ sportifs["Kate"]["taille"]
 1.67
 ```
 
-### II.2.4 Ajout / Modification d'un élément dans un dictionnaire
+### Ajout / Modification d'un élément dans un dictionnaire
 
 **&#x1F4CE; Exemple n°8 :**  
 
@@ -285,7 +287,7 @@ Reprenons le dictionnaire `dressing`
 !!! fabquestion  "Question 2"
     Modifier la catégorie `pantalons` avec une quantité de 5.
 
-### II.2.5 Suppression d'une valeur
+### Suppression d'une valeur
 
 **&#x1F4CE;  Exemple n°9 :**  
 
@@ -296,7 +298,7 @@ del repertoire["Paul"]
 
 
 
-### II.3. Exercices :  
+### Exercices :  
 
 &#x1F58B;   **A vous n°9 :**  
 Créer une fonction qui permet de rajouter un nom et un numéro au repertoire précédent.
@@ -338,7 +340,7 @@ Petit problème si on essaie d'acheter un vêtement pour la 1ère fois
 
 Nous allons résoudre ce problème grâce à :
 
-### II.4 Test d'appartenance à un dictionnaire
+### Test d'appartenance à un dictionnaire
 
 **&#x1F4CE; Exemple n°10 :**  
 Le mot `in` permet de tester l'appartenance d'une clé à un dictionnaire. Un booléen est renvoyé.
@@ -368,7 +370,7 @@ Améliorer la fonction `achat(vetement,quantite)` en y incluant un test pour pre
 
 
 
-## II.5. Création d'un dictionnaire
+## Création d'un dictionnaire
 
 Plusieurs méthodes permettent de créer soit un dictionnaire vide, soit de le noter en extension, soit par compréhension.
 
@@ -406,7 +408,7 @@ print("d6 =>", d6)
     Créez un dictionnaire appelé `notes` qui contient les paires (matières, moyenne) de vos trois spécialités. Affichez ensuite ce dictionnaire.
 
 
-## II.6. Taille d'un dictionnaire
+## Taille d'un dictionnaire
 
 &#x1F49C; La fonction `len` renvoie la taille d'un dictionnaire.
 
@@ -416,8 +418,7 @@ len(dressing)
 5
 ```
 
-<blockquote style="background-color: #9966CC; border-left: 7px solid rgb(0 0 0);"> 
-    <span style="font-size:30px; color:white;">  III. Les dictionnaires : EXERCICES</span></blockquote>
+# Les dictionnaires : EXERCICES
 
 
 

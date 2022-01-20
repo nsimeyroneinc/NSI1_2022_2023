@@ -378,7 +378,7 @@ td{
 }
 ```
 
-Le résultat de cette page peut être consulté à l'adresse [https://pagejs4.nsimeyroneinc.repl.co](https://pagejs4.nsimeyroneinc.repl.co).
+Le résultat de cette page peut être consulté à l'adresse [https://quiz.nsimeyroneinc.repl.co](https://quiz.nsimeyroneinc.repl.co).
 
 
 

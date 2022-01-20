@@ -3,7 +3,7 @@ Il permettra de retrouver les TP&TD traités en classes.<br>
 Ces TD sont corrigés dans la mesure du possible.
 
 !!! info 
-    **Thème en cours** : [Les réseaux](./Archi_Materielle/TD13_Reseaux.md)
+    **Thème en cours** : [Les Dictionnaires](./Dictionnaire/TD15_Dictionnaires.md)
 
 
 
@@ -45,14 +45,14 @@ Ces TD sont corrigés dans la mesure du possible.
         **Thème 3 : Interactions entre l'homme et la machine sur le web**
 
         - 🗹 Modalités de l'interaction entre l'homme et la machine
-        - □ Interaction 
+        - 🗹 Interaction 
 
 
     === "T5 Arch. matérielle"
         **Thème 5 : Architecture matérielle**
 
         - □ Architecture Von Neumann
-        - □ Architecture réseau
+        - 🗹 Architecture réseau
         - □ Protocoles de communication dans un réseau
         - □ Découverte des commandes Linux
 
