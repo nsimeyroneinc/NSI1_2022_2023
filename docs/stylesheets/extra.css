@@ -21,12 +21,13 @@
 
 body {
   font-family: @@font_name@@;
-  font-size: 11pt;
+  font-size: 12pt;
 /*        background-color: @@bg_color@@; */
-  background-color: white;
+ /*  background-color: white;*/
   color: @@fg_color@@;
   counter-reset: h1 h2 h3;
 }
+ 
 h1 {
   background-color: rgb(24, 141, 135);
   color: white;
@@ -66,6 +67,7 @@ h1.unnumbered:before, h2.unnumbered:before, h3.unnumbered:before {
   content: none;
   counter-increment: none;
 }
+
 :root {
   font-size: 1.25rem;
 }
