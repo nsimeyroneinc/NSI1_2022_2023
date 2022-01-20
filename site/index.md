@@ -3,7 +3,7 @@ Il permettra de retrouver les TP&TD traités en classes.<br>
 Ces TD sont corrigés dans la mesure du possible.
 
 !!! info 
-    **Thème en cours** : [Les Dictionnaires](./Dictionnaire/TD15_Dictionnaires.md)
+    **Thème en cours** : [Les Dictionnaires](./Dictionnaire/TD15_Dictionnaires.md) 
 
 
 
@@ -31,7 +31,7 @@ Ces TD sont corrigés dans la mesure du possible.
 
         - 🗹 Listes - Tableaux 
         - 🗹 Tuples    
-        - □ Dictionnaires  
+        - 🗹  Dictionnaires  
 
 
     === "T3 Tables"
