@@ -20,7 +20,7 @@
 
 Ce que le rover cache, ne se trouve pas en dessous mais plutôt au dessus, rires !
 
-![perseverance_rover_pillars.jpg](data/perseverance_rover_pillars.jpg)
+![perseverance_rover_pillars.jpg](data/perseverance_rover_pillars.jpg){:.center width=500px}
 
 Source : ESA
 
@@ -41,20 +41,6 @@ Mais avez-vous remarqué le parachute ?
 **Sa conception esthétique n’a rien d’anodin :**
 
 un message est encodé dans le motif, il était sous vos yeux durant toute la vidéo.
-
-
-
-
-```python
-from IPython.display import HTML 
-HTML("""<iframe width="1280" height="720" src="https://www.youtube.com/embed/4czjS9h4Fpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>""")
-```
-
-
-
-
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/4czjS9h4Fpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
 
 ## Mais comment ce message est-il encodé ?
@@ -101,6 +87,10 @@ Inscrire ici votre réponse
 
 
 Source : Twitter, Adam Steltzner.
+
+![](data/cercle_perseverance.png)
+
+
 
 
 ### Réponse 3 :
