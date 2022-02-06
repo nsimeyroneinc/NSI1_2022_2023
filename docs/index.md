@@ -22,7 +22,7 @@ Ces TD sont corrigés dans la mesure du possible.
         - 🗹 Codage des entiers
         - □ Codage des non-entiers
         - 🗹 Bases
-        - □ Codage des caractères
+        - 🗹 Codage des caractères
         - □ Booléens
 
     === "T2 Types construits"
