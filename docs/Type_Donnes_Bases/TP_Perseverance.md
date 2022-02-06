@@ -102,6 +102,8 @@ Inscrire ici votre réponse
 
 Source : Twitter, Adam Steltzner.
 
+![](data/cercle_perseverance.png).jpg)
+
 
 ### Réponse 3 :
 
