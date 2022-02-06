@@ -5,11 +5,11 @@
 
 /*Ajout de Sébastien HOARO pour avoir une taille de police normale dans les admonotions  */
 .md-typeset .admonition {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
 .md-typeset details {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
 /*Ajout de Gilles LASSUS pour centrer les images en Markdown avec l'extension attr_list : ![monimage](data/image.png){: .center width=50%} */
@@ -21,22 +21,32 @@
 
 body {
   font-family: @@font_name@@;
-  font-size: 11pt;
+   font-size: 14pt;
 /*        background-color: @@bg_color@@; */
-  background-color: white;
-  color: @@fg_color@@;
+ /*  background-color: white;*/
+  /* color: @@fg_color@@;*/
   counter-reset: h1 h2 h3;
 }
+ 
 h1 {
-  background-color: rgb(24, 141, 135);
+  background-color: rgb(148, 155, 155);
+  border-style: none none none groove; 
+  padding-left:10px;
+  margin-left: :5px;
+  border-color:black;
+  border-width: 1px 1x 3px 10px;
   color: white;
   font-family: @@font_name@@;
   font-size: 14pt;
 }
 h2 {
   background-color: orange;
+  padding-left:10px;
   font-family: @@font_name@@;
   font-size: 12pt;
+  border-style: none none none groove; 
+  border-color:black;
+  border-width: 1px 1x 3px 10px;
 }
 h3 {
     color: brown;
@@ -66,8 +76,9 @@ h1.unnumbered:before, h2.unnumbered:before, h3.unnumbered:before {
   content: none;
   counter-increment: none;
 }
+
 :root {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
 }
 
 :root {

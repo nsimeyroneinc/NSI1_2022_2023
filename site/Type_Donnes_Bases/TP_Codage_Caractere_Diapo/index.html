@@ -1,0 +1,1306 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Michael Meyroneinc-condy">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+    
+    
+      
+        <title>TD - Codage des caractères - Site NSI 1ére Lycée Murat ISSOIRE</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#td-codage-des-caracteres" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Site NSI 1ére Lycée Murat ISSOIRE" class="md-header__button md-logo" aria-label="Site NSI 1ére Lycée Murat ISSOIRE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="m278.9 511.5-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2 43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6 144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Site NSI 1ére Lycée Murat ISSOIRE
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TD - Codage des caractères
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../TP_Codage_Caracteres/" class="md-tabs__link">
+        T1 Types et valeurs de base
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Tableaux/TP07_TuplesTableauxCours/" class="md-tabs__link">
+        T2 Types construits
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../WEB/HTML_CSS/" class="md-tabs__link">
+        T4 IHM
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Archi_Materielle/TD13_Reseaux/" class="md-tabs__link">
+        T5 Arch. Matérielle
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../BasesPython/TP04_BasesPython/" class="md-tabs__link">
+        T6 Prog.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Tableaux/TD09_Parcours_Sequentiel_Tableaux_Corrige/" class="md-tabs__link">
+        T7 Algo.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Tableaux/TD12_Les_Images/" class="md-tabs__link">
+        Transversal
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Devoirs/DS03_Tableau/" class="md-tabs__link">
+        Devoirs
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../Divers/Liens_utiles/" class="md-tabs__link">
+      Liens Utiles
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Site NSI 1ére Lycée Murat ISSOIRE" class="md-nav__button md-logo" aria-label="Site NSI 1ére Lycée Murat ISSOIRE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="m278.9 511.5-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2 43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6 144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"/></svg>
+
+    </a>
+    Site NSI 1ére Lycée Murat ISSOIRE
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T1 Types et valeurs de base
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T1 Types et valeurs de base" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T1 Types et valeurs de base
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP_Codage_Caracteres/" class="md-nav__link">
+        TP 16
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP_Perseverance/" class="md-nav__link">
+        TP 17
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP_cesar/" class="md-nav__link">
+        TP 18
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          T2 Types construits
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T2 Types construits" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          T2 Types construits
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TP07_TuplesTableauxCours/" class="md-nav__link">
+        TP 07 Les tableaux Cours
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TP08_TuplesTableauxExercicesCorrige/" class="md-nav__link">
+        TP 08 Les tableaux Exercices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dictionnaire/TP15_Dictionnaires/" class="md-nav__link">
+        TP 15 Les Dictionnaires
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          T4 IHM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T4 IHM" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          T4 IHM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/HTML_CSS/" class="md-nav__link">
+        TD html et css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/JS/" class="md-nav__link">
+        TD 14 JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          T5 Arch. Matérielle
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T5 Arch. Matérielle" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          T5 Arch. Matérielle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archi_Materielle/TD13_Reseaux/" class="md-nav__link">
+        TP 13 Réseaux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          T6 Prog.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T6 Prog." data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          T6 Prog.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesPython/TP04_BasesPython/" class="md-nav__link">
+        TP 04 - Les bases en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesPython/TP05_BasesPythonExercices-Corrige/" class="md-nav__link">
+        TP 05 - Les bases en Python/Exercices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          T7 Algo.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T7 Algo." data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          T7 Algo.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TD09_Parcours_Sequentiel_Tableaux_Corrige/" class="md-nav__link">
+        TP 09 - Parcours séquentiel d'un tableau
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TD10_Parcours_Sequentiel_Tableaux_Corrige/" class="md-nav__link">
+        TP 10 - Parcours séquentiel d'un tableau bis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TD11_Parcours_Sequentiel_Tableaux_Ter/" class="md-nav__link">
+        TP 11 - Parcours séquentiel d'un tableau ter
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Transversal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transversal" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Transversal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TD12_Les_Images/" class="md-nav__link">
+        TP 12 - Les images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Devoirs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Devoirs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Devoirs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS03_Tableau/" class="md-nav__link">
+        DS 3 Groupe 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_TP_Reseaux/" class="md-nav__link">
+        DS réseau
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Divers/Liens_utiles/" class="md-nav__link">
+        Liens Utiles
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="TP_Codage_Caractere_Diapo.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+              
+
+
+
+
+
+                
+
+<style>
+    :root {
+    --color-background: #101010 !important;
+    --color-foreground: #FFFFFF !important;
+     font-size: 1.5rem;
+    }
+blockquote {
+  background: #C3B091;
+  border-left: 15px solid #CC0000;
+  margin: 1.5em 10px;
+  color: black;
+  padding: 0.5em 10px;
+}
+
+
+</style>
+
+<h1 id="td-codage-des-caracteres">TD : Codage des caractères<a class="headerlink" href="#td-codage-des-caracteres" title="Permanent link">⚓︎</a></h1>
+<p>Tout pour comprendre et Ã©viter les erreurs d'encodage</p>
+<h1 id="au-commencement-etait-lascii">Au commencement était l'ASCII<a class="headerlink" href="#au-commencement-etait-lascii" title="Permanent link">⚓︎</a></h1>
+<p>pour <em>American Standard Code for Information Interchange</em>, créé en 1960 aux États-Unis.</p>
+<p>Dans les années 50, il existait un nombre important d’encodages de caractères dans un ordinateur, les imprimantes ou les lecteurs de carte. Tous ces encodages étaient incompatibles les uns avec les autres, ce qui rendait les échanges particulièrement difficiles car il fallait utiliser des programmes pour convertir les caractères d’un encodage à un autre.<br />
+Pour tenter de mettre un peu d’ordre dans tout ça, en 1960, l’American Standards Association (ASA, aujourd’hui ANSI) décide de mettre un peu d’ordre dans ce bazar en créant la norme ASCII (American Standard Code for Information Interchange).  </p>
+<hr />
+<p>À chaque caractère est associé un nombre binaire sur 8 bits (1 octet).</p>
+<p><img alt="" src="../data/ascii.png" /></p>
+<hr />
+<p>En faite, seuls 7 bits sont utilisés pour coder un caractère, le 8e bit n’est pas utilisé pour le codage des caractères. Avec 7 bits il est possible de coder jusqu’à 128 caractères ce qui est largement suffisant pour un texte écrit en langue anglaise (pas d’accents et autres lettres particulières).</p>
+<ul>
+<li>Les 32 premiers codes, de 0 à 31, ne sont pas des caractères imprimables mais des caractères "de contrôle". Par exemple le code 13 représente un retour à la ligne, et le code 7 fait produire un bip à certains ordinateurs, ce qui s'avérait utile sur les premiers IBM PC pour signaler une erreur, par exemple.  </li>
+<li>À partir du code 32, suivent des signes de ponctuation et quelques symboles mathématiques comme ! ou + ou /, puis les chiffres arabes de 0 à 9, ainsi que les 26 lettres de l'alphabet latin, en capitales puis en minuscules.</li>
+</ul>
+<hr />
+<blockquote>
+<p>Exercice
+Décoder l'expression suivante, écrite en ASCII :  </p>
+</blockquote>
+<p><code>1101100 1100101 1110011 100000 1001110 1010011 1001001 100000 1100011 100111 1100101 1110011 1110100 100000 1101100 1100101 1110011 100000 1101101 1100101 1101001 1101100 1101100 1100101 1110101 1110010 1110011</code></p>
+<hr />
+<p>Vérification avec un script Python : </p>
+<p><strong>Aide :</strong>  </p>
+<ul>
+<li>la fonction <code>split(" ")</code> permet de décomposer une chaine de caractères en une liste, en se servant de l'espace <code>" "</code> comme caractère séparateur.  </li>
+<li><code>int("1101100",2)</code> permet de récupérer facilement la valeur en base 10 du nombre binaire <code>1101100</code>.   </li>
+<li>la fonction <code>chr</code> renvoie le caractère correspondant à un entier.   </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">78</span><span class="p">)</span>
+<span class="n">N</span>
+</code></pre></div>
+<ul>
+<li>La fonction <code>ord</code> de Python renvoie le code ASCII correspondant à un caractère. L’entier renvoyé est en base 10 (que l’on peut convertir enhexadécimal avec la fonction hex).</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="mi">97</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a))</span>
+<span class="s1">&#39;0x61&#39;</span>
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;1101100 1100101 1110011 </span>
+<span class="mi">100000</span> <span class="mi">1001110</span> <span class="mi">1010011</span> 
+<span class="mi">1001001</span> <span class="mi">100000</span> <span class="mi">1100011</span> <span class="mi">100111</span> 
+<span class="mi">1100101</span> <span class="mi">1110011</span> <span class="mi">1110100</span> <span class="mi">100000</span> 
+<span class="mi">1101100</span> <span class="mi">1100101</span> <span class="mi">1110011</span> <span class="mi">100000</span> 
+<span class="mi">1101101</span> <span class="mi">1100101</span> <span class="mi">1101001</span> <span class="mi">1101100</span> 
+<span class="mi">1101100</span> <span class="mi">1100101</span> <span class="mi">1110101</span> <span class="mi">1110010</span> <span class="mi">1110011</span><span class="s2">&quot;</span>
+<span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">msg</span> <span class="p">:</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h1 id="et-le-reste-du-monde">Et le reste du monde ?<a class="headerlink" href="#et-le-reste-du-monde" title="Permanent link">⚓︎</a></h1>
+<p>Lorsque d'autres personnes que des americains ou des anglais ont voulu s'échanger des données faisant intervenir du texte, certains caractères (é, è, à, ñ, Ø, Ö, β, 漢...) étaient manquants. Les 127 caractères de l'ASCII étaient largement insuffisants. <br />
+Il a donc été décidé de passer à... 256 caractères ! Il suffisait pour cela de coder les caractères non plus sur 7 bits mais sur 8 bits.</p>
+<p>Ainsi naquît, a norme <strong>ISO-8859-1</strong>, une extension de l’ASCII qui utilise les huit bits de chaque octet pour représenter les caractères.<br />
+Cette norme va être principalement utilisée dans les pays européens puisqu’elle permet d’encoder les caractères utilisés dans les principales langues européennes (la norme ISO-8859-1 est aussi appelée "latin1" car elle permet d’encoder les caractères de l’alphabet dit "latin").<br />
+Pour ajouter à la complexité, la norme ISO-8859 définit pas moins de 15 versions différentes, pour satisfaire à tous les besoins mondiaux.</p>
+<hr />
+<p>Donc après de nombreuses modifications successives (la dernière en date rajoutant par exemple le symbole €), la célèbre table <strong>ISO 8859-15</strong>, dite aussi <strong>Latin-9</strong> :    </p>
+<p><img alt="" src="../data/iso-latin.png" /></p>
+<hr />
+<h2 id="utilisation">Utilisation :<a class="headerlink" href="#utilisation" title="Permanent link">⚓︎</a></h2>
+<p>Les codes sont donnés en hexadécimal :  </p>
+<ul>
+<li>le caractère € correspond au code hexadécimal A4, donc au nombre décimal 164.  </li>
+<li>le caractère A correspond au code hexadécimal 41, donc au nombre décimal 65.  </li>
+</ul>
+<p>65... comme en ASCII ! Oui, la (seule) bonne idée aura été d'inclure les caractères ASCII avec leur même code, ce qui rendait cette nouvelle norme rétro-compatible.</p>
+<hr />
+<p><strong>Exemple :</strong><br />
+A l"aide de notepad écrire un texte (Ça marche très bien !).  Enregistrer le avec l'encodage Latin-9. <br />
+Ce fichier est ensuite ouvert avec un éditeur hexadécimal, qui permet d'observer la valeur des octets qui composent le fichier. (Comme le fichier est un .txt, le fichier ne contient que les données et rien d'autre.)  </p>
+<p><img alt="" src="../data/hexa_latin.png" /></p>
+<p>Parfait, mais comment font les Grecs pour écrire leur alphabet ? <br />
+Pas de problème, il leur suffit d'utiliser... une autre table, appelée ISO-8859-7 :  </p>
+<hr />
+<p><img alt="" src="../data/isogrec.png" /></p>
+<p>On retrouve les caractères universels hérités de l'ASCII, puis des caractères spécifiques à la langue grecque... oui mais les Thaïlandais alors ?   </p>
+<hr />
+<p>Pas de problème, ils ont la ISO-8859-11 :  </p>
+<p><img alt="" src="../data/isothai.png" /></p>
+<hr />
+<p>Évidemment, quand tous ces gens veulent discuter entre eux, les problèmes d'encodage surviennent immédiatement : certains caractères sont remplacés par d'autres.</p>
+<hr />
+<h3 id="que-fait-un-logiciel-a-louverture-dun-fichier-texte">Que fait un logiciel à l'ouverture d'un fichier texte ?<a class="headerlink" href="#que-fait-un-logiciel-a-louverture-dun-fichier-texte" title="Permanent link">⚓︎</a></h3>
+<p>Il essaie de deviner l'encodage utilisé... Parfois cela marche, parfois non.<br />
+<img alt="" src="../data/erreur_nav.png" /></p>
+<hr />
+<p>Normalement, pour un navigateur, une page web correctement codée doit contenir dans une balise <code>meta</code> le <code>charset</code> utilisé. <br />
+<img alt="" src="../data/source_twitter.png" /></p>
+<p>Mais parfois, il n'y a pas d'autre choix pour le logiciel d'essayer de deviner l'encodage qui semble être utilisé.  </p>
+<hr />
+<blockquote>
+<p>Exercice :</p>
+</blockquote>
+<p>Le mot représenté par les octets ci-dessous est-il encodé en ASCII ou en Latin-9 ?
+<img alt="" src="../data/exo2.png" /></p>
+<hr />
+<h1 id="enfin-une-normalisation-larrivee-de-lutf">Enfin une normalisation : l'arrivée de l'UTF<a class="headerlink" href="#enfin-une-normalisation-larrivee-de-lutf" title="Permanent link">⚓︎</a></h1>
+<p>En 1996, le <a href="https://home.unicode.org/">Consortium Unicode</a> décide de normaliser tout cela et de créer un système unique qui contiendra l'intégralité des caractères dont les êtres humains ont besoin pour communiquer entre eux.  </p>
+<p><img alt="" src="../data/slogan_unicode.png" /></p>
+<p>Ils créent l'Universal character set Transformation Format : l'UTF.<br />
+Ou plutôt ils en créent... plusieurs :  </p>
+<ul>
+<li>l'UTF-8 : les caractères sont codés sur 1, 2, 3 ou 4 octets.  </li>
+<li>l'UTF-16 : les caractères sont codés sur 2 ou 4 octets.  </li>
+<li>l'UTF-32 : les caractères sont codés sur 4 octets.  </li>
+</ul>
+<p>Pourquoi est-ce encore si compliqué ? En UTF-32, 32 bits sont disponibles, soit <span class="arithmatex">\(2^{32}=4294967296\)</span> caractères différents encodables. </p>
+<p>C'est largement suffisant, mais c'est surtout très très lourd !   </p>
+<hr />
+<p>D'autres encodages plus légers, mais plus complexes, sont donc proposés :</p>
+<p>Arrêtons-nous sur l'UTF-8 :  </p>
+<p><img alt="w:750" src="../data/cap_utf8.png" /></p>
+<hr />
+<p>Le principe fondateur de l'UTF-8 est qu'il est <strong>adaptatif</strong> : les caracères les plus fréquents sont codés sur un octet, qui est la taille minimale (et qui donne le 8 de "UTF-8"). Les autres caractères peuvent être codés sur 2, 3 ou 4 octets au maximum.</p>
+<p><strong>UTF-8</strong> n’utilise que l’espace dont il a besoin pour un caractère. Cela signifie donc que certains caractères n’utilisent qu’un seul octet, et d’autres deux, trois et même quatre.<br />
+<strong>UTF-8</strong> utilise les mêmes codes qu’<strong>ASCII</strong> pour les 127 premiers caractères, et se sert d’octets additionnels pour représenter des caractères spéciaux comme ’é’.  </p>
+<p>Par exemple, le caractère Z serait représenté de la même façon qu’en ASCII : <code>01011010</code>  </p>
+<p>Toutefois, le caractère ç devra être représenté en deux octets, car il ne fait pas partie des 127 caractères originaux.  </p>
+<hr />
+<p>L’encodage d’un caractère multi-octet se fait comme suit :</p>
+<p>Les premiers bits identifient le nombre d’octets à utiliser. </p>
+<ul>
+<li>0xxxxxxx : signifie que le caractère fait 1 octet de long  </li>
+<li>110xxxxx signifie que le caractère fait 3 octets de long,  </li>
+<li>1110xxxx signifie 3 octets,  </li>
+<li>11110xxx 4 octets,  </li>
+</ul>
+<p>On note U+XXXX un caractère encodé en UTF8. Les bits restants sont utilisés pour représenter le numéro du caractère.</p>
+<hr />
+<p><img alt="w:450px" src="../data/LatinB.png" />  </p>
+<blockquote>
+<p>Exemple :<br />
+    A partir  de  l’extrait  de  la  table Unicode(version hexa),  rappelez  le   Point  de  Code du  caractère <a href="https://fr.wikipedia.org/wiki/%C8%BA">Ⱥ</a> (valeur  numérique).     </p>
+</blockquote>
+<hr />
+<p>Le  caractère  appartient  à  l’intervalle U+0080 à U+07FF,  donc les <strong>11 bits</strong> seront répartis sur deux octets en  code  UTF-8.  </p>
+<ul>
+<li>Convertir  le code  en  binaire sur  11  bits  </li>
+<li>11 bits sur deux octects selon  la disposition  spécifiée  dans  la norme</li>
+</ul>
+<p><img alt="w:750px" src="../data/Unicode_exemple.png" />  </p>
+<hr />
+<p><img alt="" src="../data/Latin1.png" />  </p>
+<blockquote>
+<p>Exercice
+    Faire de même avec la lettre é</p>
+</blockquote>
+<hr />
+<p><img alt="w:750px" src="../data/Unicode_exemple_2.png" />  </p>
+<hr />
+<blockquote>
+<p>Exercice
+    Quel est le code binaire de "défi" codé avec UTF-8 ?</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>Exercice
+    Quels mots se cachent sous les codes UTF-8 suivants ? </p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>1. `01101000 01100101 01101100
+ 01101100 01101111`
+
+2. `01101001 01101110 
+01100110 01101111 
+01110010 01101101 
+01100001 01110100 
+01101001 01110001 
+01110101 01100101`
+
+3. `01100010 01101001 
+01101110 01100001 
+01101001 01110010 01100101`
+</code></pre></div>
+<hr />
+<h2 id="utilisation-grandissante-de-lencodage-utf-8">Utilisation grandissante de l'encodage UTF-8<a class="headerlink" href="#utilisation-grandissante-de-lencodage-utf-8" title="Permanent link">⚓︎</a></h2>
+<p>La majorité des sites internet utilisent maintenant l'UTf-8, tout comme les systèmes d'exploitation récents.
+<img alt="" src="../data/graph_comparaison.png" /></p>
+
+              
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="mailto:nsi.meyroneinc@gmail.com" target="_blank" rel="noopener" title="Pour toute question, suggestion ou commentaire, écrire à l&#39;auteur" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M476 3.2 12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="None" target="_blank" rel="noopener" title="dépôt github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://murat-issoire.ent.auvergnerhonealpes.fr/" target="_blank" rel="noopener" title="Lycée Murat Issoire" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M496 128v16a8 8 0 0 1-8 8h-24v12c0 6.627-5.373 12-12 12H60c-6.627 0-12-5.373-12-12v-12H24a8 8 0 0 1-8-8v-16a8 8 0 0 1 4.941-7.392l232-88a7.996 7.996 0 0 1 6.118 0l232 88A8 8 0 0 1 496 128zm-24 304H40c-13.255 0-24 10.745-24 24v16a8 8 0 0 0 8 8h464a8 8 0 0 0 8-8v-16c0-13.255-10.745-24-24-24zM96 192v192H60c-6.627 0-12 5.373-12 12v20h416v-20c0-6.627-5.373-12-12-12h-36V192h-64v192h-64V192h-64v192h-64V192H96z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

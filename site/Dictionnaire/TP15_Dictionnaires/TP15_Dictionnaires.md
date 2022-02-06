@@ -52,7 +52,7 @@ De même, la modification ou l'ajout d'un information nécessiterait de devoir f
 
 C'est ce que les dictionnaires permettent !
 
-# II. Les dictionnaires en Python
+# Les dictionnaires en Python
      
 ## Définitions et premiers exemples 
 
@@ -63,7 +63,7 @@ C'est un type de conteneur comme les list et les tuple mais ce n'est pas une sé
 
 Dans un dictionnaire, **chaque élément est accessible par une clé** qui n'est plus forcément un nombre, une chaine de caractère, un nombre, ou autre chose, peut être une clé.
 
-**&#x1F58B;  Exemple n°1 :**   
+**&#x1F4CE; Exemple n°1 :**   
 
 Reprenons la problématique de départ : un répertoire téléhonique.  
 Nous pouvons le mémoriser comme un dictionnaire `[nom:numéro]`
@@ -108,7 +108,7 @@ Imaginons que je fasse l'inventaire de mon dressing :
 ### Définitions  
 
 
-!!! savoir "&#x1F4D8;    Définition"    
+!!! savoir "&#x1F4D8; Définition"
     Un dictionnaire est une donnée composite qui **n'est pas ordonnée** (à la différence des listes !)  
     Il fonctionne par un système de `clé:valeur`.    
     Les clés, comme les valeurs, peuvent être de types différents.  
