@@ -24,6 +24,9 @@ pour *American Standard Code for Information Interchange*, créé en 1960 aux É
 
 Dans les années 50, il existait un nombre important d’encodages de caractères dans un ordinateur, les imprimantes ou les lecteurs de carte. Tous ces encodages étaient incompatibles les uns avec les autres, ce qui rendait les échanges particulièrement difficiles car il fallait utiliser des programmes pour convertir les caractères d’un encodage à un autre.  
 Pour tenter de mettre un peu d’ordre dans tout ça, en 1960, l’American Standards Association (ASA, aujourd’hui ANSI) décide de mettre un peu d’ordre dans ce bazar en créant la norme ASCII (American Standard Code for Information Interchange).  
+
+<div style="page-break-after: always;"></div>
+
 **À chaque caractère est associé un nombre binaire sur 8 bits (1 octet).**
 
 ![](data/ascii.png){:.center}
@@ -145,6 +148,7 @@ Pourquoi est-ce encore si compliqué ? En UTF-32, 32 bits sont disponibles, soit
 C'est largement suffisant, mais c'est surtout très très lourd !   
 D'autres encodages plus légers, mais plus complexes, sont donc proposés :
 
+<div style="page-break-after: always;"></div>
 
 &#x27A1;  Arrêtons-nous sur l'UTF-8 :  
 
@@ -202,10 +206,15 @@ On note U+XXXX un caractère encodé en UTF8. Les bits restants sont utilisés p
 
     0101 0110 01101111 01101001 01101100 11000011 10100000 00100000 0011 0001 11100010 10000010 10101100 00101100 00100000 01110101 0110 1110 00100000 11110000 10011111 10011000 10000100 00100000 0110 0101 01110100 00100000 01101101 11000011 10101010 01101101 0110 0101 00100000 11110000 10011101 10000100 10011110 00100001
 
+<div style="page-break-after: always;"></div>
+
 ## Utilisation grandissante de l'encodage UTF-8 
 
 La majorité des sites internet utilisent maintenant l'UTf-8, tout comme les systèmes d'exploitation récents.
 ![](data/graph_comparaison.png){:.center}
+
+
+<div style="page-break-after: always;"></div>
 
 # Applications : Codage XOR
 
@@ -214,8 +223,8 @@ La majorité des sites internet utilisent maintenant l'UTf-8, tout comme les sys
 L’objectif de l’exercice est d’étudier une méthode de cryptage d’une chaîne de
 caractères à l’aide du codage ASCII et de la fonction logique XOR.
 
-!!! fabquestion 'Question 1"
-    1. Le nombre 65, donné ici en écriture décimale, s’écrit 01000001 en notation binaire. En détaillant la méthode utilisée, donner l’écriture binaire du nombre 89.
+!!! fabquestion "Question 1"
+    Le nombre 65, donné ici en écriture décimale, s’écrit 01000001 en notation binaire. En détaillant la méthode utilisée, donner l’écriture binaire du nombre 89.
 
 !!! fabquestion "Question 2"
     La fonction logique **OU EXCLUSIF**, appelée **XOR** et représentée par le symbole ⊕, fournit une sortie égale à 1 si l’une ou l’autre des deux entrées vaut 1 mais pas les deux. 

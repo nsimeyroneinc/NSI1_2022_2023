@@ -19,7 +19,7 @@
     
     
       
-        <title>TP 18 - Site NSI 1ére Lycée Murat ISSOIRE</title>
+        <title>TP 18 Codage de césar - Site NSI 1ére Lycée Murat ISSOIRE</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TP 18
+              TP 18 Codage de césar
             
           </span>
         </div>
@@ -350,7 +350,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Site NSI 1ére Lycée Murat ISSOIRE" class="md-nav__button md-logo" aria-label="Site NSI 1ére Lycée Murat ISSOIRE" data-md-component="logo">
       
@@ -423,7 +425,7 @@
   
     <li class="md-nav__item">
       <a href="../TP_Codage_Caracteres/" class="md-nav__link">
-        TP 16
+        TP 16 - Codage caractères
       </a>
     </li>
   
@@ -437,7 +439,7 @@
   
     <li class="md-nav__item">
       <a href="../TP_Perseverance/" class="md-nav__link">
-        TP 17
+        TP 17 Message Perseverance
       </a>
     </li>
   
@@ -460,7 +462,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        TP 18
+        TP 18 Codage de césar
       </a>
       
     </li>
@@ -972,24 +974,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="TP_cesar.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
@@ -1062,34 +1046,31 @@ L'intervalle valide pour cet argument est de 0 à 1114111 (0x10FFFF en base 16).
 <p>Fonction <code>.split()</code></p>
 <blockquote>
 <p>La méthode split() divise une chaîne selon le séparateur spécifié et renvoie une liste de chaînes.<br />
-```|python
-str = "Bonjour a tous"
-res = str.split()
-print(res)
-['Bonjour','a','tous']
-<div class="highlight"><pre><span></span><code>Les codes UTF-8 et ASCII sont identiques, ainsi pour vous aider voici un [lien vers une table ASCII](http://brianaspinall.com/wp-content/uploads/2015/11/better_ascii_table.jpg)
-
-
-```python
-def chiffrement_caractere(carac,cle):
-    &quot;&quot;&quot;
-    Chiffre un caractère par la méthode de césar , les lettres a..z et A..Z sont décalées par la méthode de césar
-    les autres caractères ne sont pas modifiés (accents, tiret ...)
-    Entrées : 
-      carac (str) un caratère 
-      cle (int) la clé de codage (classiquement entre 0 et 25)
-    Sortie : 
-      (str) Le caratère décalé par la méthode de césar
-    &quot;&quot;&quot;
-    if 65&lt;= ord(carac) &lt;=90:
-        # Votre code ici
-    elif 97 &lt;= ord(carac) &lt;= 122:
-        # Votre code ici
-    else :
-        # Votre code ici
-    return # Votre code ici
+<div class="highlight"><pre><span></span><code><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Bonjour a tous&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;Bonjour&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;tous&#39;</span><span class="p">]</span>
 </code></pre></div></p>
 </blockquote>
+<p>Les codes UTF-8 et ASCII sont identiques, ainsi pour vous aider voici un <a href="http://brianaspinall.com/wp-content/uploads/2015/11/better_ascii_table.jpg">lien vers une table ASCII</a></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">chiffrement_caractere</span><span class="p">(</span><span class="n">carac</span><span class="p">,</span><span class="n">cle</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Chiffre un caractère par la méthode de césar , les lettres a..z et A..Z sont décalées par la méthode de césar</span>
+<span class="sd">    les autres caractères ne sont pas modifiés (accents, tiret ...)</span>
+<span class="sd">    Entrées : </span>
+<span class="sd">      carac (str) un caratère </span>
+<span class="sd">      cle (int) la clé de codage (classiquement entre 0 et 25)</span>
+<span class="sd">    Sortie : </span>
+<span class="sd">      (str) Le caratère décalé par la méthode de césar</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="mi">65</span><span class="o">&lt;=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">carac</span><span class="p">)</span> <span class="o">&lt;=</span><span class="mi">90</span><span class="p">:</span>
+        <span class="c1"># Votre code ici</span>
+    <span class="k">elif</span> <span class="mi">97</span> <span class="o">&lt;=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">carac</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">122</span><span class="p">:</span>
+        <span class="c1"># Votre code ici</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="c1"># Votre code ici</span>
+    <span class="k">return</span> <span class="c1"># Votre code ici</span>
+</code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Tests, si pas d&#39;erreurs continuez.</span>
 <span class="k">assert</span> <span class="n">chiffrement_caractere</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;D&#39;</span>
 <span class="k">assert</span> <span class="n">chiffrement_caractere</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Y&#39;</span>
@@ -1317,7 +1298,7 @@ Dans ce cas ne pas tester avec le assert</li>
     <nav class="md-footer__inner md-grid" aria-label="Pied de page">
       
         
-        <a href="../TP_Perseverance/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: TP 17" rel="prev">
+        <a href="../TP_Perseverance/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: TP 17 Message Perseverance" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1326,7 +1307,7 @@ Dans ce cas ne pas tester avec le assert</li>
               <span class="md-footer__direction">
                 Précédent
               </span>
-              TP 17
+              TP 17 Message Perseverance
             </div>
           </div>
         </a>
@@ -1395,7 +1376,7 @@ Dans ce cas ne pas tester avec le assert</li>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "toc.integrate", "header.autohide"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
     
     
       <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>

@@ -16,10 +16,10 @@ docs_dir: docs
 nav: 
     - Accueil : index.md
     - T1 Types et valeurs de base:
-      - TP 16 : Type_Donnes_Bases/TP_Codage_Caracteres.md
-      - TP 17 : Type_Donnes_Bases/TP_Perseverance.md
+      - TP 16 - Codage caractères : Type_Donnes_Bases/TP_Codage_Caracteres.md
+      - TP 17 Message Perseverance : Type_Donnes_Bases/TP_Perseverance.md
       #- TP 17 prof : Type_Donnes_Bases/TP_Perseverance_prof.md
-      - TP 18 : Type_Donnes_Bases/TP_cesar.md
+      - TP 18 Codage de césar : Type_Donnes_Bases/TP_cesar.md
     - T2 Types construits :
       - TP 07 Les tableaux Cours : Tableaux/TP07_TuplesTableauxCours.md
       - TP 08 Les tableaux Exercices : Tableaux/TP08_TuplesTableauxExercicesCorrige.md 
@@ -79,7 +79,7 @@ theme:
         - navigation.sections
         - navigation.indexes
         - navigation.tracking
-        #- toc.integrate
+        - toc.integrate
         - header.autohide
      
 

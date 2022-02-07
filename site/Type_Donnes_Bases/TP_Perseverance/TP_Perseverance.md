@@ -1,6 +1,6 @@
-<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+<table  style="table-layout: fixed;background-color:#3B444B; border:solid;color:black;">
         <tr>
-            <th colspan=2; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
+            <th style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;width:100%;">
            Thème 1 : Types de bases
             </th>
         </tr>
@@ -13,8 +13,6 @@
             <th  width="80%"; style="text-align:center;background-color:#99BADD;border:none;font-size:25pt;">TP : Message caché sur le Rover Perseverance</th>
         </tr>
 </table>
-
-# TP 17 Cachez ce que je ne saurais voir !
 
 **Un message caché sur le rover Perseverance.**
 
@@ -32,7 +30,7 @@ Source : ESA
 * [2. Un écho de 1899](#2.-Un-écho-de-1899)
 
 
-## 1. easter egg by NASA
+# Easter egg by NASA
 
 Vous avez déjà probablement regardé la vidéo vertigineuse de [l’atterrissage](https://youtu.be/4czjS9h4Fpg) du rover Perseverance sur la planète rouge.
 
@@ -59,24 +57,12 @@ Source : NASA
 + Les colonnes verticales peuvent être découpées en cercle de diamètres différents. Trouvez en combien de cercles le parachute est constitué.
 
 
-### Réponse 1 :
-
-...
-Inscrire ici votre réponse
-...
-
 
 ### Question 2 :
 
 + Avec vos constations, quel est la base de l'encodage ?
 + Sur combien de bits le message est-il encodé ?
 
-
-### Réponse 2 :
-
-...
-Inscrire ici votre réponse
-...
 
 
 ### Question 3 :
@@ -93,13 +79,6 @@ Source : Twitter, Adam Steltzner.
 
 
 
-### Réponse 3 :
-
-...
-Inscrire ici votre réponse
-...
-
-
 ### Question 4 :
 
 Décodez les valeurs binaires trouvés en valeurs décimales : 
@@ -108,10 +87,6 @@ Décodez les valeurs binaires trouvés en valeurs décimales :
 
 Attention : Le bit de poids faible est à droite.
 
-
-```python
-# Votre programme ici
-```
 
 ### Question 5 :
 
@@ -123,21 +98,11 @@ Modifiez votre programme pour convertir la valeur binaire en une lettre de l'alp
 
 
 
-```python
-# Votre programme ici
-```
-
 ### Question 6 :
 
 Avez vous décodez le message après déchiffrage des cercles 1 à 3 ?
 
 Si oui quel est sa signification ?
-
-### Réponse 6 :
-
-...
-Inscrire ici votre réponse
-...
 
 
 ## Vérifiez votre déchiffrage.
@@ -155,14 +120,8 @@ Vous avez aussi décodé le 4e cercle (le cercle en périphérie).
 Que représente le message sur ce 4e cercle ?
 
 
-### Réponse 7 :
 
-...
-Inscrire ici votre réponse
-...
-
-
-## 2. Un écho de 1899
+# Un écho de 1899
 
 Avant de savoir comment il est parvenu à trouver le résultat de l'énigme, on remarque que cette phrase a de profondes résonances dans l'histoire aérospatiale américaine, comme l'a détaillé le quotidien britannique The Guardian. Cette phrase, qu'on peut traduire par "Osez le sublime" ("mighty" signifie littéralement "puissant"), est le slogan du laboratoire Jet Propulsion de la NASA, qui a réalisé le gros du travail autour du rover Perseverance.
 
@@ -190,6 +149,3 @@ Version 2
 Source :  Marcus Dupont-Besnard 23 février 2021 - Numérama.
 
 
-```python
-
-```

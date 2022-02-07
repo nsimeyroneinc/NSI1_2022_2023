@@ -67,7 +67,7 @@ Fonction `% 26`
 
 Fonction `.split()`
 > La méthode split() divise une chaîne selon le séparateur spécifié et renvoie une liste de chaînes.  
-```|python
+```python
 str = "Bonjour a tous"
 res = str.split()
 print(res)

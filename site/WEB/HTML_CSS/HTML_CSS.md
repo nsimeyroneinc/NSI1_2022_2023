@@ -53,7 +53,7 @@ Je vous mets à disposition des vidéos de cours disponible en ligne, ainsi qu'u
 
 [Tutoriel CSS](https://www.w3schools.com/css/default.asp){:target="_blank"}
 
-# I. Qu'est ce que le HTML ?
+# Qu'est ce que le HTML ?
 
 Quand on consulte un site web, notre ordinateur se connecte à un serveur distant et celui-ci lui envoie une page web, que le navigateur va pouvoir afficher. En général la page est constituée de plusieurs fichiers :
 
@@ -160,7 +160,7 @@ Les commentaires sont délimités par les caractères <!-- et --> , ils ne sont 
     Problème, la balise em est fermé après la balise p !! </p></em>
     ```
 
-# III. Block / Inline
+# Block / Inline
 
 Voici les éléments les plus courants mais il en existe d’autres. Ils peuvent être regroupées en deux catégories :  
 
@@ -244,7 +244,7 @@ Un bloc quelconque, utile pour la mise en forme
     </html>
     ```
 
-# IV. Et le CSS alors ?
+# Et le CSS alors ?
 
 !!! abstract "&#x1F58B;   Langage CSS"
     Le format CSS (de l’anglais Cascading Style Sheets,ou «feuilles de styles en cascade») est un format textuel qui permet de décrire la mise en forme des documents HTML (et XML). La première version du langage CSS date de 1996. Celui-ci est pris en charge par tous les navigateurs depuis les années 2000. La version utilisée actuellement est CSS3.
@@ -403,7 +403,7 @@ Il existe une très grande variété de propriétés, la liste dépendant du sé
 
 Rendu des pages [sans CSS](https://jsfiddle.net/meyroneinc/a2tgu8bo/){:target="_blank"} et [avec CSS](https://jsfiddle.net/meyroneinc/9z86kprh/1/){:target="_blank"}
 
-# V. CSS et les boites
+# CSS et les boites
 
 Tous les éléments HTML de type block sont manipulés en tant que boites par CSS. Il existe une propriété display en CSS pour transformer n’importe quel élément en type block (ou autre) si on le souhaite.
 
@@ -533,7 +533,4 @@ Voici un exemple avec un entête de page, une barre de navigation, un pied de pa
     </body>
     </html>
     ```
-
-
-!!! example "Exercice :"
 

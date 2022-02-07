@@ -17,7 +17,7 @@ Pages web et interactions</th>
 ![image](data/BO.png){: .center}
 
 
-# I.1. Le cas le plus simple : la même page pour tout le monde
+# Le cas le plus simple : la même page pour tout le monde
 
 ![](data/stat.png){: .center}
 
@@ -28,19 +28,19 @@ Exemple de page statique côté serveur et côté utilisateur :
 - cette [merveille](https://pagesimple.michaelmeyrone1.repl.co) de page web.  
 - plus complète, mais tout aussi statique : cette page [Wikipedia](https://fr.wikipedia.org/wiki/John_Horton_Conway) consacrée à John Conway.
 
-## I.1 HTML pur
+## HTML pur
 
 Lorsque le client demande au serveur le contenu d'une page web, celui-ci lui renvoie, dans le cas le plus simple, une simple page html.  
 HTML est un langage dit « à balises ».  Ce n'est pas à proprement parler un langage de programmation, mais plutôt un langage de description de contenu. 
 Il a été inventé en 1992 par [Tim Berners-Lee](https://fr.wikipedia.org/wiki/Tim_Berners-Lee). La version actuellement utilisée est le ```html5```.
 
-## I.2 HTML + CSS
+## HTML + CSS
 
 L'acronyme CSS signifie _Cascading Style Sheets_. L'idée est de regrouper dans un seul fichier toutes les informations relatives à la mise en forme des éléments de la page html. 
 De manière très simplifiée, on peut dire que le fichier ```html``` s'occupe _du fond_ tandis que le fichier ```css``` s'occupe de la _forme_.
 
 Le fichier CSS (souvent nommé ```style.css```) doit être référencé au début du fichier ```html``` , au sein de la balise ```<head>``` avec la balise ``` <link href="style.css" rel="stylesheet" type="text/css" />``` par exemple.
-# II. Quand le client peut agir sur sa page : exemple avec JavaScript
+# Quand le client peut agir sur sa page : exemple avec JavaScript
 
 ![](data/dynclient.png){: .center}
 
