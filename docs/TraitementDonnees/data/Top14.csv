@@ -1,0 +1,619 @@
+ID,Nom,Âge,Taille,Poids,Nationalité,Poste,Matchs,E,T,P,D,J,R,Temps,Club
+13,JACQUET Loïc,36,198,117,France,2ème ligne,10,,,,,1,,397,Castres
+30,COMBEZOU Thomas,35,182,96,France,Centre,13,1,,,,,,773,Castres
+93,CHOULY Damien,36,192,106,France,3ème ligne,13,,,,,1,,680,Perpignan
+323,PICAMOLES Louis,36,192,118,France,3ème ligne,10,2,,,,1,,618,Bordeaux
+330,OUEDRAOGO Fulgence,35,191,99,France,3ème ligne,8,,,,,,,500,Montpellier
+339,TRINH-DUC François,35,186,90,France,Ouverture,15,,8,12,3,1,,636,Bordeaux
+396,GUIRADO Guilhem,35,183,109,France,Talonneur,3,,,,,,,116,Montpellier
+448,BURBAN Antoine,34,191,106,France,3ème ligne,12,1,,,,,,554,Paris
+449,HIRÈCHE Saïd,36,183,102,France,3ème ligne,12,,,,,2,,886,Brive
+451,PARISSE Sergio,38,196,122,Italie,3ème ligne,6,1,,,,,,408,Toulon
+507,MÉDARD Maxime,35,180,88,France,Arrière,11,3,,,,,,780,Toulouse
+581,ACÉBÈS Mathieu,34,182,90,France,Ailier,15,2,,,,2,,1086,Perpignan
+811,PARRA Morgan,33,180,83,France,Mêlée,8,,8,19,,,,501,Clermont
+1036,LAKAFIA Raphaël,33,191,115,France,3ème ligne,11,,,,,,,552,Toulon
+1038,THOMAS Teddy,28,185,98,France,Ailier,4,2,,,,,,320,Racing 92
+1046,LESGOURGUES Yann,31,177,82,France,Mêlée,16,3,,,,,,651,Bordeaux
+1048,GOMEZ KODELA Francisco,36,184,121,Argentine,Pilier,9,,,,,,,373,Lyon
+1061,TICHIT Antoine,32,182,112,France,Pilier,9,,,,,,,422,Castres
+1068,URDAPILLETA Benjamin,35,178,86,Argentine,Ouverture,12,1,21,19,1,1,,871,Castres
+1076,AGUILLON Pierre,34,180,93,France,Centre,6,,,,,,,135,Castres
+1079,FOFANA Wesley,34,182,93,France,Centre,1,,,,,,,73,Clermont
+1082,TOLOFUA Christopher,28,182,132,France,Talonneur,3,,,,,,,130,Toulon
+1083,MAESTRI Yoann,34,202,119,France,2ème ligne,4,,,,,,,158,Paris
+1084,CAMARA Yacouba,27,195,112,France,3ème ligne,11,,,,,1,,730,Montpellier
+1085,TEKORI Iosefa,38,198,130,Samoa,2ème ligne,7,,,,,,1,158,Toulouse
+1087,FICKOU Gaël,27,190,100,France,Centre,9,1,,,,1,,677,Racing 92
+1089,BAILLE Cyril,28,182,116,France,Pilier,11,1,,,,,,499,Toulouse
+1091,BÉZY Sébastien,30,174,78,France,Mêlée,11,,2,2,,,,653,Clermont
+1092,BARRAQUE Jean-Pascal,30,182,86,France,Centre,9,1,,1,,,,711,Clermont
+1094,JEDRASIAK Paul,29,200,121,France,2ème ligne,10,1,,,,,,509,Clermont
+1099,O'CONNOR Marvin,30,178,86,France,Ailier,10,2,,,,,,670,Clermont
+1101,ÉTRILLARD Anthony,28,183,110,France,Talonneur,13,,,,,,,628,Toulon
+1115,SLIMANI Rabah,32,178,118,France,Pilier,12,,,,,,,448,Clermont
+1117,PLISSON Jules,30,184,92,France,Ouverture,6,,3,10,,,,300,La Rochelle
+1118,DANTY Jonathan,29,181,107,France,Centre,7,,,,,1,,433,La Rochelle
+1120,NAYACALEVU Waisea,31,193,105,Fidji,Centre,15,6,,,,,,1124,Paris
+1127,KUBRIASHVILI Davit,35,185,123,Géorgie,Pilier,10,1,,,,1,,329,Perpignan
+1138,KAKOVIN Vasil,32,183,110,Géorgie,Pilier,13,,,,,,,540,Paris
+1139,GUILLAMON Antoine,30,192,139,France,Pilier,5,,,,,1,,154,Castres
+1140,DOUSSAIN Jean-Marc,31,174,93,France,Ouverture,11,1,6,,,,,390,Lyon
+1144,TAOFIFENUA Sébastien,29,178,130,France,Pilier,11,,,,,,,419,Lyon
+1146,VAHAAMAHINA Sébastien,30,203,127,France,2ème ligne,10,,,,,,,697,Clermont
+1147,TAOFIFENUA Romain,31,200,127,France,2ème ligne,10,,,,,,,624,Lyon
+1151,LOPEZ Camille,32,176,88,France,Ouverture,11,,12,20,2,,,629,Clermont
+1160,GUITOUNE Sofiane,32,186,97,France,Centre,7,,,,,1,,469,Toulouse
+1171,DA ROS François,38,179,104,France,Talonneur,8,1,,,,,,293,Biarritz
+1175,LARANJEIRA Thomas,29,186,90,France,Arrière,10,,4,9,,1,,540,Brive
+1189,MAYNADIER Clément,33,187,110,France,Talonneur,13,1,,,,1,,449,Bordeaux
+1190,MARAIS Jandré,32,198,120,Afrique du sud,2ème ligne,10,,,,,,,460,Bordeaux
+1193,DOMVO Darly,29,186,86,France,Arrière,7,,,,,,,376,Biarritz
+1196,ALDEGHERI Dorian,28,180,119,France,Pilier,6,,,,,,,276,Toulouse
+1197,METZ Fabrice,31,196,121,France,2ème ligne,12,,,,,,,562,Pau
+1199,LAURET Wenceslas,32,188,103,France,3ème ligne,11,2,,,,,,682,Racing 92
+1202,MACHENAUD Maxime,33,174,87,France,Mêlée,14,2,19,23,,,,646,Racing 92
+1204,DUMOULIN Alexandre,32,189,101,France,Centre,4,,,,,,,97,Pau
+1205,CHAVANCY Henry,33,181,97,France,Centre,8,,,,,,,392,Racing 92
+1206,VAKATAWA Virimi,29,185,98,Fidji,Centre,12,2,,,,1,,785,Racing 92
+1207,BEN AROUS Eddy,31,183,110,France,Pilier,7,,,,,,,267,Racing 92
+1209,LE ROUX Bernard,32,196,113,Afrique du sud,2ème ligne,12,,,,,,,785,Racing 92
+1215,IVALDI Mickaël,32,181,108,France,Talonneur,14,1,,,,,,567,Lyon
+1218,PÉLISSIÉ Jonathan,33,179,84,France,Mêlée,14,,1,1,,,,654,Lyon
+1226,PAILLAUGUE Benoît,34,172,74,France,Mêlée,1,,,3,,,,70,Montpellier
+1245,ARMITAGE Steffon,36,178,115,Angleterre,3ème ligne,16,,,,,,,710,Biarritz
+1248,MARTIN Vincent,29,185,93,France,Centre,5,2,,,,,,165,Biarritz
+1250,CHIOCCI Xavier,32,180,119,France,Pilier,8,,,,,1,,234,Lyon
+1253,BASTAREAUD Mathieu,33,183,125,France,3ème ligne,2,,,,,,,85,Lyon
+1254,TUISOVA Josua,28,180,113,Fidji,Ailier,10,2,,,,,1,731,Lyon
+1262,DIABY Mahamadou,31,192,110,France,3ème ligne,11,,,,,,,687,Bordeaux
+1269,CHATEAU Karl,29,189,105,France,3ème ligne,3,,,,,,,199,Perpignan
+1273,ECOCHARD Tom,29,173,80,France,Mêlée,9,,,1,,,,415,Perpignan
+1275,NARIASHVILI Misha,31,186,118,Géorgie,Pilier,6,,,,,,,170,Montpellier
+1277,ARTRU Yohann,29,178,87,France,Ailier,4,,,,,,,255,Biarritz
+1278,GALLETIER Kélian,29,190,103,France,3ème ligne,1,,,,,,,21,Montpellier
+1296,HART James,30,179,84,France,Mêlée,4,,,,,,,37,Biarritz
+1300,CHILACHAVA Levan,30,188,130,Géorgie,Pilier,14,2,,,,,,345,Castres
+1304,LEBAS Victor,28,193,108,France,2ème ligne,12,,,,,,,327,Brive
+1308,GALALA Seva,29,188,106,Fidji,Centre,9,1,,,,1,,513,Brive
+1319,RUFFENACH Romain,27,185,111,France,Talonneur,3,,,,,,,159,Biarritz
+1323,ISA Facundo,28,188,112,Argentine,3ème ligne,9,3,,,,,,591,Toulon
+1330,KOCKOTT Rory,35,180,92,Afrique du sud,Mêlée,11,2,,2,,2,,468,Castres
+1333,LAMERAT Rémi,32,184,105,France,Centre,7,,,,,1,,386,Bordeaux
+1337,FAASALELE Piula,34,196,120,Samoa,2ème ligne,10,,,,,,,713,Perpignan
+1350,LONCA Romain,30,190,90,France,Arrière,13,2,,,,,,766,Biarritz
+1351,PALIS Geoffrey,30,189,96,France,Arrière,15,3,,,,,,942,Castres
+1353,BABILLOT Mathieu,28,190,111,France,3ème ligne,5,,,,,,,276,Castres
+1355,DULIN Brice,31,176,82,France,Arrière,11,,,,,,,794,La Rochelle
+1360,DOUMAYROU Geoffrey,32,186,95,France,Centre,9,1,,,,,,571,Montpellier
+1370,SINZELLE Jérémy,31,184,95,France,Centre,9,,,,,,,639,La Rochelle
+1374,POIROT Jefferson,29,181,117,France,Pilier,10,,,,,2,,435,Bordeaux
+1380,SERIN Baptiste,27,180,79,France,Mêlée,5,2,,,,,,372,Toulon
+1398,TAULEIGNE Marco,28,191,118,France,3ème ligne,6,2,,,,,,223,Montpellier
+1405,PLACINES Alban,28,189,110,France,3ème ligne,11,1,,,,,,697,Toulouse
+1416,ALIOUAT Johan,29,197,135,France,2ème ligne,2,,,,,,,73,Biarritz
+1418,ACQUIER Thomas,32,181,112,France,Talonneur,10,1,,,,,,459,Brive
+1435,BOSCH Gilles,31,178,87,France,Ouverture,10,,5,2,,,,299,Biarritz
+1454,DUMORA Julien,33,184,96,France,Arrière,16,1,,1,3,,,1031,Castres
+1455,ARNOLD Toby,34,178,87,Nouvelle-Zélande,Arrière,14,3,,,,,,1039,Lyon
+1466,RATTEZ Vincent,29,180,85,France,Ailier,13,3,,,,,,921,Montpellier
+1470,FICHTEN Grégory,31,183,124,France,Pilier,9,,,,,,,406,Montpellier
+1476,HOUNKPATIN Wilfrid,30,192,132,France,Pilier,15,4,,,,,,851,Castres
+1492,TETRASHVILI Giorgi,28,177,114,Géorgie,Pilier,7,,,,,,,309,Perpignan
+1497,HAMADACHE Malik,33,193,145,France,Pilier,1,,,,,,,7,Montpellier
+1501,REGARD Thibaut,28,180,95,France,Centre,15,3,,,,1,,853,Lyon
+1509,TAUMOEPEAU Afusipa,32,184,100,Australie,Centre,12,5,,,,,,960,Perpignan
+1510,VATUBUA Jale,30,189,112,Fidji,Centre,13,4,,,,,,758,Pau
+1513,RAMSAY Daniel,37,197,114,Nouvelle-Zélande,2ème ligne,5,,,,,,,243,Pau
+1515,DAUBAGNA Thibault,27,177,83,France,Mêlée,11,,,,,,,351,Pau
+1527,LE GUEN Kévin,31,183,107,France,Talonneur,4,,,,,,,211,Racing 92
+1609,LUCU Ximun,32,183,87,France,Arrière,1,,,,,,,80,Biarritz
+1616,DUBIÉ Jean-Baptiste,32,181,86,France,Centre,11,,,,,1,,552,Bordeaux
+1625,ATONIO Uini,31,196,145,Nouvelle-Zélande,Pilier,13,2,,,,1,,685,La Rochelle
+1626,SAZY Romain,35,199,108,France,2ème ligne,15,,,,,,,767,La Rochelle
+1630,GOUJON Loann,32,194,114,France,3ème ligne,8,,,,,,,376,Lyon
+1646,BALÈS Alexi,31,174,80,France,Mêlée,11,,,,,,,291,Toulouse
+1656,ABADIE Paul,27,176,88,France,Mêlée,14,,,,,1,,651,Brive
+1706,PUECH Martin,33,193,105,France,3ème ligne,14,1,,,,1,,778,Pau
+1717,MIGNOT Xavier,28,188,100,France,Ailier,13,2,,,,,,761,Lyon
+1774,IRIBAREN Teddy,31,170,70,France,Mêlée,2,,2,1,,,,84,Racing 92
+1785,JOLY Arthur,34,189,123,France,Pilier,8,,,,,,,338,Perpignan
+1800,ERBANI Antoine,32,192,109,France,3ème ligne,7,,,,,,,118,Biarritz
+1813,GOURDON Kévin,32,190,103,France,3ème ligne,8,1,,,,,,577,La Rochelle
+1821,PÉLISSIÉ Adrien,31,181,110,France,Talonneur,5,1,,,,,,215,Clermont
+1895,DARBO Clément,36,175,75,France,Mêlée,2,,,,,,,64,Biarritz
+1897,FRESIA Florian,30,185,110,France,Pilier,10,,,,,2,,324,Toulon
+1903,PERRAUX Ilian,29,183,88,France,Ouverture,9,,6,9,,,,462,Biarritz
+1908,IMHOFF Juan,33,185,90,Argentine,Ailier,14,5,,,,,,1038,Racing 92
+1909,MAUROUARD Jérémie,29,181,100,France,Talonneur,11,3,,,,,,497,Montpellier
+1912,CHALUREAU Bastien,30,202,126,France,2ème ligne,13,,,,,2,1,723,Montpellier
+1920,SANCHEZ Nicolas,33,177,85,Argentine,Ouverture,3,,2,7,,,,135,Paris
+1938,COCAGI Adrea,27,185,109,Fidji,Centre,16,1,,,,1,,948,Castres
+1968,LEE Fritz,33,188,108,Samoa,3ème ligne,12,,,,,,,752,Clermont
+1969,FALGOUX Etienne,29,182,112,France,Pilier,12,,,,,,,475,Clermont
+2029,LE BAIL Jules,30,168,85,France,Mêlée,8,1,,,,,,162,La Rochelle
+2038,KAULASHVILI Lekso,29,187,120,Géorgie,Pilier,14,,,,,,,536,Bordeaux
+2051,YATO Peceli,29,196,120,Fidji,3ème ligne,6,1,,,,,,265,Clermont
+2053,BONNEVAL Arthur,26,182,88,France,Ailier,9,2,,,,,,543,Toulouse
+2063,MAMEA LEMALU Genesis,33,195,113,Samoa,3ème ligne,16,2,,,,,,975,Perpignan
+2122,THOMAS Henry,30,188,118,Angleterre,Pilier,8,,,,,2,,249,Montpellier
+2182,RAMOS Thomas,26,178,87,France,Arrière,9,2,18,24,,1,,720,Toulouse
+2189,MAVINGA Sami,28,181,116,France,Pilier,8,,,,,1,,294,Perpignan
+2213,BOTIA Levani,32,182,103,Fidji,3ème ligne,6,,,,,,,242,La Rochelle
+2218,HERRERA Ramiro,33,194,126,Argentine,Pilier,8,,,,,,,209,La Rochelle
+2238,CECCARELLI Pietro,30,184,120,Italie,Pilier,7,,,,,,,277,Brive
+2277,CRONIN James,31,184,118,Irlande,Pilier,10,,,,,,,614,Biarritz
+2280,HANRAHAN JJ,29,183,93,Irlande,Ouverture,14,3,1,4,,,,575,Clermont
+2338,HANNOYER Théo,25,198,122,France,2ème ligne,6,,,,,,,203,Castres
+2367,LAVANINI Tomás,29,202,130,Argentine,2ème ligne,5,,,,,2,,332,Clermont
+2373,UGENA Matthieu,26,186,110,France,3ème ligne,12,,,,,1,,577,Perpignan
+2374,GABRILLAGUES Paul,28,199,119,France,2ème ligne,16,1,,,,2,,1054,Paris
+2375,NETI Rodrigue,26,185,124,France,Pilier,16,,,,,,,667,Toulouse
+2376,MOREAUX Victor,28,200,127,France,2ème ligne,8,,,,,2,,237,Racing 92
+2382,BOURDEAU Rémi,29,195,108,France,3ème ligne,9,1,,,,1,,529,La Rochelle
+2394,TADJER Mike,32,183,118,France,Talonneur,10,,,,,1,,422,Perpignan
+2405,MACALOU Sekou,26,195,108,France,3ème ligne,10,2,,,,,,650,Paris
+2426,GIMENO Kévin,30,195,119,France,2ème ligne,3,,,,,,,101,Biarritz
+2441,CAZEAUX Cyril,27,198,117,France,2ème ligne,5,1,,,,,,241,Bordeaux
+2443,LESPIAUCQ Quentin,27,180,102,France,Talonneur,7,,,,,,,239,Pau
+2448,FORLETTA Enzo,27,175,117,France,Pilier,13,,,,,,,608,Montpellier
+2449,BRAZO Alan,29,192,105,France,3ème ligne,13,1,,,,1,,463,Perpignan
+2453,LUCU Maxime,29,177,79,France,Mêlée,12,,4,7,,,,629,Bordeaux
+2454,HAMDAOUI Kylan,27,182,91,France,Arrière,14,3,,,,1,,1016,Paris
+2464,POURAILLY Bastien,28,177,85,France,Ailier,3,,,,,,,191,Clermont
+2477,KLEMENCZAK Olivier,25,181,90,France,Centre,11,3,,,,,,544,Racing 92
+2492,BRIATTE Romain,29,194,107,France,3ème ligne,13,,,,,,,865,Paris
+2496,ÉTIEN Lester,26,181,102,France,Ailier,6,3,,,,,,284,Paris
+2500,PUJOL Jean-Bernard,29,193,94,France,Ailier,6,2,,,,,,385,Perpignan
+2501,FARNOUX Julien,28,185,90,France,Arrière,2,,,,,,,107,Perpignan
+2509,CHOUZENOUX Baptiste,28,202,107,France,3ème ligne,11,2,,,,,,752,Racing 92
+2510,CRAMOND Andy,27,196,115,Ecosse,2ème ligne,5,1,,,,,,340,Biarritz
+2512,CANCORIET Judicaël,25,194,114,France,3ème ligne,14,1,,,,,,1011,Clermont
+2520,NGAUAMO Paula,32,185,120,Tonga,Talonneur,10,,,,,,,316,Castres
+2523,MARCHAND Julien,26,181,108,France,Talonneur,9,,,,,,,383,Toulouse
+2533,SEPTAR Atila,25,195,104,France,Ailier,9,,,,,,,485,Toulon
+2542,TANGUY Mathieu,25,195,110,France,2ème ligne,6,,,,,,,163,La Rochelle
+2543,ROUDIL Eliott,25,184,97,France,Ailier,10,,,,,,,438,Pau
+2545,LAMBEY Félix,27,196,106,France,2ème ligne,14,,,,,1,,754,Lyon
+2547,SOBÉLA Patrick,29,188,105,France,3ème ligne,9,1,,,,,,571,Lyon
+2552,DE GIOVANNI Mathieu,28,197,115,France,2ème ligne,14,,,,,,,414,Paris
+2557,PRISO Dany,28,182,110,Cameroun,Pilier,14,,,,,2,,615,La Rochelle
+2558,DUPONT Antoine,25,174,85,France,Mêlée,10,2,,,,,,620,Toulouse
+2559,CHAT Camille,26,178,101,France,Talonneur,11,5,,,,2,,581,Racing 92
+2634,NAKARAWA Leone,34,200,125,Fidji,2ème ligne,10,1,,,,2,,688,Toulon
+2638,RUSSELL Finn,29,183,87,Ecosse,Ouverture,11,,,1,,,,579,Racing 92
+2644,BOTICA Ben,32,178,93,Nouvelle-Zélande,Ouverture,7,1,8,10,,1,,469,Castres
+2696,DOUGLAS Kane,32,202,123,Australie,2ème ligne,14,,,,,1,,1028,Bordeaux
+2717,O'CALLAGHAN Dave,32,195,112,Irlande,3ème ligne,7,,,,,,,457,Biarritz
+2763,ARDRON Tyler,30,197,112,Canada,3ème ligne,12,1,,,,1,,915,Castres
+2799,COBILAS Vadim,38,183,127,Moldavie,Pilier,10,,,,,,,383,Bordeaux
+2874,OLDING Stuart,28,180,92,Irlande,Centre,8,,2,,,,,539,Brive
+2883,DUCUING Nans,30,185,91,France,Arrière,8,1,,,,,,490,Bordeaux
+3021,ROUX Quinn,31,196,122,Afrique du sud,2ème ligne,8,,,,,,,422,Toulon
+3029,BRESLER Anton,34,200,114,Namibie,2ème ligne,6,,,,,,,221,Racing 92
+3036,DU PREEZ Cornell,30,192,115,Afrique du sud,3ème ligne,13,,,,,,,568,Toulon
+3072,LEES Mitch,33,196,120,Australie,2ème ligne,12,1,,,,2,,650,Brive
+3219,BROOKES Kieran,31,188,129,Angleterre,Pilier,13,,,,,,,527,Toulon
+3312,WILLEMSE Paul,29,201,126,Afrique du sud,2ème ligne,7,,,,,2,,379,Montpellier
+3326,BÉTHUNE Quentin,26,183,119,France,Pilier,6,,,,,,,172,Paris
+3327,HÉRITEAU Julien,27,182,96,France,Centre,7,,,,,,,444,Toulon
+3366,ITURRIA Arthur,27,198,112,France,3ème ligne,11,1,,,,,,792,Clermont
+3387,ALO-EMILE Paul,30,180,132,Australie,Pilier,11,,,,,1,1,536,Paris
+3391,TAMEIFUNA Ben,30,182,148,Nouvelle-Zélande,Pilier,14,1,,,,,,568,Bordeaux
+3404,FERNANDEZ Patricio,27,192,100,Argentine,Ouverture,6,,,,,,,268,Perpignan
+3416,PANIS Laurent,28,180,105,France,Talonneur,9,,,,,,,86,Paris
+3417,HALANUKONUKA Siua,35,186,120,Tonga,Pilier,11,,,,,,,515,Perpignan
+3419,CROS François,27,190,107,France,3ème ligne,10,1,,,,1,,688,Toulouse
+3427,BACHELIER Lucas,26,191,102,France,3ème ligne,10,,,,,,,482,Perpignan
+3431,GOMES SA Cedate,28,185,113,Portugal,Pilier,9,1,,,,,,284,Racing 92
+3449,TAKULUA Tane,31,178,96,Tonga,Mêlée,2,,,,,1,,41,Toulon
+3475,LIEBENBERG Wiaan,29,189,106,Afrique du sud,3ème ligne,9,,,,,,,649,La Rochelle
+3493,LARREGAIN Thomas,24,184,90,France,Arrière,1,,,1,,,,41,Castres
+3495,SEUTENI Ulupano,28,185,100,Australie,Centre,14,8,,,,,,852,Bordeaux
+3496,BELLEAU Anthony,25,177,85,France,Ouverture,14,1,6,15,,1,,591,Toulon
+3499,KAMIKAMICA Kitione,25,188,110,Fidji,3ème ligne,6,,,,,1,,231,Brive
+3527,RETIÈRE Arthur,24,173,75,France,Ailier,5,2,,,,,,319,La Rochelle
+3528,BLANC Julien,29,175,81,France,Mêlée,11,,,,,,,522,Toulon
+3529,TILSLEY George,29,196,100,Nouvelle-Zélande,Ailier,15,,,,,1,,767,Perpignan
+3543,HOLMES Zack,31,175,90,Australie,Ouverture,12,1,4,6,,1,,599,Toulouse
+3551,MELIKIDZE Giorgi,25,179,117,Géorgie,Pilier,14,,,,,,,588,Paris
+3564,SANGA Enzo,26,176,75,France,Mêlée,7,,,,,,,193,Brive
+3565,PENAUD Damian,25,192,96,France,Ailier,10,4,,,,1,,790,Clermont
+3566,NICOUÉ Alexandre,25,184,91,France,Ailier,1,,,,,,,20,Biarritz
+3567,RAKA Alivereti,27,189,103,Fidji,Ailier,10,5,,,,,,738,Clermont
+3568,TABIDZE Lasha,24,185,117,Géorgie,Pilier,1,,,,,,,22,Bordeaux
+3571,NAQALEVU Apisai,32,184,111,Fidji,Centre,3,1,,,,,,214,Clermont
+3578,RAISUQE Josaia,27,193,113,Fidji,Ailier,12,,,,,1,,472,Castres
+3581,CASTETS Clément,25,183,123,France,Pilier,2,,,,,,,57,Paris
+3582,DEVERGIE Martin,26,193,116,France,3ème ligne,5,,,,,,,56,Montpellier
+3603,GRAY Talalelei,31,194,114,Australie,3ème ligne,6,,,,,,,289,Paris
+3607,DUCAT Guillaume,25,205,115,France,2ème ligne,4,,,,,,,148,Pau
+3612,LAVEAU Martin,25,182,86,France,Ailier,7,3,,,,,,469,Castres
+3633,PLESSIS-COUILLAUD Brieuc,27,180,95,France,Centre,2,,,,,,,160,Biarritz
+3643,SOURY Bastien,26,180,105,France,Talonneur,11,3,,,,1,,647,Biarritz
+3643,SOURY Bastien,26,180,105,France,Talonneur,1,,,,,,,46,Toulon
+3698,ARRATÉ Alex,24,180,90,France,Centre,13,,,,,,,806,Paris
+3699,ROUMAT Alexandre,24,198,108,France,3ème ligne,10,,,,,,,661,Bordeaux
+3702,LABORDE Dorian,25,178,107,France,Ailier,5,,,,,,,258,Racing 92
+3702,LABORDE Dorian,25,178,107,France,Ailier,3,1,,,,,,174,Toulon
+3703,DACHARY Théo,24,184,97,France,Centre,3,,,,,,,158,Toulon
+3713,CAVUBATI Tevita,34,200,120,Fidji,2ème ligne,9,,,,,1,,352,Perpignan
+3715,RAVAI Peni,31,185,119,Fidji,Pilier,12,1,,,,,,499,Clermont
+3717,VOLAVOLA Ben,31,191,93,Fidji,Ouverture,7,,,1,,,,283,Racing 92
+3724,VEAINU Telusa,31,180,103,Tonga,Ailier,10,2,,,,2,,747,Paris
+3734,LOBZHANIDZE Vasil,25,175,76,Géorgie,Mêlée,12,1,,,,,,527,Brive
+3763,ETZEBETH Eben,30,203,122,Afrique du sud,2ème ligne,1,,,,,,,80,Toulon
+3766,NYAKANE Trevor,32,178,121,Afrique du sud,Pilier,3,,,,,,,106,Racing 92
+3768,POLLARD Handré,27,189,98,Afrique du sud,Ouverture,6,1,1,4,,,,323,Montpellier
+3789,MATSUSHIMA Kotaro,28,175,88,Japon,Arrière,10,,,,,,,792,Clermont
+3803,NANAI-WILLIAMS Tim,32,182,90,Samoa,Arrière,10,1,2,2,,,,402,Toulouse
+3804,MATU'U Motu,34,182,120,Samoa,Talonneur,5,1,,,,,,228,Brive
+3804,MATU'U Motu,34,182,120,Samoa,Talonneur,4,,,,,,,84,La Rochelle
+3813,LAMOSITELE Titi,27,183,132,Etats-Unis,Pilier,11,,,,,,,426,Montpellier
+3847,VITO Victor,34,192,112,Nouvelle-Zélande,3ème ligne,7,,,,,,,494,La Rochelle
+3855,FAUMUINA Charlie,35,184,130,Nouvelle-Zélande,Pilier,10,,,,,,,492,Toulouse
+3860,LANDAJO Martín,33,175,82,Argentine,Mêlée,6,,,,,,,223,Perpignan
+3861,CUBELLI Tomás,32,177,81,Argentine,Mêlée,9,4,,,,,,443,Biarritz
+3863,CORDERO Santiago,28,177,83,Argentine,Ailier,8,4,,,,,,640,Bordeaux
+3865,DE LA FUENTE Jerónimo,31,184,96,Argentine,Centre,7,1,,,,,,521,Perpignan
+3868,PETTI Guido,27,194,115,Argentine,2ème ligne,5,,,,,,,398,Bordeaux
+3877,BEALE Kurtley,33,184,96,Australie,Arrière,13,,,,,1,,893,Racing 92
+3886,KURIDRANI Tevita,30,192,102,Fidji,Centre,15,,,,,,,1033,Biarritz
+3888,SKELTON Will,29,203,140,Samoa,2ème ligne,8,2,,,,,1,543,La Rochelle
+3905,KERR-BARLOW Tawera,31,187,91,Nouvelle-Zélande,Mêlée,14,5,,,,1,,877,La Rochelle
+3931,OLMSTEAD Evan,31,198,115,Canada,2ème ligne,14,,,,,2,,668,Biarritz
+3938,SPEIGHT Henry,33,186,100,Fidji,Ailier,13,1,,,,3,,892,Biarritz
+3962,SERFONTEIN Jan,28,187,97,Afrique du sud,Centre,10,1,,,,1,,741,Montpellier
+3977,TAUFETE'E Joe,29,183,125,Etats-Unis,Talonneur,4,,,,,1,,127,Lyon
+3988,NAKOSI Filipo,29,182,108,Fidji,Ailier,13,1,,,,,,887,Castres
+3990,DUPICHOT Louis,26,183,86,France,Ailier,6,,,,,,,294,Racing 92
+3991,IKPEFAN Daniel,28,185,92,France,Ailier,5,1,,,,,,378,Pau
+4037,SAILI Francis,31,180,100,Nouvelle-Zélande,Centre,15,4,,,,1,,1189,Biarritz
+4085,DELANNOY Julien,26,198,123,France,2ème ligne,6,,,,,,,329,Pau
+4088,NARISIA Peniami Nasali,24,187,104,Fidji,Talonneur,8,2,,,,,,312,Brive
+4142,JELONCH Anthony,25,193,105,France,3ème ligne,10,3,,,,,,630,Toulouse
+4151,BUROS Romain,24,187,97,France,Arrière,11,2,,,,,,773,Bordeaux
+4169,REILHAC Yvan,26,182,94,France,Centre,4,,,,,,,137,Montpellier
+4219,DECRON Nathan,24,184,96,France,Centre,13,,,,,1,,829,Pau
+4227,MIQUEL Antoine,27,192,109,France,3ème ligne,12,2,,,,,,710,Toulouse
+4286,WARDI Reda,26,185,110,France,Pilier,11,,,,,2,,431,La Rochelle
+4306,GORGADZE Béka,26,189,106,Géorgie,3ème ligne,13,2,,,,,,797,Pau
+4319,HABEL-KUEFFNER Giovanni,27,190,110,Samoa,3ème ligne,15,2,,,,,,908,Pau
+4332,CAPELLI Mickaël,24,198,126,France,2ème ligne,2,1,,,,,,86,Montpellier
+4337,CROS Geoffrey,24,185,85,France,Ailier,3,1,,,,,1,169,Bordeaux
+4339,WALCKER Quentin,26,181,105,France,Pilier,12,,,,,,,556,Castres
+4344,JONES Luke,30,197,111,Australie,2ème ligne,12,,,,,2,,757,Racing 92
+4359,TUICUVU Setariki,26,179,95,Fidji,Arrière,11,2,,,,1,,765,Brive
+4360,LE BAIL Clovis,26,173,74,France,Mêlée,16,3,1,3,,,,857,Pau
+4362,COUILLOUD Baptiste,24,176,84,France,Mêlée,8,7,,,,,,420,Lyon
+4364,PAÏVA Thierry,26,184,125,France,Pilier,13,,,,,,,603,Bordeaux
+4378,OZ Ali,26,193,140,France,Pilier,8,,,,,,,428,Racing 92
+4381,FOURCADE Etienne,24,180,103,France,Talonneur,12,1,,,,,,475,Clermont
+4382,JOLMÈS Thomas,26,204,127,France,2ème ligne,14,,,,,,,621,Bordeaux
+4384,TAUZIN Lucas,23,187,98,France,Centre,13,1,,,,,,914,Toulouse
+4385,BARRY Steeve,30,181,89,France,Ailier,7,,,,,,,320,Biarritz
+4387,LABOUTELEY Tristan,26,202,107,France,2ème ligne,10,,,,,1,,743,Perpignan
+4390,TISSERON Julien,26,183,86,France,Ailier,12,3,,,,,,711,Montpellier
+4403,GODENER Loïc,26,188,116,France,3ème ligne,8,1,,,,,,392,Paris
+4410,BEKOSHVILI Soso,28,180,116,Géorgie,Pilier,10,,,,,,,362,Brive
+4412,GIGASHVILI Beka,30,177,116,Géorgie,Pilier,12,,,,,,,730,Toulon
+4416,REY Lucas,24,175,98,France,Talonneur,15,,,,,,,728,Pau
+4418,PALU Boris,26,194,113,France,2ème ligne,11,2,,,,,,699,Racing 92
+4419,VOISIN Matthieu,25,193,104,France,3ème ligne,13,,,,,,,736,Brive
+4422,COVILLE Arthur,24,178,83,France,Mêlée,17,2,2,,,1,,730,Paris
+4424,REBBADJ Swan,27,202,116,France,2ème ligne,12,,,,,1,,800,Toulon
+4428,SCLAVI Joel,27,190,144,Argentine,Pilier,2,,,,,1,,91,La Rochelle
+4430,PESENTI Baptiste,24,195,122,France,2ème ligne,5,,,,,,,202,Racing 92
+4433,GALLETIER Guillaume,24,178,98,France,Centre,11,,,,,1,,498,Brive
+4448,HASTOY Antoine,24,180,86,France,Ouverture,14,4,15,31,2,,,995,Pau
+4463,JANSE VAN RENSBURG Nicolaas,27,200,112,Afrique du sud,2ème ligne,4,,,,,,,179,Montpellier
+4482,BULIRUARUA Riko,25,186,106,Fidji,Centre,13,2,,,,1,,540,La Rochelle
+4493,BRENNAN Daniel,23,192,132,Irlande,Pilier,10,,,,,1,,279,Brive
+4496,PICQUETTE Rémi,27,200,117,France,2ème ligne,9,2,,,,,,462,La Rochelle
+4497,POPELIN Pierre,26,181,87,France,Ouverture,13,,8,7,,1,,551,La Rochelle
+4509,BOUDEHENT Pierre,24,196,105,France,Ailier,6,,,,,,,164,La Rochelle
+4520,HALL James,26,173,88,Afrique du sud,Mêlée,15,1,,,,,,621,Paris
+4523,DEVISME Vivien,29,175,112,France,Pilier,7,,,,,,,274,Lyon
+4531,CALLES Ignacio,26,187,116,Argentine,Pilier,12,,,,,,,388,Pau
+4532,MULLER Axel,28,186,94,Argentine,Ailier,15,2,,,,,,1011,Brive
+4590,DEGHMACHE Sadek,26,176,88,France,Mêlée,13,,,,,1,,593,Perpignan
+4609,HIRIGOYEN Mathieu,23,194,103,France,3ème ligne,16,,,,,1,,1138,Biarritz
+4610,PEYRESBLANQUES Lucas,24,181,103,France,Talonneur,3,2,,,,,,121,Biarritz
+4617,KORNATH Kévin,25,196,110,France,3ème ligne,14,3,,,,1,,698,Castres
+4660,TEDDER Tristan,25,180,80,Afrique du sud,Ouverture,14,2,10,11,2,,,1019,Perpignan
+4664,UBERTI Pablo,24,185,91,France,Centre,1,,,,,,,62,Bordeaux
+4670,MARAIS Retief,26,194,109,Afrique du sud,3ème ligne,15,,,,,1,,922,Brive
+4677,ZAFRA Andrés,25,197,116,Colombie,2ème ligne,9,1,,,,2,,445,Brive
+4679,KAABÈCHE Hamza,25,188,118,France,Pilier,6,,,,,2,,169,Lyon
+4681,HAOUAS Mohamed,27,185,127,France,Pilier,10,,,,,,,510,Montpellier
+4686,SETIANO Emerick,25,183,114,France,Pilier,7,,,,,1,,138,Toulon
+4691,BEHEREGARAY Yohan,25,180,104,France,Talonneur,13,5,,,,1,,555,Clermont
+4723,BOUTHIER Anthony,29,182,86,France,Arrière,13,2,1,1,1,,,981,Montpellier
+4750,SAWAILAU Eddie,25,182,102,Fidji,Ailier,1,,,,,,,22,Perpignan
+4753,DOUGLAS Wesley,25,183,90,Angleterre,Centre,7,1,,,,,,446,Brive
+4760,LUCAS Pierre,24,183,90,France,Centre,10,2,,,,,,353,Montpellier
+4763,MAUVAKA Péato,25,184,124,France,Talonneur,10,2,,,,,,407,Toulouse
+4766,TAFILI Paulo,26,183,132,France,Pilier,10,,,,,1,,372,Toulouse
+4793,CAREY Conor,30,183,128,Irlande,Pilier,2,,,,,,,78,Perpignan
+4822,THOMPSON-STRINGER Hayden,27,190,121,Angleterre,Pilier,9,1,,,,,,371,Brive
+4838,HERRON Brett,26,183,95,Angleterre,Ouverture,13,1,15,24,1,,,730,Biarritz
+4845,BARASSI Pierre-Louis,23,188,93,France,Centre,5,2,,,,,,349,Lyon
+4846,CRETIN Dylan,24,195,105,France,3ème ligne,12,2,,,,,,837,Lyon
+4847,GIUDICELLI Vincent,24,184,104,France,Talonneur,12,,,,,,,364,Montpellier
+4903,MERCER Zach,24,191,111,Angleterre,3ème ligne,14,1,,,,,,899,Montpellier
+4982,ROELOFSE Nemo,26,182,120,Afrique du sud,Pilier,9,,,,,,,224,Paris
+4987,EL FAKIR Zakaria,25,180,112,France,Pilier,1,,,,,,,19,Biarritz
+4988,SEGONDS Joris,24,180,91,France,Ouverture,16,,13,41,1,,,1037,Paris
+4991,GIORGADZE Otar,25,193,109,Géorgie,3ème ligne,7,,,,,,,265,Brive
+4992,BAUBIGNY Teddy,23,187,111,France,Talonneur,14,,,,,,,521,Racing 92
+4994,FA'ASO'O So'otala,27,194,136,Samoa,3ème ligne,7,3,,,,,,383,Brive
+4998,MOALA George,31,187,106,Tonga,Centre,10,2,,,,,,697,Clermont
+5002,ARNOLD Rory,31,208,120,Australie,2ème ligne,12,2,,,,,,678,Toulouse
+5008,TIMANI Lopeti,31,193,125,Tonga,3ème ligne,9,1,,,,,,380,Toulon
+5009,NAIVALU Sefa,30,186,101,Fidji,Ailier,3,1,,,,,,229,Paris
+5010,LATU Tolu,29,180,113,Tonga,Talonneur,14,1,,,,4,,837,Paris
+5042,SOPOAGA Lima,31,175,91,Nouvelle-Zélande,Ouverture,8,,7,4,1,,,295,Lyon
+5043,DIXON Elliot,32,193,111,Nouvelle-Zélande,3ème ligne,10,,,,,,,746,Biarritz
+5069,TOLOFUA Selevasio,24,186,116,France,3ème ligne,16,3,,,,,,908,Toulouse
+5070,LAGRANGE Samuel,25,182,97,France,Talonneur,11,,,,,,,189,La Rochelle
+5082,NTAMACK Romain,22,186,86,France,Ouverture,11,4,7,2,,,,802,Toulouse
+5088,VERHAEGHE Florian,24,203,110,France,2ème ligne,14,,,,,,,844,Montpellier
+5090,KOLBE Cheslin,28,171,80,Afrique du sud,Ailier,3,,,,,,,240,Toulon
+5092,LAM Seilala,33,183,110,Samoa,Talonneur,5,1,,,,,,234,Perpignan
+5124,FRANCOZ Charlie,23,195,108,France,3ème ligne,4,,,,,,,197,Paris
+5125,ALAINU'UESE Brian,27,202,135,Samoa,2ème ligne,10,1,,,,1,,621,Toulon
+5131,REY Jérôme,26,183,112,France,Pilier,13,,,,,,,520,Lyon
+5142,BOSCH Facundo,30,180,100,Argentine,Talonneur,4,1,,,,,,130,La Rochelle
+5148,SALLES Thomas,25,186,91,France,Arrière,6,1,,1,,,,390,Toulon
+5151,COLOMBET Mathias,24,189,92,France,Arrière,14,1,,,,1,,704,Pau
+5154,ERU Shahn,32,196,111,Îles Cook,2ème ligne,12,1,,,,,,471,Perpignan
+5165,GIBERT Antoine,24,177,76,France,Ouverture,16,1,9,8,,,,697,Racing 92
+5167,JALIBERT Matthieu,23,184,86,France,Ouverture,10,3,17,18,,2,,548,Bordeaux
+5169,LAMOTHE Maxime,23,184,109,France,Talonneur,13,1,,,,1,,639,Bordeaux
+5175,CARBONEL Louis,23,180,88,France,Ouverture,14,,12,23,,,,770,Toulon
+5177,ALLDRITT Greg,24,191,115,France,3ème ligne,10,3,,,,,,768,La Rochelle
+5178,BOURGARIT Pierre,24,184,105,France,Talonneur,13,1,,,,3,,873,La Rochelle
+5181,CORATO Nicolas,24,184,123,France,Pilier,17,,,,,1,,825,Pau
+5191,WOKI Cameron,23,196,109,France,3ème ligne,10,2,,,,,,652,Bordeaux
+5193,SÉNÉCA Rémi,27,185,113,France,Pilier,6,,,,,,,157,Pau
+5217,BERDEU Léo,23,195,99,France,Ouverture,17,5,19,39,,,,956,Lyon
+5256,DARMON Thomas,23,181,89,France,Centre,8,,1,1,,,,455,Montpellier
+5258,BITUNIYATA Setareki,26,194,112,Fidji,Ailier,11,3,,,,1,,780,Brive
+5266,TANGA-MANGENE Yoan,25,185,108,France,3ème ligne,14,1,,,,,,887,Racing 92
+5276,COLOMBE Georges-Henri,23,193,135,France,Pilier,10,,,,,1,,433,Racing 92
+5277,KOLINGAR Hassane,23,186,116,France,Pilier,15,1,,,,1,,575,Racing 92
+5291,N'GANDEBE Gabriel,24,174,75,France,Ailier,6,,,,,,,356,Montpellier
+5292,TCHEISHVILI Ushangi,24,178,113,Géorgie,Pilier,4,,,,,,,134,Biarritz
+5313,CORDIN Gervais,23,172,73,France,Arrière,11,,,,,,,704,Toulon
+5314,GÉRACI Kilian,22,200,115,France,2ème ligne,10,,,,,,,608,Lyon
+5330,RHULE Raymond,29,189,88,Afrique du sud,Ailier,14,1,,,,,,951,La Rochelle
+5332,LEYDS Dillyn,29,183,88,Afrique du sud,Ailier,12,5,,,,,,871,La Rochelle
+5362,LAPORTE Clément,24,181,87,France,Arrière,10,,,,,1,,517,Lyon
+5364,YAMÉOGO Kévin,24,193,125,France,Pilier,2,,,,,,,33,Pau
+5366,PAPIDZE Guram,24,187,125,Géorgie,Pilier,9,1,,,,,,283,La Rochelle
+5370,VILI Tani,21,187,112,France,Centre,12,3,,,,,,622,Clermont
+5378,GROS Jean-Baptiste,22,187,110,France,Pilier,9,,,,,,,467,Toulon
+5379,ZEGHDAR Antoine,22,198,103,France,Centre,10,,,,,,,410,Castres
+5380,SMAÏLI Mathieu,22,180,88,France,Ouverture,2,,,,,,,64,Toulon
+5435,FALATEA Sipili,24,184,116,France,Pilier,3,,,,,,,68,Clermont
+5464,APRASIDZE Gela,24,175,75,Géorgie,Mêlée,6,2,,1,,1,,214,Montpellier
+5466,BÉCOGNÉE Alexandre,25,188,108,France,3ème ligne,12,1,,,,,,848,Montpellier
+5467,MA'AFU Nafi,23,201,110,Etats-Unis,2ème ligne,3,,,,,,,86,Perpignan
+5470,LAUMAPE Ngani,28,171,103,Nouvelle-Zélande,Centre,16,,,,,,,1058,Paris
+5472,VERGNAUD François,24,190,103,France,Centre,4,,,,,,,186,Biarritz
+5534,DELHOMMEL Youri,25,181,101,France,Talonneur,11,2,,,,,,355,Pau
+5535,AZAGOH Pierre-Henri,23,198,105,France,2ème ligne,14,,,,,,,801,Paris
+5540,DELAPORTE Baptiste,24,190,112,France,3ème ligne,10,,,,,1,,507,Castres
+5550,OJOVAN Cristian,25,183,120,Moldavie,Pilier,15,,,,,,,739,Clermont
+5552,FISCHER Alexandre,24,188,107,France,3ème ligne,7,,,,,1,,416,Clermont
+5553,MARCHAND Guillaume,23,183,102,France,Talonneur,14,,,,,,,681,Lyon
+5555,THOMAS Cody,25,186,124,Afrique du sud,Pilier,1,,,,,,,56,Brive
+5558,FERNANDEZ Jérémy,24,176,86,France,Mêlée,13,1,,,,,,484,Castres
+5562,SAMARAN Quentin,24,173,113,France,Pilier,12,,,,,1,,276,Biarritz
+5568,VAN TONDER Jaco,23,197,118,Afrique du sud,2ème ligne,9,,,,,,,398,Clermont
+5569,VELARTE Lucas,23,185,108,France,Talonneur,15,2,,,,,,636,Perpignan
+5577,KREMER Marcos,24,200,116,Argentine,3ème ligne,8,,,,,1,,485,Paris
+5589,FISI'IHOI Siegfried,34,184,125,Tonga,Pilier,14,,,,,1,,790,Pau
+5592,ELSTADT Rynhardt,32,198,120,Afrique du sud,3ème ligne,1,,,,,1,,20,Toulouse
+5594,DA SILVA Lucas,24,188,115,France,Talonneur,11,,,,,1,,420,Paris
+5599,HERVÉ Enzo,23,177,90,France,Ouverture,14,2,11,26,1,,1,1001,Brive
+5600,VINCENT Arthur,22,183,90,France,Centre,4,2,,,,,,257,Montpellier
+5609,TAGITAGIVALU Lekima,26,193,109,Fidji,3ème ligne,9,,,,,,1,371,Pau
+5622,REINACH Cobus,32,175,85,Afrique du sud,Mêlée,9,7,,,,,,584,Montpellier
+5708,MAHU Andreï,30,205,124,Moldavie,2ème ligne,12,,,,,1,,708,Perpignan
+5810,ROUSSEL Alban,23,196,110,France,2ème ligne,9,1,,,,,,319,Bordeaux
+5812,NOSTADT Julius,29,185,118,Allemagne,Pilier,1,,,,,,,19,Castres
+5822,TYRELL Josh,31,194,116,Samoa,2ème ligne,9,1,,,,,,412,Biarritz
+5849,WHITELOCK Luke,31,190,116,Nouvelle-Zélande,3ème ligne,11,,,,,,,869,Pau
+5858,BAMBA Demba,23,185,124,France,Pilier,10,1,,,,,,589,Lyon
+5859,CHAUVAC Simon-Pierre,23,190,119,France,Pilier,10,,,,,,,528,Brive
+5869,CUMMINS Steven,29,202,120,Australie,2ème ligne,14,,,,,,,784,Pau
+5878,AHKI Pita,29,189,97,Nouvelle-Zélande,Centre,12,,,,,,,896,Toulouse
+5880,WEST Ihaia,30,175,85,Nouvelle-Zélande,Ouverture,9,3,19,21,,,,692,La Rochelle
+5881,NGATAI Charlie,31,188,104,Nouvelle-Zélande,Centre,12,2,,,,1,,832,Lyon
+5904,TAUFUA Jordan,30,187,110,Samoa,3ème ligne,15,4,,,,,,1023,Lyon
+5907,AOUF Léo,24,182,119,France,Pilier,7,,,,,,,209,La Rochelle
+5908,JOSEPH Jordan,21,190,124,France,3ème ligne,8,2,,,,,,491,Pau
+5908,JOSEPH Jordan,21,190,124,France,3ème ligne,2,,,,,,,53,Racing 92
+5909,BARLOT Gaëtan,24,184,107,France,Talonneur,13,2,,,,,,799,Castres
+5910,DUGUIVALU Alivereti,24,180,85,Fidji,Centre,12,3,,,,,,741,Perpignan
+6008,CHAPUIS Ryan,24,189,105,France,3ème ligne,6,1,,,,,,335,Paris
+6020,HENRY Zack,27,182,89,Angleterre,Ouverture,10,,5,16,1,,,680,Pau
+6023,ALO-EMILE Moses,22,187,130,Australie,Pilier,13,1,,,,,,591,Paris
+6039,ABADIE Esteban,24,188,95,France,3ème ligne,9,,,,,,,579,Brive
+6046,LUC Aymeric,24,180,81,France,Arrière,14,3,,,,,,1094,Toulon
+6053,DELIBES Dimitri,22,190,85,France,Ailier,4,1,,,,,,151,Toulouse
+6066,TOURNEBIZE Pierre,23,186,99,France,Ailier,5,1,,,,,,266,Brive
+6069,LAPÈGUE Adrien,23,181,88,France,Ailier,7,,,,,,,483,Paris
+6074,MILLAR Guy,29,186,125,Australie,Pilier,10,,,,,2,,624,Biarritz
+6080,VIALLARD Kévin,21,174,78,France,Mêlée,12,,,,,,,116,Clermont
+6109,BARKA Rayne,23,180,103,France,Talonneur,1,,,,,,,44,Pau
+6141,PAENGA-AMOSA Brandon,26,183,117,Nouvelle-Zélande,Talonneur,4,1,,,,,,186,Montpellier
+6149,DELGUY Bautista,24,182,83,Argentine,Ailier,6,,,,,,,404,Perpignan
+6174,JALAGONIA Tornike,23,188,105,Géorgie,3ème ligne,14,1,,,,1,,818,Biarritz
+6271,LEE Nico,27,180,89,Afrique du sud,Centre,6,,,,,,,419,Brive
+6296,DWEBA Joseph,26,180,108,Afrique du sud,Talonneur,3,,,,,,,105,Bordeaux
+6346,LEBEL Matthis,22,185,91,France,Ailier,11,2,,,,,,833,Toulouse
+6408,MALLIA Juan Cruz,25,182,92,Argentine,Centre,5,4,,,,,,277,Toulouse
+6578,BARRETT Eoghan,22,183,86,Irlande,Ailier,4,1,,,,,,228,Pau
+6627,TOKOLAHI Siate,29,184,116,Tonga,Pilier,15,,,,,,,502,Pau
+6650,RATUVA Tevita,26,198,120,Fidji,2ème ligne,13,1,,,,1,,736,Brive
+6651,MADDOCKS Jack,25,194,96,Australie,Arrière,4,1,,,,,,284,Pau
+6664,PAIA'AUA Duncan,27,183,92,Nouvelle-Zélande,Centre,6,2,,,,1,,470,Toulon
+6688,ARNOLD Richie,31,208,127,Australie,2ème ligne,9,,,,,,,411,Toulouse
+6723,STANIFORTH Thomas,27,198,119,Australie,2ème ligne,16,,,,,,,1166,Castres
+6725,ROACH Hugh,29,178,108,Australie,Talonneur,3,,,,,,,119,Perpignan
+6730,SHORT Mitch,26,178,82,Australie,Mêlée,4,,,,,,,71,Racing 92
+6737,KARKADZE Vano,21,179,114,Géorgie,Talonneur,10,1,,,,,,370,Brive
+6738,SAGHINADZE Beka,23,192,108,Géorgie,3ème ligne,8,2,,,,,,561,Lyon
+6739,NUTSUBIDZE Giorgi,23,178,116,Géorgie,Pilier,11,,,,,1,,399,Biarritz
+6740,JAPARIDZE Luka,23,180,125,Géorgie,Pilier,13,,,,,1,,607,Brive
+6769,LAM Ben,30,194,114,Nouvelle-Zélande,Ailier,12,4,,,,1,,948,Bordeaux
+6783,FAINGA'A Colby,30,183,105,Australie,3ème ligne,11,1,,,,1,,596,Lyon
+6872,MANU Tumua,28,183,97,Nouvelle-Zélande,Centre,16,2,,,,1,,1160,Pau
+6933,BIBI BIZIWU Daniel,20,183,112,France,Pilier,3,,,,,,,150,Clermont
+6946,DIALLO Ibrahim,24,193,109,France,3ème ligne,14,3,,,,,,914,Racing 92
+6951,LAVAULT Thomas,22,199,105,France,2ème ligne,15,1,,,,,,627,La Rochelle
+6987,JOUANNET Enzo,22,183,109,France,Talonneur,1,,,,,,,1,Brive
+6992,VANVERBERGHE Florent,21,195,120,France,2ème ligne,16,2,,,,1,,881,Castres
+7000,BERIA Giorgi,22,175,108,France,Pilier,7,,,,,1,,183,Clermont
+7001,FAVRE Jules,22,181,90,France,Ailier,14,7,,,,,,1057,La Rochelle
+7026,MOEFANA Yoram,21,182,97,France,Centre,12,2,,,,1,,826,Bordeaux
+7031,GOGICHASHVILI Guram,23,183,118,Géorgie,Pilier,12,,,,,,,507,Racing 92
+7053,AINU'U David,22,178,125,Etats-Unis,Pilier,7,,,,,1,,172,Toulouse
+7071,BOUDEHENT Paul,22,193,100,France,3ème ligne,12,,,,,1,,606,La Rochelle
+7091,BERJON Thomas,23,177,87,France,Mêlée,9,,,,,,,233,La Rochelle
+7138,KPOKU Joel,22,196,126,Angleterre,2ème ligne,1,,,,,,,33,Lyon
+7168,KHARAISHVILI Gia,23,180,120,Géorgie,Pilier,5,,,,,,,121,Racing 92
+7169,PAGE-RELO Martin,23,173,71,France,Mêlée,3,,,,,,,7,Toulouse
+7184,BEN-NICHOLAS Teariki,26,195,110,Nouvelle-Zélande,3ème ligne,8,2,,,,,,473,Castres
+7192,VERGNES-TAILLEFER Bastien,24,194,114,France,3ème ligne,12,1,,,,,,571,Bordeaux
+7212,ABZHANDADZE Tedo,22,177,80,Géorgie,Ouverture,6,,1,5,,,,272,Brive
+7245,ARATA Santiago,25,174,78,Uruguay,Mêlée,10,1,,,,,,398,Castres
+7277,MORETTI Simon,21,180,84,France,Ailier,1,,,,,,,80,Toulon
+7299,JURAND Joris,26,188,96,France,Ailier,16,3,,,,,,961,Brive
+7304,HEWAT Reece,24,194,110,Australie,3ème ligne,8,,,,,,,292,Pau
+7310,PINTO Vincent,22,187,93,France,Ailier,6,,,,,,,246,Pau
+7315,TIBERGHIEN Cheikh,22,186,96,France,Arrière,10,3,,,,,,553,Clermont
+7318,DEVAUX Bruce,25,183,108,France,Pilier,7,,,,,,,278,Toulon
+7320,RODOR Matteo,22,170,72,France,Mêlée,10,1,3,1,,,,346,Perpignan
+7324,BAGGIANI Enzo,21,185,115,France,Pilier,2,,,,,,,11,Bordeaux
+7337,MEAFOU Emmanuel,23,203,145,Australie,2ème ligne,5,1,,,,,,303,Toulouse
+7397,GARBISI Paolo,21,183,93,Italie,Ouverture,11,,17,28,1,,,795,Montpellier
+7398,MORI Federico,21,188,108,Italie,Centre,8,3,,,,1,,367,Bordeaux
+7494,HAMONOU Thibaut,21,195,108,France,3ème ligne,3,,,,,,,138,Pau
+7501,PAULOS Lucas,24,199,123,Argentine,2ème ligne,8,,,,,,1,486,Brive
+7504,CHOCOBARES Santiago,22,188,91,Argentine,Centre,2,1,,,,,,160,Toulouse
+7512,VAN DER MESCHT JJ,22,200,135,Afrique du sud,2ème ligne,15,,,,,2,,500,Paris
+7571,GERMAIN Baptiste,21,174,82,France,Mêlée,7,,,,,,,383,Toulouse
+7647,WARION Adrien,21,202,115,France,2ème ligne,5,,,,,,,140,Toulon
+7657,AURREKOETXEA Kerman,21,178,79,Espagne,Mêlée,2,1,,,,,,160,Biarritz
+7670,DUMORTIER Ethan,21,192,93,France,Centre,11,2,,,,1,,725,Lyon
+7681,LOTRIAN Sacha,21,180,106,France,Pilier,15,2,,,,1,,650,Perpignan
+7683,DANOVARO Tom,20,180,84,France,Ouverture,1,,,,,,,18,Brive
+7696,MALLEZ Paul,21,180,118,France,Pilier,5,,,,,,,113,Toulouse
+7725,PERCILLIER Will,23,180,84,France,Mêlée,2,,,,,,,20,Paris
+7727,SPRING Max,20,173,75,France,Arrière,5,1,,,,,,385,Racing 92
+7728,VILLIÈRE Gabin,26,180,93,France,Ailier,6,,,,,,,480,Toulon
+7733,ORY Julien,25,180,95,France,3ème ligne,12,,,,,1,,485,Toulon
+7735,DAKUWAQA Masivesi,28,190,122,Fidji,Ailier,10,2,,,,,,438,Montpellier
+7744,RENAUD Clément,22,186,110,France,Talonneur,9,1,,,,,,134,Biarritz
+7749,GUILLARD Mickaël,21,197,108,France,3ème ligne,4,,,,,,,88,Lyon
+7763,LANEN Clément,23,195,105,France,3ème ligne,3,,,,,,,140,Clermont
+7764,LANEN Thibault,23,198,110,France,2ème ligne,10,,,,,,,552,Clermont
+7774,VICI Josua,28,189,107,Fidji,Ailier,4,,,,,,,218,Montpellier
+7805,JAMINET Melvyn,22,180,80,France,Arrière,9,,10,28,,,,719,Perpignan
+7834,LEBRUN Brendan,24,181,110,France,Talonneur,8,,,,,,,217,Castres
+7892,HADDAD Matthias,20,193,99,France,3ème ligne,5,1,,,,,,136,La Rochelle
+7940,LACHAISE Jean-Baptiste,20,190,100,France,3ème ligne,1,,,,,,,7,Bordeaux
+7946,HUMBERT Brice,25,178,110,France,Talonneur,3,,,,,,,28,Castres
+7954,STARK Gavin,26,184,96,Nouvelle-Zélande,Ailier,12,,,,,1,,774,Biarritz
+7955,DESSAIGNE Lucas,23,188,102,France,3ème ligne,9,1,,,,1,,240,Clermont
+7968,COUILLOUD Barnabé,23,178,83,France,Mêlée,14,2,,,,,,656,Biarritz
+7984,TAOFIFENUA Donovan,22,179,84,France,Ailier,14,3,,,,,,1036,Racing 92
+8044,BOUDOU Benjamin,19,182,102,France,Talonneur,2,,,,,,,27,Clermont
+8100,AZARIASHVILI Luka,22,186,118,Géorgie,Pilier,11,,,,,1,,522,Biarritz
+8109,JINTCHARADZE Vakhtang,22,187,116,Géorgie,Pilier,1,,,,,,,39,Perpignan
+8140,CRAMONT Guillaume,21,183,100,France,Talonneur,6,1,,,,,,336,Toulouse
+8150,ERDOCIO Baptiste,21,173,113,France,Pilier,9,,,,,,,114,Biarritz
+8165,DIMCHEFF Pablo,22,182,104,Argentine,Talonneur,3,,,,,,,71,Bordeaux
+8219,TIREFORT Valentin,23,186,86,France,Ailier,1,,,,,,,24,Brive
+8224,BARRÉ Léo,19,189,89,France,Ouverture,13,,,5,,,,496,Paris
+8225,CHEZEAU Jean,20,173,74,France,Ouverture,1,,,,,,,2,Racing 92
+8246,DUGUID Tyler,21,196,124,Canada,2ème ligne,2,,,,,,,59,Montpellier
+8249,ALONSO Martin,22,182,88,Espagne,Ailier,2,,,,,,,99,La Rochelle
+8266,HULLEU Nathanaël,21,178,85,France,Ailier,2,2,,,,,,160,Bordeaux
+8287,ÉPÉE Nelson,21,174,74,France,Ailier,1,,,,,,,80,Toulouse
+8290,IDJELLIDAINE Théo,20,168,71,France,Mêlée,1,,,,,,,0,Toulouse
+8291,AUSSET Paul Arnaud,22,190,100,France,3ème ligne,2,,,,,,,12,Toulouse
+8294,BRENNAN Joshua,20,199,114,Irlande,2ème ligne,6,,,,,,,106,Toulouse
+8295,YOUYOUTTE Yannick,22,198,120,France,2ème ligne,11,,,,,,,459,Toulouse
+8378,LE CORVEC Mattéo,21,192,113,France,3ème ligne,2,,,,,,,43,Toulon
+8406,CAROL Thomas,21,179,82,France,Arrière,3,,,,,,,128,Pau
+8432,HALAGAHU Matthias,20,194,113,France,2ème ligne,4,,,,,,,124,Toulon
+8436,REBBADJ Rayan,22,190,90,France,Ailier,2,,,,,,1,158,Toulon
+8441,DE BENEDITTIS Wayan,22,185,115,France,Pilier,12,,,,,,,363,Castres
+8578,BORDENAVE Téo,20,189,121,France,Pilier,2,,,,,,,25,Pau
+8654,FOURSANS-BOURDETTE Louis,20,171,81,France,Ouverture,10,,7,8,,,,280,Montpellier
+8658,RODGERS Robert,20,182,107,Afrique du sud,Pilier,2,,,,,,,16,Montpellier
+8778,TAPUELUELU Wesley,22,180,114,Tonga,Pilier,8,,,,,1,,219,Brive
+8867,SOSENE-FEAGAI Michelangelo,28,185,107,Samoa,Talonneur,12,1,,,,1,,332,Toulon
+8874,TAOFIFENUA Killian,21,178,104,France,Talonneur,1,,,,,1,,20,Perpignan
+8875,DUBOIS Lucas,23,188,92,France,Ailier,11,2,,,,,,639,Perpignan
+8929,MICHET Gabin,20,180,83,France,Ouverture,6,,,,1,,,183,Clermont
+8930,LE GARREC Nolann,19,175,75,France,Mêlée,10,2,5,9,,,,426,Racing 92
+8962,FLAMENT Thibaud,24,203,116,France,2ème ligne,11,,,,,,,589,Toulouse
+9051,DEBAËS Thibault,20,179,85,France,Ouverture,5,1,2,1,,1,,235,Pau
+9077,DYER Johnny,30,190,112,Fidji,2ème ligne,16,2,,,,1,,1143,Biarritz
+9187,KAFATOLU Mateaki,32,183,105,Nouvelle-Zélande,3ème ligne,1,,,,,,,74,Castres
+9231,PIETERSE Ryno,23,197,114,Afrique du sud,2ème ligne,3,,,,,,1,84,Castres
+9321,GARCIA Matéo,19,174,79,France,Ouverture,4,,1,,,,,31,Bordeaux
+9376,WILLIAM Théo,21,194,109,France,3ème ligne,3,,,,,,,87,Lyon
+9651,YEMSI Eliott,19,181,121,France,Pilier,1,,,,,,,0,Toulon
+9719,LE BRUN Louis,19,190,96,France,Centre,1,,,,,,,80,Castres
+9731,TUIMABA Aminiasi,26,185,96,Fidji,Ailier,12,3,,,,,1,907,Pau
+9771,CHAMP Paul,21,188,89,France,Ailier,2,,,,,,,105,Paris
+9778,LEVRON Alexis,21,169,76,France,Mêlée,7,,,,,,,152,Pau
+9789,BOCHATON Pierre,20,200,100,France,2ème ligne,2,,,,,,,95,Bordeaux
+9866,BOTITU Vilimoni,23,179,93,Fidji,Centre,12,3,,,,,,847,Castres
+9889,AMATOSERO Miles,19,203,125,Australie,2ème ligne,4,,,,,,,163,Clermont
+9892,ANNANDALE Edward,21,200,116,Nouvelle-Zélande,2ème ligne,3,,,,,,,93,Clermont
+9971,JONAS Joe,21,180,90,Afrique du sud,Arrière,8,2,,,,,,403,Biarritz
+10004,SÉGUÉLA Nino,20,177,81,France,Ailier,2,,,,,,,79,Perpignan
+10021,JAUNEAU Baptiste,18,178,81,France,Mêlée,1,,,,,,,10,Clermont
+10251,DANGLOT Jules,20,170,74,France,Mêlée,12,,,,,,,276,Toulon
+10307,GREYLING Ru-Hann,22,181,102,Afrique du sud,Talonneur,1,,,,,,,44,Montpellier
+10350,DOAN Martin,23,176,76,France,Mêlée,5,1,,,,,,331,Montpellier
+10468,OBATOYINBO Harrison,21,187,92,Angleterre,Ailier,2,,,,,,,139,Toulon
+10572,VEREDAMU Tavite,32,192,108,Fidji,Ailier,5,1,,,,,,302,Lyon
+10749,PARISIEN Alfred,20,182,93,France,Centre,2,,,,,,,117,Lyon
+10755,ROZIÈRE Thomas,21,177,89,France,Ailier,7,,,,,,,220,Clermont
+10866,LACOSTE Tanguy,19,188,85,France,Ouverture,1,,,,,,,18,Brive
+10870,LAFON Mathis,22,185,95,France,Centre,1,,,,,,,0,La Rochelle
+10941,FAKATIKA Akato,21,180,118,France,Pilier,2,,,,,,,50,Perpignan
+10942,GLOVER Harry,26,192,97,Angleterre,Centre,7,1,,,,,,560,Paris
+11004,MAÏAU Jonathan,20,174,85,France,Talonneur,4,,,,,,,37,Racing 92
+11013,MAYANAVANUA Temo,24,197,120,Fidji,2ème ligne,12,1,,,,1,,510,Lyon
+11023,PLANA Baptiste,22,182,85,France,Ailier,2,,,,,,,71,Perpignan
+11059,NINIASHVILI Davit,19,186,87,Géorgie,Ailier,11,2,,,,1,,511,Lyon
+11087,BOUBILA Ian,20,182,110,France,Talonneur,6,,,,,,,123,Toulouse
+11123,MEKA Simon,21,193,110,France,2ème ligne,3,,,,,,,123,Castres
+11204,MAGURANYANGA TJ,19,194,101,Zimbabwe,Arrière,1,,,,,,,0,Clermont
+11279,CHARCOSSET Yanis,20,184,104,France,Talonneur,7,1,,,,,,114,Lyon
+11604,EYMERI Aubin,19,183,82,France,Mêlée,4,1,,,,,,27,Montpellier
+11745,WAINIQOLO Jiuta,22,187,97,Fidji,Ailier,8,1,,,,,,635,Toulon
+11772,BAUDONNE Maxime,19,188,97,France,3ème ligne,3,,,,,,,138,Racing 92
+11774,BIELLE-BIARREY Louis,18,184,79,France,Ailier,3,,,,,,,154,Bordeaux
+12006,CHAMPION DE CRESPIGNY Nick,25,193,110,Australie,3ème ligne,10,,,,,,,698,Castres
+12092,OVIEDO Joaquin,20,191,113,Argentine,3ème ligne,4,,,,,,,211,Perpignan
+12252,VAITULUKINA Emmanuel,20,183,94,France,Centre,1,,,,,,,30,Perpignan
+12284,TUWAÏ Petero,26,178,103,Fidji,Centre,1,,,,,,,80,Toulon
+12297,MASSÉ Gatien,19,182,94,France,Centre,2,,,,,,,42,Bordeaux
+12327,VAIOTU Aston,19,202,133,Australie,2ème ligne,2,,,,,,,4,Racing 92
+12328,HEMERY Anthime,21,187,111,France,3ème ligne,9,2,,,,,,405,Racing 92
+12330,LERAÎTRE Paul,21,187,84,France,Arrière,2,,,,,,,80,Racing 92
+12342,GONZALEZ Fabio,21,181,116,France,Pilier,2,,,,,,,0,Toulon
+12344,COULON Jules,19,189,105,France,3ème ligne,1,,,,,,,20,Toulon
+12384,PEREZ Alexandre,19,173,74,France,Ouverture,3,,,,,1,,81,Perpignan
+12470,RIMET Liam,18,173,74,France,Mêlée,3,,,,,,,11,Lyon
+12574,LAM Dylan,25,190,110,Nouvelle-Zélande,3ème ligne,1,,,,,,,24,Brive

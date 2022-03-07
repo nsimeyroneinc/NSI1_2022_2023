@@ -1,0 +1,1523 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="M.Meyroneinc-Condy">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+    
+    
+      
+        <title>TP 21 - K-plus proche voisin - Site NSI 1ére Lycée Murat ISSOIRE</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50e68009.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Site NSI 1ére Lycée Murat ISSOIRE" class="md-header__button md-logo" aria-label="Site NSI 1ére Lycée Murat ISSOIRE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Site NSI 1ére Lycée Murat ISSOIRE
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TP 21 - K-plus proche voisin
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Type_Donnes_Bases/TP_Codage_Caracteres/" class="md-tabs__link">
+        T1 Types et valeurs de base
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Tableaux/TP07_TuplesTableauxCours/" class="md-tabs__link">
+        T2 Types construits
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../TraitementDonnees/Traitement_Donnees/" class="md-tabs__link">
+        T3 Rep. Des données
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../WEB/HTML_CSS/" class="md-tabs__link">
+        T4 I.H.M.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Archi_Materielle/TD13_Reseaux/" class="md-tabs__link">
+        T5 Arch. Matérielle
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../BasesPython/TP04_BasesPython/" class="md-tabs__link">
+        T6 Prog.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Tableaux/TD09_Parcours_Sequentiel_Tableaux_Corrige/" class="md-tabs__link md-tabs__link--active">
+        T7 Algo.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Tableaux/TD12_Les_Images/" class="md-tabs__link">
+        Transversal
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../Divers/Liens_utiles/" class="md-tabs__link">
+      Liens Utiles
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Site NSI 1ére Lycée Murat ISSOIRE" class="md-nav__button md-logo" aria-label="Site NSI 1ére Lycée Murat ISSOIRE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    Site NSI 1ére Lycée Murat ISSOIRE
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T1 Types et valeurs de base
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T1 Types et valeurs de base" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T1 Types et valeurs de base
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Type_Donnes_Bases/TP_Codage_Caracteres/" class="md-nav__link">
+        TP 16 - Codage caractères
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Type_Donnes_Bases/TP_Perseverance/" class="md-nav__link">
+        TP 17 Message Perseverance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Type_Donnes_Bases/Exercices_Codages_Caracteres/" class="md-nav__link">
+        TP codage - révision
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Type_Donnes_Bases/TP_cesar/" class="md-nav__link">
+        TP 18 Codage de césar
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          T2 Types construits
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T2 Types construits" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          T2 Types construits
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TP07_TuplesTableauxCours/" class="md-nav__link">
+        TP 07 Les tableaux Cours
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TP08_TuplesTableauxExercicesCorrige/" class="md-nav__link">
+        TP 08 Les tableaux Exercices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dictionnaire/TP15_Dictionnaires/" class="md-nav__link">
+        TP 15 Les Dictionnaires
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          T3 Rep. Des données
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T3 Rep. Des données" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          T3 Rep. Des données
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TraitementDonnees/Traitement_Donnees/" class="md-nav__link">
+        TP 19 CSV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TraitementDonnees/TP_Pandas_Prof/" class="md-nav__link">
+        TP 20 CSV et Pandas
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          T4 I.H.M.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T4 I.H.M." data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          T4 I.H.M.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/HTML_CSS/" class="md-nav__link">
+        TD html et css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/JS/" class="md-nav__link">
+        TD 14 JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          T5 Arch. Matérielle
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T5 Arch. Matérielle" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          T5 Arch. Matérielle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archi_Materielle/TD13_Reseaux/" class="md-nav__link">
+        TP 13 Réseaux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          T6 Prog.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T6 Prog." data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          T6 Prog.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesPython/TP04_BasesPython/" class="md-nav__link">
+        TP 04 - Les bases en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesPython/TP05_BasesPythonExercices-Corrige/" class="md-nav__link">
+        TP 05 - Les bases en Python/Exercices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          T7 Algo.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T7 Algo." data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          T7 Algo.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TD09_Parcours_Sequentiel_Tableaux_Corrige/" class="md-nav__link">
+        TP 09 - Parcours séquentiel d'un tableau
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TD10_Parcours_Sequentiel_Tableaux_Corrige/" class="md-nav__link">
+        TP 10 - Parcours séquentiel d'un tableau bis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TD11_Parcours_Sequentiel_Tableaux_Ter/" class="md-nav__link">
+        TP 11 - Parcours séquentiel d'un tableau ter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP 21 - K-plus proches voisins
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Transversal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transversal" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Transversal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tableaux/TD12_Les_Images/" class="md-nav__link">
+        TP 12 - Les images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Divers/Liens_utiles/" class="md-nav__link">
+        Liens Utiles
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="TP_kppv_Prof.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+              
+
+
+
+
+
+                
+
+<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+        <tr>
+            <th colspan=2; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
+           Thème 5 : Algorithmique
+            </th>
+        </tr>
+</table>
+<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+        <tr >
+            <th width="25%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:35pt;">
+            21
+            </th>
+            <th  width="75%"; style="text-align:center;background-color:#99BADD;border:none;font-size:20pt;">Algorihtme des k-plus proches voisins</th>
+        </tr>
+</table>
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">⚓︎</a></h1>
+<blockquote>
+<p><strong>L'algorithme kNN (k-nearest neighbors) ou kppv (algorithme des k-plus proches voisins) est un algorithme (parmi les plus élémentaires) utilisé en intelligence artificielle.</strong></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>L'algorithme kNN est un <strong>algorithme de classification et d'apprentissage supervisé</strong> :  </p>
+<ul>
+<li>Classification : on cherche à regrouper les individus de la population étudiée en classes «homogènes».  </li>
+<li>Apprentissage supervisé : le programmeur ne donne pas de "critère explicite" pour la classification mais des données de référence déjà réparties dans les classes. C'est par «comparaison» avec ces données que l'ordinateur pourra classer les nouvelles données.</li>
+</ul>
+</div>
+<p>L'idée générale est la suivante :  </p>
+<ul>
+<li>On dispose d'une population statistique avec des mesures sur certains attributs des individus de cette population.  </li>
+<li>Les individus se répartissent en plusieurs classes, plus ou moins bien caractérisées par les valeurs des attributs.  </li>
+<li>Pour décider de la classe d'un nouvel individu, on compare ses attributs avec ceux des individus déjà classés.  </li>
+</ul>
+<p>Prenons l'exemple d'une population d'éléphants répartis en deux classes : les éléphants d'Afrique et les éléphants d'Asie.<br />
+Les éléphants d'Afrique ont des oreilles plus grandes que les éléphants d'Asie, l'éléphant d'Afrique est plus grand que l'éléphant d'Asie.<br />
+Les attributs utilisés pourraient donc être :  </p>
+<ul>
+<li>taille de l'éléphant,  </li>
+<li>taille des oreilles.  </li>
+</ul>
+<p>Arrive un nouvel individu.<br />
+On ne sait pas a priori de quelle classe il relève. Pour le décider, on décide de comparer les valeurs de ses attributs (hauteur de l'éléphant, taille des oreilles) à ceux de la population déjà répartie en classe.</p>
+<p>Le problème est que, parmi les éléphants d'Asie il y en a des plus gros (qui se rapprochent donc de l'éléphant d'Afrique) ou avec de plus grandes oreilles. De même les éléphants d'Afrique ne sont pas uniformes, il en existe des plus petits, etc...</p>
+<p>Bref, les attributs choisis ne permettent pas nécessairement de conclure de façon évidente. On va donc comparer notre nouvel individu à tous les individus présents. Et par exemple retenir les k=3 éléphants ayant des attributs les "plus proches" de notre individu (on a choisi k=3 mais on peut choisir k=4 ou une autre valeur de k).</p>
+<p>Si parmi les k individus les plus proches de notre nouvel arrivant, il y a plus d'éléphants d'Afrique que d'éléphants d'Asie, on décide qu'il s'agit d'un éléphant d'Afrique.</p>
+<p>La décision n'est évidemment pas absolument fiable (et il peut arriver qu'en changeant la valeur de k, on change de conclusion!) mais avec une population de départ suffisamment importante et quelques heuristiques pour le choix de k, le principe donne de bons résultats dans un certain nombre de contextes.</p>
+<h1 id="activite-dintroduction">Activité d'introduction<a class="headerlink" href="#activite-dintroduction" title="Permanent link">⚓︎</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Objectifs :</p>
+<ul>
+<li>introduire visuellement les problèmes de classification  </li>
+<li>revoir les notions sur le traitement de données en tables</li>
+</ul>
+<p>Nous allons travailler avec le fichier pokemons.csv contenant certaines caractéristiques de Pokémons.<br />
+Chaque Pokémon du fichier est caractérisé par :  </p>
+<ul>
+<li>son type,  </li>
+<li>ses points de vie  </li>
+<li>et la valeur de son attaque. <br />
+Pour simplifier, nous ne considérons que deux types de Pokémon : Eau et Psy.</li>
+</ul>
+</div>
+<p>On peut mémoriser les données du fichier csv dans une table <code>pokemons</code> afin de pouvoir travailler sur les données.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">csv</span>
+<span class="n">fichier</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/pokemons.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">fichier</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">pokemons</span> <span class="o">=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span> <span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">t</span><span class="p">]</span> <span class="c1"># création et construction du tableau par compréhension</span>
+<span class="n">fichier</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p>On peut alors afficher le contenu de la table <code>pokemons</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pokemons</span>
+</code></pre></div>
+<div class="admonition fab-question">
+<p class="admonition-title">Question 1</p>
+<p>Quel est le type de données des éléments du tableau <code>pokemons</code> ?</p>
+</div>
+<p>Prenons le premier Pokemon de la table (n'oubliez pas d'exécuter la cellule ci-dessous pour que la variable <code>pokemon1</code>soit créée).</p>
+<div class="highlight"><pre><span></span><code><span class="n">pokemon1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Aligatueur&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Eau&#39;</span><span class="p">,</span> <span class="s1">&#39;Points de vie&#39;</span><span class="p">:</span> <span class="s1">&#39;85&#39;</span><span class="p">,</span> <span class="s1">&#39;Attaque&#39;</span><span class="p">:</span> <span class="s1">&#39;105&#39;</span><span class="p">}</span>
+</code></pre></div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 2</p>
+<p>Ecrivez les instructions permettant d'accéder à son type, puis à son nombre de points de vie et enfin à sa valeur d'attaque.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 3</p>
+<p>Quel est le nom du pokémon n°27 de la table <code>pokemons</code> ?</p>
+</div>
+<h2 id="recuperer-des-donnees-simples">Récupérer des données simples<a class="headerlink" href="#recuperer-des-donnees-simples" title="Permanent link">⚓︎</a></h2>
+<p>Imaginons que nous souhaitions connaître la valeur d'attaque du Pokémon <code>'Groret'</code>. La méthode la plus naturelle est de parcourir toute la table jusqu'à trouver ce Pokémon et d'afficher sa valeur d'attaque.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pokemons</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="s1">&#39;Nom&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Groret&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;Attaque&#39;</span><span class="p">])</span>
+</code></pre></div>
+45</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 4</p>
+<p>Ecrivez une fonction <code>type_de(nom, pokemons)</code> qui renvoie le type du pokemon appelé <code>nom_pokemon</code> (chaîne de caractères) de la table <code>pokemons</code>. Quelques assertions devant être vérifiées par votre fonction sont données ci-dessous.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">type_de</span><span class="p">(</span><span class="n">nom_pokemon</span><span class="p">,</span> <span class="n">pokemons</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="o">...</span><span class="p">:</span>
+        <span class="k">if</span> <span class="o">...</span> <span class="o">==</span> <span class="n">nom_pokemon</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">...</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">assert</span> <span class="n">type_de</span><span class="p">(</span><span class="s1">&#39;Symbios&#39;</span><span class="p">,</span> <span class="n">pokemons</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Psy&#39;</span>
+<span class="k">assert</span> <span class="n">type_de</span><span class="p">(</span><span class="s1">&#39;Clamiral&#39;</span><span class="p">,</span> <span class="n">pokemons</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Eau&#39;</span>
+</code></pre></div>
+</div>
+<h2 id="selection-de-lignes">Sélection de lignes<a class="headerlink" href="#selection-de-lignes" title="Permanent link">⚓︎</a></h2>
+<p>Il est très rapide de sélectionner les lignes d'une table qui nous intéressent pour créer une nouvelle table.  </p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 5</p>
+<p>A partir de la table de départ, créer une nouvelle table contenant tous les Pokémons dont la valeur d'attaque vaut 80. </p>
+<div class="highlight"><pre><span></span><code><span class="c1">#méthode 1 : </span>
+<span class="n">pokemon_attaque_80bis</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="o">...</span><span class="p">:</span>
+    <span class="k">if</span> <span class="o">...</span> <span class="o">==</span> <span class="mi">80</span><span class="p">:</span>
+        <span class="o">...</span>
+
+<span class="c1">#Méthode 2 : par compréhension : </span>
+<span class="n">pokemon_attaque_80</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</code></pre></div>
+</div>
+<blockquote>
+<p>Vous noterez qu'il était impératif de convertir la chaîne de caractères renvoyée par <code>p['Attaque']</code> en un entier pour faire la comparaison avec 80.</p>
+</blockquote>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 6</p>
+<p>Créez une table <code>resistants</code> contenant les Pokemons dont les points de vie sont supérieurs ou égaux à 100.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 7</p>
+<p>Créez une table <code>pokemons_eau</code> et une table <code>pokemons_psy</code> contenant respectivement tous les Pokémons de type <code>'Eau'</code>.</p>
+</div>
+<p>Si les deux tests suivants ne sont pas validés, vous devez reprendre la question.</p>
+<div class="highlight"><pre><span></span><code><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">pokemons_eau</span><span class="p">)</span> <span class="o">==</span> <span class="mi">16</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">pokemons_psy</span><span class="p">)</span> <span class="o">==</span> <span class="mi">18</span>
+</code></pre></div>
+<h2 id="classification-des-pokemons">Classification des Pokemons<a class="headerlink" href="#classification-des-pokemons" title="Permanent link">⚓︎</a></h2>
+<p>Nous allons utiliser la bibliothèque <code>matplotlib</code> pour représenter graphiquement nos données sur les Pokémons.</p>
+<h3 id="travail-preliminaire">Travail préliminaire<a class="headerlink" href="#travail-preliminaire" title="Permanent link">⚓︎</a></h3>
+<p>Le code suivant permet de représenter un nuage de points dont les coordonnées sont stockées dans deux tableaux.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#%matplotlib inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>  <span class="c1"># tableau avec les abscisses</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span> <span class="c1"># tableau avec les ordonnées</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="s1">&#39;ro&#39;</span><span class="p">)</span> <span class="c1"># r pour red, o pour un cercle. voir https://matplotlib.org/api/markers_api.html</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 8</p>
+<p>Rendez-vous à l'adresse <a href="https://matplotlib.org/api/markers_api.html">https://matplotlib.org/api/markers_api.html</a>. Modifiez le code précédent pour remplacer les cercles rouges par des carrés bleus.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 9</p>
+<p>Créer deux tableaux <code>points_de_vie</code> et <code>valeur_attaque</code> puis représenter dans un repère les différents Pokémons en fonction de leurs points de vie (en asbcisse) et de leus valeurs d'attaque (en ordonnée).</p>
+<div class="highlight"><pre><span></span><code><span class="n">points_de_vie</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="o">...</span><span class="p">:</span>
+    <span class="n">points_de_vie</span><span class="o">.....</span>
+
+<span class="n">valeur_attaque</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">pass</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">points_de_vie</span><span class="p">,</span> <span class="n">valeur_attaque</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span> <span class="c1"># construction du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># affichage du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<p><img alt="" src="../data/pokemon1.png" /></p>
+<details class="tip">
+<summary>Tip</summary>
+<div class="highlight"><pre><span></span><code><span class="n">points_de_vie</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;Points de vie&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pokemons</span><span class="p">]</span> 
+<span class="n">valeur_attaque</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;Attaque&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pokemons</span><span class="p">]</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">points_de_vie</span><span class="p">,</span> <span class="n">valeur_attaque</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># affichage du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<h3 id="classification-selon-le-type">Classification selon le type<a class="headerlink" href="#classification-selon-le-type" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 9</p>
+<p>Faites apparaître sur le <em>même</em> graphique, les Pokémons de type <code>'Eau'</code> en bleu et les Pokémons de type <code>'Psy'</code> en rouge. On mettra, comme précédemment, leurs points de vie en abscisses et leurs valeurs d'attaques en ordonnées.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#%matplotlib inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">points_de_vie1</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># construction du tableau des points de vie</span>
+<span class="n">valeur_attaque1</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># construction du tableau des valeurs d&#39;attaque</span>
+<span class="n">points_de_vie2</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># construction du tableau des points de vie</span>
+<span class="n">valeur_attaque2</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># construction du tableau des valeurs d&#39;attaque</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">points_de_vie1</span><span class="p">,</span> <span class="n">valeur_attaque1</span><span class="p">,</span> <span class="s1">&#39;vb&#39;</span><span class="p">)</span> <span class="c1"># construction du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">points_de_vie2</span><span class="p">,</span> <span class="n">valeur_attaque2</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span> <span class="c1"># construction du graphique</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># affichage du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<details class="tip">
+<summary>Tip</summary>
+<div class="highlight"><pre><span></span><code><span class="c1">#%matplotlib inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">points_de_vie1</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;Points de vie&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pokemons_eau</span><span class="p">]</span> <span class="c1"># construction du tableau des points de vie</span>
+<span class="n">valeur_attaque1</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;Attaque&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pokemons_eau</span><span class="p">]</span> <span class="c1"># construction du tableau des valeurs d&#39;attaque</span>
+<span class="n">points_de_vie2</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;Points de vie&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pokemons_psy</span><span class="p">]</span> <span class="c1"># construction du tableau des points de vie</span>
+<span class="n">valeur_attaque2</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;Attaque&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pokemons_psy</span><span class="p">]</span> <span class="c1"># construction du tableau des valeurs d&#39;attaque</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">points_de_vie1</span><span class="p">,</span> <span class="n">valeur_attaque1</span><span class="p">,</span> <span class="s1">&#39;vb&#39;</span><span class="p">)</span> <span class="c1"># construction du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">points_de_vie2</span><span class="p">,</span> <span class="n">valeur_attaque2</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span> <span class="c1"># construction du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># affichage du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<p>Vous devez obtenir un graphique similaire à celui ci-dessous dans lequel les points bleus désignent les Pokémons de type <code>'Eau'</code> et les points rouges ceux de type <code>'Psy'</code>.</p>
+<p><img alt="" src="../data/pokemon2.png" /></p>
+<p>La répartition des points laisse apparaître assez clairement deux <em>classes</em>.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 10</p>
+<ul>
+<li>Un nouveau Pokémon a les caractéristiques suivantes : (points de vie, attaque)= (65, 25). Si vous deviez prédire son type, quel serait-il ?  </li>
+<li>Même question avec un Pokémon de caractéristiques (points de vie, attaque)= (75, 80).  </li>
+<li>Même question avec un Pokémon de caractéristiques (points de vie, attaque) = (95,125).  </li>
+</ul>
+</div>
+<details class="tip">
+<summary>Tip</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">points_de_vie1</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;Points de vie&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pokemons_eau</span><span class="p">]</span> <span class="c1"># construction du tableau des points de vie</span>
+<span class="n">valeur_attaque1</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;Attaque&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pokemons_eau</span><span class="p">]</span> <span class="c1"># construction du tableau des valeurs d&#39;attaque</span>
+<span class="n">points_de_vie2</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;Points de vie&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pokemons_psy</span><span class="p">]</span> <span class="c1"># construction du tableau des points de vie</span>
+<span class="n">valeur_attaque2</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;Attaque&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pokemons_psy</span><span class="p">]</span> <span class="c1"># construction du tableau des valeurs d&#39;attaque</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">points_de_vie1</span><span class="p">,</span> <span class="n">valeur_attaque1</span><span class="p">,</span> <span class="s1">&#39;vb&#39;</span><span class="p">)</span> <span class="c1"># construction du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">points_de_vie2</span><span class="p">,</span> <span class="n">valeur_attaque2</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span> <span class="c1"># construction du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">)</span> <span class="c1"># construction du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">)</span> <span class="c1"># construction du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">)</span> <span class="c1"># construction du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Points de vie&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Attaque&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Point 1&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> 
+            <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span><span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;shrink&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">})</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Point 2&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> 
+            <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;shrink&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">})</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Point 3&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mi">125</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mi">175</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> 
+            <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;shrink&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># affichage du graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<p><img alt="" src="../data/pokemon3.png" /></p>
+<h1 id="algorithme-des-k-plus-proches-voisins">Algorithme des k plus proches voisins<a class="headerlink" href="#algorithme-des-k-plus-proches-voisins" title="Permanent link">⚓︎</a></h1>
+<blockquote>
+<p>Abrégé <em>kppv</em> en français. En anglais, on dit <em>k nearest neighbors</em> souvent abrégé <em>knn</em>.</p>
+</blockquote>
+<p>L’algorithme des k plus proches voisins <strong>appartient à la famille des algorithmes d’<em>apprentissage automatique</em> (machine learning)</strong> qui constituent le <strong>poumon de l'intelligence artificielle</strong> actuellement.</p>
+<p>Pour simplifier, l'apprentissage automatique part souvent de données (data) et essaye de dire quelque chose des données qui n'ont pas encore été vues : il s'agit de <em>généraliser</em>, de <em>prédire</em>. </p>
+<p><strong>Exemple d'introduction</strong></p>
+<p>On dispose de données sur 34 Pokémons : leur type (Psy ou Eau), leur points de vie et la valeur de leurs attaques. On peut représenter ces données graphiquement, avec les points de vie en abscisses et les valeurs d'attaque en ordonnées.</p>
+<p><img alt="" src="../data/pokemon2.png" /></p>
+<p>Les Pokémons de type "Eau" sont représentés pas les points bleus, et ceux de type "Psy" par les points rouges.</p>
+<blockquote>
+<p>Peut-on prédire le type d'un nouveau Pokemon inconnu ?</p>
+</blockquote>
+<p><img alt="" src="../data/pokemon4.png" /></p>
+<p>Ce problème, qui demande à prédire à quelle catégorie, ou <em>classe</em>, appartient ce nouvel élément donné, est appelé <em>problème de classification</em>. L'algorithme des k plus proches voisins permet de trouver les k voisins les plus proches (si k = 5 on cherche les 5 voisins les plus proches) de ce nouvel élément dans le but de lui associer une <em>classe</em> plausible (Psy ou Eau, dans cet exemple).</p>
+<h2 id="algorithme-naif-des-kppv">Algorithme naïf des kppv<a class="headerlink" href="#algorithme-naif-des-kppv" title="Permanent link">⚓︎</a></h2>
+<p>A partir d'un jeu de données (par exemple, les données sur nos 34 Pokémons) et d'une donnée <em>cible</em> (le nouveau Pokemon à classifier), l'algorithme des <span class="arithmatex">\(k\)</span> plus proches voisins détermine les <span class="arithmatex">\(k\)</span> données les plus proches de la cible.</p>
+<p>Voici un algorithme permettant de résoudre ce problème :</p>
+<p><strong>Données et préconditions :</strong><br />
+- une table <code>donnees</code> de taille <code>n</code> contenant les données et leurs classes  <br />
+- une donnée cible : <code>cible</code><br />
+- un nombre <code>k</code> inférieur à <code>n</code><br />
+- une règle permettant de calculer la <em>distance</em> entre deux données  </p>
+<p><strong>Résultat :</strong> un tableau contenant les <code>k</code> plus proches voisins de la donnée cible.</p>
+<p><strong>Algorithme :</strong><br />
+1. Créer une table <code>distances_voisins</code> contenant les éléments de la table <code>donnees</code> et leurs distances avec la donnée <code>cible</code>. <br />
+2. Trier les données de la table <code>distances_voisins</code> selon la distance croissante avec la donnée <code>cible</code><br />
+3. Renvoyer les <code>k</code> premiers éléments de cette table triée.  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">point_de_vie_cible</span><span class="o">=</span><span class="mi">95</span>
+<span class="n">valeur_attaque_cible</span><span class="o">=</span><span class="mi">125</span>
+<span class="n">distances_voisins</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pokemons</span><span class="p">:</span>
+    <span class="n">dist</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;Points de vie&#39;</span><span class="p">])</span><span class="o">-</span><span class="n">point_de_vie_cible</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;Attaque&#39;</span><span class="p">])</span> <span class="o">-</span><span class="n">valeur_attaque_cible</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">p</span><span class="p">[</span><span class="s1">&#39;distance&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">dist</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pokemons</span><span class="p">:</span>
+    <span class="n">distances_voisins</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+<span class="n">distances_voisins</span><span class="o">=</span><span class="nb">sorted</span><span class="p">(</span><span class="n">distances_voisins</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">k</span><span class="p">[</span><span class="s1">&#39;distance&#39;</span><span class="p">])</span> 
+
+
+<span class="n">k</span><span class="o">=</span><span class="mi">5</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">distances_voisins</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div>
+<h3 id="et-notre-prediction-alors">Et notre prédiction alors ?<a class="headerlink" href="#et-notre-prediction-alors" title="Permanent link">⚓︎</a></h3>
+<p>L'algorithmes des kppv en lui-même n'apporte pas la réponse à notre problème de classification puisqu'il ne fournit que les k plus proches voisins (et leurs classes) de notre donnée cible. Il reste donc une dernière étape pour prédire la classe de notre nouvel élément : pour cela, on choisit la <em>classe majoritaire</em> (la plus présente) dans les k plus proches voisins.</p>
+<blockquote>
+<p>On est contents si k est impair car il ne peut pas y avoir d'ex-aequo !</p>
+</blockquote>
+<h3 id="influence-de-la-valeur-de-k">Influence de la valeur de <span class="arithmatex">\(k\)</span><a class="headerlink" href="#influence-de-la-valeur-de-k" title="Permanent link">⚓︎</a></h3>
+<p>La valeur de <span class="arithmatex">\(k\)</span> est très importante, elle doit être choisie judicieusement car elle a une influence forte sur la prédiction. Regardons le résultat de la prédiction pour différentes valeurs de <span class="arithmatex">\(k\)</span> sur notre exemple.</p>
+<p><strong>Exemple 1</strong> : le 1 plus proche voisin</p>
+<p>Si <span class="arithmatex">\(k = 1\)</span>, cela revient à chercher la donnée la plus proche de notre élément cible. Ici, on se rend compte que sa classe est "Eau" (point bleu) donc on classerait le nouveau Pokémon comme étant de type "Eau".</p>
+<p><img alt="" src="../data/1ppv.png" /></p>
+<p><strong>Exemple 2</strong> : les 3 plus proches voisins</p>
+<p>On se rend compte que la classe majoritaire dans les 3 plus proches voisins est "Psy" (2 points rouges contre 1 point bleu) donc on classerait le Pokemon inconnu comme étant de type "Psy".</p>
+<p><img alt="" src="../data/3ppv.png" /></p>
+<p><strong>Exemple 3</strong> : les 9 plus proches voisins</p>
+<p>On se rend compte que la classe majoritaire dans les 9 plus proches voisins est "Eau" (5 points bleus contre 4 points rouges) donc on classerait le Pokemon inconnu comme étant de type "Eau".</p>
+<p><img alt="" src="../data/9ppv.png" /></p>
+<p>En poursuivant, si on choisit <span class="arithmatex">\(k=34\)</span> (le nombre total de données), alors la prédiction serait toujours "Psy" car c'est la classe majoritaire de l'échantillon. Il est donc incorrect de penser que plus la valeur de <span class="arithmatex">\(k\)</span> augmente meilleure sera la prédiction, c'est plus complexe que cela.</p>
+<blockquote>
+<p>C'est bien beau tout ça, mais quelle valeur de <span class="arithmatex">\(k\)</span> faut-il choisir ?</p>
+</blockquote>
+<h3 id="choix-de-la-valeur-de-k-par-experimentation">Choix de la valeur de <span class="arithmatex">\(k\)</span> par expérimentation<a class="headerlink" href="#choix-de-la-valeur-de-k-par-experimentation" title="Permanent link">⚓︎</a></h3>
+<p>Pour trouver une bonne valeur de <span class="arithmatex">\(k\)</span> il est possible d'appliquer le protocole expérimental suivant :</p>
+<ul>
+<li>Séparer les données en deux paquets : un paquet pour <em>entraîner le modèle</em> (90 % par exemple), un second pour <em>tester le modèle</em> (les 10% restants)</li>
+<li>Utiliser le premier paquet comme nouveau jeu de données et appliquer l'algorithme des kppv sur les éléments qui ont été retirés</li>
+<li>Comparer les réponses de l'algorithme avec les réponses attendues (on connaît la classe des éléments retirés donc on peut comparer)</li>
+</ul>
+<p>En appliquant ce protocole à différentes valeurs de <span class="arithmatex">\(k\)</span>, on peut déterminer quelle valeur fournit les meilleurs résultats. Il est même judicieux de recommencer en retirant d'autres données pour affiner encore davantage la recherche de la meilleure valeur <span class="arithmatex">\(k\)</span> : on parle alors de <em>validation croisée</em> qui est une méthode d'apprentissage.</p>
+<h2 id="choix-de-la-distance">Choix de la distance<a class="headerlink" href="#choix-de-la-distance" title="Permanent link">⚓︎</a></h2>
+<p>L'algorithme des plus proches voisins repose sur la <em>distance</em> entre deux données. Dans les exemples vus précédemment, c'est la distance "naturelle" qui a été choisie (celle "à vol d'oiseau"). </p>
+<p>Dans un repère orthonormé, si <span class="arithmatex">\(A\)</span> et <span class="arithmatex">\(B\)</span> ont pour coordonnées respectives <span class="arithmatex">\((x_A, y_A)\)</span> et <span class="arithmatex">\((x_B, y_B)\)</span> alors la distance entre ces deux points est donnée par la formule :</p>
+<div class="arithmatex">\[\text{distance}(A, B) = \sqrt{(x_B-x_A)^2 + (y_B-y_A)^2}.\]</div>
+<p>On parle alors de la <em>distance euclidienne</em>. Sachez cependant qu'il existe d'autres distances et vous en rencontrerez dans les exercices. Par exemple, on peut très bien imaginer que les valeurs sur l'axe des ordonnées ne nous intéressent pas et utiliser une distance ne prenant en compte que l'axe des abscisses avec la formule <span class="arithmatex">\(\text{distance}(A, B) = |x_B-x_A|\)</span>. Ainsi, sur notre exemple, et avec cette distance, la classe majoritaire des 9 plus proches voisins de notre nouveau Pokémon est "Psy" (6 points rouges contre 3 points bleus), ce qui donnerait une prédiction contraire à celle donnée en utilisant la distance "naturelle" (euclidienne).</p>
+<p><img alt="" src="../data/9ppvbis.png" /></p>
+<p><strong>Moralité :</strong> On voit donc que le choix de la distance n'est pas anodin et que ce choix peut aboutir à des prédictions différentes.</p>
+<blockquote>
+<p><strong>Remarque</strong> : Nous n'avons parlé ici que de distances <em>géométriques</em> qui ne s'appliquent qu'à des données chiffrées. Toutes les données ne sont pas adaptées à ce type de distance : si on veut comparer la distance entre deux chaînes de caractères, d'autres types de distances sont à considérer : <em>la distance de Hamming</em> ou la <em>distance d'édition</em> qui seront abordées en Terminale.</p>
+</blockquote>
+<h2 id="un-algorithme-dapprentissage-dia">Un algorithme d'<em>apprentissage</em> ? d'<em>IA</em> ?<a class="headerlink" href="#un-algorithme-dapprentissage-dia" title="Permanent link">⚓︎</a></h2>
+<h3 id="apprentissage-par-coeur">Apprentissage par coeur<a class="headerlink" href="#apprentissage-par-coeur" title="Permanent link">⚓︎</a></h3>
+<p>La plupart des algorithmes d'apprentissage automatique cherchent à <em>apprendre</em> quelque chose du jeu de données qui lui est fourni, c'est-à-dire à remplacer les données par un <em>modèle</em> (une sorte de "règle" permettant de classer les données, de prendre une décision, etc.). Autrement dit, un tel algorithme tente de "comprendre" les données pour en déduire un modèle, on peut voir cela comme un apprentissage <em>intelligent</em>.</p>
+<p>Pour illustrer cela de manière simplifiée, un algorithme d'apprentissage automatique <em>intelligent</em> chercherait par exemple, à partir des données, à délimiter deux "zones" séparant les Pokémons "Psy" des Pokémons "Eau". Il n'aurait alors plus besoin des données (des points) pour prédire la classe d'un nouvel élément car il suffirait de regarder dans quelle zone celui-ci se trouve (d'utiliser le modèle qu'il a deviné).</p>
+<p><img alt="" src="../data/apprentissage_intelligent.png" /></p>
+<p>L'algorithme des k plus proches voisins n'a pas cette "intelligence" car il n'essaie pas de construire un modèle mais se sert des données elles-mêmes pour donner un résultat : on parle alors d'<strong>apprentissage par coeur</strong>.</p>
+<h3 id="intelligence-artificielle">Intelligence Artificielle<a class="headerlink" href="#intelligence-artificielle" title="Permanent link">⚓︎</a></h3>
+<blockquote>
+<p>L'algorithme des k plus proches voisins est-il alors un algorithme d'intelligence artificielle ?</p>
+</blockquote>
+<p>L'apprentissage par coeur est clairement l'apprentissage le moins intelligent mais la réponse est OUI si on considère sa capacité de prédiction : classifier un élément qu'il n'a jamais vu.</p>
+<h2 id="les-donnees-et-lapprentissage-automatique">Les données et l'apprentissage automatique<a class="headerlink" href="#les-donnees-et-lapprentissage-automatique" title="Permanent link">⚓︎</a></h2>
+<h3 id="big-data-et-deep-learning">Big data et deep learning<a class="headerlink" href="#big-data-et-deep-learning" title="Permanent link">⚓︎</a></h3>
+<p>Le <strong>deep learning</strong> (ou <em>apprentissage profond</em>) est une famille de méthode d'apprentissage automatique. En 2012, les techniques de deep learning ont réussi à fonctionner et obtenir des résultats spectaculaires. Ces résultats ont été rendus possibles notamment par l'arrivée de données en volume massifs (<strong>big data</strong>) permettant aux algorithmes d'apprendre à résoudre un problème. Ces données en masse permettent de disposer d'une importante quantité de données sur lesquelles entrainer et affiner les algorithmes.</p>
+<p>Les stratégies mises en place par les géants du numérique (GAFAM) tournent entièrement autour de la récolte de données de leurs clients sur n'importe quel sujet pour "nourrir" leurs algorithmes d'apprentissage. C'est ainsi qu'Amazon arrive à nous proposer des "suggestions d'achat". Google quant à lui nous utilise lorsque nous devons prouver que nous ne sommes pas un robot. En effet, qui n'a pas déjà vu un écran de ce genre ?</p>
+<p><img alt="" src="../data/recaptcha.png" /></p>
+<p>En cliquant aux bons endroits, on assigne une classe aux différentes parties de l'image (feu de circulation ou non) et celles-ci viennent alimenter les bases de données sur lesquelles les algorithmes s'entraînent. Ils serviront ensuite aux voitures autonomes de Google à repérer les feux tricolores sur la route.</p>
+<h3 id="qualite-des-donnees-et-dangers">Qualité des données et dangers<a class="headerlink" href="#qualite-des-donnees-et-dangers" title="Permanent link">⚓︎</a></h3>
+<p>La qualité des données est primordiale dans l'apprentissage automatique car ce sont elles qui définissent presque entièrement la qualité des résultats des algorithmes. Voici quelques exemples, en vrac :</p>
+<ul>
+<li>Si la base de données utilisée pour entraîner un algorithme de détourage n'est constituée que de photos d'humains, il y a des fortes chances que l'algorithme ne parvienne pas à détourer un chat correctement. C'était le cas au départ pour l'algorithme du site <a href="http://www.remove.bg">remove.bg</a> mais les données d'entraînement sont désormais plus complètes et les détourages fournissent des résultats impressionnants.</li>
+<li>L’algorithme mis en place à partir de 2015 par Amazon (<a href="https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G#_blank">source</a>) pour faciliter le recrutement de talents utilisait des données de centaines de milliers de curriculum vitae (CV) reçus par Amazon au cours des dix dernières années en vue de noter de nouvelles candidatures. L’algorithme a été rapidement suspendu car il discriminait grandement les femmes. En effet, les CV d'entraînement comprenait une écrasante majorité d'hommes, l’algorithme ne laissant du coup aucune chance aux nouvelles candidates pourtant qualifiées. On dit dans ce cas que les données sont <em>biaisées</em>.</li>
+<li>Aux Etats-unis, ils prédisent les taux de criminalité dans les quartiers et déploient les effectifs policiers en conséquence. Mais les données sur lesquelles les systèmes sont entrainés sont également biaisés car déséquilibrés avec davantage de personnes de couleurs par exemple (voir <a href="https://www.technologyreview.com/2019/02/13/137444/predictive-policing-algorithms-ai-crime-dirty-data/">source</a>).</li>
+<li>...</li>
+</ul>
+<blockquote>
+<p>&#8220; <em>Your system is only as good as the data that you use to train it on</em> &#8221;</p>
+<p>Kate Crawford, cofounder and co-director of AI Now</p>
+</blockquote>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">⚓︎</a></h2>
+<ul>
+<li>Nous avons vu que l'algorithme des <span class="arithmatex">\(k\)</span> plus proches voisins faisait partie de la famille des algorithmes d'apprentissage automatique (<em>machnine learning</em> en anglais) qui se nourissent de données pour prédire des choses sur une donnée inconnue. En particulier, il permet de résoudre des problèmes de classification.</li>
+<li>L'algorithme de kppv permet de trouver les <span class="arithmatex">\(k\)</span> voisins les plus proches d'une nouvelle donnée. Il est donc nécessaire de lui associer une distance pour apprécier cette notion de proximité.</li>
+<li>On peut alors prédire la classe d'une nouvelle donnée en prenant celle qui est majoritaire parmi ses plus proches voisins.</li>
+<li>Les prédictions varient selon la valeur de <span class="arithmatex">\(k\)</span> et selon la distance choisie : en pratique, il est donc important de bien choisir cex deux données.</li>
+<li>Les algorithmes d'apprentissage automatique (IA) se sont beaucoup développés depuis les années 2010 grâce au <em>big data</em> qui leur permet de s'entraîner sur un très grand nombre de données.</li>
+<li>La qualité des résultats dépend grandement de la qualité des données d'entraînement : il est donc important de s'assurer de leur qualité pour éviter des <em>biais</em> pouvant être discriminants, racistes...</li>
+</ul>
+<hr />
+
+              
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="../../Tableaux/TD11_Parcours_Sequentiel_Tableaux_Ter/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: TP 11 - Parcours séquentiel d&#39;un tableau ter" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              TP 11 - Parcours séquentiel d'un tableau ter
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../Tableaux/TD12_Les_Images/" class="md-footer__link md-footer__link--next" aria-label="Suivant: TP 12 - Les images" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              TP 12 - Les images
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "toc.integrate", "header.autohide", "content.code.annotate"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

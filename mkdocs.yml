@@ -15,35 +15,47 @@ docs_dir: docs
 # Menu de navigation
 nav: 
     - Accueil : index.md
+
     - T1 Types et valeurs de base:
       - TP 16 - Codage caractères : Type_Donnes_Bases/TP_Codage_Caracteres.md
       - TP 17 Message Perseverance : Type_Donnes_Bases/TP_Perseverance.md
-      - TP 17 prof : Type_Donnes_Bases/TP_Perseverance_Prof1.md
+      - TP codage - révision: Type_Donnes_Bases/Exercices_Codages_Caracteres.md
+      #- TP 17 prof : Type_Donnes_Bases/TP_Perseverance_Prof1.md
       - TP 18 Codage de césar : Type_Donnes_Bases/TP_cesar.md
+    
     - T2 Types construits :
       - TP 07 Les tableaux Cours : Tableaux/TP07_TuplesTableauxCours.md
       - TP 08 Les tableaux Exercices : Tableaux/TP08_TuplesTableauxExercicesCorrige.md 
       - TP 15 Les Dictionnaires: Dictionnaire/TP15_Dictionnaires.md
-    - T4 IHM :
+    
+    - T3 Rep. Des données:
+      - TP 19 CSV : TraitementDonnees/Traitement_Donnees.md
+      #- TP 20 CSV et Pandas: TraitementDonnees/TP_Pandas_Prof.md
+    
+    - T4 I.H.M. :
       - TD html et css : WEB/HTML_CSS.md
       - TD 14 JavaScript : WEB/JS.md
+    
     - T5 Arch. Matérielle :
       - TP 13 Réseaux : Archi_Materielle/TD13_Reseaux.md
+    
     - T6 Prog. :
       - TP 04 - Les bases en Python : BasesPython/TP04_BasesPython.md
       - TP 05 - Les bases en Python/Exercices : BasesPython/TP05_BasesPythonExercices-Corrige.md
+    
     - T7 Algo. :  
       - TP 09 - Parcours séquentiel d'un tableau : Tableaux/TD09_Parcours_Sequentiel_Tableaux_Corrige.md
       - TP 10 - Parcours séquentiel d'un tableau bis : Tableaux/TD10_Parcours_Sequentiel_Tableaux_Corrige.md
       - TP 11 - Parcours séquentiel d'un tableau ter : Tableaux/TD11_Parcours_Sequentiel_Tableaux_Ter.md
-
+      - TP 21 - K-plus proches voisins: Algorithmique/TP_kppv_Prof.md
+    
     - Transversal : 
       - TP 12 - Les images : Tableaux/TD12_Les_Images.md
 
-    - Devoirs :
-      - DS 3 Groupe 1 : Devoirs/DS03_Tableau.md
-      - DS réseau : Devoirs/DS_TP_Reseaux.md
-    # Référencer vos autres pages ci-dessus...
+    #- Devoirs :
+    #  - DS 3 Groupe 1 : Devoirs/DS03_Tableau.md
+    #  - DS réseau : Devoirs/DS_TP_Reseaux.md
+        
     - Liens Utiles : Divers/Liens_utiles.md
 
 
@@ -81,6 +93,7 @@ theme:
         - navigation.tracking
         - toc.integrate
         - header.autohide
+        - content.code.annotate 
      
 
 markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abbreviations/
@@ -94,7 +107,7 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
     - admonition                    # Blocs colorés  !!! info "ma remarque"
     - toc: # Table des matières
         permalink: ⚓︎
-        toc_depth: 1
+        toc_depth: 3
     # extensions de python-markdown https://facelessuser.github.io/pymdown-extensions/
     - pymdownx.details              #   qui peuvent se plier/déplier.
     - pymdownx.caret                # Passage ^^souligné^^ ou en ^exposant^.
@@ -136,23 +149,23 @@ plugins:
   #  - search
   #  - pdf-export
 
-  #- page-to-pdf : 
-  #    disable: False
-  #    disableOnServe: True
-  #    displayHeaderFooter: true
-  #    printBackground: False
-  #   #scale : 1.0
-  #   #landscape : False
-  #    margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
-  #    headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
-  #                      <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : 2021 - 2022</span>
-  #                    </header>'
-  #    footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#999999;margin:10px 20px;-webkit-print-color-adjust: exact">
-  #                      <span>M.Meyroneinc-Condy | CCBY | 2021</span>
-  #                      <span class="page" style="position:absolute;bottom:0;right:0;">
-  #                       <span class="pageNumber"></span>/<span class="totalPages"></span>
-  #                      </span>
-  #                    </footer>'
+  - page-to-pdf : 
+      disable: False
+      disableOnServe: True
+      displayHeaderFooter: true
+      printBackground: False
+     #scale : 1.0
+     #landscape : False
+      margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
+      headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
+                        <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : 2021 - 2022</span>
+                      </header>'
+      footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#999999;margin:10px 20px;-webkit-print-color-adjust: exact">
+                        <span>M.Meyroneinc-Condy | CCBY | 2021</span>
+                        <span class="page" style="position:absolute;bottom:0;right:0;">
+                         <span class="pageNumber"></span>/<span class="totalPages"></span>
+                        </span>
+                      </footer>'
   #   headerTemplate : 
   #      title
   #      date
@@ -164,19 +177,19 @@ plugins:
       
 
 
-extra:
-  social: # A personaliser...
-    - icon: fontawesome/solid/paper-plane
-      link: mailto:nsi.meyroneinc@gmail.com
-      name: Pour toute question, suggestion ou commentaire, écrire à l'auteur
+#extra:
+  #social: # A personaliser...
+    #- icon: fontawesome/solid/paper-plane
+    #  link: mailto:nsi.meyroneinc@gmail.com
+    #  name: Pour toute question, suggestion ou commentaire, écrire à l'auteur
 
-    - icon: fontawesome/brands/github
-      link: 
-      name: dépôt github
+    #- icon: fontawesome/brands/github
+    #  link: 
+    #  name: dépôt github
 
-    - icon: fontawesome/solid/university
-      link: https://murat-issoire.ent.auvergnerhonealpes.fr/
-      name: Lycée Murat Issoire
+    #- icon: fontawesome/solid/university
+    #  link: https://murat-issoire.ent.auvergnerhonealpes.fr/
+    #  name: Lycée Murat Issoire
 
 
 extra_javascript:

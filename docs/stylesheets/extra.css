@@ -21,7 +21,7 @@
 
 body {
   font-family: @@font_name@@;
-   font-size: 14pt;
+       font-size: 1.35rem;
 /*        background-color: @@bg_color@@; */
  /*  background-color: white;*/
   /* color: @@fg_color@@;*/
@@ -31,28 +31,28 @@ body {
 h1 {
   background-color: rgb(148, 155, 155);
   border-style: none none none groove; 
+  font-size: 11pt;
   padding-left:10px;
   margin-left: :5px;
   border-color:black;
-  border-width: 1px 1x 3px 10px;
+  border-width: 1px 1x 3px 15px;
   color: white;
   font-family: @@font_name@@;
-  font-size: 14pt;
 }
 h2 {
-  background-color: orange;
+  background-color: rgb(145, 106, 35);
   padding-left:10px;
   font-family: @@font_name@@;
-  font-size: 12pt;
+  font-size: 11pt;
   border-style: none none none groove; 
   border-color:black;
-  border-width: 1px 1x 3px 10px;
+  border-width: 1px 1x 3px 15px;
 }
 h3 {
     color: brown;
 }
 h1:before {
-  content: counter(h1) "  ";
+  content: counter(h1) ".  ";
   counter-increment: h1;
 }
 h2:before {
@@ -76,6 +76,7 @@ h1.unnumbered:before, h2.unnumbered:before, h3.unnumbered:before {
   content: none;
   counter-increment: none;
 }
+
 
 :root {
   font-size: 1.35rem;
@@ -290,3 +291,8 @@ h1.unnumbered:before, h2.unnumbered:before, h3.unnumbered:before {
             mask-image: var(--md-admonition-icon--exo);
   }
   
+
+table, td, th {
+    border: 1.5px solid black;
+    border-collapse: collapse;
+    }

@@ -1,4 +1,29 @@
-<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+---
+title : TD 16 - Codage de caractères
+subtitle: Représentation des données
+author : M.Meyroneinc-Condy
+numbersections: true
+fontsize: 11pt
+geometry:
+- top=12mm
+- left=12mm
+- right=12mm
+- heightrounded    
+output:
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    number_sections: yes
+    highlight: tango
+  blogdown::html_page:
+    toc: yes
+    toc_depth: 3
+    number_sections: yes
+    highlight: tango
+--- 
+
+
+<table  style="table-layout: fixed; border:solid;color:black;width:100%;">
         <tr>
             <th colspan=2; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
            Thème 1 : Types de bases
@@ -8,10 +33,10 @@
 
 <table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
         <tr >
-            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:50pt;">
+            <th width="25%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:35pt;">
             16
             </th>
-            <th  width="80%"; style="text-align:center;background-color:#99BADD;border:none;font-size:25pt;">TD : Codage des caractères</th>
+            <th  width="75%"; style="text-align:center;background-color:#99BADD;border:none;font-size:20pt;">TD : Codage des caractères</th>
         </tr>
 </table>
 Tout pour comprendre et Ã©viter les erreurs d'encodage
@@ -29,7 +54,7 @@ Pour tenter de mettre un peu d’ordre dans tout ça, en 1960, l’American Stan
 
 **À chaque caractère est associé un nombre binaire sur 8 bits (1 octet).**
 
-![](data/ascii.png){:.center}
+![](data/ascii.png){:.center width=400px}
 
 En faite, **seuls 7 bits sont utilisés** pour coder un caractère, le 8e bit n’est pas utilisé pour le codage des caractères. Avec 7 bits il est possible de coder jusqu’à 128 caractères ce qui est largement suffisant pour un texte écrit en langue anglaise (pas d’accents et autres lettres particulières).
 
@@ -84,7 +109,7 @@ Pour ajouter à la complexité, la norme ISO-8859 définit pas moins de 15 versi
 
 Donc après de nombreuses modifications successives (la dernière en date rajoutant par exemple le symbole €), la célèbre table **ISO 8859-15**, dite aussi **Latin-9** :    
 
-![](data/iso-latin.png){:.center}
+![](data/iso-latin.png){:.center width=300px}
 
 ## Utilisation :
 Les codes sont donnés en hexadécimal :  
@@ -99,28 +124,28 @@ Les codes sont donnés en hexadécimal :
 A l"aide de notepad écrire un texte (Ça marche très bien !).  Enregistrer le avec l'encodage Latin-9.   
 Ce fichier est ensuite ouvert avec un éditeur hexadécimal, qui permet d'observer la valeur des octets qui composent le fichier. (Comme le fichier est un .txt, le fichier ne contient que les données et rien d'autre.)  
 
-![](data/hexa_latin.png){:.center}
+![](data/hexa_latin.png){:.center width=350px}
 
 Parfait, mais comment font les Grecs pour écrire leur alphabet ?   
 Pas de problème, il leur suffit d'utiliser... une autre table, appelée ISO-8859-7 :  
 
-![](data/isogrec.png){:.center}
+![](data/isogrec.png){:.center width=300px}
 
 On retrouve les caractères universels hérités de l'ASCII, puis des caractères spécifiques à la langue grecque... oui mais les Thaïlandais alors ?   
 Pas de problème, ils ont la ISO-8859-11 :  
 
-![](data/isothai.png){:.center}
+![](data/isothai.png){:.center width=300px}
 
 Évidemment, quand tous ces gens veulent discuter entre eux, les problèmes d'encodage surviennent immédiatement : certains caractères sont remplacés par d'autres.
 
 
-### Que fait un logiciel à l'ouverture d'un fichier texte ?
+## Que fait un logiciel à l'ouverture d'un fichier texte ?
  
 Il essaie de deviner l'encodage utilisé... Parfois cela marche, parfois non.  
-![](data/erreur_nav.png){:.center width=75%}
+![](data/erreur_nav.png){:.center width=300px}
 
 Normalement, pour un navigateur, une page web correctement codée doit contenir dans une balise `meta` le `charset` utilisé.   
-![](data/source_twitter.png){:.center}
+![](data/source_twitter.png){:.center width=300px}
 
 Mais parfois, il n'y a pas d'autre choix pour le logiciel d'essayer de deviner l'encodage qui semble être utilisé.  
 
@@ -173,7 +198,7 @@ L’encodage d’un caractère multi-octet se fait comme suit :
 On note U+XXXX un caractère encodé en UTF8. Les bits restants sont utilisés pour représenter le numéro du caractère.
 
 !!! example "Exemple :"
-    ![](data/LatinB.png)  
+    ![](data/LatinB.png){width=350px}
     A partir  de  l’extrait  de  la  table Unicode(version hexa),  rappelez  le   Point  de  Code du  caractère [Ⱥ](https://fr.wikipedia.org/wiki/%C8%BA) (valeur  numérique).     
 
     Le  caractère  appartient  à  l’intervalle U+0080 à U+07FF,  donc les **11 bits** seront répartis sur deux octets en  code  UTF-8.  
@@ -183,7 +208,7 @@ On note U+XXXX un caractère encodé en UTF8. Les bits restants sont utilisés p
 ![](data/Unicode_exemple.png){:.center width=750px}  
 
 !!! exo "Exercice"  
-    ![](data/Latin1.png)  
+    ![](data/Latin1.png){width=350px}  
     Faire de même avec la lettre é
 
 
@@ -206,12 +231,10 @@ On note U+XXXX un caractère encodé en UTF8. Les bits restants sont utilisés p
 
     0101 0110 01101111 01101001 01101100 11000011 10100000 00100000 0011 0001 11100010 10000010 10101100 00101100 00100000 01110101 0110 1110 00100000 11110000 10011111 10011000 10000100 00100000 0110 0101 01110100 00100000 01101101 11000011 10101010 01101101 0110 0101 00100000 11110000 10011101 10000100 10011110 00100001
 
-<div style="page-break-after: always;"></div>
-
 ## Utilisation grandissante de l'encodage UTF-8 
 
 La majorité des sites internet utilisent maintenant l'UTf-8, tout comme les systèmes d'exploitation récents.
-![](data/graph_comparaison.png){:.center}
+![](data/graph_comparaison.png){:.center width=300px}
 
 
 <div style="page-break-after: always;"></div>
@@ -244,7 +267,7 @@ On donne, ci-dessous, un extrait de la table ASCII qui permet d’encoder les ca
 On peut alors considérer l’opération XOR entre deux caractères en effectuant le XOR entre les codes ASCII des deux caractères.  
 Par exemple : 'F' XOR 'S' sera le résultat de 01000110 ⊕ 01010011.
 
-![](data/ascii_Exo.png){:.center}  
+![](data/ascii_Exo.png){:.center width=350px}  
 
 Le cryptage XOR est un système de cryptage basique mais pas trop limité. Ainsi, il a beaucoup été utilisé dans les débuts de l'informatique et continue à l'être encore aujourd'hui car il est facile à implémenter, dans toutes sortes de programmes.  
 
@@ -353,7 +376,7 @@ Chaque caractère du message à coder est représenté par un entier, le code AS
 !!! fabquestion "Question 4."
     Recopier et compléter la table de vérité de (𝑬𝟏 ⊕ 𝑬𝟐) ⊕ 𝑬𝟐.
 
-    ![](data/Table_XOR_XOR.png){:.center}  
+    ![](data/Table_XOR_XOR.png){:.center width=300px}  
 
     A l’aide de ce résultat, proposer une démarche pour décrypter un message crypté.
 
