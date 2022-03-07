@@ -3,7 +3,7 @@ Il permettra de retrouver les TP&TD traités en classes.<br>
 Ces TD sont corrigés dans la mesure du possible.
 
 !!! info 
-    **Thème en cours** : [Codage Caractères](./Type_Donnes_Bases/TP_Codage_Caracteres.md) 
+    **Thème en cours** : [Manipulation de données (CSV)](./TraitementDonnees/Traitement_Donnees.md) 
 
 
 
