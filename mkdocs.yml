@@ -47,7 +47,7 @@ nav:
       - TP 09 - Parcours séquentiel d'un tableau : Tableaux/TD09_Parcours_Sequentiel_Tableaux_Corrige.md
       - TP 10 - Parcours séquentiel d'un tableau bis : Tableaux/TD10_Parcours_Sequentiel_Tableaux_Corrige.md
       - TP 11 - Parcours séquentiel d'un tableau ter : Tableaux/TD11_Parcours_Sequentiel_Tableaux_Ter.md
-      - TP 21 - K-plus proches voisins: Algorithmique/TP_kppv_Prof.md
+      #- TP 21 - K-plus proches voisins: Algorithmique/TP_kppv_Prof.md
     
     - Transversal : 
       - TP 12 - Les images : Tableaux/TD12_Les_Images.md
