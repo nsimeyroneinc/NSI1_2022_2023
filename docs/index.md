@@ -3,9 +3,12 @@ Il permettra de retrouver les TP&TD traités en classes.<br>
 Ces TD sont corrigés dans la mesure du possible.
 
 !!! info 
-    **Thème en cours** : [Manipulation de données (CSV)](./TraitementDonnees/Traitement_Donnees.md) 
+    **Thème en cours** : [Manipulation de données (CSV) avec la bibliothèque Pandas](./TraitementDonnees/TP20_Manipulation_fichier_CSV_avec_bibliotheque_Pandas.md) 
 
 
+??? video  "Vidéo de présentation :" 
+
+    <div style="width: 100%;"><div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;"><iframe frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/622b74508c4c780013c4e08f" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
 
 ## Les thèmes du programme
 
@@ -23,7 +26,7 @@ Ces TD sont corrigés dans la mesure du possible.
         - □ Codage des non-entiers
         - 🗹 Bases
         - 🗹 Codage des caractères
-        - □ Booléens
+        - 🗹 Booléens
 
     === "T2 Types construits"
 
@@ -37,8 +40,8 @@ Ces TD sont corrigés dans la mesure du possible.
     === "T3 Tables"
         **Thème 3 : Traitements de données en tables**
 
-        - □ Recherche dans une table
-        - □ Tri d'une table
+        - 🗹 Recherche dans une table
+        - 🗹 Tri d'une table
         - □ Fusion de tables
     
     === "T4 IHM"

@@ -18,7 +18,7 @@ Créer le dictionnaire représentant mon dressing.
 
 
 ```python
-
+dressing={'pantalons':3,'pulls':4,'tee-shirts':8,'sweats':5}
 ```
 
 **Question 2 :**  
@@ -26,8 +26,16 @@ Rajouter la catégorie `chemises` avec une quantité de 6.
 
 
 ```python
-
+dressing['chemises']=6
+dressing
 ```
+
+
+
+
+    {'pantalons': 3, 'pulls': 4, 'tee-shirts': 8, 'sweats': 5, 'chemises': 6}
+
+
 
 **Question 3 :**  
 Ecrivez un programme permettant d'obtenir l'affichage suivant.
@@ -43,16 +51,47 @@ Le dressing comporte :
 
 
 ```python
-
+print('Le dressing comporte : ')
+for vet,quantite in dressing.items():
+    print(quantite,vet)
 ```
+
+    Le dressing comporte : 
+    3 pantalons
+    4 pulls
+    8 tee-shirts
+    5 sweats
+    6 chemises
+
 
 **Question 4 :**
 Ecrire une fonction `achat(vetement,quantite)` en y incluant un test pour prendre en compte les nouveaux habits.
 
 
 ```python
+def achat(vetement,quantite):
+    if vetement not in dressing:
+        dressing[vetement]=quantite
+    else:
+        dressing[vetement]+=quantite
+
+achat('jeans',6)
+achat('pulls',2)
+dressing
 
 ```
+
+
+
+
+    {'pantalons': 3,
+     'pulls': 6,
+     'tee-shirts': 8,
+     'sweats': 5,
+     'chemises': 6,
+     'jeans': 6}
+
+
 
 ## Exercice n°2 : notes d'examen
 
@@ -71,8 +110,15 @@ Ecrire la commande permettant d'accéder à la note de projet du candidat_a
 
 
 ```python
-
+candidat_a['projet']
 ```
+
+
+
+
+    17
+
+
 
 **Question 2**  
 Ecrire une fonction `affichenote(candidat,matiere)` ayant comme paramètres `candidat` et `matiere` et renvoyant le nom du candidat ainsi que la note de la matière choisie.
@@ -80,12 +126,17 @@ Ecrire une fonction `affichenote(candidat,matiere)` ayant comme paramètres `can
 
 ```python
 def affichenote(candidat,matiere):
-    nom=candidat['nom']
-    note=candidat[matiere]
-    return nom,note
+    return (candidat['nom'],candidat[matiere])
 
-
+affichenote(candidat_a,'ecrit')
 ```
+
+
+
+
+    ('John', 15)
+
+
 
 Tester votre fonction grâce au jeu de tests ci-dessous.
 
@@ -101,7 +152,13 @@ Compléter la fonction `moyenne` qui prend en paramètre un dictionnaire modéli
 
 ```python
 def moyenne(candidat):
-    ...
+    somme=0
+    nb2notes=len(candidat)-1
+    for nom,note in candidat.items():
+        if nom!='nom':
+            somme+=note
+
+    return somme/nb2notes
 ```
 
 Tester votre fonction grâce au jeu de tests ci-dessous.
@@ -128,10 +185,17 @@ Compléter la fonction `harmonisation` ci-dessous qui prend en paramètre un dic
 import copy
 
 def harmonisation(candidat):
-    copie_candidat = copy.deepcopy(...)
-    ...
-    ...
-    return ...
+    copie_candidat = copy.deepcopy(candidat)
+    if copie_candidat['projet'] < 2:
+        copie_candidat['projet'] = 0
+    else:
+        copie_candidat['projet'] = copie_candidat['projet'] - 2
+
+    if copie_candidat['oral'] < 4:
+        copie_candidat['oral'] = 0
+    else:
+        copie_candidat['oral'] = copie_candidat['oral'] - 4
+    return copie_candidat
     
 ```
 
@@ -172,10 +236,10 @@ Compléter la fonction `nouvel_achat` :
 
 ```python
 def nouvel_achat(dict_achats, ref, m):
-    if ... in dict_achats. ... :
-        dict_achats[...] = ... + ...
+    if ref in dict_achats.keys() :
+        dict_achats[ref] = dict_achats[ref] + m
     else:
-        dict_achats[...] = ...
+        dict_achats[ref] = m
 ```
 
 Tester votre fonction grâce au jeu de tests ci-dessous.
@@ -213,8 +277,8 @@ Completer la fonction `montant_total` :
 ```python
 def montant_total(dict_achats):
     total = 0
-    for ... in dict_achats. ... :
-        total = total + ...
+    for val in dict_achats.values() :
+        total = total + val
     return total
 ```
 
@@ -268,9 +332,9 @@ On pourra consulter le jeu de tests si besoin.
 ```python
 def selectionner_etape_0(preselection):
     dico = {i:0 for i in range(1, 16)}
-    for ... in preselection :
-        dico[...] = ...
-    return ...
+    for elt in preselection :
+        dico[elt] = 1
+    return dico
 ```
 
 Tester votre fonction grâce au jeu de tests ci-dessous.
@@ -306,9 +370,9 @@ def selection_finale(preselection_a, preselection_b):
     dico_a = selectionner_etape_0(preselection_a)
     dico_b = selectionner_etape_0(preselection_b)
     selection_finale = []
-    for ... in range(1, 16):
-        if ...[...] == ... and ...[...] == ... :
-            selection_finale.append(...)
+    for i in range(1, 16):
+        if dico_a[i] == 1 and dico_b[i] == 1 :
+            selection_finale.append(i)
     return selection_finale
 ```
 
