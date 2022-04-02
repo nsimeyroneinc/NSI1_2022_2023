@@ -29,7 +29,8 @@ nav:
       - TP 15 Les Dictionnaires: Dictionnaire/TP15_Dictionnaires.md
     
     - T3 Rep. Des données:
-      - TP 19 CSV : TraitementDonnees/Traitement_Donnees.md
+      #- TP 19 CSV : TraitementDonnees/Traitement_Donnees.md
+      - TP 19 CSV - Correction : TraitementDonnees/TP19_Manipulation_et_traitement_de_fichier_CSV_Prof.md
       - TP 20 CSV et Pandas: TraitementDonnees/TP20_Manipulation_fichier_CSV_avec_bibliotheque_Pandas.md
     
     - T4 I.H.M. :
@@ -87,12 +88,12 @@ theme:
     features:
         - navigation.instant
         - navigation.tabs
-        - navigation.expand
+        #- navigation.expand
         - navigation.top
         - navigation.sections
         - navigation.indexes
         - navigation.tracking
-        - toc.integrate
+        #- toc.integrate
         - header.autohide
         - content.code.annotate 
      
