@@ -3,10 +3,10 @@ Il permettra de retrouver les TP&TD traités en classes.<br>
 Ces TD sont corrigés dans la mesure du possible.
 
 !!! info 
-    - **Thème en cours** : [Algorihtme glouton](./Algorithmique/TD_Glouton.md)  
-    - **Correction(s) disponible(s)** : 
+    - **Thème en cours** : [Algorihtmes gloutons](./Algorithmique/TD_Glouton.md)  
+    - **Correction(s) disponible(s)** :  
         - [TP 19 : Fichier CSV ](./TraitementDonnees/TP19_Manipulation_et_traitement_de_fichier_CSV_Prof.md)  
-        -[Manipulation de données (CSV) avec la bibliothèque Pandas](./TraitementDonnees/TP20_Prof_Manipulation_fichier_CSV_avec_bibliotheque_Pandas.md)  
+        - [TP 20 Fichier CSV avec la bibliothèque Pandas](./TraitementDonnees/TP20_Prof_Manipulation_fichier_CSV_avec_bibliotheque_Pandas.md)  
 
 
 ??? video  "Vidéo de présentation :" 
@@ -45,7 +45,7 @@ Ces TD sont corrigés dans la mesure du possible.
 
         - 🗹 Recherche dans une table
         - 🗹 Tri d'une table
-        - □ Fusion de tables
+        - 🗹 Fusion de tables
     
     === "T4 IHM"
         **Thème 3 : Interactions entre l'homme et la machine sur le web**
