@@ -40,7 +40,7 @@ df = pd.read_csv('data/players.csv', encoding = 'utf-8')
 
 La variable est nommée classiquement `df` pour *dataframe* (que l'on peut traduire par *table de données*)
 
-## Premiers renseignements sur les fichiers de données  
+# Premiers renseignements sur les fichiers de données  
 
 Que contient la variable `df`?
 
@@ -747,11 +747,11 @@ df.info()
     memory usage: 52.4+ KB
 
 
-## Extraction de colonnes
+# Extraction de colonnes
 
-### Pour accéder aux information d'une colonne
+## Pour accéder aux information d'une colonne
 
-#### Filter les lignes en appliquant une condition aux colonnes à l'aide de  `.loc` 
+### Filter les lignes en appliquant une condition aux colonnes à l'aide de  `.loc` 
 
 &#x27A1; Pour faire afficher une colonne de données :
 
@@ -1175,7 +1175,7 @@ test1
 
 
 
-#### Extraire des informations selon des critères  `loc()`
+### Extraire des informations selon des critères  `loc()`
 
 &#x27A1; Cette méthode nécessite de savoir la position du joueur voulu, pour accéder à un joueur avec son nom : 
 
@@ -2624,7 +2624,7 @@ df.loc[df.College=='Kentucky']
 
 
 
-#### Opération classique : Moyenne, maximum et minimum
+### Opération classique : Moyenne, maximum et minimum
 
 &#x27A1; On peut calculer la moyenne des salaires : 
 
@@ -2668,7 +2668,7 @@ df["Salary"].min()
 
 
 
-#### Filtrer les lignes avec des indices en utilisant `iloc`
+### Filtrer les lignes avec des indices en utilisant `iloc`
 
 &#x27A1; On peut également faire afficher le salaire max et le nom du joueur correspondant :
 
@@ -2690,10 +2690,13 @@ Faire afficher uniquement le nom des joueurs gagnant plus de 40 millions de doll
 
 
 ```python
-result = df[df["Salary"]>40000000]["Name"].iloc[:]
-print(result)
+df[df["Salary"]>40000000]["Name"].iloc[:]
+
 
 ```
+
+
+
 
     25          Kevin Durant
     29          James Harden
@@ -2704,16 +2707,21 @@ print(result)
     Name: Name, dtype: object
 
 
+
 **&#x1F58B; A vous**  
 Faites de même pour faire apparaitre le nom du joueur ayant le salaire minimum.
 
 
 ```python
 result = df[df["Salary"].min() == df["Salary"]]["Name"].iloc[0]  # 0 signifie qu'on affiche le premier joueur correspondant à la condition
-print(result)
+result
 ```
 
-    Miles McBride
+
+
+
+    'Miles McBride'
+
 
 
 **&#x1F58B; A vous**  
@@ -2721,13 +2729,17 @@ Faire apparaitre le poste et le club de Kemba Walker
 
 
 ```python
-result = df[df["Name"] == "Kemba Walker"][["Name",'Team']].iloc[0] 
-print(result)
+df[df["Name"] == "Kemba Walker"][["Name",'Team']].iloc[0] 
+
 ```
+
+
+
 
     Name       Kemba Walker
     Team    New York Knicks
     Name: 64, dtype: object
+
 
 
 **&#x1F58B; A vous**  
@@ -2735,12 +2747,45 @@ Faire apparaitre le plus grand joueur
 
 
 ```python
-result = df[df["Height"].max() == df["Height"]][["Name","Height"]].iloc[:]  # 0 signifie qu'on affiche le premier joueur correspondant à la condition
-print(result)
+df[df["Height"].max() == df["Height"]][["Name","Height"]].iloc[:]  # 0 signifie qu'on affiche le premier joueur correspondant à la condition
+
 ```
 
-             Name Height
-    4  Tacko Fall  7' 5"
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>Tacko Fall</td>
+      <td>7' 5"</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 
 **&#x1F58B; A vous**  
@@ -2748,14 +2793,55 @@ Faire apparaitre le plus petit joueur
 
 
 ```python
-result = df[df["Height"].min() == df["Height"]][["Name","Height"]].iloc[:]  # 0 signifie qu'on affiche le premier joueur correspondant à la condition
-print(result)
+df[df["Height"].min() == df["Height"]][["Name","Height"]].iloc[:]  # 0 signifie qu'on affiche le premier joueur correspondant à la condition
+
 ```
 
-                     Name  Height
-    50       Jared Harper  5' 10"
-    471  Facundo Campazzo  5' 10"
-    478     Markus Howard  5' 10"
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>50</th>
+      <td>Jared Harper</td>
+      <td>5' 10"</td>
+    </tr>
+    <tr>
+      <th>471</th>
+      <td>Facundo Campazzo</td>
+      <td>5' 10"</td>
+    </tr>
+    <tr>
+      <th>478</th>
+      <td>Markus Howard</td>
+      <td>5' 10"</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 
 **&#x1F58B; A vous**  
@@ -2763,12 +2849,47 @@ Faire apparaitre le meilleur rebondeur
 
 
 ```python
-result = df[df["Rebounds"].max() == df["Rebounds"]][["Name","Rebounds",'Salary']].iloc[:]  # 0 signifie qu'on affiche le premier joueur correspondant à la condition
-print(result)
+df[df["Rebounds"].max() == df["Rebounds"]][["Name","Rebounds",'Salary']].iloc[:]  # 0 signifie qu'on affiche le premier joueur correspondant à la condition
+
 ```
 
-                 Name  Rebounds      Salary
-    191  Clint Capela      14.3  18603448.0
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Rebounds</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>191</th>
+      <td>Clint Capela</td>
+      <td>14.3</td>
+      <td>18603448.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 
 **&#x1F58B; A vous**   
@@ -2776,12 +2897,45 @@ Donner le nom du meilleur marqueur ainsi que sa moyenne de points
 
 
 ```python
-result = df[df["Points"].max() == df["Points"]][["Name","Points"]].iloc[:]  # 0 signifie qu'on affiche le premier joueur correspondant à la condition
-print(result)
+df[df["Points"].max() == df["Points"]][["Name","Points"]].iloc[:]  # 0 signifie qu'on affiche le premier joueur correspondant à la condition
+
 ```
 
-                  Name  Points
-    287  Stephen Curry    32.0
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>287</th>
+      <td>Stephen Curry</td>
+      <td>32.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 
 **&#x1F58B; A vous**   
@@ -2789,36 +2943,269 @@ Donner les joueurs des Brooklyn Nets
 
 
 ```python
-result = df[df["Team"] == "Brooklyn Nets"][["Name","Salary",'Points','Rebounds','Assists']].iloc[:]  # 0 signifie qu'on affiche le premier joueur correspondant à la condition
-print(result)
+df[df["Team"] == "Brooklyn Nets"][["Team","Name","Salary",'Points','Rebounds','Assists']].iloc[:]
+
 ```
 
-                           Name      Salary  Points  Rebounds  Assists
-    19        LaMarcus Aldridge         NaN    13.5       4.5      1.9
-    20          DeAndre' Bembry   1669178.0     5.7       2.9      2.1
-    21              Bruce Brown   4736102.0     8.8       5.4      1.6
-    22             Jevon Carter   3650000.0     4.1       1.5      1.2
-    23          Nicolas Claxton   1782621.0     6.6       5.2      0.9
-    24          Sekou Doumbouya   3613680.0     5.1       2.6      0.8
-    25             Kevin Durant  42018900.0    26.9       7.1      5.6
-    26          Kessler Edwards         NaN     NaN       NaN      NaN
-    27             RaiQuan Gray         NaN     NaN       NaN      NaN
-    28            Blake Griffin   1669178.0    11.0       4.9      3.0
-    29             James Harden  44310840.0    24.6       7.9     10.8
-    30               Joe Harris  17357143.0    14.1       3.6      1.9
-    31             Kyrie Irving  35328700.0    26.9       4.8      6.0
-    32               Mike James         NaN     7.7       2.5      4.2
-    33            Alize Johnson   1762796.0     5.2       5.0      0.8
-    34            James Johnson   1669178.0     7.2       3.5      1.9
-    35            Tyler Johnson         NaN     5.4       2.0      1.2
-    36  Timothe Luwawu-Cabarrot         NaN     6.4       2.2      1.2
-    37              Patty Mills   5890000.0    10.8       1.7      2.4
-    38             Paul Millsap         NaN     9.0       4.7      1.8
-    39            Jahlil Okafor   2130023.0     5.4       2.4      0.5
-    40             Reggie Perry         NaN     3.0       2.8      0.5
-    41           Day'Ron Sharpe   2009040.0     NaN       NaN      NaN
-    42           Cameron Thomas   2036280.0     NaN       NaN      NaN
-    43        Marcus Zegarowski         NaN     NaN       NaN      NaN
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Team</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Points</th>
+      <th>Rebounds</th>
+      <th>Assists</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>19</th>
+      <td>Brooklyn Nets</td>
+      <td>LaMarcus Aldridge</td>
+      <td>NaN</td>
+      <td>13.5</td>
+      <td>4.5</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Brooklyn Nets</td>
+      <td>DeAndre' Bembry</td>
+      <td>1669178.0</td>
+      <td>5.7</td>
+      <td>2.9</td>
+      <td>2.1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Brooklyn Nets</td>
+      <td>Bruce Brown</td>
+      <td>4736102.0</td>
+      <td>8.8</td>
+      <td>5.4</td>
+      <td>1.6</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Brooklyn Nets</td>
+      <td>Jevon Carter</td>
+      <td>3650000.0</td>
+      <td>4.1</td>
+      <td>1.5</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Brooklyn Nets</td>
+      <td>Nicolas Claxton</td>
+      <td>1782621.0</td>
+      <td>6.6</td>
+      <td>5.2</td>
+      <td>0.9</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Brooklyn Nets</td>
+      <td>Sekou Doumbouya</td>
+      <td>3613680.0</td>
+      <td>5.1</td>
+      <td>2.6</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Brooklyn Nets</td>
+      <td>Kevin Durant</td>
+      <td>42018900.0</td>
+      <td>26.9</td>
+      <td>7.1</td>
+      <td>5.6</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Brooklyn Nets</td>
+      <td>Kessler Edwards</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Brooklyn Nets</td>
+      <td>RaiQuan Gray</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Brooklyn Nets</td>
+      <td>Blake Griffin</td>
+      <td>1669178.0</td>
+      <td>11.0</td>
+      <td>4.9</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Brooklyn Nets</td>
+      <td>James Harden</td>
+      <td>44310840.0</td>
+      <td>24.6</td>
+      <td>7.9</td>
+      <td>10.8</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Brooklyn Nets</td>
+      <td>Joe Harris</td>
+      <td>17357143.0</td>
+      <td>14.1</td>
+      <td>3.6</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Brooklyn Nets</td>
+      <td>Kyrie Irving</td>
+      <td>35328700.0</td>
+      <td>26.9</td>
+      <td>4.8</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Brooklyn Nets</td>
+      <td>Mike James</td>
+      <td>NaN</td>
+      <td>7.7</td>
+      <td>2.5</td>
+      <td>4.2</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Brooklyn Nets</td>
+      <td>Alize Johnson</td>
+      <td>1762796.0</td>
+      <td>5.2</td>
+      <td>5.0</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Brooklyn Nets</td>
+      <td>James Johnson</td>
+      <td>1669178.0</td>
+      <td>7.2</td>
+      <td>3.5</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Brooklyn Nets</td>
+      <td>Tyler Johnson</td>
+      <td>NaN</td>
+      <td>5.4</td>
+      <td>2.0</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Brooklyn Nets</td>
+      <td>Timothe Luwawu-Cabarrot</td>
+      <td>NaN</td>
+      <td>6.4</td>
+      <td>2.2</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Brooklyn Nets</td>
+      <td>Patty Mills</td>
+      <td>5890000.0</td>
+      <td>10.8</td>
+      <td>1.7</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Brooklyn Nets</td>
+      <td>Paul Millsap</td>
+      <td>NaN</td>
+      <td>9.0</td>
+      <td>4.7</td>
+      <td>1.8</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Brooklyn Nets</td>
+      <td>Jahlil Okafor</td>
+      <td>2130023.0</td>
+      <td>5.4</td>
+      <td>2.4</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Brooklyn Nets</td>
+      <td>Reggie Perry</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>2.8</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Brooklyn Nets</td>
+      <td>Day'Ron Sharpe</td>
+      <td>2009040.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Brooklyn Nets</td>
+      <td>Cameron Thomas</td>
+      <td>2036280.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Brooklyn Nets</td>
+      <td>Marcus Zegarowski</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 
 &#x27A1;  On peut regrouper les informations selon un critère
@@ -2878,7 +3265,7 @@ print(result)
     41    1669178.00    4.00      1.00     0.00
 
 
-## Création de graphique
+# Création de graphique
 
 
 ```python
@@ -2893,8 +3280,12 @@ plt.show()
 ```
 
 
+    
+![png](TP20_Prof_Manipulation_fichier_CSV_avec_bibliotheque_Pandas_files/TP20_Prof_Manipulation_fichier_CSV_avec_bibliotheque_Pandas_66_0.png)
+    
 
-## Rajout d'une colonne  
+
+# Rajout d'une colonne  
 
 &#x27A1;  Afin de pouvoir trier les joueurs suivant de nouveaux critères, nous allons rajouter un champ pour chaque joueur.   
 
@@ -6057,6 +6448,7 @@ df_1
       <th>Rebounds</th>
       <th>Assists</th>
       <th>Taille</th>
+      <th>IMC</th>
       <th>total_P+A</th>
     </tr>
   </thead>
@@ -6072,6 +6464,7 @@ df_1
       <td>5.5</td>
       <td>5.8</td>
       <td>190.50</td>
+      <td>23.123415</td>
       <td>37.8</td>
     </tr>
     <tr>
@@ -6085,6 +6478,7 @@ df_1
       <td>4.2</td>
       <td>7.5</td>
       <td>187.96</td>
+      <td>25.036518</td>
       <td>36.3</td>
     </tr>
     <tr>
@@ -6098,6 +6492,7 @@ df_1
       <td>4.7</td>
       <td>4.4</td>
       <td>190.50</td>
+      <td>25.873226</td>
       <td>35.7</td>
     </tr>
     <tr>
@@ -6111,6 +6506,7 @@ df_1
       <td>7.9</td>
       <td>10.8</td>
       <td>195.58</td>
+      <td>26.088193</td>
       <td>35.4</td>
     </tr>
     <tr>
@@ -6124,6 +6520,7 @@ df_1
       <td>3.9</td>
       <td>9.4</td>
       <td>185.42</td>
+      <td>23.748137</td>
       <td>34.7</td>
     </tr>
     <tr>
@@ -6137,6 +6534,7 @@ df_1
       <td>11.5</td>
       <td>11.7</td>
       <td>190.50</td>
+      <td>24.998286</td>
       <td>33.9</td>
     </tr>
     <tr>
@@ -6150,6 +6548,7 @@ df_1
       <td>4.8</td>
       <td>6.0</td>
       <td>187.96</td>
+      <td>25.036518</td>
       <td>32.9</td>
     </tr>
     <tr>
@@ -6163,6 +6562,7 @@ df_1
       <td>7.1</td>
       <td>5.6</td>
       <td>208.28</td>
+      <td>25.094948</td>
       <td>32.5</td>
     </tr>
     <tr>
@@ -6176,6 +6576,7 @@ df_1
       <td>3.5</td>
       <td>7.2</td>
       <td>190.50</td>
+      <td>23.123415</td>
       <td>32.4</td>
     </tr>
     <tr>
@@ -6189,6 +6590,7 @@ df_1
       <td>5.0</td>
       <td>4.9</td>
       <td>195.58</td>
+      <td>23.716539</td>
       <td>32.3</td>
     </tr>
     <tr>
@@ -6202,6 +6604,7 @@ df_1
       <td>4.4</td>
       <td>5.2</td>
       <td>185.42</td>
+      <td>28.365830</td>
       <td>31.6</td>
     </tr>
     <tr>
@@ -6215,6 +6618,7 @@ df_1
       <td>10.6</td>
       <td>2.8</td>
       <td>213.36</td>
+      <td>27.899873</td>
       <td>31.3</td>
     </tr>
     <tr>
@@ -6228,6 +6632,7 @@ df_1
       <td>7.4</td>
       <td>4.3</td>
       <td>203.20</td>
+      <td>23.069707</td>
       <td>30.7</td>
     </tr>
     <tr>
@@ -6241,6 +6646,7 @@ df_1
       <td>7.2</td>
       <td>3.7</td>
       <td>200.66</td>
+      <td>31.993881</td>
       <td>30.7</td>
     </tr>
     <tr>
@@ -6254,6 +6660,7 @@ df_1
       <td>10.2</td>
       <td>6.0</td>
       <td>203.20</td>
+      <td>27.463937</td>
       <td>30.1</td>
     </tr>
     <tr>
@@ -6267,6 +6674,7 @@ df_1
       <td>6.5</td>
       <td>5.2</td>
       <td>200.66</td>
+      <td>25.347265</td>
       <td>30.0</td>
     </tr>
     <tr>
@@ -6280,6 +6688,7 @@ df_1
       <td>4.2</td>
       <td>4.3</td>
       <td>195.58</td>
+      <td>24.428035</td>
       <td>29.9</td>
     </tr>
     <tr>
@@ -6293,6 +6702,7 @@ df_1
       <td>4.7</td>
       <td>5.9</td>
       <td>198.12</td>
+      <td>20.801089</td>
       <td>29.6</td>
     </tr>
     <tr>
@@ -6306,6 +6716,7 @@ df_1
       <td>10.6</td>
       <td>4.5</td>
       <td>210.82</td>
+      <td>25.310356</td>
       <td>29.3</td>
     </tr>
     <tr>
@@ -6319,6 +6730,7 @@ df_1
       <td>3.1</td>
       <td>4.4</td>
       <td>185.42</td>
+      <td>25.067478</td>
       <td>28.7</td>
     </tr>
   </tbody>
@@ -6369,6 +6781,7 @@ df_2
       <th>Rebounds</th>
       <th>Assists</th>
       <th>Taille</th>
+      <th>IMC</th>
       <th>total_P+A</th>
       <th>total_P+A+R</th>
     </tr>
@@ -6385,6 +6798,7 @@ df_2
       <td>11.5</td>
       <td>11.7</td>
       <td>190.50</td>
+      <td>24.998286</td>
       <td>33.9</td>
       <td>45.4</td>
     </tr>
@@ -6399,6 +6813,7 @@ df_2
       <td>7.9</td>
       <td>10.8</td>
       <td>195.58</td>
+      <td>26.088193</td>
       <td>35.4</td>
       <td>43.3</td>
     </tr>
@@ -6413,6 +6828,7 @@ df_2
       <td>5.5</td>
       <td>5.8</td>
       <td>190.50</td>
+      <td>23.123415</td>
       <td>37.8</td>
       <td>43.3</td>
     </tr>
@@ -6427,6 +6843,7 @@ df_2
       <td>10.6</td>
       <td>2.8</td>
       <td>213.36</td>
+      <td>27.899873</td>
       <td>31.3</td>
       <td>41.9</td>
     </tr>
@@ -6441,6 +6858,7 @@ df_2
       <td>4.2</td>
       <td>7.5</td>
       <td>187.96</td>
+      <td>25.036518</td>
       <td>36.3</td>
       <td>40.5</td>
     </tr>
@@ -6455,6 +6873,7 @@ df_2
       <td>4.7</td>
       <td>4.4</td>
       <td>190.50</td>
+      <td>25.873226</td>
       <td>35.7</td>
       <td>40.4</td>
     </tr>
@@ -6469,6 +6888,7 @@ df_2
       <td>10.2</td>
       <td>6.0</td>
       <td>203.20</td>
+      <td>27.463937</td>
       <td>30.1</td>
       <td>40.3</td>
     </tr>
@@ -6483,6 +6903,7 @@ df_2
       <td>10.6</td>
       <td>4.5</td>
       <td>210.82</td>
+      <td>25.310356</td>
       <td>29.3</td>
       <td>39.9</td>
     </tr>
@@ -6497,6 +6918,7 @@ df_2
       <td>7.1</td>
       <td>5.6</td>
       <td>208.28</td>
+      <td>25.094948</td>
       <td>32.5</td>
       <td>39.6</td>
     </tr>
@@ -6511,6 +6933,7 @@ df_2
       <td>11.7</td>
       <td>3.8</td>
       <td>210.82</td>
+      <td>26.535051</td>
       <td>27.2</td>
       <td>38.9</td>
     </tr>
@@ -6525,6 +6948,7 @@ df_2
       <td>3.9</td>
       <td>9.4</td>
       <td>185.42</td>
+      <td>23.748137</td>
       <td>34.7</td>
       <td>38.6</td>
     </tr>
@@ -6539,6 +6963,7 @@ df_2
       <td>7.4</td>
       <td>4.3</td>
       <td>203.20</td>
+      <td>23.069707</td>
       <td>30.7</td>
       <td>38.1</td>
     </tr>
@@ -6553,6 +6978,7 @@ df_2
       <td>7.2</td>
       <td>3.7</td>
       <td>200.66</td>
+      <td>31.993881</td>
       <td>30.7</td>
       <td>37.9</td>
     </tr>
@@ -6567,6 +6993,7 @@ df_2
       <td>4.8</td>
       <td>6.0</td>
       <td>187.96</td>
+      <td>25.036518</td>
       <td>32.9</td>
       <td>37.7</td>
     </tr>
@@ -6581,6 +7008,7 @@ df_2
       <td>5.0</td>
       <td>4.9</td>
       <td>195.58</td>
+      <td>23.716539</td>
       <td>32.3</td>
       <td>37.3</td>
     </tr>
@@ -6595,6 +7023,7 @@ df_2
       <td>6.5</td>
       <td>5.2</td>
       <td>200.66</td>
+      <td>25.347265</td>
       <td>30.0</td>
       <td>36.5</td>
     </tr>
@@ -6609,6 +7038,7 @@ df_2
       <td>4.4</td>
       <td>5.2</td>
       <td>185.42</td>
+      <td>28.365830</td>
       <td>31.6</td>
       <td>36.0</td>
     </tr>
@@ -6623,6 +7053,7 @@ df_2
       <td>3.5</td>
       <td>7.2</td>
       <td>190.50</td>
+      <td>23.123415</td>
       <td>32.4</td>
       <td>35.9</td>
     </tr>
@@ -6637,6 +7068,7 @@ df_2
       <td>6.9</td>
       <td>7.1</td>
       <td>200.66</td>
+      <td>25.910537</td>
       <td>28.6</td>
       <td>35.5</td>
     </tr>
@@ -6651,6 +7083,7 @@ df_2
       <td>6.6</td>
       <td>5.2</td>
       <td>203.20</td>
+      <td>24.168265</td>
       <td>28.5</td>
       <td>35.1</td>
     </tr>
