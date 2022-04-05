@@ -3,7 +3,7 @@ Il permettra de retrouver les TP&TD traités en classes.<br>
 Ces TD sont corrigés dans la mesure du possible.
 
 !!! info 
-    - **Thème en cours** : [Algorihtmes gloutons](./Algorithmique/TD_Glouton.md)  
+    - **Thème en cours** : [Algorithmes gloutons](./Algorithmique/TD_Glouton.md)  
     - **Correction(s) disponible(s)** :  
         - [TP 19 : Fichier CSV ](./TraitementDonnees/TP19_Manipulation_et_traitement_de_fichier_CSV_Prof.md)  
         - [TP 20 Fichier CSV avec la bibliothèque Pandas](./TraitementDonnees/TP20_Prof_Manipulation_fichier_CSV_avec_bibliotheque_Pandas.md)  
