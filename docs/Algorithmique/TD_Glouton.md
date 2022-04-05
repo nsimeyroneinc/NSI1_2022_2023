@@ -338,7 +338,7 @@ On peut dans un tableau énumérer quelques solutions possibles et choisir celle
 
 L'utilisation de **ce type de méthode** est **très coûteux en temps de calcul** car il faut explorer toutes les possibilités.
 
-## L'algorithme glouton
+### L'algorithme glouton
 
 
 On procède étape par étape en faisant, à chaque étape, le meilleur choix possible. On ne remet jamais en cause les choix faits aux étapes passées. Dans notre cas nous allons rendre la monnaie en commençant par la pièce ou le billet avec la plus grande duree possible (en restant inférieur à la somme à rendre).  
@@ -383,7 +383,7 @@ Notre solution dépend du nombre de pièces et de billets disponibles. Si nous s
     Traiter l'exercice précédent avec pour système S = $[1,2,5,50,100]$ et pour somme : 127 €.
 
 
-## Solution et solution optimale
+### Solution et solution optimale
 
 Pourquoi notre système monétaire ne possède pas de pièces ou de billets de 7 € ?
 
@@ -392,7 +392,7 @@ Prenons un montant de 14 €. L'algorithme glouton donne le rendu suivant 14=10+
 
 Il existe des conditions sur le système pour que l'algorithme glouton soit optimal. Si le sujet vous intéresse, vous pouvez faire des recherches.
 
-## Une solution optimale locale  
+### Une solution optimale locale  
 
 Un algorithme glouton permet de trouver solution optimale locale mais pas toujours une solution optimale globale.
 
@@ -410,7 +410,7 @@ L'algorithme glouton ne va pas trouver de solution, alors qu'il existe au moins 
 
 > **Remarque :** Dans le système de pièces Européen, l'algorithme glouton donne toujours une solution optimale.
 
-## Implémentation de l'algorithme glouton [Capytale](https://capytale2.ac-paris.fr/web/c/1352-489284)
+### Implémentation de l'algorithme glouton [Capytale](https://capytale2.ac-paris.fr/web/c/1352-489284)
 
 !!! ugli-exo "Exercice 4 :"  
     Programmer cet algorithme en langage python. Programmer une fonction rendu_monnaie_glouton(systeme,somme) qui possède comme paramètres  
@@ -426,7 +426,7 @@ L'algorithme glouton ne va pas trouver de solution, alors qu'il existe au moins 
     * penser à trier par ordre décroissant la liste des pièces et billets.  
     * penser à gérer l'absence de solution globale.
 
-### Version 1 : avec uniquement des entiers - Epreuve pratique de BAC.
+#### Version 1 : avec uniquement des entiers - Epreuve pratique de BAC.
 
 La fonction `rendu_monnaie_centimes` prend en paramètres deux nombres entiers
 positifs `s_due` et` s_versee` et elle permet de procéder au rendu de monnaie de la
@@ -468,7 +468,7 @@ Compléter ce code pour qu'il donne :
 [200, 100, 50, 20, 10, 5, 2, 1]
 ```
 
-### Version 2 : Avec les centimes
+#### Version 2 : Avec les centimes
 
 ```python
 euros = [100, 50, 20, 10, 5, 2, 1, 0.50, 0.20, 0.10, 0.05, 0.02,0.01]
