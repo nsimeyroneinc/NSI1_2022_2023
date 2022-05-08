@@ -7,7 +7,7 @@ date : 28/11/2021
 <table  class="blueTable">
         <tr>
             <th>
-            Thème 4 : Algorithmique
+            Thème 7 : Algorithmique
             </th>
         </tr>
 </table>
@@ -51,8 +51,9 @@ Voici le tableau des distances :
 
 
 !!! fabquestion "Question 1 :"
-    Partons de Lille. 
-    - Combien de destinations différentes peut-on choisir ?  
+    Partons de Lille.  
+
+    - Combien de destinations différentes peut-on choisir ?   
     - Combien de "chemin" possible ?
 
     Le problème se ramène à trouver un ordre de visite des quatre villes pour lequel la somme des distance données par ce tableau est aussi petite que possible.    
@@ -64,7 +65,7 @@ Voici le tableau des distances :
 
     Traiter le problème en faisant tous les cas de figure, à résumer dans un tableau et donner l'itinéraire le plus court
     
-    Afficher tous les chemin avec la distance totale  
+    Afficher tous les chemins possibles avec la distance totale  
 
     1.  Lille  -> ...   -> ...-> ...-> ...-> Lille     avec une distance totale de  ... km   
     2.  Lille -> ...   -> ...-> ...-> ...-> Lille     avec une distance totale de  ... km  
@@ -83,12 +84,12 @@ Voici le tableau des distances :
 Les douze itinéraires correspondent chacun à l'un des douze itinéraire emprunté dans le sens inverse.
 
 !!! fabquestion "Question 3 :"
-    Répondre au problème : quel est le trajet optimal. ?
+    Répondre au problème : quel est le trajet optimal ?
 
 ### Limite de cette méthode 
 
 !!! fabquestion "Question 4 :"
-    Reprenons le même problème en rajoutant Marseille.
+    Et si l'on reprennait le même problème en rajoutant Marseille.
 
 <img src="https://drive.google.com/uc?id=1mrw6g3czekWnWSBHZqBHsZYJ1ETLZ5ep" height="500px" align="center" hspace="100px" alt="New"></img> 
 
@@ -97,7 +98,9 @@ Les douze itinéraires correspondent chacun à l'un des douze itinéraire emprun
     Dans ce cas, avec 6 villes, combien de cas faut-il étudier ? Qu'en pensez-vous ?
 
 ??? tip "Réponse au problème :"
-    > Le plus petit trajet sera réalisé avec le parcours suivant (dans un sens ou dans l'autre) :  
+
+    - Impossible de refaire la même méthode, on aurait 60 cas à étudier  
+    - Le plus petit trajet sera réalisé avec le parcours suivant (dans un sens ou dans l'autre) :  
     Lille -> Paris -> Lyon -> Marseille -> Bordeaux -> Brest -> Lille en 3 000 km
 
     <img src="https://drive.google.com/uc?id=1GV9GKXK0wGvBD9CQtg8o-ZmXuvYwrnZU" height="500px" align="center" hspace="100px" alt="New"></img> 
@@ -129,7 +132,7 @@ Maintenant que vous avez manipulé ce problème et vu à quel point il est compl
 
 > **_Remarque_** : **greedy algorithms** en anglais, l'adjectif "greedy" signifiant avare/glouton.
 
-Les **_algorithmes gloutons_** sont utilisés pour répondre à des **_problèmes d'optimisation_**, c'est-à-dire des problèmes algorithmiques dans lesquels l'objectif est de trouver une solution " la meilleure possible " selon un critère, parmi un ensemble de solutions également valides mais potentiellement moins avantageuses.  
+Les **_algorithmes gloutons_** sont utilisés pour répondre à des **_problèmes d'optimisation_**, c'est-à-dire des problèmes algorithmiques dans lesquels l'objectif est de trouver une solution " **_la meilleure possible_** " selon un critère, parmi un ensemble de solutions également valides mais potentiellement moins avantageuses.  
 
 Le contexte général d'un tel problème d'optimisation est donc le suivant :  
 
@@ -137,10 +140,10 @@ Le contexte général d'un tel problème d'optimisation est donc le suivant :
 * on dispose d'une fonction mathématique évaluant la qualité de chaque solution  
 * on cherche une solution qui soit bonne, voire meilleure.  
 
-Les algorithmes gloutons s'appliquent lorsque de plus :  
+Les **_algorithmes gloutons s'appliquent_** lorsque de plus :  
 
-* la recherche d'une solution peut se ramener à une succession de choix qui produisent et précisent petit à petit une solution partielle  
-* on dispose d'une fonction mathématique évaluant la qualité de chaque solution partielle (dont on attend qu'elle soit cohérente avec la fonction d'évaluation des solutions complètes).  
+* la **recherche d'une solution** peut se ramener à une **succession de choix** qui produisent et précisent petit à petit une solution partielle  
+* on **dispose d'une fonction mathématique** évaluant la qualité de chaque solution partielle (dont on attend qu'elle soit cohérente avec la fonction d'évaluation des solutions complètes).  
 
 <img src="https://drive.google.com/uc?id=1rWHqq1YskAKVz4KAJNnkxCksHvfkozJh" width="200px" align="left" hspace="1px" alt="New"></img>   
 
@@ -199,10 +202,19 @@ les_villes = {'Brest':brest, 'Bordeaux':bordeaux, 'Lille':lille, 'Lyon':lyon, 'M
 
 ```python
 def plus_proche_voisin(ville,les_villes_voisines,Non_Visitees):
-       pass
-
-ville='Lille'
-print(plus_proche_voisin(ville,les_villes[ville],les_villes.keys()))
+    if Non_Visitees==[ville]:
+        dist=0
+    else:
+        dist=1E99
+    pp=None
+   
+    for v,d in les_villes_voisines.items():
+        
+        if v in Non_Visitees:
+            if d<dist:
+                dist=d
+                pp=v
+    return pp,dist
 
 ```
 
@@ -212,28 +224,20 @@ print(plus_proche_voisin(ville,les_villes[ville],les_villes.keys()))
 
 ```python
 def trajet(depart,avisitees):
-    Nvisitees=....  #on crée un tableau avec les villes à visiter
-    taille=len(avisitees)             
-    ville=depart                                  
-    parcours=[depart]  # le parcours débute par la ville choisie
-    distance=0         # au départ la distance aprcourue est 0 
-    for i in range(.....):
-        ...........   #on enleve la ville déja visitée de la liste
-        
-        ville,dist=plus_proche_voisin(ville,avisitees[ville],Nvisitees) #on appelle la fonction plus proche voisin
-        
-        distance....    #la distance parcourue augment de la distance entre les deux villes
-        
-        parcours.append(ville)  # On ajoute la ville ainsi visitée dans le tableau parcours
-        
-        print(f"ville suivante {ville} avec une distance de {dist} km soit une distance totale {distance} km")
-    
-    ..... #la boucle est finie, on rajoute la ville de départ qui devient la ville de fin pour terminer la boucle.
-    
-    distance+=les_villes[ville][depart]  #on ajoute la dernière distance à parcourir pour retourner à la ville de départ
-    
-    print(f"ville suivante {ville} avec une distance de {dist} km soit une distance totale {distance} km")
-    
+    Nvisitees=[vil for vil in avisitees.keys()]
+    taille=len(avisitees)
+    ville=depart
+    parcours=[depart]
+    distance=0
+    for i in range(taille-1):
+        Nvisitees.remove(ville)
+        ville,dist=plus_proche_voisin(ville,avisitees[ville],Nvisitees)
+        distance+=dist
+        parcours.append(ville)
+        print(f"ville suivante {ville} avec une distance de {dist} km soit une distance total {distance} km")
+    parcours.append(depart)
+    distance+=les_villes[ville][depart]
+    print(f"ville suivante {ville} avec une distance de {dist} km soit une distance total {distance} km")
     return parcours,distance
     
 print(trajet('Lyon',les_villes))
@@ -243,12 +247,13 @@ print(trajet('Lyon',les_villes))
 Tester ce code avec d'autres villes de départ.
 
 ### <img src="https://drive.google.com/uc?id=1fYHzp1GqR6Tepu-6SIFhAci5g1CK8R7e" height="30px" align="left" hspace="1px" alt="New"></img>  Qualité de l’approximation  
-* La solution donnée par l’algorithme glouton n’est pas nécessairement optimale. Peut-on néanmoins s’attendre à un certain niveau de qualité ?
-* Si oui, ce niveau de qualité attendu est-il garanti, c’est-à-dire respecte même dans le pire des scénarios ?
-* Ou bien est-il seulement hautement probable, c’est-à-dire généralement respecté mais avec des exceptions ?
+
+* La solution donnée par l’algorithme glouton n’est pas nécessairement optimale. Peut-on néanmoins s’attendre à un certain niveau de qualité ?  
+* Si oui, ce niveau de qualité attendu est-il garanti, c’est-à-dire respecte même dans le pire des scénarios ?  
+* Ou bien est-il seulement hautement probable, c’est-à-dire généralement respecté mais avec des exceptions ?  
 
 Les réponses à ces questions dépendent fortement du problème considéré.  
-Pour notre problème du voyageur, ii a été démontré que lorsque le nombre de villes devient grand, le rapport entre la. solution gloutonne et la solution optimale est dans le pire des cas proportionnel **au logarithme du nombre de villes**.
+Pour notre problème du voyageur, ii a été démontré que lorsque le nombre de villes devient grand, le rapport entre la solution gloutonne et la solution optimale est dans le pire des cas proportionnel **au logarithme du nombre de villes**.
 
 
 [Voir une simulation](http://lycee.stanislas.info.free.fr/Algorithme/Glouton/Glouton.html)
@@ -501,7 +506,7 @@ print(rendu_monnaie_glouton(147.35, euros))
 
 ### Problème :  
 
-> Le problème est celui-ci : vous disposez d'un sac d'une contenance limitée (sur le dessin ci-dessus, 15kg) et vous souhaitez maximiser la duree totale des  objets que vous mettez dans votre sac. Evidemment, la somme de leur masse ne doit pas dépasser 15 kg.
+> Le problème est celui-ci : vous disposez d'un sac d'une contenance limitée et vous souhaitez maximiser la duree totale des  objets que vous mettez dans votre sac.
 
 Ce problème (de la catégorie des problème dits d'_analyse combinatoire_) malgré sa simplicité est **un problème majeur** d'optimisation. 
 
@@ -800,6 +805,7 @@ table_videos = [{'nom' : 'video A', 'duree' : 114, 'poids' : 4.5},
 ```
 
 On peut alors accéder aux éléments de cette table.
+
 
 
 ```python

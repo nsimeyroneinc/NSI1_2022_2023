@@ -15,7 +15,7 @@ geometry:
 <table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
         <tr>
             <th colspan=2; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
-           Thème 5 : Algorithmique
+           Thème 7 : Algorithmique
             </th>
         </tr>
 </table>
@@ -31,7 +31,7 @@ geometry:
 
                                                               
 
-# Introduction  
+## Introduction  
 
 >  **L'algorithme kNN (k-nearest neighbors) ou kppv (algorithme des k-plus proches voisins) est un algorithme (parmi les plus élémentaires) utilisé en intelligence artificielle.**
 
@@ -67,7 +67,7 @@ Si parmi les k individus les plus proches de notre nouvel arrivant, il y a plus 
 
 La décision n'est évidemment pas absolument fiable (et il peut arriver qu'en changeant la valeur de k, on change de conclusion!) mais avec une population de départ suffisamment importante et quelques heuristiques pour le choix de k, le principe donne de bons résultats dans un certain nombre de contextes.
 
-# Activité d'introduction  
+## Activité d'introduction  
 
    
 
@@ -118,7 +118,7 @@ pokemon1 = {'Nom': 'Aligatueur', 'Type': 'Eau', 'Points de vie': '85', 'Attaque'
 !!! fabquestion "Question 3"
     Quel est le nom du pokémon n°27 de la table `pokemons` ?
 
-## Récupérer des données simples
+### Récupérer des données simples
 
 Imaginons que nous souhaitions connaître la valeur d'attaque du Pokémon `'Groret'`. La méthode la plus naturelle est de parcourir toute la table jusqu'à trouver ce Pokémon et d'afficher sa valeur d'attaque.
 
@@ -145,7 +145,7 @@ for p in pokemons:
     assert type_de('Clamiral', pokemons) == 'Eau'
     ```
 
-## Sélection de lignes  
+### Sélection de lignes  
 Il est très rapide de sélectionner les lignes d'une table qui nous intéressent pour créer une nouvelle table.  
 
 !!! fabquestion "Question 5"
@@ -180,11 +180,11 @@ assert len(pokemons_eau) == 16
 assert len(pokemons_psy) == 18
 ```
 
-## Classification des Pokemons
+### Classification des Pokemons
 
 Nous allons utiliser la bibliothèque `matplotlib` pour représenter graphiquement nos données sur les Pokémons.
 
-### Travail préliminaire
+#### Travail préliminaire
 
 Le code suivant permet de représenter un nuage de points dont les coordonnées sont stockées dans deux tableaux.
 
@@ -233,7 +233,7 @@ plt.close()
  
 
 
-### Classification selon le type
+#### Classification selon le type
 
 !!! fabquestion "Question 9"
     Faites apparaître sur le *même* graphique, les Pokémons de type `'Eau'` en bleu et les Pokémons de type `'Psy'` en rouge. On mettra, comme précédemment, leurs points de vie en abscisses et leurs valeurs d'attaques en ordonnées.
@@ -326,7 +326,7 @@ La répartition des points laisse apparaître assez clairement deux *classes*.
 
 
 
-# Algorithme des k plus proches voisins
+## Algorithme des k plus proches voisins
 
 > Abrégé *kppv* en français. En anglais, on dit *k nearest neighbors* souvent abrégé *knn*.
 
@@ -352,7 +352,7 @@ Les Pokémons de type "Eau" sont représentés pas les points bleus, et ceux de 
 
 Ce problème, qui demande à prédire à quelle catégorie, ou *classe*, appartient ce nouvel élément donné, est appelé *problème de classification*. L'algorithme des k plus proches voisins permet de trouver les k voisins les plus proches (si k = 5 on cherche les 5 voisins les plus proches) de ce nouvel élément dans le but de lui associer une *classe* plausible (Psy ou Eau, dans cet exemple).
 
-## Algorithme naïf des kppv
+### Algorithme naïf des kppv
 
 A partir d'un jeu de données (par exemple, les données sur nos 34 Pokémons) et d'une donnée *cible* (le nouveau Pokemon à classifier), l'algorithme des $k$ plus proches voisins détermine les $k$ données les plus proches de la cible.
 
@@ -441,7 +441,7 @@ Pour trouver une bonne valeur de $k$ il est possible d'appliquer le protocole ex
 
 En appliquant ce protocole à différentes valeurs de $k$, on peut déterminer quelle valeur fournit les meilleurs résultats. Il est même judicieux de recommencer en retirant d'autres données pour affiner encore davantage la recherche de la meilleure valeur $k$ : on parle alors de *validation croisée* qui est une méthode d'apprentissage.
 
-##  Choix de la distance
+###  Choix de la distance
 
 L'algorithme des plus proches voisins repose sur la *distance* entre deux données. Dans les exemples vus précédemment, c'est la distance "naturelle" qui a été choisie (celle "à vol d'oiseau"). 
 
