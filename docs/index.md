@@ -73,9 +73,9 @@ Ces TD sont corrigés dans la mesure du possible.
         **Thème 7 : Algorithmique**
 
         - 🗹 Extremums et moyennes
-        - □ Tri par insertion - Tri par sélection
+        - 🗹 Tri par insertion - Tri par sélection
         - □ Dichotomie
-        - □ Algorithmes gloutons
+        - 🗹 Algorithmes gloutons
         - □ Algorithme KNN
 
 ## Les compétences transversales 
