@@ -52,6 +52,7 @@ nav:
       #- TP 21 - K-plus proches voisins: Algorithmique/TP_kppv_Prof.md
       - Tri par insertion: Algorithmique/Tri_insertion.md
       - Tri par selection: Algorithmique/Tri_selection.md
+      - Dichotomie: Algorithmique/Dichotomie.md
     
     - Transversal : 
       - TP 12 - Les images : Tableaux/TD12_Les_Images.md
