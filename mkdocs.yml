@@ -9,24 +9,50 @@ site_url:
 
 
 
-# Structure des dossiers :
+#  Structure des dossiers :
 docs_dir: docs
 
 # Menu de navigation
 nav: 
     - Accueil : index.md
 
-    - T1 Types et valeurs de base:
-      - TP 16 - Codage caractères : Type_Donnes_Bases/TP_Codage_Caracteres.md
-      
+    - T1 Types et valeurs de base :
+      - Codages des entiers: T01_TypesBase/T1.1_Bases/Codage_Entiers.md
+
     
-    - T2 Types construits :
-      - TP 07 Les tableaux Cours : Tableaux/TP07_TuplesTableauxCours.md
+    #- T2 Types construits :
+
+    
+    #- T3 Rep. Des données:
+
+    
+    #- T4 I.H.M. :
+
+    
+    #- T5 Arch. Matérielle :
+
+    
+    - T6 Prog. :
+      - TP 01 - Les Variables en Python : T06_Python/T6.1_Python/Cours01_Les_Variables_en_Python.md
+      - TP 02 - Les Fonctions en Python : T06_Python/T6.1_Python/Cours02_Les_fonctions_en_Python.md
+      - TP 03 - Les boucles en Python : T06_Python/T6.1_Python/Cours03_Boucle_FOR_et_WHILE_en_Python.md
+      - TP 04 - Les Conditions en Python : T06_Python/T6.1_Python/Cours04_Instructions_conditionnelles_en_Python.md
+    #- T7 Algo. :  
+
      
+
     
-    
+    #- Transversal : 
+
+
+    #- Devoirs :
+
         
-    - Liens Utiles : Divers/Liens_utiles.md
+    - Divers : 
+      - Conseil : Divers/conseil.md
+      - Liens utiles : Divers/Liens_utiles.md
+
+
 
 
 
