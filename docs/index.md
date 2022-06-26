@@ -1,9 +1,12 @@
-Ce site est à destination des élèves de première NSI au Lycée Murat d'Issoire.<br>
-Il permettra de retrouver les TP&TD traités en classes.<br>
-Ces TD sont corrigés dans la mesure du possible.
+Cours Première NSI - M.Meyroneinc
+===
+
+Ce site est à destination des élèves de première NSI du Lycée Murat d'Issoire.<br>
+Il permettra de retrouver les cours, TP et TD traités en classes.<br>
+Ces TD sont corrigés dans la mesure du possible (soit directement sur le site soit dans Capytale).
 
 !!! info 
-    - **Thème en cours** : [Algorithmes de tris : tri par insertion, tri par sélection et Recherche : Dichomotie](./Algorithmique/Tri_insertion.md)  
+    - Thème traité : Python - Les bases
 
 
 ??? video  "Vidéo de présentation :" 
@@ -22,40 +25,40 @@ Ces TD sont corrigés dans la mesure du possible.
     === "T1 Rep. des données"
         **Thème  :  Types et valeurs de base**  
 
-        - 🗹 Codage des entiers
+        - □ Codage des entiers
         - □ Codage des non-entiers
-        - 🗹 Bases
-        - 🗹 [Codage des caractères](https://nsimeyroneinc.github.io/siteNSI1ere/Type_Donnes_Bases/TP_Codage_Caracteres/)
-        - 🗹 Booléens
+        - □ Bases
+        - □ [Codage des caractères](https://nsimeyroneinc.github.io/siteNSI1ere/Type_Donnes_Bases/TP_Codage_Caracteres/)
+        - □ Booléens
 
     === "T2 Types construits"
 
         **Thème 2 :  Types construits**  
 
-        - 🗹 Listes - Tableaux 
-        - 🗹 Tuples    
-        - 🗹 Dictionnaires  
+        - □ Listes - Tableaux 
+        - □ Tuples    
+        - □ Dictionnaires  
 
 
     === "T3 Tables"
         **Thème 3 : Traitements de données en tables**
 
-        - 🗹 [Recherche dans une table](./TraitementDonnees/TP19_Manipulation_et_traitement_de_fichier_CSV_Prof.md)
-        - 🗹 [Tri d'une table](./TraitementDonnees/TP20_Prof_Manipulation_fichier_CSV_avec_bibliotheque_Pandas.md)
-        - 🗹 [Fusion de tables](./TraitementDonnees/TP20_Prof_Manipulation_fichier_CSV_avec_bibliotheque_Pandas.md)
+        - □ Recherche dans une table
+        - □ Tri d'une table
+        - □ Fusion de tables
     
     === "T4 IHM"
         **Thème 3 : Interactions entre l'homme et la machine sur le web**
 
-        - 🗹 Modalités de l'interaction entre l'homme et la machine
-        - 🗹 Interaction 
+        - □ Modalités de l'interaction entre l'homme et la machine
+        - □ Interaction 
 
 
     === "T5 Arch. matérielle"
         **Thème 5 : Architecture matérielle**
 
         - □ Architecture Von Neumann
-        - 🗹 [Architecture réseau](./Archi_Materielle/TD13_Reseaux.md)
+        - □ Architecture réseau
         - □ Protocoles de communication dans un réseau
         - □ Découverte des commandes Linux
 
@@ -63,19 +66,19 @@ Ces TD sont corrigés dans la mesure du possible.
         **Thème 6 : Langages et programmation - Python**
 
         - 🗹 Variables
-        - 🗹 Boucle For
-        - 🗹 Boucle While
-        - 🗹 Instruction conditionnelle If
-        - 🗹 Fonctions
+        - □ Boucle For
+        - □ Boucle While
+        - □ Instruction conditionnelle If
+        - □ Fonctions
 
 
     === "T7 Algo."
         **Thème 7 : Algorithmique**
 
-        - 🗹 Extremums et moyennes
-        - 🗹 Tri par insertion - Tri par sélection
+        - □ Extremums et moyennes
+        - □ Tri par insertion - Tri par sélection
         - □ Dichotomie
-        - 🗹 Algorithmes gloutons
+        - □ Algorithmes gloutons
         - □ Algorithme KNN
 
 ## Les compétences transversales 
