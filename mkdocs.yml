@@ -18,49 +18,13 @@ nav:
 
     - T1 Types et valeurs de base:
       - TP 16 - Codage caractères : Type_Donnes_Bases/TP_Codage_Caracteres.md
-      - TP 17 Message Perseverance : Type_Donnes_Bases/TP_Perseverance.md
-      - TP codage - révision: Type_Donnes_Bases/Exercices_Codages_Caracteres.md
-      #- TP 17 prof : Type_Donnes_Bases/TP_Perseverance_Prof1.md
-      - TP 18 Codage de césar : Type_Donnes_Bases/TP_cesar.md
+      
     
     - T2 Types construits :
       - TP 07 Les tableaux Cours : Tableaux/TP07_TuplesTableauxCours.md
-      - TP 08 Les tableaux Exercices : Tableaux/TP08_TuplesTableauxExercicesCorrige.md 
-      - TP 15 Les Dictionnaires: Dictionnaire/TP15_Dictionnaires.md
-    
-    - T3 Rep. Des données:
-      #- TP 19 CSV : TraitementDonnees/Traitement_Donnees.md
-      - TP 19 CSV - Correction : TraitementDonnees/TP19_Manipulation_et_traitement_de_fichier_CSV_Prof.md
-      - TP 20 CSV et Pandas - Correction : TraitementDonnees/TP20_Prof_Manipulation_fichier_CSV_avec_bibliotheque_Pandas.md
-    
-    - T4 I.H.M. :
-      - TD html et css : WEB/HTML_CSS.md
-      - TD 14 JavaScript : WEB/JS.md
-    
-    - T5 Arch. Matérielle :
-      - TP 13 Réseaux : Archi_Materielle/TD13_Reseaux.md
-    
-    - T6 Prog. :
-      - TP 04 - Les bases en Python : BasesPython/TP04_BasesPython.md
-      - TP 05 - Les bases en Python/Exercices : BasesPython/TP05_BasesPythonExercices-Corrige.md
-    
-    - T7 Algo. :  
-      - TP 09 - Parcours séquentiel d'un tableau : Tableaux/TD09_Parcours_Sequentiel_Tableaux_Corrige.md
-      - TP 10 - Parcours séquentiel d'un tableau bis : Tableaux/TD10_Parcours_Sequentiel_Tableaux_Corrige.md
-      - TP 11 - Parcours séquentiel d'un tableau ter : Tableaux/TD11_Parcours_Sequentiel_Tableaux_Ter.md
      
-      #- TP 21 - K-plus proches voisins: Algorithmique/TP_kppv_Prof.md
-      - Tri par insertion: Algorithmique/Tri_insertion.md
-      - Tri par selection: Algorithmique/Tri_selection.md
-      - Dichotomie: Algorithmique/Dichotomie.md
     
-    - Transversal : 
-      - TP 12 - Les images : Tableaux/TD12_Les_Images.md
-
-    - Devoirs :
-    #  - DS 3 Groupe 1 : Devoirs/DS03_Tableau.md
-    #  - DS réseau : Devoirs/DS_TP_Reseaux.md
-      - DS codage: Type_Donnes_Bases/DS_codage.md
+    
         
     - Liens Utiles : Divers/Liens_utiles.md
 
