@@ -28,7 +28,7 @@ Thème 1 - Représentation des données - Types et valeurs de bases
 !!! progNSI "Programme Terminale"
     |Contenus|Capacités attendues|Commentaires|
     |:---:|:---:|:---:|
-    |Ecriture d'un entier positif dans une base $b \leq 2$| Passer de la représentation d'une base à l'autre|Les bases 2, 10 et 16 sont privilégiées|
+    |Ecriture d'un entier positif dans une base $b \geq 2$| Passer de la représentation d'une base à l'autre|Les bases 2, 10 et 16 sont privilégiées|
 
 
 
