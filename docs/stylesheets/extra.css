@@ -448,6 +448,25 @@ table.blueTable {
 }
 
 
+table.yellowTable {
+  border: 1px solid #151616;
+  background-color: #c5ca27;
+  width: 100%;
+  color: black;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 18px;
+}
+
+table.redTable {
+  border: 1px solid #151616;
+  background-color: #FC6B3C;
+  width: 100%;
+  color: black;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 18px;
+}
 table.greenTable {
   border: 1px solid #151616;
   background-color: #87A96B;
@@ -456,35 +475,6 @@ table.greenTable {
   text-align: center;
   border-collapse: collapse;
   font-size: 18px;
-}
-
-table.greenTable td, table.greenTable th {
-  border: 1px solid #AAAAAA;
-  padding: 3px 2px;
-}
-
-table.greenTable tbody td {
-  font-size: 16px;
-}
-
-table.greenTable tr:nth-child(even) {
-  background: #D0E4F5;
-}
-
-table.greenTable tfoot td {
-  font-size: 14px;
-}
-
-table.greenTable tfoot .links {
-  text-align: right;
-}
-
-table.greenTable tfoot .links a {
-  display: inline-block;
-  background: #1C6EA4;
-  color: #FFFFFF;
-  padding: 2px 8px;
-  border-radius: 5px;
 }
 
 em {

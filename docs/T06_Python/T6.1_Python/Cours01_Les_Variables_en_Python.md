@@ -11,6 +11,8 @@ geometry:
 - heightrounded    
 --- 
 
+{{ initexo(0) }}
+
 Thème 6 - Langages et programmation
 ===
 

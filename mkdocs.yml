@@ -67,7 +67,7 @@ theme:
 
     palette: # Palettes de couleurs jour/nuit, cf : https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
       - scheme: default # nom du thème clair
-        primary: indigo # couleur primaire des titres, des liens, ..., à prendre dans la liste
+        primary: grey # couleur primaire des titres, des liens, ..., à prendre dans la liste
         accent: amber # couleur d'accentuation au survol des boutons, desliens, ..., à prendre dans la liste
         toggle: # définition du bouton pour switcher de palette
           icon: material/weather-sunny # apparence
