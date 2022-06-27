@@ -310,7 +310,7 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
         Convertir les nombres binaires suivants en hexadécimal
         **1.** $(01001101)_2$
         **2.** $(100110000111)_2$
-        **3.** _(101110101100)_2$
+        **3.** $(101110101100)_2$
 
     === "Conversion Hexadécimal  → Binaire"
         Convertir en binaire les nombres suivant :
@@ -355,7 +355,7 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
     Essayons d’expliquer ce qui est arrivé !
 
 !!! exo "{{ exercice() }}"
-    **1.**Donner l’écriture binaire de $277_{10}$.  
+    **1.** Donner l’écriture binaire de $277_{10}$.  
     **2.** Sachant qu’un octet est composé de 8 bits, compléter un octet avec le nombre obtenu ?  
     Que remarquez-vous ?
     **3.**  Expliquer alors le résultat 21 qui apparaît sur le compteur.
@@ -388,7 +388,7 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 
 Voyons maintenant comment on ajoute des nombres exprimés en base deux
 
-![](data/addition_binaire.png)
+![](data/addition_binaire.png){:.center width=50%}
 
 
 !!! exo "{{ exercice() }}"
