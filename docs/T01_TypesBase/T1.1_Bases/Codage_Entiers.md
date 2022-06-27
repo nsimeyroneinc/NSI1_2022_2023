@@ -307,15 +307,17 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 
 !!! example "{{ exercice() }}"  
     === "Conversion Binaire → Hexadécimal"
-        Convertir les nombres binaires suivants en hexadécimal
-        **1.** $(01001101)_2$
-        **2.** $(100110000111)_2$
-        **3.** $(101110101100)_2$
+        Convertir les nombres binaires suivants en hexadécimal  
+
+        **1.** $(01001101)_2$  
+        **2.** $(100110000111)_2$  
+        **3.** $(101110101100)_2$  
 
     === "Conversion Hexadécimal  → Binaire"
-        Convertir en binaire les nombres suivant :
-        **1.** $(FABE51)_{16}$  
-        **2.** $(59A75)_{16}$
+        Convertir en binaire les nombres suivant :  
+        **1.** $(FABE51)_{16}$   
+        **2.** $(59A75)_{16}$  
+
 #### Avec Python
 
 ??? info "Fonctions de conversion"
@@ -357,15 +359,15 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 !!! exo "{{ exercice() }}"
     **1.** Donner l’écriture binaire de $277_{10}$.  
     **2.** Sachant qu’un octet est composé de 8 bits, compléter un octet avec le nombre obtenu ?  
-    Que remarquez-vous ?
-    **3.**  Expliquer alors le résultat 21 qui apparaît sur le compteur.
+    Que remarquez-vous ?  
+    **3.**  Expliquer alors le résultat 21 qui apparaît sur le compteur.  
 
 
 !!! savoir "A retenir"
     Si le nombre de bits obtenu est inférieur à n, on rajoute des 0 pour parvenir à n bits. S’il n’y a pas assez de bits disponibles, on dit que la capacité d’écriture est insuffisante (on parle d’overflow).
 
 
-!!! objectif "Enoncé du problème"
+!!! objectif "Enoncé du problème"  
     Combien de bits faut-il pour représenter un nombre entier en binaire ?  
 
     Pour évaluer le nombre de bits minimum nécessaires à l’écriture en base 2 d’un entier positif, il faut trouver la plus petite puissance de 2 qui soit strictement supérieure à l’entier à écrire.  
@@ -394,7 +396,7 @@ Voyons maintenant comment on ajoute des nombres exprimés en base deux
 !!! exo "{{ exercice() }}"
     Faites les additions suivantes :
 
-    **1.** A=1101+10
+    **1.** A=1101+10  
     **2.** B=101001+101  
     **3.** C=10101010+1011  
-    **4.** D=1110101+10101
+    **4.** D=1110101+10101  

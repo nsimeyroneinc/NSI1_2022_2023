@@ -1,4 +1,3 @@
-
 var dict = {};  // Global dictionnary tracking the number of clicks
 const nAttempts = 5;
 

@@ -1,0 +1,866 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Michael Meyroneinc-condy">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>T2.3 Dictionnaires - Site NSI 1ére</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../xtra/stylesheets/pyoditeur.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#t23-dictionnaires" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Site NSI 1ére" class="md-header__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Site NSI 1ére
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              T2.3 Dictionnaires
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../T01_TypesBase/T1.1_Bases/Codage_Entiers/" class="md-tabs__link">
+        T1 Types et valeurs de base
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../T06_Python/T6.1_Python/Cours01_Les_Variables_en_Python/" class="md-tabs__link">
+        T6 Prog.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Divers/conseil.md" class="md-tabs__link">
+        Divers
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Site NSI 1ére" class="md-nav__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    Site NSI 1ére
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T1 Types et valeurs de base
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T1 Types et valeurs de base" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T1 Types et valeurs de base
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T01_TypesBase/T1.1_Bases/Codage_Entiers/" class="md-nav__link">
+        Codages des entiers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          T6 Prog.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T6 Prog." data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          T6 Prog.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/Cours01_Les_Variables_en_Python/" class="md-nav__link">
+        TP 01 - Les Variables en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/Cours02_Les_fonctions_en_Python/" class="md-nav__link">
+        TP 02 - Les Fonctions en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/Cours03_Boucle_FOR_et_WHILE_en_Python/" class="md-nav__link">
+        TP 03 - Les boucles en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/Cours04_Instructions_conditionnelles_en_Python/" class="md-nav__link">
+        TP 04 - Les Conditions en Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Divers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Divers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Divers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Divers/conseil.md" class="md-nav__link">
+        Conseil
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Divers/Liens_utiles/" class="md-nav__link">
+        Liens utiles
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#231-definition-dun-dictionnaire-cles-et-valeurs" class="md-nav__link">
+    2.3.1 Définition d'un dictionnaire, clés et valeurs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#232-methodes-sur-les-dictionnaires" class="md-nav__link">
+    2.3.2 Méthodes sur les dictionnaires
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#233-exercices" class="md-nav__link">
+    2.3.3 Exercices
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="T2.3_Dictionnaires.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+              
+    
+                
+
+
+<h1 id="t23-dictionnaires">T2.3 Dictionnaires<a class="headerlink" href="#t23-dictionnaires" title="Permanent link">⚓︎</a></h1>
+<p>Jusqu'à présent, nous avons rencontré deux types de <strong>conteneurs</strong> (ou ensemble d'éléments) : les listes et les tuples. Ces deux types ont en commun le repérage de leurs éléments par un <em>indice</em>, qui est un nombre entier. Ces deux types sont <strong>ordonnés</strong>, on les appelle des <strong>séquences</strong>. L'indice est la <strong>clé</strong> qui permet d'accéder à un élément de l'ensemble.</p>
+<p>Prenons comme exemple un autre ensemble d'éléments: les numéros de téléphone sauvegardés dans l'application « Contacts » de votre smartphone. Ces numéros ne sont pas ordonnés, et ne sont pas repérables par un <em>indice</em>, mais (en général) par un nom.</p>
+<p>Grosso modo, le contenu de votre application « Contacts » est un ensemble d'associations <code>nom: numéro</code>. En Informatique, on parle de <em>p-uplet nommé</em>: un ensemble de (p) valeurs appelées par un descripteur autre qu'un indice.</p>
+<p>En Python, on représentera ces <em>p-uplets nommés</em> par des <strong>dictionnaires</strong>.</p>
+<h2 id="231-definition-dun-dictionnaire-cles-et-valeurs">2.3.1 Définition d'un dictionnaire, clés et valeurs<a class="headerlink" href="#231-definition-dun-dictionnaire-cles-et-valeurs" title="Permanent link">⚓︎</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">Le type <code>dict</code></p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">contacts</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;jean-mi&quot;</span><span class="p">:</span> <span class="s1">&#39;0155551010&#39;</span><span class="p">,</span> <span class="s2">&quot;bénédicte&quot;</span><span class="p">:</span> <span class="s1">&#39;0516526600&#39;</span><span class="p">,</span> <span class="s2">&quot;marc&quot;</span><span class="p">:</span> <span class="s1">&#39;0545974500&#39;</span><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>
+<p>Un dictionnaire (type <code>dict</code>) est une donnée composite qui n'est pas ordonnée (à la différence des listes !). Il fonctionne par un système de <code>clé: valeur</code>.</p>
+</li>
+<li>
+<p>Les clés, comme les valeurs, peuvent être de types différents.</p>
+</li>
+<li>
+<p>Un dictionnaire est délimité par des accolades, les associations <code>clé: valeur</code> séparées par des espaces.</p>
+</li>
+<li>
+<p>On accède à une valeur par sa clé : </p>
+</li>
+</ul>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">contacts</span><span class="p">[</span><span class="s2">&quot;jean-mi&quot;</span><span class="p">]</span>
+<span class="s1">&#39;0155551010&#39;</span>
+</code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Méthodes <code>keys</code> et <code>values</code></p>
+<p>On peut lister les clés d'un dictionnaires:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">contacts</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">dict_keys</span><span class="p">([</span><span class="s1">&#39;jean-mi&#39;</span><span class="p">,</span> <span class="s1">&#39;bénédicte&#39;</span><span class="p">,</span> <span class="s1">&#39;marc&#39;</span><span class="p">])</span>
+</code></pre></div>
+et ses valeurs:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">contacts</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="n">dict_values</span><span class="p">([</span><span class="s1">&#39;0155551010&#39;</span><span class="p">,</span> <span class="s1">&#39;0516526600&#39;</span><span class="p">,</span> <span class="s1">&#39;0545974500&#39;</span><span class="p">])</span>
+</code></pre></div></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Ajout/modification/suppression d'éléments</p>
+<p>Pour modifier une valeur associée à une clé, on réaffecte la nouvelle valeur :</p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">contacts</span><span class="p">[</span><span class="s2">&quot;jean-mi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0605040302&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">contacts</span>
+<span class="p">{</span><span class="s1">&#39;jean-mi&#39;</span><span class="p">:</span> <span class="s1">&#39;0605040302&#39;</span><span class="p">,</span> <span class="s1">&#39;bénédicte&#39;</span><span class="p">:</span> <span class="s1">&#39;0516526600&#39;</span><span class="p">,</span> <span class="s1">&#39;marc&#39;</span><span class="p">:</span> <span class="s1">&#39;0545974500&#39;</span><span class="p">}</span>
+</code></pre></div>
+Si la clé n'existe pas, cela ajoute une paire <code>clé: valeur</code> au dictionnaire:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">contacts</span><span class="p">[</span><span class="s2">&quot;xavier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0545387000&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">contacts</span>
+<span class="p">{</span><span class="s1">&#39;jean-mi&#39;</span><span class="p">:</span> <span class="s1">&#39;0605040302&#39;</span><span class="p">,</span> <span class="s1">&#39;bénédicte&#39;</span><span class="p">:</span> <span class="s1">&#39;0516526600&#39;</span><span class="p">,</span> <span class="s1">&#39;marc&#39;</span><span class="p">:</span> <span class="s1">&#39;0545974500&#39;</span><span class="p">,</span> <span class="s1">&#39;xavier&#39;</span><span class="p">:</span> <span class="s1">&#39;0545387000&#39;</span><span class="p">}</span>
+</code></pre></div></p>
+<p>La suppression d'une clé (et donc de sa valeur) se fait par le mot-clé <code>del</code>:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">contacts</span><span class="p">[</span><span class="s2">&quot;jean-mi&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">contacts</span>
+<span class="p">{</span><span class="s1">&#39;bénédicte&#39;</span><span class="p">:</span> <span class="s1">&#39;0516526600&#39;</span><span class="p">,</span> <span class="s1">&#39;marc&#39;</span><span class="p">:</span> <span class="s1">&#39;0545974500&#39;</span><span class="p">,</span> <span class="s1">&#39;xavier&#39;</span><span class="p">:</span> <span class="s1">&#39;0545387000&#39;</span><span class="p">}</span>
+</code></pre></div></p>
+</div>
+<h2 id="232-methodes-sur-les-dictionnaires">2.3.2 Méthodes sur les dictionnaires<a class="headerlink" href="#232-methodes-sur-les-dictionnaires" title="Permanent link">⚓︎</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Parcours d'un dictionnaire</p>
+<p>On utilise comme pour les listes une boucle <code>for</code> avec l'opérateur <code>in</code>. Cet opérateur <code>in</code> peut également tester l'appartenance d'une clé à un dictionnaire, hors d'un <code>for</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Méthode basique</label><label for="__tabbed_1_2">Méthode avancée avec <code>items</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On parcourt par défaut sur les clés:</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">nom</span> <span class="ow">in</span> <span class="n">contacts</span><span class="p">:</span>
+<span class="o">...</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;le numéro de </span><span class="si">{}</span><span class="s2"> est </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nom</span><span class="p">,</span> <span class="n">contacts</span><span class="p">[</span><span class="n">nom</span><span class="p">]))</span>
+<span class="o">...</span>
+<span class="n">le</span> <span class="n">numéro</span> <span class="n">de</span> <span class="n">bénédicte</span> <span class="n">est</span> <span class="mi">0516526600</span>
+<span class="n">le</span> <span class="n">numéro</span> <span class="n">de</span> <span class="n">marc</span> <span class="n">est</span> <span class="mi">0545974500</span>
+<span class="n">le</span> <span class="n">numéro</span> <span class="n">de</span> <span class="n">xavier</span> <span class="n">est</span> <span class="mi">0545387000</span>
+</code></pre></div>
+<p>Il serait équivalent de faire <code>for nom in contacts.keys()</code>.</p>
+<p>On peut également parcourir le dictionnaire sur les valeurs, mais sans possibilité alors de récupérer la clé à partir de la valeur (puisque plusieurs clés peuvent avoir la même valeur).</p>
+<p>On utilisera pour cela:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">contacts</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+<span class="o">...</span>    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="mi">0516526600</span>
+<span class="mi">0545974500</span>
+<span class="mi">0545387000</span>
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>Il peut être utile de parcourir à la fois sur les clés et sur les valeurs, c'est à dire sur l'élément complet <code>clé: valeur</code> du dictionnaire, notamment si on souhaite récupérer la clé associée à une valeur donnée.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">contacts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;est associé à&quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="o">...</span> 
+<span class="mi">0516526600</span> <span class="n">est</span> <span class="n">associé</span> <span class="n">à</span> <span class="n">bénédicte</span>
+<span class="mi">0545974500</span> <span class="n">est</span> <span class="n">associé</span> <span class="n">à</span> <span class="n">marc</span>
+<span class="mi">0545387000</span> <span class="n">est</span> <span class="n">associé</span> <span class="n">à</span> <span class="n">xavier</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Création d'une liste vide et construction de dictionnaire</p>
+<p>Comme les listes, il est très fréquent qu'on ait besoin de construire le dictionnaire par ajouts successifs en partant d'un dictionnaire vide.</p>
+<p>On peut créer un dictionnaire vide de deux façons: <code>{}</code> ou <code>dict()</code>:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">dico</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dico</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">chiffres</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;zéro&#39;</span><span class="p">,</span> <span class="s1">&#39;un&#39;</span><span class="p">,</span> <span class="s1">&#39;deux&#39;</span><span class="p">,</span> <span class="s1">&#39;trois&#39;</span><span class="p">,</span> <span class="s1">&#39;quatre&#39;</span><span class="p">,</span> <span class="s1">&#39;cinq&#39;</span><span class="p">,</span> <span class="s1">&#39;six&#39;</span><span class="p">,</span> <span class="s1">&#39;sept&#39;</span><span class="p">,</span> <span class="s1">&#39;huit&#39;</span><span class="p">,</span> <span class="s1">&#39;neuf&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">chiffres</span><span class="p">:</span>
+<span class="o">...</span>     <span class="n">dico</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dico</span>
+<span class="p">{</span><span class="s1">&#39;zéro&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;un&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;deux&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;trois&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;quatre&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;cinq&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;six&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sept&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;huit&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;neuf&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+</code></pre></div></p>
+<p>On peut bien évidemment créer un dictionnaire en compréhension (<strong>hors-programme</strong>). On peut résumer le code précédent en:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">dico</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">chiffres</span><span class="p">}</span>
+</code></pre></div></p>
+</div>
+<h2 id="233-exercices">2.3.3 Exercices<a class="headerlink" href="#233-exercices" title="Permanent link">⚓︎</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Exercice  1</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label><label for="__tabbed_2_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On considère le contenu de mon dressing, représenté par un dictionnaire:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">dressing</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;pantalons&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;pulls&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;tee-shirts&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">}</span>
+</code></pre></div></p>
+<ol>
+<li>J'ai oublié mes 5 chemises... Ajoutez-les au dictionnaire <code>dressing</code>.</li>
+<li>Écrire une fonction (ou plutôt une <em>procédure</em>, pas de <strong>return</strong>) <code>ajout(habit)</code> qui prend en paramètre un type d'habit et qui augmente son nombre de 1 dans le dictionnaire.</li>
+<li>Améliorer la fonction pour qu'elle crée une nouvelle entrée si le type d'habit n'existe pas comme clé.</li>
+</ol>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  2</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Énoncé</label><label for="__tabbed_3_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On considère la liste suivante :
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;5717&#39;</span><span class="p">,</span> <span class="s1">&#39;1133&#39;</span><span class="p">,</span> <span class="s1">&#39;5545&#39;</span><span class="p">,</span> <span class="s1">&#39;4031&#39;</span><span class="p">,</span> <span class="s1">&#39;6398&#39;</span><span class="p">,</span> <span class="s1">&#39;2734&#39;</span><span class="p">,</span> <span class="s1">&#39;3070&#39;</span><span class="p">,</span> <span class="s1">&#39;1346&#39;</span><span class="p">,</span> <span class="s1">&#39;7849&#39;</span><span class="p">,</span> <span class="s1">&#39;7288&#39;</span><span class="p">,</span> <span class="s1">&#39;7587&#39;</span><span class="p">,</span> <span class="s1">&#39;6217&#39;</span><span class="p">,</span> <span class="s1">&#39;8240&#39;</span><span class="p">,</span> <span class="s1">&#39;5733&#39;</span><span class="p">,</span> <span class="s1">&#39;6466&#39;</span><span class="p">,</span> <span class="s1">&#39;7972&#39;</span><span class="p">,</span> <span class="s1">&#39;7341&#39;</span><span class="p">,</span> <span class="s1">&#39;6616&#39;</span><span class="p">,</span> <span class="s1">&#39;5061&#39;</span><span class="p">,</span> <span class="s1">&#39;2441&#39;</span><span class="p">,</span> <span class="s1">&#39;2571&#39;</span><span class="p">,</span> <span class="s1">&#39;4496&#39;</span><span class="p">,</span> <span class="s1">&#39;4831&#39;</span><span class="p">,</span> <span class="s1">&#39;5395&#39;</span><span class="p">,</span> <span class="s1">&#39;8584&#39;</span><span class="p">,</span> <span class="s1">&#39;3033&#39;</span><span class="p">,</span> <span class="s1">&#39;6266&#39;</span><span class="p">,</span> <span class="s1">&#39;2452&#39;</span><span class="p">,</span> <span class="s1">&#39;6909&#39;</span><span class="p">,</span> <span class="s1">&#39;3021&#39;</span><span class="p">,</span> <span class="s1">&#39;5404&#39;</span><span class="p">,</span> <span class="s1">&#39;3799&#39;</span><span class="p">,</span> <span class="s1">&#39;5053&#39;</span><span class="p">,</span> <span class="s1">&#39;8096&#39;</span><span class="p">,</span> <span class="s1">&#39;2488&#39;</span><span class="p">,</span> <span class="s1">&#39;8519&#39;</span><span class="p">,</span> <span class="s1">&#39;6896&#39;</span><span class="p">,</span> <span class="s1">&#39;7300&#39;</span><span class="p">,</span> <span class="s1">&#39;5914&#39;</span><span class="p">,</span> <span class="s1">&#39;7464&#39;</span><span class="p">,</span> <span class="s1">&#39;5068&#39;</span><span class="p">,</span> <span class="s1">&#39;1386&#39;</span><span class="p">,</span> <span class="s1">&#39;9898&#39;</span><span class="p">,</span> <span class="s1">&#39;8313&#39;</span><span class="p">,</span> <span class="s1">&#39;1072&#39;</span><span class="p">,</span> <span class="s1">&#39;1441&#39;</span><span class="p">,</span> <span class="s1">&#39;7333&#39;</span><span class="p">,</span> <span class="s1">&#39;5691&#39;</span><span class="p">,</span> <span class="s1">&#39;6987&#39;</span><span class="p">,</span> <span class="s1">&#39;5255&#39;</span><span class="p">]</span>
+</code></pre></div></p>
+<p>Quel est le <strong>chiffre</strong> qui revient le plus fréquemment dans cette liste ?</p>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  3</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On modélise des informations (nom, taille et poids) sur des Pokémons de la façon suivante:</p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">exemple_pokemons</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Bulbizarre&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
+    <span class="s1">&#39;Herbizarre&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span>
+    <span class="s1">&#39;Abo&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
+    <span class="s1">&#39;Jungko&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">170</span><span class="p">,</span> <span class="mi">52</span><span class="p">)}</span>
+</code></pre></div>
+Par exemple, <code>Bulbizarre</code> est un pokémon qui mesure 70 cm et pèse 7 kg.</p>
+<ol>
+<li>Ajouer le pokémon <code>Goupix</code> qui mesure 60 cm et pèse 10 kg.</li>
+<li>Compléter la fonction <code>plus_grand</code> qui prend en paramètre un dictionnaire et qui renvoie un tuple contenant le nom du pokemon le plus grand et sa taille.</li>
+</ol>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">plus_grand</span><span class="p">(</span><span class="n">pokemons</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+    <span class="n">grand</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">taille_max</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span>  <span class="ow">in</span> <span class="n">pokemons</span><span class="o">.</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">taille</span> <span class="o">&gt;</span> <span class="n">taille_max</span><span class="p">:</span>
+            <span class="n">grand</span> <span class="o">=</span>
+            <span class="n">taille_max</span> <span class="o">=</span> 
+    <span class="k">return</span> 
+</code></pre></div>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  4</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Énoncé</label><label for="__tabbed_5_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Reprendre l'exercice «Le lion de Némée» et construire un dictionnaire dont les clés sont les noms des divinités et les valeurs leur «valeur» selon l'énoncé.</p>
+<!-- Trouver un moyen de trier les noms de divinités selon leur «valeur» par ordre croissant afin de résoudre le pydéfi. -->
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  5</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Énoncé</label><label for="__tabbed_6_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Voici un dictionnaire <code>dates</code> dont les clés sont des prénoms au format <code>str</code> et les valeurs des dates de naissance au format <code>tuple</code>.</p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">dates</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alan&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1912</span><span class="p">),</span>
+         <span class="s2">&quot;Grace&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1906</span><span class="p">),</span>
+         <span class="s2">&quot;Linus&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1969</span><span class="p">),</span>
+         <span class="s2">&quot;Guido&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">31</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1956</span><span class="p">),</span>
+         <span class="s2">&quot;Ada&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1815</span><span class="p">),</span>
+         <span class="s2">&quot;Tim&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1955</span><span class="p">),</span>
+         <span class="s2">&quot;Dennis&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1941</span><span class="p">),</span>
+         <span class="s2">&quot;Hedy&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1914</span><span class="p">),</span>
+         <span class="s2">&quot;Steve&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1955</span><span class="p">)</span>
+        <span class="p">}</span>
+</code></pre></div>
+Par exemple, Linus est né le 28 décembre 1969.</p>
+<ol>
+<li>
+<p>Ajouter les deux entrées suivantes: Margaret, née le 17 août 1936 et John, né le 28 décembre 1903.</p>
+</li>
+<li>
+<p>Écrire une fonction <code>calendrier</code> qui prend en paramètre un dictionnaire constitué d'entrées <code>nom: (jour, mois, année)</code> comme <code>dates</code> et qui renvoie un dictionnaire dont les clés sont les mois de l'année et les valeurs les listes des noms nés ce mois-là.
+Par exemple, <code>calendrier(dates)</code> doit renvoyer un dictionnaire contenant l'entrée <code>"juin": ["Alan", "Tim"]</code>.</p>
+</li>
+<li>
+<p>Écrire une fonction <code>plus_jeune</code> qui renvoie le nom de la personne la plus jeune du dictionnaire.</p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+</div>
+
+              
+    <script src="../../../js/ide.js"></script> 
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+        <script src="../../../xtra/javascripts/config.js"></script>
+      
+        <script src="../../../xtra/javascripts/interpreter.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+    
+  </body>
+</html>
