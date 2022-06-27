@@ -157,7 +157,7 @@ print(compteur)
     1
 
 
-!!! fabquestion "Q.2"
+!!! fabquestion "{{ exercice() }}"
     Ecrire le code «classique» et le code «Pythonesque» pour l'instruction suivante :  
     On initialise une variable ```capital``` à 1000 et on lui enlève 5%.
 
@@ -385,7 +385,7 @@ Sans surprise, en Python, nous utiliserons donc le ```snake_case```.
 ## Exercices
 
 
-!!! exo "Exercice 1 :"
+!!! exo "{{ exercice() }}"
 
     Prédire la valeur affichée après les séquences d'instructions suivantes.
         
@@ -422,7 +422,7 @@ Sans surprise, en Python, nous utiliserons donc le ```snake_case```.
     >>> print(a, b)
     ~~~
 
-!!! exo "Exercice 2 :"
+!!! exo "{{ exercice() }}"
 
     Le prix d'une matière première est de 873 euros la tonne au début de l'année. Ce prix subit des variations saisonnières : 
 
@@ -442,7 +442,7 @@ Sans surprise, en Python, nous utiliserons donc le ```snake_case```.
     print("Prix final :", prix)
     ~~~
 
-!!! exo "Exercice 3 :"
+!!! exo "{{ exercice() }}"
 
     La température $f$ en degrés  Fahrenheit s'obtient à partir de la température $c$ en degrés Celsius par la formule de conversion $f=1,8 * c + 32$. 
         

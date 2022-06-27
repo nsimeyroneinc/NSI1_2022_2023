@@ -114,7 +114,7 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
         auto_title_map:
             "Python": "🐍 Script Python"
             "Python Console Session": "🐍 Console Python"
-            "Text Only": "📋 Texte"
+            "Text Only": "📋 Algo"
             "E-mail": "📥 Entrée"
             "Text Output": "📤 Sortie"
             "SQL": "🗂️ Requête SQL"

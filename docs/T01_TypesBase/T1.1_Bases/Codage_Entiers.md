@@ -142,18 +142,27 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 ### Le système binaire (base 2)
 
 !!! abstract "Le binaire"
-    - Le système binaire est le système de numération de base $b=2$.
-    - Il utilise donc seulement deux chiffres, 0 et 1, appelés **bits** (contraction de l'anglais binary digit).
-
-    - Il est particulièrement adapté à l'informatique car il permet d'unifier la logique (Vrai/Faux), le calcul et l'électronique (voir vidéo suivante).
-
-    - Un regroupement de 8 bits est appelé un **octet**.
+    
+    - Le binaire, c'est le système de comptage des ordinateurs. Pourquoi le binaire et pas le décimal comme les humains ?  
+    - Un ordinateur est composé de circuits électroniques et de composants électriques, alimentés par un signal électrique : 1, il y a du courant, 0, il n'y en a pas. Le plus simple pour compter est donc d'utiliser un système en base 2 (le binaire) car on peut représenter ses deux valeurs possibles (0 et 1).  (voir vidéo suivante).
+    - Le système binaire est le système de numération de base $b=2$.  
+    - Il utilise donc seulement deux chiffres, 0 et 1, appelés **bits** (contraction de l'anglais binary digit).  Le nombre 10101 occupe 5 rangs. On dit qu'il s'écrit sur 5 bits
+    - Un regroupement de 8 bits est appelé un **octet**.  
 
 
 ??? video "Vidéo"
     <p align="center">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/VRdp_vaNRoY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </p>
+
+
+!!! exo "{{ exercice() }}"
+
+    1. Combien de valeurs peut-on coder avec 1 bit ?  
+    2. Combien de valeurs peut-on coder avec 2 bits ?  
+    3. Combien de valeurs peut-on coder avec 3 bits ?  
+    4. Combien de valeurs peut-on coder avec n bits ?
+
 
 
 !!! info "Conversions"
@@ -164,16 +173,29 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 
         Par exemple $10110101_2=128+32+16+4+1=181$.
     
-    === "Décimal → Binaire"
+    === "Décimal → Binaire Méthode 1"
         - On peut utiliser l'algorithme de soustraction: on soustrait du nombre la plus grande puissance de 2 possible, et on recommence...
 
         - On utilise l'algorithme de divisions: on effectue les divisions successives du nombre par 2. L'écriture en binaire est donnée par les restes lus de bas en haut.
 
         ![](data/divisions.png){: .center} 
 
+    === "Décimal → Binaire Méthode 2"
+        - On peut utiliser un tableau.  Par exemple pour 217  
+
+        |$2^7$  |$2^6$  |$2^5$  |$2^4$  |$2^3$  |$2^2$  |$2^1$  |$2^0$  |
+        |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+        |128  |64   |32   |16   |8    |4    |2    | 1   |
+        |1    |1    |0    |1    |1    |0    |0    | 1    |
+        |217-128=89 |89-64=25   |25   |25-16=9   |9-8=1    |1    |1    | 1-1=0   |
+
+
     === "Décimal →  Base quelconque"
         Les deux algorithmes de soustraction et de divisions fonctionnent également pour la conversion du décimal vers n'importe quelle autre base.
 
+
+!!! example "{{ exercice() }}"
+    Écrire 96,196,119 et 168 en binaire avec cette méthode.
 
 
 ### Le système hexadécimal (base 16)
@@ -227,7 +249,8 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
         1. 1010
         2. 101110
         3. 10001101
-        4. 11111111
+        4. 11111111  
+        5. 101011001
 
     === "{{ exercice() }}"
         Convertir du décimal vers le binaire.
@@ -235,8 +258,8 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
         1. 17
         2. 34
         3. 68
-        2. 100
-        3. 200
+        4. 100
+        5. 200
 
         Que remarquez-vous quand on passe de l'écriture binaire d'un nombre à celle de son double?
 
@@ -256,6 +279,16 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
         3. 421
 
 !!! example "{{ exercice() }}"
+    C’est en 11110010000 qu’a été démontré le théorème fondamental de l’informatique. Exprimer ce nombre en base dix
+
+!!! example "{{ exercice() }}"
+    Convertir les nombres suivants en base 10 :  
+    **1.** $(1B7)_{16}$
+    **2.** $(ABE)_{16}$
+    **3.** $(A320_{16}$
+
+
+!!! example "{{ exercice() }}"
 	=== "Conversion Binaire → Hexadécimal"
 		- On regroupe les bits par paquets de 4 (quitte à ajouter des 0 pour compléter).
 		- On convertit chaque paquet en chiffre hexadécimal.
@@ -271,6 +304,18 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 		1. Convertir $101101_2$ puis $10011011111_2$ en base 16.
 		2. Convertir $8\text{D}_{16}$ puis $1\text{CA}7_{16}$ en binaire.
 	
+
+!!! example "{{ exercice() }}"  
+    === "Conversion Binaire → Hexadécimal"
+        Convertir les nombres binaires suivants en hexadécimal
+        **1.** $(01001101)_2$
+        **2.** $(100110000111)_2$
+        **3.** _(101110101100)_2$
+
+    === "Conversion Hexadécimal  → Binaire"
+        Convertir en binaire les nombres suivant :
+        **1.** $(FABE51)_{16}$  
+        **2.** $(59A75)_{16}$
 #### Avec Python
 
 ??? info "Fonctions de conversion"
@@ -302,3 +347,54 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 
     {{ terminal() }}
     
+
+## Integer Overflow  
+
+!!! objectif "Enoncé du problème"
+    Dans une usine, sur une machine qui fabrique en moyenne 200 pièces par jour, un compteur stocké sur un octet affiche le nombre de pièces produites. quand un technicien récupère les pièces fabriquées, il vérifie que le nombre est conforme, puis appuie sur un bouton pour remettre le compteur à zéro. Un jour le compteur affiche 21 alors que 277 pièces ont été produites. Il appelle le numéro d’assistance pour signaler que le compteur ne fonction plus. On lui répond que c’est normal et qu’une mise à jour sera effectuée prochainement pour corriger ce défaut.  
+    Essayons d’expliquer ce qui est arrivé !
+
+!!! exo "{{ exercice() }}"
+    **1.**Donner l’écriture binaire de $277_{10}$.  
+    **2.** Sachant qu’un octet est composé de 8 bits, compléter un octet avec le nombre obtenu ?  
+    Que remarquez-vous ?
+    **3.**  Expliquer alors le résultat 21 qui apparaît sur le compteur.
+
+
+!!! savoir "A retenir"
+    Si le nombre de bits obtenu est inférieur à n, on rajoute des 0 pour parvenir à n bits. S’il n’y a pas assez de bits disponibles, on dit que la capacité d’écriture est insuffisante (on parle d’overflow).
+
+
+!!! objectif "Enoncé du problème"
+    Combien de bits faut-il pour représenter un nombre entier en binaire ?  
+
+    Pour évaluer le nombre de bits minimum nécessaires à l’écriture en base 2 d’un entier positif, il faut trouver la plus petite puissance de 2 qui soit strictement supérieure à l’entier à écrire.  
+
+    Exemple : comme $2^8$ = 256 et $2^9$ = 512, $2^8 \leq 277 < 2^9$ donc 9 bits sont nécessaires pour écrire l’entier 277.  
+
+    **1.** Combien de bits minimum sont nécessaires pour stocker les entiers 1047 et 65 512 ?  
+    **2.** Remplir le tableau suivant avec les tailles fréquentes des entiers en binaire et généralisation.
+
+    |Nombre d’octets utilisés | 1 | 2 | 4 | 8 | n |
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    |Nombre de bits utilisés|8||||
+    |Nombre d’entiers positifs qu’on peut stocker|$2^8 = 256$||||
+    |Plus grand entier positif que l’on peut stocker|$2^8 - 1 =255||||
+
+
+## Addition en binaire  
+
+
+
+Voyons maintenant comment on ajoute des nombres exprimés en base deux
+
+![](data/addition_binaire.png)
+
+
+!!! exo "{{ exercice() }}"
+    Faites les additions suivantes :
+
+    **1.** A=1101+10
+    **2.** B=101001+101  
+    **3.** C=10101010+1011  
+    **4.** D=1110101+10101
