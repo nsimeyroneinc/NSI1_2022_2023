@@ -191,7 +191,11 @@ plugins:
 
 extra_javascript:
   - javascripts/config.js
+  - xtra/javascripts/interpreter.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
 
 extra_css:
   - stylesheets/extra.css
+  - xtra/stylessheets/pyoditeur.css
