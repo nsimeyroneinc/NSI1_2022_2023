@@ -143,6 +143,7 @@ plugins:
       include_source: False
   - awesome-pages:
       collapse_single_pages: true
+  - macros
 
   #- plugins:
   #  - search
@@ -201,3 +202,5 @@ extra_javascript:
 extra_css:
   - stylesheets/extra.css
   - xtra/stylesheets/pyoditeur.css
+
+
