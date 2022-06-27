@@ -404,7 +404,7 @@ h3 {
     color: rgb(199, 90, 27);
 }
 h1:before {
-  content: counter(h1) ".    ";
+  content: "   ";
   counter-increment: h1;
 }
 h2:before {

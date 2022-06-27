@@ -59,7 +59,7 @@ nav:
 theme:
 
     name: material
-    custom_dir: my_theme_customizations
+    custom_dir: my_theme_customizations/
     font: false  # RGPD ; pas de fonte Google
     language: fr # français
     icon:
@@ -118,7 +118,8 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
         clickable_checkbox: true    #   et cliquables.
     - pymdownx.tabbed:               # Volets glissants.  === "Mon volet"
         alternate_style: true 
-    
+    - pymdownx.betterem:
+        smart_enable: all 
     - pymdownx.superfences:
 
     - pymdownx.keys:                # Touches du clavier.  ++ctrl+d++
@@ -191,7 +192,7 @@ plugins:
 
 
 extra_javascript:
-  - javascripts/config.js
+  - xtra/javascripts/config.js
   - xtra/javascripts/interpreter.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
@@ -199,4 +200,4 @@ extra_javascript:
 
 extra_css:
   - stylesheets/extra.css
-  - xtra/stylessheets/pyoditeur.css
+  - xtra/stylesheets/pyoditeur.css
