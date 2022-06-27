@@ -12,8 +12,11 @@ geometry:
 --- 
 
 
+
 Thème 6 - Langages et programmation
 ===
+
+{{ initexo(0) }}
 
 <table  class="yellowTable">
         <tr >
@@ -88,7 +91,7 @@ print(b)
     6
 
 
-!!! fabquestion "Q.1"
+!!! exo "{{ exercice() }}"
     Écrivez le programme Python correspondant à l'algorithme ci-dessous. Que valent `N` et `P` après l’exécution de cet algorithme ?  
     
     ```
