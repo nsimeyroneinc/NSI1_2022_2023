@@ -111,7 +111,15 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
     - pymdownx.tilde                # Passage ~~barré~~ ou en ~indice~.
     - pymdownx.highlight            # Coloration syntaxique du code
       #linenums: true
-    - pymdownx.inlinehilite         # pour  `#!python  <python en ligne>`
+    - pymdownx.inlinehilite:         # pour  `#!python  <python en ligne>`
+        auto_title: true
+        auto_title_map:
+            "Python": "🐍 Script Python"
+            "Python Console Session": "🐍 Console Python"
+            "Text Only": "📋 Texte"
+            "E-mail": "📥 Entrée"
+            "Text Output": "📤 Sortie"
+            "SQL": "🗂️ Requête SQL"
     - pymdownx.snippets             # Inclusion de fichiers externe.
     - pymdownx.tasklist:            # Cases à cocher  - [ ]  et - [x]
         custom_checkbox:    false   #   avec cases d'origine

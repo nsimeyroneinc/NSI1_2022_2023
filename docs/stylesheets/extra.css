@@ -2,7 +2,15 @@
   max-width: 1540px; 
 }
  
+@media print {
+  @page {
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
  
+
  /*Ajout de Guillaume CONNAN pour éviter l'ascenceur vertical  */
  .md-typeset div.arithmatex  {
   overflow: initial;
