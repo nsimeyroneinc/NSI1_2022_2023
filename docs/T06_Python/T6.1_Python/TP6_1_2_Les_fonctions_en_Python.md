@@ -14,12 +14,14 @@ geometry:
 Thème 6 - Langages et programmation
 ===
 
+{{ initexo(0) }}
+
 <table  class="yellowTable">
         <tr >
             <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
             02
             </th>
-            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Cours : Les Fonctions en Python</th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Les Fonctions en Python - Principes généraux</th>
         </tr>
 </table>
 <br>
@@ -332,3 +334,36 @@ Help on function double in module __main__:
         Renvoie le de n"
 
 ```
+
+
+## Exercices
+
+!!! exo "{{ exercice() }}"
+    **Calcul aire**  
+    Écrire une fonction qui prends en entrée la longueur et la largeur d'un rectangle et qui renvoie son aire.
+
+    ```python
+    def caclule_aire(longueur, largeur):
+        ...
+    ```
+
+!!! exo "{{ exercice() }}"
+    **conversion_duree**  
+
+    Écrire une fonction qui convertit un nombre de secondes en heures/minutes/secondes.  
+    On peut utiliser le fait que si `a` et `b` sont deux variables contenant des entiers, alors 
+    ```python
+    a // b
+    ```
+    est la partie entière de la division de `a` par `b` et 
+    ```python
+    a % b
+    ```
+    est reste de la division de `a` par `b`.
+
+    ```python
+    def convertit(secondes):
+        ...
+        return (heures, minutes, secondes)
+    ```
+

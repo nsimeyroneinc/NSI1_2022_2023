@@ -33,10 +33,12 @@ nav:
 
     
     - T6 Prog. :
+      - TP 00 - Introduction Python : T06_Python/T6.1_Python/TP6_1_0_Introduction.md
       - TP 01 - Les Variables en Python : T06_Python/T6.1_Python/TP6_1_1_Les_Variables_en_Python.md
-      - TP 02 - Les Fonctions en Python : T06_Python/T6.1_Python/Cours02_Les_fonctions_en_Python.md
-      - TP 03 - Les boucles en Python : T06_Python/T6.1_Python/Cours03_Boucle_FOR_et_WHILE_en_Python.md
-      - TP 04 - Les Conditions en Python : T06_Python/T6.1_Python/Cours04_Instructions_conditionnelles_en_Python.md
+      - TP 02 - Les Fonctions en Python : T06_Python/T6.1_Python/TP6_1_2_Les_fonctions_en_Python.md
+      - TP 03 - Les boucles en Python : T06_Python/T6.1_Python/TP6_1_3_Boucle_FOR_et_WHILE_en_Python.md
+      - TP 04 - Les Conditions en Python : T06_Python/T6.1_Python/TP6_1_4_Instructions_conditionnelles_en_Python.md
+ 
     #- T7 Algo. :  
 
      
