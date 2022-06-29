@@ -225,53 +225,53 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 
 #### À la main
 
-!!! example "Exercices"
-    === "{{ exercice() }}"
-        Convertir de la base mentionnée vers la base 10 (système décimal).
+!!! example "{{ exercice() }}"
+    Convertir de la base mentionnée vers la base 10 (système décimal).
 
-        **Attention, il y a un piège...**
+    **Attention, il y a un piège...**
 
-        1. $131_6$
-        2. $420_5$
-        3. $1515_8$
-        4. $716_4$
-        5. $321_4$
+    1. $131_6$  
+    2. $420_5$  
+    3. $1515_8$  
+    4. $716_4$  
+    5. $321_4$  
     
-    === "{{ exercice() }}"
-        Convertir les écritures décimales vers la base mentionnée.
+!!! example "{{ exercice() }}"
+    Convertir les écritures décimales vers la base mentionnée.
+    
+    1. 47 en base 5  
+    2. 92 en base 4  
 
-        1. 47 en base 5
-        2. 92 en base 4
+!!! example "{{ exercice() }}"
+    Convertir du binaire vers le décimal.
 
-    === "{{ exercice() }}"
-        Convertir du binaire vers le décimal.
+    1. 1010  
+    2. 101110  
+    3. 10001101  
+    4. 11111111  
+    5. 101011001  
 
-        1. 1010
-        2. 101110
-        3. 10001101
-        4. 11111111  
-        5. 101011001
+!!! example "{{ exercice() }}"
+    Convertir du décimal vers le binaire.
 
-    === "{{ exercice() }}"
-        Convertir du décimal vers le binaire.
+    1. 17  
+    2. 34  
+    3. 68  
+    4. 100  
+    5. 200  
 
-        1. 17
-        2. 34
-        3. 68
-        4. 100
-        5. 200
+    Que remarquez-vous quand on passe de l'écriture binaire d'un nombre à celle de son double?
 
-        Que remarquez-vous quand on passe de l'écriture binaire d'un nombre à celle de son double?
-
-    === "{{ exercice() }}"
-        1. Vérifier la conversion de la couleur rouge donnée en exemple à la section précédente.
+!!! example "{{ exercice() }}"
+    
+    **1.** Vérifier la conversion de la couleur rouge donnée en exemple à la section précédente.
 
         2. Convertir les écritures hexadécimales en décimal: 99, D7, 1B8, ABC.
 
         3. Comment s'écrit la couleur blanche en code hexadécimal?
 
 
-    === "{{ exercice() }}"
+!!! example "{{ exercice() }}"
         Convertir les écritures décimales en hexadécimal.
 
         1. 45
@@ -283,9 +283,10 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 
 !!! example "{{ exercice() }}"
     Convertir les nombres suivants en base 10 :  
-    **1.** $(1B7)_{16}$
-    **2.** $(ABE)_{16}$
-    **3.** $(A320_{16}$
+    
+    1. $(1B7)_{16}$  
+    2. $(ABE)_{16}$  
+    3. $(A320_{16}$  
 
 
 !!! example "{{ exercice() }}"

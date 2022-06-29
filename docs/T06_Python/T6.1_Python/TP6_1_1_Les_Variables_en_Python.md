@@ -23,7 +23,7 @@ Thème 6 - Langages et programmation
             <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
             01
             </th>
-            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Cours : Les Variables en Python</th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Les Variables en Python</th>
         </tr>
 </table>
 <br>
@@ -33,17 +33,23 @@ Thème 6 - Langages et programmation
 ![](data/python_logo1.png){:.center}
 
 
-## Introduction 
+## Préambule
 
-Le langage Python est un langage de programmation objet interprété. Il a été développer par Guido Von Rossum en 1989 à l’Université d’Amsterdam.  
+### Python
 
-![](data/rossum.jpeg){:.center}
+![](data/python420x420.png){align=right}
 
-- Python a été créé dansl’optique d’être le plus simple possible à apprendre.  
-- Il s’agit d’un langage dit de « haut niveau ».  
-- Python est un langage open source. Libre et gratuit, il est supporté, développé et utilisé par une large communauté.  
-- Python est une langage multiplateforme : vous érirez le même programme que soyez sous Linux, Mac OS X ou Windows et il pourra être exécuté indifférenment sur l’un de ces systèmes d’exploitation.  
-- Python est un langage opérationnel complet : il ne sert pas qu’à apprendre à programmer. De nombreuses applications scientifiques complexes sont développées en Python. A la NASA, au CNRS, chez Google, chez Yahoo, etc ... de nombreux projets sont développés en Python.  
+Python est un [*langage de programmation*](https://fr.wikipedia.org/wiki/Langage_de_programmation){:target="_blank"} inventé en 1991 par Guido Van Rossum.
+
+![](data/rossum.jpeg)
+
+Ce langage est un des langages les plus utilisés actuellement (avec le C, le Java, le Javascript ...), notamment dans le monde scientifique.
+
+Il est aussi un des langages de développement de nombreuses applications (Spotify, Instagram, Netflix), des sites Web, de traitement de données,  du noyau Linux... Python fait à peu près tout ce qu'on veut. Sauf le café.
+
+ Il est aussi parfaitement adapté à la découverte de la programmation, de par sa clarté et sa concision (il a aussi bien sûr beaucoup de défauts !).
+
+C'est pourquoi c'est le langage de programmation utilisé au lycée en Mathématiques, en Physique-Chimie, en SNT et bien sûr maintenant en NSI.
 
 Avec le langage Python il est possible de faire :  
 
@@ -57,6 +63,41 @@ Avec le langage Python il est possible de faire :
 - interfacer des systèmes de gestion de base de données (librairie MySQLdb...)  
 - des applications réseaux (framework Twisted)  
 
+
+## Utiliser Python
+
+Pour pouvoir utiliser un langage de programmation, en particulier Python, on a besoin d'un [IDE](https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement) (environnement de développement). Il en existe beaucoup...
+
+## En ligne
+
+Rendez-vous sur la page [https://console.basthon.fr/](https://console.basthon.fr/){:target="_blank"} 
+
+![](../../images/basthon.png)
+
+<p align="center">
+<em>Éditeur à gauche, console à droite</em>
+</p>
+
+## Au lycée / à la maison
+
+Nous utiliserons l'IDE [Thonny](https://thonny.org/){:target="_blank"}  au lycée, qui est assez simple et complet.
+Si vous souhaitez installer Python sur votre PC à la maison, je vous conseille de l'installer également.
+
+![](../../images/thonny2.png){: .center .w640}
+
+<p align="center">
+<em>Éditeur en haut, console en bas</em>
+</p>
+
+## Ici, sur ce site
+
+Dans certaines activités, vous trouverez une console intégrée. Vous pouvez y entrer des instructions simples:
+
+{{ terminal() }}
+
+Ou bien un mini-IDE intégré:
+
+{{ IDEv() }}
 
 ## Variables et Affectation 
 
