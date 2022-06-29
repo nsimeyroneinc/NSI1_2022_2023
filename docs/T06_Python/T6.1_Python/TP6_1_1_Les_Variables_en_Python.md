@@ -68,7 +68,7 @@ Avec le langage Python il est possible de faire :
 
 Pour pouvoir utiliser un langage de programmation, en particulier Python, on a besoin d'un [IDE](https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement) (environnement de développement). Il en existe beaucoup...
 
-## En ligne
+### En ligne
 
 Rendez-vous sur la page [https://console.basthon.fr/](https://console.basthon.fr/){:target="_blank"} 
 
@@ -78,10 +78,12 @@ Rendez-vous sur la page [https://console.basthon.fr/](https://console.basthon.fr
 <em>Éditeur à gauche, console à droite</em>
 </p>
 
-## Au lycée / à la maison
+### Au lycée / à la maison
 
-Nous utiliserons l'IDE [Thonny](https://thonny.org/){:target="_blank"}  au lycée, qui est assez simple et complet.
-Si vous souhaitez installer Python sur votre PC à la maison, je vous conseille de l'installer également.
+Nous utiliserons Capytale, intégré à l'ENT et basé sur basthon.
+
+Nous utiliserons, à l'occasion l'IDE [Spyder](https://www.spyder-ide.org/){:target="_blank"} au lycée ou l'IDE [Thonny](https://thonny.org/){:target="_blank"} qui est assez simple et complet.  
+Si vous souhaitez installer Python sur votre PC à la maison, je vous conseille de l'installer.
 
 ![](../../images/thonny2.png){: .center .w640}
 
@@ -89,7 +91,7 @@ Si vous souhaitez installer Python sur votre PC à la maison, je vous conseille 
 <em>Éditeur en haut, console en bas</em>
 </p>
 
-## Ici, sur ce site
+### Ici, sur ce site
 
 Dans certaines activités, vous trouverez une console intégrée. Vous pouvez y entrer des instructions simples:
 
