@@ -1,0 +1,960 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Première NSI">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>Codage des entiers positifs en base b - Site NSI 1ére</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../xtra/stylesheets/pyoditeur.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#theme-1-representation-des-donnees-types-et-valeurs-de-bases" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Site NSI 1ére" class="md-header__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Site NSI 1ére
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Codage des entiers positifs en base b
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-tabs__link">
+        T6 Prog.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Divers/Liens_utiles/" class="md-tabs__link">
+        Divers
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Site NSI 1ére" class="md-nav__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    Site NSI 1ére
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T6 Prog.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T6 Prog." data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T6 Prog.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-nav__link">
+        TP 00 - Introduction Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python/" class="md-nav__link">
+        TP 01 - Les Variables en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python/" class="md-nav__link">
+        TP 02 - Les Fonctions en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_et_WHILE_en_Python/" class="md-nav__link">
+        TP 03 - Les boucles en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_4_Instructions_conditionnelles_en_Python/" class="md-nav__link">
+        TP 04 - Les Conditions en Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Divers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Divers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Divers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Divers/Liens_utiles/" class="md-nav__link">
+        Liens utiles
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-les-nombres-entiers-en-binaire-non-signe" class="md-nav__link">
+    1. Les nombres entiers en binaire non signé
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-nombres-entiers-en-binaire-signe" class="md-nav__link">
+    Les nombres entiers en binaire signé
+  </a>
+  
+    <nav class="md-nav" aria-label="Les nombres entiers en binaire signé">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-fausse-bonne-idee" class="md-nav__link">
+    La fausse bonne idée
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complement-a-2" class="md-nav__link">
+    Complément à 2
+  </a>
+  
+    <nav class="md-nav" aria-label="Complément à 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-la-recherche-de-loppose-dun-nombre" class="md-nav__link">
+    À la recherche de l'opposé d'un nombre
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion-ecriture-loppose-dun-nombre-positif" class="md-nav__link">
+    Conclusion : écriture l'opposé d'un nombre positif
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#travail-inverse-passage-du-binaire-signe-au-nombre-relatif" class="md-nav__link">
+    Travail inverse : passage du binaire signé au nombre relatif
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-codage-des-entiers-une-source-intarissable-derreurs" class="md-nav__link">
+    Le codage des entiers, une source intarissable d'erreurs...
+  </a>
+  
+    <nav class="md-nav" aria-label="Le codage des entiers, une source intarissable d'erreurs...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-vol-501-dariane-5" class="md-nav__link">
+    Le vol 501 d'Ariane 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-bug-de-lannee-2038" class="md-nav__link">
+    Le bug de l'année 2038
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    Exercices
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="T1_2_Relatifs.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+              
+    
+                
+
+
+<h1 id="theme-1-representation-des-donnees-types-et-valeurs-de-bases">Thème 1 - Représentation des données - Types et valeurs de bases<a class="headerlink" href="#theme-1-representation-des-donnees-types-et-valeurs-de-bases" title="Permanent link">⚓︎</a></h1>
+<table  class="greenTable">
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            06
+            </th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Ecriture d'un entier relatifs en binaire</th>
+        </tr>
+</table>
+<p><br></p>
+<div class="admonition prognsi">
+<p class="admonition-title">Programme Terminale</p>
+<table>
+<thead>
+<tr>
+<th align="center">Contenus</th>
+<th align="center">Capacités attendues</th>
+<th align="center">Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Représentation binaire d’un entier relatif</td>
+<td align="center">Évaluer le nombre de bits nécessaires à l’écriture en base 2 d’un entier, de la somme ou du produit de deux nombres entiers. Utiliser le complément à 2.</td>
+<td align="center">Il s’agit de décrire les tailles courantes des entiers (8, 16, 32 ou 64 bits). Il est possible d’évoquer la représentation des entiers de taille arbitraire de Python.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title"><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> Attention <img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /></p>
+<p>La manière dont les nombres (entiers, non-entiers, positifs, négatifs...) sont traités par un langage de programmation est <strong>spécifique</strong> à ce langage.</p>
+<p>Dans toute la suite de ce cours, pour simplifier, nous considérerons que les nombres sont codés sur <strong>1 octet</strong> seulement. Ce qui ne correspond pas à la réalité, mais permet de comprendre les notions essentielles.</p>
+</div>
+<h2 id="1-les-nombres-entiers-en-binaire-non-signe">1. Les nombres entiers en binaire non signé<a class="headerlink" href="#1-les-nombres-entiers-en-binaire-non-signe" title="Permanent link">⚓︎</a></h2>
+<p>L'expression "non signé" signifie que la contrainte du signe n'existe pas : tous les nombres sont considérés comme étant positifs.</p>
+<p>Au chapitre T1.1, nous avons vu comment représenter un nombre entier <strong>positif</strong> en notation binaire.</p>
+<p>Sur un octet, le nombre minimal qu'on puisse coder est <code>00000000</code>. C'est l'entier naturel 0.<br />
+Le nombre maximal qu'on puisse coder est <code>11111111</code>. C'est l'entier naturel 255.</p>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  1</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Énoncé</label><label for="__tabbed_1_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>Quel est le plus grand entier non signé codable sur 16 bits ?</li>
+<li>... sur 32 bits ?</li>
+<li>... <span class="arithmatex">\(n\)</span> bits ?</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li><span class="arithmatex">\(N=1+2+2^2+2^3+\dots+2^{15}= 65535\)</span></li>
+<li><span class="arithmatex">\(N=1+2+2^2+2^3+\dots+2^{31}= 4294967295\)</span></li>
+<li>Pour tout <span class="arithmatex">\(n \in \mathbb{N}\)</span>, <span class="arithmatex">\(1+2+2^2+2^3+\dots+2^{n}=2^{n+1}-1\)</span> (formule de la somme des termes d'une suite géométrique de raison 2).</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Python et les entiers <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<p>Depuis la version 3 du langage Python, il n'y a plus de taille maximale pour les entiers en Python.</p>
+<p>Ceci implique que la taille nécessaire au codage de l'entier est allouée dynamiquement par Python (avec pour seule limite celle de la mémoire disponible). </p>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  2</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>Effectuer la somme des deux nombres binaires <code>00001101</code> et <code>00001011</code>.</li>
+<li>Vérifier que le résultat est cohérent en base 10.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<h2 id="les-nombres-entiers-en-binaire-signe">Les nombres entiers en binaire signé<a class="headerlink" href="#les-nombres-entiers-en-binaire-signe" title="Permanent link">⚓︎</a></h2>
+<h3 id="la-fausse-bonne-idee">La fausse bonne idée<a class="headerlink" href="#la-fausse-bonne-idee" title="Permanent link">⚓︎</a></h3>
+<p>Comment différencier les nombres positifs des nombres négatifs ?  </p>
+<p>L'idée naturelle est de réserver 1 bit pour le signe de l'entier (+ ou -).</p>
+<div class="admonition savoir">
+<p class="admonition-title">Signe d'un entier relatif</p>
+<p>On choisit de représenter le signe d'un nombre entier relatif:</p>
+<ul>
+<li>par un <code>0</code> pour le + : ainsi la représentation des entiers positifs est <strong>inchangée</strong>;</li>
+<li>par un <code>1</code> pour le -.</li>
+</ul>
+</div>
+<p><strong>Mais où placer ce bit de signe?</strong></p>
+<p>En effet, 6 se coderait alors en <code>0110</code> et -6 en <code>1110</code>? Mais <code>1110</code> représente l'entier 14 !</p>
+<p>Pour lever cette ambiguité, il faut décider :</p>
+<ul>
+<li>de la taille du mot binaire qui va représenter l'entier, c'est-à-dire le nombre de bits;</li>
+<li>d'une façon efficace de représenter les nombres négatifs.</li>
+</ul>
+<div class="admonition savoir">
+<p class="admonition-title">Taille en bits d'un entier</p>
+<p>Pour représenter un nombre entier relatif, on a donc besoin de fixer un nombre <code>n</code>  de bits sur lequel le coder.</p>
+<p>En général, <code>n</code> est une des valeurs suivantes : 8, 16, 32 ou 64 (1, 2, 4 ou 8 octets). Cela dépend du langage de programmation utilisé et de l'architecture matérielle de l'ordinateur.</p>
+<p>Le bit de poids fort représente donc le signe et les <code>n-1</code> bits suivants la <strong>valeur absolue</strong> du nombre.</p>
+</div>
+<p>Sur 8 bits par exemple, l'entier 6 est codé par <code>0|000 0110</code>. Et on serait tenté de coder son opposé -6 par <code>1|000 0110</code>, n'est-ce pas?</p>
+<p><strong>Problèmes :</strong></p>
+<p>Au moins deux (gros) inconvénients à cette méthode:</p>
+<ul>
+<li>Le nombre 0 serait codé par <code>0|000 0000</code> <strong>et</strong> par <code>1|000 0000</code>. Deux représentations pour un même nombre, ça ne sent pas bon.</li>
+<li>Plus grave : l'addition telle qu'on la connaît ne fonctionnerait plus. Posez par exemple 6 + (-6) ...</li>
+</ul>
+<p><center> &emsp;     0 0 0 0 0 1 1 0 <br> + &nbsp; 1 0 0 0 0 1 1 0 <br> <div class="trait"></div> <br>&emsp;      1 0 0 0 1 1 0 0</center></p>
+<p>On n'obtient pas 0 mais <span class="arithmatex">\(-12\)</span>.</p>
+<div class="admonition savoir">
+<p class="admonition-title">Moralité :</p>
+<p>Indiquer le signe d'un nombre par son premier bit est une fausse bonne idée, il faut trouver autre chose.</p>
+</div>
+<h2 id="complement-a-2">Complément à 2<a class="headerlink" href="#complement-a-2" title="Permanent link">⚓︎</a></h2>
+<h3 id="a-la-recherche-de-loppose-dun-nombre">À la recherche de l'opposé d'un nombre<a class="headerlink" href="#a-la-recherche-de-loppose-dun-nombre" title="Permanent link">⚓︎</a></h3>
+<div class="admonition objectif">
+<p class="admonition-title">Idée :</p>
+<p>Plutôt que de chercher à écrire directement le nombre <span class="arithmatex">\(-3\)</span>, nous allons chercher à déterminer ce qu'il faut ajouter à <span class="arithmatex">\((+3)\)</span> pour obtenir 0.</p>
+<p>Que faut-il ajouter au nombre <span class="arithmatex">\((+3)\)</span> pour obtenir 0 ?</p>
+<p><center> &emsp;     0 0 0 0 0 1 1 0 <br> + &nbsp; ? ? ? ? ? ? ? ? <br> <div class="trait"></div> <br>&emsp;      0 0 0 0 0 0 0 0</center></p>
+</div>
+<p>L'idée naturelle est de commencer par la droite, en essayant de «fabriquer du zéro» en choisissant le bon bit à ajouter :</p>
+<p><center> &emsp;     0 0 0 0 0 1 1 0 <br> + &nbsp; 1 1 1 1 1 0 1 0 <br> <div class="trait"></div> <br>&emsp;      0 0 0 0 0 0 0 0</center></p>
+<p>On arrive bien à fabriquer des 0 sur tout notre octet, mais que devient la retenue (en anglais <em>carry</em>) de 1 qui déborde de notre octet ?</p>
+<p>Réponse : rien ! Elle sera perdue et c'est une très bonne nouvelle. Ce nombre sera donc considéré comme un 0 : nous avons trouvé comment coder <span class="arithmatex">\(-6\)</span>.</p>
+<p>Le nombre <span class="arithmatex">\(-6\)</span> s'écrit donc <code>11111010</code>.</p>
+<p>Comment, à partir du nombre <code>00000110</code>, aurait-on pu le trouver directement (sans raisonner de proche en proche) ?</p>
+<p>On peut remarquer qu'en inversant chaque bit du nombre de départ <code>00000110</code>, on obtient <code>11111001</code>, qui appelé le <strong>complément à 2</strong> du nombre <code>00000110</code>.</p>
+<p>Il ne reste donc plus qu'à ajouter <code>1</code> à ce nombre <code>11111010</code> pour obtenir le nombre cherché, <code>11111010</code></p>
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" />  ce nombre <code>11111010</code> représente 250 en codage non signé. Il est donc nécessaire, lorsqu'on représente un nombre, de savoir si les nombres manipulés seront des entiers naturels (<em>non signés</em>) ou bien relatifs (<em>signés</em>).</p>
+<h3 id="conclusion-ecriture-loppose-dun-nombre-positif">Conclusion : écriture l'opposé d'un nombre positif<a class="headerlink" href="#conclusion-ecriture-loppose-dun-nombre-positif" title="Permanent link">⚓︎</a></h3>
+<div class="admonition savoir">
+<p class="admonition-title">Pour obtenir le complément à 2 d'un entier négatif<img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li>On prend le complément à 2 de chaque bit du nombre de départ<ul>
+<li>on code sa valeur absolue en binaire;</li>
+<li>on inverse tous les bits (on remplace les <code>0</code> par des <code>1</code> et les <code>1</code> par des <code>0</code>);</li>
+</ul>
+</li>
+<li>On ajoute 1 au nombre obtenu.</li>
+</ul>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  3</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Énoncé</label><label for="__tabbed_3_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Donner l'écriture binaire sur un octet du nombre <span class="arithmatex">\(-13\)</span>.</p>
+</div>
+<div class="tabbed-block">
+<p>Commençons par écrire le nombre 13 en binaire. Il s'écrit  <code>00001101</code>.</p>
+<ul>
+<li>en prenant le complément à 2 de chaque bit, on obtient <code>11110010</code>.</li>
+<li>en ajoutant 1 à ce dernier nombre, on obtient <code>11110011</code>. </li>
+</ul>
+<p>Le nombre <span class="arithmatex">\(-13\)</span> s'écrit donc <code>11110011</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  4</p>
+<p>Donner l'écriture binaire sur un octet du nombre <span class="arithmatex">\(-57\)</span>.</p>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  5</p>
+<p>Donner l'écriture binaire sur un octet du nombre <span class="arithmatex">\(-17\)</span>.</p>
+</div>
+<h3 id="travail-inverse-passage-du-binaire-signe-au-nombre-relatif">Travail inverse : passage du binaire signé au nombre relatif<a class="headerlink" href="#travail-inverse-passage-du-binaire-signe-au-nombre-relatif" title="Permanent link">⚓︎</a></h3>
+<p>Considérons le nombre <code>11101101</code>, codé en binaire signé. À quel nombre relatif correspond-il ?</p>
+<ol>
+<li>On observe son bit de poids fort : ici 1, donc ce nombre est négatif. Si ce bit est égal à 0, le nombre codé est positif, il suffit d'opérer une conversion binaire classique.</li>
+<li>Comme ce nombre est négatif, il va falloir inverser le protocole précédent. On commence donc par <strong>enlever 1</strong> au nombre proposé. On trouve <code>11101100</code>.</li>
+<li>On prend ensuite le complément à 2 de chaque bit. On trouve <code>00010011</code>.</li>
+<li>On convertit en base 10 le nombre obtenu, qui était donc 19.</li>
+<li>Le nombre initial était donc <span class="arithmatex">\(-19\)</span>.</li>
+</ol>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  6</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>En binaire signé, à quel nombre correspond <code>11110001</code>?</li>
+<li>En binaire signé, quel est le plus grand nombre que l'on puisse écrire sur un octet ? </li>
+<li>Quel est le plus petit nombre ?</li>
+<li>Au total, combien de nombres différents peuvent être écrits en binaire signé ?</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li><code>11110001</code> - <code>1</code> = <code>11110000</code>. En prenant le complément à 2, on trouve <code>00001111</code>, qui vaut 15. Le nombre <code>11110001</code> représente donc <span class="arithmatex">\(-15\)</span>.</li>
+<li>Le plus grand nombre est <code>01111111</code>, soit <span class="arithmatex">\(+127\)</span>.</li>
+<li>Le plus petit nombre est <code>10000000</code>. <code>10000000</code> - <code>1</code> = <code>01111111</code>. Le complément est <code>10000000</code>, qui est égal à 128. Donc le nombre minimal est <span class="arithmatex">\(-128\)</span>.</li>
+<li>Il y a 128 nombres négatifs (de <span class="arithmatex">\(-128\)</span> à <span class="arithmatex">\(-1\)</span>), le nombre 0, puis 127 nombres positifs (de 1 à 127). Il y a donc 256 nombres au total, comme en binaire non signé. </li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<h2 id="le-codage-des-entiers-une-source-intarissable-derreurs">Le codage des entiers, une source intarissable d'erreurs...<a class="headerlink" href="#le-codage-des-entiers-une-source-intarissable-derreurs" title="Permanent link">⚓︎</a></h2>
+<h3 id="le-vol-501-dariane-5">Le vol 501 d'Ariane 5<a class="headerlink" href="#le-vol-501-dariane-5" title="Permanent link">⚓︎</a></h3>
+<p><img alt="image" class="center" src="../data/ariane5.png" width="30%" /></p>
+<p>Le 04 juin 1996, le vol inaugural d'Ariane 5 a malheureusement fini dans <a class="" href="https://www.ina.fr/ina-eclaire-actu/video/cab96023317/explosion-au-lancement-d-ariane-5" target="_blank">une gerbe d'étincelles</a>.</p>
+<p>En cause : un code prévu pour Ariane 4 avait été gardé pour le nouveau modèle Ariane 5. Dans ce «vieux» code, une donnée issue d'un capteur (le capteur de <em>vitesse horizontale</em>) était codé sur 8 bits. La valeur maximale acceptable de cette donnée était donc 255.</p>
+<p>Or, Ariane 5 étant beaucoup plus puissante, le capteur de vitesse horizontale a renvoyé, au bout de 30 secondes, la valeur 300 : cette valeur a provoqué un dépassement des 8 bits prévus et a donné un résultat absurde. L'ordinateur de bord a cru que la fusée était en train de se coucher et a violemment orienté les tuyères de propulsion pour redresser Ariane 5, alors que celle-ci s'élevait pourtant bien verticalement... 
+Ariane 5 a alors brusquement pivoté avant d'exploser.</p>
+<p>Cette catastrophe (150 millions d'euros et des années de travail perdus) a fait prendre conscience à la communauté scientifique de l'importance de faire des tests logiciels toujours plus poussés : ce n'est pas parce qu'un code marche dans un environnement donné qu'il marchera de la même manière dans d'autres conditions...</p>
+<h3 id="le-bug-de-lannee-2038">Le bug de l'année 2038<a class="headerlink" href="#le-bug-de-lannee-2038" title="Permanent link">⚓︎</a></h3>
+<p><img alt="image" class="center" src="../data/2038.gif" /></p>
+<p>Expliquons ce (superbe) gif issu de la page Wikipedia <a class="" href="https://fr.wikipedia.org/wiki/Bug_de_l%27an_2038" target="_blank">Bug de l'an 2038</a>.</p>
+<p>Lorsqu'on demande à Python l'heure qu'il est, par la fonction <code>time()</code> du module <code>time</code>, voici ce qu'il répond :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">time</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="mf">1653855138.398177</span>
+</code></pre></div>
+<p>Il nous renvoie le nombre de secondes écoulées depuis le 1er janvier 1970 à 00h00. On appelle cela l'heure POSIX ou <a class="" href="https://fr.wikipedia.org/wiki/Heure_Unix" target="_blank">l'heure UNIX</a>.
+Au 29 mai 2022, il s'en donc écoulé environ 1,6 milliards.</p>
+<p>Dans beaucoup de systèmes informatiques, ce nombre de secondes est codé par <strong>un entier signé sur 32 bits</strong>.
+Le nombre maximum de secondes qui peut être représenté est donc <code>01111111 11111111 11111111 11111111</code> </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;01111111111111111111111111111111&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">2147483647</span>
+</code></pre></div>
+<p>Ce nombre représente un peu plus de 2 milliards de secondes... En les comptant depuis le 01/01/1970 00h00m00s, on arrive au 19/01/2038 à 03h14m07s.</p>
+<p>À la seconde d'après, la represéntation binaire du temps sera <code>10000000 00000000 00000000 00000000</code>, qui sera interprété comme le nombre <strong>négatif</strong> −2147483648, et qui ramènera donc les horloges au 13 décembre 1901...</p>
+<p>Vous pourrez lire sur la page Wikipedia citée plus haut plus d'informations sur ce problème.</p>
+<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">⚓︎</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Exercice  7</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Énoncé</label><label for="__tabbed_5_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Quel est l'intervalle de nombres entiers relatifs qu'on peut représenter:</p>
+<ol>
+<li>Sur 4 bits?</li>
+<li>Sur 16 bits?</li>
+<li>Sur 64 bits?</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>On utilise l'encadrement donné dans l'encadré précédent avec la valeur de <span class="arithmatex">\(n\)</span> correspondante:</p>
+<ol>
+<li>Pour <span class="arithmatex">\(n=4\)</span>, entre -8 et 7</li>
+<li>Pour <span class="arithmatex">\(n=16\)</span>, entre -32768 et 32767</li>
+<li>Pour <span class="arithmatex">\(n=64\)</span>, entre -9223372036854775808 et 9223372036854775801</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  8</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Énoncé</label><label for="__tabbed_6_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>Convertir en complément à 2 les nombres 12 et -53.</li>
+<li>Effectuer l'addition en binaire de ces deux nombres, et vérifier que le résultat est correct.</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Comme 12 est positif, sa représentation binaire est <code>00001100</code>.</li>
+</ol>
+<p>En revanche, -53 est négatif. Donc:</p>
+<ul>
+<li>on écrit sa valeur absolue, 53, en binaire: <code>00110101</code></li>
+<li>on effectue le complément à 2 en inversant les bits : <code>11001010</code></li>
+<li>on ajoute 1 et on obtient <code>11001011</code></li>
+</ul>
+<p><br>
+2. L'addition bit par bit donne : <code>11010111</code> </p>
+<p>Le résultat de 12 + (-53) est -41. Or sa représentation est </p>
+<ul>
+<li>valeur absolue : <code>00101001</code></li>
+<li>complément à 2 : <code>11010110</code></li>
+<li>+1 : <code>11010111</code></li>
+</ul>
+<p>On obtient bien le même résultat.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  9</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Énoncé</label><label for="__tabbed_7_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Quels sont les entiers relatifs dont la représentation binaire en complément à 2 (sur 8 bits) est:</p>
+<ol>
+<li><code>01100111</code></li>
+<li><code>10011001</code></li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>
+<p>L'écriture binaire commence par un 0, c'est donc un positif. On fait «comme d'habitude»: <code>01100111</code> est l'écriture binaire de 103.</p>
+</li>
+<li>
+<p>L'écriture binaire commence par un 1, c'est donc un négatif. </p>
+</li>
+</ol>
+<p>On effectue les opérations dans l'autre sens:</p>
+<ul>
+<li>On soustrait 1 : on obtient <code>10011000</code></li>
+<li>complément à 2 : on obtient <code>01100111</code></li>
+<li>on récupère la valeur absolue : 103</li>
+</ul>
+<p>Le nombre est donc -103.</p>
+</div>
+</div>
+</div>
+</div>
+
+              
+    <script src="../../../js/ide.js"></script> 
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+        <script src="../../../xtra/javascripts/config.js"></script>
+      
+        <script src="../../../xtra/javascripts/interpreter.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+    
+  </body>
+</html>

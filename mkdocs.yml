@@ -16,11 +16,13 @@ docs_dir: docs
 nav: 
     - Accueil : index.md
 
-    - T1 Types et valeurs de base :
-      - Codages des entiers: T01_TypesBase/T1.1_Bases/Codage_Entiers.md
+    #- T1 Types et valeurs de base :
+    #  - Codages des entiers positifs: T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers.md
+    #  - Codages des entiers relatifs: T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md
 
     
     #- T2 Types construits :
+    #  - Listes en Python: T02_TypesConstruits/T2.1_Listes/T2_1_Listes.md
 
     
     #- T3 Rep. Des données:
@@ -33,11 +35,11 @@ nav:
 
     
     - T6 Prog. :
-      - TP 00 - Introduction Python : T06_Python/T6.1_Python/TP6_1_0_Introduction.md
-      - TP 01 - Les Variables en Python : T06_Python/T6.1_Python/TP6_1_1_Les_Variables_en_Python.md
-      - TP 02 - Les Fonctions en Python : T06_Python/T6.1_Python/TP6_1_2_Les_fonctions_en_Python.md
-      - TP 03 - Les boucles en Python : T06_Python/T6.1_Python/TP6_1_3_Boucle_FOR_et_WHILE_en_Python.md
-      - TP 04 - Les Conditions en Python : T06_Python/T6.1_Python/TP6_1_4_Instructions_conditionnelles_en_Python.md
+      - TP 00 - Introduction Python : T06_Python/T6.1_Python/T6_1_0_Introduction.md
+      - TP 01 - Les Variables en Python : T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python.md
+      - TP 02 - Les Fonctions en Python : T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python.md
+      - TP 03 - Les boucles en Python : T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_et_WHILE_en_Python.md
+      - TP 04 - Les Conditions en Python : T06_Python/T6.1_Python/T6_1_4_Instructions_conditionnelles_en_Python.md
  
     #- T7 Algo. :  
 
@@ -51,7 +53,7 @@ nav:
 
         
     - Divers : 
-      - Conseil : Divers/conseil.md
+      #- Conseil : Divers/conseil.md
       - Liens utiles : Divers/Liens_utiles.md
 
 

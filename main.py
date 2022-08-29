@@ -18,6 +18,17 @@ def define_env(env):
         env.variables['compteur_exo'] = n
         return ""
 
+    env.variables['compteur_exple'] = 0
+    @env.macro
+    def exemple():
+        env.variables['compteur_exple'] += 1
+        return f"Exemple  { env.variables['compteur_exple']}"
+
+    @env.macro
+    def initexple(n):
+        env.variables['compteur_exple'] = n
+        return ""
+
     @env.macro
     def correction(booleen, texte):
         if booleen == False:
@@ -25,8 +36,37 @@ def define_env(env):
         else:
             return texte
 #---------------- </exo perso>-------------------- 
+    @env.macro
+    def addition(v1, v2) -> str:
+        r1='    '
+        for v in v1:
+            r1+=' '+v
+        r2=''
+        for v in v2:
+            r2+=' '+v
 
+        sum = bin(int(v1, 2) + int(v2, 2)) 
+  
+        resultat=sum[2:]
+        rfin='    '
+        for v in resultat:
+            rfin+=' '+v
+        return f'<center> &emsp;{r1} <br> + &nbsp;{r2} <br> <div class="trait"></div> <br>&emsp; {rfin}</center>'
 
+    @env.macro
+    def additionatrou(v1, v2,res) -> str:
+        r1='    '
+        for v in v1:
+            r1+=' '+v
+        r2=''
+        for v in v2:
+            r2+=' '+v
+
+        rfin='    '
+        for v in res:
+            rfin+=' '+v
+        return f'<center> &emsp;{r1} <br> + &nbsp;{r2} <br> <div class="trait"></div> <br>&emsp; {rfin}</center>'
+        
 #---------------- <PYODIDE>-------------------- 
     env.variables['term_counter'] = 0
     env.variables['IDE_counter'] = 0

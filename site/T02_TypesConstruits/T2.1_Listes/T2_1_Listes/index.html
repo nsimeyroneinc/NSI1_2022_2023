@@ -1,0 +1,1242 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Première NSI">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>Les Listes en Python - Site NSI 1ére</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../xtra/stylesheets/pyoditeur.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#theme-2-types-construits" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Site NSI 1ére" class="md-header__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Site NSI 1ére
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Les Listes en Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-tabs__link">
+        T6 Prog.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Divers/Liens_utiles/" class="md-tabs__link">
+        Divers
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Site NSI 1ére" class="md-nav__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    Site NSI 1ére
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T6 Prog.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T6 Prog." data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T6 Prog.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-nav__link">
+        TP 00 - Introduction Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python/" class="md-nav__link">
+        TP 01 - Les Variables en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python/" class="md-nav__link">
+        TP 02 - Les Fonctions en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_et_WHILE_en_Python/" class="md-nav__link">
+        TP 03 - Les boucles en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_4_Instructions_conditionnelles_en_Python/" class="md-nav__link">
+        TP 04 - Les Conditions en Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Divers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Divers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Divers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Divers/Liens_utiles/" class="md-nav__link">
+        Liens utiles
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notion-de-tableau-indices" class="md-nav__link">
+    Notion de tableau, indices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tableau-et-liste-de-python" class="md-nav__link">
+    Tableau et liste de Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Tableau et liste de Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaration-dune-liste" class="md-nav__link">
+    Déclaration d'une liste
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acces-aux-elements-dune-liste" class="md-nav__link">
+    Accès aux éléments d'une liste
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longueur-dune-liste" class="md-nav__link">
+    Longueur d'une liste
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parcours-des-elements-dune-liste" class="md-nav__link">
+    Parcours des éléments d'une liste
+  </a>
+  
+    <nav class="md-nav" aria-label="Parcours des éléments d'une liste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parcours-par-elements" class="md-nav__link">
+    Parcours «par éléments»
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parcours-par-indice" class="md-nav__link">
+    Parcours «par indice»
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avantages-et-inconvenients-de-chaque-methode" class="md-nav__link">
+    Avantages et inconvénients de chaque méthode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation-de-listes" class="md-nav__link">
+    Création de listes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modification-de-liste" class="md-nav__link">
+    Modification de liste
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-phenomene-inquietant-la-copie-de-liste-hors-programme-enfin-presque" class="md-nav__link">
+    Un phénomène inquiétant : la copie de liste (Hors Programme enfin presque ....)
+  </a>
+  
+    <nav class="md-nav" aria-label="Un phénomène inquiétant : la copie de liste (Hors Programme enfin presque ....)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mais-alors-comment-copier-le-contenu-dune-liste-vers-une-autre-sans-creer-un-clone" class="md-nav__link">
+    Mais alors, comment copier le contenu d'une liste vers une autre sans créer un clone ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="T2_1_Listes.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+              
+    
+                
+
+
+<h1 id="theme-2-types-construits">Thème 2 - Types construits<a class="headerlink" href="#theme-2-types-construits" title="Permanent link">⚓︎</a></h1>
+<table  class="blueTable">
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            00
+            </th>
+            <th  width="80%"; style="text-align:center;color:white;border:none;font-size:25pt;">Les Listes en Python</th>
+        </tr>
+</table>
+<p><br></p>
+<p><img alt="" class="center" src="data/python_logo1.png" /></p>
+<div class="admonition prognsi">
+<p class="admonition-title">Programme Première</p>
+<table>
+<thead>
+<tr>
+<th align="left">Contenus</th>
+<th align="left">Capacités attendues</th>
+<th align="left">Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Tableau indexé, tableau donné en compréhension</td>
+<td align="left">Lire et modifier les éléments d’un tableau grâce à leurs index. Construire un tableau par compréhension. Utiliser des tableaux de tableaux pour représenter des matrices : notation a <code>[i][j]</code>. Itérer sur les éléments d’un tableau.</td>
+<td align="left">Seuls les tableaux dont les éléments sont du même type sont présentés. Aucune connaissance des tranches (slices) n’est exigible. L’aspect dynamique des tableaux de Python n’est pas évoqué. Python identifie listes et tableaux. Il n’est pas fait référence aux tableaux de la bibliothèque NumPy.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="notion-de-tableau-indices">Notion de tableau, indices<a class="headerlink" href="#notion-de-tableau-indices" title="Permanent link">⚓︎</a></h2>
+<p>En informatique (comme ailleurs...), un tableau permet de stocker de façon structurée plusieurs valeurs, en général de même type<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<p>Voici comment on se représente traditionnellement un tableau de 6 entiers, avec des cases (ou cellules):</p>
+<p><img alt="" class="center" src="../../images/tableau.png" width="50%" /> </p>
+<p>Bien entendu, il faut stocker ce tableau dans un variable et lui donner un nom. Appelons-le <code>t</code>. Ce tableau est <strong>ordonné</strong>, le premier élément est 4, le deuxième est 2, et le dernier est 12.</p>
+<p>On repère chaque élément du tableau par sa position, le numéro de la case, qu'on appelle <strong>indice</strong>.</p>
+<p><img alt="" class="center" src="../../images/tableau_indice.png" width="50%" /> </p>
+<p>Généralement, on utilise la notation <code>t[i]</code> pour désigner l'élement d'indice <code>i</code> du tableau <code>t</code>. Par exemple, dans notre exemple, <code>t[3]</code> contient la valeur 42.</p>
+<p>Enfin la <strong>taille</strong> d'un tableau est le nombre d'éléments qu'il contient. Ici le tableau <code>t</code> a une taille égale à 6.</p>
+<h2 id="tableau-et-liste-de-python">Tableau et liste de Python<a class="headerlink" href="#tableau-et-liste-de-python" title="Permanent link">⚓︎</a></h2>
+<div class="admonition voc">
+<p class="admonition-title">Le type <code>list</code></p>
+<p>En Python, on implémente le type abstrait de tableau par le type <code>list</code>. On définit un tableau avec des <strong>crochets</strong> et on sépare ses éléments par des <strong>virgules</strong>. Par abus de langage on parle de liste plutôt que de tableau<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<p>Une liste vide se déclarera par <code>[]</code>.</p>
+</div>
+<h3 id="declaration-dune-liste">Déclaration d'une liste<a class="headerlink" href="#declaration-dune-liste" title="Permanent link">⚓︎</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Exemple  1</p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">list</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bart&quot;</span><span class="p">,</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span> <span class="s2">&quot;Maggie&quot;</span><span class="p">]</span> <span class="c1"># (1)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">famille</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">list</span><span class="s1">&#39;&gt;</span>
+</code></pre></div>
+1. Nous prendrons souvent l'exemple de la famille Simpsons.</p>
+</div>
+<ul>
+<li>Une liste <strong>vide</strong> se déclarera avec <code>[]</code>.
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">copies_corrigees</span> <span class="o">=</span> <span class="p">[]</span>
+</code></pre></div>
+Nous verrons plus tard qu'il est fréquent dans les exercices de partir d'une liste vide et d'ajouter progressivement des éléments.</li>
+</ul>
+<h3 id="acces-aux-elements-dune-liste">Accès aux éléments d'une liste<a class="headerlink" href="#acces-aux-elements-dune-liste" title="Permanent link">⚓︎</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Exemple  2</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="mi">42</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="mi">12</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bart&quot;</span><span class="p">,</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span> <span class="s2">&quot;Maggie&quot;</span><span class="p">]</span> <span class="c1"># (1)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="s1">&#39;Bart&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="s1">&#39;Lisa&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="s1">&#39;Maggie&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<span class="n">File</span> <span class="s2">&quot;&lt;pyshell&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">IndexError</span><span class="p">:</span> <span class="nb">list</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
+</code></pre></div>
+</div>
+<p><strong>Remarques :</strong></p>
+<ul>
+<li>
+<p>Un indice qui dépasse la valeur  <code>longueur de la liste -1</code> provoquera donc une erreur <code>list index out of range</code>. C'est une erreur <strong>très fréquente</strong> lorsqu'on manipule des listes.</p>
+</li>
+<li>
+<p>Il est par contre possible d'utiliser des indices <strong>négatifs</strong>. On utilise par exemple très souvent l'indice -1 pour accéder au dernier élément de la liste, sans avoir à connaître la longueur de celle-ci :</p>
+</li>
+</ul>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="s1">&#39;Maggie&#39;</span>
+</code></pre></div>
+<h3 id="longueur-dune-liste">Longueur d'une liste<a class="headerlink" href="#longueur-dune-liste" title="Permanent link">⚓︎</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Exemple  3</p>
+<p>La longueur d'une liste sera donnée par la fonction <code>len()</code>, qui renvoie donc un nombre entier positif ou nul.
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">famille</span><span class="p">)</span>
+<span class="mi">3</span>
+</code></pre></div></p>
+</div>
+<p><strong>Remarques :</strong></p>
+<ul>
+<li>La liste vide a pour longueur 0 :
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">([])</span>
+<span class="mi">0</span>
+</code></pre></div></li>
+<li>Le dernier élément d'une liste <code>maliste</code> (non vide) sera donc toujours l'élément d'indice <code>len(maliste)-1</code>.
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">famille</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="s1">&#39;Maggie&#39;</span>
+</code></pre></div></li>
+<li>Comme indiqué précédemment, ce dernier élément est aussi accessible par l'indice -1.</li>
+</ul>
+<p><strong>Remarques bis</strong>:</p>
+<ul>
+<li>on obtient la taille d'une liste avec la fonction <code>len</code>;</li>
+<li>un indice supérieur à <code>len(t) - 1</code> provoque une erreur <code>IndexError: list index out of range</code> (en dehors de la liste);</li>
+<li>on peut utiliser les indices négatifs: en particulier l'indice -1 permet d'accèder facilement au <strong>dernier</strong> élement.</li>
+</ul>
+<h2 id="parcours-des-elements-dune-liste">Parcours des éléments d'une liste <img alt="⭐" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2b50.svg" title=":star:" /><a class="headerlink" href="#parcours-des-elements-dune-liste" title="Permanent link">⚓︎</a></h2>
+<p>Il existe principalement deux méthodes pour parcourir une liste :<br />
+- par ses éléments <br />
+- par les indices. <br />
+Mais dans les deux cas on utilise une boucle <code>for</code>. <br />
+Ces deux méthodes sont à maîtriser impérativement.</p>
+<h3 id="parcours-par-elements">Parcours «par éléments»<a class="headerlink" href="#parcours-par-elements" title="Permanent link">⚓︎</a></h3>
+<p>C'est la méthode la plus naturelle, celle déjà vue lors de la présentation de la boucle <code>for</code>. Nous allons simplement <em>itérer</em> sur les éléments de la liste.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemple  4</p>
+<p>Le code :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">famille</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bart&quot;</span><span class="p">,</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span> <span class="s2">&quot;Maggie&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">membre</span> <span class="ow">in</span> <span class="n">famille</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">membre</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+renverra :
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">Bart</span>
+<span class="n">Lisa</span>
+<span class="n">Maggie</span>
+</code></pre></div></p>
+</div>
+<p><strong>Remarque :</strong></p>
+<ul>
+<li>Penser à donner un nom signifiant à la variable qui parcourt la liste. Il aurait par exemple été très maladroit d'écrire 
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">famille</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</code></pre></div>
+En effet le nom de variable <code>k</code> est habituellement utilisé pour les nombres (les indices, les compteurs...).</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exercice  1</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Énoncé</label><label for="__tabbed_1_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Après un référendum, la liste <code>urne</code> contient uniquement des <code>'oui'</code> ou des <code>'non'</code>.
+Déterminer le vainqueur de ce référendum.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">urne</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">]</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">urne</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">]</span>
+
+<span class="n">nb_oui</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">vote</span> <span class="ow">in</span> <span class="n">urne</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">vote</span> <span class="o">==</span> <span class="s1">&#39;oui&#39;</span><span class="p">:</span>
+        <span class="n">nb_oui</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pourcentage de oui&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">nb_oui</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">urne</span><span class="p">),</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="parcours-par-indice">Parcours «par indice»<a class="headerlink" href="#parcours-par-indice" title="Permanent link">⚓︎</a></h3>
+<p>Chaque élément étant accessible par son indice (de <code>0</code> à   <code>len(liste) - 1</code> ), il suffit de faire parcourir à une variable <code>i</code> l'ensemble des entiers de <code>0</code> à   <code>len(liste) - 1</code>, par l'instruction <code>range(len(liste))</code> :</p>
+<div class="admonition example">
+<p class="admonition-title">Exemple  5</p>
+<p>Le code :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">famille</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bart&quot;</span><span class="p">,</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span> <span class="s2">&quot;Maggie&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">famille</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">famille</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+renverra :
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">Bart</span>
+<span class="n">Lisa</span>
+<span class="n">Maggie</span>
+</code></pre></div></p>
+</div>
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> <strong>Bonne habitude à prendre</strong> : nommer sa variable d'indice <code>i</code>, <code>j</code>, <code>k</code> ou <code>indice</code> mais pas autre chose !  </p>
+<h3 id="avantages-et-inconvenients-de-chaque-methode">Avantages et inconvénients de chaque méthode<a class="headerlink" href="#avantages-et-inconvenients-de-chaque-methode" title="Permanent link">⚓︎</a></h3>
+<h4 id="parcours-par-element">Parcours par élément<a class="headerlink" href="#parcours-par-element" title="Permanent link">⚓︎</a></h4>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code>    <span class="k">for</span> <span class="n">membre</span> <span class="ow">in</span> <span class="n">famille</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">membre</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Les avantages</strong> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":+1:" /></p>
+<ul>
+<li>la simplicité : un code plus facile à écrire, avec un nom de variable explicite.</li>
+<li>la sécurité  : pas de risque d'<code>index out of range</code> !</li>
+</ul>
+<p><strong>Les inconvénients</strong> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":-1:" /></p>
+<ul>
+<li>méthode rudimentaire : lorsqu'on est «positionné» sur un élément, il n'est pas possible d'accéder au précédent ou au suivant. (et c'est parfois utile).</li>
+<li>on n'a pas accès à l'indice correspondant à la valeur.</li>
+<li>on ne peut pas modifier l'élément sur lequel on est positionné :</li>
+</ul>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">nb</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+        <span class="n">nb</span> <span class="o">=</span> <span class="n">nb</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1"># (1)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span> 
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># (2)</span>
+</code></pre></div>
+<ol>
+<li>On veut multiplier par 2 chaque élément de la liste</li>
+<li>La liste <code>lst</code> n'a pas changé...</li>
+</ol>
+<h4 id="_1"><a class="headerlink" href="#_1" title="Permanent link">⚓︎</a></h4>
+<p>Parcours par indice </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">famille</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">famille</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div>
+<p><strong>Les avantages</strong>  <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":+1:" /></p>
+<ul>
+<li>le contrôle : en parcourant par indice, on peut s'arrêter où on veut, on peut accéder au suivant/précédent...</li>
+<li>pour les tableaux à deux dimensions, on retrouve la désignation classique d'un élément par numéro de ligne / numéro de colonne.</li>
+</ul>
+<p><strong>Les inconvénients</strong> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":-1:" /></p>
+<ul>
+<li>la complexité : il faut connaître le nombre d'éléments de la liste (ou le récupérer par la fonction <code>len()</code> )</li>
+<li>le risque d'erreur : encore et toujours le <code>index out of range</code>...</li>
+</ul>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  2</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label><label for="__tabbed_2_2">Correction <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On donne la liste :
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</code></pre></div>
+En utilisant un parcours <strong>par indice</strong> :</p>
+<ol>
+<li>Afficher les éléments de cette liste.</li>
+<li>Afficher les éléments de cette liste <strong>dans l'ordre inverse</strong> (en commençant par 9)</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  3</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Énoncé</label><label for="__tabbed_3_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Trouvez le nombre qui est <strong>exactement à la même place</strong> dans la liste <code>list1</code> et dans la liste <code>list2</code>, sachant que :</p>
+<ul>
+<li>les deux listes ont la même taille</li>
+<li>vous n'avez droit qu'à une seule boucle <code>for</code>. </li>
+</ul>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8468</span><span class="p">,</span> <span class="mi">4560</span><span class="p">,</span> <span class="mi">3941</span><span class="p">,</span> <span class="mi">3328</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9910</span><span class="p">,</span> <span class="mi">9208</span><span class="p">,</span> <span class="mi">8400</span><span class="p">,</span> <span class="mi">6502</span><span class="p">,</span> <span class="mi">1076</span><span class="p">,</span> <span class="mi">5921</span><span class="p">,</span> <span class="mi">6720</span><span class="p">,</span> <span class="mi">948</span><span class="p">,</span> <span class="mi">9561</span><span class="p">,</span> <span class="mi">7391</span><span class="p">,</span> <span class="mi">7745</span><span class="p">,</span> <span class="mi">9007</span><span class="p">,</span> <span class="mi">9707</span><span class="p">,</span> <span class="mi">4370</span><span class="p">,</span> <span class="mi">9636</span><span class="p">,</span> <span class="mi">5265</span><span class="p">,</span> <span class="mi">2638</span><span class="p">,</span> <span class="mi">8919</span><span class="p">,</span> <span class="mi">7814</span><span class="p">,</span> <span class="mi">5142</span><span class="p">,</span> <span class="mi">1060</span><span class="p">,</span> <span class="mi">6971</span><span class="p">,</span> <span class="mi">4065</span><span class="p">,</span> <span class="mi">4629</span><span class="p">,</span> <span class="mi">4490</span><span class="p">,</span> <span class="mi">2480</span><span class="p">,</span> <span class="mi">9180</span><span class="p">,</span> <span class="mi">5623</span><span class="p">,</span> <span class="mi">6600</span><span class="p">,</span> <span class="mi">1764</span><span class="p">,</span> <span class="mi">9846</span><span class="p">,</span> <span class="mi">7605</span><span class="p">,</span> <span class="mi">8271</span><span class="p">,</span> <span class="mi">4681</span><span class="p">,</span> <span class="mi">2818</span><span class="p">,</span> <span class="mi">832</span><span class="p">,</span> <span class="mi">5280</span><span class="p">,</span> <span class="mi">3170</span><span class="p">,</span> <span class="mi">8965</span><span class="p">,</span> <span class="mi">4332</span><span class="p">,</span> <span class="mi">3198</span><span class="p">,</span> <span class="mi">9454</span><span class="p">,</span> <span class="mi">2025</span><span class="p">,</span> <span class="mi">2373</span><span class="p">,</span> <span class="mi">4067</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9093</span><span class="p">,</span> <span class="mi">2559</span><span class="p">,</span> <span class="mi">9664</span><span class="p">,</span> <span class="mi">8075</span><span class="p">,</span> <span class="mi">4525</span><span class="p">,</span> <span class="mi">5847</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">8932</span><span class="p">,</span> <span class="mi">5049</span><span class="p">,</span> <span class="mi">5241</span><span class="p">,</span> <span class="mi">5886</span><span class="p">,</span> <span class="mi">1393</span><span class="p">,</span> <span class="mi">9413</span><span class="p">,</span> <span class="mi">8872</span><span class="p">,</span> <span class="mi">2560</span><span class="p">,</span> <span class="mi">4636</span><span class="p">,</span> <span class="mi">9004</span><span class="p">,</span> <span class="mi">7586</span><span class="p">,</span> <span class="mi">1461</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">2627</span><span class="p">,</span> <span class="mi">2187</span><span class="p">,</span> <span class="mi">7778</span><span class="p">,</span> <span class="mi">8933</span><span class="p">,</span> <span class="mi">351</span><span class="p">,</span> <span class="mi">7097</span><span class="p">,</span> <span class="mi">356</span><span class="p">,</span> <span class="mi">4110</span><span class="p">,</span> <span class="mi">1393</span><span class="p">,</span> <span class="mi">4864</span><span class="p">,</span> <span class="mi">1088</span><span class="p">,</span> <span class="mi">3904</span><span class="p">,</span> <span class="mi">5623</span><span class="p">,</span> <span class="mi">8040</span><span class="p">,</span> <span class="mi">7273</span><span class="p">,</span> <span class="mi">1114</span><span class="p">,</span> <span class="mi">4394</span><span class="p">,</span> <span class="mi">4108</span><span class="p">,</span> <span class="mi">7123</span><span class="p">,</span> <span class="mi">8001</span><span class="p">,</span> <span class="mi">5715</span><span class="p">,</span> <span class="mi">7215</span><span class="p">,</span> <span class="mi">7460</span><span class="p">,</span> <span class="mi">5829</span><span class="p">,</span> <span class="mi">9513</span><span class="p">,</span> <span class="mi">1256</span><span class="p">,</span> <span class="mi">4052</span><span class="p">,</span> <span class="mi">1585</span><span class="p">,</span> <span class="mi">1608</span><span class="p">,</span> <span class="mi">3941</span><span class="p">]</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8468</span><span class="p">,</span> <span class="mi">4560</span><span class="p">,</span> <span class="mi">3941</span><span class="p">,</span> <span class="mi">3328</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9910</span><span class="p">,</span> <span class="mi">9208</span><span class="p">,</span> <span class="mi">8400</span><span class="p">,</span> <span class="mi">6502</span><span class="p">,</span> <span class="mi">1076</span><span class="p">,</span> <span class="mi">5921</span><span class="p">,</span> <span class="mi">6720</span><span class="p">,</span> <span class="mi">948</span><span class="p">,</span> <span class="mi">9561</span><span class="p">,</span> <span class="mi">7391</span><span class="p">,</span> <span class="mi">7745</span><span class="p">,</span> <span class="mi">9007</span><span class="p">,</span> <span class="mi">9707</span><span class="p">,</span> <span class="mi">4370</span><span class="p">,</span> <span class="mi">9636</span><span class="p">,</span> <span class="mi">5265</span><span class="p">,</span> <span class="mi">2638</span><span class="p">,</span> <span class="mi">8919</span><span class="p">,</span> <span class="mi">7814</span><span class="p">,</span> <span class="mi">5142</span><span class="p">,</span> <span class="mi">1060</span><span class="p">,</span> <span class="mi">6971</span><span class="p">,</span> <span class="mi">4065</span><span class="p">,</span> <span class="mi">4629</span><span class="p">,</span> <span class="mi">4490</span><span class="p">,</span> <span class="mi">2480</span><span class="p">,</span> <span class="mi">9180</span><span class="p">,</span> <span class="mi">5623</span><span class="p">,</span> <span class="mi">6600</span><span class="p">,</span> <span class="mi">1764</span><span class="p">,</span> <span class="mi">9846</span><span class="p">,</span> <span class="mi">7605</span><span class="p">,</span> <span class="mi">8271</span><span class="p">,</span> <span class="mi">4681</span><span class="p">,</span> <span class="mi">2818</span><span class="p">,</span> <span class="mi">832</span><span class="p">,</span> <span class="mi">5280</span><span class="p">,</span> <span class="mi">3170</span><span class="p">,</span> <span class="mi">8965</span><span class="p">,</span> <span class="mi">4332</span><span class="p">,</span> <span class="mi">3198</span><span class="p">,</span> <span class="mi">9454</span><span class="p">,</span> <span class="mi">2025</span><span class="p">,</span> <span class="mi">2373</span><span class="p">,</span> <span class="mi">4067</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9093</span><span class="p">,</span> <span class="mi">2559</span><span class="p">,</span> <span class="mi">9664</span><span class="p">,</span> <span class="mi">8075</span><span class="p">,</span> <span class="mi">4525</span><span class="p">,</span> <span class="mi">5847</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">8932</span><span class="p">,</span> <span class="mi">5049</span><span class="p">,</span> <span class="mi">5241</span><span class="p">,</span> <span class="mi">5886</span><span class="p">,</span> <span class="mi">1393</span><span class="p">,</span> <span class="mi">9413</span><span class="p">,</span> <span class="mi">8872</span><span class="p">,</span> <span class="mi">2560</span><span class="p">,</span> <span class="mi">4636</span><span class="p">,</span> <span class="mi">9004</span><span class="p">,</span> <span class="mi">7586</span><span class="p">,</span> <span class="mi">1461</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">2627</span><span class="p">,</span> <span class="mi">2187</span><span class="p">,</span> <span class="mi">7778</span><span class="p">,</span> <span class="mi">8933</span><span class="p">,</span> <span class="mi">351</span><span class="p">,</span> <span class="mi">7097</span><span class="p">,</span> <span class="mi">356</span><span class="p">,</span> <span class="mi">4110</span><span class="p">,</span> <span class="mi">1393</span><span class="p">,</span> <span class="mi">4864</span><span class="p">,</span> <span class="mi">1088</span><span class="p">,</span> <span class="mi">3904</span><span class="p">,</span> <span class="mi">5623</span><span class="p">,</span> <span class="mi">8040</span><span class="p">,</span> <span class="mi">7273</span><span class="p">,</span> <span class="mi">1114</span><span class="p">,</span> <span class="mi">4394</span><span class="p">,</span> <span class="mi">4108</span><span class="p">,</span> <span class="mi">7123</span><span class="p">,</span> <span class="mi">8001</span><span class="p">,</span> <span class="mi">5715</span><span class="p">,</span> <span class="mi">7215</span><span class="p">,</span> <span class="mi">7460</span><span class="p">,</span> <span class="mi">5829</span><span class="p">,</span> <span class="mi">9513</span><span class="p">,</span> <span class="mi">1256</span><span class="p">,</span> <span class="mi">4052</span><span class="p">,</span> <span class="mi">1585</span><span class="p">,</span> <span class="mi">1608</span><span class="p">,</span> <span class="mi">3941</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">list1</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">list1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">list2</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  4</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Dans la liste </p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2428970</span><span class="p">,</span> <span class="mi">1518306</span><span class="p">,</span> <span class="mi">4971405</span><span class="p">,</span> <span class="mi">1690994</span><span class="p">,</span> <span class="mi">7918102</span><span class="p">,</span> <span class="mi">4030834</span><span class="p">,</span> <span class="mi">8830131</span><span class="p">,</span> <span class="mi">7514856</span><span class="p">,</span> <span class="mi">7903128</span><span class="p">,</span> <span class="mi">6307569</span><span class="p">,</span> <span class="mi">6624056</span><span class="p">,</span> <span class="mi">5260490</span><span class="p">,</span> <span class="mi">6447835</span><span class="p">,</span> <span class="mi">4598783</span><span class="p">,</span> <span class="mi">9108626</span><span class="p">,</span> <span class="mi">5045240</span><span class="p">,</span> <span class="mi">4128269</span><span class="p">,</span> <span class="mi">4460134</span><span class="p">,</span> <span class="mi">2497873</span><span class="p">,</span> <span class="mi">5076659</span><span class="p">,</span> <span class="mi">8104003</span><span class="p">,</span> <span class="mi">7604887</span><span class="p">,</span> <span class="mi">7451976</span><span class="p">,</span> <span class="mi">4136924</span><span class="p">,</span> <span class="mi">5691945</span><span class="p">,</span> <span class="mi">8726293</span><span class="p">,</span> <span class="mi">7855592</span><span class="p">,</span> <span class="mi">3562473</span><span class="p">,</span> <span class="mi">8849129</span><span class="p">,</span> <span class="mi">6488474</span><span class="p">,</span> <span class="mi">5303587</span><span class="p">,</span> <span class="mi">2606124</span><span class="p">,</span> <span class="mi">5484044</span><span class="p">,</span> <span class="mi">4559758</span><span class="p">,</span> <span class="mi">7592232</span><span class="p">,</span> <span class="mi">2211406</span><span class="p">,</span> <span class="mi">9974334</span><span class="p">,</span> <span class="mi">7988936</span><span class="p">,</span> <span class="mi">7582946</span><span class="p">,</span> <span class="mi">7668748</span><span class="p">,</span> <span class="mi">1799997</span><span class="p">,</span> <span class="mi">3837917</span><span class="p">,</span> <span class="mi">3196209</span><span class="p">,</span> <span class="mi">7064342</span><span class="p">,</span> <span class="mi">2543765</span><span class="p">,</span> <span class="mi">1182013</span><span class="p">,</span> <span class="mi">7253381</span><span class="p">,</span> <span class="mi">1153735</span><span class="p">,</span> <span class="mi">1037391</span><span class="p">,</span> <span class="mi">4375946</span><span class="p">,</span> <span class="mi">4445821</span><span class="p">,</span> <span class="mi">5965587</span><span class="p">,</span> <span class="mi">6001887</span><span class="p">,</span> <span class="mi">4162629</span><span class="p">,</span> <span class="mi">5235783</span><span class="p">,</span> <span class="mi">8716582</span><span class="p">,</span> <span class="mi">4901175</span><span class="p">,</span> <span class="mi">5445422</span><span class="p">,</span> <span class="mi">1120005</span><span class="p">,</span> <span class="mi">8332321</span><span class="p">,</span> <span class="mi">7075046</span><span class="p">,</span> <span class="mi">2194175</span><span class="p">,</span> <span class="mi">5557300</span><span class="p">,</span> <span class="mi">2887907</span><span class="p">,</span> <span class="mi">5103214</span><span class="p">,</span> <span class="mi">2520744</span><span class="p">,</span> <span class="mi">5104399</span><span class="p">,</span> <span class="mi">2065665</span><span class="p">,</span> <span class="mi">3035703</span><span class="p">,</span> <span class="mi">7890213</span><span class="p">,</span> <span class="mi">1758301</span><span class="p">,</span> <span class="mi">3407982</span><span class="p">,</span> <span class="mi">1355453</span><span class="p">,</span> <span class="mi">4896338</span><span class="p">,</span> <span class="mi">7979392</span><span class="p">,</span> <span class="mi">9671602</span><span class="p">,</span> <span class="mi">9690721</span><span class="p">,</span> <span class="mi">7423779</span><span class="p">,</span> <span class="mi">7423780</span><span class="p">,</span> <span class="mi">3080825</span><span class="p">,</span> <span class="mi">6785783</span><span class="p">,</span> <span class="mi">3836837</span><span class="p">,</span> <span class="mi">7310931</span><span class="p">,</span> <span class="mi">1857470</span><span class="p">,</span> <span class="mi">3492507</span><span class="p">,</span> <span class="mi">2823231</span><span class="p">,</span> <span class="mi">1492310</span><span class="p">,</span> <span class="mi">1911148</span><span class="p">,</span> <span class="mi">9620515</span><span class="p">,</span> <span class="mi">5564910</span><span class="p">,</span> <span class="mi">7009452</span><span class="p">,</span> <span class="mi">7464745</span><span class="p">,</span> <span class="mi">9608747</span><span class="p">,</span> <span class="mi">7267383</span><span class="p">,</span> <span class="mi">6939140</span><span class="p">,</span> <span class="mi">6556578</span><span class="p">,</span> <span class="mi">3592267</span><span class="p">,</span> <span class="mi">8135497</span><span class="p">,</span> <span class="mi">4881660</span><span class="p">,</span> <span class="mi">5346884</span><span class="p">,</span> <span class="mi">6859150</span><span class="p">]</span>
+</code></pre></div>
+se cachent deux nombres consécutifs. Pouvez-vous les trouver ?</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2428970</span><span class="p">,</span> <span class="mi">1518306</span><span class="p">,</span> <span class="mi">4971405</span><span class="p">,</span> <span class="mi">1690994</span><span class="p">,</span> <span class="mi">7918102</span><span class="p">,</span> <span class="mi">4030834</span><span class="p">,</span> <span class="mi">8830131</span><span class="p">,</span> <span class="mi">7514856</span><span class="p">,</span> <span class="mi">7903128</span><span class="p">,</span> <span class="mi">6307569</span><span class="p">,</span> <span class="mi">6624056</span><span class="p">,</span> <span class="mi">5260490</span><span class="p">,</span> <span class="mi">6447835</span><span class="p">,</span> <span class="mi">4598783</span><span class="p">,</span> <span class="mi">9108626</span><span class="p">,</span> <span class="mi">5045240</span><span class="p">,</span> <span class="mi">4128269</span><span class="p">,</span> <span class="mi">4460134</span><span class="p">,</span> <span class="mi">2497873</span><span class="p">,</span> <span class="mi">5076659</span><span class="p">,</span> <span class="mi">8104003</span><span class="p">,</span> <span class="mi">7604887</span><span class="p">,</span> <span class="mi">7451976</span><span class="p">,</span> <span class="mi">4136924</span><span class="p">,</span> <span class="mi">5691945</span><span class="p">,</span> <span class="mi">8726293</span><span class="p">,</span> <span class="mi">7855592</span><span class="p">,</span> <span class="mi">3562473</span><span class="p">,</span> <span class="mi">8849129</span><span class="p">,</span> <span class="mi">6488474</span><span class="p">,</span> <span class="mi">5303587</span><span class="p">,</span> <span class="mi">2606124</span><span class="p">,</span> <span class="mi">5484044</span><span class="p">,</span> <span class="mi">4559758</span><span class="p">,</span> <span class="mi">7592232</span><span class="p">,</span> <span class="mi">2211406</span><span class="p">,</span> <span class="mi">9974334</span><span class="p">,</span> <span class="mi">7988936</span><span class="p">,</span> <span class="mi">7582946</span><span class="p">,</span> <span class="mi">7668748</span><span class="p">,</span> <span class="mi">1799997</span><span class="p">,</span> <span class="mi">3837917</span><span class="p">,</span> <span class="mi">3196209</span><span class="p">,</span> <span class="mi">7064342</span><span class="p">,</span> <span class="mi">2543765</span><span class="p">,</span> <span class="mi">1182013</span><span class="p">,</span> <span class="mi">7253381</span><span class="p">,</span> <span class="mi">1153735</span><span class="p">,</span> <span class="mi">1037391</span><span class="p">,</span> <span class="mi">4375946</span><span class="p">,</span> <span class="mi">4445821</span><span class="p">,</span> <span class="mi">5965587</span><span class="p">,</span> <span class="mi">6001887</span><span class="p">,</span> <span class="mi">4162629</span><span class="p">,</span> <span class="mi">5235783</span><span class="p">,</span> <span class="mi">8716582</span><span class="p">,</span> <span class="mi">4901175</span><span class="p">,</span> <span class="mi">5445422</span><span class="p">,</span> <span class="mi">1120005</span><span class="p">,</span> <span class="mi">8332321</span><span class="p">,</span> <span class="mi">7075046</span><span class="p">,</span> <span class="mi">2194175</span><span class="p">,</span> <span class="mi">5557300</span><span class="p">,</span> <span class="mi">2887907</span><span class="p">,</span> <span class="mi">5103214</span><span class="p">,</span> <span class="mi">2520744</span><span class="p">,</span> <span class="mi">5104399</span><span class="p">,</span> <span class="mi">2065665</span><span class="p">,</span> <span class="mi">3035703</span><span class="p">,</span> <span class="mi">7890213</span><span class="p">,</span> <span class="mi">1758301</span><span class="p">,</span> <span class="mi">3407982</span><span class="p">,</span> <span class="mi">1355453</span><span class="p">,</span> <span class="mi">4896338</span><span class="p">,</span> <span class="mi">7979392</span><span class="p">,</span> <span class="mi">9671602</span><span class="p">,</span> <span class="mi">9690721</span><span class="p">,</span> <span class="mi">7423779</span><span class="p">,</span> <span class="mi">7423780</span><span class="p">,</span> <span class="mi">3080825</span><span class="p">,</span> <span class="mi">6785783</span><span class="p">,</span> <span class="mi">3836837</span><span class="p">,</span> <span class="mi">7310931</span><span class="p">,</span> <span class="mi">1857470</span><span class="p">,</span> <span class="mi">3492507</span><span class="p">,</span> <span class="mi">2823231</span><span class="p">,</span> <span class="mi">1492310</span><span class="p">,</span> <span class="mi">1911148</span><span class="p">,</span> <span class="mi">9620515</span><span class="p">,</span> <span class="mi">5564910</span><span class="p">,</span> <span class="mi">7009452</span><span class="p">,</span> <span class="mi">7464745</span><span class="p">,</span> <span class="mi">9608747</span><span class="p">,</span> <span class="mi">7267383</span><span class="p">,</span> <span class="mi">6939140</span><span class="p">,</span> <span class="mi">6556578</span><span class="p">,</span> <span class="mi">3592267</span><span class="p">,</span> <span class="mi">8135497</span><span class="p">,</span> <span class="mi">4881660</span><span class="p">,</span> <span class="mi">5346884</span><span class="p">,</span> <span class="mi">6859150</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># Il faut s&#39;arrêter à l&#39;avant-dernier élément de la liste</span>
+    <span class="k">if</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="creation-de-listes">Création de listes<a class="headerlink" href="#creation-de-listes" title="Permanent link">⚓︎</a></h3>
+<p>Jusqu'à présent on a créé des listes en <em>extension</em>, c'est-à-dire qu'on a écrit tous les éléments un par un entre crochets. Voici deux autres façons de faire, souvent pratiques et parfois plus rapides lorsque la taille de la liste est grande.</p>
+<div class="admonition info">
+<p class="admonition-title">Avec une boucle <code>for</code> et la méthode <code>append</code></p>
+<p>On crée une liste vide, puis on lui ajoute élément par élément.</p>
+<p>Création d'une liste contenant les entiers multiples de 3 ou de 5 inférieurs à 100:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">multiples</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">k</span><span class="o">%</span><span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">k</span><span class="o">%</span><span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">multiples</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Construction d'une liste <em>en compréhension</em> <img alt="⭐" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2b50.svg" title=":star:" /></p>
+<p>C'est une grande caractéristique du langage Python (même si ce n'est pas une exclustivité) : la méthode de liste en compréhension propose une manière élégante, rapide et naturelle pour créer des listes.</p>
+<p><strong>«en compréhension», pourquoi ?</strong><br />
+Cette expression vient des mathématiques. On dit qu'on définit un sous-ensemble <em>par compréhension</em> lorsqu'on part d'un ensemble plus grand dont on ne garde que les éléments vérifiant une certaine propriété.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exemple  6 <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<p>Imaginons que nous possédons une liste <code>data</code> de températures, dont nous ne voulons garder que celles strictement supérieures à 20.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">18</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">good</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">tab1</span> <span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">good</span>
+<span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">18</span><span class="p">]</span>
+</code></pre></div>
+</div>
+<p><strong>Explications :</strong></p>
+<p><img alt="image" class="center" src="../data/comprehension.svg" width="60%" /></p>
+<h4 id="le-filtre-eventuel">le filtre éventuel<a class="headerlink" href="#le-filtre-eventuel" title="Permanent link">⚓︎</a></h4>
+<p>C'est lui qui donne tout son sens à cette méthode : il permet de ne garder que certaines valeurs. 
+Il est pourtant éventuel : que se passe-t-il s'il n'y a pas de filtre ?</p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">good</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">good</span>
+<span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
+</code></pre></div>
+On se retrouve évidemment avec une nouvelle liste qui contient exactement les éléments de la liste de départ, ce qui n'est pas très intéressant.
+Pourtant les listes en compréhension <em>sans filtre</em> sont très fréquentes, nous le verrons plus loin.</p>
+<div class="admonition info">
+<p class="admonition-title">Élements identiques</p>
+<p>Il est souvent pratique d'initialiser une liste de taille donnée, souvent en la remplissant de la même valeur, souvent 0.
+Par exemple, pour produire une liste contenant 26 zéros:</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span> <span class="o">=</span> <span class="mi">26</span> <span class="o">*</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  5</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Énoncé</label><label for="__tabbed_5_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Construire une liste contenant tous les nombres inférieurs à 100 qui sont divisibles par 7.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  6</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Énoncé</label><label for="__tabbed_6_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On considère la liste </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">temp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="o">-</span><span class="mi">14</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">17</span><span class="p">,</span> <span class="o">-</span><span class="mi">13</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</code></pre></div>
+<p>Construire la liste <code>temp_pos</code> qui ne contient que les éléments positifs de <code>temp</code>. </p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">temp_pos</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">temp</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">temp_pos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>```
+"
+) }}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  7</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Énoncé</label><label for="__tabbed_7_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On considère la liste <code>lst = [51, 52, 66, 91, 92, 82, 65, 53, 86, 42, 79, 95]</code>. Seuls les nombres entre 60 et 90 ont une signification : ce sont des codes ASCII (récupérables par la fonction <code>chr</code> ).<br />
+Créer (en compréhension) une liste <code>sol</code> qui contient les lettres correspondants aux nombres ayant une signification.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">51</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">decode</span> <span class="o">=</span> <span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">lst</span> <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">60</span>  <span class="ow">and</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">90</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">decode</span>
+<span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="modification-de-liste">Modification de liste<a class="headerlink" href="#modification-de-liste" title="Permanent link">⚓︎</a></h3>
+<p>En Python, les objets de type <code>list</code> sont modifiables (on emploie le mot <em>mutable</em>). Et c'est souvent une bonne chose, car des listes peuvent évoluer après leur création. </p>
+<div class="admonition voc">
+<p class="admonition-title">Modification d'un élément existant</p>
+<p>On modifie un élément du tableau par simple affectation, en écrasant sa valeur avec la nouvelle.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bart&quot;</span><span class="p">,</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span> <span class="s2">&quot;Maggie&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Bartholomew&quot;</span> <span class="c1"># oui, c&#39;est son vrai nom</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span>
+<span class="p">[</span><span class="s1">&#39;Bartholomew&#39;</span><span class="p">,</span> <span class="s1">&#39;Lisa&#39;</span><span class="p">,</span> <span class="s1">&#39;Maggie&#39;</span><span class="p">]</span>   
+</code></pre></div>
+</div>
+<div class="admonition voc">
+<p class="admonition-title">Ajout d'un élément en fin de liste</p>
+<p>La méthode <code>append</code> permet d'ajouter un élément en fin de liste (et donc d'augmenter la taille de la liste).</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bart&quot;</span><span class="p">,</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span> <span class="s2">&quot;Maggie&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Homer&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">famille</span>
+<span class="p">[</span><span class="s1">&#39;Bart&#39;</span><span class="p">,</span> <span class="s1">&#39;Lisa&#39;</span><span class="p">,</span> <span class="s1">&#39;Maggie&#39;</span><span class="p">,</span> <span class="s1">&#39;Homer&#39;</span><span class="p">]</span>  
+</code></pre></div>
+</div>
+<div class="admonition voc">
+<p class="admonition-title">Suppression d'un élément</p>
+<p>La métode <code>remove</code> permet de supprimer la <strong>première</strong> occurrence de l'élément (et seulement la première). À condition bien entendu que l'élément soit dans la liste...</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">matieres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nsi&quot;</span><span class="p">,</span> <span class="s2">&quot;maths&quot;</span><span class="p">,</span> <span class="s2">&quot;anglais&quot;</span><span class="p">,</span> <span class="s2">&quot;français&quot;</span><span class="p">,</span> <span class="s2">&quot;maths&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">matieres</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;maths&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">matieres</span>
+<span class="p">[</span><span class="s2">&quot;nsi&quot;</span><span class="p">,</span> <span class="s2">&quot;anglais&quot;</span><span class="p">,</span> <span class="s2">&quot;français&quot;</span><span class="p">,</span> <span class="s2">&quot;maths&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">matieres</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;espagnol&quot;</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<span class="n">File</span> <span class="s2">&quot;&lt;pyshell&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">ValueError</span><span class="p">:</span> <span class="nb">list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">list</span>
+</code></pre></div>
+</div>
+<p><strong>Remarques :</strong></p>
+<ul>
+<li>Attention, <code>remove</code> n'enlève que la <em>première occurrence</em> de l'élément désigné. S'il y en a d'autres après, elles resteront dans la liste :
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</code></pre></div></li>
+<li>Si l'élément à supprimer n'est pas trouvé, un message d'erreur est renvoyé :
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;pyshell&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">ValueError</span><span class="p">:</span> <span class="nb">list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">list</span>
+</code></pre></div></li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exercice  8</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Énoncé</label><label for="__tabbed_8_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Dans la liste suivante:</p>
+<ul>
+<li>remplacer <code>"Loki"</code> par <code>"Thor"</code></li>
+<li>ajouter <code>"Dr. Strange"</code></li>
+<li>supprimer l'intrus.</li>
+</ul>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">avengers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Black Widow&quot;</span><span class="p">,</span> <span class="s2">&quot;Captain America&quot;</span><span class="p">,</span> <span class="s2">&quot;Loki&quot;</span><span class="p">,</span> <span class="s2">&quot;Iron Man&quot;</span><span class="p">,</span> <span class="s2">&quot;Hulk&quot;</span><span class="p">,</span> <span class="s2">&quot;Batman&quot;</span><span class="p">,</span> <span class="s2">&quot;Hawkeye&quot;</span><span class="p">]</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">avengers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Thor&#39;</span>
+<span class="n">avengers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Dr. Strange&#39;</span><span class="p">)</span>
+<span class="n">avengers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Batman&#39;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="un-phenomene-inquietant-la-copie-de-liste-hors-programme-enfin-presque">Un phénomène inquiétant : la copie de liste (Hors Programme enfin presque ....)<a class="headerlink" href="#un-phenomene-inquietant-la-copie-de-liste-hors-programme-enfin-presque" title="Permanent link">⚓︎</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">une copie un peu trop parfaite</p>
+<p>Observez le code ci-dessous, réalisé sans trucage.
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">listA</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">listB</span> <span class="o">=</span> <span class="n">listA</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">listA</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">listB</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">listB</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">listA</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</code></pre></div></p>
+</div>
+<p>Tout se passe comme si les listes  <code>listA</code> et<code>listB</code> étaient devenus des clones «synchronisés» depuis l'affectation <code>listB = listA</code>.</p>
+<div class="admonition aide">
+<p class="admonition-title">Analyse grâce à PythonTutor</p>
+<p><iframe width="800" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=listA%20%3D%20%5B1,%202,%203%5D%0AlistB%20%3D%20listA%0AlistA.append%287%29%0AlistB.append%288%29%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe></p>
+</div>
+<p>L'illustration de PythonTutor nous donne la clé de l'énigme :
+<img alt="image" class="center" src="../data/tutor1.png" width="30%" /></p>
+<p><code>listA</code> et<code>listB</code> sont en fait <strong>un seul et même objet</strong>.</p>
+<p>Comment en avoir le cœur net ? En observant leur adresse-mémoire, disponible grâce à la fonction <code>id</code> :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">listA</span><span class="p">)</span>
+<span class="mi">140485841327616</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">listB</span><span class="p">)</span>
+<span class="mi">140485841327616</span>
+</code></pre></div>
+<h3 id="mais-alors-comment-copier-le-contenu-dune-liste-vers-une-autre-sans-creer-un-clone">Mais alors, comment copier le contenu d'une liste vers une autre sans créer un clone ?<a class="headerlink" href="#mais-alors-comment-copier-le-contenu-dune-liste-vers-une-autre-sans-creer-un-clone" title="Permanent link">⚓︎</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Exemple fondateur n°12 <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">listA</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">listB</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">listA</span><span class="p">)</span>
+</code></pre></div>
+D'autres possibilités existent, comme <code>listA.copy()</code>, ou encore <code>listA[::]</code>...  </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  9</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Énoncé</label><label for="__tabbed_9_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Effectuer les tests nécessaires pour prouver que l'exemple précédent a bien produit deux objets différents.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">listA</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">listB</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">listA</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">listA</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">listB</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">listA</span><span class="p">)</span>
+<span class="mi">140157471522368</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">listB</span><span class="p">)</span>
+<span class="mi">140157465797184</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>même si Python l'autorise, il n'y a pas beaucoup de situations où on va créer un tableau avec des valeurs de types différents.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>en fait la liste est un autre type abstrait de données en informatique. Python identifie un peu les deux. C'est un peu plus compliqué en réalité, mais c'est une autre histoire...&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+              
+    <script src="../../../js/ide.js"></script> 
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+        <script src="../../../xtra/javascripts/config.js"></script>
+      
+        <script src="../../../xtra/javascripts/interpreter.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+    
+  </body>
+</html>

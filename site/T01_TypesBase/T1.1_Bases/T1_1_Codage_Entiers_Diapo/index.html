@@ -1,0 +1,1207 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Michael Meyroneinc-condy">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>Codage des entiers positifs en base b - Site NSI 1ére</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../xtra/stylesheets/pyoditeur.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ecriture-dun-entier-positif-dans-une-base-b-geq-2" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Site NSI 1ére" class="md-header__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Site NSI 1ére
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Codage des entiers positifs en base b
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-tabs__link">
+        T6 Prog.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Divers/Liens_utiles/" class="md-tabs__link">
+        Divers
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Site NSI 1ére" class="md-nav__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    Site NSI 1ére
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T6 Prog.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T6 Prog." data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T6 Prog.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-nav__link">
+        TP 00 - Introduction Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python/" class="md-nav__link">
+        TP 01 - Les Variables en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python/" class="md-nav__link">
+        TP 02 - Les Fonctions en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_et_WHILE_en_Python/" class="md-nav__link">
+        TP 03 - Les boucles en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_4_Instructions_conditionnelles_en_Python/" class="md-nav__link">
+        TP 04 - Les Conditions en Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Divers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Divers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Divers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Divers/Liens_utiles/" class="md-nav__link">
+        Liens utiles
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ecriture-dun-entier-dans-une-base" class="md-nav__link">
+    Écriture d'un entier dans une base
+  </a>
+  
+    <nav class="md-nav" aria-label="Écriture d'un entier dans une base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-systeme-decimal" class="md-nav__link">
+    Le système décimal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    ---
+  </a>
+  
+    <nav class="md-nav" aria-label="---">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notion-de-base" class="md-nav__link">
+    Notion de base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-systeme-binaire-base-2" class="md-nav__link">
+    Le système binaire (base 2)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-systeme-hexadecimal-base-16" class="md-nav__link">
+    Le système hexadécimal (base 16)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    Exercices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integer-overflow" class="md-nav__link">
+    Integer Overflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addition-en-binaire" class="md-nav__link">
+    Addition en binaire
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="T1_1_Codage_Entiers_Diapo.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+              
+    
+                
+
+
+<style>
+:root {
+  width: 1280px;
+  height: 960px;
+  font-size: 35px;
+  padding: 1rem;
+}
+
+h1 {
+  /* background-color: rgb(161, 161, 172);
+  color:white;*/
+  font-family: @@font_name@@;
+  font-size: 2rem;
+  text-align:center;
+}
+h2 {
+  background-color: rgb(70, 70, 77);
+  color:white;
+  font-family: @@font_name@@;
+  font-size: 1.5rem;
+}
+h3 {
+    color: brown;
+    font-size: 1.25rem;
+}
+
+code 
+{
+  background: #778899;
+  color:white;
+}
+blockquote {
+  background: #ffedcc;
+  border-left: 15px solid #d1bf9d;
+  margin: 1.5em 15px;
+  padding: 0.5em 15px;
+}
+blockquote:before{
+  content: unset;
+}
+blockquote:after{
+  content: unset;
+}
+
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+.w640 {
+  width: 640px;
+}
+
+
+</style>
+
+<h1 id="ecriture-dun-entier-positif-dans-une-base-b-geq-2">Ecriture d'un entier positif dans une base <span class="arithmatex">\(b \geq 2\)</span><a class="headerlink" href="#ecriture-dun-entier-positif-dans-une-base-b-geq-2" title="Permanent link">⚓︎</a></h1>
+<hr />
+<p><strong>Programme 1ère</strong><br />
+|Contenus|Capacités attendues|Commentaires|
+|:---:|:---:|:---:|
+|Ecriture d'un entier positif dans une base <span class="arithmatex">\(b \geq 2\)</span>| Passer de la représentation d'une base à l'autre|Les bases 2, 10 et 16 sont privilégiées|</p>
+<hr />
+<h2 id="ecriture-dun-entier-dans-une-base">Écriture d'un entier dans une base<a class="headerlink" href="#ecriture-dun-entier-dans-une-base" title="Permanent link">⚓︎</a></h2>
+<blockquote>
+<p>Le monde se divise en 2 catégories : ceux qui comprennent le binaire et ceux qui ne le comprennent pas.</p>
+</blockquote>
+<hr />
+<h3 id="le-systeme-decimal">Le système décimal<a class="headerlink" href="#le-systeme-decimal" title="Permanent link">⚓︎</a></h3>
+<p>Depuis la préhistoire, l'Homme a besoin de compter. Sa première idée:</p>
+<p><img alt="center w:400px" src="../data/entailles.png" /></p>
+<p>Pas très pratique... Heureusement, il en eut rapidemennt une autre, beaucoup plus efficace: regrouper les bâtons en paquets.</p>
+<p><img alt="center w:400px" src="../data/entailles_paquets.png" /></p>
+<hr />
+<p><img alt="w:250px bg right:25%" src="../data/homer2.png" /></p>
+<p>Des paquets de 5 et surtout de 10. Pourquoi 10 ? </p>
+<p>Pour écrire les nombres, regroupés en paquets de 10, il a donc fallu inventer 10 chiffres pour compter les unités (en-dessous du paquet): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.</p>
+<p>Et le nombre 10 ne signifie ni plus ni moins que 1 paquet et 0 unité.</p>
+<p>Ensuite, on fait un paquet de paquets, la centaine (100, c'est à dire <span class="arithmatex">\(10 \times 10 = 10^2\)</span>), puis un paquet de centaines, le millier (1000, c'est-à-dire <span class="arithmatex">\(10\times 10\times10=10^3\)</span>), et ainsi de suite.</p>
+<p>Au final, si on écrit le nombre 2022 on sait que c'est:</p>
+<ul>
+<li><strong>2</strong> mille, c'est-à-dire <span class="arithmatex">\(2\times 10^3\)</span> ;</li>
+<li><strong>0</strong> centaine, c'est-à-dire <span class="arithmatex">\(0\times 10^2\)</span> ;</li>
+<li><strong>2</strong> dizaines, c'est-à-dire <span class="arithmatex">\(2\times 10^1\)</span>;</li>
+<li><strong>2</strong> unité, c'est-à-dire <span class="arithmatex">\(2\times 10^0\)</span>.</li>
+</ul>
+<p>Et bien entendu, <span class="arithmatex">\(2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0\)</span></p>
+<hr />
+<blockquote>
+<p>La position de chaque chiffre dans l'écriture du nombre correspond à la puissance de 10 par laquelle on le multiplie.</p>
+</blockquote>
+<div class="admonition note inline end">
+<p class="admonition-title">Homer compte</p>
+<table>
+<thead>
+<tr>
+<th align="center">Octal</th>
+<th align="center">Décimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">6</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">7</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">9</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">13</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">14</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">15</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="center">16</td>
+</tr>
+<tr>
+<td align="center">21</td>
+<td align="center">17</td>
+</tr>
+<tr>
+<td align="center">...</td>
+<td align="center">...</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr />
+<div class="admonition info">
+<p class="admonition-title">Un autre exemple, la base octale</p>
+<p>Pour Homer Simpson, qui n'a que 8 doigts, il aurait été certainement plus naturel de faire des paquets de 8... et donc de manipuler seulement 8 chiffres : 0, 1, 2, 3, 4, 5, 6 et 7.</p>
+<p>C'est le <strong>système octal</strong>.</p>
+<p>Ainsi, «son» 10 signifierait 1 paquet de 8 et 0 unité, soit «notre» 8...
+Et donc notre 10 (en décimal) s'écrirait 12 (en octal).</p>
+<p>Enfin, 2022 (en décimal) s'écrit 3746 en octal puisque : </p>
+<div class="arithmatex">\[\begin{array}{rl}
+    3746_8 &amp;= 3\times 8^3+7\times 8^2+4\times 8^1+5\times 8^0 \\
+    &amp;= 8\times 512+7\times 64+4\times 8+6\times 1  \\
+    &amp;= 1536+448+32+6\\
+    &amp;= 2022
+    \end{array}
+    \]</div>
+</div>
+<h2 id="-">---<a class="headerlink" href="#-" title="Permanent link">⚓︎</a></h2>
+<h3 id="notion-de-base">Notion de base<a class="headerlink" href="#notion-de-base" title="Permanent link">⚓︎</a></h3>
+<div class="admonition abstract">
+<p class="admonition-title">Écriture d'un entier en base <span class="arithmatex">\(b\)</span></p>
+<ul>
+<li>
+<p>Choisir une base, c'est choisir la «taille» du paquet, et donc le nombre de chiffres dont on aura besoin: en base <span class="arithmatex">\(b\)</span>, il y a <span class="arithmatex">\(b\)</span> chiffres.</p>
+</li>
+<li>
+<p>Dans notre système décimal, la base est <span class="arithmatex">\(b=10\)</span>.</p>
+</li>
+<li>
+<p>La position de chaque chiffre correspond à la puissance de <span class="arithmatex">\(b\)</span> par laquelle on le multiplie.</p>
+</li>
+<li>
+<p>On précisera la base (si différente de 10) en indice en fin du nombre. Par exemple, le nombre <span class="arithmatex">\(312_5\)</span> est écrit en base 5.</p>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exemples<div class="arithmatex">\[\begin{array}{rl}
+312_5 &amp;= 3\times 5^2 + 1\times 5^1 + 2\times 5^0 \\
+&amp;= 3\times 25+1\times 5+2\times 1  \\
+&amp;= 82
+\end{array}
+\]</div>
+<div class="arithmatex">\[\begin{array}{rl}
+25072_8 &amp;= 2\times 8^4 + 5\times 8^3+0\times 8^2+7\times 8^1+2\times 8^0 \\
+&amp;= 2\times 4096 + 5\times 512 + 7\times 8 + 2\times 1  \\
+&amp;= 10810
+\end{array}
+\]</div>
+</p>
+</div>
+<hr />
+<h3 id="le-systeme-binaire-base-2">Le système binaire (base 2)<a class="headerlink" href="#le-systeme-binaire-base-2" title="Permanent link">⚓︎</a></h3>
+<div class="admonition abstract">
+<p class="admonition-title">Le binaire</p>
+<ul>
+<li>Le binaire, c'est le système de comptage des ordinateurs. Pourquoi le binaire et pas le décimal comme les humains ?  </li>
+<li>Un ordinateur est composé de circuits électroniques et de composants électriques, alimentés par un signal électrique : 1, il y a du courant, 0, il n'y en a pas. Le plus simple pour compter est donc d'utiliser un système en base 2 (le binaire) car on peut représenter ses deux valeurs possibles (0 et 1).  (voir vidéo suivante).</li>
+<li>Le système binaire est le système de numération de base <span class="arithmatex">\(b=2\)</span>.  </li>
+<li>Il utilise donc seulement deux chiffres, 0 et 1, appelés <strong>bits</strong> (contraction de l'anglais binary digit).  Le nombre 10101 occupe 5 rangs. On dit qu'il s'écrit sur 5 bits</li>
+<li>Un regroupement de 8 bits est appelé un <strong>octet</strong>.  </li>
+</ul>
+</div>
+<details class="video">
+<summary>Vidéo</summary>
+<p><p align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VRdp_vaNRoY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p></p>
+</details>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  16</p>
+<ol>
+<li>Combien de valeurs peut-on coder avec 1 bit ?  </li>
+<li>Combien de valeurs peut-on coder avec 2 bits ?  </li>
+<li>Combien de valeurs peut-on coder avec 3 bits ?  </li>
+<li>Combien de valeurs peut-on coder avec n bits ?</li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Conversions</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Binaire → Décimal</label><label for="__tabbed_1_2">Décimal → Binaire Méthode 1</label><label for="__tabbed_1_3">Décimal → Binaire Méthode 2</label><label for="__tabbed_1_4">Décimal →  Base quelconque</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Il est utile de connaître alors les puissances de 2 pour convertir rapidement de l'écriture binaire vers l'écriture décimale.</p>
+<p><img alt="" class="center" src="../data/puissances2.png" width="50%" /> </p>
+<p>Par exemple <span class="arithmatex">\(10110101_2=128+32+16+4+1=181\)</span>.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>
+<p>On peut utiliser l'algorithme de soustraction: on soustrait du nombre la plus grande puissance de 2 possible, et on recommence...</p>
+</li>
+<li>
+<p>On utilise l'algorithme de divisions: on effectue les divisions successives du nombre par 2. L'écriture en binaire est donnée par les restes lus de bas en haut.</p>
+</li>
+</ul>
+<p><img alt="" class="center" src="../data/divisions.png" /> </p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>On peut utiliser un tableau.  Par exemple pour 217  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center"><span class="arithmatex">\(2^7\)</span></th>
+<th align="center"><span class="arithmatex">\(2^6\)</span></th>
+<th align="center"><span class="arithmatex">\(2^5\)</span></th>
+<th align="center"><span class="arithmatex">\(2^4\)</span></th>
+<th align="center"><span class="arithmatex">\(2^3\)</span></th>
+<th align="center"><span class="arithmatex">\(2^2\)</span></th>
+<th align="center"><span class="arithmatex">\(2^1\)</span></th>
+<th align="center"><span class="arithmatex">\(2^0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">128</td>
+<td align="center">64</td>
+<td align="center">32</td>
+<td align="center">16</td>
+<td align="center">8</td>
+<td align="center">4</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">217-128=89</td>
+<td align="center">89-64=25</td>
+<td align="center">25</td>
+<td align="center">25-16=9</td>
+<td align="center">9-8=1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1-1=0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<p>Les deux algorithmes de soustraction et de divisions fonctionnent également pour la conversion du décimal vers n'importe quelle autre base.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  17</p>
+<p>Écrire 96,196,119 et 168 en binaire avec cette méthode.</p>
+</div>
+<h3 id="le-systeme-hexadecimal-base-16">Le système hexadécimal (base 16)<a class="headerlink" href="#le-systeme-hexadecimal-base-16" title="Permanent link">⚓︎</a></h3>
+<div class="admonition abstract">
+<p class="admonition-title">L'hexadécimal</p>
+<ul>
+<li>
+<p>Le système hexadécimal est le système de numération de base <span class="arithmatex">\(b=16\)</span>.</p>
+</li>
+<li>
+<p>Il utilise donc 16 chiffres : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.</p>
+</li>
+<li>
+<p>Bien qu'il nécessite plus de chiffres, ce système donne des écritures plus courtes et particulièrement pratique du fait que 16 est une puissance de 2 : la conversion entre les systèmes binaire et hexadécimal se fait sans calcul, uniquement par regroupement de 4 bits.</p>
+</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Couleurs</p>
+<p>Le système hexadécimal est en particulier un mode de code informatique des couleurs.</p>
+<p>En effet une couleur (codage RGB) est composée de 3 valeurs correspondant aux composantes rouge, verte et bleue, et chacune de ces valeurs est un entier compris entre 0 et 255, c'est-à-dire entre 0 et FF en hexadécimal: on peut les écrire avec seulement deux chiffres.</p>
+<p><img align="right" alt="" src="../data/rouge_B21A0F.png" /> </p>
+<p>Par exemple, la couleur rouge ci-contre a pour composantes (178, 26, 15), ce qui donne en hexadécimal : (B2, 1A, 0F), qu'on écrit en général de façon <em>concaténée</em> B21A0F et souvent précédée d'un #.</p>
+</div>
+<details class="tip">
+<summary>Convertisseur</summary>
+<p>Un <a href="http://www.proftnj.com/RGB3.htm" target="_blank">convertisseur</a>  bien utile.</p>
+</details>
+<h3 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">⚓︎</a></h3>
+<h4 id="a-la-main">À la main<a class="headerlink" href="#a-la-main" title="Permanent link">⚓︎</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Exercice  18</p>
+<p>Convertir de la base mentionnée vers la base 10 (système décimal).</p>
+<p><strong>Attention, il y a un piège...</strong></p>
+<ol>
+<li><span class="arithmatex">\(131_6\)</span>  </li>
+<li><span class="arithmatex">\(420_5\)</span>  </li>
+<li><span class="arithmatex">\(1515_8\)</span>  </li>
+<li><span class="arithmatex">\(716_4\)</span>  </li>
+<li><span class="arithmatex">\(321_4\)</span>  </li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  19</p>
+<p>Convertir les écritures décimales vers la base mentionnée.</p>
+<ol>
+<li>47 en base 5  </li>
+<li>92 en base 4  </li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  20</p>
+<p>Convertir du binaire vers le décimal.</p>
+<ol>
+<li>1010  </li>
+<li>101110  </li>
+<li>10001101  </li>
+<li>11111111  </li>
+<li>101011001  </li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  21</p>
+<p>Convertir du décimal vers le binaire.</p>
+<ol>
+<li>17  </li>
+<li>34  </li>
+<li>68  </li>
+<li>100  </li>
+<li>200  </li>
+</ol>
+<p>Que remarquez-vous quand on passe de l'écriture binaire d'un nombre à celle de son double?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  22</p>
+<p><strong>1.</strong> Vérifier la conversion de la couleur rouge donnée en exemple à la section précédente.</p>
+<div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>2. Convertir les écritures hexadécimales en décimal: 99, D7, 1B8, ABC.
+
+3. Comment s&#39;écrit la couleur blanche en code hexadécimal?
+</code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  23<p>Convertir les écritures décimales en hexadécimal.</p>
+<ol>
+<li>45</li>
+<li>72</li>
+<li>421</li>
+</ol>
+</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  24</p>
+<p>C’est en 11110010000 qu’a été démontré le théorème fondamental de l’informatique. Exprimer ce nombre en base dix</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  25</p>
+<p>Convertir les nombres suivants en base 10 :  </p>
+<ol>
+<li><span class="arithmatex">\((1B7)_{16}\)</span>  </li>
+<li><span class="arithmatex">\((ABE)_{16}\)</span>  </li>
+<li><span class="arithmatex">\((A320_{16}\)</span>  </li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  26</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Conversion Binaire → Hexadécimal</label><label for="__tabbed_2_2">Conversion Hexadécimal  → Binaire</label><label for="__tabbed_2_3">Application</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>On regroupe les bits par paquets de 4 (quitte à ajouter des 0 pour compléter).</li>
+<li>On convertit chaque paquet en chiffre hexadécimal.</li>
+<li>On concatène les chiffres</li>
+</ul>
+<p>Par exemple, <span class="arithmatex">\(11111100101_2 = \underbrace{0111}_{7} \underbrace{1110}_{14=\text{E}_{16}} \underbrace{0101}_{5} = 7\text{E}5_{16}\)</span>   </p>
+</div>
+<div class="tabbed-block">
+<p>On fait la même chose dans l'autre sens.</p>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Convertir <span class="arithmatex">\(101101_2\)</span> puis <span class="arithmatex">\(10011011111_2\)</span> en base 16.</li>
+<li>Convertir <span class="arithmatex">\(8\text{D}_{16}\)</span> puis <span class="arithmatex">\(1\text{CA}7_{16}\)</span> en binaire.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  27</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Conversion Binaire → Hexadécimal</label><label for="__tabbed_3_2">Conversion Hexadécimal  → Binaire</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Convertir les nombres binaires suivants en hexadécimal  </p>
+<p><strong>1.</strong> <span class="arithmatex">\((01001101)_2\)</span><br />
+<strong>2.</strong> <span class="arithmatex">\((100110000111)_2\)</span><br />
+<strong>3.</strong> <span class="arithmatex">\((101110101100)_2\)</span>  </p>
+</div>
+<div class="tabbed-block">
+<p>Convertir en binaire les nombres suivant :<br />
+<strong>1.</strong> <span class="arithmatex">\((FABE51)_{16}\)</span> <br />
+<strong>2.</strong> <span class="arithmatex">\((59A75)_{16}\)</span>  </p>
+</div>
+</div>
+</div>
+</div>
+<h4 id="avec-python">Avec Python<a class="headerlink" href="#avec-python" title="Permanent link">⚓︎</a></h4>
+<details class="info">
+<summary>Fonctions de conversion</summary>
+<p>Pour convertir un entier écrit en décimal vers le binaire ou l'hexadécimal, on peut utiliser les fonctions <code>bin</code> et <code>hex</code>, qui renvoient des chaînes de caractères.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="mi">2021</span><span class="p">)</span>
+<span class="s1">&#39;0b11111100101&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hex</span><span class="p">(</span><span class="mi">2021</span><span class="p">)</span>
+<span class="s1">&#39;0x7e5&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+<p>Les préfixes <code>0b</code> et <code>0x</code> indiquent que les écritures sont respectivement en base 2  et en base 16.</p>
+<p>Réciproquement, pour convertir l'écriture d'un nombre écrit en base <span class="arithmatex">\(b\)</span> vers le décimal, on utilise la fonction <code>int</code> en passant en arguments l'écriture en chaîne de caractères et la base.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;11111100101&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">2021</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;7e5&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="mi">2021</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+</details>
+<div class="admonition example">
+<p class="admonition-title">Exercice  28</p>
+<p>Utilisez ces fonctions pour vérifier vos résultats des exercices précédents.</p>
+<p><div onclick='start_term("id1")' id="fake_id1" class="terminal_f"><label class="terminal"><span>&gt;&gt;&gt; </span></label></div><div id="id1" class="hide"></div></p>
+</div>
+<h2 id="integer-overflow">Integer Overflow<a class="headerlink" href="#integer-overflow" title="Permanent link">⚓︎</a></h2>
+<div class="admonition objectif">
+<p class="admonition-title">Enoncé du problème</p>
+<p>Dans une usine, sur une machine qui fabrique en moyenne 200 pièces par jour, un compteur stocké sur un octet affiche le nombre de pièces produites. quand un technicien récupère les pièces fabriquées, il vérifie que le nombre est conforme, puis appuie sur un bouton pour remettre le compteur à zéro. Un jour le compteur affiche 21 alors que 277 pièces ont été produites. Il appelle le numéro d’assistance pour signaler que le compteur ne fonction plus. On lui répond que c’est normal et qu’une mise à jour sera effectuée prochainement pour corriger ce défaut.<br />
+Essayons d’expliquer ce qui est arrivé !</p>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  29</p>
+<p><strong>1.</strong> Donner l’écriture binaire de <span class="arithmatex">\(277_{10}\)</span>.<br />
+<strong>2.</strong> Sachant qu’un octet est composé de 8 bits, compléter un octet avec le nombre obtenu ?<br />
+Que remarquez-vous ?<br />
+<strong>3.</strong>  Expliquer alors le résultat 21 qui apparaît sur le compteur.  </p>
+</div>
+<div class="admonition savoir">
+<p class="admonition-title">A retenir</p>
+<p>Si le nombre de bits obtenu est inférieur à n, on rajoute des 0 pour parvenir à n bits. S’il n’y a pas assez de bits disponibles, on dit que la capacité d’écriture est insuffisante (on parle d’overflow).</p>
+</div>
+<div class="admonition objectif">
+<p class="admonition-title">Enoncé du problème</p>
+<p>Combien de bits faut-il pour représenter un nombre entier en binaire ?  </p>
+<p>Pour évaluer le nombre de bits minimum nécessaires à l’écriture en base 2 d’un entier positif, il faut trouver la plus petite puissance de 2 qui soit strictement supérieure à l’entier à écrire.  </p>
+<p>Exemple : comme <span class="arithmatex">\(2^8\)</span> = 256 et <span class="arithmatex">\(2^9\)</span> = 512, <span class="arithmatex">\(2^8 \leq 277 &lt; 2^9\)</span> donc 9 bits sont nécessaires pour écrire l’entier 277.  </p>
+<p><strong>1.</strong> Combien de bits minimum sont nécessaires pour stocker les entiers 1047 et 65 512 ?<br />
+<strong>2.</strong> Remplir le tableau suivant avec les tailles fréquentes des entiers en binaire et généralisation.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Nombre d’octets utilisés</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">4</th>
+<th align="center">8</th>
+<th align="center">n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Nombre de bits utilisés</td>
+<td align="center">8</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Nombre d’entiers positifs qu’on peut stocker</td>
+<td align="center"><span class="arithmatex">\(2^8 = 256\)</span></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Plus grand entier positif que l’on peut stocker</td>
+<td align="center">$2^8 - 1 =255</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="addition-en-binaire">Addition en binaire<a class="headerlink" href="#addition-en-binaire" title="Permanent link">⚓︎</a></h2>
+<p>Voyons maintenant comment on ajoute des nombres exprimés en base deux</p>
+<p><img alt="" class="center" src="../data/addition_binaire.png" width="50%" /></p>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  30</p>
+<p>Faites les additions suivantes :</p>
+<p><strong>1.</strong> A=1101+10<br />
+<strong>2.</strong> B=101001+101<br />
+<strong>3.</strong> C=10101010+1011<br />
+<strong>4.</strong> D=1110101+10101  </p>
+</div>
+
+              
+    <script src="../../../js/ide.js"></script> 
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+        <script src="../../../xtra/javascripts/config.js"></script>
+      
+        <script src="../../../xtra/javascripts/interpreter.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+    
+  </body>
+</html>

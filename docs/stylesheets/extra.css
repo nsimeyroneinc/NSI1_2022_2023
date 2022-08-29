@@ -18,15 +18,15 @@
 
 /*Ajout de Sébastien HOARO pour avoir une taille de police normale dans les admonotions  */
 .md-typeset .admonition {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 
 .md-typeset details {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .md-typeset .collapsible {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 /*
 :root{
@@ -38,6 +38,14 @@
 .center {
   display: block;
   margin: 0 auto;
+}
+
+.trait
+{
+background-color: rgb(182, 70, 26);
+height: 1pt;
+width: 150px;
+margin-bottom:-10px;
 }
 
 .w640 {
@@ -422,7 +430,7 @@ h2:before {
   counter-increment: h2;
 }
 h3:before {
-  content:  counter(h3) ".  ";
+  content:  counter(h2) "."counter(h3) ".  ";
   counter-increment: h3;
 }
 h1 {
@@ -446,10 +454,10 @@ table {
   border: 1px solid #ddd;
 }
 
-
+/*Theme 2 : Types construits*/
 table.blueTable {
   border: 1px solid #151616;
-  background-color: #8bb7d4;
+  background-color: #3232B2;
   width: 100%;
   color: black;
   text-align: center;
@@ -457,7 +465,7 @@ table.blueTable {
   font-size: 18px;
 }
 
-
+/*Theme 6 : programmation */
 table.yellowTable {
   border: 1px solid #151616;
   background-color: #c5ca27;
@@ -468,6 +476,7 @@ table.yellowTable {
   font-size: 18px;
 }
 
+
 table.redTable {
   border: 1px solid #151616;
   background-color: #FC6B3C;
@@ -477,15 +486,96 @@ table.redTable {
   border-collapse: collapse;
   font-size: 18px;
 }
+
+/*Theme 1 : Représentation types et valeurs de bases*/
 table.greenTable {
   border: 1px solid #151616;
-  background-color: #87A96B;
+  background-color: #21B852;
   width: 100%;
   color: black;
   text-align: center;
   border-collapse: collapse;
   font-size: 18px;
 }
+
+
+th.yellowTh {
+  border: 1px solid #151616;
+  background-color: #c5ca27;
+  width: 100%;
+  color: black;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 18px;
+}
+
+th {
+  border: 1px solid var(--md-typeset-table-color);
+  border-spacing: 0;
+  border-bottom: none;
+  border-left: none;
+  border-top: none;
+  background-color: #5da3a7;
+  color: #fff;
+}
+
+td {
+  border: 1px solid var(--md-typeset-table-color);
+  border-spacing: 0;
+  border-bottom: none;
+  border-left: none;
+  border-top: none;
+}
+
+.md-typeset__table {
+  line-height: 1;
+}
+
+.md-typeset__table table:not([class]) {
+  font-size: .74rem;
+  border-right: none;
+}
+
+
+.md-typeset__table table:not([class]) td,
+.md-typeset__table table:not([class]) th {
+  padding: 9px;
+}
+
+/* light mode alternating table bg colors */
+.md-typeset__table tr:nth-child(2n) {
+  background-color: #a9ada6;
+}
+/*
+table.greenTable td, table.greenTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+
+table.greenTable tbody td {
+  font-size: 16px;
+}
+
+table.greenTable tr:nth-child(even) {
+  background: #D0E4F5;
+}
+
+table.greenTable tfoot td {
+  font-size: 14px;
+}
+
+table.greenTable tfoot .links {
+  text-align: right;
+}
+
+table.greenTable tfoot .links a {
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
 
 em {
   color: var(--red);

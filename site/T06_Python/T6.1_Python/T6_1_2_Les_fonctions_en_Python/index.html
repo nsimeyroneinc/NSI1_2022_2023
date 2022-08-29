@@ -1,0 +1,1100 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Première NSI">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>Les Fonctions en Python - Site NSI 1ére</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../xtra/stylesheets/pyoditeur.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#theme-6-langages-et-programmation" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Site NSI 1ére" class="md-header__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Site NSI 1ére
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Les Fonctions en Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../T6_1_0_Introduction/" class="md-tabs__link md-tabs__link--active">
+        T6 Prog.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Divers/Liens_utiles/" class="md-tabs__link">
+        Divers
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Site NSI 1ére" class="md-nav__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    Site NSI 1ére
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T6 Prog.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T6 Prog." data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T6 Prog.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T6_1_0_Introduction/" class="md-nav__link">
+        TP 00 - Introduction Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T6_1_1_Les_Variables_en_Python/" class="md-nav__link">
+        TP 01 - Les Variables en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TP 02 - Les Fonctions en Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP 02 - Les Fonctions en Python
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notion-de-fonctions" class="md-nav__link">
+    Notion de fonctions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonctions-sans-parametre-sans-valeur-renvoyee" class="md-nav__link">
+    Fonctions sans paramètre, sans valeur renvoyée
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonction-avec-parametres-sans-valeur-renvoyee" class="md-nav__link">
+    Fonction avec paramètre(s), sans valeur renvoyée
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonction-avec-parametres-et-avec-valeur-renvoyee" class="md-nav__link">
+    Fonction avec paramètre(s) et avec valeur renvoyée
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autour-du-return" class="md-nav__link">
+    Autour du return
+  </a>
+  
+    <nav class="md-nav" aria-label="Autour du return">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-force-du-return" class="md-nav__link">
+    La force du return
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-return-est-un-siege-ejectable" class="md-nav__link">
+    Le return est un siège éjectable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-fonctions-sans-return-sont-elles-des-fonctions" class="md-nav__link">
+    Les fonctions sans return sont-elles des fonctions ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-locales-variables-globales" class="md-nav__link">
+    Variables locales, variables globales
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables locales, variables globales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notion-despace-de-noms" class="md-nav__link">
+    Notion d'espace de noms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regles-dacces-en-lecture-et-en-modification-dune-variable-suivant-son-espace-dorigine" class="md-nav__link">
+    &#x1F4DA; Règles d'accès en lecture et en modification d'une variable suivant son espace d'origine
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documenter-une-fonction" class="md-nav__link">
+    Documenter une fonction
+  </a>
+  
+    <nav class="md-nav" aria-label="Documenter une fonction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help !
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creer-le-mode-demploi-de-ses-propres-fonctions-les-docstrings" class="md-nav__link">
+    Créer le mode d'emploi de ses propres fonctions : les docstrings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    Exercices
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T6_1_3_Boucle_FOR_et_WHILE_en_Python/" class="md-nav__link">
+        TP 03 - Les boucles en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T6_1_4_Instructions_conditionnelles_en_Python/" class="md-nav__link">
+        TP 04 - Les Conditions en Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Divers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Divers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Divers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Divers/Liens_utiles/" class="md-nav__link">
+        Liens utiles
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notion-de-fonctions" class="md-nav__link">
+    Notion de fonctions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonctions-sans-parametre-sans-valeur-renvoyee" class="md-nav__link">
+    Fonctions sans paramètre, sans valeur renvoyée
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonction-avec-parametres-sans-valeur-renvoyee" class="md-nav__link">
+    Fonction avec paramètre(s), sans valeur renvoyée
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonction-avec-parametres-et-avec-valeur-renvoyee" class="md-nav__link">
+    Fonction avec paramètre(s) et avec valeur renvoyée
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autour-du-return" class="md-nav__link">
+    Autour du return
+  </a>
+  
+    <nav class="md-nav" aria-label="Autour du return">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-force-du-return" class="md-nav__link">
+    La force du return
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-return-est-un-siege-ejectable" class="md-nav__link">
+    Le return est un siège éjectable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-fonctions-sans-return-sont-elles-des-fonctions" class="md-nav__link">
+    Les fonctions sans return sont-elles des fonctions ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-locales-variables-globales" class="md-nav__link">
+    Variables locales, variables globales
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables locales, variables globales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notion-despace-de-noms" class="md-nav__link">
+    Notion d'espace de noms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regles-dacces-en-lecture-et-en-modification-dune-variable-suivant-son-espace-dorigine" class="md-nav__link">
+    &#x1F4DA; Règles d'accès en lecture et en modification d'une variable suivant son espace d'origine
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documenter-une-fonction" class="md-nav__link">
+    Documenter une fonction
+  </a>
+  
+    <nav class="md-nav" aria-label="Documenter une fonction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help !
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creer-le-mode-demploi-de-ses-propres-fonctions-les-docstrings" class="md-nav__link">
+    Créer le mode d'emploi de ses propres fonctions : les docstrings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    Exercices
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="T6_1_2_Les_fonctions_en_Python.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+              
+    
+                
+
+
+<h1 id="theme-6-langages-et-programmation">Thème 6 - Langages et programmation<a class="headerlink" href="#theme-6-langages-et-programmation" title="Permanent link">⚓︎</a></h1>
+<table  class="yellowTable">
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            02
+            </th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Les Fonctions en Python - Principes généraux</th>
+        </tr>
+</table>
+<p><br></p>
+<p><img alt="python_logo1.png" class="center" src="../data/python_logo1.png" /></p>
+<h2 id="notion-de-fonctions">Notion de fonctions<a class="headerlink" href="#notion-de-fonctions" title="Permanent link">⚓︎</a></h2>
+<p>La notion de fonction est essentielle en programmation, elles servent à mieux structurer votre code.<br />
+Par exemple, elles permettent d’éviter de répéter plusieurs fois des portions de codes identiques. Ainsi, une fonction peut être vu comme un «petit» programme :<br />
+- à qui on donne des paramètres en entrée, <br />
+- puis qui effectue alors un traitement sur ces paramètres,<br />
+- qui renvoie enfin un résultat en sortie.  </p>
+<p>Une fonction qui modifie des variables mais sans renvoyer de résultat est appelée une procédure. Le langage Python ne fait pas de différence dans la syntaxe entre fonction et procédure.</p>
+<div class="admonition savoir">
+<p class="admonition-title">A retenir :</p>
+<p>En Python, une fonction se crée avec le mot-clé <code>def</code>.</p>
+</div>
+<h2 id="fonctions-sans-parametre-sans-valeur-renvoyee">Fonctions sans paramètre, sans valeur renvoyée<a class="headerlink" href="#fonctions-sans-parametre-sans-valeur-renvoyee" title="Permanent link">⚓︎</a></h2>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">accueil</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;comment allez-vous ?&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">accueil</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">Bonjour</span>
+<span class="n">comment</span> <span class="n">allez</span><span class="o">-</span><span class="n">vous</span> <span class="err">?</span>
+</code></pre></div>
+<h2 id="fonction-avec-parametres-sans-valeur-renvoyee">Fonction avec paramètre(s), sans valeur renvoyée<a class="headerlink" href="#fonction-avec-parametres-sans-valeur-renvoyee" title="Permanent link">⚓︎</a></h2>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">d</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;le double de </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> est </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">double</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">le</span> <span class="n">double</span> <span class="n">de</span> <span class="mi">4</span> <span class="n">est</span> <span class="mi">8</span>
+</code></pre></div>
+<div class="admonition voc">
+<p class="admonition-title">Vocabulaire :</p>
+<ul>
+<li>La valeur <code>n</code> est appelée <strong>paramètre</strong> de la fonction <code>double</code>.  </li>
+<li>On dit qu'on  <strong>passe</strong> le paramètre <code>n</code> à la fonction <code>double</code>.  </li>
+<li>Dans l'exemple ci-dessus, on dit qu'on a appelé la fonction <code>double</code> avec  <strong>l'argument</strong> 4.</li>
+</ul>
+</div>
+<p><strong>Remarques :</strong></p>
+<ul>
+<li>là encore, notre fonction ne renvoie rien : on peut encore la considérer comme un ensemble d'instructions factorisé dans un même bloc. À la différence de la fonction sans paramètre, ces instructions ne sont pas toujours les mêmes, grâce à l'utilisation du paramètre demandé à l'utilisateur.  </li>
+<li>la fonction bien connue  <code>print()</code> est une fonction à paramètre, qui affiche dans la console le contenu du paramètre.  </li>
+</ul>
+<h2 id="fonction-avec-parametres-et-avec-valeur-renvoyee">Fonction avec paramètre(s) et avec valeur renvoyée<a class="headerlink" href="#fonction-avec-parametres-et-avec-valeur-renvoyee" title="Permanent link">⚓︎</a></h2>
+<p>On retrouve ici la notion classique de fonction rencontrée en mathématiques : un procédé qui prend un nombre et en renvoie un autre. En informatique, l'objet renvoyé ne sera pas forcément un nombre (cela pourra être aussi une liste, un tableau, une image...).
+Le renvoi d'une valeur se fait grâce au mot-clé <code>return</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemple</p>
+<p>La fonction mathématique <span class="arithmatex">\(f : x \longmapsto 2x+3\)</span> se codera par :</p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="mi">11</span>
+</code></pre></div></p>
+</div>
+<h2 id="autour-du-return">Autour du <code>return</code><a class="headerlink" href="#autour-du-return" title="Permanent link">⚓︎</a></h2>
+<h3 id="la-force-du-return">La force du <code>return</code><a class="headerlink" href="#la-force-du-return" title="Permanent link">⚓︎</a></h3>
+<p><strong>Différence fondamentale entre <code>return</code> et <code>print</code></strong>  </p>
+<p>Le mot-clé <code>return</code> de l'exemple précédent fait que l'expression <code>f(4)</code> est <strong>égale</strong> à 11.<br />
+On peut d'ailleurs écrire en console :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="mi">16</span>
+</code></pre></div>
+<p>Imaginons (avant de l'oublier très vite) le code <strong>affreux</strong> ci-dessous :  </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<p>On pourrait avoir <em>l'illusion</em> que la fonction <code>g</code> fait correctement son travail :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">g</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="mi">11</span>
+</code></pre></div>
+<p>Mais <code>g</code> se contente <strong>d'afficher</strong> sa valeur calculée, et non pas de la renvoyer. En effet :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">g</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="mi">16</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<span class="n">File</span> <span class="s2">&quot;&lt;input&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">unsupported</span> <span class="n">operand</span> <span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="o">+</span><span class="p">:</span> <span class="s1">&#39;NoneType&#39;</span> <span class="ow">and</span> <span class="s1">&#39;int&#39;</span>
+</code></pre></div>
+<p>En résumé :</p>
+<p><img alt="yoda1.png" class="center" src="../data/yoda1.png" /></p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">g</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="mi">11</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<span class="n">File</span> <span class="s2">&quot;&lt;input&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">unsupported</span> <span class="n">operand</span> <span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="o">+</span><span class="p">:</span> <span class="s1">&#39;NoneType&#39;</span> <span class="ow">and</span> <span class="s1">&#39;int&#39;</span>
+</code></pre></div>
+<h3 id="le-return-est-un-siege-ejectable">Le <code>return</code> est un siège éjectable<a class="headerlink" href="#le-return-est-un-siege-ejectable" title="Permanent link">⚓︎</a></h3>
+<p>Le mot-clé <code>return</code> provoque une <em>éjection</em> du code : tout ce qui est situé <strong>après</strong> le  <code>return</code> <strong>ne sera pas exécuté</strong>.   </p>
+<p>Observez la différence entre les fonctions <code>g</code>  et <code>h</code> .</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ce texte sera bien affiché&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">g</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">ce</span> <span class="n">texte</span> <span class="n">sera</span> <span class="n">bien</span> <span class="n">affiché</span>
+<span class="mi">11</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ceci ne sera jamais affiché&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">h</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="mi">11</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ce texte sera bien affiché&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span>
+
+<span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ceci ne sera jamais affiché&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">ce</span> <span class="n">texte</span> <span class="n">sera</span> <span class="n">bien</span> <span class="n">affiché</span>
+<span class="mi">11</span>
+<span class="mi">11</span>
+</code></pre></div></p>
+<h3 id="les-fonctions-sans-return-sont-elles-des-fonctions">Les fonctions sans <code>return</code> sont-elles des fonctions ?<a class="headerlink" href="#les-fonctions-sans-return-sont-elles-des-fonctions" title="Permanent link">⚓︎</a></h3>
+<ul>
+<li>Pour les puristes, une fonction sans valeur renvoyée sera plutôt appelée <em>procédure</em>. Le mot <em>fonction</em> est alors réservé aux fonctions qui ont effectivement un <code>return</code>.</li>
+</ul>
+<h2 id="variables-locales-variables-globales">Variables locales, variables globales<a class="headerlink" href="#variables-locales-variables-globales" title="Permanent link">⚓︎</a></h2>
+<h3 id="notion-despace-de-noms">Notion d'espace de noms<a class="headerlink" href="#notion-despace-de-noms" title="Permanent link">⚓︎</a></h3>
+<div class="admonition savoir">
+<p class="admonition-title">A retenir :</p>
+<ul>
+<li>Les variables définies dans le corps d'une fonction sont appelées <strong>variables locales</strong>  </li>
+<li>Les variables définies dans le corps du programme (sous-entendu : pas à l'intérieur d'une fonction) sont appelées <strong>variables globales</strong>.  </li>
+</ul>
+</div>
+<h3 id="regles-dacces-en-lecture-et-en-modification-dune-variable-suivant-son-espace-dorigine">&#x1F4DA; Règles d'accès en lecture et en modification d'une variable suivant son espace d'origine<a class="headerlink" href="#regles-dacces-en-lecture-et-en-modification-dune-variable-suivant-son-espace-dorigine" title="Permanent link">⚓︎</a></h3>
+<p><strong>Règles d'accès aux variables locales et globales :</strong>   </p>
+<ul>
+<li><strong>règle 1 :</strong> une <strong>variable locale</strong> (définie au cœur d'une fonction) est <strong>inaccessible</strong> hors de cette fonction.   </li>
+<li><strong>règle 2 :</strong> une <strong>variable globale</strong> (définie à l'extérieur d'une fonction) est <strong>accessible</strong> en <strong>lecture</strong> à l'intérieur d'une fonction.  </li>
+<li><strong>règle 3 :</strong> une <strong>variable globale</strong> (définie à l'extérieur d'une fonction) <strong>ne peut pas être modifiée</strong> à l'intérieur d'une fonction.</li>
+</ul>
+<p><strong>&#x26A0; À propos de la règle n°3</strong><br />
+<em>(toute la vérité, rien que la vérité)</em></p>
+<p>Pour certains types de variables (listes, dictionnaires...), la modification d'une variable globale à l'intérieur du corps d'une fonction est en fait possible (contrairement à ce qu'énonce la règle 3). Mais cela reste très fortement déconseillé.</p>
+<p>Une fonction ne <strong>doit</strong> modifier que les variables qu'elle crée (ses variables locales) ou bien les variables qu'on lui a données en paramètre. </p>
+<p>Une fonction qui ne respecte pas cette règle présente des <em>effets de bord</em> : on peut peut-être arriver à les gérer sur un «petit» code, mais cela devient illusoire sur un code utilisant de multiples fonctions. </p>
+<h2 id="documenter-une-fonction">Documenter une fonction<a class="headerlink" href="#documenter-une-fonction" title="Permanent link">⚓︎</a></h2>
+<h3 id="help">Help !<a class="headerlink" href="#help" title="Permanent link">⚓︎</a></h3>
+<p>Si une fonction peut être assimilée à un outil, il est normal de se demander si cet outil possède un mode d'emploi.</p>
+<p>Observons les fonctions pré-définies par Python, et notamment une des premières que nous avons rencontrées : la fonction <code>print()</code>. Son mode d'emploi est accessible grâce à la commande <code>help(print)</code>.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="nb">print</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">builtins</span><span class="p">:</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">Prints</span> <span class="n">the</span> <span class="n">values</span> <span class="n">to</span> <span class="n">a</span> <span class="n">stream</span><span class="p">,</span> <span class="ow">or</span> <span class="n">to</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="n">by</span> <span class="n">default</span><span class="o">.</span>
+    <span class="n">Optional</span> <span class="n">keyword</span> <span class="n">arguments</span><span class="p">:</span>
+    <span class="n">file</span><span class="p">:</span>  <span class="n">a</span> <span class="n">file</span><span class="o">-</span><span class="n">like</span> <span class="nb">object</span> <span class="p">(</span><span class="n">stream</span><span class="p">);</span> <span class="n">defaults</span> <span class="n">to</span> <span class="n">the</span> <span class="n">current</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span>
+    <span class="n">sep</span><span class="p">:</span>   <span class="n">string</span> <span class="n">inserted</span> <span class="n">between</span> <span class="n">values</span><span class="p">,</span> <span class="n">default</span> <span class="n">a</span> <span class="n">space</span><span class="o">.</span>
+    <span class="n">end</span><span class="p">:</span>   <span class="n">string</span> <span class="n">appended</span> <span class="n">after</span> <span class="n">the</span> <span class="n">last</span> <span class="n">value</span><span class="p">,</span> <span class="n">default</span> <span class="n">a</span> <span class="n">newline</span><span class="o">.</span>
+    <span class="n">flush</span><span class="p">:</span> <span class="n">whether</span> <span class="n">to</span> <span class="n">forcibly</span> <span class="n">flush</span> <span class="n">the</span> <span class="n">stream</span>
+</code></pre></div>
+<p>Pensez à utiliser cette fonction <code>help()</code> </p>
+<h3 id="creer-le-mode-demploi-de-ses-propres-fonctions-les-docstrings">Créer le mode d'emploi de ses propres fonctions : les docstrings<a class="headerlink" href="#creer-le-mode-demploi-de-ses-propres-fonctions-les-docstrings" title="Permanent link">⚓︎</a></h3>
+<p>Il est possible, voire souhaitable (dès qu'on créé un code comportant plusieurs fonctions, et/ou qui sera amené à être lu par d'autres personnes), de créer un mode d'emploi pour ses fonctions. On appelle cela écrire <strong>la docstring</strong> de la fonction, et c'est très simple : il suffit de l'encadrer par des triples double-quotes <code>"""</code>.</p>
+<p><strong>Exemple</strong><br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Renvoie le de n&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">d</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span>
+    <span class="k">return</span> <span class="n">d</span>
+</code></pre></div></p>
+<p>On peut donc maintenant demander de l'aide pour cette fonction :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">double</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">double</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
+
+<span class="n">double</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">Renvoie</span> <span class="n">le</span> <span class="n">double</span> <span class="n">de</span> <span class="n">n</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Renvoie le de n&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">d</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span>
+    <span class="k">return</span> <span class="n">d</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">help</span><span class="p">(</span><span class="n">double</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">double</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
+
+    <span class="n">double</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">Renvoie</span> <span class="n">le</span> <span class="n">de</span> <span class="n">n</span><span class="s2">&quot;</span>
+</code></pre></div>
+<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  1</p>
+<p><strong>Calcul aire</strong><br />
+Écrire une fonction qui prends en entrée la longueur et la largeur d'un rectangle et qui renvoie son aire.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">caclule_aire</span><span class="p">(</span><span class="n">longueur</span><span class="p">,</span> <span class="n">largeur</span><span class="p">):</span>
+    <span class="o">...</span>
+</code></pre></div>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  2</p>
+<p><strong>conversion_duree</strong>  </p>
+<p>Écrire une fonction qui convertit un nombre de secondes en heures/minutes/secondes.<br />
+On peut utiliser le fait que si <code>a</code> et <code>b</code> sont deux variables contenant des entiers, alors 
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">//</span> <span class="n">b</span>
+</code></pre></div>
+est la partie entière de la division de <code>a</code> par <code>b</code> et 
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+</code></pre></div>
+est reste de la division de <code>a</code> par <code>b</code>.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">convertit</span><span class="p">(</span><span class="n">secondes</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">heures</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">secondes</span><span class="p">)</span>
+</code></pre></div>
+</div>
+
+              
+    <script src="../../../js/ide.js"></script> 
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="../T6_1_1_Les_Variables_en_Python/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: TP 01 - Les Variables en Python" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              TP 01 - Les Variables en Python
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../T6_1_3_Boucle_FOR_et_WHILE_en_Python/" class="md-footer__link md-footer__link--next" aria-label="Suivant: TP 03 - Les boucles en Python" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              TP 03 - Les boucles en Python
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+        <script src="../../../xtra/javascripts/config.js"></script>
+      
+        <script src="../../../xtra/javascripts/interpreter.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+    
+  </body>
+</html>
