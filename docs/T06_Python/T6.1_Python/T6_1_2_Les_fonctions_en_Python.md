@@ -386,3 +386,14 @@ Help on function double in module __main__:
 
 
 
+!!! exo "{{ exercice() }}"
+    **Prix**
+
+    Le droit d'entrée journalier dans un parc d’attraction est 
+
+    + 37€ pour un adulte
+    + 28€ pour un enfant. 
+
+    Ecrire une fonction `prix(nbre_adultes, nbre_enfants)` renvoyant le prix à payer pour le parc d'attraction.
+
+{{ IDEv() }}

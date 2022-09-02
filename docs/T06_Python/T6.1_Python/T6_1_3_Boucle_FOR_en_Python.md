@@ -19,7 +19,7 @@ Thème 6 - Langages et programmation
             <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
             03
             </th>
-            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Les Boucles (FOR et WHILE) en Python</th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Les Boucles FOR en Python</th>
         </tr>
 </table>
 <br>
@@ -42,9 +42,9 @@ En informatique, il existe un concept similaire qui va désigner les objets que 
 
 
 
-### &#x2712; Itérer sur les itérables : la boucle `for`
+###  Itérer sur les itérables : la boucle `for`
 
-#### Itérer sur une chaîne de caractères
+#### &#x2712; Itérer sur une chaîne de caractères
 
 Il existe donc une instruction permettant de faire une (ou plusieurs) action(s) à chaque itération sur un élément énumérable.
 
@@ -112,8 +112,12 @@ La variable ```m``` prend successivement les valeurs ```'N```, ```'A'```, ```'S'
     - finir la ligne du ```for``` par les deux points ```:```  
     - indenter sous le ```for``` les instructions qui doivent être répétées. 
 
+    ```python
+    for ........ :
+        instructions à répéter
+    ```
 
-#### Itérer sur une liste
+#### &#x2712; Itérer sur une liste
 
 **Exemple :**
 Le programme suivant :
@@ -185,13 +189,13 @@ for jour in semaine:
 
 Comment répéter 10 fois la phrase ```"Hasta la vista, baby"``` ?
 
-!!! note "&#x1F4CC; Note :"
-    L'ensemble `range` :  
-    Le programme suivant :
-    ```python
-    for i in range(5):
-        print("Hasta la vista, baby")
-    ```
+!!! note "&#x1F4CC; Note : range"
+
+Le programme suivant :
+```python
+for i in range(5):
+    print("Hasta la vista, baby")
+```
 
 va donner ceci :  
 
@@ -235,7 +239,8 @@ va donner ceci :
 3
 ```
 
-**Interprétation :** faire parcourir à une variable ```k``` l'ensemble **```range(n)```** va faire prendre à ```k``` les valeurs 0, 1, 2, ..., n-1. 
+!!! savoir "&#x1F4DA;  A retenir :"
+    Faire parcourir à une variable ```k``` l'ensemble **```range(n)```** va faire prendre à ```k``` les valeurs 0, 1, 2, ..., n-1. 
 
 
 #### Utilisation avancée de l'objet ```range()```  
@@ -254,11 +259,13 @@ va donner ceci :
 11
 13
 ```    
-**Interprétation :** faire parcourir à ```k``` l'ensemble `range(start, stop, step)` fait :
 
-- démarrer ```k``` à la valeur ```start``` 
-- progresser ```k```  de ```step``` en ```step``` 
-- tant que ```k``` est **rictement inférieur** ```stop``` 
+!!! savoir "&#x1F4DA;  A retenir :"
+    faire parcourir à ```k``` l'ensemble `range(start, stop, step)` fait :
+
+    - démarrer ```k``` à la valeur ```start```   
+    - progresser ```k```  de ```step``` en ```step```   
+    - tant que ```k``` est **rictement inférieur** ```stop```   
 
 
 **Remarques** :
@@ -374,147 +381,4 @@ Cette variable `chaine` est appelée un **accumulateur**.
 
 !!! exo "&#x1F4BB; Exercice 7 :"
     Proposer un code qui écrit la **table de multiplication** de 7, de 8 et de 9.
-
-
-
-<a class="anchor" id="section3"></a>
-
-##  Boucle WHILE
-    
-
-###  &#x2712;  Premiers exemples
-
-À la différence essentielle des boucles `for`, dont on peut savoir à l'avance combien de fois elles vont être exécutées, les boucles `while` sont des boucles dont on ne sort que lorsqu'une condition n'est plus satisfaite. 
-
-Avec donc le risque de rester infiniment bloqué à l'intérieur !  
-
-
-
-```
-a = 0
-while a < 3:
-    print("ok")
-    a = a + 1
-print("fini")
-```
-
-    ok
-    ok
-    ok
-    fini
-
-
-### &#x2712; Syntaxe générale
-
-
-!!! savoir "&#x1F4DA; A retenir :"
-    **Écriture d'une boucle `while`**
-    ```python
-    while condition:
-        instruction1
-        instruction2
-        ...
-        instructionN
-    ````
-
-
-![while.jpg](data/while.jpg)
-
-#### La condition
-
-La ```condition``` est un booléen, c'est-à-dire une expression que Python évaluera à ```True``` ou à ```False```.
-
-Exemple de booléens résultant d'une évaluation :
-```python
->>> 1 < 3
-True
->>> 5 > 7
-False
->>> a = 10
->>> a > 8
-True
-```
-
-###  &#x2712;  Les pièges ...
-
-#### piège n°1 : ne JAMAIS SORTIR de la boucle
-
-
-**Exemple :**
-Le programme suivant :
-```python
-a = 0
-while a < 3:
-    print("ok")
-    a = a + 1
-    a = a * 0
-print("ce texte ne s'écrira jamais")
-```
-va écrire une suite infinie de ```ok``` et ne **jamais s'arrêter**
-
-
-#### piège n°2 : ne JAMAIS ENTRER dans la boucle
-
-**Exemple :**
-Le programme suivant :
-```python
-a = 0
-while a > 10:
-    print("ce texte non plus ne s'écrira jamais")
-    a = a + 1
-        
-print("fini") 
-```
-va écrire ```fini``` et s'arrêter.
-
-
-```
-a = 0
-while a > 10:
-    print("ce texte non plus ne s'écrira jamais")
-    a = a + 1
-
-print("fini")
-```
-
-fini
-
-
-!!! exo "&#x1F4BB; Exercice 8 :
-    Trouver le plus petit nombre entier $n$ tel que $2^n$ soit supérieur à 1 milliard.
-
-    ```python
-    n = 1
-    while 2**n...:
-        ...
-        print("trop petit")
-    print("trouvé : ",n)
-    ```
-
-La boucle infinie a été présentée comme un danger qu'il faut éviter. 
-
-Pourtant, dans quelques situations, il est d'usage d'enfermer _volontairement_ l'utilisateur dans une boucle infinie.
-
-C'est notamment le cas des codes p5 où la fonction ```draw()``` est une boucle infinie dont on ne sort que lorsqu'un évènement est intercepté (par exemple, le clic sur la fermeture de la fenêtre d'affichage).  
-Ou lors de la création d'un jeu....
-
-Observez et exécutez le code suivant :
-
-
-```python
-while True :
-    reponse = input("tapez sur la lettre S du clavier pour me sortir de cet enfer : ")
-    if reponse == 'S' or reponse == 's':
-        break
-
-print("merci, j'étais bloqué dans une boucle infinie")
-```
-
-    tapez sur la lettre S du clavier pour me sortir de cet enfer : E
-    tapez sur la lettre S du clavier pour me sortir de cet enfer : S
-    merci, j'étais bloqué dans une boucle infinie
-
-
-- le début du code : ```while True``` est typique des boucles infinies volontaires. On aurait tout aussi bien pu écrire ```while 3 > 2``` (on rencontre même parfois des ```while 1```)
-- vous avez découvert l'expression ```break``` qui comme son nom l'indique permet de casser la boucle (cela marche pour ```while``` comme pour ```for```) et donc d'en sortir. Son emploi est controversé parmi les puristes de la programmation. Nous dirons juste que c'est une instruction bien pratique.
 

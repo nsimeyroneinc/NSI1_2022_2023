@@ -109,6 +109,8 @@ compteur = 0
 
 Considérons qu'à un moment du programme, cette variable doit être modifiée, par exemple en lui ajoutant 1.
 
+**Ne perdez pas de vue que le signe = est une affectation, et non une égalité.**
+
 En Python, cela s'écrira :
 
 - Syntaxe classique  
@@ -138,40 +140,121 @@ print(compteur)
     Ecrire le code «classique» et le code «Pythonesque» pour l'instruction suivante :  
     On initialise une variable ```capital``` à 1000 et on lui enlève 5%.
 
+##  Derouler un code : Premier algorithme
+
+Considérons ce code :
+
+```python
+a = 1
+b = 3
+c = a + b
+```
+
+On peut décrire le déroulement du code en faisant un tableau.
++ A gauche on indique le numéro de la ligne.
++ A droite, tout les changements d'état de la mémoire (c'est à dire la ou les variables modifiée(s) à cette ligne, avec leur nouvelle valeur).
+
+|n° ligne|état|
+|:-:|:-:|
+|1|a = 1|
+|2|b = 3|
+|3|c = 4|
+
+!!! fabquestion "{{ exercice() }}"
+
+    Ecrire le déroulé du code, puis donnez la valeur de $x$ à la fin du code.
+
+    ```python
+    x = 2
+    x = 3 - x
+    y = 5 * x
+    x = y / 2
+    ```
+
+??? correction "Correction"
+
+    |n° ligne|état|
+    |:-:|:-:|
+    |1|x = 2|
+    |2|x = 1|
+    |3|y = 5|
+    |4|x = 2.5|
+
+    A la fin $x$ vaut $2.5$
+
+!!! fabquestion "{{ exercice() }}"
+    Ecrire le déroulé du code, puis donnez la valeur de $nom$ à la fin du code.
+
+    ```python
+    nom = "Cépadur"
+    prenom = "Alban"
+    nom = prenom + " " + nom
+    nom = nom +"."
+    ```
+
+??? correction "Correction"
+
+    |n° ligne|état|
+    |:-:|:--|
+    |1| nom = "Cépadur"|
+    |2|prenom = "Jean"|
+    |3|nom = "Alban Cépadur"|
+    |4|nom = "Alban  Cépadur,"|
+
+    A la fin $nom$ vaut  **"Alban Cépadur,"**
+
+
+!!! fabquestion "{{ exercice() }}"
+    Ecrire le déroulé du code et donnez les valeurs de $x$ et de $y$ à la fin du code.
+
+    ```python
+    nb_de_tour = 0
+    nb_de_tour = nb_de_tour + 1
+    nb_de_tour = nb_de_tour + 2
+    nb_de_tour = nb_de_tour + 3
+    ```
+
+??? correction "Correction"
+
+    |n° ligne|état|
+    |:-:|:--|
+    |1| nb_de_tour = 0|
+    |2|nb_de_tour = 1|
+    |3|nb_de_tour = 3|
+    |4|nb_de_tour = 6|
+
+    A la fin **nb_de_tour** vaut $6$
+        
+
 
 ## L'échange de variables
     
 Après l'incrémentation, une autre technique de base reviendra fréquemment dans nos codes : **l'échange de variables**.
 
-Imaginons les variables suivantes :
+!!! fabquestion "{{ exercice() }}"
+    Ecrire le déroulé du code et donnez les valeurs de $x$ et de $y$ à la fin du code.
 
-```python
->>> a = 3
->>> b = 5
-```
-Le but est d'échanger les valeurs de ```a``` et de ```b```.
+    ```python
+    x = 2
+    y = 3
+    x = y
+    y = x
+    ```
 
-▸ **Méthode naïve**
+??? correction "Correction"
+    
+    |n° ligne|état|
+    |:-:|:--|
+    |1| x = 2|
+    |2|y = 3|
+    |3|x = 3|
+    |4|y = 3|
 
-```python
->>> a = b
->>> b = a
-```
+    A la fin $x$ vaut $3$ et  $y$ vaut $3$
 
-Que valent ```a``` et ```b``` maintenant ?
+Dans l'exemple précédent, la variable ```x``` a été écrasée dès qu'on lui a donné la valeur de la variable ```y```, on n'a donc pas procédé à une échange de valeur.
 
-Malheureusement :
-```python
->>> a
-5
->>> b
-5
->
-```
-
-La variable ```a``` a été écrasée dès qu'on lui a donné la valeur de la variable ```b```.
-
-Comment la préserver ?
+Pour procéder à un échange de valeur comment faire ?
 
 La situation est similaire au problème suivant : comment échanger le contenu de ces deux verres ?
 
@@ -179,45 +262,38 @@ La situation est similaire au problème suivant : comment échanger le contenu d
 
 La méthode est évidente : il nous faut un troisième verre.
 
-Nous allons faire de même pour nos variables. Nous allons utiliser une variable **temporaire** (on parle aussi de variable **tampon**) pour conserver la mémoire de la valeur de ```a``` (par exemple) avant que celle-ci ne se fasse écraser :
+Nous allons faire de même pour nos variables. Nous allons utiliser une variable **temporaire** (on parle aussi de variable **tampon**) pour conserver la mémoire de la valeur de ```x``` (par exemple) avant que celle-ci ne se fasse écraser :
 
 ```python
->>> a = 3
->>> b = 5
->>> temp = a
->>> a = b
->>> b = temp
+>>> x = 2
+>>> y = 3
+>>> temp = x
+>>> x = y
+>>> y = temp
 ```
 
-Vous pouvez vérifier maintenant que les valeurs de ```a``` et de ```b``` ont bien été échangées.
+Vous pouvez vérifier maintenant que les valeurs de ```x``` et de ```y``` ont bien été échangées.
 
 
 
 &#x1F4CC;  **Syntaxe classique et syntaxe Pythonesque :**  
 
-L'échange de deux variables ```a``` et de ```b``` s'écrit donc :
+L'échange de deux variables ```x``` et de ```y``` s'écrit donc :
 ```python
->>> temp = a
->>> a = b
->>> b = temp
+>>> temp = x
+>>> a = y
+>>> y = temp
 ```
 Mais il existe aussi une syntaxe particulière à Python, bien plus courte :
 
 ```python
->>> a, b = b, a
+>>> x, y = y, x
 ```
 
 
 ##  Types de variables
     
-
-Pour l'instant, les variables que nous avons manipulées contiennent toutes des nombres entiers.
-
-Sauf les maisons de Poudlard, qui sont des ~~mots~~ chaînes de caractères.
-
-Pour différencier la nature de ce que peut contenir une variable, on parle alors de **type de variable**.
-
-En voici quelques uns, que nous découvrirons au fil de l'année :
+Pour ce début d'année, il faut avoir à l'esprit qu'il existe 4 types de base :
 
 
 !!! info "Types de base :"
@@ -235,7 +311,17 @@ En voici quelques uns, que nous découvrirons au fil de l'année :
     |`function`|fonction| `print`|
 
 
-Comment connaître le type d'une variable ?  
+
+**int** est l'abréviation de **interger** qui ignifie entier en anglais
+
+**float** est l'abbréviation de **floating point** qui se traduit en français par **nombre à virgule flottante**. Nous aurons l'occasion plus tard de reparler de ce nom étrange, pour le moment considérez qu'il s'agit de nombres décimaux.
+
+**str** est l'abréviation de **string**, et désigne les chaine de caractères (character strings).
+
+**bool** est l'abréviation de **boolean**, soit booléen en français. C'est un type moins intuitif mais très important en informatique. Une variable booléenne ne peut avoir que 2 valeurs : **True** ou **False** (Vrai ou Faux)
+
+
+Comment connaître le type d'une variable ?
 Il suffit dans la console d'utiliser la fonction `type`.
 
 
@@ -250,8 +336,43 @@ type(a)
 
     <class 'int'>
 
+```python
+un_entier = 1
+print("le type de la variable un_entier est :", type(un_entier))
 
+mot = "Albert"
+print("le type de la variable mot est :", type(mot))
 
+un_float = 1.0
+print("le type de la variable un_float est :", type(un_float))
+
+bool = True
+print("le type de la variable bool est :", type(bool))
+```
+
+    le type de la variable un_entier est : <class 'int'>
+    le type de la variable mot est : <class 'str'>
+    le type de la variable un_float est : <class 'float'>
+    le type de la variable bool est : <class 'bool'>
+
+Vous vous posez peut-être la question de savoir si 1 et 1.0 sont identiques ? 
+
+En vérité ils ne le sont pas, puisqu'ils n'ont pas le même type. Cela veux dire qu'il ne sont pas représentés de la même façon dans votre ordinateur. Néanmoins, ils ont bien la même valeur.
+
+Illustrons cela en utilisant le **test d'égalité : ==** et le **test d'identité : is**.
+
++ Le premier, **a == b** est <font color=green><b>True</b></font> (vrai) si a et b on la même valeur. 
++ Le second, **a is b** est <font color=green><b>True</b></font> si a et b sont identiques.
+
+```python
+a = 1
+b = 1.0
+print( "a est égal à b ? -> ", a == b)
+
+print( "a est identique à b ? -> ", a is b)
+```
+    a est égal à b ? ->  True
+    a est identique à b ? ->  False
 
 
 ## Python et le typage dynamique
@@ -427,45 +548,142 @@ Sans surprise, en Python, nous utiliserons donc le ```snake_case```.
 {{ IDEv() }}
 
 
+## Entrées / Sorties
+
+
+Un programme effectue des calculs. En général, il traite des informations, et nous renvoie le résultat du traitement.
+
+Les informations traitées doivent donc être fournies **en entrée**. Les résultat renvoyés **en sortie**.
+
+Dans ce qui précède, les codes que nous avons écrit **affiche un résultat dans la console**. Mais ils n'avaient rien en entrée. Si on exécute plusieurs fois ces programmes, ils feront à chaque fois exactement la même chose, puisqu'aucune donnée ne change à chaque exécution.
+
+La grande majorité des programmes ne fonctionnent pas ainsi. En général, un programme lit des informations, les traite, et renvoie le résultat. 
+
+
+Les informations lues peuvent être saisies au clavier, lues dans un fichier, provenir d'un apparareil photo ou scanner, enregistrées via un dispositif audio etc....
+
+De même, le résultat peut être un simple affichage à l'écran (texte ou image), ou sur une imprimante, dans un fichier, un son etc...
+
+Les codes précédents de ce document affichent un résultat (avec la fonction **`print()`** qui affiche dans la console). **`print()`** peut afficher n'importe quelle variable (int, float, str ou bool) ou texte.
+
+Pour entrer une information, on peut utiliser la fonction **`input()`**. 
+
+### Entrer des données de type texte
+
+```python
+print("-------- entrées -------")
+votre_nom = input("quel est votre nom ? ")
+votre_prenom = input("quel est votre prénom ? ")
+print("-------- sorties -------")
+print("Bonjour ", votre_prenom, votre_nom,",")
+print()
+print("Bienvenue à Pythonworld !")
+```
+
+```python
+-------- entrées -------
+quel est votre nom ? Mika
+quel est votre prénom ? mm
+-------- sorties -------
+Bonjour  mm Mika ,
+
+Bienvenue à Pythonworld !
+```
+
+**La fonction `input(message)` :**
+
+affiche le message, attend que l'on entre une information, que l'on termine en appuyant sur la touche Entrée, et renvoie cette information. L'instruction :
+
+```python
+ma_var = intput("un message :")
+``` 
+permet donc d'affecter la donnée entrée à la variable **`ma_var`**
+
+### Entrer des données numériques
+
+La méthode est la même, a ceci près : la fonction **`input()`** nous permet de demander d'entrer une valeur et d'affecter la valeur entrée à une variable. **Mais la valeur entrée est toujours de type str**.
+
+Voyez ce code, et comprenez l'erreur générée à l'exécution :
+
+```python
+age = input("Entre ton age : ")
+print("Tu as ", age, "ans.")
+age_2050 = age + (2050 - 2022)
+print("En 2050 tu auras : ", age_2050, "ans.")
+```
+
+    Entre ton age : 22
+    Tu as  22 ans.
+    Traceback (most recent call last):
+    File "<input>", line 3, in <module>
+    TypeError: can only concatenate str (not "int") to str
+
+
+🌵 Vous obtenez :
+
+**&nbsp;&nbsp;&nbsp;File "&lt;input\>", line 3, in &lt;module><br>**
+**TypeError: can only concatenate str (not "int") to str**
+
+ce qui en français donne : 
+
+    on ne peut concaténer que des str (pas des int) à des str.
+
+🤔 Pourtant **`age + (2050 - 2022)`** semblait bien être une **addition de deux entiers** non ?
+
+En fait non, car `age` est de type **str**.
+
+💡 Si vous voulez que age soit un entier, il faut **convertir** le résultat de `input()`. Voici le code précédent, corrigé pour que l'entrée soit convertie en entier :
+
+```python
+age = int( input("Entre ton age : ") )
+print("Tu as ", age, "ans.")
+age_2050 = age + (2050 - 2022)
+print("En 2050 tu auras : ", age_2050, "ans.")
+```
+
+    Entre ton age : 22
+    Tu as  22 ans.
+    En 2050 tu auras :  50 ans.
+
+Dans l'exemple ci-dessous que nous avons étudié où `age` était de type `str`: 
+```python  
+age = input("Entre ton age : ")
+print("Tu as ", age, "ans.")
+age_2050 = age + (2050 - 2022)
+
+```
+
+le code génèrait une erreur. 
+
+🌵 Mais ce ne sera pas forcément le cas.... 
+
+Ou du moins, il y aura surement une erreur, mais le code ne va pas forcément s'arrêter, il affichera des choses  étranges....
+
+Regardez ce code, comprenez le problème, puis corrigez le code :
+
+```python
+age = input("Entre ton age : ")
+print("Tu as ", age, "ans.")
+age_duclos = age * 2 
+print("Monsieur Duclos a deux fois ton age. Il a", age_duclos, "ans.")
+```
+
+    Entre ton age : 22
+    Tu as  22 ans.
+    Monsieur Duclos a deux fois ton age. Il a 2222 ans.
+
+### Que s'est-il passé ?  
+
+Si `age`  est de type chaine de caractères, il est possible de faire `2 * age`. Cela revient en fait à faire `age + age`.  
+On dit qu'on a fait une **concaténation** des chaines de caractères. Cela revient tout simplement à les juxtaposer.  
+
+
 !!! exo "{{ exercice() }}"
 
     La température $f$ en degrés  Fahrenheit s'obtient à partir de la température $c$ en degrés Celsius par la formule de conversion $f=1,8 * c + 32$. 
-        
-    On veut écrire un programme qui réponde à la __spécification__ suivante : _convertir une mesure de température de l'échelle  Celsius vers l'échelle Fahrenheit._
-        
-    **1.** Saisir  le code ci-dessous  :
-        
-    ~~~python
-    f = input("Température en degrés Celsius ? "
-    d = 1,8 * f + 32
-    print("La température en degrés Fahrenheit est de ", d)
-    ~~~
-        
-    **2.** Exécuter le code, on doit obtenir un message d'erreur indiquant une erreur de Syntaxe. Un curseur indique dans le code la position où l'interpréteur Python s'est interrompu dans la lecture du code. Si le curseur est en début de ligne, il faut souvent chercher l'erreur à la fin de la ligne précédente ...
-        
-    Corriger l'erreur de syntaxe.
-        
-    **3.** Exécuter de nouveau le code, on doit obtenir un message d'erreur indiquant que Python ne peut réaliser l'opération demandée. On dit que l'interpréteur Python a levé une [exception](https://docs.python.org/3.5/tutorial/errors.html).
-        
-    ~~~python
-    TypeError: can only concatenate str (not "int") to str
-    ~~~
-        
-    **4.** Insérer l'instruction `print(type(f))` en ligne 2, exécuter de nouveau. Que représente la valeur affichée avant le message d'erreur ?
-        
-    **5.** Remplacer la première instruction par `float(input("Température en degrés Celsius ? "))` puis exécuter. 
-        
-    Quel est l'effet de la fonction `float` ? Afficher sa documentation dans l'interpréteur avec l'instruction `help(float)`. 
-        
-    **6.** Si on teste le programme pour une température de 45 degrés Celsisus on doit obtenir l'affichage ci-dessous. 
-        
-    Est-ce que la spécification du programme est vérifiée ? Corriger le programme.
-        
-    ~~~python
-    Température en degrés Celsius ? 45
-    <class 'float'>
-    La température en degrés Fahrenheit est de  (1, 392.0)
-    ~~~
+    
+    Ecrire un programme qui réponde à la __spécification__ suivante : _convertir une mesure de température de l'échelle  Celsius vers l'échelle Fahrenheit._
+ 
 
 
 
