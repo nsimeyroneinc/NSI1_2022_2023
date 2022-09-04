@@ -19,7 +19,7 @@ Nous travaillerons sur les notebooks Capytale de l'ENT principalement.
 
 - et un espace essentiel : un petit cahier à spirale et un stylo &#x1F4DD;  !  Afin de faire une fiche résumé des divers notions abordées.
 
-![image](data/cahier.jpeg){: .center width=50%}
+![image](data/laptop-notebook.jpeg){: .center width=50%}
 
 
 ## Dossiers, fichiers et versionning
