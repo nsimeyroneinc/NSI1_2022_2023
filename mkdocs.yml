@@ -53,7 +53,7 @@ nav:
 
         
     - Divers : 
-      #- Conseil : Divers/conseil.md
+      - Conseil : Divers/conseil.md
       - Liens utiles : Divers/Liens_utiles.md
 
 
