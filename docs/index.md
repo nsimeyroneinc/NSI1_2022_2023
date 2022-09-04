@@ -81,18 +81,8 @@ Ces TD sont corrigés dans la mesure du possible (soit directement sur le site s
         - □ Algorithmes gloutons
         - □ Algorithme KNN
 
-## Les compétences transversales 
+## Comment calculer sa note au BAC 2023 et Répartition des notes :
 
-La spécialité NSI permet de développer des compétences transversales : 
+[Fiche pour calculer sa note au BAC 2023](divers/data/el-ve-de-premiere-comment-calculer-note-bac-2022-94490.pdf){:target="_blank"} 
 
-!!! incremental  "Compétences transversales"
-
-    * faire preuve d'autonomie, d'initiative et de créativité
-    * présenter un problème ou sa solution
-    * coopérer au sein d'une équipe
-    * rechercher une information et partager des ressources
-    * faire un usage responsable et critique de l'information
-    
-
-
-
+![](r-partition-de-la-note-finale.jpg)
