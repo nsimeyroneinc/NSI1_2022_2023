@@ -226,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Divers/Liens_utiles/" class="md-tabs__link">
+      <a href="../../../Divers/conseil/" class="md-tabs__link">
         Divers
       </a>
     </li>
@@ -297,6 +297,8 @@
       
       
       
+        
+          
         
           
         
@@ -527,8 +529,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../T6_1_3_Boucle_FOR_et_WHILE_en_Python/" class="md-nav__link">
-        TP 03 - Les boucles en Python
+      <a href="../T6_1_3_Boucle_FOR_en_Python/" class="md-nav__link">
+        TP 03 - Les boucles (1) en Python
       </a>
     </li>
   
@@ -541,8 +543,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../T6_1_4_Instructions_conditionnelles_en_Python/" class="md-nav__link">
-        TP 04 - Les Conditions en Python
+      <a href="../T6_1_4_Boucle_WHILE_en_Python/" class="md-nav__link">
+        TP 04 - Les boucles (2) en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T6_1_5_Instructions_conditionnelles_en_Python/" class="md-nav__link">
+        TP 05 - Les Conditions en Python
       </a>
     </li>
   
@@ -573,6 +589,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3">
@@ -586,6 +604,20 @@
           Divers
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Divers/conseil/" class="md-nav__link">
+        Conseil
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -991,19 +1023,41 @@ On peut d'ailleurs écrire en console :</p>
 <div class="admonition exo">
 <p class="admonition-title">Exercice  2</p>
 <p><strong>conversion_duree</strong>  </p>
-<p>Écrire une fonction qui convertit un nombre de secondes en heures/minutes/secondes.<br />
-On peut utiliser le fait que si <code>a</code> et <code>b</code> sont deux variables contenant des entiers, alors 
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">//</span> <span class="n">b</span>
-</code></pre></div>
-est la partie entière de la division de <code>a</code> par <code>b</code> et 
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
-</code></pre></div>
-est reste de la division de <code>a</code> par <code>b</code>.</p>
+<p>Écrire une fonction qui convertit un nombre de secondes en heures/minutes/secondes.  </p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">convertit</span><span class="p">(</span><span class="n">secondes</span><span class="p">):</span>
     <span class="o">...</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">heures</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">secondes</span><span class="p">)</span>
 </code></pre></div>
+<p>On peut utiliser le fait que si <code>a</code> et <code>b</code> sont deux variables contenant des entiers, alors<br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">//</span> <span class="n">b</span>
+</code></pre></div>
+est la partie entière de la division de <code>a</code> par <code>b</code> et </p>
+<p><strong>Exemple :</strong></p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="mi">19</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">a</span> <span class="o">//</span> <span class="n">b</span>
+<span class="mi">3</span>
+</code></pre></div>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+</code></pre></div>
+est reste de la division de <code>a</code> par <code>b</code>.</p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+<span class="mi">4</span>
+</code></pre></div>
+En effet <span class="arithmatex">\(19 = 3 \times 5 + 4\)</span></p>
 </div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  3</p>
+<p><strong>Prix</strong></p>
+<p>Le droit d'entrée journalier dans un parc d’attraction est </p>
+<ul>
+<li>37€ pour un adulte</li>
+<li>28€ pour un enfant. </li>
+</ul>
+<p>Ecrire une fonction <code>prix(nbre_adultes, nbre_enfants)</code> renvoyant le prix à payer pour le parc d'attraction.</p>
+</div>
+<div class="ide_classe"><div class="wrapper"><div class="interior_wrapper"><div id="editor_11"></div></div><div id="term_editor_11" class="term_editor"></div></div><button class="emoji" onclick='interpretACE("editor_11","v")'>▶️</button><span style="indent-text:5em"> </span><button class="emoji" onclick='download_file("editor_11","")'>⤵️</button><span style="indent-text:5em"> </span><button class="emoji" onclick="document.getElementById('input_editor_11').click()">⤴️</button>                <input type="file" id="input_editor_11" name="file" enctype="multipart/form-data" class="hide"/></div>
+<p><span id="content_editor_11" class="hide"></span><span id="corr_content_editor_11" class="hide"></span></p>
 
               
     <script src="../../../js/ide.js"></script> 
@@ -1040,13 +1094,13 @@ est reste de la division de <code>a</code> par <code>b</code>.</p>
       
       
         
-        <a href="../T6_1_3_Boucle_FOR_et_WHILE_en_Python/" class="md-footer__link md-footer__link--next" aria-label="Suivant: TP 03 - Les boucles en Python" rel="next">
+        <a href="../T6_1_3_Boucle_FOR_en_Python/" class="md-footer__link md-footer__link--next" aria-label="Suivant: TP 03 - Les boucles (1) en Python" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              TP 03 - Les boucles en Python
+              TP 03 - Les boucles (1) en Python
             </div>
           </div>
           <div class="md-footer__button md-icon">

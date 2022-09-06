@@ -226,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Divers/Liens_utiles/" class="md-tabs__link">
+      <a href="../../../Divers/conseil/" class="md-tabs__link">
         Divers
       </a>
     </li>
@@ -297,6 +297,8 @@
       
       
       
+        
+          
         
           
         
@@ -390,6 +392,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#derouler-un-code-premier-algorithme" class="md-nav__link">
+    Derouler un code : Premier algorithme
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lechange-de-variables" class="md-nav__link">
     L'échange de variables
   </a>
@@ -451,6 +460,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#entrees-sorties" class="md-nav__link">
+    Entrées / Sorties
+  </a>
+  
+    <nav class="md-nav" aria-label="Entrées / Sorties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entrer-des-donnees-de-type-texte" class="md-nav__link">
+    Entrer des données de type texte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrer-des-donnees-numeriques" class="md-nav__link">
+    Entrer des données numériques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-sest-il-passe" class="md-nav__link">
+    Que s'est-il passé ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -480,8 +523,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../T6_1_3_Boucle_FOR_et_WHILE_en_Python/" class="md-nav__link">
-        TP 03 - Les boucles en Python
+      <a href="../T6_1_3_Boucle_FOR_en_Python/" class="md-nav__link">
+        TP 03 - Les boucles (1) en Python
       </a>
     </li>
   
@@ -494,8 +537,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../T6_1_4_Instructions_conditionnelles_en_Python/" class="md-nav__link">
-        TP 04 - Les Conditions en Python
+      <a href="../T6_1_4_Boucle_WHILE_en_Python/" class="md-nav__link">
+        TP 04 - Les boucles (2) en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T6_1_5_Instructions_conditionnelles_en_Python/" class="md-nav__link">
+        TP 05 - Les Conditions en Python
       </a>
     </li>
   
@@ -526,6 +583,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3">
@@ -539,6 +598,20 @@
           Divers
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Divers/conseil/" class="md-nav__link">
+        Conseil
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -601,6 +674,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#derouler-un-code-premier-algorithme" class="md-nav__link">
+    Derouler un code : Premier algorithme
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lechange-de-variables" class="md-nav__link">
     L'échange de variables
   </a>
@@ -659,6 +739,40 @@
   <a href="#exercices" class="md-nav__link">
     Exercices
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entrees-sorties" class="md-nav__link">
+    Entrées / Sorties
+  </a>
+  
+    <nav class="md-nav" aria-label="Entrées / Sorties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entrer-des-donnees-de-type-texte" class="md-nav__link">
+    Entrer des données de type texte
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrer-des-donnees-numeriques" class="md-nav__link">
+    Entrer des données numériques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-sest-il-passe" class="md-nav__link">
+    Que s'est-il passé ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -795,6 +909,7 @@ Il existe des noms réservés :  </p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>
 </code></pre></div></p>
 <p>Considérons qu'à un moment du programme, cette variable doit être modifiée, par exemple en lui ajoutant 1.</p>
+<p><strong>Ne perdez pas de vue que le signe = est une affectation, et non une égalité.</strong></p>
 <p>En Python, cela s'écrira :</p>
 <ul>
 <li>
@@ -819,52 +934,219 @@ print(compteur)
 <p>Ecrire le code «classique» et le code «Pythonesque» pour l'instruction suivante :<br />
 On initialise une variable <code>capital</code> à 1000 et on lui enlève 5%.</p>
 </div>
+<h2 id="derouler-un-code-premier-algorithme">Derouler un code : Premier algorithme<a class="headerlink" href="#derouler-un-code-premier-algorithme" title="Permanent link">⚓︎</a></h2>
+<p>Considérons ce code :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre></div>
+<p>On peut décrire le déroulement du code en faisant un tableau.
++ A gauche on indique le numéro de la ligne.
++ A droite, tout les changements d'état de la mémoire (c'est à dire la ou les variables modifiée(s) à cette ligne, avec leur nouvelle valeur).</p>
+<table>
+<thead>
+<tr>
+<th align="center">n° ligne</th>
+<th align="center">état</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">a = 1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">b = 3</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">c = 4</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition fabquestion">
+<p class="admonition-title">Exercice  3</p>
+<p>Ecrire le déroulé du code, puis donnez la valeur de <span class="arithmatex">\(x\)</span> à la fin du code.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">x</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">/</span> <span class="mi">2</span>
+</code></pre></div>
+</div>
+<details class="correction">
+<summary>Correction</summary>
+<table>
+<thead>
+<tr>
+<th align="center">n° ligne</th>
+<th align="center">état</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">x = 2</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">x = 1</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">y = 5</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">x = 2.5</td>
+</tr>
+</tbody>
+</table>
+<p>A la fin <span class="arithmatex">\(x\)</span> vaut <span class="arithmatex">\(2.5\)</span></p>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">Exercice  4</p>
+<p>Ecrire le déroulé du code, puis donnez la valeur de <span class="arithmatex">\(nom\)</span> à la fin du code.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Cépadur&quot;</span>
+<span class="n">prenom</span> <span class="o">=</span> <span class="s2">&quot;Alban&quot;</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="n">prenom</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">nom</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span> <span class="o">+</span><span class="s2">&quot;.&quot;</span>
+</code></pre></div>
+</div>
+<details class="correction">
+<summary>Correction</summary>
+<table>
+<thead>
+<tr>
+<th align="center">n° ligne</th>
+<th align="left">état</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="left">nom = "Cépadur"</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="left">prenom = "Jean"</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="left">nom = "Alban Cépadur"</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="left">nom = "Alban  Cépadur,"</td>
+</tr>
+</tbody>
+</table>
+<p>A la fin <span class="arithmatex">\(nom\)</span> vaut  <strong>"Alban Cépadur,"</strong></p>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">Exercice  5</p>
+<p>Ecrire le déroulé du code et donnez les valeurs de <span class="arithmatex">\(x\)</span> et de <span class="arithmatex">\(y\)</span> à la fin du code.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">nb_de_tour</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">nb_de_tour</span> <span class="o">=</span> <span class="n">nb_de_tour</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">nb_de_tour</span> <span class="o">=</span> <span class="n">nb_de_tour</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">nb_de_tour</span> <span class="o">=</span> <span class="n">nb_de_tour</span> <span class="o">+</span> <span class="mi">3</span>
+</code></pre></div>
+</div>
+<details class="correction">
+<summary>Correction</summary>
+<table>
+<thead>
+<tr>
+<th align="center">n° ligne</th>
+<th align="left">état</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="left">nb_de_tour = 0</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="left">nb_de_tour = 1</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="left">nb_de_tour = 3</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="left">nb_de_tour = 6</td>
+</tr>
+</tbody>
+</table>
+<p>A la fin <strong>nb_de_tour</strong> vaut <span class="arithmatex">\(6\)</span></p>
+</details>
 <h2 id="lechange-de-variables">L'échange de variables<a class="headerlink" href="#lechange-de-variables" title="Permanent link">⚓︎</a></h2>
 <p>Après l'incrémentation, une autre technique de base reviendra fréquemment dans nos codes : <strong>l'échange de variables</strong>.</p>
-<p>Imaginons les variables suivantes :</p>
-<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="admonition fabquestion">
+<p class="admonition-title">Exercice  6</p>
+<p>Ecrire le déroulé du code et donnez les valeurs de <span class="arithmatex">\(x\)</span> et de <span class="arithmatex">\(y\)</span> à la fin du code.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
 </code></pre></div>
-Le but est d'échanger les valeurs de <code>a</code> et de <code>b</code>.</p>
-<p>▸ <strong>Méthode naïve</strong></p>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-</code></pre></div>
-<p>Que valent <code>a</code> et <code>b</code> maintenant ?</p>
-<p>Malheureusement :
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="mi">5</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
-<span class="mi">5</span>
-<span class="o">&gt;</span>
-</code></pre></div></p>
-<p>La variable <code>a</code> a été écrasée dès qu'on lui a donné la valeur de la variable <code>b</code>.</p>
-<p>Comment la préserver ?</p>
+</div>
+<details class="correction">
+<summary>Correction</summary>
+<table>
+<thead>
+<tr>
+<th align="center">n° ligne</th>
+<th align="left">état</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="left">x = 2</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="left">y = 3</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="left">x = 3</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="left">y = 3</td>
+</tr>
+</tbody>
+</table>
+<p>A la fin <span class="arithmatex">\(x\)</span> vaut <span class="arithmatex">\(3\)</span> et  <span class="arithmatex">\(y\)</span> vaut <span class="arithmatex">\(3\)</span></p>
+</details>
+<p>Dans l'exemple précédent, la variable <code>x</code> a été écrasée dès qu'on lui a donné la valeur de la variable <code>y</code>, on n'a donc pas procédé à une échange de valeur.</p>
+<p>Pour procéder à un échange de valeur comment faire ?</p>
 <p>La situation est similaire au problème suivant : comment échanger le contenu de ces deux verres ?</p>
 <p><img alt="verres1.png" class="center" src="../data/verres1.png" /></p>
 <p>La méthode est évidente : il nous faut un troisième verre.</p>
-<p>Nous allons faire de même pour nos variables. Nous allons utiliser une variable <strong>temporaire</strong> (on parle aussi de variable <strong>tampon</strong>) pour conserver la mémoire de la valeur de <code>a</code> (par exemple) avant que celle-ci ne se fasse écraser :</p>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">temp</span>
+<p>Nous allons faire de même pour nos variables. Nous allons utiliser une variable <strong>temporaire</strong> (on parle aussi de variable <strong>tampon</strong>) pour conserver la mémoire de la valeur de <code>x</code> (par exemple) avant que celle-ci ne se fasse écraser :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">temp</span>
 </code></pre></div>
-<p>Vous pouvez vérifier maintenant que les valeurs de <code>a</code> et de <code>b</code> ont bien été échangées.</p>
+<p>Vous pouvez vérifier maintenant que les valeurs de <code>x</code> et de <code>y</code> ont bien été échangées.</p>
 <p>&#x1F4CC;  <strong>Syntaxe classique et syntaxe Pythonesque :</strong>  </p>
-<p>L'échange de deux variables <code>a</code> et de <code>b</code> s'écrit donc :
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">temp</span>
+<p>L'échange de deux variables <code>x</code> et de <code>y</code> s'écrit donc :
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">y</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">temp</span>
 </code></pre></div>
 Mais il existe aussi une syntaxe particulière à Python, bien plus courte :</p>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span>
 </code></pre></div>
 <h2 id="types-de-variables">Types de variables<a class="headerlink" href="#types-de-variables" title="Permanent link">⚓︎</a></h2>
-<p>Pour l'instant, les variables que nous avons manipulées contiennent toutes des nombres entiers.</p>
-<p>Sauf les maisons de Poudlard, qui sont des <del>mots</del> chaînes de caractères.</p>
-<p>Pour différencier la nature de ce que peut contenir une variable, on parle alors de <strong>type de variable</strong>.</p>
-<p>En voici quelques uns, que nous découvrirons au fil de l'année :</p>
+<p>Pour ce début d'année, il faut avoir à l'esprit qu'il existe 4 types de base :</p>
 <div class="admonition info">
 <p class="admonition-title">Types de base :</p>
 <p>Voici les types Python les plus fréquemment utilisés cette année:</p>
@@ -920,13 +1202,49 @@ Mais il existe aussi une syntaxe particulière à Python, bien plus courte :</p>
 </tbody>
 </table>
 </div>
-<p>Comment connaître le type d'une variable ?<br />
+<p><strong>int</strong> est l'abréviation de <strong>interger</strong> qui ignifie entier en anglais</p>
+<p><strong>float</strong> est l'abbréviation de <strong>floating point</strong> qui se traduit en français par <strong>nombre à virgule flottante</strong>. Nous aurons l'occasion plus tard de reparler de ce nom étrange, pour le moment considérez qu'il s'agit de nombres décimaux.</p>
+<p><strong>str</strong> est l'abréviation de <strong>string</strong>, et désigne les chaine de caractères (character strings).</p>
+<p><strong>bool</strong> est l'abréviation de <strong>boolean</strong>, soit booléen en français. C'est un type moins intuitif mais très important en informatique. Une variable booléenne ne peut avoir que 2 valeurs : <strong>True</strong> ou <strong>False</strong> (Vrai ou Faux)</p>
+<p>Comment connaître le type d'une variable ?
 Il suffit dans la console d'utiliser la fonction <code>type</code>.</p>
 <div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>a = 1
 type(a)
 </code></pre></div>
 <div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>&lt;class &#39;int&#39;&gt;
 </code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">un_entier</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;le type de la variable un_entier est :&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">un_entier</span><span class="p">))</span>
+
+<span class="n">mot</span> <span class="o">=</span> <span class="s2">&quot;Albert&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;le type de la variable mot est :&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">mot</span><span class="p">))</span>
+
+<span class="n">un_float</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;le type de la variable un_float est :&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">un_float</span><span class="p">))</span>
+
+<span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;le type de la variable bool est :&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>le type de la variable un_entier est : &lt;class &#39;int&#39;&gt;
+le type de la variable mot est : &lt;class &#39;str&#39;&gt;
+le type de la variable un_float est : &lt;class &#39;float&#39;&gt;
+le type de la variable bool est : &lt;class &#39;bool&#39;&gt;
+</code></pre></div>
+<p>Vous vous posez peut-être la question de savoir si 1 et 1.0 sont identiques ? </p>
+<p>En vérité ils ne le sont pas, puisqu'ils n'ont pas le même type. Cela veux dire qu'il ne sont pas représentés de la même façon dans votre ordinateur. Néanmoins, ils ont bien la même valeur.</p>
+<p>Illustrons cela en utilisant le <strong>test d'égalité : ==</strong> et le <strong>test d'identité : is</strong>.</p>
+<ul>
+<li>Le premier, <strong>a == b</strong> est <font color=green><b>True</b></font> (vrai) si a et b on la même valeur. </li>
+<li>Le second, <strong>a is b</strong> est <font color=green><b>True</b></font> si a et b sont identiques.</li>
+</ul>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;a est égal à b ? -&gt; &quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;a est identique à b ? -&gt; &quot;</span><span class="p">,</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+    a est égal à b ? -&gt;  True
+    a est identique à b ? -&gt;  False</p>
 <h2 id="python-et-le-typage-dynamique">Python et le typage dynamique<a class="headerlink" href="#python-et-le-typage-dynamique" title="Permanent link">⚓︎</a></h2>
 <p>Jusqu'à présent, nous ne nous sommes pas occupés de préciser à Python le type de notre variable.</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
@@ -998,7 +1316,7 @@ Mais comment former ces longs mots ?</p>
 <p>Sans surprise, en Python, nous utiliserons donc le <code>snake_case</code>.</p>
 <h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">⚓︎</a></h2>
 <div class="admonition exo">
-<p class="admonition-title">Exercice  3</p>
+<p class="admonition-title">Exercice  7</p>
 <p>Prédire la valeur affichée après les séquences d'instructions suivantes.</p>
 <p><strong>1.</strong> Séquence 1 :</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
@@ -1028,7 +1346,7 @@ Mais comment former ces longs mots ?</p>
 <div class="ide_classe"><div class="wrapper"><div class="interior_wrapper"><div id="editor_5"></div></div><div id="term_editor_5" class="term_editor"></div></div><button class="emoji" onclick='interpretACE("editor_5","v")'>▶️</button><span style="indent-text:5em"> </span><button class="emoji" onclick='download_file("editor_5","")'>⤵️</button><span style="indent-text:5em"> </span><button class="emoji" onclick="document.getElementById('input_editor_5').click()">⤴️</button>                <input type="file" id="input_editor_5" name="file" enctype="multipart/form-data" class="hide"/></div>
 <p><span id="content_editor_5" class="hide"></span><span id="corr_content_editor_5" class="hide"></span></p>
 <div class="admonition exo">
-<p class="admonition-title">Exercice  4</p>
+<p class="admonition-title">Exercice  8</p>
 <p>Le prix d'une matière première est de 873 euros la tonne au début de l'année. Ce prix subit des variations saisonnières : </p>
 <ul>
 <li>au premier trimestre il augmente de 347 euros,  </li>
@@ -1051,29 +1369,94 @@ Mais comment former ces longs mots ?</p>
 </div>
 <div class="ide_classe"><div class="wrapper"><div class="interior_wrapper"><div id="editor_7"></div></div><div id="term_editor_7" class="term_editor"></div></div><button class="emoji" onclick='interpretACE("editor_7","v")'>▶️</button><span style="indent-text:5em"> </span><button class="emoji" onclick='download_file("editor_7","")'>⤵️</button><span style="indent-text:5em"> </span><button class="emoji" onclick="document.getElementById('input_editor_7').click()">⤴️</button>                <input type="file" id="input_editor_7" name="file" enctype="multipart/form-data" class="hide"/></div>
 <p><span id="content_editor_7" class="hide"></span><span id="corr_content_editor_7" class="hide"></span></p>
+<h2 id="entrees-sorties">Entrées / Sorties<a class="headerlink" href="#entrees-sorties" title="Permanent link">⚓︎</a></h2>
+<p>Un programme effectue des calculs. En général, il traite des informations, et nous renvoie le résultat du traitement.</p>
+<p>Les informations traitées doivent donc être fournies <strong>en entrée</strong>. Les résultat renvoyés <strong>en sortie</strong>.</p>
+<p>Dans ce qui précède, les codes que nous avons écrit <strong>affiche un résultat dans la console</strong>. Mais ils n'avaient rien en entrée. Si on exécute plusieurs fois ces programmes, ils feront à chaque fois exactement la même chose, puisqu'aucune donnée ne change à chaque exécution.</p>
+<p>La grande majorité des programmes ne fonctionnent pas ainsi. En général, un programme lit des informations, les traite, et renvoie le résultat. </p>
+<p>Les informations lues peuvent être saisies au clavier, lues dans un fichier, provenir d'un apparareil photo ou scanner, enregistrées via un dispositif audio etc....</p>
+<p>De même, le résultat peut être un simple affichage à l'écran (texte ou image), ou sur une imprimante, dans un fichier, un son etc...</p>
+<p>Les codes précédents de ce document affichent un résultat (avec la fonction <strong><code>print()</code></strong> qui affiche dans la console). <strong><code>print()</code></strong> peut afficher n'importe quelle variable (int, float, str ou bool) ou texte.</p>
+<p>Pour entrer une information, on peut utiliser la fonction <strong><code>input()</code></strong>. </p>
+<h3 id="entrer-des-donnees-de-type-texte">Entrer des données de type texte<a class="headerlink" href="#entrer-des-donnees-de-type-texte" title="Permanent link">⚓︎</a></h3>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------- entrées -------&quot;</span><span class="p">)</span>
+<span class="n">votre_nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;quel est votre nom ? &quot;</span><span class="p">)</span>
+<span class="n">votre_prenom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;quel est votre prénom ? &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------- sorties -------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour &quot;</span><span class="p">,</span> <span class="n">votre_prenom</span><span class="p">,</span> <span class="n">votre_nom</span><span class="p">,</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bienvenue à Pythonworld !&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">--------</span> <span class="n">entrées</span> <span class="o">-------</span>
+<span class="n">quel</span> <span class="n">est</span> <span class="n">votre</span> <span class="n">nom</span> <span class="err">?</span> <span class="n">Mika</span>
+<span class="n">quel</span> <span class="n">est</span> <span class="n">votre</span> <span class="n">prénom</span> <span class="err">?</span> <span class="n">mm</span>
+<span class="o">--------</span> <span class="n">sorties</span> <span class="o">-------</span>
+<span class="n">Bonjour</span>  <span class="n">mm</span> <span class="n">Mika</span> <span class="p">,</span>
+
+<span class="n">Bienvenue</span> <span class="n">à</span> <span class="n">Pythonworld</span> <span class="err">!</span>
+</code></pre></div>
+<p><strong>La fonction <code>input(message)</code> :</strong></p>
+<p>affiche le message, attend que l'on entre une information, que l'on termine en appuyant sur la touche Entrée, et renvoie cette information. L'instruction :</p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">ma_var</span> <span class="o">=</span> <span class="n">intput</span><span class="p">(</span><span class="s2">&quot;un message :&quot;</span><span class="p">)</span>
+</code></pre></div>
+permet donc d'affecter la donnée entrée à la variable <strong><code>ma_var</code></strong></p>
+<h3 id="entrer-des-donnees-numeriques">Entrer des données numériques<a class="headerlink" href="#entrer-des-donnees-numeriques" title="Permanent link">⚓︎</a></h3>
+<p>La méthode est la même, a ceci près : la fonction <strong><code>input()</code></strong> nous permet de demander d'entrer une valeur et d'affecter la valeur entrée à une variable. <strong>Mais la valeur entrée est toujours de type str</strong>.</p>
+<p>Voyez ce code, et comprenez l'erreur générée à l'exécution :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entre ton age : &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tu as &quot;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s2">&quot;ans.&quot;</span><span class="p">)</span>
+<span class="n">age_2050</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2050</span> <span class="o">-</span> <span class="mi">2022</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;En 2050 tu auras : &quot;</span><span class="p">,</span> <span class="n">age_2050</span><span class="p">,</span> <span class="s2">&quot;ans.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>Entre ton age : 22
+Tu as  22 ans.
+Traceback (most recent call last):
+File &quot;&lt;input&gt;&quot;, line 3, in &lt;module&gt;
+TypeError: can only concatenate str (not &quot;int&quot;) to str
+</code></pre></div>
+<p>🌵 Vous obtenez :</p>
+<p><strong>&nbsp;&nbsp;&nbsp;File "&lt;input>", line 3, in &lt;module&gt;<br></strong>
+<strong>TypeError: can only concatenate str (not "int") to str</strong></p>
+<p>ce qui en français donne : </p>
+<div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>on ne peut concaténer que des str (pas des int) à des str.
+</code></pre></div>
+<p>🤔 Pourtant <strong><code>age + (2050 - 2022)</code></strong> semblait bien être une <strong>addition de deux entiers</strong> non ?</p>
+<p>En fait non, car <code>age</code> est de type <strong>str</strong>.</p>
+<p>💡 Si vous voulez que age soit un entier, il faut <strong>convertir</strong> le résultat de <code>input()</code>. Voici le code précédent, corrigé pour que l'entrée soit convertie en entier :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entre ton age : &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tu as &quot;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s2">&quot;ans.&quot;</span><span class="p">)</span>
+<span class="n">age_2050</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2050</span> <span class="o">-</span> <span class="mi">2022</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;En 2050 tu auras : &quot;</span><span class="p">,</span> <span class="n">age_2050</span><span class="p">,</span> <span class="s2">&quot;ans.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>Entre ton age : 22
+Tu as  22 ans.
+En 2050 tu auras :  50 ans.
+</code></pre></div>
+<p>Dans l'exemple ci-dessous que nous avons étudié où <code>age</code> était de type <code>str</code>: 
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entre ton age : &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tu as &quot;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s2">&quot;ans.&quot;</span><span class="p">)</span>
+<span class="n">age_2050</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2050</span> <span class="o">-</span> <span class="mi">2022</span><span class="p">)</span>
+</code></pre></div></p>
+<p>le code génèrait une erreur. </p>
+<p>🌵 Mais ce ne sera pas forcément le cas.... </p>
+<p>Ou du moins, il y aura surement une erreur, mais le code ne va pas forcément s'arrêter, il affichera des choses  étranges....</p>
+<p>Regardez ce code, comprenez le problème, puis corrigez le code :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entre ton age : &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tu as &quot;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s2">&quot;ans.&quot;</span><span class="p">)</span>
+<span class="n">age_duclos</span> <span class="o">=</span> <span class="n">age</span> <span class="o">*</span> <span class="mi">2</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Monsieur Duclos a deux fois ton age. Il a&quot;</span><span class="p">,</span> <span class="n">age_duclos</span><span class="p">,</span> <span class="s2">&quot;ans.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>Entre ton age : 22
+Tu as  22 ans.
+Monsieur Duclos a deux fois ton age. Il a 2222 ans.
+</code></pre></div>
+<h3 id="que-sest-il-passe">Que s'est-il passé ?<a class="headerlink" href="#que-sest-il-passe" title="Permanent link">⚓︎</a></h3>
+<p>Si <code>age</code>  est de type chaine de caractères, il est possible de faire <code>2 * age</code>. Cela revient en fait à faire <code>age + age</code>.<br />
+On dit qu'on a fait une <strong>concaténation</strong> des chaines de caractères. Cela revient tout simplement à les juxtaposer.  </p>
 <div class="admonition exo">
-<p class="admonition-title">Exercice  5</p>
+<p class="admonition-title">Exercice  9</p>
 <p>La température <span class="arithmatex">\(f\)</span> en degrés  Fahrenheit s'obtient à partir de la température <span class="arithmatex">\(c\)</span> en degrés Celsius par la formule de conversion <span class="arithmatex">\(f=1,8 * c + 32\)</span>. </p>
-<p>On veut écrire un programme qui réponde à la <strong>spécification</strong> suivante : <em>convertir une mesure de température de l'échelle  Celsius vers l'échelle Fahrenheit.</em></p>
-<p><strong>1.</strong> Saisir  le code ci-dessous  :</p>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">f</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Température en degrés Celsius ? &quot;</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">8</span> <span class="o">*</span> <span class="n">f</span> <span class="o">+</span> <span class="mi">32</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La température en degrés Fahrenheit est de &quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
-</code></pre></div>
-<p><strong>2.</strong> Exécuter le code, on doit obtenir un message d'erreur indiquant une erreur de Syntaxe. Un curseur indique dans le code la position où l'interpréteur Python s'est interrompu dans la lecture du code. Si le curseur est en début de ligne, il faut souvent chercher l'erreur à la fin de la ligne précédente ...</p>
-<p>Corriger l'erreur de syntaxe.</p>
-<p><strong>3.</strong> Exécuter de nouveau le code, on doit obtenir un message d'erreur indiquant que Python ne peut réaliser l'opération demandée. On dit que l'interpréteur Python a levé une <a href="https://docs.python.org/3.5/tutorial/errors.html">exception</a>.</p>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="ne">TypeError</span><span class="p">:</span> <span class="n">can</span> <span class="n">only</span> <span class="n">concatenate</span> <span class="nb">str</span> <span class="p">(</span><span class="ow">not</span> <span class="s2">&quot;int&quot;</span><span class="p">)</span> <span class="n">to</span> <span class="nb">str</span>
-</code></pre></div>
-<p><strong>4.</strong> Insérer l'instruction <code>print(type(f))</code> en ligne 2, exécuter de nouveau. Que représente la valeur affichée avant le message d'erreur ?</p>
-<p><strong>5.</strong> Remplacer la première instruction par <code>float(input("Température en degrés Celsius ? "))</code> puis exécuter. </p>
-<p>Quel est l'effet de la fonction <code>float</code> ? Afficher sa documentation dans l'interpréteur avec l'instruction <code>help(float)</code>. </p>
-<p><strong>6.</strong> Si on teste le programme pour une température de 45 degrés Celsisus on doit obtenir l'affichage ci-dessous. </p>
-<p>Est-ce que la spécification du programme est vérifiée ? Corriger le programme.</p>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">Température</span> <span class="n">en</span> <span class="n">degrés</span> <span class="n">Celsius</span> <span class="err">?</span> <span class="mi">45</span>
-<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">float</span><span class="s1">&#39;&gt;</span>
-<span class="n">La</span> <span class="n">température</span> <span class="n">en</span> <span class="n">degrés</span> <span class="n">Fahrenheit</span> <span class="n">est</span> <span class="n">de</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">392.0</span><span class="p">)</span>
-</code></pre></div>
+<p>Ecrire un programme qui réponde à la <strong>spécification</strong> suivante : <em>convertir une mesure de température de l'échelle  Celsius vers l'échelle Fahrenheit.</em></p>
 </div>
 <div class="ide_classe"><div class="wrapper"><div class="interior_wrapper"><div id="editor_9"></div></div><div id="term_editor_9" class="term_editor"></div></div><button class="emoji" onclick='interpretACE("editor_9","v")'>▶️</button><span style="indent-text:5em"> </span><button class="emoji" onclick='download_file("editor_9","")'>⤵️</button><span style="indent-text:5em"> </span><button class="emoji" onclick="document.getElementById('input_editor_9').click()">⤴️</button>                <input type="file" id="input_editor_9" name="file" enctype="multipart/form-data" class="hide"/></div>
 <p><span id="content_editor_9" class="hide"></span><span id="corr_content_editor_9" class="hide"></span></p>
