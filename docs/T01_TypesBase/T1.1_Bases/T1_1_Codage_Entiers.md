@@ -24,12 +24,53 @@ Thème 1 - Représentation des données - Types et valeurs de bases
 </table>
 <br>
 
+{{ initexo(0) }}
 
 !!! progNSI "Programme 1ère"
     |Contenus|Capacités attendues|Commentaires|
     |:---:|:---:|:---:|
     |Ecriture d'un entier positif dans une base $b \geq 2$| Passer de la représentation d'une base à l'autre|Les bases 2, 10 et 16 sont privilégiées|
 
+## Activité : Compter avec des 0 et des 1
+
+C'est décidé : nous allons changer de monnaie ! Fini les euros nous comptons désormais en Bin dont le symbole est $\mathbb(B)$. De tous nouveaux billets de banque ont été émis, vous en voyez la liste i-dessous :
+
+![](data/1.png){width=35%}![](data/2.png){width=35%}
+![](data/4.png){width=35%}![](data/8.png){width=35%}
+![](data/16.png){width=35%}![](data/32.png){width=35%}
+![](data/64.png){width=35%}![](data/128.png){width=35%}
+
+
+!!! exo "{{ exercice() }}"
+        On suppose qu'on ne dispose que d'un seul exemplaire de chaque billet.  
+
+        1. Peut-on réunir exactement le somme de 73 B ? Comment ?  
+        2. Même question pour 155 B.  
+        3. Même question pour 218 B.  
+
+!!! exo "{{ exercice() }}"
+        Pour simpliflier l'écriture d'une somme contenant au maximum un seul de ces billets, on propose d'utiliser le tableau suivant.  
+        Dans la colonne du billet on indique 1 si le billet est utilisé et 0 sinon.  
+        Recopier et compléter le tableau ci-dessous.  
+
+|  | 1B       | 2B    | 4B | 8B   | 16B   | 32B | 64B   | 128B |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|148| | | | | | | | |
+|42| | | | | | | | |
+|237| | | | | | | | |
+|219| | | | | | | | |
+|   | 0| 0| 0| 0| 0| 1| 1| 1|
+|   | 1| 0| 1| 0| 0| 1| 0| 0|
+|   | 0| 1| 1| 1| 0| 0| 0| 1|
+|   | 1| 0| 1| 1| 0| 1| 0| 0|
+
+
+!!! exo "{{ exercice() }}"  
+    1. Quelle somme maximale peut-on réunir en utilisant au maximum un seul de Ces billets ?  
+    2. Peut-on réunir n'importe quelle somme (jusqu'à la somme maximale) ? Expliquer.  
+    3. Les valeurs de Ces billets n'ont pas été Choisies au hasard, à votre avis quel doit être le montant du billet suivant ? Pourquoi ?  
+    4. Dans le tableau Ci-dessus, que peut-on dire des nombres pour lesquels le billet 1 $\mathbb(B)$ n'est pas utilisé ?  
+    5. Proposer une méthode pour trouver les billets à utiliser pour une somme donnée.
 
 
 ## Écriture d'un entier dans une base
@@ -46,9 +87,6 @@ Pas très pratique... Heureusement, il en eut rapidemennt une autre, beaucoup pl
 
 ![](data/entailles_paquets.png){: .center width=50%} 
 
-
-
-![](data/homer2.png){align=right width=25%} 
 
 Des paquets de 5 et surtout de 10. Pourquoi 10 ? 
 
@@ -68,49 +106,6 @@ Au final, si on écrit le nombre 2022 on sait que c'est:
 Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0$
 
 > La position de chaque chiffre dans l'écriture du nombre correspond à la puissance de 10 par laquelle on le multiplie.
-
-!!! note inline end "Homer compte"
-    |Octal|Décimal
-    |:-:|:-:|
-    |0|0|
-    |1|1|
-    |2|2| 
-    |3|3|
-    |4|4|
-    |5|5|
-    |6|6|
-    |7|7|
-    |10|8|
-    |11|9|
-    |12|10|
-    |13|11|
-    |14|12|
-    |15|13|
-    |16|14|
-    |17|15|
-    |20|16|
-    |21|17|
-    |...|...|
-
-
-!!! info "Un autre exemple, la base octale"
-    Pour Homer Simpson, qui n'a que 8 doigts, il aurait été certainement plus naturel de faire des paquets de 8... et donc de manipuler seulement 8 chiffres : 0, 1, 2, 3, 4, 5, 6 et 7.
-    
-    C'est le **système octal**.
-
-    Ainsi, «son» 10 signifierait 1 paquet de 8 et 0 unité, soit «notre» 8...
-    Et donc notre 10 (en décimal) s'écrirait 12 (en octal).
-
-    Enfin, 2022 (en décimal) s'écrit 3746 en octal puisque : 
-    
-    $$\begin{array}{rl}
-        3746_8 &= 3\times 8^3+7\times 8^2+4\times 8^1+5\times 8^0 \\
-        &= 8\times 512+7\times 64+4\times 8+6\times 1  \\
-        &= 1536+448+32+6\\
-        &= 2022
-        \end{array}
-        $$
-
 
 
 ### Notion de base
@@ -165,22 +160,22 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 
 
 
-!!! info "Conversions"
-    === "Binaire → Décimal"
+!!! info "Binaire → Décimal"
         Il est utile de connaître alors les puissances de 2 pour convertir rapidement de l'écriture binaire vers l'écriture décimale.
 
         ![](data/puissances2.png){: .center width=50%} 
 
         Par exemple $10110101_2=128+32+16+4+1=181$.
     
-    === "Décimal → Binaire Méthode 1"
+!!! info "Décimal → Binaire Méthode 1"
+        
         - On peut utiliser l'algorithme de soustraction: on soustrait du nombre la plus grande puissance de 2 possible, et on recommence...
 
         - On utilise l'algorithme de divisions: on effectue les divisions successives du nombre par 2. L'écriture en binaire est donnée par les restes lus de bas en haut.
 
         ![](data/divisions.png){: .center} 
 
-    === "Décimal → Binaire Méthode 2"
+!!! info "Décimal → Binaire Méthode 2"
         - On peut utiliser un tableau.  Par exemple pour 217  
 
         |$2^7$  |$2^6$  |$2^5$  |$2^4$  |$2^3$  |$2^2$  |$2^1$  |$2^0$  |
@@ -190,7 +185,7 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
         |217-128=89 |89-64=25   |25   |25-16=9   |9-8=1    |1    |1    | 1-1=0   |
 
 
-    === "Décimal →  Base quelconque"
+!!! info "Décimal →  Base quelconque"
         Les deux algorithmes de soustraction et de divisions fonctionnent également pour la conversion du décimal vers n'importe quelle autre base.
 
 
@@ -217,15 +212,12 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 
     Par exemple, la couleur rouge ci-contre a pour composantes (178, 26, 15), ce qui donne en hexadécimal : (B2, 1A, 0F), qu'on écrit en général de façon *concaténée* B21A0F et souvent précédée d'un #.
 
-??? tip "Convertisseur"
-    Un [convertisseur](http://www.proftnj.com/RGB3.htm){:target="_blank"}  bien utile.
-
 
 ### Exercices
 
 #### À la main
 
-!!! example "{{ exercice() }}"
+!!! exo "{{ exercice() }}"
     Convertir de la base mentionnée vers la base 10 (système décimal).
 
     **Attention, il y a un piège...**
@@ -236,13 +228,13 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
     4. $716_4$  
     5. $321_4$  
     
-!!! example "{{ exercice() }}"
+!!! exo "{{ exercice() }}"
     Convertir les écritures décimales vers la base mentionnée.
     
     1. 47 en base 5  
     2. 92 en base 4  
 
-!!! example "{{ exercice() }}"
+!!! exo "{{ exercice() }}"
     Convertir du binaire vers le décimal.
 
     1. 1010  
@@ -251,7 +243,7 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
     4. 11111111  
     5. 101011001  
 
-!!! example "{{ exercice() }}"
+!!! exo "{{ exercice() }}"
     Convertir du décimal vers le binaire.
 
     1. 17  
@@ -262,7 +254,7 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 
     Que remarquez-vous quand on passe de l'écriture binaire d'un nombre à celle de son double?
 
-!!! example "{{ exercice() }}"
+!!! exo "{{ exercice() }}"
     
     **1.** Vérifier la conversion de la couleur rouge donnée en exemple à la section précédente.
 
@@ -271,17 +263,17 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
         3. Comment s'écrit la couleur blanche en code hexadécimal?
 
 
-!!! example "{{ exercice() }}"
+!!! exo "{{ exercice() }}"
         Convertir les écritures décimales en hexadécimal.
 
         1. 45
         2. 72
         3. 421
 
-!!! example "{{ exercice() }}"
+!!! exo "{{ exercice() }}"
     C’est en 11110010000 qu’a été démontré le théorème fondamental de l’informatique. Exprimer ce nombre en base dix
 
-!!! example "{{ exercice() }}"
+!!! exo "{{ exercice() }}"
     Convertir les nombres suivants en base 10 :  
     
     1. $(1B7)_{16}$  
@@ -289,7 +281,7 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
     3. $(A320_{16}$  
 
 
-!!! example "{{ exercice() }}"
+!!! exo "{{ exercice() }}"
 	=== "Conversion Binaire → Hexadécimal"
 		- On regroupe les bits par paquets de 4 (quitte à ajouter des 0 pour compléter).
 		- On convertit chaque paquet en chiffre hexadécimal.
@@ -306,7 +298,7 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 		2. Convertir $8\text{D}_{16}$ puis $1\text{CA}7_{16}$ en binaire.
 	
 
-!!! example "{{ exercice() }}"  
+!!! exo "{{ exercice() }}"  
     === "Conversion Binaire → Hexadécimal"
         Convertir les nombres binaires suivants en hexadécimal  
 
@@ -345,7 +337,7 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 	>>>
 	```
 
-!!! example "{{ exercice() }}"
+!!! exo "{{ exercice() }}"
 	Utilisez ces fonctions pour vérifier vos résultats des exercices précédents.
 
     {{ terminal() }}

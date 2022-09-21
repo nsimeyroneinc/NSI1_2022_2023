@@ -16,8 +16,8 @@ docs_dir: docs
 nav: 
     - Accueil : index.md
 
-    #- T1 Types et valeurs de base :
-    #  - Codages des entiers positifs: T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers.md
+    - T1 Types et valeurs de base :
+      - Codages des entiers positifs: T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers.md
     #  - Codages des entiers relatifs: T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md
 
     
@@ -39,8 +39,8 @@ nav:
       - TP 01 - Les Variables en Python : T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python.md
       - TP 02 - Les Fonctions en Python : T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python.md
       - TP 03 - Les boucles (1) en Python : T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python.md
-      - TP 04 - Les boucles (2) en Python : T06_Python/T6.1_Python/T6_1_4_Boucle_WHILE_en_Python.md
-      - TP 05 - Les Conditions en Python : T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles_en_Python.md
+      #- TP 04 - Les boucles (2) en Python : T06_Python/T6.1_Python/T6_1_4_Boucle_WHILE_en_Python.md
+      #- TP 05 - Les Conditions en Python : T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles_en_Python.md
  
     #- T7 Algo. :  
 
