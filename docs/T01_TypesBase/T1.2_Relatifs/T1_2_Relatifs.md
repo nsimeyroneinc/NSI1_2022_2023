@@ -1,5 +1,5 @@
 ---
-title : Codage des entiers positifs en base b
+title : Codage des entiers relatifs en base b
 subtitle: Thème 1 - Représentation de données - Types et valeurs de bases
 author : Première NSI
 numbersections: true
@@ -19,7 +19,7 @@ Thème 1 - Représentation des données - Types et valeurs de bases
 <table  class="greenTable">
         <tr >
             <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
-            06
+            07
             </th>
             <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Ecriture d'un entier relatifs en binaire</th>
         </tr>
@@ -27,24 +27,24 @@ Thème 1 - Représentation des données - Types et valeurs de bases
 <br>
 
 
-!!! progNSI "Programme Terminale"
+!!! progNSI "Programme 1ere"
     |Contenus|Capacités attendues|Commentaires|
     |:---:|:---:|:---:|
     |Représentation binaire d’un entier relatif|Évaluer le nombre de bits nécessaires à l’écriture en base 2 d’un entier, de la somme ou du produit de deux nombres entiers. Utiliser le complément à 2. |Il s’agit de décrire les tailles courantes des entiers (8, 16, 32 ou 64 bits). Il est possible d’évoquer la représentation des entiers de taille arbitraire de Python. |
 
 
-!!! abstract ":warning: Attention :warning:"
+!!! abstract "&#x26A0;    Attention &#x26A0;   "
     La manière dont les nombres (entiers, non-entiers, positifs, négatifs...) sont traités par un langage de programmation est **spécifique** à ce langage.
 
     Dans toute la suite de ce cours, pour simplifier, nous considérerons que les nombres sont codés sur **1 octet** seulement. Ce qui ne correspond pas à la réalité, mais permet de comprendre les notions essentielles.
 
-## 1. Les nombres entiers en binaire non signé
+## Les nombres entiers en binaire non signé
  L'expression "non signé" signifie que la contrainte du signe n'existe pas : tous les nombres sont considérés comme étant positifs.
  
  Au chapitre T1.1, nous avons vu comment représenter un nombre entier **positif** en notation binaire.
 
-Sur un octet, le nombre minimal qu'on puisse coder est `00000000`. C'est l'entier naturel 0.  
-Le nombre maximal qu'on puisse coder est `11111111`. C'est l'entier naturel 255.
+Sur un octet, le nombre minimal qu'on puisse coder est `00000000` soit l'entier naturel 0.  
+Le nombre maximal qu'on puisse coder est `11111111` soit l'entier naturel 255.
 
 !!! exo "{{ exercice() }}"
     === "Énoncé"
@@ -52,9 +52,10 @@ Le nombre maximal qu'on puisse coder est `11111111`. C'est l'entier naturel 255.
         2. ... sur 32 bits ?
         3. ... $n$ bits ?
     === "Correction"
-        1. $N=1+2+2^2+2^3+\dots+2^{15}= 65535$
-        2. $N=1+2+2^2+2^3+\dots+2^{31}= 4294967295$
-        3. Pour tout $n \in \mathbb{N}$, $1+2+2^2+2^3+\dots+2^{n}=2^{n+1}-1$ (formule de la somme des termes d'une suite géométrique de raison 2).
+        1. Le plus grand entier non signé sut 16 bits est :  
+        $1111 1111 1111 1111$ soit $N=1+2+2^2+2^3+\dots+2^{15}= 2^{16}-1=65535$  (Voir cours de spécialité maths en première)  
+        2. $N=1+2+2^2+2^3+\dots+2^{31}= 2^{31}-1=4294967295$
+        3. Pour tout $n \in \mathbb{N}$, $1+2+2^2+2^3+\dots+2^{n-1}=2^{n}-1$ (formule de la somme des termes d'une suite géométrique de raison 2).
 
 
 !!! note "Python et les entiers :heart:"
@@ -79,14 +80,15 @@ Comment différencier les nombres positifs des nombres négatifs ?
 L'idée naturelle est de réserver 1 bit pour le signe de l'entier (+ ou -).
 
 !!! savoir "Signe d'un entier relatif"
-    On choisit de représenter le signe d'un nombre entier relatif:
+    Par exemple, on peut décréter que le premier bit (appelé bit de poids fort) sera le bit de signe :  
 
-    - par un `0` pour le + : ainsi la représentation des entiers positifs est **inchangée**;
-    - par un `1` pour le -.
+    - par un `0` pour le $+$ : ainsi la représentation des entiers positifs est **inchangée**;
+    - par un `1` pour le $-$.
 
-**Mais où placer ce bit de signe?**
+**Problème : Taille en bits d'un entier**
 
-En effet, 6 se coderait alors en `0110` et -6 en `1110`? Mais `1110` représente l'entier 14 !
+6 se coderait alors en `0110` et -6 en `1110` sur 4 bits. Mais sur 8 bits `1110` représente l'entier 14 ! (on complète `0000 1110`).  
+Dans ce cas `0000 0110` et -6 en `1000 0110` sur 8 bits
 
 Pour lever cette ambiguité, il faut décider :
 
@@ -101,18 +103,18 @@ Pour lever cette ambiguité, il faut décider :
 
     Le bit de poids fort représente donc le signe et les `n-1` bits suivants la **valeur absolue** du nombre.
 
-Sur 8 bits par exemple, l'entier 6 est codé par `0|000 0110`. Et on serait tenté de coder son opposé -6 par `1|000 0110`, n'est-ce pas?
+Donc sur 8 bits, l'entier 6 est codé par `0|000 0110`. Et on serait tenté de coder son opposé -6 par `1|000 0110`, n'est-ce pas?
 
-**Problèmes :**
+!!! danger "Problèmes :"
 
-Au moins deux (gros) inconvénients à cette méthode:
+    Au moins deux (gros) inconvénients à cette méthode:
 
-- Le nombre 0 serait codé par `0|000 0000` **et** par `1|000 0000`. Deux représentations pour un même nombre, ça ne sent pas bon.
-- Plus grave : l'addition telle qu'on la connaît ne fonctionnerait plus. Posez par exemple 6 + (-6) ...
+    - Le nombre 0 serait codé par `0|000 0000` **et** par `1|000 0000`. Deux représentations pour un même nombre, ça ne sent pas bon.
+    - Plus grave : l'addition telle qu'on la connaît ne fonctionnerait plus. Posez par exemple 6 + (-6) ...
 
-{{ addition('00000110','10000110') }}
+    {{ addition('00000110','10000110') }}
 
-On n'obtient pas 0 mais $-12$.
+    On n'obtient pas 0 mais $-12$.
 
 !!! savoir "Moralité :"
     Indiquer le signe d'un nombre par son premier bit est une fausse bonne idée, il faut trouver autre chose.
@@ -129,6 +131,8 @@ On n'obtient pas 0 mais $-12$.
     
     {{ additionatrou('00000110','????????','00000000') }}
 
+!!! exo "{{ exercice() }}"
+    A vous de déterminer ce nombre.
 
 L'idée naturelle est de commencer par la droite, en essayant de «fabriquer du zéro» en choisissant le bon bit à ajouter :
 
@@ -152,7 +156,7 @@ Il ne reste donc plus qu'à ajouter `1` à ce nombre `11111010` pour obtenir le 
 
 
 
-### Conclusion : écriture l'opposé d'un nombre positif
+### Conclusion : écriture de l'opposé d'un nombre positif
 
 !!! savoir "Pour obtenir le complément à 2 d'un entier négatif:heart:"
         
@@ -180,7 +184,48 @@ Il ne reste donc plus qu'à ajouter `1` à ce nombre `11111010` pour obtenir le 
 !!! exo "{{ exercice() }}"
     Donner l'écriture binaire sur un octet du nombre $-17$.
 
+### Bilan : Complément à 2 :
 
+
+On adopte donc une autre méthode, qui consiste à représenter un entier relatif par un entier naturel.
+
+**En binaire non signé :** sur 8 bits, on peut représenter tous les entiers positifs de 0 à 255.
+Ceux qui ont un bit de poids fort égal à `0` correspondent aux entiers de 0 à 127 et ceux qui ont un bit de poids fort égal à `1` correspondent aux nombres de 128 à 255.
+
+**En binaire signé :** toujours sur 8 bits, les nombres de 0 à 127 conservent la même représentation (positifs, car avec `0` en bit de poids fort). En revanche, les écritures binaires avec un `1` en bit de poids fort représentent les entiers négatifs de -128 à -1.
+
+Ainsi sur 8 bits, on représente à nouveau 255 valeurs : de -128 à +127, c'est-à-dire de $-2^7$ à $2^7 -1$. Et puisque le bit de poids fort est réservé au signe, il est logique que la valeur absolue soit inférieure à 128 puisqu'on ne dispose plus que de 7 bits...
+
+![](data/Entiers_signes.png){: .center} 
+
+On représente donc l'entier $-1$ par `11111111` en binaire sur 8 bits. C'est sa notation en **complément à 2** (ou plutôt $2^n$).
+
+!!! abstract "Écrire la représentation binaire d'un entier négatif"
+    === "Complément à 2"
+        Pour obtenir le complément à 2 d'un entier négatif:
+
+        - on code sa valeur absolue en binaire;
+        - on inverse tous les bits (on remplace les `0` par des `1` et les `1` par des `0`);
+        - on ajoute 1.
+
+        Par exemple:
+        
+        - $-6$ s'écrit `11111010` sur 8 bits:    $6_{10} = 0000 0110_2  \rightarrow 1111 1001_2 \rightarrow 1111 1010_2$.
+        - $-42$ s'écrit `11010110` sur 8 bits:    $42_{10} = 0010 1010_2  \rightarrow 1101 0101_2 \rightarrow 1101 0110_2$.
+
+    === "Par décalage"
+        La représentation binaire d'un entier $x$  négatif sur $n$ bits est celle de l'entier naturel (non signé) $x + 2^n$. 
+
+        Par exemple pour $x=-42$, on représente $-42+256=214$ en binaire non signé, c'est-à-dire `11010110`.
+
+!!! warning "Dépassement de capacité"
+    On ne peut coder qu'un nombre fini d'entiers selon la valeur de $n$:  entre $-2^{n-1}$ et $2^{n-1}-1$.
+
+    Tout calcul sur des entiers dont le résultat ne fait pas partie de cet intervalle donnera un résultat faux: il sera tronqué sur $n$ bits! On parle de [dépassement de capacité](https://fr.wikipedia.org/wiki/D%C3%A9passement_d%27entier){:target="_blank"}    , *overflow* en anglais.
+
+    En Python, tous les entiers sont signés. Contrairement à certains langages de programmation, le type *entier non signé* n'existe pas nativement. Par défaut les entiers sont codés sur 64 bits (ou 32 bits sur les machines 32 bits), ce qui laisse un peu de marge.
+
+   
 
 
 ### Travail inverse : passage du binaire signé au nombre relatif
@@ -195,19 +240,24 @@ Considérons le nombre `11101101`, codé en binaire signé. À quel nombre relat
 
 !!! exo "{{ exercice() }}"
     === "Énoncé"
-        1. En binaire signé, à quel nombre correspond `11110001`?
-        2. En binaire signé, quel est le plus grand nombre que l'on puisse écrire sur un octet ? 
-        3. Quel est le plus petit nombre ?
-        4. Au total, combien de nombres différents peuvent être écrits en binaire signé ?
+        En binaire signé, à quel nombre correspond `11110001`?
+
 
     === "Correction"
-        1. `11110001` - `1` = `11110000`. En prenant le complément à 2, on trouve `00001111`, qui vaut 15. Le nombre `11110001` représente donc $-15$.
-        2. Le plus grand nombre est `01111111`, soit $+127$.
-        3. Le plus petit nombre est `10000000`. `10000000` - `1` = `01111111`. Le complément est `10000000`, qui est égal à 128. Donc le nombre minimal est $-128$.
-        4. Il y a 128 nombres négatifs (de $-128$ à $-1$), le nombre 0, puis 127 nombres positifs (de 1 à 127). Il y a donc 256 nombres au total, comme en binaire non signé. 
+        `11110001` - `1` = `11110000`. En prenant le complément à 2, on trouve `00001111`, qui vaut 15. Le nombre `11110001` représente donc $-15$.
 
 
 
+!!! exo "{{ exercice() }}"
+    === "Énoncé"
+        1. En binaire signé, quel est le plus grand nombre que l'on puisse écrire sur 16 bits ? 
+        2. Quel est le plus petit nombre que l'on puisse écrire sur 16 bits ?
+        3. Au total, combien de nombres différents peuvent être écrits en binaire signé sur 16 bits?
+
+    === "Correction"
+        1. Le plus grand nombre est `0111 1111 1111 1111`, soit $+32 767$.
+        2. Le plus petit nombre est `1000 0000 0000 0000`. `1000 0000 0000 0000` - `1` = `0111 1111 1111 1111`. Donc le nombre minimal est $-32768$.
+        3. Il y a 32768 nombres négatifs (de $-32768$ à $-1$), le nombre 0, puis 326767 nombres positifs (de 1 à 32767). Il y a donc  65536 nombres au total, comme en binaire non signé. 
 
 ## Le codage des entiers, une source intarissable d'erreurs...
 
@@ -224,6 +274,31 @@ Ariane 5 a alors brusquement pivoté avant d'exploser.
 
 Cette catastrophe (150 millions d'euros et des années de travail perdus) a fait prendre conscience à la communauté scientifique de l'importance de faire des tests logiciels toujours plus poussés : ce n'est pas parce qu'un code marche dans un environnement donné qu'il marchera de la même manière dans d'autres conditions...
 
+!!! example "Illustration en Python"
+    En Python, tous les entiers sont signés. Contrairement à certains langages de programmation, le type *entier non signé* n'existe pas nativement. Par défaut les entiers sont codés sur 64 bits (ou 32 bits sur les machines 32 bits), ce qui laisse un peu de marge.
+
+    ```python linenums='1'
+    import numpy
+    un = numpy.int8(1)
+    vie = numpy.int8(42)
+    ```
+
+    À l'aide du module `numpy`, effectuer en console les calculs suivants:
+
+    1. 127 + 1
+    2. 127 + 2
+    3. 127 + 127 
+
+    Par exemple pour le premier calcul :  
+
+    ```python 
+    >>> import numpy
+    >>> numpy.int8(127) + numpy.int8(1)
+    ```
+
+{{ terminal() }}
+
+
 ### Le bug de l'année 2038
 
 ![image](data/2038.gif){: .center}
@@ -235,11 +310,11 @@ Lorsqu'on demande à Python l'heure qu'il est, par la fonction ```time()``` du m
 ```python
 >>> import time
 >>> time.time()
-1653855138.398177
+1664110696.4503427
 ```
 
 Il nous renvoie le nombre de secondes écoulées depuis le 1er janvier 1970 à 00h00. On appelle cela l'heure POSIX ou [l'heure UNIX](https://fr.wikipedia.org/wiki/Heure_Unix){. target="_blank"}.
-Au 29 mai 2022, il s'en donc écoulé environ 1,6 milliards.
+Au 25 septembre 2022, il s'en donc écoulé environ 1,6 milliards.
 
 Dans beaucoup de systèmes informatiques, ce nombre de secondes est codé par **un entier signé sur 32 bits**.
 Le nombre maximum de secondes qui peut être représenté est donc ```01111111 11111111 11111111 11111111``` 
@@ -255,7 +330,9 @@ Ce nombre représente un peu plus de 2 milliards de secondes... En les comptant 
 
 Vous pourrez lire sur la page Wikipedia citée plus haut plus d'informations sur ce problème.
 
-    
+!!! exo "{{ exercice() }}"
+    Reprendre le calcul et le raisonnement sur un code en 64 bits.
+
 ## Exercices
 
 
@@ -265,7 +342,7 @@ Vous pourrez lire sur la page Wikipedia citée plus haut plus d'informations sur
         Quel est l'intervalle de nombres entiers relatifs qu'on peut représenter:
 
         1. Sur 4 bits?
-        2. Sur 16 bits?
+        2. Sur 32 bits?
         3. Sur 64 bits?
     === "Solution" 
         {{ correction(True, 

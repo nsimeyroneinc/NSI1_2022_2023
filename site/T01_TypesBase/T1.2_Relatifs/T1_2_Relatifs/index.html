@@ -17,7 +17,7 @@
     
     
       
-        <title>Codage des entiers positifs en base b - Site NSI 1ére</title>
+        <title>Codage des entiers relatifs en base b - Site NSI 1ére</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Codage des entiers positifs en base b
+              Codage des entiers relatifs en base b
             
           </span>
         </div>
@@ -312,6 +312,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2">
@@ -334,6 +338,34 @@
     <li class="md-nav__item">
       <a href="../../T1.1_Bases/T1_1_Codage_Entiers/" class="md-nav__link">
         Codages des entiers positifs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T1.1_Bases/T1_Perseverance/" class="md-nav__link">
+        Perseverance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T1_2_Relatifs_eleve/" class="md-nav__link">
+        Codages des entiers relatifs
       </a>
     </li>
   
@@ -541,8 +573,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-les-nombres-entiers-en-binaire-non-signe" class="md-nav__link">
-    1. Les nombres entiers en binaire non signé
+  <a href="#les-nombres-entiers-en-binaire-non-signe" class="md-nav__link">
+    Les nombres entiers en binaire non signé
   </a>
   
 </li>
@@ -583,8 +615,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#conclusion-ecriture-loppose-dun-nombre-positif" class="md-nav__link">
-    Conclusion : écriture l'opposé d'un nombre positif
+  <a href="#conclusion-ecriture-de-loppose-dun-nombre-positif" class="md-nav__link">
+    Conclusion : écriture de l'opposé d'un nombre positif
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bilan-complement-a-2" class="md-nav__link">
+    Bilan : Complément à 2 :
   </a>
   
 </li>
@@ -654,14 +693,14 @@
 <table  class="greenTable">
         <tr >
             <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
-            06
+            07
             </th>
             <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Ecriture d'un entier relatifs en binaire</th>
         </tr>
 </table>
 <p><br></p>
 <div class="admonition prognsi">
-<p class="admonition-title">Programme Terminale</p>
+<p class="admonition-title">Programme 1ere</p>
 <table>
 <thead>
 <tr>
@@ -680,15 +719,15 @@
 </table>
 </div>
 <div class="admonition abstract">
-<p class="admonition-title"><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> Attention <img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /></p>
+<p class="admonition-title">&#x26A0;    Attention &#x26A0;   </p>
 <p>La manière dont les nombres (entiers, non-entiers, positifs, négatifs...) sont traités par un langage de programmation est <strong>spécifique</strong> à ce langage.</p>
 <p>Dans toute la suite de ce cours, pour simplifier, nous considérerons que les nombres sont codés sur <strong>1 octet</strong> seulement. Ce qui ne correspond pas à la réalité, mais permet de comprendre les notions essentielles.</p>
 </div>
-<h2 id="1-les-nombres-entiers-en-binaire-non-signe">1. Les nombres entiers en binaire non signé<a class="headerlink" href="#1-les-nombres-entiers-en-binaire-non-signe" title="Permanent link">⚓︎</a></h2>
+<h2 id="les-nombres-entiers-en-binaire-non-signe">Les nombres entiers en binaire non signé<a class="headerlink" href="#les-nombres-entiers-en-binaire-non-signe" title="Permanent link">⚓︎</a></h2>
 <p>L'expression "non signé" signifie que la contrainte du signe n'existe pas : tous les nombres sont considérés comme étant positifs.</p>
 <p>Au chapitre T1.1, nous avons vu comment représenter un nombre entier <strong>positif</strong> en notation binaire.</p>
-<p>Sur un octet, le nombre minimal qu'on puisse coder est <code>00000000</code>. C'est l'entier naturel 0.<br />
-Le nombre maximal qu'on puisse coder est <code>11111111</code>. C'est l'entier naturel 255.</p>
+<p>Sur un octet, le nombre minimal qu'on puisse coder est <code>00000000</code> soit l'entier naturel 0.<br />
+Le nombre maximal qu'on puisse coder est <code>11111111</code> soit l'entier naturel 255.</p>
 <div class="admonition exo">
 <p class="admonition-title">Exercice  1</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Énoncé</label><label for="__tabbed_1_2">Correction</label></div>
@@ -702,9 +741,10 @@ Le nombre maximal qu'on puisse coder est <code>11111111</code>. C'est l'entier n
 </div>
 <div class="tabbed-block">
 <ol>
-<li><span class="arithmatex">\(N=1+2+2^2+2^3+\dots+2^{15}= 65535\)</span></li>
-<li><span class="arithmatex">\(N=1+2+2^2+2^3+\dots+2^{31}= 4294967295\)</span></li>
-<li>Pour tout <span class="arithmatex">\(n \in \mathbb{N}\)</span>, <span class="arithmatex">\(1+2+2^2+2^3+\dots+2^{n}=2^{n+1}-1\)</span> (formule de la somme des termes d'une suite géométrique de raison 2).</li>
+<li>Le plus grand entier non signé sut 16 bits est :<br />
+<span class="arithmatex">\(1111 1111 1111 1111\)</span> soit <span class="arithmatex">\(N=1+2+2^2+2^3+\dots+2^{15}= 2^{16}-1=65535\)</span>  (Voir cours de spécialité maths en première)  </li>
+<li><span class="arithmatex">\(N=1+2+2^2+2^3+\dots+2^{31}= 2^{31}-1=4294967295\)</span></li>
+<li>Pour tout <span class="arithmatex">\(n \in \mathbb{N}\)</span>, <span class="arithmatex">\(1+2+2^2+2^3+\dots+2^{n-1}=2^{n}-1\)</span> (formule de la somme des termes d'une suite géométrique de raison 2).</li>
 </ol>
 </div>
 </div>
@@ -734,14 +774,15 @@ Le nombre maximal qu'on puisse coder est <code>11111111</code>. C'est l'entier n
 <p>L'idée naturelle est de réserver 1 bit pour le signe de l'entier (+ ou -).</p>
 <div class="admonition savoir">
 <p class="admonition-title">Signe d'un entier relatif</p>
-<p>On choisit de représenter le signe d'un nombre entier relatif:</p>
+<p>Par exemple, on peut décréter que le premier bit (appelé bit de poids fort) sera le bit de signe :  </p>
 <ul>
-<li>par un <code>0</code> pour le + : ainsi la représentation des entiers positifs est <strong>inchangée</strong>;</li>
-<li>par un <code>1</code> pour le -.</li>
+<li>par un <code>0</code> pour le <span class="arithmatex">\(+\)</span> : ainsi la représentation des entiers positifs est <strong>inchangée</strong>;</li>
+<li>par un <code>1</code> pour le <span class="arithmatex">\(-\)</span>.</li>
 </ul>
 </div>
-<p><strong>Mais où placer ce bit de signe?</strong></p>
-<p>En effet, 6 se coderait alors en <code>0110</code> et -6 en <code>1110</code>? Mais <code>1110</code> représente l'entier 14 !</p>
+<p><strong>Problème : Taille en bits d'un entier</strong></p>
+<p>6 se coderait alors en <code>0110</code> et -6 en <code>1110</code> sur 4 bits. Mais sur 8 bits <code>1110</code> représente l'entier 14 ! (on complète <code>0000 1110</code>).<br />
+Dans ce cas <code>0000 0110</code> et -6 en <code>1000 0110</code> sur 8 bits</p>
 <p>Pour lever cette ambiguité, il faut décider :</p>
 <ul>
 <li>de la taille du mot binaire qui va représenter l'entier, c'est-à-dire le nombre de bits;</li>
@@ -753,8 +794,9 @@ Le nombre maximal qu'on puisse coder est <code>11111111</code>. C'est l'entier n
 <p>En général, <code>n</code> est une des valeurs suivantes : 8, 16, 32 ou 64 (1, 2, 4 ou 8 octets). Cela dépend du langage de programmation utilisé et de l'architecture matérielle de l'ordinateur.</p>
 <p>Le bit de poids fort représente donc le signe et les <code>n-1</code> bits suivants la <strong>valeur absolue</strong> du nombre.</p>
 </div>
-<p>Sur 8 bits par exemple, l'entier 6 est codé par <code>0|000 0110</code>. Et on serait tenté de coder son opposé -6 par <code>1|000 0110</code>, n'est-ce pas?</p>
-<p><strong>Problèmes :</strong></p>
+<p>Donc sur 8 bits, l'entier 6 est codé par <code>0|000 0110</code>. Et on serait tenté de coder son opposé -6 par <code>1|000 0110</code>, n'est-ce pas?</p>
+<div class="admonition danger">
+<p class="admonition-title">Problèmes :</p>
 <p>Au moins deux (gros) inconvénients à cette méthode:</p>
 <ul>
 <li>Le nombre 0 serait codé par <code>0|000 0000</code> <strong>et</strong> par <code>1|000 0000</code>. Deux représentations pour un même nombre, ça ne sent pas bon.</li>
@@ -762,6 +804,7 @@ Le nombre maximal qu'on puisse coder est <code>11111111</code>. C'est l'entier n
 </ul>
 <p><center> &emsp;     0 0 0 0 0 1 1 0 <br> + &nbsp; 1 0 0 0 0 1 1 0 <br> <div class="trait"></div> <br>&emsp;      1 0 0 0 1 1 0 0</center></p>
 <p>On n'obtient pas 0 mais <span class="arithmatex">\(-12\)</span>.</p>
+</div>
 <div class="admonition savoir">
 <p class="admonition-title">Moralité :</p>
 <p>Indiquer le signe d'un nombre par son premier bit est une fausse bonne idée, il faut trouver autre chose.</p>
@@ -774,6 +817,10 @@ Le nombre maximal qu'on puisse coder est <code>11111111</code>. C'est l'entier n
 <p>Que faut-il ajouter au nombre <span class="arithmatex">\((+3)\)</span> pour obtenir 0 ?</p>
 <p><center> &emsp;     0 0 0 0 0 1 1 0 <br> + &nbsp; ? ? ? ? ? ? ? ? <br> <div class="trait"></div> <br>&emsp;      0 0 0 0 0 0 0 0</center></p>
 </div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  3</p>
+<p>A vous de déterminer ce nombre.</p>
+</div>
 <p>L'idée naturelle est de commencer par la droite, en essayant de «fabriquer du zéro» en choisissant le bon bit à ajouter :</p>
 <p><center> &emsp;     0 0 0 0 0 1 1 0 <br> + &nbsp; 1 1 1 1 1 0 1 0 <br> <div class="trait"></div> <br>&emsp;      0 0 0 0 0 0 0 0</center></p>
 <p>On arrive bien à fabriquer des 0 sur tout notre octet, mais que devient la retenue (en anglais <em>carry</em>) de 1 qui déborde de notre octet ?</p>
@@ -783,7 +830,7 @@ Le nombre maximal qu'on puisse coder est <code>11111111</code>. C'est l'entier n
 <p>On peut remarquer qu'en inversant chaque bit du nombre de départ <code>00000110</code>, on obtient <code>11111001</code>, qui appelé le <strong>complément à 2</strong> du nombre <code>00000110</code>.</p>
 <p>Il ne reste donc plus qu'à ajouter <code>1</code> à ce nombre <code>11111010</code> pour obtenir le nombre cherché, <code>11111010</code></p>
 <p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" />  ce nombre <code>11111010</code> représente 250 en codage non signé. Il est donc nécessaire, lorsqu'on représente un nombre, de savoir si les nombres manipulés seront des entiers naturels (<em>non signés</em>) ou bien relatifs (<em>signés</em>).</p>
-<h3 id="conclusion-ecriture-loppose-dun-nombre-positif">Conclusion : écriture l'opposé d'un nombre positif<a class="headerlink" href="#conclusion-ecriture-loppose-dun-nombre-positif" title="Permanent link">⚓︎</a></h3>
+<h3 id="conclusion-ecriture-de-loppose-dun-nombre-positif">Conclusion : écriture de l'opposé d'un nombre positif<a class="headerlink" href="#conclusion-ecriture-de-loppose-dun-nombre-positif" title="Permanent link">⚓︎</a></h3>
 <div class="admonition savoir">
 <p class="admonition-title">Pour obtenir le complément à 2 d'un entier négatif<img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
 <ul>
@@ -796,7 +843,7 @@ Le nombre maximal qu'on puisse coder est <code>11111111</code>. C'est l'entier n
 </ul>
 </div>
 <div class="admonition exo">
-<p class="admonition-title">Exercice  3</p>
+<p class="admonition-title">Exercice  4</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Énoncé</label><label for="__tabbed_3_2">Correction</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -814,12 +861,50 @@ Le nombre maximal qu'on puisse coder est <code>11111111</code>. C'est l'entier n
 </div>
 </div>
 <div class="admonition exo">
-<p class="admonition-title">Exercice  4</p>
+<p class="admonition-title">Exercice  5</p>
 <p>Donner l'écriture binaire sur un octet du nombre <span class="arithmatex">\(-57\)</span>.</p>
 </div>
 <div class="admonition exo">
-<p class="admonition-title">Exercice  5</p>
+<p class="admonition-title">Exercice  6</p>
 <p>Donner l'écriture binaire sur un octet du nombre <span class="arithmatex">\(-17\)</span>.</p>
+</div>
+<h3 id="bilan-complement-a-2">Bilan : Complément à 2 :<a class="headerlink" href="#bilan-complement-a-2" title="Permanent link">⚓︎</a></h3>
+<p>On adopte donc une autre méthode, qui consiste à représenter un entier relatif par un entier naturel.</p>
+<p><strong>En binaire non signé :</strong> sur 8 bits, on peut représenter tous les entiers positifs de 0 à 255.
+Ceux qui ont un bit de poids fort égal à <code>0</code> correspondent aux entiers de 0 à 127 et ceux qui ont un bit de poids fort égal à <code>1</code> correspondent aux nombres de 128 à 255.</p>
+<p><strong>En binaire signé :</strong> toujours sur 8 bits, les nombres de 0 à 127 conservent la même représentation (positifs, car avec <code>0</code> en bit de poids fort). En revanche, les écritures binaires avec un <code>1</code> en bit de poids fort représentent les entiers négatifs de -128 à -1.</p>
+<p>Ainsi sur 8 bits, on représente à nouveau 255 valeurs : de -128 à +127, c'est-à-dire de <span class="arithmatex">\(-2^7\)</span> à <span class="arithmatex">\(2^7 -1\)</span>. Et puisque le bit de poids fort est réservé au signe, il est logique que la valeur absolue soit inférieure à 128 puisqu'on ne dispose plus que de 7 bits...</p>
+<p><img alt="" class="center" src="../data/Entiers_signes.png" /> </p>
+<p>On représente donc l'entier <span class="arithmatex">\(-1\)</span> par <code>11111111</code> en binaire sur 8 bits. C'est sa notation en <strong>complément à 2</strong> (ou plutôt <span class="arithmatex">\(2^n\)</span>).</p>
+<div class="admonition abstract">
+<p class="admonition-title">Écrire la représentation binaire d'un entier négatif</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Complément à 2</label><label for="__tabbed_4_2">Par décalage</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Pour obtenir le complément à 2 d'un entier négatif:</p>
+<ul>
+<li>on code sa valeur absolue en binaire;</li>
+<li>on inverse tous les bits (on remplace les <code>0</code> par des <code>1</code> et les <code>1</code> par des <code>0</code>);</li>
+<li>on ajoute 1.</li>
+</ul>
+<p>Par exemple:</p>
+<ul>
+<li><span class="arithmatex">\(-6\)</span> s'écrit <code>11111010</code> sur 8 bits:    <span class="arithmatex">\(6_{10} = 0000 0110_2  \rightarrow 1111 1001_2 \rightarrow 1111 1010_2\)</span>.</li>
+<li><span class="arithmatex">\(-42\)</span> s'écrit <code>11010110</code> sur 8 bits:    <span class="arithmatex">\(42_{10} = 0010 1010_2  \rightarrow 1101 0101_2 \rightarrow 1101 0110_2\)</span>.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>La représentation binaire d'un entier <span class="arithmatex">\(x\)</span>  négatif sur <span class="arithmatex">\(n\)</span> bits est celle de l'entier naturel (non signé) <span class="arithmatex">\(x + 2^n\)</span>. </p>
+<p>Par exemple pour <span class="arithmatex">\(x=-42\)</span>, on représente <span class="arithmatex">\(-42+256=214\)</span> en binaire non signé, c'est-à-dire <code>11010110</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Dépassement de capacité</p>
+<p>On ne peut coder qu'un nombre fini d'entiers selon la valeur de <span class="arithmatex">\(n\)</span>:  entre <span class="arithmatex">\(-2^{n-1}\)</span> et <span class="arithmatex">\(2^{n-1}-1\)</span>.</p>
+<p>Tout calcul sur des entiers dont le résultat ne fait pas partie de cet intervalle donnera un résultat faux: il sera tronqué sur <span class="arithmatex">\(n\)</span> bits! On parle de <a href="https://fr.wikipedia.org/wiki/D%C3%A9passement_d%27entier" target="_blank">dépassement de capacité</a>    , <em>overflow</em> en anglais.</p>
+<p>En Python, tous les entiers sont signés. Contrairement à certains langages de programmation, le type <em>entier non signé</em> n'existe pas nativement. Par défaut les entiers sont codés sur 64 bits (ou 32 bits sur les machines 32 bits), ce qui laisse un peu de marge.</p>
 </div>
 <h3 id="travail-inverse-passage-du-binaire-signe-au-nombre-relatif">Travail inverse : passage du binaire signé au nombre relatif<a class="headerlink" href="#travail-inverse-passage-du-binaire-signe-au-nombre-relatif" title="Permanent link">⚓︎</a></h3>
 <p>Considérons le nombre <code>11101101</code>, codé en binaire signé. À quel nombre relatif correspond-il ?</p>
@@ -831,23 +916,34 @@ Le nombre maximal qu'on puisse coder est <code>11111111</code>. C'est l'entier n
 <li>Le nombre initial était donc <span class="arithmatex">\(-19\)</span>.</li>
 </ol>
 <div class="admonition exo">
-<p class="admonition-title">Exercice  6</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Correction</label></div>
+<p class="admonition-title">Exercice  7</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Énoncé</label><label for="__tabbed_5_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>En binaire signé, à quel nombre correspond <code>11110001</code>?</p>
+</div>
+<div class="tabbed-block">
+<p><code>11110001</code> - <code>1</code> = <code>11110000</code>. En prenant le complément à 2, on trouve <code>00001111</code>, qui vaut 15. Le nombre <code>11110001</code> représente donc <span class="arithmatex">\(-15\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  8</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Énoncé</label><label for="__tabbed_6_2">Correction</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
-<li>En binaire signé, à quel nombre correspond <code>11110001</code>?</li>
-<li>En binaire signé, quel est le plus grand nombre que l'on puisse écrire sur un octet ? </li>
-<li>Quel est le plus petit nombre ?</li>
-<li>Au total, combien de nombres différents peuvent être écrits en binaire signé ?</li>
+<li>En binaire signé, quel est le plus grand nombre que l'on puisse écrire sur 16 bits ? </li>
+<li>Quel est le plus petit nombre que l'on puisse écrire sur 16 bits ?</li>
+<li>Au total, combien de nombres différents peuvent être écrits en binaire signé sur 16 bits?</li>
 </ol>
 </div>
 <div class="tabbed-block">
 <ol>
-<li><code>11110001</code> - <code>1</code> = <code>11110000</code>. En prenant le complément à 2, on trouve <code>00001111</code>, qui vaut 15. Le nombre <code>11110001</code> représente donc <span class="arithmatex">\(-15\)</span>.</li>
-<li>Le plus grand nombre est <code>01111111</code>, soit <span class="arithmatex">\(+127\)</span>.</li>
-<li>Le plus petit nombre est <code>10000000</code>. <code>10000000</code> - <code>1</code> = <code>01111111</code>. Le complément est <code>10000000</code>, qui est égal à 128. Donc le nombre minimal est <span class="arithmatex">\(-128\)</span>.</li>
-<li>Il y a 128 nombres négatifs (de <span class="arithmatex">\(-128\)</span> à <span class="arithmatex">\(-1\)</span>), le nombre 0, puis 127 nombres positifs (de 1 à 127). Il y a donc 256 nombres au total, comme en binaire non signé. </li>
+<li>Le plus grand nombre est <code>0111 1111 1111 1111</code>, soit <span class="arithmatex">\(+32 767\)</span>.</li>
+<li>Le plus petit nombre est <code>1000 0000 0000 0000</code>. <code>1000 0000 0000 0000</code> - <code>1</code> = <code>0111 1111 1111 1111</code>. Donc le nombre minimal est <span class="arithmatex">\(-32768\)</span>.</li>
+<li>Il y a 32768 nombres négatifs (de <span class="arithmatex">\(-32768\)</span> à <span class="arithmatex">\(-1\)</span>), le nombre 0, puis 326767 nombres positifs (de 1 à 32767). Il y a donc  65536 nombres au total, comme en binaire non signé. </li>
 </ol>
 </div>
 </div>
@@ -861,16 +957,39 @@ Le nombre maximal qu'on puisse coder est <code>11111111</code>. C'est l'entier n
 <p>Or, Ariane 5 étant beaucoup plus puissante, le capteur de vitesse horizontale a renvoyé, au bout de 30 secondes, la valeur 300 : cette valeur a provoqué un dépassement des 8 bits prévus et a donné un résultat absurde. L'ordinateur de bord a cru que la fusée était en train de se coucher et a violemment orienté les tuyères de propulsion pour redresser Ariane 5, alors que celle-ci s'élevait pourtant bien verticalement... 
 Ariane 5 a alors brusquement pivoté avant d'exploser.</p>
 <p>Cette catastrophe (150 millions d'euros et des années de travail perdus) a fait prendre conscience à la communauté scientifique de l'importance de faire des tests logiciels toujours plus poussés : ce n'est pas parce qu'un code marche dans un environnement donné qu'il marchera de la même manière dans d'autres conditions...</p>
+<div class="admonition example">
+<p class="admonition-title">Illustration en Python</p>
+<p>En Python, tous les entiers sont signés. Contrairement à certains langages de programmation, le type <em>entier non signé</em> n'existe pas nativement. Par défaut les entiers sont codés sur 64 bits (ou 32 bits sur les machines 32 bits), ce qui laisse un peu de marge.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">un</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">int8</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">vie</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">int8</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>À l'aide du module <code>numpy</code>, effectuer en console les calculs suivants:</p>
+<ol>
+<li>127 + 1</li>
+<li>127 + 2</li>
+<li>127 + 127 </li>
+</ol>
+<p>Par exemple pour le premier calcul :  </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">numpy</span><span class="o">.</span><span class="n">int8</span><span class="p">(</span><span class="mi">127</span><span class="p">)</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">int8</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div onclick='start_term("id3")' id="fake_id3" class="terminal_f"><label class="terminal"><span>>>> </span></label></div>
+<div id="id3" class="hide"></div>
+
 <h3 id="le-bug-de-lannee-2038">Le bug de l'année 2038<a class="headerlink" href="#le-bug-de-lannee-2038" title="Permanent link">⚓︎</a></h3>
 <p><img alt="image" class="center" src="../data/2038.gif" /></p>
 <p>Expliquons ce (superbe) gif issu de la page Wikipedia <a class="" href="https://fr.wikipedia.org/wiki/Bug_de_l%27an_2038" target="_blank">Bug de l'an 2038</a>.</p>
 <p>Lorsqu'on demande à Python l'heure qu'il est, par la fonction <code>time()</code> du module <code>time</code>, voici ce qu'il répond :</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">time</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="mf">1653855138.398177</span>
+<span class="mf">1664110696.4503427</span>
 </code></pre></div>
 <p>Il nous renvoie le nombre de secondes écoulées depuis le 1er janvier 1970 à 00h00. On appelle cela l'heure POSIX ou <a class="" href="https://fr.wikipedia.org/wiki/Heure_Unix" target="_blank">l'heure UNIX</a>.
-Au 29 mai 2022, il s'en donc écoulé environ 1,6 milliards.</p>
+Au 25 septembre 2022, il s'en donc écoulé environ 1,6 milliards.</p>
 <p>Dans beaucoup de systèmes informatiques, ce nombre de secondes est codé par <strong>un entier signé sur 32 bits</strong>.
 Le nombre maximum de secondes qui peut être représenté est donc <code>01111111 11111111 11111111 11111111</code> </p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;01111111111111111111111111111111&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -879,16 +998,20 @@ Le nombre maximum de secondes qui peut être représenté est donc <code>0111111
 <p>Ce nombre représente un peu plus de 2 milliards de secondes... En les comptant depuis le 01/01/1970 00h00m00s, on arrive au 19/01/2038 à 03h14m07s.</p>
 <p>À la seconde d'après, la represéntation binaire du temps sera <code>10000000 00000000 00000000 00000000</code>, qui sera interprété comme le nombre <strong>négatif</strong> −2147483648, et qui ramènera donc les horloges au 13 décembre 1901...</p>
 <p>Vous pourrez lire sur la page Wikipedia citée plus haut plus d'informations sur ce problème.</p>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  9</p>
+<p>Reprendre le calcul et le raisonnement sur un code en 64 bits.</p>
+</div>
 <h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">⚓︎</a></h2>
 <div class="admonition example">
-<p class="admonition-title">Exercice  7</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Énoncé</label><label for="__tabbed_5_2">Solution</label></div>
+<p class="admonition-title">Exercice  10</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Énoncé</label><label for="__tabbed_7_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Quel est l'intervalle de nombres entiers relatifs qu'on peut représenter:</p>
 <ol>
 <li>Sur 4 bits?</li>
-<li>Sur 16 bits?</li>
+<li>Sur 32 bits?</li>
 <li>Sur 64 bits?</li>
 </ol>
 </div>
@@ -904,8 +1027,8 @@ Le nombre maximum de secondes qui peut être représenté est donc <code>0111111
 </div>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Exercice  8</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Énoncé</label><label for="__tabbed_6_2">Solution</label></div>
+<p class="admonition-title">Exercice  11</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Énoncé</label><label for="__tabbed_8_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
@@ -937,8 +1060,8 @@ Le nombre maximum de secondes qui peut être représenté est donc <code>0111111
 </div>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Exercice  9</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Énoncé</label><label for="__tabbed_7_2">Solution</label></div>
+<p class="admonition-title">Exercice  12</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Énoncé</label><label for="__tabbed_9_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Quels sont les entiers relatifs dont la représentation binaire en complément à 2 (sur 8 bits) est:</p>

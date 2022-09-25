@@ -18,7 +18,9 @@ nav:
 
     - T1 Types et valeurs de base :
       - Codages des entiers positifs: T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers.md
-    #  - Codages des entiers relatifs: T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md
+      - Perseverance : T01_TypesBase/T1.1_Bases/T1_Perseverance.md
+      #- Codages des entiers relatifs: T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md
+      - Codages des entiers relatifs: T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs_eleve.md
 
     
     #- T2 Types construits :

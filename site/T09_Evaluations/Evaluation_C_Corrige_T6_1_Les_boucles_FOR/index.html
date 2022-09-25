@@ -1,0 +1,1028 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Michael Meyroneinc-condy">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>Evaluation C Corrige T6 1 Les boucles FOR - Site NSI 1ére</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../xtra/stylesheets/pyoditeur.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Site NSI 1ére" class="md-header__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Site NSI 1ére
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Evaluation C Corrige T6 1 Les boucles FOR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers/" class="md-tabs__link">
+        T1 Types et valeurs de base
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-tabs__link">
+        T6 Prog.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Divers/conseil/" class="md-tabs__link">
+        Divers
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Site NSI 1ére" class="md-nav__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+
+    </a>
+    Site NSI 1ére
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T1 Types et valeurs de base
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T1 Types et valeurs de base" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T1 Types et valeurs de base
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers/" class="md-nav__link">
+        Codages des entiers positifs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T01_TypesBase/T1.1_Bases/T1_Perseverance/" class="md-nav__link">
+        Perseverance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs_eleve/" class="md-nav__link">
+        Codages des entiers relatifs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          T6 Prog.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T6 Prog." data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          T6 Prog.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-nav__link">
+        TP 00 - Introduction Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python/" class="md-nav__link">
+        TP 01 - Les Variables en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python/" class="md-nav__link">
+        TP 02 - Les Fonctions en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python/" class="md-nav__link">
+        TP 03 - Les boucles (1) en Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Divers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Divers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Divers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Divers/conseil/" class="md-nav__link">
+        Conseil
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Divers/Liens_utiles/" class="md-nav__link">
+        Liens utiles
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="Evaluation_C_Corrige_T6_1_Les_boucles_FOR.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+              
+    
+                
+
+
+  <h1>Evaluation C Corrige T6 1 Les boucles FOR</h1>
+
+<table  style="border: 1px solid;  background-color: #c5ca27;  width: 100%;  color: black;  text-align: center; font-size: 18px;">
+        <tr>
+            <th style="background-color: #c5ca27;width: 100%; text-align:center;border:none;font-size:14pt;">
+            Thème 6 - Langages et programmation
+            </th>
+        </tr>
+</table>
+
+<p><br></p>
+<table  style="border: 1px;  background-color: #c5ca27;  width: 100%;  color: black;  text-align: center;font-size: 18px;">
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:25pt;">
+            Evaluation
+            </th>
+            <th  width="80%"; style="background-color: #c5ca27;text-align:center;border:none;font-size:25pt;">Les Boucles FOR en Python - Evaluation</th>
+        </tr>
+</table>
+<p><br></p>
+<p>Devoir à faire avec des points bonus sur les derniers exercices.<br />
+N'oublier pas d'enregistrer régulièrement votre travail.
+A la fin penser à rendre votre travail.
+Bon courage à vous.</p>
+<div class="alert alert-warning"><strong>Exercice 1 : </strong> <strong>La punition</strong><br>
+    Ecrire un programme qui demande à l'utilisateur un message et le nombre de foisqu'il faut afficher ce message.   
+</div>
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">msg</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Donner le texte à repéter : &#39;</span><span class="p">)</span>
+<span class="n">nb_de_fois</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;donner le nombre de fois qu&#39;il faut répéter le texte : &quot;</span> <span class="p">))</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_de_fois</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</code></pre></div>
+<div class="alert alert-info"><strong>Exercice 2 : </strong> Ecrire un programme qui calcule et affiche le produit 87x52 en n'effectuant que des additions.   
+</div>
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">resultat</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">87</span><span class="p">):</span>
+    <span class="n">resultat</span><span class="o">+=</span><span class="mi">52</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultat</span><span class="p">)</span>
+</code></pre></div>
+<div class="alert alert-success"><strong>Exercice 3 : </strong> Ecrire un programme qui demande à l'utilisateur de saisir un nombre entier, puis qui affiche la table de multiplication correspondande.   
+
+    Quel table voulez-vous afficher ? 7 
+    7 x 1 = 7
+    7 x 2 = 14
+    7 x 3 = 21
+    ...
+</div>
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">nb</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quelle table de multiplication voulez-vous afficher ? )&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Table de </span><span class="si">{</span><span class="n">nb</span><span class="si">}</span><span class="s2"> : &quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nb</span><span class="si">}</span><span class="s2"> * </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">nb</span><span class="o">*</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="alert alert-warning"><strong>Exercice 4 :</strong>   Ecrire un programme qui affiche tous les entiers impairs de 0 à 187 inclus.
+</div>
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="alert alert-info"><strong>Exercice 5 : </strong> Ecrire un programme qui affiche tous les carrés des nombres compris entre 0 et 29.
+</div>
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="alert alert-success"><strong>Exercice 6 : </strong> <br> 1) Ecrire un programme qui affiche un rectangle de 5 lignes et 10 colonnes avec le caractère # comme ci-dessous :<br>
+    ##########<br>
+    ##########<br>
+    ##########<br>
+    ##########<br>
+    ##########<br>
+2) Améliorer ce programme pour qu'il demande d'abord à l'utilisateur de saisir la largeur et la hauteur du rectangle.<br>
+On peut aussi lui demander avec quel caractère il souhaite remplir le rectangle.</div>
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># 1ère question :</span>
+<span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">colonne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># 2ème question</span>
+<span class="n">largeur</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez saisir la largeur du rectangle : &quot;</span><span class="p">))</span>
+<span class="n">hauteur</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez saisir la hauteur du rectangle : &quot;</span><span class="p">))</span>
+<span class="n">caractère</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez saisir le caractère de remplissage : &quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hauteur</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">colonne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">largeur</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">caractère</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="alert alert-warning"><strong>Exercice 7 : </strong> <br>
+1) Ecrire un programme qui calcule la moyenne de 7 notes. <br>
+2) Améliorer ce programme pour qu'il demande d'abord à l'utilisateur de saisir le nombre de notes à rentrer puis qui calcule la moyenne de ses notes.    
+</div>
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+    <span class="n">note</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Saisissez la note n°&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; : &quot;</span><span class="p">))</span>
+    <span class="n">somme</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">+</span> <span class="n">note</span>   <span class="c1"># ou somme += note</span>
+<span class="n">moyenne</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">/</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La moyenne des notes est </span><span class="si">{</span><span class="n">moyenne</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">nb_2_notes</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Combien de notes voulez-vous rentrer ? &quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_2_notes</span><span class="p">):</span>
+    <span class="n">note</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Saisissez la note n°&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; : &quot;</span><span class="p">))</span>
+    <span class="n">somme</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">+</span> <span class="n">note</span>   <span class="c1"># ou somme += note</span>
+<span class="n">moyenne</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">/</span> <span class="n">nb_2_notes</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La moyenne des notes est </span><span class="si">{</span><span class="n">moyenne</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><a id="partie2"></a></p>
+<div class="alert alert-info"><strong>Exercice 8 : </strong> Ecrire un programme qui affiche le résultat suivant : <br>
+36 33 30 27 24 21 18 15 12 9 6 3 0
+</div>
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="alert alert-success"><strong>Exercice 9 : </strong> Ecrire un programme qui dessine un triangle comme ci-dessous avec une hauteur saisie par l'utilisateur.<br>
+*****<br>
+****<br>
+***<br>
+**<br>
+*
+    </div>
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">hauteur</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez saisir la hauteur du triangle : &quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hauteur</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="o">*</span><span class="n">ligne</span><span class="p">)</span>
+</code></pre></div>
+<div class="alert alert-warning"><strong>Exercice 10 : </strong> Ecrire un programme qui dessine une figure comme ci-dessous avec une hauteur et une largeur de 6 (on a un carré).<br>
+******<br>
+*****&<br>
+****&&<br>
+***&&&<br>
+**&&&&<br>
+*&&&&&<br>
+&&&&&&    
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">hauteur</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez saisir la hauteur du triangle : &quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">hauteur</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">fin_ligne</span><span class="o">=</span><span class="n">hauteur</span><span class="o">-</span><span class="n">ligne</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="o">*</span><span class="n">fin_ligne</span><span class="o">+</span><span class="s2">&quot;&amp;&quot;</span><span class="o">*</span><span class="n">ligne</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="alert alert-info"><strong>Exercice 11 : </strong> Ecrire un programme qui dessine une figure comme ci-dessous avec une hauteur saisie par l'utilisateur.<br>
+&<br>
+&&<br>
+&&&<br>
+&&&&<br>
+&&&&&<br>
+&&&&&&</div>
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">hauteur</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez saisir la hauteur du triangle : &quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hauteur</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="o">*</span><span class="n">ligne</span><span class="p">)</span>
+</code></pre></div>
+
+<a id="partie3"></a>
+
+<div class="alert alert-warning"><strong>Exercice 12 : </strong> Ecrire un programme qui demande 7 valeurs à l'utilisateur et qui affiche la somme de ces valeurs.
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+    <span class="n">note</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Saisissez la note n°&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; : &quot;</span><span class="p">))</span>
+    <span class="n">somme</span> <span class="o">+=</span> <span class="n">note</span>   <span class="c1"># ou somme += note</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La moyenne des notes est </span><span class="si">{</span><span class="n">somme</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="alert alert-info"><strong>Exercice 13 : </strong> Ecrire un programme simule le lancer de 500 dés et qui affiche la moyenne des résultats obtenus.
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">):</span>
+    <span class="n">dé</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">somme</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">+</span> <span class="n">dé</span>
+<span class="n">moyenne</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">/</span> <span class="mi">1000</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La moyenne des 1000 lancers est </span><span class="si">{</span><span class="n">moyenne</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="alert alert-success"><strong>Exercice 14 : </strong> Ecrire un programme qui demande à l'utilisateur un entier a et un entier n et qui calcule $a^n$ à l'aide d'une boucle <code>for</code> (on verra plus tard un algorithme plus rapide que celui-ci).<br>
+Remarque : il est interdit d'utiliser ** ici! 
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez saisir la valeurs de a (la base) : &quot;</span><span class="p">))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez saisir la valeur de n (l&#39;exponsant) : &quot;</span><span class="p">))</span>
+<span class="n">puissance</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">puissance</span> <span class="o">=</span> <span class="n">puissance</span> <span class="o">*</span> <span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> puissance </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> est égal à </span><span class="si">{</span><span class="n">puissance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="alert alert-warning"><strong>Exercice 15 : </strong> Ecrire un programme qui demande de saisir un entier positif n et qui calcule la <strong>factorielle</strong> de n.<br>
+    La factorielle de n, notée $n!$ est définie par $n! = 1\times 2\times 3\times...\times n$ .<br>
+    On a par exemple $3! = 6$</code>.</div>
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez saisir un entier positif : &quot;</span><span class="p">))</span>
+<span class="n">factorielle</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">factorielle</span> <span class="o">*=</span><span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La factorielle de &quot;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s2">&quot;est&quot;</span><span class="p">,</span><span class="n">factorielle</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="alert alert-info"><strong>Exercice 16 : </strong>  Ecrire un programme qui demande de saisir un entier positif n et qui calcule la <strong>somme des carrés S</strong> de 1 jusqu'à $n^2$.<br>
+$S(n)=1^2 + 2^2 + 3^2 +...+ n^2$ .<br>
+On a par exemple $S(3) = 14$</div>
+
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">nb</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Donner le nombre voulu : &#39;</span><span class="p">))</span>
+<span class="n">resultat</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">resultat</span><span class="o">+=</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultat</span><span class="p">)</span>
+</code></pre></div>
+
+<a id="partie4"></a>
+
+<h2 style="text-decoration:underline;" id="partie4">4- Dessiner avec Turtle</h2>
+
+La bibliothèque **turtle** permet de dessiner à l'écran.<br>
+Le petit programme commenté ci-dessous permet d'obtenir un tracé intéressant :
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>      <span class="c1"># On importe la bibliothèque turtle</span>
+
+<span class="n">speed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>                 <span class="c1"># On règle la vitesse du tracé (un entier compris entre 1 et 10)</span>
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">)</span>    <span class="c1"># On fixe la couleur du tracé à &#39;rouge&#39; et la couleur de rempissage à &#39;jaune&#39;</span>
+<span class="n">begin_fill</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">36</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>          <span class="c1"># La tortue avance de 200 pixels </span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">170</span><span class="p">)</span>             <span class="c1"># La tortue tourne vers la gauche de 170°</span>
+<span class="n">end_fill</span><span class="p">()</span>
+<span class="n">done</span><span class="p">()</span>                    <span class="c1"># Il faut terminer par done() pour lancer l&#39;exécution du tracé    </span>
+</code></pre></div>
+
+Voici quelques fonctionnalités de turtle :
+
+<style>
+        td{
+            color : green;
+        }
+</style>
+
+<table>
+    <tr><th style="border:1px solid #000000; background-color:pink; text-align: center;">Fonction</th><th style="text-align:center;border:1px solid #000000; background-color:pink;">Description</th></tr>
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>forward(x)</code></td><td style="border:1px solid #000000; text-align: center;">Déplace la tortue de x pixels en marche avant.</td></tr> 
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>backward(x)</code></td><td style="border:1px solid #000000; text-align: center;">Déplace la tortue de x pixels en marche arrière.</td></tr> 
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>left(x)</code></td><td style="border:1px solid #000000; text-align: center;">Fait pivoter la tortue d'un angle de x degrés vers la gauche.</td></tr>
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>right(x)</code></td><td style="border:1px solid #000000; text-align: center;">Fait pivoter la tortue d'un angle de x degrés vers la droite.</td></tr>
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>goto(x,y)</code></td><td style="border:1px solid #000000; text-align: center;">Déplace la tortue au point de corrdonnées (x,y). Attention, l'axe des y est orienté vers le haut de l'écran comme en mathématiques!</td></tr>
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>penup()</code></td><td style="border:1px solid #000000; text-align: center;">Lève le crayon (la tortue arrêtera de tracer).</td></tr>
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>pendown()</code></td><td style="border:1px solid #000000; text-align: center;">Abaisse le crayon. La tortue se remettra à tracer.</td></tr>
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>hideturtle()</code></td><td style="border:1px solid #000000; text-align: center;">Cache la tortue.</td></tr>
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>showturtle()</code></td><td style="border:1px solid #000000; text-align: center;">Fait réapparaitre la tortue.</td></tr>
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>speed(n)</code></td><td style="border:1px solid #000000; text-align: center;">Règle la vitesse du tracé. n est un entier compris entre 0 et 10. 1 correspond à une vitesse lente, 10 correspond à une vitesse rapide. 0 permet d'obtenir un tracé instantané.</td></tr>
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>done()</code></td><td style="border:1px solid #000000; text-align: center;">Lance l'exécution du tracé.</td></tr>
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>circle(r)</code></td><td style="border:1px solid #000000; text-align: center;">Trace un cercle de rayon r.<br>
+        On peut ajouter une deuxième paramètre facultatif a si on souhaite tracer seulement tracer un arc de cercle d'angle a.</td></tr>
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>color(couleur1,couleur2)</code></td><td style="border:1px solid #000000; text-align: center;">Définir la couleur du tracé (couleur1) et la couleur de remplissage (couleur2).</td></tr>
+    <tr><td style="border:1px solid #000000; text-align: center;"><code>width(n)</code></td><td style="border:1px solid #000000; text-align: center;">Règle l'épaisseur du trait à n pixels.</td></tr>
+</table>
+
+<div class="alert alert-success"><strong>Exercice 17 : </strong> Ecrire un programme qui utilise une boucle <code>for</code> pour tracer un carré de côté 100 pixels, avec un contour bleu et colorié en vert.</div>
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code>
+</code></pre></div>
+
+<div class="alert alert-warning"><strong>Exercice 18 : </strong> Ecrire un programme qui trace 10 cercles dont les rayons sont 10, 20, 30, ..., 100 et espacé de 2 fois le rayon<br>
+Choisir une couleur de tracé et une couleur de remplissage.</div>
+
+
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>      <span class="c1"># On importe la bibliothèque turtle</span>
+
+<span class="n">speed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>   
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;pink&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+
+    <span class="n">begin_fill</span><span class="p">()</span>
+    <span class="n">circle</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">end_fill</span><span class="p">()</span>
+
+<span class="n">done</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="alert alert-info"><strong>Exercice 19 : </strong> Dessiner le drapeau de l'allemagne avec Turtle.</div>
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">up</span><span class="p">()</span>
+<span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">250</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">down</span><span class="p">()</span>
+
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span> 
+<span class="n">begin_fill</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">end_fill</span><span class="p">()</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span> 
+<span class="n">begin_fill</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">end_fill</span><span class="p">()</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">)</span> 
+<span class="n">begin_fill</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">end_fill</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">done</span><span class="p">()</span>
+</code></pre></div>
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1">#Avec une fonction </span>
+<span class="k">def</span> <span class="nf">rectangle</span><span class="p">(</span><span class="n">largeur</span><span class="p">,</span><span class="n">longueur</span><span class="p">,</span><span class="n">couleur1</span><span class="p">,</span><span class="n">couleur2</span><span class="p">):</span>
+    <span class="n">color</span><span class="p">(</span><span class="n">couleur1</span><span class="p">,</span> <span class="n">couleur2</span><span class="p">)</span> 
+    <span class="n">begin_fill</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">longueur</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">largeur</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">end_fill</span><span class="p">()</span>
+
+<span class="n">up</span><span class="p">()</span>
+<span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">250</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">down</span><span class="p">()</span>
+<span class="n">largeur</span><span class="o">=</span><span class="mi">75</span>
+<span class="n">longueur</span><span class="o">=</span><span class="mi">300</span>
+<span class="n">rectangle</span><span class="p">(</span><span class="n">largeur</span><span class="p">,</span><span class="n">longueur</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="n">largeur</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">rectangle</span><span class="p">(</span><span class="n">largeur</span><span class="p">,</span><span class="n">longueur</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="n">largeur</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">rectangle</span><span class="p">(</span><span class="n">largeur</span><span class="p">,</span><span class="n">longueur</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="s1">&#39;yellow&#39;</span><span class="p">)</span>
+<span class="n">done</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="alert alert-info"><strong>Exercice 20 : </strong> Ecrire un programme qui dessine le diamant ci-dessous.</div>
+
+
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">speed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span> 
+<span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">250</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">goto</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+    <span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">goto</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">50</span><span class="o">-</span><span class="mi">250</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>   
+    <span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">done</span><span class="p">()</span>
+</code></pre></div>
+
+
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code>
+</code></pre></div>
+
+              
+    <script src="../../js/ide.js"></script> 
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+        <script src="../../xtra/javascripts/config.js"></script>
+      
+        <script src="../../xtra/javascripts/interpreter.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+    
+  </body>
+</html>
