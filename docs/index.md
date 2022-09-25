@@ -6,7 +6,10 @@ Il permettra de retrouver les cours, TP et TD traités en classes.<br>
 Ces TD sont corrigés dans la mesure du possible (soit directement sur le site soit dans Capytale).
 
 !!! info 
-    - Thème traité : Python - Les bases
+    - Thème traité :  
+        - [T1 Le codage des entiers positifs](T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers.md)
+        - [T1 Le message secret de Perseverance](T01_TypesBase/T1.1_Bases/T1_Perseverance.md)  
+        - [T1 Le codage des entiers relatifss](T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs_eleve.md)
 
 
 ??? video  "Vidéo de présentation :" 
@@ -15,7 +18,7 @@ Ces TD sont corrigés dans la mesure du possible (soit directement sur le site s
 
 ## Les thèmes du programme
 
-![image](Divers/7themes2.png)
+![image](Divers/7themes2.png){:.center}
 
 
 ## Programme
