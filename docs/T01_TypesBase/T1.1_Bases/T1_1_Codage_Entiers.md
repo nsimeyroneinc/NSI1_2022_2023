@@ -152,11 +152,17 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 
 
 !!! exo "{{ exercice() }}"
-
-    1. Combien de valeurs peut-on coder avec 1 bit ?  
-    2. Combien de valeurs peut-on coder avec 2 bits ?  
-    3. Combien de valeurs peut-on coder avec 3 bits ?  
-    4. Combien de valeurs peut-on coder avec n bits ?
+    === "Enoncé"
+        1. Combien de valeurs peut-on coder avec 1 bit ?  
+        2. Combien de valeurs peut-on coder avec 2 bits ?  
+        3. Combien de valeurs peut-on coder avec 3 bits ?  
+        4. Combien de valeurs peut-on coder avec n bits ?
+    === "Correction"
+        1. Sur 1 bit : on peut code 2 valeurs.  
+        2. Sur 2 bits : on peut code 4 valeurs (soit $2^2$).  
+        3. Sur 3 bits : on peut code 8 valeurs (soit $2^3$).  
+        4. Sur n bits : on peut code $2^n$ valeurs.  
+        
 
 
 
@@ -218,67 +224,119 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
 #### À la main
 
 !!! exo "{{ exercice() }}"
-    Convertir de la base mentionnée vers la base 10 (système décimal).
+    === "Enoncé" 
+        Convertir de la base mentionnée vers la base 10 (système décimal).
 
-    **Attention, il y a un piège...**
+        **Attention, il y a un piège...**
 
-    1. $131_6$  
-    2. $420_5$  
-    3. $1515_8$  
-    4. $716_4$  
-    5. $321_4$  
+        1. $131_6$  
+        2. $420_5$  
+        3. $1515_8$  
+        4. $716_4$  
+        5. $321_4$  
+    === "Correction"  
+        1. $131_6$ :  $1 \times 6^2 + 3 \times 6^1 + 1 =55$     
+        2. $420_5$  :  $4 \times 5^2 + 2 \times 6^1 + 0 =110$  
+        3. $1515_8$  :  $1 \times 8^3 + 5 \times 8^2 + 1 \times 5^1 + 5 =845$  
+        4. $716_4$  :  Impossible  les chiffres ne peuvent pas dépasser 3 dans une base 4.  
+        5. $321_4$  :  $3 \times 4^2 + 2 \times 4^1 + 1 =57$    
+
+!!! exo "{{ exercice() }}"
+    === "Enconcé"
+        Convertir les écritures décimales vers la base mentionnée.
     
-!!! exo "{{ exercice() }}"
-    Convertir les écritures décimales vers la base mentionnée.
-    
-    1. 47 en base 5  
-    2. 92 en base 4  
+        1. 47 en base 5  
+        2. 92 en base 4  
+    === "Correction" 
+        1. $47 =  142_5$
+        2. $92= 1130_4
+
 
 !!! exo "{{ exercice() }}"
-    Convertir du binaire vers le décimal.
+    === "Enoncé"
+        Convertir du binaire vers le décimal.
 
-    1. 1010  
-    2. 101110  
-    3. 10001101  
-    4. 11111111  
-    5. 101011001  
+        1. 1010  
+        2. 101110  
+        3. 10001101  
+        4. 11111111  
+        5. 101011001  
 
-!!! exo "{{ exercice() }}"
-    Convertir du décimal vers le binaire.
-
-    1. 17  
-    2. 34  
-    3. 68  
-    4. 100  
-    5. 200  
-
-    Que remarquez-vous quand on passe de l'écriture binaire d'un nombre à celle de son double?
+    === "Correction"
+        1. $1010_2 = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 0 =10$  
+        2. $101110 _2 = 1 \times 2^5 + 0 \times 2^4 + 1 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 0 =32+8+4+2=44$  
+        3. $10001101_2 = 1 \times 2^7 + 0 \times 2^6 + 0 \times 2^5 + 0 \times 2^4 + 1 \times 2^3 + 1 \times 2^2 + 0 \times 2^1 + 1 =140$  
+        4. $11111111_2 = 1 \times 2^7 + 1 \times 2^6 + 1 \times 2^5 + 1 \times 2^4 + 1 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 1 =255$  
+        5. $101011001_2 = 1 \times 2^8 + 1 \times 2^6 + 1 \times 2^4 + 1 \times 2^3 + 1 =345$  
 
 !!! exo "{{ exercice() }}"
-    
-    **1.** Vérifier la conversion de la couleur rouge donnée en exemple à la section précédente.
+    === "Enoncé"
+        Convertir du décimal vers le binaire.
+
+        1. 17  
+        2. 34  
+        3. 68  
+        4. 100  
+        5. 200  
+
+        Que remarquez-vous quand on passe de l'écriture binaire d'un nombre à celle de son double?
+
+    === "Correction"
+        1. $17=10001_2$  
+        2. $34=100010_2$  
+        3. $68=1000100_2$  
+        4. $100=1100100_2$  
+        5. $200=11001000_2$  
+
+
+!!! exo "{{ exercice() }}"
+    === "Enoncé"
+        1. Vérifier la conversion de la couleur rouge donnée en exemple à la section précédente.
 
         2. Convertir les écritures hexadécimales en décimal: 99, D7, 1B8, ABC.
 
         3. Comment s'écrit la couleur blanche en code hexadécimal?
-
+    === "Correction"
+        1. Voir cours  
+        2. $99_{16}=9 \times 16^1 + 9 = 153$  
+        $D7_{16}=13 \times 16^1 + 7 = 215$  
+        $1B8_{16}= 1 \times 16 ^2 + 11 \times 16^1 + 8 = 440$   
+        $ABC_{16}=10 \times 16^2 + 11 \times 16^1 + 12 = 2748$  
 
 !!! exo "{{ exercice() }}"
+    === "Enoncé" 
         Convertir les écritures décimales en hexadécimal.
 
-        1. 45
-        2. 72
-        3. 421
+        1. 45  
+        2. 72  
+        3. 421  
+    === "Correction"
+        Par divisions successives par 16, on obtient :  
+
+        1. $45 =2D_{16}$  
+        2. $72=48_{16}$  
+        3. $421=1A5_{16}$  
 
 !!! exo "{{ exercice() }}"
-    C’est en 11110010000 qu’a été démontré le théorème fondamental de l’informatique. Exprimer ce nombre en base dix
+    === "Enoncée"
+        C’est en $11110010000_2$ qu’a été démontré le théorème fondamental de l’informatique. Exprimer ce nombre en base dix
+    === "Correction" 
+        On obtient 1936
 
 !!! exo "{{ exercice() }}"
-    Convertir les nombres suivants en base 10 :  
+    === "Enoncé"
+        Convertir les nombres suivants en base 10 :  
     
-    1. $(1B7)_{16}$  
-    2. $(ABE)_{16}$  
-    3. $(A320_{16}$  
+        1. $(1B7)_{16}$  
+        2. $(ABE)_{16}$  
+        3. $(A320)_{16}$  
+    === "Correction"
+
+        1. $(1B7)_{16}=1 \times 16^2 + 11 \times 16^1 + 7 = 439$  
+
+        2. $(ABE)_{16}=10 \times 16^2 + 11 \times 16^1 + 14 = 2750$  
+
+        3. $(A320)_{16}=10 \times 16^3 + 3 \times 16^2 + 2 \times 16^1 + 0 = 41760$  
 
 
 !!! exo "{{ exercice() }}"
@@ -305,11 +363,25 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
         **1.** $(01001101)_2$  
         **2.** $(100110000111)_2$  
         **3.** $(101110101100)_2$  
+    
+    === "Correction 1"
+        En regroupant par paquet de 4 :  
+
+        **1.** $(01001101)_2 = 0100\, 1101_2$ or  $0100_2$ correspond à 4 soit $4_{16}$ et  $1101_2$ correspond à 8+4+1=13 soit $D_{16}$  
+        d'où =$(01001101)_2 = 4D_{16}$   
+        **2.** $(100110000111)_2 = 1001 \, 1000\, 0111_2$ donc  $(100110000111)_2=987_{16}$  
+        **3.** $(101110101100)_2 = 1011\, 1010 \,1100_2$  donc $(101110101100)_2=BAC_{16}$  
 
     === "Conversion Hexadécimal  → Binaire"
         Convertir en binaire les nombres suivant :  
         **1.** $(FABE51)_{16}$   
         **2.** $(59A75)_{16}$  
+
+    === "Correction 2"
+        **1.** $F_{16}=1111_2 \, A_{16}=1010_2 \, B_{16}=1011_2 \, E_{16}=1110_2 \, 5_{16}=0101_2 \, 1_{16}=0001_2$, d'où   
+        $(FABE51)_{16}=111110101011111001010001_2$     
+        **2.** $5_{16}=0101_2 \, 9_{16}=1001_2 \, A_{16}=1010_2 \, 7_{16}=0111_2 \, 5_{16}=0101_2$, d'où   
+        $(59A75)_{16}=01011001101001110101_2$ 
 
 #### Avec Python
 
@@ -350,11 +422,16 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
     Essayons d’expliquer ce qui est arrivé !
 
 !!! exo "{{ exercice() }}"
-    **1.** Donner l’écriture binaire de $277_{10}$.  
-    **2.** Sachant qu’un octet est composé de 8 bits, compléter un octet avec le nombre obtenu ?  
-    Que remarquez-vous ?  
-    **3.**  Expliquer alors le résultat 21 qui apparaît sur le compteur.  
+    === "Enoncé"
+        **1.** Donner l’écriture binaire de $277_{10}$.  
+        **2.** Sachant qu’un octet est composé de 8 bits, compléter un octet avec le nombre obtenu ?  
+        Que remarquez-vous ?  
+        **3.**  Expliquer alors le résultat 21 qui apparaît sur le compteur.  
 
+    === "Correction"  
+        **1.** Ecriture binaire de $277_{10}=100010101_2$.  
+        **2.** Sur un octet $277_{10}=00010101_2$. Il y a un dépassement et donc il manque le premier 1.          
+        **3.**  Le résultat obtenu est donc $00010101_2= 16 + 4 + 1 = 21$
 
 !!! savoir "A retenir"
     Si le nombre de bits obtenu est inférieur à n, on rajoute des 0 pour parvenir à n bits. S’il n’y a pas assez de bits disponibles, on dit que la capacité d’écriture est insuffisante (on parle d’overflow).
@@ -374,7 +451,7 @@ Et bien entendu, $2022 = 2\times 10^3 + 0\times 10^2+ 2\times 10^1 +2\times 10^0
     |:---:|:---:|:---:|:---:|:---:|:---:|
     |Nombre de bits utilisés|8||||
     |Nombre d’entiers positifs qu’on peut stocker|$2^8 = 256$||||
-    |Plus grand entier positif que l’on peut stocker|$2^8 - 1 =255||||
+    |Plus grand entier positif que l’on peut stocker|$2^8 - 1 =255$||||
 
 
 ## Addition en binaire  
