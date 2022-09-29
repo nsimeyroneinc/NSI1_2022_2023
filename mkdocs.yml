@@ -21,7 +21,7 @@ nav:
       - TP Perseverance : T01_TypesBase/T1.1_Bases/T1_Perseverance.md
       #- Codages des entiers relatifs: T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md
       - T1_2 Codages des entiers relatifs : T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md
-      - T1_3 Codage des flottants : T01_TypesBases/T1.3_Flottants/T1_3_Flottants.md
+      - T1_3 Codage des flottants : T01_TypesBase/T1.3_Flottants/T1_3_Flottants.md
 
 
     
@@ -167,23 +167,23 @@ plugins:
   #  - search
   #  - pdf-export
 
-  #- page-to-pdf : 
-  #    disable: False
-  #    disableOnServe: True
-  #    displayHeaderFooter: true
-  #    printBackground: False
-  #   #scale : 1.0
-  #   #landscape : False
-  #    #margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
-  #    headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
-  #                     <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : 2021 - 2022</span>
-  #                    </header>'
-  #    footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#999999;margin:10px 20px;-webkit-print-color-adjust: exact">
-  #                     <span>M.Meyroneinc-Condy | CCBY | 2021</span>
-  #                     <span class="page" style="position:absolute;bottom:0;right:0;">
-  #                      <span class="pageNumber"></span>/<span class="totalPages"></span>
-  #                     </span>
-  #                    </footer>'
+  - page-to-pdf : 
+      disable: False
+      disableOnServe: True
+      displayHeaderFooter: true
+      printBackground: False
+     #scale : 1.0
+     #landscape : False
+      #margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
+      headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
+                       <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : 2021 - 2022</span>
+                      </header>'
+      footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#999999;margin:10px 20px;-webkit-print-color-adjust: exact">
+                       <span>M.Meyroneinc-Condy | CCBY | 2021</span>
+                       <span class="page" style="position:absolute;bottom:0;right:0;">
+                        <span class="pageNumber"></span>/<span class="totalPages"></span>
+                       </span>
+                      </footer>'
   #   headerTemplate : 
   #      title
   #      date
