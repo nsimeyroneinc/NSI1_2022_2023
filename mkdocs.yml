@@ -21,6 +21,7 @@ nav:
       - TP Perseverance : T01_TypesBase/T1.1_Bases/T1_Perseverance.md
       #- Codages des entiers relatifs: T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md
       - T1_2 Codages des entiers relatifs : T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md
+      - T1_3 Codage des flottants : T01_TypesBases/T1.3_Flottants/T1_3_Flottants.md
 
 
     
