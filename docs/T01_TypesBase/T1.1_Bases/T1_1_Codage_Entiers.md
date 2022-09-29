@@ -35,9 +35,12 @@ Thème 1 - Représentation des données - Types et valeurs de bases
 
 C'est décidé : nous allons changer de monnaie ! Fini les euros nous comptons désormais en Bin dont le symbole est $\mathbb(B)$. De tous nouveaux billets de banque ont été émis, vous en voyez la liste i-dessous :
 
-![](data/1.png){width=35%}![](data/2.png){width=35%}
-![](data/4.png){width=35%}![](data/8.png){width=35%}
-![](data/16.png){width=35%}![](data/32.png){width=35%}
+![](data/1.png){width=35%}![](data/2.png){width=35%}  
+
+![](data/4.png){width=35%}![](data/8.png){width=35%}  
+
+![](data/16.png){width=35%}![](data/32.png){width=35%}  
+
 ![](data/64.png){width=35%}![](data/128.png){width=35%}
 
 
