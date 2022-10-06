@@ -6,10 +6,11 @@ Il permettra de retrouver les cours, TP et TD traités en classes.<br>
 Ces TD sont corrigés dans la mesure du possible (soit directement sur le site soit dans Capytale).
 
 !!! info 
-    - Thème traité :  
-        - [T1 Le codage des entiers positifs](T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers.md)
-        - [T1 Le message secret de Perseverance](T01_TypesBase/T1.1_Bases/T1_Perseverance.md)  
-        - [T1 Le codage des entiers relatifss](T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs_eleve.md)
+    - Thèmes traités :  
+        - !!! capytale "TP Capytale"
+            - [Boucles WHILE](https://capytale2.ac-paris.fr/web/c/58b1-658638/mcer)
+            - [Instructions conditionnelles](https://capytale2.ac-paris.fr/web/c/1760-639728/mcer)  
+            - [Exercices Bilan Bases](https://capytale2.ac-paris.fr/web/c/47b7-774746/mcer)
 
 
 ??? video  "Vidéo de présentation :" 
@@ -28,10 +29,10 @@ Ces TD sont corrigés dans la mesure du possible (soit directement sur le site s
     === "T1 Rep. des données"
         **Thème  :  Types et valeurs de base**  
 
-        - □ Codage des entiers
-        - □ Codage des non-entiers
+        - 🗹 Codage des entiers
+        - 🗹 Codage des non-entiers
         - □ Bases
-        - □ [Codage des caractères](https://nsimeyroneinc.github.io/siteNSI1ere/Type_Donnes_Bases/TP_Codage_Caracteres/)
+        - □ Codage des caractères
         - □ Booléens
 
     === "T2 Types construits"
@@ -69,9 +70,9 @@ Ces TD sont corrigés dans la mesure du possible (soit directement sur le site s
         **Thème 6 : Langages et programmation - Python**
 
         - 🗹 Variables
-        - □ Boucle For
-        - □ Boucle While
-        - □ Instruction conditionnelle If
+        - 🗹 Boucle For
+        - 🗹 Boucle While
+        - 🗹 Instruction conditionnelle If
         - □ Fonctions
 
 
@@ -86,6 +87,6 @@ Ces TD sont corrigés dans la mesure du possible (soit directement sur le site s
 
 ## Comment calculer sa note au BAC 2023 et Répartition des notes :
 
-[Fiche pour calculer sa note au BAC 2023](divers/data/el-ve-de-premiere-comment-calculer-note-bac-2022-94490.pdf){:target="_blank"} 
+[Fiche pour calculer sa note au BAC 2023](Divers/data/el-ve-de-premiere-comment-calculer-note-bac-2022-94490.pdf){:target="_blank"} 
 
-![](divers/r-partition-de-la-note-finale.jpg){:.center width=50%}
+![](Divers/r-partition-de-la-note-finale.jpg){:.center width=75%}
