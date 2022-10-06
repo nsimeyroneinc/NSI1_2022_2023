@@ -88,4 +88,4 @@ Ces TD sont corrigés dans la mesure du possible (soit directement sur le site s
 
 [Fiche pour calculer sa note au BAC 2023](divers/data/el-ve-de-premiere-comment-calculer-note-bac-2022-94490.pdf){:target="_blank"} 
 
-![](r-partition-de-la-note-finale.jpg)
+![](divers/r-partition-de-la-note-finale.jpg){:.center width=50%}
