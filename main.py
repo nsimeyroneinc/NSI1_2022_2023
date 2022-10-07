@@ -68,6 +68,19 @@ def define_env(env):
         return f'<center> &emsp;{r1} <br> + &nbsp;{r2} <br> <div class="trait"></div> <br>&emsp; {rfin}</center>'
         
 #---------------- <PYODIDE>-------------------- 
+    @env.macro
+    def script(lang: str, nom: str) -> str:
+        "Renvoie le script dans une balise bloc avec langage spécifié"
+        return f"""```{lang}
+--8<---  "docs/""" + os.path.dirname(env.variables.page.url.rstrip('/')) + f"""/{nom}"
+```"""
+    # f"docs/{os.path.dirname(env.variables.page.url.rstrip('/'))}/scripts/{nom}.py"
+    
+    @env.macro
+    def py(nom: str) -> str:
+        "macro python rapide"
+        return script('python', "scripts/" + nom + ".py")
+
     env.variables['term_counter'] = 0
     env.variables['IDE_counter'] = 0
 

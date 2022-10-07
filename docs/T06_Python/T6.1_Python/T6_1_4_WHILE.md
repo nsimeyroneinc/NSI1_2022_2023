@@ -221,7 +221,7 @@ merci, j'étais bloqué dans une boucle infinie
         Exécuter le progtramme suivant et observer pas à pas les valeurs des variables. 
 
 
-{{ IDEv('exo') }}
+{{ IDE('exo') }}
 
 ```python
 def nombreAnnees(capital):              # je crée un fonction nombreAnnees associé au paramétre d'entrée capital
@@ -230,7 +230,7 @@ def nombreAnnees(capital):              # je crée un fonction nombreAnnees asso
         capital = capital * 1.05 + 500         # J'augmente la valeur de capital
         print("Capital : ", capital)
         annee += 1                      # J'incrément de 1 la variable annee
-        print-('Année : ', annee)
+        print('Année : ', annee)
     return annee                        # la fonction retourne la valeur de la variable année
 
 nombreAnnees(1000)    # J'exécute la fonction nombreAnnees avec 1000 comme paramètre (correspondant au capital de départ)
