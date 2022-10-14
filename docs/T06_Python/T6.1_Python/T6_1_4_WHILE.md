@@ -221,7 +221,8 @@ merci, j'étais bloqué dans une boucle infinie
         Exécuter le progtramme suivant et observer pas à pas les valeurs des variables. 
 
 
-{{ IDE('exo') }}
+{{ IDE() }}
+
 
 ```python
 def nombreAnnees(capital):              # je crée un fonction nombreAnnees associé au paramétre d'entrée capital

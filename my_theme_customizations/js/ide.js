@@ -67,14 +67,27 @@ window.addEventListener('load', () => {
     var p = document.querySelector('label[for="__palette_2"]')
     console.log(p)
     if (p.hidden) {
-        paintACE('ace/theme/crimson_editor')
+        paintACE('ace/theme/tomorrow')
     } else {
         paintACE('ace/theme/tomorrow_night_bright')
     }
 });
 
 var p2 = document.querySelector('input[id="__palette_2"]')
-p2.addEventListener('click', () => { paintACE('ace/theme/crimson_editor') });
+p2.addEventListener('click', () => { 
+    if (p2 === "(prefers-color-scheme: dark)") {
+        paintACE('ace/theme/tomorrow_night_bright')
+    } else {
+        paintACE('ace/theme/tomorrow')
+    }
+    
+});
 
 var p1 = document.querySelector('input[id="__palette_1"]')
-p1.addEventListener('click', () => { paintACE('ace/theme/tomorrow_night_bright') });
+p1.addEventListener('click', () => { 
+    if (p1 === "(prefers-color-scheme: light)") {
+        paintACE('ace/theme/tomorrow')
+    } else {
+        paintACE('ace/theme/tomorrow_night_bright')
+    }
+});
