@@ -215,7 +215,7 @@ True
 ```
 
 
-!!! savoir "FICHE n°8 : instructions conditionelles"
+!!! savoir "FICHE n°8 : instructions conditionnelles"
 
     !!! voc "if ... :"
 
@@ -476,7 +476,7 @@ True
 !!! exo "{{ exercice()}}"
     Programmer la fonction `trier` qui prend en paramètres trois nombres `a, b` et `c` et  - si besoin - intervertit leurs valeurs afin de les renvoyer triées dans l'ordre croissant.
 
-??? check "Solution 1 "
+??? check "Solution"
     ```python
     def trier(a,b,c):
         #on intervertit si besoin a et b pour avoir a <= b
@@ -491,23 +491,6 @@ True
         return (a, b, c) #les valeurs de a, b, c ont si besoin été échangées entre elles de sorte que a <= b <= c
     ```
 
-??? check "Solution 2"
-    ```python
-    def trier(a,b,c):
-        max1=maximum(maximum(a,b),c)
-        if max1==a and b>c:
-            return c,b,a
-        elif max1==a and b < c:
-            return b,c,a
-        elif max1==b and a>c:
-            return c,a,b
-        elif max1==b and a < c:
-            return a,c,b
-        elif max1==c and b>a:
-            return a,b,c
-        else:
-            return b,a,c
-    ```
 
 
 !!! exo "{{ exercice()}} : Maximun triplet"
