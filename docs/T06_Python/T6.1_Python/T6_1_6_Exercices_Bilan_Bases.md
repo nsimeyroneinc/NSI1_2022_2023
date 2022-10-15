@@ -282,7 +282,7 @@ Thème 6 - Langages et programmation
     === "Question 3"
         En utilisant votre fonction déterminer si 1792 est une année bissextile.
 
-    === 'Solution"
+    === "Solution"
         ```python
         annee_bissextile(1792)
         True
