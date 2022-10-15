@@ -159,6 +159,7 @@ merci, j'étais bloqué dans une boucle infinie
 
 ##  EXERCICES
     
+{{ initexo(0) }}
 
 !!! exo "{{ exercice()}}"
     === "Enoncé"

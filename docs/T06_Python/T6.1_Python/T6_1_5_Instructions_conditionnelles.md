@@ -26,6 +26,7 @@ Thème 6 - Langages et programmation
 
 ![python_logo1.png](data/python_logo1.png){:.center width=100px}
 
+{{ initexo(0) }}
 
 ## L'instruction conditionnelle IF
     

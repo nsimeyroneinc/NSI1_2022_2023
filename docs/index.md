@@ -31,7 +31,7 @@ Ces TD sont corrigés dans la mesure du possible (soit directement sur le site s
 
         - 🗹 Codage des entiers
         - 🗹 Codage des non-entiers
-        - □ Bases
+        - 🗹 Bases
         - □ Codage des caractères
         - □ Booléens
 
@@ -73,7 +73,7 @@ Ces TD sont corrigés dans la mesure du possible (soit directement sur le site s
         - 🗹 Boucle For
         - 🗹 Boucle While
         - 🗹 Instruction conditionnelle If
-        - □ Fonctions
+        - 🗹 Fonctions
 
 
     === "T7 Algo."
