@@ -48,7 +48,7 @@ Mini-Projet : Logo - Sprint
 
 ## Le « sprint »
 
-!!! note inline end "Reprise de Deezer"
+!!! note inline end "Windows retro"
     ![](data/windows.png)
 
     
