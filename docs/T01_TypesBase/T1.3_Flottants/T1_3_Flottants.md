@@ -86,7 +86,7 @@ Comme pour les entiers, on utilise le système binaire, qu'on prolonge à la par
         5. En déduire celle de $0,2$.
 
     === "Correction" 
-        {{ correction(False, 
+        {{ correction(True, 
         "
         1. $20,875 = 10100,111_2$
         4. $0,1 = 0,00011\overline{0011}_2$
