@@ -6,6 +6,7 @@ Il permettra de retrouver les cours, TP et TD traités en classes.<br>
 Ces TD sont corrigés dans la mesure du possible (soit directement sur le site soit dans Capytale).
 
 !!! info "Actualités"
+    - DM : [Dessine ta rue sur Capytale.](T08_Extras/5MiniProjet/dessine_ta_rue.md)
     - Thèmes traités :  
         - !!! capytale "TP Capytale"
             - [Boucles WHILE](https://capytale2.ac-paris.fr/web/c/58b1-658638/mcer)

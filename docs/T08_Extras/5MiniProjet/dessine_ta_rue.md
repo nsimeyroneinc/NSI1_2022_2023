@@ -57,6 +57,14 @@ D.L : Dessine ta rue
 !!! info "Information"
     Les fonctions sont données avec certains paramètres, vous pouvez rajouter un paramètre couleur par exemple...
 
+!!! aide "Aide Construction"
+    - Penser à faire un dessin, utiliser des coorodnnées et à utiliser la fonction `goto(x,y)`.  
+    ![dessin](data/dessin_coordonnees.png){:.center width=35%}
+    - Les murs, fenêtres et portes ne sont que des rectangles.  
+    - Un immeuble est un assemblage de murs, porte et fenêtres.
+    - ...
+
+
 Pour la couleur, vous avez à votre disposition le code suivant :
 
 ```python
