@@ -1,30 +1,12 @@
----
-title : Codage des entiers relatifs en base b
-subtitle: Thème 1 - Représentation de données - Types et valeurs de bases
-author : Première NSI
-numbersections: true
-fontsize: 10pt
-geometry:
-- top=20mm
-- left=20mm
-- right=20mm
-- heightrounded    
---- 
 
-Thème 1 - Représentation des données - Types et valeurs de bases
-===
+{% set num = 5 %}
+{% set titre = "Représentation des entiers négatifs"%}
+{% set theme = "typesbase" %}
+{% set niveau = "premiere"%} 
 
-{{ initexo(0) }}
 
-<table  class="greenTable">
-        <tr >
-            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
-            07
-            </th>
-            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Ecriture d'un entier relatifs en binaire</th>
-        </tr>
-</table>
-<br>
+{{ titre_chapitre(num,titre,theme,niveau)}}
+
 
 
 !!! progNSI "Programme 1ere"

@@ -1,32 +1,15 @@
----
-title : Mini-Projet
-subtitle: Thème 6 - Programmation
-author : Première NSI
-numbersections: true
-fontsize: 10pt
-geometry:
-- top=20mm
-- left=20mm
-- right=20mm
-- heightrounded    
---- 
+
+{% set num = 2 %}
+{% set titre = "Dessine ta rue" %}
+{% set theme = "projet" %}
+{% set niveau = "premiere" %}
 
 
-
-D.L : Dessine ta rue
-===
+{{ titre_chapitre(num,titre,theme,niveau)}}
 
 {{ initexo(0) }}
 
-<table  class="yellowTable">
-        <tr >
-            <th width="35%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:25pt;">
-            Mini-Projet
-            </th>
-            <th  width="65%"; style="text-align:center;border:none;font-size:25pt;">Dessine ta rue</th>
-        </tr>
-</table>
-<br>
+
 
 ![](data/dessine_ta_rue.png)
 

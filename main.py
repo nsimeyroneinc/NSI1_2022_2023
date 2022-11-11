@@ -1,9 +1,252 @@
 import os
+import csv
 
 # print(env.variables.config['theme']['palette']) # access palette color. Automatic toggle of color ?
 
 def define_env(env):
     "Hook function"
+
+    env.variables['transversal']=["histoire","projet","typesconstruits","python"]
+    env.variables['projet'] = {"icone":":fontawesome-solid-lightbulb:","style":"projet"}
+    env.variables['typesconstruits'] = {"icone":":fontawesome-solid-cubes:","style":"typesconstruits"}
+    env.variables['python'] = {"icone":":fontawesome-brands-python:","style":"python"}
+    env.variables['themes']={
+        "histoire":"Histoire de l'informatique",
+        "projet":"Projet",
+        "sd":"Structures de données",
+        "db":"Bases de données",
+        "os":"Architectures matérielles, systèmes d'exploitation et réseaux",
+        "algorithmique":"Algorithmique",
+        "python":"Langages et programmation",
+        "typesconstruits":"Types construits",
+        "typesbase":"Types de base",
+        "donneestable":"Données en table",
+        "web":"Le web"
+    }
+    env.variables['icones'] = {
+        "histoire":':fontawesome-solid-building-columns:{title="'+env.variables['themes']['histoire']+'"}',
+        "projet":':fontawesome-solid-lightbulb:{title="'+env.variables['themes']['projet']+'"}',
+        "sd":':fontawesome-solid-diagram-project:{title="'+env.variables['themes']['sd']+'"}',
+        "db":':fontawesome-solid-database:{title="'+env.variables['themes']['db']+'"}',
+        "os":':fontawesome-solid-microchip:{title="'+env.variables['themes']['os']+'"}',
+        "algorithmique":':fontawesome-solid-gears:{title="'+env.variables['themes']['algorithmique']+'"}',
+        "python":':fontawesome-brands-python:{title="'+env.variables['themes']['python']+'"}',
+        "typesconstruits" : ':fontawesome-solid-cubes:{title="'+env.variables['themes']['typesconstruits']+'"}',
+        "typesbase" : ':fontawesome-solid-cube:{title="'+env.variables['themes']['typesbase']+'"}',
+        "donneestable" : ':fontawesome-solid-table-columns:{title="'+env.variables['themes']['donneestable']+'"}',
+        "web" : ':material-web:{title="'+env.variables['themes']['web']+'"}'
+
+    }
+    env.variables['icones_exo']={
+        "dur": ":fontawesome-solid-bomb:{title='Exercice difficile'}",
+        "rappel": ":fontawesome-solid-clock-rotate-left:{title='Retour sur des notions antérieures'}",
+        "recherche": ":fontawesome-solid-search:{title='Exercice de recherche'}",
+        "capacite": ":fontawesome-solid-puzzle-piece:{title='Exercice testant une capacité du chapitre'}",
+        "python": ":fontawesome-brands-python:{title='Exercice en lien avec la programmation en Python'}",
+        "bac": ":fontawesome-solid-graduation-cap:{title='Exercice extrait du Bac'}",
+        "maths": ":fontawesome-solid-infinity:{title='Exercice en lien avec les mathématiques'}"
+    }
+    env.variables['icones_act']={
+        "rappel": ":material-history:{title='Retour sur des notions antérieures'}",
+        "recherche": ":fontawesome-solid-search:{title='Activité de recherche'}",
+        "oral": ":fontawesome-solid-comments:{title='Activité oral'}",
+        "papier": ":material-file-edit-outline:{title='Activité à réaliser sur feuille'}",
+        "vscode": ":material-microsoft-visual-studio-code:{title='Activité utilisant VS Code'}",
+        "video": ":fontawesome-solid-film:{title='Activité utilisant un support vidéo'}",
+        "notebook": ":fontawesome-solid-book:{title='Activité utilisant un jupyter notebook'}",
+        "python": ":fontawesome-brands-python:{title='Activité en lien avec la programmation en Python'}",
+        "maths": ":fontawesome-solid-infinity:{title='Activité en lien avec les mathématiques'}"
+    }
+
+    env.variables['devant_exo']=':black_small_square:'
+    env.variables['devant_act']=':black_small_square:'
+    env.variables['num_exo']=1
+    env.variables['num_act']=1
+
+    env.variables['progression_premiere']={
+        0 : ["python","Introduction",0,"T06_Python/T6.1_Python/T6_1_0_Introduction.md"],
+        1 : ["python","Les variables en Python",1,"T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python.md"],
+        2 : ["python","Les fonction en Python",1,"T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python.md"],
+        3 : ["python","Les Boucles FOR",1,"T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python.md"],
+        4 : ["typesbase","Représentation des entiers positifs",1,"T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers.md"],
+        5 : ["typesbase","Représentation des entiers négatifs",1,"T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md"],
+        6 : ["typesbase","Représentation des flottants",1,"T01_TypesBase/T1.3_Flottants/T1_3_Flottants.md"],
+        7 : ["python","Les boucles WHILE",1,"T06_Python/T6.1_Python/T6_1_4_WHILE.md"],
+        8 : ["python","Les instructions conditionnelles",1,"T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles.md"],
+        9 : ["python","Exercices Bilan Python",1,"T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases.md"]
+        #8 : ["web","Le web",2,"leweb.md"],
+        #9 : ["algorithmique","Algorithmes de tri",2,"algostri.md"],
+        #10 : ["typesbase","Représentation des entiers négatifs",1,"negatifs.md"],
+        #11: ["os","Réseau",1,"reseau.md"],
+        #12: ["web","Interaction dans une page web",1,"interactionweb.md"],
+        #13: ["algorithmique","Algorithmes gloutons",2,"gloutons.md"],
+        #14: ["donneestable","Fusion de tables",1,"fusiontable.md"],
+        #15: ["os","Interface homme-machine",2,"interface.md"],
+        #16: ["typesbase","Notion de nombre flottant",1,"flottant.md"],
+        #17: ["algorithmique","Algorithme des k plus proches voisins",2,"knn.md"]
+    }
+
+    env.variables['projet_premiere']={
+        1 : ["projet","Défi Logo Sprint",1,"T08_Extras/5MiniProjet/logo.md"],
+        2 : ["projet","Dessine ta rue",1,"T08_Extras/5MiniProjet/dessine_ta_rue.md"]
+        #2 : ["python","Les fonction en Python",1,"T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python.md"],
+        #3 : ["python","Les Boucles FOR",1,"T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python.md"],
+        #4 : ["typesbase","Représentation des entiers positifs",1,"T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers.md"],
+        #5 : ["typesbase","Représentation des entiers négatifs",1,"T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md"],
+        #6 : ["typesbase","Représentation des flottants",1,"T01_TypesBase/T1.3_Flottants/T1_3_Flottants.md"],
+        #7 : ["python","Les boucles WHILE",1,"T06_Python/T6.1_Python/T6_1_4_WHILE.md"],
+        #8 : ["python","Les instructions conditionnelles",1,"T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles.md"],
+        #9 : ["python","Exercices Bilan Python",1,"T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases.md"]
+        #8 : ["web","Le web",2,"leweb.md"],
+        #9 : ["algorithmique","Algorithmes de tri",2,"algostri.md"],
+        #10 : ["typesbase","Représentation des entiers négatifs",1,"negatifs.md"],
+        #11: ["os","Réseau",1,"reseau.md"],
+        #12: ["web","Interaction dans une page web",1,"interactionweb.md"],
+        #13: ["algorithmique","Algorithmes gloutons",2,"gloutons.md"],
+        #14: ["donneestable","Fusion de tables",1,"fusiontable.md"],
+        #15: ["os","Interface homme-machine",2,"interface.md"],
+        #16: ["typesbase","Notion de nombre flottant",1,"flottant.md"],
+        #17: ["algorithmique","Algorithme des k plus proches voisinumchapitrens",2,"knn.md"]
+    }
+    
+    # Titres des items travaillés sur l'année
+    @env.macro
+    def sec_titre(theme,titre):
+            icone = env.variables.icones[theme]
+            return f"### {icone} &nbsp; {titre}"
+    
+    @env.macro
+    def icone(theme):
+        return env.variables.icones[theme]
+    
+    @env.macro
+    def titre_chapitre(numero,titre,theme,niveau):
+        # Position de l'ancre pour repérage dans la page
+        if theme=="projet":
+            titre_bis = env.variables['projet_'+niveau][numero][1]
+            ligne=f"# <span class='numchapitre'>Mini-Projet {numero} : </span>  {titre_bis} "
+            ligne+=f"<span style='float:right;'>{env.variables.icones[theme]}</span>"
+        else:
+            titre_bis = env.variables['progression_'+niveau][numero][1]
+            ligne=f"# <span class='numchapitre'>C{numero}</span> {titre_bis} "
+            ligne+=f"<span style='float:right;'>{env.variables.icones[theme]}</span>"
+        return ligne
+
+    @env.macro
+    def chapitre(num,theme,titre,duree,lien):
+        icone = env.variables["icones"][theme]
+        return f"|{icone}|[C{num}- {titre}]({lien}) | {duree}\n"
+
+    @env.macro
+    def projet_c(num,theme,titre,duree,lien):
+        icone = env.variables["icones"][theme]
+        return f"|{icone}|[Mini-Projet {num}- {titre}]({lien}) | {duree}\n"        
+#--------------------------------------------
+    @env.macro
+    def sec_projet(theme,projet):
+            icone = env.variables.icones[theme]
+            return f"### {icone} &nbsp; {projet}"
+
+    @env.macro
+    def projet_chapitre(numero,projet,theme,niveau):
+        # Position de l'ancre pour repérage dans la page
+        titre_bis = env.variables['projet_'+niveau][numero][1]
+        ligne=f"# <span class='numprojet'>Mini-projet-{numero}</span> {titre_bis} "
+        ligne+=f"<span style='float:right;'>{env.variables.icones[theme]}</span>"
+        return ligne
+
+    @env.macro
+    def affiche_projet(niveau):
+        ret='''
+| |Mini-Projet        | Durée |
+|-|-------------|-------|
+        '''
+        if niveau=="premiere":
+            var_projet = env.variables.projet_premiere
+        else:
+            var_projet = env.variables.projet_terminale
+        for k in var_projet:
+           ret+=projet_c(k,env.variables['projet_'+niveau][k][0],env.variables['projet_'+niveau][k][1],env.variables['projet_'+niveau][k][2],env.variables['projet_'+niveau][k][3])
+        return ret
+#--------------------------------------------------------
+
+    @env.macro
+    def affiche_progression(niveau):
+        ret='''
+| |Titre        | Durée |
+|-|-------------|-------|
+        '''
+        if niveau=="premiere":
+            var_progression = env.variables.progression_premiere
+
+        else:
+            var_progression = env.variables.progression_terminale
+
+        for k in var_progression:
+            ret+=chapitre(k,env.variables['progression_'+niveau][k][0],env.variables['progression_'+niveau][k][1],env.variables['progression_'+niveau][k][2],env.variables['progression_'+niveau][k][3])
+       
+        return ret
+    
+    @env.macro
+    def genere_nav():
+        ret='''```\n'''
+        for k in env.variables.progression:
+            da = env.variables['progression'][k]
+            ret+=f'  - "C{k}-{da[1]}" : {da[3]}\n'
+        return ret+'```\n'
+#---------------- <exo perso>-------------------- 
+    with open("qcm.csv","r",encoding="utf-8") as f:
+        questions = list(csv.DictReader(f,delimiter=","))
+    env.variables['qcm']=questions
+
+    @env.macro
+    def affiche_question(num,index):
+        lenonce = env.variables.qcm[num]["enonce"]
+        # Traitement si enoncé sur plusieurs lignes
+        nl = lenonce.find('\n')
+        if nl>0:
+            lenonce=lenonce.replace("\n",'"\n',1)
+            lenonce=lenonce.replace("\n",'\n    ')
+        else:
+            lenonce+='"'
+        # Traitement si image
+        limg = env.variables.qcm[num]["image"]
+        if limg!='':
+            lenonce+=f'\n \t ![illustration](./images/C{env.variables.qcm[num]["chapitre"]}/{limg})'
+            lenonce+='{: .imgcentre}\n'
+        modele = f'''
+!!! fabquestion "**{index}.** {lenonce}
+    === "Réponses"
+        - [ ] a) {env.variables.qcm[num]["reponseA"]}
+        - [ ] b) {env.variables.qcm[num]["reponseB"]}
+        - [ ] c) {env.variables.qcm[num]["reponseC"]}
+        - [ ] d) {env.variables.qcm[num]["reponseD"]}
+    === "Correction"\n'''
+        for rep in "ABCD":
+            clerep = "reponse"+rep
+            if env.variables.qcm[num]["bonne_reponse"]==rep:
+                modele+=f"        - [x] {rep.lower()}) =={env.variables.qcm[num][clerep]}== \n"
+            else:
+                modele+=f"        - [ ] {rep.lower()}) ~~{env.variables.qcm[num][clerep]}~~ \n"
+        return modele
+
+    @env.macro
+    def affiche_qcm(liste_question):
+        qcm = ""
+        for index in range(len(liste_question)):
+            qcm+=affiche_question(liste_question[index],index+1)
+        return qcm
+    
+    @env.macro
+    def qcm_chapitre(num_chap):
+        index=1
+        qcmc=""
+        for num in range(len(env.variables.qcm)):
+            if int(env.variables.qcm[num]["chapitre"])==num_chap:
+                qcmc+=affiche_question(num,index)
+                index+=1
+        return qcmc
+
 
 #---------------- <exo perso>-------------------- 
 

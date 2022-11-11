@@ -1,34 +1,11 @@
----
-title : Les Variables en Python
-subtitle: Thème 6 - Programmation
-author : Première NSI
-numbersections: true
-fontsize: 10pt
-geometry:
-- top=20mm
-- left=20mm
-- right=20mm
-- heightrounded    
---- 
+
+{% set num = 1 %}
+{% set titre = "Les variables en Python"%}
+{% set theme = "python" %}
+{% set niveau = "premiere"%} 
 
 
-
-Thème 6 - Langages et programmation
-===
-
-{{ initexo(0) }}
-
-<table  class="yellowTable">
-        <tr >
-            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
-            01
-            </th>
-            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Les Variables en Python</th>
-        </tr>
-</table>
-<br>
-
-
+{{ titre_chapitre(num,titre,theme,niveau)}}
 
 ![](data/python_logo1.png){:.center}
 

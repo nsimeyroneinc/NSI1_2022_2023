@@ -14,9 +14,16 @@ Ces TD sont corrigés dans la mesure du possible (soit directement sur le site s
             - [Exercices Bilan Bases](https://capytale2.ac-paris.fr/web/c/47b7-774746/mcer)
 
 
+
+{{ affiche_progression("premiere") }}
+
+{{ affiche_projet("premiere") }}
+
 ??? video  "Vidéo de présentation :" 
 
     <div style="width: 100%;"><div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;"><iframe frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/622b74508c4c780013c4e08f" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+
+
 
 ## Les thèmes du programme
 

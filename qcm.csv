@@ -1,0 +1,225 @@
+num,enonce,reponseA,reponseB,reponseC,reponseD,bonne_reponse,domaine,chapitre,image
+1,"Une et une seule de ces affirmations est fausse. Laquelle ?","Un système d'exploitation libre est la plupart du temps gratuit","Je peux contribuer à un système d'exploitation libre","Il est interdit d'étudier un système d'exploitation propriétaire","Un système d'exploitation propriétaire est plus sécurisé","D","Architectures matérielles et systèmes d'exploitation",1,
+2,"Quelle est l'effet de la commande `cd ..` ?","Changer le répertoire courant vers le répertoire parent","Ejecter le CD","Copier le contenu du répertoire courant dans un répertoire caché","Supprimer le répertoire courant","A","Architectures matérielles et systèmes d'exploitation",1,
+3,"Quel est le rôle de la commande `ls` ?","Basculer en mode administrateur","Lister le contenu du répertoire courant","Effacer le contenu du répertoire courant","Donner un accès complet à un fichier","B","Architectures matérielles et systèmes d'exploitation",1,
+4,"Dans un terminal sous Linux, quelle commande faut-il écrire pour donner à tout le monde le droit d'écriture sur le fichier `information.py` ?",`chmod o+w information.py`,`chmod a+w information.py`,`chmod o+x information.py`,`chmod a+x information.py`,B,Architectures matérielles et systèmes d'exploitation,1,
+5,Quel est l'effet de la commande `chmod u+w fichier.txt` ?,de permettre au propriétaire du fichier de modifier le contenu de ce fichier,d'interdire au propriétaire de modifier le contenu de ce fichier,d'interdire à tous les autres utilisateurs de lire le fichier,d'effacer le fichier,A,Architectures matérielles et systèmes d'exploitation,1,
+6,"Dans la console Linux, quelle commande faut-il exécuter pour obtenir la documentation de la commande `pwd` ?",`man pwd`,`cd pwd`,`mkdir pwd`,`ls pwd`,A,Architectures matérielles et systèmes d'exploitation,1,
+7,Lequel de ces systèmes d'exploitation est sous licence propriétaire ?,Android,Linux,Windows,Ubuntu,C,Architectures matérielles et systèmes d'exploitation,1,
+8,"Une application doit écrire sur le disque dur de l'ordinateur, laquelle des affirmations suivantes est vraie ?",Elle peut le faire quand bon lui semble,Elle doit en faire la demande au système d'exploitation,Elle doit en faire la demande aux autres applications qui fonctionnent sur l'ordinateur,Elle doit en faire la demande à l'utilisateur de l'ordinateur,B,Architectures matérielles et systèmes d'exploitation,1,
+9,Quelle est l'écriture en base 2 du nombre $(154)_{10}$ ?,10011100,10011001,00011010,10011010,D,Types et valeurs de base,2,
+10,Que peut-on dire de l'écriture en base 2 d'un nombre divisible par 2 ?,Elle ne contient pas de 0,Elle se termine par 0,Elle ne contient qu'un seul 1,Elle contient deux 1,B,Types et valeurs de base,2,
+11,Quelle est l'écriture en base 10 du nombre $(01101100)_{2}$ ?,216,108,54,4,B,Types et valeurs de base,2,
+12,Quelle est l'écriture en base 16 du nombre $(165)_{10}$ ?,95,A5,B5,C5,B,Types et valeurs de base,2,
+13,"En base 12, combien il y a-t-il de chiffres ?",10,11,12,13,C,Types et valeurs de base,2,
+14,"Si l'écriture en base 2 d'un nombre ne comporte qu'un seul 1, alors ce nombre :",n'est pas une puissance 2,est une puissance de 2,est divisible par 2,n'est pas divisible par 2,B,Types et valeurs de base,2,
+15,Quelle est l'écriture en base 10 du nombre $(B2)_{16}$ ?,112,162,178,194,C,Types et valeurs de base,2,
+16,"Pour écrire les nombres entre 1 et 100 en base 2, on a besoin au maximum de :",5 chiffres,6 chiffres,7 chiffres,8 chiffres,C,Types et valeurs de base,2,
+17,Quelle est l'affirmation exacte ?,Le codage UTF-8 est sur 7 bits.,Le codage UTF-8 est sur 1 octet.,Le codage UTF-8 est sur 1 à 4 octets.,Le codage UTF-8 est sur 4 octets.,C,Types et valeurs de base,2,
+18,On a écrit une fonction qui prend en paramètre une liste non vide et qui renvoie son plus grand élément. Combien de tests faudrait-il écrire pour garantir que la fonction donne un résultat correct pour toute liste ?,"Il faudrait écrire une infinité de tests, on ne peut pas prouver que cette fonction est correct simplement en la testant",Deux tests : pour une liste à un élément et pour une liste à deux éléments ou plus.,"Trois tests : pour une liste vide, pour une liste à un élément et pour une liste à deux éléments ou plus.",Deux tests : pour le cas où le plus grand élément est en début de liste et pour le cas où le plus grand élément n'est pas en début de liste,A,Algorithmique,6,
+19,"Quelle affirmation concernant la fonction ci-dessous (où `x` et `y` sont des entiers naturels) est fausse ? 
+```python
+def f(x,y):
+    s=x
+    t=y
+    while t>0:
+        s=s+1
+        t=t-1
+    return s
+```
+",La propriété `s+t=x+y` est un invariant de boucle,La valeur finale de `t` est 1,"La propriété ""`t` est supérieur ou égal à 0"" est un invariant de boucle",Le résultat renvoyé est égal à la somme `x+y`,A,Algorithmique,6,
+20,"Donner un invariant de boucle de l'algorithme suivant qui permet de calculer la somme des `N` premiers entiers (où `N` est un nombre entier) :
+```python
+i=0
+while i<N:
+    i=i+1
+    somme=somme+i
+```
+",`somme = 0+1+2+...+i` et `i<N`,`somme = 0+1+2+...+N` et `i<N`,`somme = 0+1+1+...+i` et `i<N+1`,`somme = 0+1+2+...+N` et `i<N+1`,B,Algorithmique,6,
+21,"Quel test va permettre de détecter l'erreur dans la fonction Python suivante qui ne calcule pas toujours correctement le résultat de $x^y$ (avec $x$ et $y$ entiers) ?
+```python
+def puissance(x,y);
+    p=x
+    for i in range(y-1):
+        p=p*x
+    return p
+```","`puissance(2,0)`","`puissance(2,1)`","`puissance(2,2)`","`puissance(2,10)`",A,Algorithmique,6,
+22,"Pour pouvoir utiliser un algorithme de recherche par dichotomie dans une liste, quelle précondition doit être vraie ?",La liste doit être triée.,La liste ne doit pas comporter de doublons.,La liste doit comporter uniquement des entiers positifs.,La liste doit être de longueur inférieure à 1024.,A,Algorithmique,6,
+23,"La fonction suivante doit calculer la moyenne d'un tableau de nombres. Avec quelles expressions faut-il compléter l'écriture pour que la fonction soit correcte ?
+```python
+def moyenne(tableau):
+    total = ...
+    for valeur in tableau:
+        total=total+valeur
+    return total/...
+```",`0` et `len(tableau)`,`0` et `len(tableau)+1`,`1` et `len(tableau)`,`1` et `len(tableau)+1`,A,Algorithmique,6,
+24,"Dans une recherche par dichotomie, combien de comparaisons faut-il faire au maximum pour savoir si une valeur se trouve ou non dans un tableau trié de 1000 nombres ?",3,10,1000,2000,B,Algorithmique,6,
+25,Qu'est-ce qu'un fichier `csv` ?,Un utilitaire de traiment d'image.,Un format de données.,Un format d'image.,Une bibliothèque Python permettant l'affichage des images.,B,Traitement de données en table,7,
+26,"Dans la plupart des fichiers `csv`, que contient la première ligne ?",L'origine des données,Des informations sur l'auteur du fichier,La date de création du fichier,Les descripteurs des champs de la table de données,D,Traitement de données en table,7,
+27,"Dans un fichier `csv`,",Une ligne s'appelle un enregistrement et une colonne s'apelle un champ,Une ligne s'appelle un champ et une colonne s'apelle un enregistrement,Une ligne s'appelle un descripteur et une colonne s'apelle un champ,Une ligne s'appelle un enregistrement et une colonne s'apelle un descripteur,A,Traitement de données en table,7,
+28,"Quels sont les descripteurs du tableau suivant :
+   |Nom   |Prenom| Naissance |
+   |------|------|-----------|
+   |Dupont|Pierre|17/05/1987|
+   |Dupond|Catherine|18/07/1981|
+   |Haddock|Archibald|23/04/1998|
+","Dupont, Pierre et 17/05/1987","Dupont, Dupond et Haddock",Nom Prenom et Naissance,Il n'y en a pas,C,Traitement de données en table,7,
+29,Que peut-on dire de l'entier relatif $101001_2$ codé sur 8 bits en complément à deux ?,Cet entier est pair.,Cet entier est négatif.,Cet entier est positif.,Ce entier vaut $-23_{10}$.,B,Types et valeurs de base,10,
+30,Quel est l'entier relatif codé en complément à deux sur un octet par $11111111$,$-1$,$-128$,$-127$,255,C,Types et valeurs de base,10,
+31,Le complément à deux sur un octet de $10110100_2$ est :,$01001011_2$,$00110100_2$,$01001000_2$,$01001100_2$,D,Types et valeurs de base,10,
+32,"Si $1011_2$ est un entier signé sur quatre bits en complément à 2, alors sa valeur décimale est :",$-7$,$-5$,5,7,B,Types et valeurs de base,10,
+33,Donner l'écriture de $-3_{10}$ en complément à deux sur quatre bits :,0111,1101,1011,1111,B,Types et valeurs de base,10,
+34,A quelle catégorie appartient l'algorithme des k plus proches voisins ?,Algorithmes de classification et d'apprentissage,Algorithmes de tri,Algorithmes gloutons,Algorithmes de recherches de chemins,A,Algorithmique,17,
+35,Quelle est l'affirmation correcte ?,L'algorithme des k plus proches voisins peut donner des résultats différents suivant les valeurs de k,L'algorithme des k plus proches voisins donne toujours le même résultat suivant les valeurs de k,On ne peut pas modifier la valeur de k dans l'algorithme des k plus proches voisins,La valeur de k doit être impair dans l'algorithme des k plus proches voisins,A,Algorithmique,17,
+36,Comment est classé la donnée représentée par le point gris central en utilisant l'algorithme des 10 plus proches voisins ?,La nouvelle donnée est un rond rouge,La nouvelle donnée est un losange bleu,La nouvelle donnée est une croix verte,L'algorithme échoue et ne peut pas préduire,C,Algorithmique,17,exqcm.png
+37,Laquelle de ces propositions est une adresse IP v4 valide ?,4E:15:67:E3:11:17,212.53.98.120,256.53.98.120,53.98.120,B,Architectures matérielles et systèmes d'exploitation,11,
+38,Laquelle de ces propositions est une adresse MAC valide ?,04:D3:B0:7E:71:A6,04:D3:B0:7E:71,04:D3:B0:7E:71:G6,125.212.31.53,A,Architectures matérielles et systèmes d'exploitation,11,
+39,Quelle est l'utilité de la commande `ping` ?,Obtenir la route suivie par un paquet sur un réseau informatique,Obtenir l'adresse MAC de la machine sur laquelle on exécute cette commande.,Mesurer  les performances d'une machine distante.,Tester si une machine distante est accessible.,D,Architectures matérielles et systèmes d'exploitation,11,
+40,Le protocole du bit alterné permet :,de chiffrer les communications sur un réseau,de corriger les problèmes de perte de paquet lors de transmissions sur un réseau,d'accélerer les communications sur un réseau,de fiabiliser totalement les communications sur un réseau,B,Architectures matérielles et systèmes d'exploitation,11,
+41,"Par rapport à un envoi en continu, quel est l'un des avantages de l'envoi de données par paquets dans un réseau ?",Les données vont plus vite lorsqu'elles sont par paquets.,Les données sont plus sécurisées lorsqu'elles sont par paquets,"En cas de panne temporaire sur le réseau, seul les paquets concernés doivent être émis de nouveau.","Il n'y a pas davantage, l'envoi en continu est toujours préférable.",C,Architectures matérielles et systèmes d'exploitation,11,
+42,"On donne ci-dessous une variable Python `pays` contenant une liste de dictionnaires. Parmi les propositions, quelle variable contient `Paris` ?
+```python
+pays = [
+{'Nom':'France','Capitale':'Paris'},
+{'Nom':'Allemagne','Capitale':'Berlin'},
+{'Nom':'Espagne','Capitale':'Madrid'}]
+```
+",`pays[0]['Capitale']`,`pays[1]['Capitale']`,`Nom[0]['Capitale']`,`Capitale['France']`,A,Traitement de données en table,7,
+43,Entre quelles balises se trouvent le contenu d'un fichier html qui s'affiche dans un navigateur ?,`<html>` et `</html>`,`<head>` et `</head>`,`<title>` et `</title>`,`<body>` et `</body>`,D,Interactions entre l'homme et la machine sur le Web,8,
+44,Quel balise html permet d'insérer un lien hypertexte ?,`<a>`,`<p>`,`<link>`,`<href>`,A,Interactions entre l'homme et la machine sur le Web,8,
+45,Quel est le rôle d'un fichier `css` ?,Créer le contenu d'une page web,Définir l'apparence des éléments constituants une page web,"Définir la structure d'une page web (titres, paragraphes, ...)",Insérer des images dans une page web,B,Interactions entre l'homme et la machine sur le Web,8,
+46,"Les balises `<h1>`, `<h2>`, ... `<h6>`, permettent :",De créer des listes numérotées dans une page web,De créer des listes à puces dans une page web,De créer plusieurs niveaux de titres dans une page web,De créer des paragraphes dans  une page web,C,Interactions entre l'homme et la machine sur le Web,8,
+47,Le *Web* fonctionne sur le :,modèle client-serveur,modèle pair à pair,modèle client-client,modèle serveur-serveur,A,Interactions entre l'homme et la machine sur le Web,8,
+48,Quelle ligne dans le fichier `css` d'une page web permettra aux titres de niveau 1 de cette page de s'afficher en rouge ?,`h1 {color:red;}`,`title {color:red;}`,`.h1 {couleur:red;}`,`<h1> {color:red;}`,A,Interactions entre l'homme et la machine sur le Web,8,
+49,Quel est la balise à utiliser pour insérer une image nommée `logo_python.jpg` dans une page web ?,"`<image src=""logo_python.jpg"">`","`<image source=""logo_python.jpg"">`","`<img src=""logo_python.jpg"">`","`<img source=""logo_python.jpg"">`",C,Interactions entre l'homme et la machine sur le Web,8,
+50,Quelles balises doit-on utiliser pour créer une liste d'éléments non ordonnées dans une page web ?,`<ol>` et `<li>`,`<ul>` et `<li>`,`<ol>` et `<il>`,`<ul>` et `<ol>`,B,Interactions entre l'homme et la machine sur le Web,8,
+51,Quelle instruction permet d'orienter une tortue `crayon` vers le bas ?,`tortue.forward(270)`,`tortue.left(270)`,`tortue.right(270)`,`tortue.setheading(270)`,D,Langages et programmation,3,
+52,"On suppose que la tortue `crayon` est située en `(0,0)` et est orientée vers le bas, quelle suite d'instructions permet de construire la figure suivante ?",<br> `crayon.forward(100)` <br> `crayon.left(90)` <br> `crayon.forward(50)`,<br> `crayon.forward(100)` <br> `crayon.right(90)` <br> `crayon.forward(50)`,<br> `crayon.forward(100)` <br> `crayon.setheading(90)` <br> `crayon.forward(50)`,<br>`crayon.forward(100)` <br> `crayon.left(45)`<br> `crayon.forward(50)`,A,Langages et programmation,3,qcm1.png
+53,"Quelles instructions permettent de positionner la tortue `crayon` en `(-100,100)`, sans rien tracer à l'écran ?","<br> `crayon.penup()` <br> `crayon.set(-100,100)`","<br> `crayon.penup()` <br> `crayon.forward(-100,100)`","<br> `crayon.pendown()` <br> `crayon.goto(-100,100)`","<br> `crayon.penup()` <br> `crayon.goto(-100,100)`",D,Langages et programmation,3,
+54,"En python, la définition d'une fonction commencer par le mot clé :",`function`,`def`,`import`,`return`,B,Langages et programmation,3,
+55,"Quelle sera le dessin produit par l'instruction `mystere(100,45)`  où `mystere` est la fonction ci-dessous :
+```python
+def mystere(l,a):
+    crayon.penup()
+    crayon.goto(0,0)
+    crayon.setheading(a)
+    crayon.forward(l)
+```",Un trait de longueur 45 d'orientation 100° et partant de l'origine,Un trait de longueur 100 d'orientation 45° et partant de l'origine,Deux traits de longueur 100 se croisant à l'origine à 45°,Cette fonction ne produit aucun dessin !,D,Langages et programmation,3,
+56,Quelle instruction permet de créer une boucle qui va répéter 5 fois  les instructions indentées qui suivent ?,`for ma_variable in range(5)`,`for ma_variable in range(5):`,`for ma_variable in 5:`,`if ma_variable in 5:`,B,Langages et programmation,3,
+57,Quelle instruction permet de tester si la variable `essais` vaut 10 ?,`if essais=10`,`if essais==10`,`if essais==10:`,`if essais in 10:`,C,Langages et programmation,3,
+58,Une boucle `while` :,s'exécute tant qu'une condition est vraie et donc peut être infinie.,s'exécute un nombre prédéfinie de fois,s'exécute toujours une infinité de fois,s'exécute jusqu'à ce que l'utilisateur réponde correctement,A,Langages et programmation,5,
+59,"Quel sera le résultat de l'exécution du programme Python suivant ?
+
+```python
+n = 5
+p = 1
+while n>0:
+    p = p*2
+```
+",Une boucle infinie,Une boucle se répétant cinq fois,Une `Syntax Error`,Une `Indentation Error`,D,Langages et programmation,5,
+60,"Quelles seront les valeurs des variables `s` et `i` à la fin de l'exécution du programme suivant ?
+
+```python
+s = 0
+i = 1
+while i < 5:
+    s = s + i
+    i = i + 1
+```
+",`s=10` et `i=4`,`s=10` et `i=5`,`s=15` et `i=5`,Aucunes car ce programme produit une erreur.,B,Langages et programmation,5,
+61,"Quelle instruction permet d'exécuter une boucle tant que les variables `a` et `b` sont toutes les deux inférieures strictement à 10.
+",`while a<10 or b<10`,`while a<10 or b<10:`,`while a<10 and b<10`,`while a<10 and b<10:`,D,Langages et programmation,5,
+62,"Quel est la valeur de la variable `b` après exécution de ce programme :
+
+```python
+a = 10
+if a%2==0:
+    b=1
+else:
+    b=2
+```",`b=1`,`b=2`,`b=10`,Aucune car ce programme produit une erreur,A,Langages et programmation,3,
+63,"Quel sera la valeur de la variable `compteur` après l'exécution du programme suivant ?
+
+```python
+compteur = 1
+compteur += 1
+```",Aucune car `+= 1` provoque une erreur,`compteur` vaudra 2 car `+= 1` permet d'augmenter de 1 une variable,`compteur` vaudra 0 car `+= 1` permet de diminuer de 1 une variable,`compteur` vaudra 1 car `+= 1` ne modifie pas sa valeur,B,Langages et programmation,5,
+65,De quand date la première version du langage Python ?,1951,1971,1991,2011,C,Langages et programmation,3,
+66,"Parmi les éléments suivants d'un ordinateur, lequel n'est pas un périphérique d'entrée ?",Souris,Ecran,Disque dur,Clé usb,B,Architectures matérielles et systèmes d'exploitation,4,
+67,"Dans le modèle d'architecture de Von Neumann, quel est le rôle de l'unité de contrôle ?",Gérer le séquençage (l'ordre) des opérations,Effectuer les opérations,Lire les données,Stocker les données,A,Architectures matérielles et systèmes d'exploitation,4,
+68,"Dans le modèle d'architecture de Von Neumann, que signifie UAL ?",Unité Active de Lecture,Unité Additive et Logique,Unité Arithmétique et Logique,Unité Active et logique,C,Architectures matérielles et systèmes d'exploitation,4,
+69,Quel est le rôle de l'unité arithmétique et logique dans un ordinateur ?,Afficher les informations,Définir l'ordre des opérations,Effectuer les opérations,Stocker les informations,C,Architectures matérielles et systèmes d'exploitation,4,
+70,"Le composant élémentaire d'un ordinateur, circuit électronique ne pouvant être que dans deux états (0 ou 1) s'appelle :",Un transistor,Une radio,Un processeur,Une porte logique,A,Architectures matérielles et systèmes d'exploitation,4,
+71,Quel est l'opérateur booléen qui vaut 1 seulement lorsque les deux opérandes valent 1 ?,Or,And,Nor,Nand,B,Architectures matérielles et systèmes d'exploitation,4,
+72,"Parmi les propositions suivantes, quelle expression est égale à `not(a and b)` ?",`(not a) and (not b)`,`(not a) or (not b)`,`(not a) and  b`,`a and (not b)`,B,Architectures matérielles et systèmes d'exploitation,4,
+73,"Quelles sont les valeurs manquantes dans la table de vérité suivante :
+
+| a | b| not a | b or (not a) | 
+|---|--|-------|--------------|
+|0|0|1|1|
+|0|1|1|1|
+|1|0|?|?|
+|1|1|0|1|
+",0 et 0,0 et 1,1 et 0,1 et 1,A,Architectures matérielles et systèmes d'exploitation,4,
+74,Que vaut la variable `a` après exécution de l'instruction `a=[0.5*x for x in range(4)]` ?,"`[0.0,0.5,1.0,1.5,2.0]`","`[0,1,2,3,4]`","`[0,1,2,3]`","`[0.0,0.5,1.0,1.5]`",D,Langages et programmation,5,
+75,"Si `alpha=[""A"",""B"",""C"",""D"",""E"",""F"",""G"",""H""]` quelle est l'expression permettant d'accéder à la lettre ""E"" ?",`alpha4`,`alpha[4]`,`alpha(4)`,`alpha.E`,B,Langages et programmation,5,
+76,"Parmi les propositions suivantes, laquelle est exacte ?",Un algorithme glouton fournit toujours une solution optimale,Un algorithme glouton est un algorithme testant toutes les combinaisons possibles,Un algorithme glouton ne donne pas toujours une solution optimale,Un algorithme glouton consomme enormément de mémoire,C,Algorithmique,13,
+77,"Quel est le résultat de l'algorithme glouton pour le rendu de monnaie si le système monétaire contient les pièces suivantes : 2, 4, 7, 15 et 20 et que la somme à rendre est 38 ?","15,15,4,4","20,7,7,4","7,7,7,7,4,4,2",L'algorithme échoue et ne parvient pas  à rendre une somme de 38,D,Algorithmique,13,
+78,Cocher la réponse correcte parmi celles proposées :,Un algorithme glouton procède en effectuant des choix aléatoires,Un algorithme glouton teste toutes les solutions possibles,Un algorithme glouton procède étape par étape en effectuant un choix optimum local,"Un algorithme glouton procède par essai/erreur, en revenant en arrière lorsqu'un mauvais choix a été effectué",C,Algorithmique,13,
+79,"Parmi les problèmes de rendu de monnaie suivants, cocher celui pour lequel l'algorithme glouton ne donne **pas** un résultat optimal :","Somme à rendre = 18 et valeurs = 13,6,3,1","Somme à rendre = 55 et valeurs = 20,10,5,2,1","Somme à rendre = 27 et valeurs = 10,6,3,1","Somme à rendre = 34 et valeurs = 20,10,5,2,1",A,Algorithmique,13,
+80,"On considère un problème du sac à dos avec un poids maximum de 2 kg et les objets suivants : ordinateur (1500 €, 1.8 kg), téléphone (900 €, 1.2 kg) et livre (700 €, 0.7 kg). On suppose qu'on utilise un algorithme glouton classant les objets par **valeur décroissante**. Alors :",La solution optimale est téléphone+livre et celle de l'algorithme glouton est ordinateur seul,La solution optimale et celle de l'algorithme glouton sont les mêmes : téléphone+livre,La solution optimale et celle de l'algorithme glouton sont les mêmes : ordinateur seul,La solution optimale est ordinateur seul et celle de l'algorithme glouton est téléphone+livre ,A,Algorithmique,13,
+81,"Pour le problème du sac à dos, l'algorithme glouton consiste à :",Générer des combinaisons aléatoires d'objets et les tester,Tester toutes les combinaisons possibles et prendre la meilleure,Classer les objets suivant un critère et prendre les mieux classés en premier,Classer les objets afin d'en éliminer certains puis choisir parmi ceux qui restent,C,Algorithmique,13,
+82,"On applique l'algorithme du tri par sélection à la liste `[9,11,7,16]`, après la première étape, le contenu de la liste sera :","`[11,9,7,16]`","`[7,11,9,16]`","`[16,11,7,9]`",Aucune des propositions ci-dessus,B,Algorithmique,9,
+83,"On applique l'algorithme du tri par insertion à la liste `[9,11,7,16]`, quel sera le contenu de la liste après le premier échange ?","`[11,9,7,16]`","`[9,11,16,7]`","`[9,7,11,16]`",Aucune des propositions ci-dessus,C,Algorithmique,9,
+84,L'algorithme du tri par insertion a une complexité :,logarithmique,linéaire,quadratique,exponentielle,C,Algorithmique,9,
+85,"Un programme de tri par insertion prend environ 1 seconde pour trier une liste de $10\,000$ éléments, combien de temps prendra-t-il environ pour trier une liste de $100\,000$ éléments ?",1 seconde,10 secondes,100 secondes,1000 secondes,C,Algorithmique,9,
+86,"Quelles sont les deux lignes manquantes dans la fonction ci-dessus qui renvoie le minimum d'une liste non vide :
+```python linenums=""1""
+def min_liste(liste):
+    elt_min = ....
+    for elt in liste:
+        if elt<elt_min:
+            ......
+    return elt_min
+```",La ligne 2 est `elt_min=liste[1]` et la ligne 5 est `elt_min=elt`,La ligne 2 est `elt_min=liste[1]` et la ligne 5 est `elt=elt_min`,La ligne 2 est `elt_min=liste[0]` et la ligne 5 est `elt=elt_min`,La ligne 2 est `elt_min=liste[0]` et la ligne 5 est `elt_min=elt`,D,Algorithmique,9,
+87,"Dans le programme Javascript ci-dessous, quelle est la notation qui délimite le bloc d'instructions exécuté à chaque passage dans la boucle `while` ?
+```javascript
+var i=0
+while (i<10) {
+    alert(i);
+    i = i + 1;
+}
+alert(""Fin"")
+```",Le fait que les instructions soient encadrées entre `{` et `}`,Le fait que les instructions soient indentées de 4 caractères,Le fait que les instructions suivent le mot clé `while`,Le fait que les instructions suivent la parenthèse fermante `)`,A,Interactions entre l'homme et la machine sur le Web,12,
+88,Quel mot clé permet de commencer la définition d'une fonction en Javascript ?,`def`,`return`,`var`,`function`,D,Interactions entre l'homme et la machine sur le Web,12,
+89,"Parmi les balises HTML ci-dessous, quelle est celle qui permet à l'utilisateur de saisir son nom dans un formulaire en respectant la norme HTML ?","`<input type=""text"">`","`<input type=""name"">`",`<select/>`,`<form>`,A,Interactions entre l'homme et la machine sur le Web,12,
+90,"Parmi les propriétés suivantes d'une balise `<button>` dans une page HTML, laquelle doit être rédigé en Javascript ?",La propriété `name`,La propriété `id`,La propriété `onclick`,la propritété   `type`,C,Interactions entre l'homme et la machine sur le Web,12,
+91,Quelle est la machine qui va exécuter un programme Javascript inclus dans une page HTML ?,"La machine de l'utilisateur ou le serveur, suivant la confidentialité des données manipulées.","La machine de l'utilisateur ou le serveur, selon leurs disponibilités",Le serveur sur lequel est stocké la page HTML,La machine de l'utilisateur sur laquelle s'exécute le navigateur web,D,Interactions entre l'homme et la machine sur le Web,12,
+92,"Le nombre à virgule $0,3_{10}$ :",est représenté exactement en machine par $3/10$,"est représenté exactement en machine par $0,11_{2}$",ne peut pas être représenté exactement en machine car c'est un nombre à virgule,ne peut pas être représenté exactement car son écriture dyadique est illimitée,D,Types et valeurs de base,16,
+93,"Le nombre à virgule $0,25_{10}$ :","est représenté exactement en machine par $0,1_{2}$","est représenté exactement en machine par $0,01_{2}$",ne peut pas être représenté exactement en machine car c'est un nombre à virgule,ne peut pas être représenté exactement car son écriture dyadique est illimitée,B,Types et valeurs de base,16,
+94,"Quelle est  l'écriture décimal de $0,11_{2}$ ?","$0,5$","$0,25$","$0,75$","$0,3$",C,Types et valeurs de base,16,
+95,"Quelle est  l'écriture dyadique de $0,625_{10}$ ?","$0,101_{2}$","$0,011_{2}$","$0,110_{2}$","$0,111_{2}$",A,Types et valeurs de base,16,
+96,"Un seul des nombres suivants n'a pas une écriture finie en base 2, lequel ?","$1,25_{10}$","$1,5_{10}$","$1,6_{10}$","$1,75_{10}$",C,Types et valeurs de base,16,
+97,A quelle condition peut-on concaténer deux tables ?,il suffit qu'elles aient un descripteur commun,elles doivent avoir des descripteurs identiques,elles doivent avoir au moins un enregistrement identique,elles doivent avoir le même nombre de colonnes,B,Traitement de données en table,14,
+98,A quelle condition peut-on effectuer la jointure de deux tables ?,il faut qu'elles aient un descripteur commun,elles doivent avoir le même nombre de ligne,elles doivent avoir au moins un enregistrement identique,elles doivent avoir le même nombre de colonnes,A,Traitement de données en table,14,
+99,"Quelle instruction permettra de réaliser la concaténation des deux tables ci-dessous contenant des noms de communes et leur code postal (CP) :
+```python
+t1 = [{""Nom"":""Saint-Denis"";""CP"":97400},{""Nom"":""Saint-Paul"";""CP"":97411}]
+t1 = [{""Nom"":""Le tampon"";""CP"":97418},{""Nom"":""La possession"";""CP"":97419}]
+```",`t = t1.join(t2)`,"`t = concat(t1, t2)`",`t == t1 + t2`,`t = t1 + t2`,D,Traitement de données en table,14,
+100,"Parmi les dispositifs d'entrée et de sortie suivants, lequel est uniquement un capteur ?",Le thermomètre,La diode,L'écran tactile,Le moteur pas à pas,A,Architectures matérielles et systèmes d'exploitation,15,
+101,"Parmi les dispositifs suivants, lequel est à la fois un capteur et un actionneur ?",Une diode,Une boussole,Un accéléromètre,Un écran tactile,D,Histoire de l'informatique,15,
+102,"En python, par quel caractère commence une ligne de commentaire ?",`$`,`?`,`#`,`:`,C,Langages et programmation,3,
+103,"Dans une console Python, que va afficher l'interpréteur si on écrit :
+```>>> 25 % 2```",12,1,0,une erreur,B,Langages et programmation,1,
+104,"Quel faut-il écrire pour importer la librairie `csv` dans Python ?
+",`import csv`,`with csv`,`csv import`,`from csv`,A,Langages et programmation,3,
+105,"Quel faut-il écrire dans un terminal Python pour calculer $2^{20}$ ?
+",`2%20`,`2*20`,`2^20`,`2**20`,D,Langages et programmation,1,
+106,"Dans la console Python, que faut-il écrire pour obtenir le **quotient** dans la division euclidienne de 127 par 8 ?",`127/8`,`127%8`,`127//8`,`127%%8`,C,Langages et programmation,1,
+107,"Pour quitter la console Python, on doit taper :",`leave()`,`exit()`,`quit()`,`bye()`,B,Langages et programmation,1,
+108,"En Python, un nombre en écriture hexadécimale commence par :",`0b`,`0x`,`0$`,`0#`,B,Langages et programmation,2,
+109,"En Python, quelle fonction permet de convertir un nombre en écriture binaire ?",`bin`,`hex`,`chr`,`binary`,A,Langages et programmation,2,
+110,"Si `a` vaut `True` et `b` vaut `False`, que vaut l'expression `not(a and b)` ?",`False`,`True`,Cette expression renvoie une erreur,`None`,B,Types et valeurs de base,4,
+111,"Si l'expression `not(a or b)` vaut True, alors les valeurs possibles de `a`et `b` sont :",`True` et `True`,`True` et `False`,`False` et `True`,`False` et `False`,D,Types et valeurs de base,4,
+112,"Sur le schéma de circuit suivant, quelles sont les valeurs des sorties `A` et `B` ?",`A=0` et `B=0`,`A=0` et `B=1`,`A=1` et `B=0`,`A=1` et `B=1`,B,Types et valeurs de base,4,qcm1.png

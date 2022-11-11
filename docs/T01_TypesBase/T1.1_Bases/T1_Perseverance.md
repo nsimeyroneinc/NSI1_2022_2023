@@ -19,7 +19,7 @@ Thème 1 - Représentation des données - Types et valeurs de bases
 <table  class="greenTable">
         <tr >
             <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
-            06
+            TP
             </th>
             <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Le message secret de Perseverance</th>
         </tr>

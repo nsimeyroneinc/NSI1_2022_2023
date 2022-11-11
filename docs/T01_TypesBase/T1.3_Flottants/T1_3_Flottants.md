@@ -1,30 +1,12 @@
----
-title : Codage des flottants
-subtitle: Thème 1 - Représentation de données - Types et valeurs de bases
-author : Première NSI
-numbersections: true
-fontsize: 10pt
-geometry:
-- top=20mm
-- left=20mm
-- right=20mm
-- heightrounded    
---- 
 
-Thème 1 - Représentation des données - Types et valeurs de bases
-===
+{% set num = 6 %}
+{% set titre = "Représentation des flottants"%}
+{% set theme = "typesbase" %}
+{% set niveau = "premiere"%} 
 
-{{ initexo(0) }}
 
-<table  class="greenTable">
-        <tr >
-            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
-            08
-            </th>
-            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Ecriture d'un flottant en binaire</th>
-        </tr>
-</table>
-<br>
+{{ titre_chapitre(num,titre,theme,niveau)}}
+
 
 
 Avant de commencer, demandez à Python d'effectuer les calculs suivants (que vous aurez bien entendu faits de tête auparavant) dans un terminal:

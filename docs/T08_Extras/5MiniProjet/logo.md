@@ -1,32 +1,16 @@
----
-title : Mini-Projet
-subtitle: Thème 6 - Programmation
-author : Première NSI
-numbersections: true
-fontsize: 10pt
-geometry:
-- top=20mm
-- left=20mm
-- right=20mm
-- heightrounded    
---- 
+
+{% set num = 1 %}
+{% set titre = "Logo Sprint" %}
+{% set theme = "projet" %}
+{% set niveau = "premiere" %}
 
 
 
-Mini-Projet : Logo - Sprint
-===
+{{ titre_chapitre(num,titre,theme,niveau)}}
+
+
 
 {{ initexo(0) }}
-
-<table  class="yellowTable">
-        <tr >
-            <th width="35%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:25pt;">
-            Mini-Projet
-            </th>
-            <th  width="65%"; style="text-align:center;border:none;font-size:25pt;">LOGO</th>
-        </tr>
-</table>
-<br>
 
 !!! objectif
     Nous allons suivre une démarche de projet pour créer un logo numérique à l’aide de python et turtle. (le faire à partir d’un logiciel de traitement d’image serait trop simple ...)

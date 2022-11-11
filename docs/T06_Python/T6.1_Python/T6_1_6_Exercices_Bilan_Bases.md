@@ -1,28 +1,13 @@
----
-title : Exercices de Bases - Bilan
-subtitle: Thème 6 - Programmation
-author : Première NSI
-numbersections: true
-fontsize: 10pt
-geometry:
-- top=20mm
-- left=20mm
-- right=20mm
-- heightrounded    
---- 
 
-Thème 6 - Langages et programmation
-===
+{% set num = 9 %}
+{% set titre = "Exercices Bilan Python"%}
+{% set theme = "python" %}
+{% set niveau = "premiere"%} 
 
-<table  class="yellowTable">
-        <tr >
-            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
-            06
-            </th>
-            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Exercices Bilan : Les Bases</th>
-        </tr>
-</table>
-<br>
+
+{{ titre_chapitre(num,titre,theme,niveau)}}
+
+
 
 ![python_logo1.png](data/python_logo1.png){:.center width=100px}
 
