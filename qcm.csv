@@ -64,11 +64,11 @@ def moyenne(tableau):
    |Dupond|Catherine|18/07/1981|
    |Haddock|Archibald|23/04/1998|
 ","Dupont, Pierre et 17/05/1987","Dupont, Dupond et Haddock",Nom Prenom et Naissance,Il n'y en a pas,C,Traitement de données en table,7,
-29,Que peut-on dire de l'entier relatif $101001_2$ codé sur 8 bits en complément à deux ?,Cet entier est pair.,Cet entier est négatif.,Cet entier est positif.,Ce entier vaut $-23_{10}$.,B,Types et valeurs de base,10,
-30,Quel est l'entier relatif codé en complément à deux sur un octet par $11111111$,$-1$,$-128$,$-127$,255,C,Types et valeurs de base,10,
-31,Le complément à deux sur un octet de $10110100_2$ est :,$01001011_2$,$00110100_2$,$01001000_2$,$01001100_2$,D,Types et valeurs de base,10,
-32,"Si $1011_2$ est un entier signé sur quatre bits en complément à 2, alors sa valeur décimale est :",$-7$,$-5$,5,7,B,Types et valeurs de base,10,
-33,Donner l'écriture de $-3_{10}$ en complément à deux sur quatre bits :,0111,1101,1011,1111,B,Types et valeurs de base,10,
+29,Que peut-on dire de l'entier relatif $101001_2$ codé sur 8 bits en complément à deux ?,Cet entier est pair.,Cet entier est négatif.,Cet entier est positif.,Ce entier vaut $-23_{10}$.,B,Types et valeurs de base,18,
+30,Quel est l'entier relatif codé en complément à deux sur un octet par $11111111$,$-1$,$-128$,$-127$,255,C,Types et valeurs de base,18,
+31,Le complément à deux sur un octet de $10110100_2$ est :,$01001011_2$,$00110100_2$,$01001000_2$,$01001100_2$,D,Types et valeurs de base,18,
+32,"Si $1011_2$ est un entier signé sur quatre bits en complément à 2, alors sa valeur décimale est :",$-7$,$-5$,5,7,B,Types et valeurs de base,18,
+33,Donner l'écriture de $-3_{10}$ en complément à deux sur quatre bits :,0111,1101,1011,1111,B,Types et valeurs de base,18,
 34,A quelle catégorie appartient l'algorithme des k plus proches voisins ?,Algorithmes de classification et d'apprentissage,Algorithmes de tri,Algorithmes gloutons,Algorithmes de recherches de chemins,A,Algorithmique,17,
 35,Quelle est l'affirmation correcte ?,L'algorithme des k plus proches voisins peut donner des résultats différents suivant les valeurs de k,L'algorithme des k plus proches voisins donne toujours le même résultat suivant les valeurs de k,On ne peut pas modifier la valeur de k dans l'algorithme des k plus proches voisins,La valeur de k doit être impair dans l'algorithme des k plus proches voisins,A,Algorithmique,17,
 36,Comment est classé la donnée représentée par le point gris central en utilisant l'algorithme des 10 plus proches voisins ?,La nouvelle donnée est un rond rouge,La nouvelle donnée est un losange bleu,La nouvelle donnée est une croix verte,L'algorithme échoue et ne peut pas préduire,C,Algorithmique,17,exqcm.png
@@ -85,14 +85,14 @@ pays = [
 {'Nom':'Espagne','Capitale':'Madrid'}]
 ```
 ",`pays[0]['Capitale']`,`pays[1]['Capitale']`,`Nom[0]['Capitale']`,`Capitale['France']`,A,Traitement de données en table,7,
-43,Entre quelles balises se trouvent le contenu d'un fichier html qui s'affiche dans un navigateur ?,`<html>` et `</html>`,`<head>` et `</head>`,`<title>` et `</title>`,`<body>` et `</body>`,D,Interactions entre l'homme et la machine sur le Web,8,
-44,Quel balise html permet d'insérer un lien hypertexte ?,`<a>`,`<p>`,`<link>`,`<href>`,A,Interactions entre l'homme et la machine sur le Web,8,
-45,Quel est le rôle d'un fichier `css` ?,Créer le contenu d'une page web,Définir l'apparence des éléments constituants une page web,"Définir la structure d'une page web (titres, paragraphes, ...)",Insérer des images dans une page web,B,Interactions entre l'homme et la machine sur le Web,8,
-46,"Les balises `<h1>`, `<h2>`, ... `<h6>`, permettent :",De créer des listes numérotées dans une page web,De créer des listes à puces dans une page web,De créer plusieurs niveaux de titres dans une page web,De créer des paragraphes dans  une page web,C,Interactions entre l'homme et la machine sur le Web,8,
-47,Le *Web* fonctionne sur le :,modèle client-serveur,modèle pair à pair,modèle client-client,modèle serveur-serveur,A,Interactions entre l'homme et la machine sur le Web,8,
-48,Quelle ligne dans le fichier `css` d'une page web permettra aux titres de niveau 1 de cette page de s'afficher en rouge ?,`h1 {color:red;}`,`title {color:red;}`,`.h1 {couleur:red;}`,`<h1> {color:red;}`,A,Interactions entre l'homme et la machine sur le Web,8,
-49,Quel est la balise à utiliser pour insérer une image nommée `logo_python.jpg` dans une page web ?,"`<image src=""logo_python.jpg"">`","`<image source=""logo_python.jpg"">`","`<img src=""logo_python.jpg"">`","`<img source=""logo_python.jpg"">`",C,Interactions entre l'homme et la machine sur le Web,8,
-50,Quelles balises doit-on utiliser pour créer une liste d'éléments non ordonnées dans une page web ?,`<ol>` et `<li>`,`<ul>` et `<li>`,`<ol>` et `<il>`,`<ul>` et `<ol>`,B,Interactions entre l'homme et la machine sur le Web,8,
+43,Entre quelles balises se trouvent le contenu d'un fichier html qui s'affiche dans un navigateur ?,`<html>` et `</html>`,`<head>` et `</head>`,`<title>` et `</title>`,`<body>` et `</body>`,D,Interactions entre l'homme et la machine sur le Web,10,
+44,Quel balise html permet d'insérer un lien hypertexte ?,`<a>`,`<p>`,`<link>`,`<href>`,A,Interactions entre l'homme et la machine sur le Web,10,
+45,Quel est le rôle d'un fichier `css` ?,Créer le contenu d'une page web,Définir l'apparence des éléments constituants une page web,"Définir la structure d'une page web (titres, paragraphes, ...)",Insérer des images dans une page web,B,Interactions entre l'homme et la machine sur le Web,10,
+46,"Les balises `<h1>`, `<h2>`, ... `<h6>`, permettent :",De créer des listes numérotées dans une page web,De créer des listes à puces dans une page web,De créer plusieurs niveaux de titres dans une page web,De créer des paragraphes dans  une page web,C,Interactions entre l'homme et la machine sur le Web,10,
+47,Le *Web* fonctionne sur le :,modèle client-serveur,modèle pair à pair,modèle client-client,modèle serveur-serveur,A,Interactions entre l'homme et la machine sur le Web,10,
+48,Quelle ligne dans le fichier `css` d'une page web permettra aux titres de niveau 1 de cette page de s'afficher en rouge ?,`h1 {color:red;}`,`title {color:red;}`,`.h1 {couleur:red;}`,`<h1> {color:red;}`,A,Interactions entre l'homme et la machine sur le Web,10,
+49,Quel est la balise à utiliser pour insérer une image nommée `logo_python.jpg` dans une page web ?,"`<image src=""logo_python.jpg"">`","`<image source=""logo_python.jpg"">`","`<img src=""logo_python.jpg"">`","`<img source=""logo_python.jpg"">`",C,Interactions entre l'homme et la machine sur le Web,10,
+50,Quelles balises doit-on utiliser pour créer une liste d'éléments non ordonnées dans une page web ?,`<ol>` et `<li>`,`<ul>` et `<li>`,`<ol>` et `<il>`,`<ul>` et `<ol>`,B,Interactions entre l'homme et la machine sur le Web,10,
 51,Quelle instruction permet d'orienter une tortue `crayon` vers le bas ?,`tortue.forward(270)`,`tortue.left(270)`,`tortue.right(270)`,`tortue.setheading(270)`,D,Langages et programmation,3,
 52,"On suppose que la tortue `crayon` est située en `(0,0)` et est orientée vers le bas, quelle suite d'instructions permet de construire la figure suivante ?",<br> `crayon.forward(100)` <br> `crayon.left(90)` <br> `crayon.forward(50)`,<br> `crayon.forward(100)` <br> `crayon.right(90)` <br> `crayon.forward(50)`,<br> `crayon.forward(100)` <br> `crayon.setheading(90)` <br> `crayon.forward(50)`,<br>`crayon.forward(100)` <br> `crayon.left(45)`<br> `crayon.forward(50)`,A,Langages et programmation,3,qcm1.png
 53,"Quelles instructions permettent de positionner la tortue `crayon` en `(-100,100)`, sans rien tracer à l'écran ?","<br> `crayon.penup()` <br> `crayon.set(-100,100)`","<br> `crayon.penup()` <br> `crayon.forward(-100,100)`","<br> `crayon.pendown()` <br> `crayon.goto(-100,100)`","<br> `crayon.penup()` <br> `crayon.goto(-100,100)`",D,Langages et programmation,3,

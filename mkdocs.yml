@@ -26,13 +26,14 @@ nav:
 
     
     #- T2 Types construits :
-    #  - Listes en Python: T02_TypesConstruits/T2.1_Listes/T2_1_Listes.md
+      #- Tableaux (Listes) en Python: T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux.md
 
     
     #- T3 Rep. Des données:
 
     
-    #- T4 I.H.M. :
+    - T4 I.H.M. :
+      - HTML - CSS : T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS.md
 
     
     #- T5 Arch. Matérielle :
@@ -46,7 +47,9 @@ nav:
       - TP 04 - Les boucles (2) en Python : T06_Python/T6.1_Python/T6_1_4_WHILE.md
       - TP 05 - Les Conditions en Python : T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles.md
       - TP 06 - Exercices Bilan Les bases : T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases.md
+    
     #- T7 Algo. :  
+      #- TP Parcours séquentiel d'un tableau : T07_Algorithmes/T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau.md
 
      
     - T8 Extras :
@@ -169,23 +172,23 @@ plugins:
   #  - search
   #  - pdf-export
 
-  #- page-to-pdf : 
-  #    disable: False
-  #    disableOnServe: True
-  #    displayHeaderFooter: true
-  #    printBackground: False
-  #   #scale : 1.0
-  #   #landscape : False
-  #    #margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
-  #    headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
-  #                     <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : 2021 - 2022</span>
-  #                    </header>'
-  #    footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#999999;margin:10px 20px;-webkit-print-color-adjust: exact">
-  #                     <span>M.Meyroneinc-Condy | CCBY | 2021</span>
-  #                     <span class="page" style="position:absolute;bottom:0;right:0;">
-  #                      <span class="pageNumber"></span>/<span class="totalPages"></span>
-  #                     </span>
-  #                    </footer>'
+  - page-to-pdf : 
+      disable: False
+      disableOnServe: True
+      displayHeaderFooter: true
+      printBackground: False
+     #scale : 1.0
+     #landscape : False
+      #margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
+      headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
+                       <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : 2021 - 2022</span>
+                      </header>'
+      footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#999999;margin:10px 20px;-webkit-print-color-adjust: exact">
+                       <span>M.Meyroneinc-Condy | CCBY | 2021</span>
+                       <span class="page" style="position:absolute;bottom:0;right:0;">
+                        <span class="pageNumber"></span>/<span class="totalPages"></span>
+                       </span>
+                      </footer>'
   #   headerTemplate : 
   #      title
   #      date
@@ -218,9 +221,13 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+     # For mkdocs integration: Add a link to 'massilia-admonitions.js' cdn by rod2ik
+  - https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js
 
 extra_css:
   - stylesheets/extra.css
   - xtra/stylesheets/pyoditeur.css
+  # For mkdocs integration: Add a link to 'massilia-admonitions.css' cdn by rod2ik
+  - https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css
 
 

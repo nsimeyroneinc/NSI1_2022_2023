@@ -73,7 +73,10 @@ def define_env(env):
         6 : ["typesbase","Représentation des flottants",1,"T01_TypesBase/T1.3_Flottants/T1_3_Flottants.md"],
         7 : ["python","Les boucles WHILE",1,"T06_Python/T6.1_Python/T6_1_4_WHILE.md"],
         8 : ["python","Les instructions conditionnelles",1,"T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles.md"],
-        9 : ["python","Exercices Bilan Python",1,"T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases.md"]
+        9 : ["python","Exercices Bilan Python",1,"T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases.md"],
+        10 : ["web","Le web",2,"T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS.md"]
+        #11 : ["typesconstruits","Les tableaux en Python",1,"T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux.md"],
+        #12 : ["algorithmique","Parcours séquentiel d'un tableau",1,"T07_Algorithmes/T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau.md"]
         #8 : ["web","Le web",2,"leweb.md"],
         #9 : ["algorithmique","Algorithmes de tri",2,"algostri.md"],
         #10 : ["typesbase","Représentation des entiers négatifs",1,"negatifs.md"],
@@ -88,7 +91,7 @@ def define_env(env):
 
     env.variables['projet_premiere']={
         1 : ["projet","Défi Logo Sprint",1,"T08_Extras/5MiniProjet/logo.md"],
-        2 : ["projet","Dessine ta rue",1,"T08_Extras/5MiniProjet/dessine_ta_rue.md"]
+        2 : ["projet","Dessine ta rue","17/11/2023","T08_Extras/5MiniProjet/dessine_ta_rue.md"]
         #2 : ["python","Les fonction en Python",1,"T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python.md"],
         #3 : ["python","Les Boucles FOR",1,"T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python.md"],
         #4 : ["typesbase","Représentation des entiers positifs",1,"T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers.md"],
@@ -109,12 +112,49 @@ def define_env(env):
         #17: ["algorithmique","Algorithme des k plus proches voisinumchapitrens",2,"knn.md"]
     }
     
+    #titre activites 
+    @env.macro
+    def sc(chaine):
+        return f'<span style="font-variant:small-caps;">{chaine}</span>'
+
+    env.variables['devant_act']=':black_small_square:'
+    env.variables['num_act']=1
+    @env.macro
+    def titre_activite(titre,licones,numero=1):
+        if numero==0:
+            env.variables['num_act']=1
+        ligne=f"### {env.variables['devant_act']}   Activité {env.variables['num_act']} "
+        if titre!="":
+            ligne+=f": *{titre}*"
+        if licones!=[]:
+            ligne+=f"<span style='float:right;'>"
+            for icone in licones:
+                ligne+=f"<span style='float:right;'>&thinsp; {env.variables['icones_act'][icone]}</span>"
+            ligne+="</span>"
+        env.variables['num_act']=env.variables['num_act']+1
+        return ligne
+
     # Titres des items travaillés sur l'année
     @env.macro
     def sec_titre(theme,titre):
             icone = env.variables.icones[theme]
             return f"### {icone} &nbsp; {titre}"
     
+    @env.macro
+    def cours(fichier):
+        ccours = '''
+Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :
+
+<span class='centre'>[Diaporama de cours :fontawesome-regular-file-pdf:](../pdf/'''+fichier+'''){.md-button target=_blank}</span>
+!!! warning "Attention"
+    Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos **propres** notes de cours et par une révision approfondie des exercices.'''
+        return ccours
+
+    @env.macro
+    def aff_cours(num):
+        fichier=f'../../pdf/C{num}/C{num}-cours.pdf'
+        return cours(fichier)
+
     @env.macro
     def icone(theme):
         return env.variables.icones[theme]
@@ -140,7 +180,18 @@ def define_env(env):
     @env.macro
     def projet_c(num,theme,titre,duree,lien):
         icone = env.variables["icones"][theme]
-        return f"|{icone}|[Mini-Projet {num}- {titre}]({lien}) | {duree}\n"        
+        return f"|{icone}|[Mini-Projet {num}- {titre}]({lien}) | {duree}\n"      
+
+    @env.macro
+    def liens(fichier,type=".pdf"):
+        location="./pdf/"+fichier[0:2]+"/"
+        return f"[:fontawesome-solid-download:]({location}{fichier}.pdf) [:fontawesome-regular-file:]({location}{fichier}.tex)"
+
+    @env.macro
+    def telecharger(description,fichier):
+        liens =f"[{description} :material-download:](./{fichier})"
+        liens+="{.md-button}"
+        return "<span class='centre'>"+liens+"</span>"      
 #--------------------------------------------
     @env.macro
     def sec_projet(theme,projet):
@@ -158,7 +209,7 @@ def define_env(env):
     @env.macro
     def affiche_projet(niveau):
         ret='''
-| |Mini-Projet        | Durée |
+| |Mini-Projet        | Pour le  |
 |-|-------------|-------|
         '''
         if niveau=="premiere":
@@ -249,6 +300,20 @@ def define_env(env):
 
 
 #---------------- <exo perso>-------------------- 
+    @env.macro
+    def exo(titre,licones,numero=1):
+        if numero==0:
+            env.variables['num_exo']=1
+        ligne=f"### {env.variables['devant_exo']}   Exercice {env.variables['num_exo']} "
+        if titre!="":
+            ligne+=f": *{titre}*"
+        if licones!=[]:
+            ligne+=f"<span style='float:right;'>"
+            for icone in licones:
+                ligne+=f"<span style='float:right;'>&thinsp; {env.variables['icones_exo'][icone]}</span>"
+            ligne+="</span>"
+        env.variables['num_exo']=env.variables['num_exo']+1
+        return ligne
 
     env.variables['compteur_exo'] = 0
     @env.macro
