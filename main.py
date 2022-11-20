@@ -112,6 +112,30 @@ def define_env(env):
         #17: ["algorithmique","Algorithme des k plus proches voisinumchapitrens",2,"knn.md"]
     }
     
+
+    #env.variables['devoir_premiere']={
+     #   1 : ["projet","Défi Logo Sprint",1,"T08_Extras/5MiniProjet/logo.md"],
+      #  2 : ["projet","Dessine ta rue","17/11/2023","T08_Extras/5MiniProjet/dessine_ta_rue.md"]
+        #2 : ["python","Les fonction en Python",1,"T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python.md"],
+        #3 : ["python","Les Boucles FOR",1,"T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python.md"],
+        #4 : ["typesbase","Représentation des entiers positifs",1,"T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers.md"],
+        #5 : ["typesbase","Représentation des entiers négatifs",1,"T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md"],
+        #6 : ["typesbase","Représentation des flottants",1,"T01_TypesBase/T1.3_Flottants/T1_3_Flottants.md"],
+        #7 : ["python","Les boucles WHILE",1,"T06_Python/T6.1_Python/T6_1_4_WHILE.md"],
+        #8 : ["python","Les instructions conditionnelles",1,"T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles.md"],
+        #9 : ["python","Exercices Bilan Python",1,"T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases.md"]
+        #8 : ["web","Le web",2,"leweb.md"],
+        #9 : ["algorithmique","Algorithmes de tri",2,"algostri.md"],
+        #10 : ["typesbase","Représentation des entiers négatifs",1,"negatifs.md"],
+        #11: ["os","Réseau",1,"reseau.md"],
+        #12: ["web","Interaction dans une page web",1,"interactionweb.md"],
+        #13: ["algorithmique","Algorithmes gloutons",2,"gloutons.md"],
+        #14: ["donneestable","Fusion de tables",1,"fusiontable.md"],
+        #15: ["os","Interface homme-machine",2,"interface.md"],
+        #16: ["typesbase","Notion de nombre flottant",1,"flottant.md"],
+        #17: ["algorithmique","Algorithme des k plus proches voisinumchapitrens",2,"knn.md"]
+    #}
+    
     #titre activites 
     @env.macro
     def sc(chaine):
