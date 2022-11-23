@@ -34,7 +34,7 @@ nav:
     
     - T4 I.H.M. :
       - HTML - CSS : T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS.md
-      - JS - Interaction dans une page web : docs/T04_IHMWeb/T4.2_Interactions/T4.2_Js.md
+      - JS - Interaction dans une page web : T04_IHMWeb/T4.2_Interactions/T4.2_Js.md
 
     
     #- T5 Arch. Matérielle :
