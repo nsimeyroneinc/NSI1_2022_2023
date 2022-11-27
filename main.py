@@ -75,8 +75,8 @@ def define_env(env):
         8 : ["python","Les instructions conditionnelles",1,"T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles.md"],
         9 : ["python","Exercices Bilan Python",1,"T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases.md"],
         10 : ["web","Le web",2,"T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS.md"],
-        11: ["web","Interaction dans une page web",1,"T04_IHMWeb/T4.2_Interactions/T4.2_Js.md"]
-        #11 : ["typesconstruits","Les tableaux en Python",1,"T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux.md"],
+        11: ["web","Interaction dans une page web",1,"T04_IHMWeb/T4.2_Interactions/T4.2_Js.md"],
+        12 : ["typesconstruits","Les tableaux en Python",1,"T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux.md"]
         #12 : ["algorithmique","Parcours séquentiel d'un tableau",1,"T07_Algorithmes/T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau.md"]
         #8 : ["web","Le web",2,"leweb.md"],
         #9 : ["algorithmique","Algorithmes de tri",2,"algostri.md"],

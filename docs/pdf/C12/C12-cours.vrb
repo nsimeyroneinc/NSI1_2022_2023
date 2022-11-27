@@ -1,0 +1,16 @@
+\mframe{\Python}
+	\begin{exampleblock}{Exemple}
+		Soit la liste Python : {\tt notes = [17,12,9,11,13,15,8]}, en effectuant des parcours de cette liste, écrire un programme permettant :
+		\begin{enumerate}[label=\textbullet]
+			\item D'écrire les élements de cette liste qui sont supérieurs à 10.
+			\item De calculer la somme des élements de cette liste
+			\item De créer une nouvelle liste à partir de cette liste en ne conservant que les éléments inférieurs ou égaux à 10
+			      \begin{lstlisting}
+	notes = [17,12,9,11,13,15,8]
+	notes_inf_10 = []
+	for note in notes:
+		if note<=10:
+			notes_inf_10.append(note)
+\end{lstlisting}
+		\end{enumerate}
+	\end{exampleblock}

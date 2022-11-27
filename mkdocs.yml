@@ -25,8 +25,8 @@ nav:
 
 
     
-    #- T2 Types construits :
-      #- Tableaux (Listes) en Python: T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux.md
+    - T2 Types construits :
+      - Tableaux (Listes) en Python: T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux.md
 
     
     #- T3 Rep. Des données:

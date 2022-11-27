@@ -1,5 +1,5 @@
 
-{% set num = 11 %}
+{% set num = 12 %}
 {% set titre = "Les tableaux en Python" %}
 {% set theme = "typesconstruits" %}
 {% set niveau = "premiere" %}
@@ -74,6 +74,23 @@ On définit un tableau avec des **crochets** et on sépare ses éléments par de
 
 Nous verrons plus tard qu'il est fréquent dans les exercices de partir d'une liste vide et d'ajouter progressivement des éléments.
 
+
+!!! jeretiens "Définition : listes en python"
+
+        Une liste est un ensemble de valeurs, regroupées en un seul objet.
+        
+    **Exemples :**
+
+    ```python
+    lst1 = [2, 1, 7, 0] # lst est une liste de nombres entiers
+    lst2 = [2.1, 1.1, 7.5, 0.36] # lst est une liste de float
+    lst3 = ["albert", "paul", "jacques"] # lst est une liste de str
+
+    # mais une liste peut contenir des éléments de types différents :
+    lst4 = ["1G4","NSI", 22, 13.7, True] # cette liste contient des éléments de différents types. 
+    ``` 
+
+
 ### &#x2712; Accés aux élèments d'une liste
 
 
@@ -111,6 +128,41 @@ IndexError: list index out of range
     'Maggie'
     ```
 
+
+!!! jeretiens "Définitions : Indices des éléments d'une liste"
+
+    Les éléments d'une listes sont numérotés, on dit **indicés**.
+        
+    + Le premier élément a li'ndice 0  
+    + Le second élément a li'ndice 1  
+    + Le troisième élément a li'ndice 2  
+        
+    etc...
+        
+    !!! note "remarque très importante :"
+
+        **L'indice du dernier élément** est égal à **len(lst) - 1**
+        
+        Par exemple si la liste à 4 élément, ils ont les indices $0$, $1$, $2$ et $3$, la longueur de la liste est $4$
+        
+    !!! voc "notations :"
+        
+        Souvent, quand nous travaillerons avec des listes, nous les représenterons avec des cases pour les éléments, et les indices reportés (au dessus ou en dessous) :
+        
+        ![tableau_indice.png](data/tableau_indice.png){:.center width=50%}
+
+        
+    Les indices permettent d'accéder à la valeur des éléments :
+        
+        
+    ```python
+    lst[0] est le premier élément de la liste
+    lst[1] est le second élément de la liste
+    lst[2] est le troisième élément de la liste
+    ect
+        
+    Le dernier élément d une liste de longueur 6 à l indice 5
+    ```
 
 ### &#x2712; Longueur d'une liste
 
@@ -255,6 +307,110 @@ Il existe principalement deux méthodes pour parcourir une liste: par ses élém
 
     - la complexité : il faut connaître le nombre d'éléments de la liste (ou le récupérer par la fonction ```len()``` )
     - le risque d'erreur : encore et toujours le ```index out of range```...
+
+
+
+!!! jeretiens "FICHE : les listes"
+
+
+    <span style="padding:1px;padding-left:10px;padding-right:10px;background-color:#66bb66;border:1px solid black;border-radius:20px;font-weight:bold;color:white;font-size:1em;">définition</span> 
+    <br>
+        
+    Une liste est un ensemble de valeurs, regroupées en un seul objet.
+        
+    **exemples :**
+
+    ```python
+    lst1 = [2, 1, 7, 0] # lst est une liste de nombres entiers
+    lst2 = [2.1, 1.1, 7.5, 0.36] # lst est une liste de float
+    lst3 = ["albert", "paul", "jacques"] # lst est une liste de str
+
+    # mais une liste peut contenir des éléments de types différents :
+    lst4 = ["1G4","NSI", 22, 13.7, True] # cette liste contient des éléments de différents types. 
+    ```
+            
+    **type :** une liste à le type **_list_**  
+    
+        
+    <span style="padding:1px;padding-left:10px;padding-right:10px;background-color:#66bb66;border:1px solid black;border-radius:20px;font-weight:bold;color:white;font-size:1em;">indices</span> 
+    <br>
+
+    Les éléments d'une listes sont numérotés, on dit **indicés**.
+        
+    + Le premier élément a l'indice 0
+    + Le second élément a li'ndice 1
+    + Le troisième élément a li'ndice 2
+        
+    etc...
+        
+    ** remarque très importante :**
+
+    **L'indice du dernier élément** est égal à **len(lst) - 1**
+
+        
+    <span style="padding:1px;padding-left:10px;padding-right:10px;background-color:#66bb66;border:1px solid black;border-radius:20px;font-weight:bold;color:white;font-size:1em;">modifier l'élément d'indice **i**</span> 
+        
+    Il suffit d'affecter une valeur à l'élement d'indice **i**
+    ```python
+    lst = ["a", "b", "c"]
+    lst[1] = "e" # maintenant lst vaut : ["a", "e", "c"]
+    ```
+        
+        
+        
+    <br><span style="padding:1px;padding-left:10px;padding-right:10px;background-color:#66bb66;border:1px solid black;border-radius:20px;font-weight:bold;color:white;font-size:1em;">longueur</span> 
+        
+    La fonction **len()** renvoie la longueur d'une liste :
+
+    ```python
+    lst = [1, 2, 3]
+    nombre_elements = len(lst) # nombre d'élément prendra la valeur 3
+    ```
+        
+    <br><span style="padding:1px;padding-left:10px;padding-right:10px;background-color:#66bb66;border:1px solid black;border-radius:20px;font-weight:bold;color:white;font-size:1em;">Parcours par indice</span> 
+    <br>
+    **ce code est à connaitre SANS AUCUNE HESITATION**
+        
+    ```python
+        for i in range(len(lst)) :
+            print( lst[i] )
+    ```
+
+    **on peut aussi modifier tout les éléments grâce à un parcours :**
+        
+    ```python
+        lst = [1, 2, 3]
+        for i in range(len(lst)) :
+            lst[i] = 2 * lst[i] # maintenant lst vaut : [2, 4, 6]
+    ```
+
+    <br><span style="padding:1px;padding-left:10px;padding-right:10px;background-color:#66bb66;border:1px solid black;border-radius:20px;font-weight:bold;color:white;font-size:1em;">Parcours par valeur</span> 
+    <br>
+    **ce code est à connaitre SANS AUCUNE HESITATION**
+        
+    ```python
+        for elt in lst :
+            print(elt)
+    ```
+
+    **exemple :**
+        
+    ```python
+        lst = [1, 2, 3]
+        for elt in lst :
+            print(3*elt)
+    ```
+    
+    ```python
+        3
+        6
+        9
+        
+    ```
+    
+        
+
+
 
 !!! exo 
 
@@ -424,3 +580,10 @@ En Python, les objets de type `list` sont modifiables (on emploie le mot *mutabl
     ```python
     lst = [51, 52, 66, 91, 92, 82, 65, 53, 86, 42, 79, 95]
     ```
+
+
+## Cours
+
+{{ aff_cours(num) }}
+
+

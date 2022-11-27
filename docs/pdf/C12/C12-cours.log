@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2022.11.4)  27 NOV 2022 21:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2022.11.4)  27 NOV 2022 21:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C10-cours.tex
-(./C10-cours.tex
+**C12-cours.tex
+(./C12-cours.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-07-15>
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
@@ -1530,27 +1530,27 @@ File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
 )
-(./C10-cours.aux)
-\openout1 = `C10-cours.aux'.
+(./C12-cours.aux)
+\openout1 = `C12-cours.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1608,69 +1608,69 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 8.
+Package hyperref Info: Link coloring OFF on input line 7.
 
-(./C10-cours.out) (./C10-cours.out)
+(./C12-cours.out) (./C12-cours.out)
 \@outlinefile=\write8
-\openout8 = `C10-cours.out'.
+\openout8 = `C12-cours.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 8.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 7.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 8.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 7.
 \symnumbers=\mathgroup8
 \sympureletters=\mathgroup9
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 8.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 8.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 7.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 7.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 8.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 7.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 8.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 8.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 7.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 7.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 8.
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 7.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 8.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 8.
+(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 7.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 7.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 8.
+(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 7.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 8.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 8.
+(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 7.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 7.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 8.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 7.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 8.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 7.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 8.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 7.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 8.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 7.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 8.
+(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 7.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 8.
+(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 7.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 8.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 7.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 8.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 7.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 8.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 8.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 7.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 7.
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 8.
+(Font)              `pureletters' in the math version `normal' on input line 7.
 
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 8.
+(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 7.
 
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 8.
+(Font)              `pureletters' in the math version `bold' on input line 7.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 8.
+(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 7.
 
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 8.
+ut line 7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -1696,8 +1696,8 @@ Dictionary: translator-numbers-dictionary, Language: English
 ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \degres on input line 8.
-LaTeX Info: Redefining \up on input line 8.
+LaTeX Info: Redefining \degres on input line 7.
+LaTeX Info: Redefining \up on input line 7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictio
 nary-french.trsl
@@ -1705,12 +1705,12 @@ File: translations-basic-dictionary-french.trsl (french translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `french'. on input line 8.
+or `french'. on input line 7.
 \c@lstlisting=\count474
- (./C10-cours.nav)
+ (./C12-cours.nav)
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' undefined
-(Font)              using `T1/cmss/m/n' instead on input line 8.
+(Font)              using `T1/cmss/m/n' instead on input line 7.
 
 (../../../latex/MacrosCours.tex
 \c@numchap=\count475
@@ -1726,15 +1726,23 @@ LaTeX Font Warning: Font shape `T1/cmss/m/sc' undefined
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-)
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-41.
+36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
+6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+Overfull \hbox (22.38454pt too wide) in paragraph at lines 36--36
+[]\T1/cmtt/m/n/10 main = ["pouce","index","majeur","annulaire","auriculaire"][]
+ 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -1778,6 +1786,11 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> ps:0.8 setlinewidth 0 setgray
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (22.38454pt too wide) in paragraph at lines 36--36
+[]\T1/cmtt/m/n/10 main = ["pouce","index","majeur","annulaire","auriculaire"][]
+ 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -1789,6 +1802,11 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [2
 
 ]
+Overfull \hbox (22.38454pt too wide) in paragraph at lines 36--36
+[]\T1/cmtt/m/n/10 main = ["pouce","index","majeur","annulaire","auriculaire"][]
+ 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -1800,6 +1818,11 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [3
 
 ]
+Overfull \hbox (22.38454pt too wide) in paragraph at lines 36--36
+[]\T1/cmtt/m/n/10 main = ["pouce","index","majeur","annulaire","auriculaire"][]
+ 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -1811,6 +1834,11 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [4
 
 ]
+Overfull \hbox (22.38454pt too wide) in paragraph at lines 36--36
+[]\T1/cmtt/m/n/10 main = ["pouce","index","majeur","annulaire","auriculaire"][]
+[] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -1822,6 +1850,11 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [5
 
 ]
+Overfull \hbox (22.38454pt too wide) in paragraph at lines 36--36
+[]\T1/cmtt/m/n/10 main = ["pouce","index","majeur","annulaire","auriculaire"][]
+[] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -1832,7 +1865,11 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 
 [6
 
-]
+] (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd)
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -1877,6 +1914,30 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [10
 
 ]
+Overfull \hbox (4.765pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Alex"| 
+ []
+
+
+Overfull \hbox (15.26244pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Pierre"| 
+ []
+
+
+Overfull \hbox (10.01372pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Marie"| 
+ []
+
+
+Overfull \hbox (10.01372pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Jimmy"| 
+ []
+
+
+Overfull \hbox (10.01372pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Elise"| 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -1888,6 +1949,30 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [11
 
 ]
+Overfull \hbox (4.765pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Alex"| 
+ []
+
+
+Overfull \hbox (15.26244pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Pierre"| 
+ []
+
+
+Overfull \hbox (10.01372pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Marie"| 
+ []
+
+
+Overfull \hbox (10.01372pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Jimmy"| 
+ []
+
+
+Overfull \hbox (10.01372pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Elise"| 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -1899,6 +1984,30 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [12
 
 ]
+Overfull \hbox (4.765pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Alex"| 
+ []
+
+
+Overfull \hbox (15.26244pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Pierre"| 
+ []
+
+
+Overfull \hbox (10.01372pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Marie"| 
+ []
+
+
+Overfull \hbox (10.01372pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Jimmy"| 
+ []
+
+
+Overfull \hbox (10.01372pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Elise"| 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -1910,6 +2019,30 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [13
 
 ]
+Overfull \hbox (4.765pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Alex"| 
+ []
+
+
+Overfull \hbox (15.26244pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Pierre"| 
+ []
+
+
+Overfull \hbox (10.01372pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Marie"| 
+ []
+
+
+Overfull \hbox (10.01372pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Jimmy"| 
+ []
+
+
+Overfull \hbox (10.01372pt too wide) in paragraph at lines 86--86
+ []|\T1/cmtt/m/n/10 "Elise"| 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -1954,11 +2087,6 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [17
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 8
-1.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2091,9 +2219,6 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [29
 
 ]
-\openout4 = `C10-cours.vrb'.
-
- (./C10-cours.vrb)
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2105,15 +2230,6 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [30
 
 ]
-\openout4 = `C10-cours.vrb'.
-
- (./C10-cours.vrb
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-[]\T1/cmss/m/sc/10 Les ba-lises \T1/cmtt/m/n/10 <h1> ...</h1>, <h2> ...</h2>, .
-..<h6> ...
- []
-
-)
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2124,13 +2240,7 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 
 [31
 
-] (./C10-cours.vrb
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-[]\T1/cmss/m/sc/10 Les ba-lises \T1/cmtt/m/n/10 <h1> ...</h1>, <h2> ...</h2>, .
-..<h6> ...
- []
-
-)
+]
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2141,13 +2251,7 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 
 [32
 
-] (./C10-cours.vrb
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-[]\T1/cmss/m/sc/10 Les ba-lises \T1/cmtt/m/n/10 <h1> ...</h1>, <h2> ...</h2>, .
-..<h6> ...
- []
-
-)
+]
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2158,13 +2262,7 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 
 [33
 
-] (./C10-cours.vrb
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-[]\T1/cmss/m/sc/10 Les ba-lises \T1/cmtt/m/n/10 <h1> ...</h1>, <h2> ...</h2>, .
-..<h6> ...
- []
-
-)
+]
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2175,13 +2273,7 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 
 [34
 
-] (./C10-cours.vrb
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-[]\T1/cmss/m/sc/10 Les ba-lises \T1/cmtt/m/n/10 <h1> ...</h1>, <h2> ...</h2>, .
-..<h6> ...
- []
-
-)
+]
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2192,13 +2284,7 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 
 [35
 
-] (./C10-cours.vrb
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-[]\T1/cmss/m/sc/10 Les ba-lises \T1/cmtt/m/n/10 <h1> ...</h1>, <h2> ...</h2>, .
-..<h6> ...
- []
-
-)
+]
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2210,9 +2296,6 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [36
 
 ]
-\openout4 = `C10-cours.vrb'.
-
- (./C10-cours.vrb)
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2223,7 +2306,7 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 
 [37
 
-] (./C10-cours.vrb)
+]
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2234,7 +2317,7 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 
 [38
 
-] (./C10-cours.vrb)
+]
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2245,7 +2328,7 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 
 [39
 
-] (./C10-cours.vrb)
+]
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2257,9 +2340,6 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [40
 
 ]
-\openout4 = `C10-cours.vrb'.
-
- (./C10-cours.vrb)
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2270,7 +2350,7 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 
 [41
 
-] (./C10-cours.vrb)
+]
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2281,7 +2361,7 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 
 [42
 
-] (./C10-cours.vrb)
+]
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2293,12 +2373,6 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [43
 
 ]
-\openout4 = `C10-cours.vrb'.
-
- (./C10-cours.vrb)
-Overfull \vbox (9.68735pt too high) detected at line 186
- []
-
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2309,10 +2383,7 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 
 [44
 
-] (./C10-cours.vrb)
-Overfull \vbox (9.68735pt too high) detected at line 186
- []
-
+]
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2323,10 +2394,7 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 
 [45
 
-] (./C10-cours.vrb)
-Overfull \vbox (9.68735pt too high) detected at line 186
- []
-
+]
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -2338,44 +2406,230 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [46
 
 ]
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[47
+
+]
+\openout4 = `C12-cours.vrb'.
+
+ (./C12-cours.vrb)
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[48
+
+]
+\openout4 = `C12-cours.vrb'.
+
+ (./C12-cours.vrb)
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[49
+
+]
+\openout4 = `C12-cours.vrb'.
+
+ (./C12-cours.vrb)
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[50
+
+]
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[51
+
+]
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[52
+
+]
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[53
+
+]
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[54
+
+]
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[55
+
+]
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[56
+
+]
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[57
+
+]
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[58
+
+]
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[59
+
+]
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[60
+
+]
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[61
+
+]
+
+Package fancyhdr Warning: \headheight is too small (0.0pt): 
+(fancyhdr)                Make it at least 12.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.0pt}.
+
+[62
+
+]
 \tf@nav=\write9
-\openout9 = `C10-cours.nav'.
+\openout9 = `C12-cours.nav'.
 
 \tf@toc=\write10
-\openout10 = `C10-cours.toc'.
+\openout10 = `C12-cours.toc'.
 
 \tf@snm=\write11
-\openout11 = `C10-cours.snm'.
+\openout11 = `C12-cours.snm'.
 
- (./C10-cours.aux)
+ (./C12-cours.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `C10-cours.out' has not changed.
+Package rerunfilecheck Info: File `C12-cours.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 62097 strings out of 478023
- 1413836 string characters out of 5841208
- 2345792 words of memory out of 5000000
- 79488 multiletter control sequences out of 15000+600000
- 479264 words of font info for 46 fonts, out of 8000000 for 9000
+ 62189 strings out of 478023
+ 1416194 string characters out of 5841208
+ 2313730 words of memory out of 5000000
+ 79548 multiletter control sequences out of 15000+600000
+ 483087 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,11n,122p,707b,1802s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,12n,122p,707b,1822s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
-fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf/fonts/type1/public/
-cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsi0900.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfsi1000.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfss0900.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on C10-cours.pdf (46 pages, 259313 bytes).
+fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfr
+m1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0700.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sfss0900.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss
+1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share
+/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/p
+ublic/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0
+900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on C12-cours.pdf (62 pages, 242464 bytes).
 PDF statistics:
- 346 PDF objects out of 1000 (max. 8388607)
- 263 compressed objects within 3 object streams
- 93 named destinations out of 1000 (max. 500000)
+ 435 PDF objects out of 1000 (max. 8388607)
+ 335 compressed objects within 4 object streams
+ 125 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
