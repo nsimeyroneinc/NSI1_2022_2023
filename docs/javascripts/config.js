@@ -15,3 +15,7 @@ window.MathJax = {
 document$.subscribe(() => {
   MathJax.typesetPromise()
 })
+
+var replaceBy = {
+  "question": "Question "
+}

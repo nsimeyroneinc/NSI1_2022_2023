@@ -17,30 +17,38 @@ nav:
     - Accueil : index.md
 
     - T1 Types et valeurs de base :
+      - Rep. des données : T01_TypesBase/index_typebases.md
       - T1_1 Codages des entiers positifs : T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers.md
       - TP Perseverance : T01_TypesBase/T1.1_Bases/T1_Perseverance.md
       #- Codages des entiers relatifs: T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md
       - T1_2 Codages des entiers relatifs : T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md
       - T1_3 Codage des flottants : T01_TypesBase/T1.3_Flottants/T1_3_Flottants.md
+      - T1_4 Les Booléens : T01_TypesBase/T1.4_Booleens/T1_4_Booleens.md
 
 
     
     - T2 Types construits :
+      - Types construits : T02_TypesConstruits/index_typeconstruits.md
       - Tableaux (Listes) en Python: T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux.md
 
     
     #- T3 Rep. Des données:
+      #- Traitemens de données : T03_TraitementDonnees/index_traitdonnes.md
 
     
     - T4 I.H.M. :
+      - I.H.M : T04_IHMWeb/index_web.md
       - HTML - CSS : T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS.md
       - JS - Interaction dans une page web : T04_IHMWeb/T4.2_Interactions/T4.2_Js.md
 
     
-    #- T5 Arch. Matérielle :
+    - T5 Arch. Matérielle :
+      - Architecture matérielle : T05_Architectures/index_archi.md
+      - Architecture d'un réseau: T05_Architectures/T5.3_Reseaux/T5.1_Architecture.md
 
     
     - T6 Programmation :
+      - Programmation : T06_Python/index_prog.md
       - TP 00 - Introduction Python : T06_Python/T6.1_Python/T6_1_0_Introduction.md
       - TP 01 - Les Variables en Python : T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python.md
       - TP 02 - Les Fonctions en Python : T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python.md
@@ -49,8 +57,9 @@ nav:
       - TP 05 - Les Conditions en Python : T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles.md
       - TP 06 - Exercices Bilan Les bases : T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases.md
     
-    #- T7 Algo. :  
-      #- TP Parcours séquentiel d'un tableau : T07_Algorithmes/T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau.md
+    - T7 Algo. :  
+      - Algorithmique : T07_Algorithmes/index_algo.md
+      - TP Parcours séquentiel d'un tableau : T07_Algorithmes/T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau.md
 
      
     - T8 Extras :
@@ -63,6 +72,7 @@ nav:
     #- Devoirs :
 
         
+      
     - Divers : 
       - Conseil : Divers/conseil.md
       - Liens utiles : Divers/Liens_utiles.md
@@ -219,6 +229,7 @@ plugins:
 
 extra_javascript:
   - xtra/javascripts/config.js
+  - xtra/javascripts/perso.js
   - xtra/javascripts/interpreter.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

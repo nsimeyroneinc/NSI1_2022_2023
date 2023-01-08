@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.0"
+   width="128"
+   height="74"
+   id="svg3947"
+   sodipodi:docname="porteNOT_Europe.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview11"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="11.797297"
+     inkscape:cx="63.997709"
+     inkscape:cy="36.957617"
+     inkscape:window-width="3769"
+     inkscape:window-height="2132"
+     inkscape:window-x="71"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs3949" />
+  <g
+     transform="translate(-527.33821,-855.11584)"
+     id="layer1">
+    <rect
+       width="53.890453"
+       height="72.14373"
+       x="563.86176"
+       y="856.04395"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3965" />
+    <path
+       d="M 627.17716 892.71881 A 4.8288975 4.8288975 0 1 1  617.51937,892.71881 A 4.8288975 4.8288975 0 1 1  627.17716 892.71881 z"
+       transform="matrix(0.9480661,0,0,0.9480661,32.457274,45.759398)"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.10955763;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3977" />
+    <rect
+       width="34.930683"
+       height="32.003536"
+       x="573.34161"
+       y="860.13263"
+       style="fill:#eeeeee;fill-opacity:0;stroke:none;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4020" />
+    <path
+       d="M 594.49839,882.96829 L 592.03746,882.96829 L 592.03746,867.28665 C 591.44499,867.85177 590.66799,868.41687 589.7064,868.98196 C 588.74481,869.54708 587.8812,869.97091 587.11558,870.25345 L 587.11558,867.87454 C 588.49188,867.22742 589.69501,866.44357 590.72496,865.52298 C 591.7549,864.60243 592.48406,863.7092 592.91246,862.84329 L 594.49839,862.84329 L 594.49839,882.96829 z "
+       style="font-size:28px;font-style:normal;font-weight:bold;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Gill Sans MT"
+       id="text3981" />
+    <text
+       xml:space="preserve"
+       style="font-size:33.3333px;line-height:1.05;font-family:sans-serif"
+       x="527.53638"
+       y="900.87555"
+       id="text2884"><tspan
+         sodipodi:role="line"
+         id="tspan2882"
+         x="527.53638"
+         y="900.87555"
+         style="font-size:33.3333px">A</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.296485;stroke-linejoin:round;paint-order:markers stroke fill"
+       id="rect5718"
+       width="15.99276"
+       height="1.9661652"
+       x="546.71918"
+       y="890.65308" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.26457;stroke-linejoin:round;paint-order:markers stroke fill"
+       id="rect5718-3"
+       width="12.494431"
+       height="2.0040181"
+       x="627.99072"
+       y="890.97467" />
+    <text
+       xml:space="preserve"
+       style="font-size:33.3333px;line-height:1.05;font-family:sans-serif"
+       x="638.50269"
+       y="902.16077"
+       id="text7005"><tspan
+         sodipodi:role="line"
+         id="tspan7003"
+         x="638.50269"
+         y="902.16077"
+         style="font-size:33.3333px">S</tspan></text>
+  </g>
+</svg>

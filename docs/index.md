@@ -43,23 +43,24 @@ Ces **TD sont corrigés** dans la mesure du possible (soit directement sur le si
 
         **Thème 2 :  Types construits**  
 
-        - □ Listes - Tableaux 
-        - □ Tuples    
+        - 🗹 Listes - Tableaux 
+        - 🗹 Tuples    
+        - 🗹 Tuples    
         - □ Dictionnaires  
 
 
     === "T3 Tables"
         **Thème 3 : Traitements de données en tables**
 
-        - □ Recherche dans une table
+        - 🗹 Recherche dans une table
         - □ Tri d'une table
         - □ Fusion de tables
     
     === "T4 IHM"
         **Thème 3 : Interactions entre l'homme et la machine sur le web**
 
-        - □ Modalités de l'interaction entre l'homme et la machine
-        - □ Interaction 
+        - 🗹 Modalités de l'interaction entre l'homme et la machine
+        - 🗹 Interaction 
 
 
     === "T5 Arch. matérielle"
@@ -83,7 +84,7 @@ Ces **TD sont corrigés** dans la mesure du possible (soit directement sur le si
     === "T7 Algo."
         **Thème 7 : Algorithmique**
 
-        - □ Extremums et moyennes
+        - 🗹 Extremums et moyennes
         - □ Tri par insertion - Tri par sélection
         - □ Dichotomie
         - □ Algorithmes gloutons
@@ -92,5 +93,7 @@ Ces **TD sont corrigés** dans la mesure du possible (soit directement sur le si
 ## Comment calculer sa note au BAC 2023 et Répartition des notes :
 
 [Fiche pour calculer sa note au BAC 2023](Divers/data/el-ve-de-premiere-comment-calculer-note-bac-2022-94490.pdf){:target="_blank"} 
+
+![](images/calculer_sa_note_BAC.png)
 
 ![](Divers/r-partition-de-la-note-finale.jpg){:.center width=75%}

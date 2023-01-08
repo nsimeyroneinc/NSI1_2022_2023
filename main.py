@@ -76,9 +76,9 @@ def define_env(env):
         9 : ["python","Exercices Bilan Python",1,"T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases.md"],
         10 : ["web","Le web",2,"T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS.md"],
         11: ["web","Interaction dans une page web",1,"T04_IHMWeb/T4.2_Interactions/T4.2_Js.md"],
-        12 : ["typesconstruits","Les tableaux en Python",1,"T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux.md"]
-        #12 : ["algorithmique","Parcours séquentiel d'un tableau",1,"T07_Algorithmes/T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau.md"]
-        #8 : ["web","Le web",2,"leweb.md"],
+        12 : ["typesconstruits","Les tableaux en Python",1,"T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux.md"],
+        13 : ["typesbase","Les Booleens",1,"T01_TypesBase/T1.4_Booleens/T1_4_Booleens.md"],
+        14 : ["os","Architecture d'un réseau",1,"T05_Architectures/T5.3_Reseaux/T5.1_Architecture.md"]
         #9 : ["algorithmique","Algorithmes de tri",2,"algostri.md"],
         #10 : ["typesbase","Représentation des entiers négatifs",1,"negatifs.md"],
         #11: ["os","Réseau",1,"reseau.md"],
@@ -288,7 +288,7 @@ Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de c
         # Traitement si image
         limg = env.variables.qcm[num]["image"]
         if limg!='':
-            lenonce+=f'\n \t ![illustration](./images/C{env.variables.qcm[num]["chapitre"]}/{limg})'
+            lenonce+=f'\n \t ![illustration](../../images/C{env.variables.qcm[num]["chapitre"]}/{limg})'
             lenonce+='{: .imgcentre}\n'
         modele = f'''
 !!! fabquestion "**{index}.** {lenonce}
@@ -368,6 +368,10 @@ Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de c
             return ""
         else:
             return texte
+
+
+
+
 #---------------- </exo perso>-------------------- 
     @env.macro
     def addition(v1, v2) -> str:
