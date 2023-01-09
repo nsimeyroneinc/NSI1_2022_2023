@@ -551,14 +551,20 @@ La Porte XOR (OU EXCLUSIF) admet deux valeurs en entrée (notées $A$ et $B$), e
 !!! exo 
     1. Écrire la table de vérité de la loi définie par :  
     $f(A,B) =$ (not A and B ) or (A and not B )  
-    Table de vérité  
-    | $A$  | $B$ | $ (not A and B ) or (A and not B )|
-    |:-:|:-:|:-:|
-    | $0$ |$0$ | $\,$ | 
-    | $0$ |$1$ | $\,$ | 
-    | $1$ |$0$ | $\,$ | 
-    | $1$ |$1$ | $\,$ |   
+
+    Table de vérité   
+
+    | $A$  | $B$ | not A  | (not A and B)| not B |A and not B | (not A and B ) or (A and not B)|
+    |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+    | $0$ |$0$ | $\,$ |  $\,$ |  $\,$ |  $\,$ |  $\,$ | 
+    | $0$ |$1$ | $\,$ |  $\,$ |  $\,$ |  $\,$ |  $\,$ | 
+    | $1$ |$0$ | $\,$ |  $\,$ |  $\,$ |  $\,$ |  $\,$ | 
+    | $1$ |$1$ | $\,$ |  $\,$ |  $\,$ |  $\,$ |  $\,$ | 
+
     2. Concevoir un circuit qui, étant données deux entrées A et B, donne en sortie la valeur A xor B , en utilisant seulement des portes Non, Et, Ou.
+
+<iframe style="width: 100%; height: 550px; border: 0" src="https://logic.modulo-info.ch/?mode=design&data=N4IgbiBcAsC+Q"></iframe>
+
 
 !!! info "Application en électricité domestique."
     Une application utilisée de l’opérateur logique XOR en électricité domestique est dans les salles où une ampoule peut être allumée ou éteinte par deux interrupteurs placés près de deux entrées. Chacun des deux interrupteurs peut soit allumer ou éteindre l’ampoule quelle que soit la position de l’autre interrupteur. Pour obtenir une telle fonctionnalité, on doit brancher les deux interrupteurs afin de former un opérateur XOR. C’est le montage dit « va-et-vient ».
@@ -574,8 +580,8 @@ La Porte XOR (OU EXCLUSIF) admet deux valeurs en entrée (notées $A$ et $B$), e
         | $0$ |$1$ | $\,$ | $\,$ | $\,$ |
         | $1$ |$0$ | $\,$ | $\,$ | $\,$ |
         | $1$ |$1$ | $\,$ | $\,$ | $\,$ |
-    
-    1. Que constatez-vous ?
+
+    2. Que constatez-vous ?
 
 
 Construire les circuits correpondants pour tester vos réponses :   
@@ -606,14 +612,14 @@ En pratique, cette méthode est souvent utilisée avec une clé $y$ à usage uni
     === "Enoncé"
         Écrire les tables de vérité des expressions booléennes suivantes :
 
-        1. NOT(A) AND B  
-        2. B OR (A AND B  
-        3. A AND (A OR B)  
-        4. (NOT(A) AND B) OR (A AND C)  
+        1. NOT(A) and B  
+        2. B or (A and B ) 
+        3. A and (A or B)  
+        4. (NOT(A) and B) or (A and C)  
 
     === "Solution 1"  
 
-        | $A$  | $B$ | $NOT(A)$ | $NOT(A)$ AND $B$|
+        | $A$  | $B$ | $NOT(A)$ | $NOT(A)$ and $B$|
         |:-:|:-:|:-:|:-:|
         | $0$ |$0$ | $1$ | $0$ |
         | $0$ |$1$ | $1$ | $1$ |
@@ -622,7 +628,7 @@ En pratique, cette méthode est souvent utilisée avec une clé $y$ à usage uni
 
     === "Solution 2"  
 
-        | $A$  | $B$ | $A$ AND $B$ | $B$ OR ($A$ AND $B$)|
+        | $A$  | $B$ | $A$ and $B$ | $B$ or ($A$ and $B$)|
         |:-:|:-:|:-:|:-:|
         | $0$ |$0$ | $0$ | $0$ |
         | $0$ |$1$ | $0$ | $1$ |
@@ -631,7 +637,7 @@ En pratique, cette méthode est souvent utilisée avec une clé $y$ à usage uni
 
     === "Solution 3"  
 
-        | $A$  | $B$ | $A$ OR $B$ | $A$ AND ($A$ OR $B$)|
+        | $A$  | $B$ | $A$ or $B$ | $A$ and ($A$ or $B$)|
         |:-:|:-:|:-:|:-:|
         | $0$ |$0$ | $0$ | $0$ |
         | $0$ |$1$ | $1$ | $0$ |
@@ -640,7 +646,7 @@ En pratique, cette méthode est souvent utilisée avec une clé $y$ à usage uni
 
     === "Solution 4"
 
-        | $A$  | $B$ | $C$| $NOT(A)$ | $S_1=NOT(A)$ AND $B$|$S_2=A$ AND $C$|$S_1$ OR $S2$|
+        | $A$  | $B$ | $C$| $NOT(A)$ | $S_1=NOT(A)$ and $B$|$S_2=A$ and $C$|$S_1$ or $S2$|
         |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
         | $0$ |$0$ | $0$ | $1$ | $0$ | $0$ | $0$ |
         | $0$ |$0$ | $1$ | $1$ | $0$ | $0$ | $0$ |
@@ -724,7 +730,7 @@ Construire les circuits correpondants pour tester vos réponses :
     | $1$ |$1$ | $1$ |  |
 
     !!! info "Remarque"
-        Le circuit étudié est appelé multiplexeur à 2 entrées.
+        Le circuit étudié est appelé multiplexeur à 2 entrées.  
         Selon la valeur de la commande (C ), il permet de reproduire en sortie (Out) :  
         - le signal E 1 si C est à 0.  
         - le signal E 2 si C est à 1.  
