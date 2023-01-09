@@ -807,7 +807,7 @@ Construire les circuits correpondants pour tester vos réponses :
     | $0$ |$0$ | $1$ | $1$ | $0$ |
     | $0$ |$1$ | $0$ | $1$ | $1$ |
     | $0$ |$1$ | $1$ | $1$ | $1$ |
-    | $0$ |$0$ | $0$ | $0$ | $0$ |
+    | $1$ |$0$ | $0$ | $0$ | $0$ |
     | $1$ |$0$ | $1$ | $0$ | $0$ |
     | $1$ |$1$ | $0$ | $0$ | $0$ |
     | $1$ |$1$ | $1$ | $0$ | $0$ |
@@ -993,7 +993,7 @@ L’objectif de l’exercice est d’étudier une méthode de cryptage d’une c
         ```
 
 !!! question "Question 5"
-    **Recopier** et **compléter** la table de vérité de $(E1 \oplus E_2$.  
+    **Recopier** et **compléter** la table de vérité de $(E1 \oplus E_2)$.  
 
     | $E_1$  | $E_2$ | $E_1 \oplus E_2$ | $(E_1 \oplus E_2) \oplus E_2$|
     |:-:|:-:|:-:|:-:|
