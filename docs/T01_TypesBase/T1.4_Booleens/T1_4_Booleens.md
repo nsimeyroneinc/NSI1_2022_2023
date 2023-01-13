@@ -652,7 +652,7 @@ En pratique, cette méthode est souvent utilisée avec une clé $y$ à usage uni
         | $0$ |$0$ | $1$ | $1$ | $0$ | $0$ | $0$ |
         | $0$ |$1$ | $0$ | $1$ | $1$ | $0$ | $1$ |
         | $0$ |$1$ | $1$ | $1$ | $1$ | $0$ | $1$ |
-        | $0$ |$0$ | $0$ | $0$ | $0$ | $0$ | $0$ |
+        | $1$ |$0$ | $0$ | $0$ | $0$ | $0$ | $0$ |
         | $1$ |$0$ | $1$ | $0$ | $0$ | $1$ | $1$ |
         | $1$ |$1$ | $0$ | $0$ | $0$ | $0$ | $0$ |
         | $1$ |$1$ | $1$ | $0$ | $0$ | $1$ | $1$ |
@@ -705,7 +705,7 @@ Construire les circuits correpondants pour tester vos réponses :
     | $0$ |$0$ | $1$ |  |
     | $0$ |$1$ | $0$ |  |
     | $0$ |$1$ | $1$ |  |
-    | $0$ |$0$ | $0$ |  |
+    | $1$ |$0$ | $0$ |  |
     | $1$ |$0$ | $1$ |  |
     | $1$ |$1$ | $0$ |  |
     | $1$ |$1$ | $1$ |  |
@@ -724,7 +724,7 @@ Construire les circuits correpondants pour tester vos réponses :
     | $0$ |$0$ | $1$ |  |
     | $0$ |$1$ | $0$ |  |
     | $0$ |$1$ | $1$ |  |
-    | $0$ |$0$ | $0$ |  |
+    | $1$ |$0$ | $0$ |  |
     | $1$ |$0$ | $1$ |  |
     | $1$ |$1$ | $0$ |  |
     | $1$ |$1$ | $1$ |  |
@@ -803,14 +803,14 @@ Construire les circuits correpondants pour tester vos réponses :
 
     | $Cin$  | $A$ | $B$| $Cout$ | $S$|
     |:-:|:-:|:-:|:-:|:-:|
-    | $0$ |$0$ | $0$ | $1$ | $0$ |
-    | $0$ |$0$ | $1$ | $1$ | $0$ |
-    | $0$ |$1$ | $0$ | $1$ | $1$ |
-    | $0$ |$1$ | $1$ | $1$ | $1$ |
-    | $1$ |$0$ | $0$ | $0$ | $0$ |
-    | $1$ |$0$ | $1$ | $0$ | $0$ |
-    | $1$ |$1$ | $0$ | $0$ | $0$ |
-    | $1$ |$1$ | $1$ | $0$ | $0$ |
+    | $0$ |$0$ | $0$ |  |  |
+    | $0$ |$0$ | $1$ |  |  |
+    | $0$ |$1$ | $0$ |  |  |
+    | $0$ |$1$ | $1$ |  |  |
+    | $1$ |$0$ | $0$ |  |  |
+    | $1$ |$0$ | $1$ |  |  |
+    | $1$ |$1$ | $0$ |  |  |
+    | $1$ |$1$ | $1$ |  |  |
 
 !!! exo
     Calculer les opérations suivantes :
@@ -874,7 +874,19 @@ Construire les circuits correpondants pour tester vos réponses :
     ```
 
     ???- corr
-        Pour comprendre ces résultats, il faut travailler en binaire. Voici les mêmes calculs :
+        Pour comprendre ces résultats, il faut travailler en binaire. Voici les mêmes calculs :  
+        calcul A  
+
+        12 -> 1100  
+        7 -> 0111  
+        ```python
+          1100
+        & 0111
+        ----------
+          0100  
+        ```
+
+        0100 -> 4
 
         ```python
         # calcul A
@@ -882,12 +894,36 @@ Construire les circuits correpondants pour tester vos réponses :
             '0b100'
         ```
 
+        calcul B  
+        
+        12 -> 1100  
+        7 -> 0111  
+        ```python
+          1100
+        | 0111
+        ----------
+          1111  
+        ```
+
+        1111 -> 15  
         ```python
         # calcul B
         >>> bin(0b1100 | 0b111)
         '0b1111'
         ```
 
+        calcul C  
+        
+        12 -> 1100  
+        5 -> 0101  
+        ```python
+          1100
+        ^ 0101
+        ----------
+          1001  
+        ```
+
+        1001 -> 9    
         ```python
         # calcul C
         >>> bin(0b1100 ^ 0b111)
