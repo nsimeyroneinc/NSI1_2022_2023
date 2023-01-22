@@ -13,6 +13,7 @@ def define_env(env):
     env.variables['themes']={
         "histoire":"Histoire de l'informatique",
         "projet":"Projet",
+        "devoir":"Devoir",
         "sd":"Structures de données",
         "db":"Bases de données",
         "os":"Architectures matérielles, systèmes d'exploitation et réseaux",
@@ -26,6 +27,7 @@ def define_env(env):
     env.variables['icones'] = {
         "histoire":':fontawesome-solid-building-columns:{title="'+env.variables['themes']['histoire']+'"}',
         "projet":':fontawesome-solid-lightbulb:{title="'+env.variables['themes']['projet']+'"}',
+        "devoir":':fontawesome-solid-pen-to-square:{title="'+env.variables['themes']['devoir']+'"}',
         "sd":':fontawesome-solid-diagram-project:{title="'+env.variables['themes']['sd']+'"}',
         "db":':fontawesome-solid-database:{title="'+env.variables['themes']['db']+'"}',
         "os":':fontawesome-solid-microchip:{title="'+env.variables['themes']['os']+'"}',
@@ -114,7 +116,7 @@ def define_env(env):
     }
     
 
-    #env.variables['devoir_premiere']={
+    env.variables['devoir_premiere']={
      #   1 : ["projet","Défi Logo Sprint",1,"T08_Extras/5MiniProjet/logo.md"],
       #  2 : ["projet","Dessine ta rue","17/11/2023","T08_Extras/5MiniProjet/dessine_ta_rue.md"]
         #2 : ["python","Les fonction en Python",1,"T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python.md"],
@@ -123,7 +125,7 @@ def define_env(env):
         #5 : ["typesbase","Représentation des entiers négatifs",1,"T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs.md"],
         #6 : ["typesbase","Représentation des flottants",1,"T01_TypesBase/T1.3_Flottants/T1_3_Flottants.md"],
         #7 : ["python","Les boucles WHILE",1,"T06_Python/T6.1_Python/T6_1_4_WHILE.md"],
-        #8 : ["python","Les instructions conditionnelles",1,"T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles.md"],
+        8 : ["devoir","Les portes Logiques",1,"T09_Evaluations/DS_portes_logiques.md"]
         #9 : ["python","Exercices Bilan Python",1,"T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases.md"]
         #8 : ["web","Le web",2,"leweb.md"],
         #9 : ["algorithmique","Algorithmes de tri",2,"algostri.md"],
@@ -135,7 +137,7 @@ def define_env(env):
         #15: ["os","Interface homme-machine",2,"interface.md"],
         #16: ["typesbase","Notion de nombre flottant",1,"flottant.md"],
         #17: ["algorithmique","Algorithme des k plus proches voisinumchapitrens",2,"knn.md"]
-    #}
+    }
     
     #titre activites 
     @env.macro
@@ -270,6 +272,46 @@ Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de c
             da = env.variables['progression'][k]
             ret+=f'  - "C{k}-{da[1]}" : {da[3]}\n'
         return ret+'```\n'
+
+
+
+
+#------------------DEVOIRS--------------------------
+    @env.macro
+    def devoir(num,theme,titre,duree,lien):
+        icone = env.variables["icones"][theme]
+        return f"|{icone}|[DS {num}- {titre}]({lien}) | {duree}\n" 
+
+
+    @env.macro
+    def sec_devoir(theme,devoir):
+            icone = env.variables.icones[theme]
+            return f"### {icone} &nbsp; {devoir}"
+
+    @env.macro
+    def devoir_chapitre(numero,devoir,theme,niveau):
+        # Position de l'ancre pour repérage dans la page
+        titre_bis = env.variables['devoir_'+niveau][numero][1]
+        ligne=f"# <span class='numdevoir'>Devoir-{numero}</span> {titre_bis} "
+        ligne+=f"<span style='float:right;'>{env.variables.icones[theme]}</span>"
+        return ligne
+
+    @env.macro
+    def affiche_devoir(niveau):
+        ret='''
+| |Devoir       | Le  |
+|-|-------------|-------|
+        '''
+        if niveau=="premiere":
+            var_projet = env.variables.devoir_premiere
+        else:
+            var_projet = env.variables.devoir_terminale
+        for k in var_projet:
+           ret+=devoir(k,env.variables['devoir_'+niveau][k][0],env.variables['devoir_'+niveau][k][1],env.variables['devoir_'+niveau][k][2],env.variables['devoir_'+niveau][k][3])
+        return ret
+
+#--------------------------------------------------------------------------------------        
+
 #---------------- <exo perso>-------------------- 
     with open("qcm.csv","r",encoding="utf-8") as f:
         questions = list(csv.DictReader(f,delimiter=","))
@@ -323,6 +365,54 @@ Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de c
                 index+=1
         return qcmc
 
+
+#---------------------------------------------- QCM sans réponse ---------------------------
+
+    with open("qcm_devoir.csv","r",encoding="utf-8") as f:
+        questions_devoir = list(csv.DictReader(f,delimiter=","))
+    env.variables['qcm_devoir']=questions_devoir
+
+    @env.macro
+    def affiche_question_devoir(num,index):
+        lenonce = env.variables.qcm_devoir[num]["enonce"]
+        # Traitement si enoncé sur plusieurs lignes
+        nl = lenonce.find('\n')
+        if nl>0:
+            lenonce=lenonce.replace("\n",'"\n',1)
+            lenonce=lenonce.replace("\n",'\n    ')
+        else:
+            lenonce+='"'
+        # Traitement si image
+        limg = env.variables.qcm_devoir[num]["image"]
+        if limg!='':
+            lenonce+=f'\n \t ![illustration](../images/C{env.variables.qcm_devoir[num]["chapitre"]}/{limg})'
+            lenonce+='{: .imgcentre}\n'
+        modele = f'''
+!!! fabquestion "**{index}.** {lenonce}
+    - [ ] a) {env.variables.qcm_devoir[num]["reponseA"]}
+    - [ ] b) {env.variables.qcm_devoir[num]["reponseB"]}
+    - [ ] c) {env.variables.qcm_devoir[num]["reponseC"]}
+    - [ ] d) {env.variables.qcm_devoir[num]["reponseD"]}
+'''
+        return modele
+
+    @env.macro
+    def affiche_qcm_devoir(liste_question_devoir):
+        qcm_devoir = ""
+        for index in range(len(liste_question_devoir)):
+            qcm_devoir+=affiche_question_devoir(liste_question_devoir[index],index+1)
+        return qcm_devoir
+    
+    @env.macro
+    def qcm_chapitre_devoir(num_chap):
+        index=1
+        qcmc=""
+        for num in range(len(env.variables.qcm_devoir)):
+            if int(env.variables.qcm_devoir[num]["chapitre"])==num_chap:
+                qcmc+=affiche_question_devoir(num,index)
+                index+=1
+        return qcmc
+#-------------------------------------    
 
 #---------------- <exo perso>-------------------- 
     @env.macro
