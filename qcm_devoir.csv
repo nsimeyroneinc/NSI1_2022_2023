@@ -1,7 +1,7 @@
 num,enonce,reponseA,reponseB,reponseC,reponseD,bonne_reponse,domaine,chapitre,image
 1,"Parmi les quatre expressions suivantes, laquelle s'évalue en True ?","False and (True and False)","False or (True and False)","True and (True and False)","True or (True and False)",D,8,8,
 2,"Sachant que l'expression not(a or b) a la valeur True, quelles peuvent être les valeurs des variables booléennes a et b ?","True et True","False et True","True et False","False et False",D,8,8,
-3,Pour quelles valeurs booléennes des variables a, b et c l'expression (a or b) and (not c) a-t-elle pour valeur True,"a = True b = False c = True","a = True b = False c = False","a = False b = False c = True","a = False b = True c = True",B,8,8,
+3,"Pour quelles valeurs booléennes des variables a, b et c l'expression (a or b) and (not c) a-t-elle pour valeur True","a = True b = False c = True","a = True b = False c = False","a = False b = False c = True","a = False b = True c = True",B,8,8,
 4,"Si A et B sont des variables booléennes, laquelle de ces expressions booléennes est équivalente à (not A) or B ?",(A and B) or (not A and B),(A and B) or (not A and B) or (not A and not B),(not A and B) or (not A and not B),(A and B) or (not A and not B),C,8,8,
 5,Quel est l'opérateur booléen qui vaut 1 seulement lorsque les deux opérandes valent 1 ?,Or,And,Nor,Nand,B,Architectures matérielles et systèmes d'exploitation,8,
 6,"Parmi les propositions suivantes, quelle expression est égale à `not(a and b)` ?",`(not a) and (not b)`,`(not a) or (not b)`,`(not a) and  b`,`a and (not b)`,B,Architectures matérielles et systèmes d'exploitation,8,
