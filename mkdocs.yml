@@ -70,7 +70,7 @@ nav:
 
 
     - Devoirs :
-      - Portes logiques : T09_Evaluations/DS_portes_logiques.md
+      #- Portes logiques : T09_Evaluations/DS_portes_logiques.md
       - logic : T09_Evaluations/logic.md
     
 
