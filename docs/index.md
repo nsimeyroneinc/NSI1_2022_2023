@@ -6,7 +6,9 @@ Il permettra de **retrouver les cours, TP et TD traités en classes**.<br>
 Ces **TD sont corrigés** dans la mesure du possible (soit directement sur le site soit dans Capytale).
 
 !!! info "Actualités"
-    - DM : [Dessine ta rue sur Capytale.](T08_Extras/5MiniProjet/dessine_ta_rue.md)
+    - Site web à rendre le Lundi 20/02/2023  
+    - TP sur les images dans Capytale  
+    - TP - Cours sur les dictionnaires dans Capytale  
 
 
 
