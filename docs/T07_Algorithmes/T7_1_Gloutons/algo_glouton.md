@@ -37,8 +37,12 @@ Le tableau suivant donne les distances routières kilométriques entre plusieurs
 - Villes à visiter : Limoges, Lyon, Paris et Toulouse.   
 
 **Q1.a** Combien de destinations différentes peut-on choisir ?  
+
 **Q1.b** Combien de "chemin" possible ?  
-**Q1.c** Répondre au problème: quel est le trajet optimal ?
+
+**Q1.c** Déterminer tous les chemins possibles ainsi que le kilométrage totale.
+
+**Q1.d** Répondre au problème: quel est le trajet optimal ?
 
 Le problème se ramène à trouver un ordre de visite des quatre villes pour lequel la somme des distance données par ce tableau est aussi petite que possible.  
 Une manière simple d'aborder le problème consiste à énumérer tous les cas possibles et calculer la distance  correspondante pour chacun des cas.  
