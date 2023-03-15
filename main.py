@@ -463,7 +463,7 @@ Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de c
     
     @env.macro
     def capytale(id):
-        lien = "[![logo capytale](https://nsimeyroneinc.github.io/images/capytale.png){.imgcentre width=150px border=2px}]"
+        lien = "[![logo capytale](./images/capytale.png){.center width=150px border=2px}]"
         lien +=f"(https://capytale2.ac-paris.fr/web/c/{id})"
         lien += "{target=_blank}"
         return lien
