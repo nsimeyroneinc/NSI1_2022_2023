@@ -240,3 +240,18 @@ t1 = [{""Nom"":""Le tampon"";""CP"":97418},{""Nom"":""La possession"";""CP"":974
 111,"Si l'expression `not(a or b)` vaut True, alors les valeurs possibles de `a`et `b` sont :",`True` et `True`,`True` et `False`,`False` et `True`,`False` et `False`,D,Types et valeurs de base,13,
 112,"Sur le schéma de circuit suivant, quelles sont les valeurs des sorties `A` et `B` ?",`A=0` et `B=0`,`A=0` et `B=1`,`A=1` et `B=0`,`A=1` et `B=1`,B,Types et valeurs de base,13,qcm1.png
 113,"L'adresse IP du site www.education.gouv.fr est 185.75.143.24. Quel dispositif permet d'associer l'adresse IP et l'URL www.education.gouv.fr ?",un routeur, un serveur DNS, un serveur de temps, un serveur Web,B,Types et valeurs de base,14,
+114,On considère la fonction suivante dont la fin est manquante.
+`
+def mois(n) :
+'''
+Transforme un mois donné sous forme d'un entier en une chaîne de caractèr
+param n : (int) entier compris entre 1 et 12 correspondant à un mois de l
+return (str) : chaîne de caractères correspondant au mois en toutes lettr
+'''
+dico1 = {1: 'Janv.', 2: 'Fév.', 3: 'Mars', 4: 'Avr.', 5: 'Mai', 6: 'Juin'
+7: 'Juil.', 8: 'Aout', 9: 'Sept.', 10: 'Oct.', 11: 'Nov.', 12: '
+dico2 = {'Janv.': 1, 'Fév.': 2,'Mars': 3, 'Avr.': 4, 'Mai': 5, 'Juin': 6,
+'Juil.': 7, 'Aout': 8, 'Sept.': 9, 'Oct.': 10, 'Nov.': 11, 'Déc.
+
+return ...
+`,Par quel code faut-il remplacer les ... après le return pour que la fonction soit correcte ?,`dico2{n}`,`mois`,`dico1[n]`,`dico1(n)`,,dictionnaire,30,

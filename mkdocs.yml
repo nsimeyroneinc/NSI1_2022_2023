@@ -60,6 +60,7 @@ nav:
     - T7 Algo. :  
       - Algorithmique : T07_Algorithmes/index_algo.md
       - TP Parcours séquentiel d'un tableau : T07_Algorithmes/T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau.md
+      - TP algorithme Glouton : T07_Algorithmes/T7_1_Gloutons/algo_glouton.md
 
      
     - T8 Extras :

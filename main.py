@@ -80,7 +80,8 @@ def define_env(env):
         11: ["web","Interaction dans une page web",1,"T04_IHMWeb/T4.2_Interactions/T4.2_Js.md"],
         12 : ["typesconstruits","Les tableaux en Python",1,"T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux.md"],
         13 : ["typesbase","Les Booleens",1,"T01_TypesBase/T1.4_Booleens/T1_4_Booleens.md"],
-        14 : ["os","Architecture d'un réseau",1,"T05_Architectures/T5.3_Reseaux/T5.1_Architecture.md"]
+        14 : ["os","Architecture d'un réseau",1,"T05_Architectures/T5.3_Reseaux/T5.1_Architecture.md"],
+        15 : ["python","Algorithme glouton",1,"T07_Algorithmes/T7_1_Gloutons/algo_glouton.md"]
         #9 : ["algorithmique","Algorithmes de tri",2,"algostri.md"],
         #10 : ["typesbase","Représentation des entiers négatifs",1,"negatifs.md"],
         #11: ["os","Réseau",1,"reseau.md"],
@@ -459,8 +460,13 @@ Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de c
         else:
             return texte
 
-
-
+    
+    @env.macro
+    def capytale(id):
+        lien = "[![logo capytale](https://nsimeyroneinc.github.io/images/capytale.png){.imgcentre width=150px border=2px}]"
+        lien +=f"(https://capytale2.ac-paris.fr/web/c/{id})"
+        lien += "{target=_blank}"
+        return lien
 
 #---------------- </exo perso>-------------------- 
     @env.macro
