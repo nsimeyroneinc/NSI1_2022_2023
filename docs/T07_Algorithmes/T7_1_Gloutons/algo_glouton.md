@@ -127,7 +127,7 @@ Même question avec un classement par valeur/poids (valeur massique) croissant.
 **Q4**  
 A-t-on obtenu la solution optimale ?
 
-**Activité Capytale :** {{capytale("a60c-1470297")}}
+**Activité Capytale :** {{capytale("cd2e-1484556")}}
 
 {{ titre_activite("Rendu de monnaie",[],) }}
 
@@ -162,6 +162,7 @@ Mais cette stratégie gagnante pour la somme de 49 euros l’est-elle pour n’i
 !!! note "Remarque :" 
     Un système monétaire pour lequel l’algorithme de rendu de monnaie glouton donne toujours un nombre minimal de pièces est dit canonique. Il existe des algorithmes permettant de déterminer si un système monétaire est canonique. 
     
+### Activité sur Capytale 
 
-**Activité Capytale :** {{capytale("5b71-1470368")}}
+**Activité Capytale :** {{capytale("5726-1484553")}}
 
