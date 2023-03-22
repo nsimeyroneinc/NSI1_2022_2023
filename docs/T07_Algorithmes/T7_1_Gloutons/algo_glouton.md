@@ -36,13 +36,11 @@ Le tableau suivant donne les distances routières kilométriques entre plusieurs
 - Départ et arrivée à Clermont-Ferrand,  
 - Villes à visiter : Limoges, Lyon, Paris et Toulouse.   
 
-**Q1.a** Combien de destinations différentes peut-on choisir ?  
+**Q1.a** Combien de "chemin" possible ?  
 
-**Q1.b** Combien de "chemin" possible ?  
+**Q1.b** Déterminer tous les chemins possibles ainsi que le kilométrage totale.
 
-**Q1.c** Déterminer tous les chemins possibles ainsi que le kilométrage totale.
-
-**Q1.d** Répondre au problème: quel est le trajet optimal ?
+**Q1.c** Répondre au problème: quel est le trajet optimal ?
 
 Le problème se ramène à trouver un ordre de visite des quatre villes pour lequel la somme des distance données par ce tableau est aussi petite que possible.  
 Une manière simple d'aborder le problème consiste à énumérer tous les cas possibles et calculer la distance  correspondante pour chacun des cas.  
@@ -62,13 +60,13 @@ Calculer le nombre de trajets possibles si le voyageur décide de visiter toutes
     > Face à de tels problèmes d'optimisation impossible à explorer exhaustivement, il peut être utile de connaître des algorithmes donnant rapidement une réponse qui, sans être nécessairement optimale, resterait bonne.
 
 
-## Synthèse 
+### Synthèse 
 
 Nous avons vu que la force brute ne permet pas de résoudre (en un temps raisonnable) le problème du voyageur de commerce lorsqu'on augmente le nombre de villes.
 
 Maintenant que vous avez manipulé ce problème et vu à quel point il est complexe à résoudre, nous allons voir comment faire autrement.
 
-!!! aretenir "A retenir :"
+!!! jeretiens "A retenir :"
     - Les **algorithmes gloutons** (greedy algorithms) constituent une alternative beaucoup plus simple à programmer, mais dont le résultat n’est pas toujours optimal (sauf dans certaines situations dites canoniques)
     - L’approche gloutonne consiste à construire une solution complète par une succession de choix locaux donnant systématiquement la meilleure solution partielle.  
 
@@ -115,17 +113,17 @@ L'objectif est d'aider le héros à effectuer cette optimisation.
 |Masse (kg)|0.5|1|1|5|6|5|3|
 |Valeur massique||||||||
 
-**Q1**  
-Classer ces objets par valeur décroissante et donner la solution de l'algorithme glouton avec ce critère de classement.
+!!! question "Q1"
+    Classer ces objets par valeur décroissante et donner la solution de l'algorithme glouton avec ce critère de classement.
 
-**Q2**  
-Même question avec un classement par poids croissant.
+!!! question "Q2"  
+    Même question avec un classement par poids croissant.
 
-**Q3**  
-Même question avec un classement par valeur/poids (valeur massique) croissant.
+!!! question "Q3"  
+    Même question avec un classement par valeur/poids (valeur massique) croissant.
 
-**Q4**  
-A-t-on obtenu la solution optimale ?
+!!! question "Q4"  
+    A-t-on obtenu la solution optimale ?
 
 **Activité Capytale :** {{capytale("cd2e-1484556")}}
 
