@@ -7,4 +7,4 @@
 
 - 🗹 Listes - Tableaux  
 - 🗹 Tuples    
-- □ Dictionnaires  
+- 🗹 Dictionnaires  

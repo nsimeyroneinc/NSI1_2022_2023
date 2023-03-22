@@ -4,6 +4,6 @@ Afin de pouvoir être traitées efficacement, les données doivent être structu
 
 ![](../images/database.png){: .center} 
 
-- 🗹 & □ Recherche dans une table  
+- 🗹 Recherche dans une table  
 - □ Tri d'une table  
 - □ Fusion de tables  

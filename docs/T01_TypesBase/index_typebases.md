@@ -6,6 +6,6 @@
 - 🗹 Codage des non-entiers  
 - 🗹 Bases  
 - □ Codage des caractères  
-- □ Booléens  
+- 🗹 Booléens  
 
 

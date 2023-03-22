@@ -14,7 +14,7 @@ Tout comme les plus grands chefs conçoivent leurs recettes à partir de recette
 - 🗹 Extremums et moyennes  
 - □ Tri par insertion - Tri par sélection  
 - □ Dichotomie  
-- □ Algorithmes gloutons  
+- 🗹 Algorithmes gloutons  
 - □ Algorithme KNN  
 
 <!-- ![](../images/AnimeHanoiNB.gif){: .center width=640}  -->
