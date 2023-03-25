@@ -1,788 +1,860 @@
 
-<!doctype html>
-<html lang="fr" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="Cours et TD de l'année en cours">
-      
-      
-        <meta name="author" content="Michael Meyroneinc-condy">
-      
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
-    
-    
-      
-        <title>T4.1 HTML & CSS - Site NSI 1ére</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.c382b1dc.min.css">
-      
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-      
-    
-    
-    
-    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+<!DOCTYPE html>
 
-    
-      
-    
-    
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
-    
-      <link rel="stylesheet" href="../../../xtra/stylesheets/pyoditeur.css">
-    
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber">
-  
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#t41-html-css" class="md-skip">
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Cours et TD de l'année en cours" name="description"/>
+<meta content="Michael Meyroneinc-condy" name="author"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<title>HTML - CSS - Site NSI 1ére</title>
+<link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript"></script>
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet"/>
+<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../../../xtra/stylesheets/pyoditeur.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="amber" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#c10-le-web">
           Aller au contenu
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../../.." title="Site NSI 1ére" class="md-header__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="En-tête" class="md-header__inner md-grid">
+<a aria-label="Site NSI 1ére" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Site NSI 1ére">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             Site NSI 1ére
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
-              T4.1 HTML & CSS
+              HTML - CSS
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      <form class="md-header__option" data-md-component="palette">
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
-          
-            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
-            </label>
-          
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
-            </label>
-          
-        
-      </form>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Basculer en mode sombre" class="md-option" data-md-color-accent="amber" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Basculer en mode sombre">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"></path></svg>
+</label>
+<input aria-label="Basculer en mode clair" class="md-option" data-md-color-accent="lime" data-md-color-media="" data-md-color-primary="amber" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Basculer en mode clair">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Effacer" class="md-search__icon md-icon" tabindex="-1" title="Effacer" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Initialisation de la recherche
           </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list"></ol>
 </div>
-    
-    
-  </nav>
-  
+</div>
+</div>
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-            
-<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+<div class="md-container" data-md-component="container">
+<nav aria-label="Onglets" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
       Accueil
     </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-tabs__link">
-        T6 Prog.
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T01_TypesBase/index_typebases/">
+        T1 Types et valeurs de base
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../Divers/conseil/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T02_TypesConstruits/index_typeconstruits/">
+        T2 Types construits
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../../index_web/">
+        T4 I.H.M.
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T05_Architectures/index_archi/">
+        T5 Arch. Matérielle
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T06_Python/index_prog/">
+        T6 Programmation
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T07_Algorithmes/index_algo/">
+        T7 Algo.
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T08_Extras/5MiniProjet/logo/">
+        T8 Extras
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T09_Evaluations/DS_portes_logiques/">
+        Devoirs
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../Divers/conseil/">
         Divers
       </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Site NSI 1ére" class="md-nav__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
-
-    </a>
-    Site NSI 1ére
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
-        Accueil
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
-      
-      
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_2">
-          T6 Prog.
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="T6 Prog." data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          T6 Prog.
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-nav__link">
-        TP 00 - Introduction Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python/" class="md-nav__link">
-        TP 01 - Les Variables en Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python/" class="md-nav__link">
-        TP 02 - Les Fonctions en Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python/" class="md-nav__link">
-        TP 03 - Les boucles (1) en Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../T06_Python/T6.1_Python/T6_1_4_Boucle_WHILE_en_Python/" class="md-nav__link">
-        TP 04 - Les boucles (2) en Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles_en_Python/" class="md-nav__link">
-        TP 05 - Les Conditions en Python
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_3">
-          Divers
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Divers" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          Divers
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Divers/conseil/" class="md-nav__link">
-        Conseil
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Divers/Liens_utiles/" class="md-nav__link">
-        Liens utiles
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#411-les-bases-de-html" class="md-nav__link">
-    4.1.1 Les bases de HTML
-  </a>
-  
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#412-avec-css" class="md-nav__link">
-    4.1.2 Avec CSS
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="T4.1_HTML_CSS.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
-              
-    
-                
-
-
-<h1 id="t41-html-css">T4.1 HTML &amp; CSS<a class="headerlink" href="#t41-html-css" title="Permanent link">⚓︎</a></h1>
-<p><img alt="" class="center" src="../../images/htmlcssjs_meme.jpg" /> </p>
-<p>On commence par s'intéresser au cas le plus simple, celui où le serveur renvoie une page unique, identique pour tous les utilisateurs. De plus, l'utilisateur ne pourra pas agir sur sa page : il n'y a aucune interactivité.</p>
-<p><img alt="" class="center" src="../../images/page_statique.png" /> </p>
-<div class="admonition tip">
-<p class="admonition-title">Sources de l'Escape Game</p>
-<p>Vous pouvez prendre modèle sur la source du site de l'escape game en la téléchargeant <a href="http://lyceevalois.com/nsi/WebEscapeGame.zip" target="_blank">ici</a>.</p>
-</div>
-<h2 id="411-les-bases-de-html">4.1.1 Les bases de HTML<a class="headerlink" href="#411-les-bases-de-html" title="Permanent link">⚓︎</a></h2>
-<p>Nous allons nous intéresser à un acteur fondamental du développement web, le couple HTML+CSS (Hyper Text Markup Langage et Cascading Style Sheets).</p>
-<p><img alt="" class="center" src="../../images/logo_HTML_CSS.png" width="50%" /> </p>
-<p>Dans un premier temps, nous allons exclusivement nous intéresser au HTML. Qu'est-ce que le HTML, voici la définition que nous en donne Wikipedia :</p>
-<blockquote>
-<p>L’Hypertext Markup Language, généralement abrégé HTML, est le format de données <strong>conçu pour représenter les pages web</strong>. C’est un <strong>langage de balisage</strong> permettant d’écrire de l’hypertexte, d’où son nom. HTML permet également de structurer sémantiquement et de mettre en forme le contenu des pages, d’inclure des ressources multimédias, dont des images, des formulaires de saisie, et des programmes informatiques. Il permet de créer des documents interopérables avec des équipements très variés de manière conforme aux exigences de l’accessibilité du web. Il est souvent utilisé conjointement avec des langages de programmation (JavaScript) et des formats de présentation (feuilles de style en cascade).</p>
-</blockquote>
-<p>On retiendra que HTML est un langage dit « à balises ». Ce n'est pas à proprement parler un langage de programmation, mais un langage de <strong>description</strong> de contenu. Il a été inventé en 1992 par <a href="https://fr.wikipedia.org/wiki/Tim_Berners-Lee" target="_blank">Tim Berners-Lee</a>. La version actuellement utilisée est le <code>html5</code>.</p>
-<div class="admonition info">
-<p class="admonition-title">Balises</p>
-<p>Voici un site pour apprendre le fonctionnement des balises :</p>
-<p><a href="https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Getting_started" target="_blank">https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Getting_started</a> </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Exemple complet minimal</p>
-<p>Ouvrir l'éditeur de texte <code>gedit</code> et y coller le code suivant. Enregistrer le document sous le nom <code>exemple_minimal.html</code> par exemple, dans un dossier <code>HTML</code>. Puis l'ouvrir avec un navigateur (Firefox).</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><code>&lt;head&gt;</code></label><label for="__tabbed_1_2"><code>&lt;body&gt;</code></label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span> 
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<span class="hll">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>                                      <span class="cm">&lt;!-- (1) --&gt;</span>
-</span><span class="hll">        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
-</span><span class="hll">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Titre très original<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span><span class="hll">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Une belle page web<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-            Un texte très <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>intéressant<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>.
-        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://lyceevalois.com/lmdv&quot;</span><span class="p">&gt;</span>Un lien<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-        <span class="cm">&lt;!-- Un commentaire... --&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<ol>
-<li>La balise <code>&lt;head&gt;</code> regroupe l'entête du document: à part le titre, aucun des éléments de l'entête n'est affiché sur la page.</li>
-</ol>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span> 
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>                                      <span class="cm">&lt;!-- (1) --&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Titre très original<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="hll">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span class="hll">        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Une belle page web<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-</span><span class="hll">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span class="hll">            Un texte très <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>intéressant<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>.
-</span><span class="hll">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span class="hll">        <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-</span><span class="hll">        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://lyceevalois.com/lmdv&quot;</span><span class="p">&gt;</span>Un lien<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</span><span class="hll">        <span class="cm">&lt;!-- Un commentaire... --&gt;</span>
-</span><span class="hll">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<ol>
-<li>La balise <code>&lt;body&gt;</code> regroupe tous les éléments qui structurenet et composent la page.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Exercice  1</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label><label for="__tabbed_2_2">Correction</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>Répondre à  l'aide de recherches sur le web.</p>
-<ol>
-<li>Quelle est la signification des balises de ce code minimal?</li>
-<li>Quelles sont les balises contenant un <em>attribut</em>?</li>
-<li>L'indentation est-elle obligatoire?</li>
-<li>Quelle est l'erreur dans l'extrait de code suivant?
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">&lt;</span><span class="n">balise1</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">balise2</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">balise1</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">balise2</span><span class="o">&gt;</span>
-</code></pre></div></td></tr></table></div></li>
-<li>Quelle est la balise permettant d'insérer une image dans une page web? Combien d'attributs obligatoires comporte-t-elle?</li>
-</ol>
-</div>
-<div class="tabbed-block"></div>
-</div>
-</div>
-</div>
-<p>On peut donner des attributs pour mettre en forme les différents éléments.</p>
-<p>Modifier par exemple dans l'exemple précédent:</p>
-<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: #FF0000;&quot;</span><span class="p">&gt;</span>Une belle page web<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align: center;&quot;</span><span class="p">&gt;</span>
-    Un texte très <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>intéressant<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>.
-<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Pour l'instant, cela fera l'affaire, mais c'est une très mauvaise pratique, qu'on abandonnera dès la section suivante...</p>
-<div class="admonition example">
-<p class="admonition-title">Exercice  2</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Énoncé</label><label for="__tabbed_3_2">Correction</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>Créer une page web, présentant la biographie de la personnalité qui vous a été attribuée.</p>
-<p>La page web devra comporter (<em>a minima</em>):</p>
-<ul>
-<li>le nom de la personne en titre (centré);</li>
-<li>une image (centrée);</li>
-<li>la biographie sous forme d'une liste non numérotée (unordered list);</li>
-<li>un lien vers vos sources, qui doit s'ouvrir dans un nouvel onglet.</li>
 </ul>
 </div>
-<div class="tabbed-block"></div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Site NSI 1ére" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Site NSI 1ére">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg>
+</a>
+    Site NSI 1ére
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+        Accueil
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+          T1 Types et valeurs de base
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T1 Types et valeurs de base" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          T1 Types et valeurs de base
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T01_TypesBase/index_typebases/">
+        Rep. des données
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers/">
+        T1_1 Codages des entiers positifs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T01_TypesBase/T1.1_Bases/T1_Perseverance/">
+        TP Perseverance
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs/">
+        T1_2 Codages des entiers relatifs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T01_TypesBase/T1.3_Flottants/T1_3_Flottants/">
+        T1_3 Codage des flottants
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T01_TypesBase/T1.4_Booleens/T1_4_Booleens/">
+        T1_4 Les Booléens
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+          T2 Types construits
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T2 Types construits" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          T2 Types construits
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T02_TypesConstruits/index_typeconstruits/">
+        Types construits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux/">
+        Tableaux (Listes) en Python
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+          T4 I.H.M.
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T4 I.H.M." class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          T4 I.H.M.
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../index_web/">
+        I.H.M
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          HTML - CSS
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        HTML - CSS
+      </a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-modele-client-serveur">
+    Activité 1 : Modèle client serveur  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-2-les-elements-dune-page-web">
+    Activité 2 : Les éléments d'une page Web
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-3-lapparence-dune-page-web">
+    Activité 3 : L'apparence d'une page Web
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-corrections">
+    Exercice 1 : Corrections
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-structurer-une-page-web">
+    Exercice 2 : Structurer une page Web
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-modifier-lapparence-dune-page-web">
+    Exercice 3 : Modifier l'apparence d'une page web
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-creer-un-mini-site">
+    Exercice 4 : Créer un mini-site
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../T4.2_Interactions/T4.2_Js/">
+        JS - Interaction dans une page web
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+          T5 Arch. Matérielle
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T5 Arch. Matérielle" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          T5 Arch. Matérielle
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T05_Architectures/index_archi/">
+        Architecture matérielle
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T05_Architectures/T5.3_Reseaux/T5.1_Architecture/">
+        Architecture d'un réseau
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+          T6 Programmation
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T6 Programmation" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          T6 Programmation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T06_Python/index_prog/">
+        Programmation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_0_Introduction/">
+        TP 00 - Introduction Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python/">
+        TP 01 - Les Variables en Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python/">
+        TP 02 - Les Fonctions en Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python/">
+        TP 03 - Les boucles (1) en Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_4_WHILE/">
+        TP 04 - Les boucles (2) en Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles/">
+        TP 05 - Les Conditions en Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases/">
+        TP 06 - Exercices Bilan Les bases
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
+          T7 Algo.
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T7 Algo." class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          T7 Algo.
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T07_Algorithmes/index_algo/">
+        Algorithmique
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T07_Algorithmes/T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau/">
+        TP Parcours séquentiel d'un tableau
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T07_Algorithmes/T7_1_Gloutons/algo_glouton/">
+        TP algorithme Glouton
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8">
+          T8 Extras
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T8 Extras" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+          T8 Extras
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T08_Extras/5MiniProjet/logo/">
+        Mini-Projet
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T08_Extras/5MiniProjet/dessine_ta_rue/">
+        Dessine ta rue
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9">
+          Devoirs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Devoirs" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+          Devoirs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T09_Evaluations/DS_portes_logiques/">
+        Portes logiques
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T09_Evaluations/logic/">
+        logic
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10">
+          Divers
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Divers" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+          Divers
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Divers/conseil/">
+        Conseil
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Divers/Liens_utiles/">
+        Liens utiles
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Divers/instal_python/">
+        Installation Python
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
-<h2 id="412-avec-css">4.1.2 Avec CSS<a class="headerlink" href="#412-avec-css" title="Permanent link">⚓︎</a></h2>
-<p>L'acronyme CSS signifie Cascading Style Sheets. L'idée est de regrouper dans un seul fichier toutes les informations relatives à la mise en forme des éléments de la page html.</p>
-<p>De manière très simplifiée, on peut dire que le fichier <code>html</code> s'occupe du fond tandis que le fichier <code>css</code> s'occupe de la forme.</p>
-<p>Le fichier CSS (souvent nommé <code>style.css</code>) doit être référencé au début du fichier <code>html</code> , au sein de la balise <code>&lt;head&gt;</code> en y ajoutant cette ligne:</p>
-<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Un exemple</p>
-<p>Voici un extrait du fichier css utilisé pour l'escape game d'introduction:</p>
-<div class="highlight"><span class="filename">CSS</span><pre><span></span><code><span class="nt">body</span><span class="w">                                </span><span class="c">/* note (1) */</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">color</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mh">#FFFFFF</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">background-color</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mh">#000000</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">font-family</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">monospace</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="nt">h1</span><span class="w">                                  </span><span class="c">/* note (2) */</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">font-style</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">width</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">font-size</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">em</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">margin-right</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="nt">a</span><span class="w">                                   </span><span class="c">/* note (3) */</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">font-style</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">color</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mh">#C80903</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="p">.</span><span class="nc">cesar</span><span class="w">                              </span><span class="c">/* note (4) */</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">margin-right</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">width</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">em</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-modele-client-serveur">
+    Activité 1 : Modèle client serveur  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-2-les-elements-dune-page-web">
+    Activité 2 : Les éléments d'une page Web
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-3-lapparence-dune-page-web">
+    Activité 3 : L'apparence d'une page Web
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-corrections">
+    Exercice 1 : Corrections
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-structurer-une-page-web">
+    Exercice 2 : Structurer une page Web
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-modifier-lapparence-dune-page-web">
+    Exercice 3 : Modifier l'apparence d'une page web
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-creer-un-mini-site">
+    Exercice 4 : Créer un mini-site
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="c10-le-web"><span class="numchapitre">C10</span> Le web <span style="float:right;"><span class="twemoji" title="Le web"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"></path></svg></span></span><a class="headerlink" href="#c10-le-web" title="Permanent link">⚓︎</a></h1>
+<h2 id="activites">Activités<a class="headerlink" href="#activites" title="Permanent link">⚓︎</a></h2>
+<h3 id="activite-1-modele-client-serveur"><img alt="▪" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/25aa.svg" title=":black_small_square:"/>   Activité 1 : <em>Modèle client serveur</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Activité utilisant un support vidéo"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 96c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v320c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm48 272v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32zM48 240v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32zM48 112v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32zm-256 32v64c0 17.7 14.3 32 32 32h128c17.7 0 32-14.3 32-32v-64c0-17.7-14.3-32-32-32H192c-17.7 0-32 14.3-32 32zm32 160c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32h128c17.7 0 32-14.3 32-32v-64c0-17.7-14.3-32-32-32H192z"></path></svg></span></span></span><a class="headerlink" href="#activite-1-modele-client-serveur" title="Permanent link">⚓︎</a></h3>
+<div class="centre"><iframe allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="360" src="https://player.vimeo.com/video/138623558?color=b50067&amp;title=0&amp;byline=0&amp;portrait=0" width="640"></iframe></div>
+<p>En faisant vos propres recherches et en vous aidant de la vidéo ci-dessus, répondre aux questions suivantes :</p>
 <ol>
-<li>On définit le style par défaut des pages (balise <code>&lt;body&gt;</code>): couleurs du texte et du fond, police de caractère).</li>
-<li>On définit le sstyle des titres de niveau 1 (balise <code>&lt;h1&gt;</code>).</li>
-<li>On définit le style des liens (balise <code>&lt;a&gt;</code>).</li>
-<li>On définit le style de la classe <code>cesar</code>.</li>
+<li>Quand et par qui a été inventé <em>le Web</em> ?</li>
+<li>Peut-on dire <em>Internet</em> à la place du <em>Web</em> ?</li>
+<li>Sur quel principe de fonctionnement repose <em>le Web</em> ?</li>
+</ol>
+<h3 id="activite-2-les-elements-dune-page-web"><img alt="▪" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/25aa.svg" title=":black_small_square:"/>   Activité 2 : <em>Les éléments d'une page Web</em><a class="headerlink" href="#activite-2-les-elements-dune-page-web" title="Permanent link">⚓︎</a></h3>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Dans cette activité, on commence à créer des pages HTML, pour visualiser la page produite, deux solutions s'offrent à vous :</p>
+<ol>
+<li>installer l'extension <em>HTML Preview</em> de VS code, dans ce cas vous pourrez afficher côte à côte dans VS Code le code source de votre page HTML ainsi que sa prévisualisation.</li>
+<li>ouvrir à l'aide de <em>Firefox</em> le fichier local de votre page HTML (taper <span class="keys"><kbd class="key-control">Ctrl</kbd><span>＋</span><kbd class="key-o">O</kbd></span> dans <em>Firefox</em>). Après avoir modifié le source HTML dans VS Code, mettre à jour l'affichage dans <em>Firefox</em> en appuyant sur <span class="keys"><kbd class="key-f5">F5</kbd></span> pour actualiser.</li>
 </ol>
 </div>
-<div class="admonition abstract">
-<p class="admonition-title">Classes</p>
-<p>Dans l'exemple de code <code>css</code>    précédent, j'ai définit un style pour la <code>class</code> que j'ai appelée <code>cesar</code>.</p>
-<p>En fait, <code>class</code> est un attribut que l'on peut attribuer à une balise (<code>div</code>, <code>p</code>, <code>span</code>) pour lui appliquer le style correspondant.</p>
-<p>Ce que je fait dans la page <code>/true/level5.html</code>: </p>
-<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cesar&quot;</span><span class="p">&gt;</span>
-    Mh vxlv frqqxh srxu dyrlu uhdolvh oh suhplhu yhulwdeoh surjudpph lqirupdwltxh hw xq odqjdjh gh surjudppdwlrq sruwh prq suhqrp.
-<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<ol>
+<li>
+<p>Squelette d'une page <em>Web</em><br/>
+L'éditeur VS Code, permet d'insérer rapidement la structure de base d'une page web :</p>
+<ul>
+<li>créer un fichier vide appelé <code>structure.html</code>,</li>
+<li>ouvrir ce fichier dans VS Code,</li>
+<li>taper simplement <code>!</code> et entrée (ou alors taper <code>html</code> et dans le menu d'abbreviation sélectioner <code>html:5</code>)</li>
+</ul>
+<p>Vous devriez obtenir le résultat suivant :
+<div class="highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content</span><span class="o">=</span><span class="s">"IE=edge"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Un document <span style="font-variant:small-caps;">html</span> est constitué d'un <em>en-tête</em>, suivi d'un <em>corps</em>. Repéré les balises permettant de délimiter :<ol>
+<li>Le document <span style="font-variant:small-caps;">html</span></li>
+<li>L'en-tête</li>
+<li>Le corps</li>
+</ol>
+</li>
+<li>L'en-tête contient une balise <code>&lt;title&gt;</code>, quel est son rôle ? </li>
+</ol>
+</li>
+<li>
+<p>Ajout de contenu<br/>
+Dans le corps du document, c'est à dire entre les balises <code>&lt;body&gt;</code> et <code>&lt;body&gt;</code>, insérer le contenu suivant :</p>
+<div class="highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Mon premier site web.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> Introduction <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+       <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span> Le HTML et les balises <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> le début d'une liste indentée <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> la suite ... <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>  
+    Pour apprendre le fonctionnement des balises, voir <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Getting_started"</span><span class="p">&gt;</span> ici<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> par exemple !
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>Observer le résultat obtenu dans l'affichage et en déduire le rôle des balises suivantes :  </p>
+<ol>
+<li><code>&lt;h1&gt;</code> et <code>&lt;h2&gt;</code></li>
+<li><code>&lt;ul&gt;</code> et <code>&lt;li&gt;</code></li>
+<li><code>&lt;p&gt;</code></li>
+</ol>
+</li>
+<li>
+<p>Ajouter un sous-titre 'Mes tests de balises' dans la page Web</p>
+</li>
+<li>Dans ce sous-titre créer une liste avec deux éléments : "élèment 1", "élèment 2".</li>
+<li>Ajouter un paragraphe au début (juste aprés le titre de niveau 1) dans lequelle on écrira "Ne pas oublier de prendre des notes sur les divers notions cues dans ce chapitre."</li>
+<li>
+<p>Au paragraphe crée à la question précédente rajouter :</p>
+<div class="highlight"><span class="filename">HTML</span><pre><span></span><code>    Un exemple de format et de logiciel pour la prise de notes : <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://www.nextinpact.com/article/44926/visual-studio-code-editeur-credible-pour-publication-et-markdown"</span><span class="p">&gt;</span>Visual code et markdown<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </code></pre></div>
+</li>
+<li>
+<p>Quelle est la modification produite dans la page ?</p>
+</li>
+<li>
+<p>Ajouter un lien dans votre page Web sur le mot "Markdown" : <code>https://code.visualstudio.com/docs/languages/markdown</code></p>
+</li>
+<li>
+<p>Rechercher vous-même sur le <em>Web</em> la balise permettant d'insérer une image dans une page HTML puis l'utiliser pour insérer une image illustrant le web (attention à utiliser une image libre de droit)</p>
+</li>
+</ol>
+<h3 id="activite-3-lapparence-dune-page-web"><img alt="▪" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/25aa.svg" title=":black_small_square:"/>   Activité 3 : <em>L'apparence d'une page Web</em><a class="headerlink" href="#activite-3-lapparence-dune-page-web" title="Permanent link">⚓︎</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Les balises HTML permettent de <strong>structurer</strong> le contenu d'une page web, en définissant les titres, les paragraphes, ...
+Pour modifier l'<strong>apparence</strong> d'une page, on a recours au <em>css</em> (cascadind style sheet) qui permettent de modifier l'apparence du contenu de la page</p>
 </div>
-<div class="admonition example">
-<p class="admonition-title">Exercice  3</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Correction</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>Écrire un fichier <code>css</code> contenant la mise en forme de votre page web. Celle-ci ne doit plus contenir de mise en forme en attributs de balises.</p>
-<p>Pour s'aider : <a href="https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3/1605060-mettez-en-place-le-css" target="_blank">https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3/1605060-mettez-en-place-le-css</a> </p>
+<p><span class="centre"><a class="md-button" href="../../../pdf/C10/Act10-2.pdf">Une courte introduction à css <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg></span></a></span></p>
+<h2 id="cours">Cours<a class="headerlink" href="#cours" title="Permanent link">⚓︎</a></h2>
+<p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :</p>
+<p><span class="centre"><a class="md-button" href="../../../pdf/C10/C10-cours.pdf" target="_blank">Diaporama de cours <span class="twemoji"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"></path></svg></span></a></span></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos <strong>propres</strong> notes de cours et par une révision approfondie des exercices.</p>
 </div>
-<div class="tabbed-block"></div>
+<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">⚓︎</a></h2>
+<h3 id="exercice-1-corrections"><img alt="▪" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/25aa.svg" title=":black_small_square:"/>   Exercice 1 : <em>Corrections</em><a class="headerlink" href="#exercice-1-corrections" title="Permanent link">⚓︎</a></h3>
+<p>Corriger les erreurs dans les fragments de code HTML suivant :</p>
+<ol>
+<li><code>&lt;h&gt; Mon titre principal &lt;/h&gt;</code></li>
+<li><code>&lt;href="http://www.wikipedia.fr"&gt;un lien vers Wikipedia&lt;/href&gt;</code></li>
+<li><code>&lt;p&gt; Ce paragraphe contient un &lt;a href="autre_page.html"&gt;lien vers une autre page&lt;/p&gt;&lt;/a&gt;</code></li>
+</ol>
+<h3 id="exercice-2-structurer-une-page-web"><img alt="▪" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/25aa.svg" title=":black_small_square:"/>   Exercice 2 : <em>Structurer une page Web</em><a class="headerlink" href="#exercice-2-structurer-une-page-web" title="Permanent link">⚓︎</a></h3>
+<p>Quelles sont les balises <span style="font-variant:small-caps;">html</span> permettant de délimiter :</p>
+<ol>
+<li>Un titre ou un sous titre ?</li>
+<li>Un paragraphe ?</li>
+<li>Un lien ?</li>
+<li>Un tableau ? Une ligne d'un tableau ? Une case dans un tableau ?</li>
+</ol>
+<h3 id="exercice-3-modifier-lapparence-dune-page-web"><img alt="▪" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/25aa.svg" title=":black_small_square:"/>   Exercice 3 : <em>Modifier l'apparence d'une page web</em><a class="headerlink" href="#exercice-3-modifier-lapparence-dune-page-web" title="Permanent link">⚓︎</a></h3>
+<ol>
+<li>Enregistrer dans le répertoire suivant le fichier <span style="font-variant:small-caps;">html</span> suivant :  </li>
+</ol>
+<p><span class="centre"><a class="md-button" href="../../../files/C10/exo_changement.html">Le site à modifier <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg></span></a></span> </p>
+<p>Pour cela, vous pouvez par exemple cliquer à droite sur le bouton ci-dessus, puis sélectionner "Enregistrer la cible du lien sous ..."  </p>
+<ol>
+<li>Par la méthode de votre choix (mais de préférence en créant une feuille de style dans un fichier séparé), modifier l'apparence de cette page web de sorte que :  <ul>
+<li>Le fond de la page soit de couleur noire,  </li>
+<li>Les liens soient jaunes et pas soulignés,  </li>
+<li>Les titres de niveau 1 soient en gras et en blanc,  </li>
+<li>Les titres de niveau 2 soient en bleu clair, encadré avec un trait de couleur rouge  </li>
+</ul>
+</li>
+</ol>
+<h3 id="exercice-4-creer-un-mini-site"><img alt="▪" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/25aa.svg" title=":black_small_square:"/>   Exercice 4 : <em>Créer un mini-site</em><a class="headerlink" href="#exercice-4-creer-un-mini-site" title="Permanent link">⚓︎</a></h3>
+<p>Réaliser  un mini site <em>Web</em>, en utilisant le html et les feuilles de style. Le sujet du site est au choix, par exemple : votre CV, vos films préférés, un site de recette de cuisines, un site sur un sport ou une de vos passions, ou sur une célébrité (sportif, acteur, chanteur ...) . Respecter le cahier des charges suivant :</p>
+<ul>
+<li>au moins 5 pages reliées entre elles par des liens internes et des liens vers des sites extérieurs</li>
+<li>au moins 5 images, attention à utiliser des images <em>libres de droits</em> ou à créer vos propres illustrations pour votre site</li>
+<li>au moins une page de votre site devra contenir des informations organisées sous la forme d'un tableau et donc utiliser les balises <code>&lt;table&gt;</code> et <code>&lt;/table&gt;</code>.</li>
+<li>L'apparence du site sera uniformisé (c'est à dire que d'une page à l'autre on retrouvera les mêmes couleurs et la même présentation). Vous devrez pour cela utiliser une feuille de style dans un fichier séparé.</li>
+</ul>
+<p>On complétera ce site ultérieument. </p>
+<script src="../../../js/ide.js"></script>
+<a class="md-content__icon pdf-download-btn" download href="../../../pandoc/T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS/T4.1_HTML_CSS.pdf" title="Download"><i class="fa fas fa-download"></i><small> T4.1_HTML_CSS.pdf </small></a></article>
 </div>
 </div>
-</div>
-
-              
-    <script src="../../../js/ide.js"></script> 
-
-            </article>
-          </div>
-        </div>
-        
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             Retour en haut de la page
           </a>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
+</main>
+<footer class="md-footer">
+<nav aria-label="Pied de page" class="md-footer__inner md-grid">
+<a aria-label="Précédent: I.H.M" class="md-footer__link md-footer__link--prev" href="../../index_web/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Précédent
+              </span>
+              I.H.M
+            </div>
+</div>
+</a>
+<a aria-label="Suivant: JS - Interaction dans une page web" class="md-footer__link md-footer__link--next" href="../../T4.2_Interactions/T4.2_Js/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Suivant
+              </span>
+              JS - Interaction dans une page web
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
       2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
-    </div>
+</div>
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>
-  
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
-    
-    
-      <script src="../../../assets/javascripts/bundle.a6c66575.min.js"></script>
-      
-        <script src="../../../xtra/javascripts/config.js"></script>
-      
-        <script src="../../../xtra/javascripts/interpreter.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+<script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script src="../../../xtra/javascripts/config.js"></script>
+<script src="../../../xtra/javascripts/perso.js"></script>
+<script src="../../../xtra/javascripts/interpreter.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+</body>
 </html>

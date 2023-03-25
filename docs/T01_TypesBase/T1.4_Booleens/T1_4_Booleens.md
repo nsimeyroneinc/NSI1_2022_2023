@@ -602,9 +602,7 @@ En pratique, cette méthode est souvent utilisée avec une clé $y$ à usage uni
 
 {{ aff_cours(num) }}
 
-## QCM
 
-{{qcm_chapitre(num)}}
 
 ## EXERCICES
 

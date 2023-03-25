@@ -1,646 +1,694 @@
 
-<!doctype html>
-<html lang="fr" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="Cours et TD de l'année en cours">
-      
-      
-        <meta name="author" content="Michael Meyroneinc-condy">
-      
-      
-      <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
-    
-    
-      
-        <title>Site NSI 1ére</title>
-      
-    
-    
-      <link rel="stylesheet" href="assets/stylesheets/main.c382b1dc.min.css">
-      
-        
-        <link rel="stylesheet" href="assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-      
-    
-    
-    
-    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+<!DOCTYPE html>
 
-    
-      
-    
-    
-      <link rel="stylesheet" href="stylesheets/extra.css">
-    
-      <link rel="stylesheet" href="xtra/stylesheets/pyoditeur.css">
-    
-    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber">
-  
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#cours-premiere-nsi-mmeyroneinc" class="md-skip">
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Cours et TD de l'année en cours" name="description"/>
+<meta content="Michael Meyroneinc-condy" name="author"/>
+<link href="assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<title>Site NSI 1ére</title>
+<link href="assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript"></script>
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet"/>
+<link href="stylesheets/extra.css" rel="stylesheet"/>
+<link href="xtra/stylesheets/pyoditeur.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css" rel="stylesheet"/>
+<script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="amber" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#cours-premiere-nsi-mmeyroneinc">
           Aller au contenu
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="." title="Site NSI 1ére" class="md-header__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="En-tête" class="md-header__inner md-grid">
+<a aria-label="Site NSI 1ére" class="md-header__button md-logo" data-md-component="logo" href="." title="Site NSI 1ére">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             Site NSI 1ére
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               Accueil
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      <form class="md-header__option" data-md-component="palette">
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
-          
-            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
-            </label>
-          
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
-            </label>
-          
-        
-      </form>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Basculer en mode sombre" class="md-option" data-md-color-accent="amber" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Basculer en mode sombre">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"></path></svg>
+</label>
+<input aria-label="Basculer en mode clair" class="md-option" data-md-color-accent="lime" data-md-color-media="" data-md-color-primary="amber" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Basculer en mode clair">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Effacer" class="md-search__icon md-icon" tabindex="-1" title="Effacer" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Initialisation de la recherche
           </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list"></ol>
 </div>
-    
-    
-  </nav>
-  
+</div>
+</div>
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-            
-<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-    
-  
-
-
-  <li class="md-tabs__item">
-    <a href="." class="md-tabs__link md-tabs__link--active">
+<div class="md-container" data-md-component="container">
+<nav aria-label="Onglets" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href=".">
       Accueil
     </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-tabs__link">
-        T6 Prog.
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="T01_TypesBase/index_typebases/">
+        T1 Types et valeurs de base
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="Divers/conseil/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="T02_TypesConstruits/index_typeconstruits/">
+        T2 Types construits
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="T04_IHMWeb/index_web/">
+        T4 I.H.M.
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="T05_Architectures/index_archi/">
+        T5 Arch. Matérielle
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="T06_Python/index_prog/">
+        T6 Programmation
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="T07_Algorithmes/index_algo/">
+        T7 Algo.
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="T08_Extras/5MiniProjet/logo/">
+        T8 Extras
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="T09_Evaluations/DS_portes_logiques/">
+        Devoirs
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="Divers/conseil/">
         Divers
       </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="." title="Site NSI 1ére" class="md-nav__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
-
-    </a>
-    Site NSI 1ére
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Accueil
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
-        Accueil
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#les-themes-du-programme" class="md-nav__link">
-    Les thèmes du programme
-  </a>
-  
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#programme" class="md-nav__link">
-    Programme
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comment-calculer-sa-note-au-bac-2023-et-repartition-des-notes" class="md-nav__link">
-    Comment calculer sa note au BAC 2023 et Répartition des notes :
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
-      
-      
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_2">
-          T6 Prog.
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="T6 Prog." data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          T6 Prog.
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-nav__link">
-        TP 00 - Introduction Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python/" class="md-nav__link">
-        TP 01 - Les Variables en Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python/" class="md-nav__link">
-        TP 02 - Les Fonctions en Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python/" class="md-nav__link">
-        TP 03 - Les boucles (1) en Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="T06_Python/T6.1_Python/T6_1_4_Boucle_WHILE_en_Python/" class="md-nav__link">
-        TP 04 - Les boucles (2) en Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles_en_Python/" class="md-nav__link">
-        TP 05 - Les Conditions en Python
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_3">
-          Divers
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Divers" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          Divers
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Divers/conseil/" class="md-nav__link">
-        Conseil
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Divers/Liens_utiles/" class="md-nav__link">
-        Liens utiles
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#les-themes-du-programme" class="md-nav__link">
-    Les thèmes du programme
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#programme" class="md-nav__link">
-    Programme
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comment-calculer-sa-note-au-bac-2023-et-repartition-des-notes" class="md-nav__link">
-    Comment calculer sa note au BAC 2023 et Répartition des notes :
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="index.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
-              
-    
-                
-
-
-<h1 id="cours-premiere-nsi-mmeyroneinc">Cours Première NSI - M.Meyroneinc<a class="headerlink" href="#cours-premiere-nsi-mmeyroneinc" title="Permanent link">⚓︎</a></h1>
-<p>Ce site est à destination des élèves de première NSI du Lycée Murat d'Issoire.<br>
-Il permettra de retrouver les cours, TP et TD traités en classes.<br>
-Ces TD sont corrigés dans la mesure du possible (soit directement sur le site soit dans Capytale).</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<ul>
-<li>Thème traité : Python - Les bases</li>
 </ul>
 </div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Site NSI 1ére" class="md-nav__button md-logo" data-md-component="logo" href="." title="Site NSI 1ére">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg>
+</a>
+    Site NSI 1ére
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Accueil
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href=".">
+        Accueil
+      </a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#les-themes-du-programme">
+    Les thèmes du programme
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#programme">
+    Programme
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comment-calculer-sa-note-au-bac-2023-et-repartition-des-notes">
+    Comment calculer sa note au BAC 2023 et Répartition des notes :
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+          T1 Types et valeurs de base
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T1 Types et valeurs de base" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          T1 Types et valeurs de base
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="T01_TypesBase/index_typebases/">
+        Rep. des données
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers/">
+        T1_1 Codages des entiers positifs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T01_TypesBase/T1.1_Bases/T1_Perseverance/">
+        TP Perseverance
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs/">
+        T1_2 Codages des entiers relatifs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T01_TypesBase/T1.3_Flottants/T1_3_Flottants/">
+        T1_3 Codage des flottants
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T01_TypesBase/T1.4_Booleens/T1_4_Booleens/">
+        T1_4 Les Booléens
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+          T2 Types construits
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T2 Types construits" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          T2 Types construits
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="T02_TypesConstruits/index_typeconstruits/">
+        Types construits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux/">
+        Tableaux (Listes) en Python
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+          T4 I.H.M.
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T4 I.H.M." class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          T4 I.H.M.
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="T04_IHMWeb/index_web/">
+        I.H.M
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS/">
+        HTML - CSS
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T04_IHMWeb/T4.2_Interactions/T4.2_Js/">
+        JS - Interaction dans une page web
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+          T5 Arch. Matérielle
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T5 Arch. Matérielle" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          T5 Arch. Matérielle
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="T05_Architectures/index_archi/">
+        Architecture matérielle
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T05_Architectures/T5.3_Reseaux/T5.1_Architecture/">
+        Architecture d'un réseau
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+          T6 Programmation
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T6 Programmation" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          T6 Programmation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="T06_Python/index_prog/">
+        Programmation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T06_Python/T6.1_Python/T6_1_0_Introduction/">
+        TP 00 - Introduction Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python/">
+        TP 01 - Les Variables en Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python/">
+        TP 02 - Les Fonctions en Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python/">
+        TP 03 - Les boucles (1) en Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T06_Python/T6.1_Python/T6_1_4_WHILE/">
+        TP 04 - Les boucles (2) en Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles/">
+        TP 05 - Les Conditions en Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases/">
+        TP 06 - Exercices Bilan Les bases
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
+          T7 Algo.
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T7 Algo." class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          T7 Algo.
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="T07_Algorithmes/index_algo/">
+        Algorithmique
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T07_Algorithmes/T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau/">
+        TP Parcours séquentiel d'un tableau
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T07_Algorithmes/T7_1_Gloutons/algo_glouton/">
+        TP algorithme Glouton
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8">
+          T8 Extras
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T8 Extras" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+          T8 Extras
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="T08_Extras/5MiniProjet/logo/">
+        Mini-Projet
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T08_Extras/5MiniProjet/dessine_ta_rue/">
+        Dessine ta rue
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9">
+          Devoirs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Devoirs" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+          Devoirs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="T09_Evaluations/DS_portes_logiques/">
+        Portes logiques
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="T09_Evaluations/logic/">
+        logic
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10">
+          Divers
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Divers" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+          Divers
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="Divers/conseil/">
+        Conseil
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="Divers/Liens_utiles/">
+        Liens utiles
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="Divers/instal_python/">
+        Installation Python
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#les-themes-du-programme">
+    Les thèmes du programme
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#programme">
+    Programme
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comment-calculer-sa-note-au-bac-2023-et-repartition-des-notes">
+    Comment calculer sa note au BAC 2023 et Répartition des notes :
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="cours-premiere-nsi-mmeyroneinc">Cours Première NSI - M.Meyroneinc<a class="headerlink" href="#cours-premiere-nsi-mmeyroneinc" title="Permanent link">⚓︎</a></h1>
+<p>Ce site est à destination des élèves de première NSI du Lycée Murat d'Issoire.<br/>
+Il permettra de <strong>retrouver les cours, TP et TD traités en classes</strong>.<br/>
+Ces <strong>TD sont corrigés</strong> dans la mesure du possible (soit directement sur le site soit dans Capytale).</p>
+<div class="admonition info">
+<p class="admonition-title">Actualités</p>
+<ul>
+<li>TD : Algorithmes Gloutons</li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Titre</th>
+<th>Durée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji" title="Langages et programmation"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg></span></td>
+<td><a href="T06_Python/T6.1_Python/T6_1_0_Introduction/">C0- Introduction</a></td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Langages et programmation"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg></span></td>
+<td><a href="T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python/">C1- Les variables en Python</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Langages et programmation"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg></span></td>
+<td><a href="T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python/">C2- Les fonction en Python</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Langages et programmation"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg></span></td>
+<td><a href="T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python/">C3- Les Boucles FOR</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Types de base"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M234.5 5.7c13.9-5 29.1-5 43.1 0l192 68.6c25.4 9.1 42.4 33.2 42.4 60.3v242.8c0 27-17 51.2-42.5 60.3l-192 68.6c-13.9 5-29.1 5-43.1 0l-192-68.6C17 428.6 0 404.5 0 377.4V134.6c0-27 17-51.2 42.5-60.3l192-68.6zM256 66 82.3 128 256 190l173.7-62L256 66zm32 368.6 160-57.1v-188l-160 57.1v188z"></path></svg></span></td>
+<td><a href="T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers/">C4- Représentation des entiers positifs</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Types de base"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M234.5 5.7c13.9-5 29.1-5 43.1 0l192 68.6c25.4 9.1 42.4 33.2 42.4 60.3v242.8c0 27-17 51.2-42.5 60.3l-192 68.6c-13.9 5-29.1 5-43.1 0l-192-68.6C17 428.6 0 404.5 0 377.4V134.6c0-27 17-51.2 42.5-60.3l192-68.6zM256 66 82.3 128 256 190l173.7-62L256 66zm32 368.6 160-57.1v-188l-160 57.1v188z"></path></svg></span></td>
+<td><a href="T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs/">C5- Représentation des entiers négatifs</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Types de base"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M234.5 5.7c13.9-5 29.1-5 43.1 0l192 68.6c25.4 9.1 42.4 33.2 42.4 60.3v242.8c0 27-17 51.2-42.5 60.3l-192 68.6c-13.9 5-29.1 5-43.1 0l-192-68.6C17 428.6 0 404.5 0 377.4V134.6c0-27 17-51.2 42.5-60.3l192-68.6zM256 66 82.3 128 256 190l173.7-62L256 66zm32 368.6 160-57.1v-188l-160 57.1v188z"></path></svg></span></td>
+<td><a href="T01_TypesBase/T1.3_Flottants/T1_3_Flottants/">C6- Représentation des flottants</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Langages et programmation"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg></span></td>
+<td><a href="T06_Python/T6.1_Python/T6_1_4_WHILE/">C7- Les boucles WHILE</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Langages et programmation"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg></span></td>
+<td><a href="T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles/">C8- Les instructions conditionnelles</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Langages et programmation"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg></span></td>
+<td><a href="T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases/">C9- Exercices Bilan Python</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Le web"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"></path></svg></span></td>
+<td><a href="T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS/">C10- Le web</a></td>
+<td>2</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Le web"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"></path></svg></span></td>
+<td><a href="T04_IHMWeb/T4.2_Interactions/T4.2_Js/">C11- Interaction dans une page web</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Types construits"><svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m290.8 48.6 78.4 29.7-81.2 31.2-81.2-31.2 78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5v112.2c-1.3.4-2.6.8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7v119.2c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4L308 3.7c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zm256 118.1-82.4 31.2v-89.2L392 121v89.6zm-237.2 40.3 78.4 29.7-81.2 31.1-81.2-31.1 78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8l82.4-31.6v95.9l-82.4 36.2zm247.6-204.4c1.8-.7 3.8-.7 5.7 0l78.4 29.7-81.3 31.1-81.2-31.1 78.4-29.7zm102 170.3-77.6 34.1V354.8l82.4-31.6v90.7c0 3.2-1.9 6-4.8 7.3z"></path></svg></span></td>
+<td><a href="T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux/">C12- Les tableaux en Python</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Types de base"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M234.5 5.7c13.9-5 29.1-5 43.1 0l192 68.6c25.4 9.1 42.4 33.2 42.4 60.3v242.8c0 27-17 51.2-42.5 60.3l-192 68.6c-13.9 5-29.1 5-43.1 0l-192-68.6C17 428.6 0 404.5 0 377.4V134.6c0-27 17-51.2 42.5-60.3l192-68.6zM256 66 82.3 128 256 190l173.7-62L256 66zm32 368.6 160-57.1v-188l-160 57.1v188z"></path></svg></span></td>
+<td><a href="T01_TypesBase/T1.4_Booleens/T1_4_Booleens/">C13- Les Booleens</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Architectures matérielles, systèmes d'exploitation et réseaux"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c-35.3 0-64 28.7-64 64H24c-13.3 0-24 10.7-24 24s10.7 24 24 24h40v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24h40v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24h40c0 35.3 28.7 64 64 64v40c0 13.3 10.7 24 24 24s24-10.7 24-24v-40h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24v-40h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24v-40c35.3 0 64-28.7 64-64h40c13.3 0 24-10.7 24-24s-10.7-24-24-24h-40v-56h40c13.3 0 24-10.7 24-24s-10.7-24-24-24h-40v-56h40c13.3 0 24-10.7 24-24s-10.7-24-24-24h-40c0-35.3-28.7-64-64-64V24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40h-56V24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40h-56V24zm-16 104h192c17.7 0 32 14.3 32 32v192c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32zm192 32H160v192h192V160z"></path></svg></span></td>
+<td><a href="T05_Architectures/T5.3_Reseaux/T5.1_Architecture/">C14- Architecture d'un réseau</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Langages et programmation"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg></span></td>
+<td><a href="T07_Algorithmes/T7_1_Gloutons/algo_glouton/">C15- Algorithme glouton</a></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Mini-Projet</th>
+<th>Pour le</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji" title="Projet"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2 5.2-7.1 10.4-14.2 15.4-21.4 19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3 5 7.2 10.2 14.3 15.4 21.4 19.8 27.1 39.7 54.4 49.2 86.2h160zm-80 128c44.2 0 80-35.8 80-80v-16H112v16c0 44.2 35.8 80 80 80zm-80-336c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112 8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"></path></svg></span></td>
+<td><a href="T08_Extras/5MiniProjet/logo/">Mini-Projet 1- Défi Logo Sprint</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="twemoji" title="Projet"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2 5.2-7.1 10.4-14.2 15.4-21.4 19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3 5 7.2 10.2 14.3 15.4 21.4 19.8 27.1 39.7 54.4 49.2 86.2h160zm-80 128c44.2 0 80-35.8 80-80v-16H112v16c0 44.2 35.8 80 80 80zm-80-336c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112 8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"></path></svg></span></td>
+<td><a href="T08_Extras/5MiniProjet/dessine_ta_rue/">Mini-Projet 2- Dessine ta rue</a></td>
+<td>17/11/2023</td>
+</tr>
+</tbody>
+</table>
 <details class="video">
 <summary>Vidéo de présentation :</summary>
-<p><div style="width: 100%;"><div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;"><iframe frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/622b74508c4c780013c4e08f" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div></p>
+<p><div style="width: 100%;"><div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;"><iframe allowfullscreen="true" allownetworking="all" allowscriptaccess="always" frameborder="0" height="675" scrolling="yes" src="https://view.genial.ly/622b74508c4c780013c4e08f" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" type="text/html" width="1200"></iframe> </div> </div></p>
 </details>
 <h2 id="les-themes-du-programme">Les thèmes du programme<a class="headerlink" href="#les-themes-du-programme" title="Permanent link">⚓︎</a></h2>
-<p><img alt="image" src="Divers/7themes2.png" /></p>
+<p><img alt="image" class="center" src="Divers/7themes2.png"/></p>
 <h2 id="programme">Programme<a class="headerlink" href="#programme" title="Permanent link">⚓︎</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Programme</p>
 <p>Nous traiterons les différentes entrées du programme dans les chapitres suivants :</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:7"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">T1 Rep. des données</label><label for="__tabbed_1_2">T2 Types construits</label><label for="__tabbed_1_3">T3 Tables</label><label for="__tabbed_1_4">T4 IHM</label><label for="__tabbed_1_5">T5 Arch. matérielle</label><label for="__tabbed_1_6">T6 Python</label><label for="__tabbed_1_7">T7 Algo.</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:7"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><input id="__tabbed_1_7" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">T1 Rep. des données</label><label for="__tabbed_1_2">T2 Types construits</label><label for="__tabbed_1_3">T3 Tables</label><label for="__tabbed_1_4">T4 IHM</label><label for="__tabbed_1_5">T5 Arch. matérielle</label><label for="__tabbed_1_6">T6 Python</label><label for="__tabbed_1_7">T7 Algo.</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><strong>Thème  :  Types et valeurs de base</strong>  </p>
+<p><strong>Thème  :  Types et valeurs de base</strong> </p>
 <ul>
-<li>□ Codage des entiers</li>
-<li>□ Codage des non-entiers</li>
-<li>□ Bases</li>
-<li>□ <a href="https://nsimeyroneinc.github.io/siteNSI1ere/Type_Donnes_Bases/TP_Codage_Caracteres/">Codage des caractères</a></li>
+<li>🗹 Codage des entiers</li>
+<li>🗹 Codage des non-entiers</li>
+<li>🗹 Bases</li>
+<li>□ Codage des caractères</li>
 <li>□ Booléens</li>
 </ul>
 </div>
 <div class="tabbed-block">
-<p><strong>Thème 2 :  Types construits</strong>  </p>
+<p><strong>Thème 2 :  Types construits</strong> </p>
 <ul>
-<li>□ Listes - Tableaux </li>
-<li>□ Tuples    </li>
+<li>🗹 Listes - Tableaux </li>
+<li>🗹 Tuples    </li>
+<li>🗹 Tuples    </li>
 <li>□ Dictionnaires  </li>
 </ul>
 </div>
 <div class="tabbed-block">
 <p><strong>Thème 3 : Traitements de données en tables</strong></p>
 <ul>
-<li>□ Recherche dans une table</li>
+<li>🗹 Recherche dans une table</li>
 <li>□ Tri d'une table</li>
 <li>□ Fusion de tables</li>
 </ul>
@@ -648,8 +696,8 @@ Ces TD sont corrigés dans la mesure du possible (soit directement sur le site s
 <div class="tabbed-block">
 <p><strong>Thème 3 : Interactions entre l'homme et la machine sur le web</strong></p>
 <ul>
-<li>□ Modalités de l'interaction entre l'homme et la machine</li>
-<li>□ Interaction </li>
+<li>🗹 Modalités de l'interaction entre l'homme et la machine</li>
+<li>🗹 Interaction </li>
 </ul>
 </div>
 <div class="tabbed-block">
@@ -665,16 +713,16 @@ Ces TD sont corrigés dans la mesure du possible (soit directement sur le site s
 <p><strong>Thème 6 : Langages et programmation - Python</strong></p>
 <ul>
 <li>🗹 Variables</li>
-<li>□ Boucle For</li>
-<li>□ Boucle While</li>
-<li>□ Instruction conditionnelle If</li>
-<li>□ Fonctions</li>
+<li>🗹 Boucle For</li>
+<li>🗹 Boucle While</li>
+<li>🗹 Instruction conditionnelle If</li>
+<li>🗹 Fonctions</li>
 </ul>
 </div>
 <div class="tabbed-block">
 <p><strong>Thème 7 : Algorithmique</strong></p>
 <ul>
-<li>□ Extremums et moyennes</li>
+<li>🗹 Extremums et moyennes</li>
 <li>□ Tri par insertion - Tri par sélection</li>
 <li>□ Dichotomie</li>
 <li>□ Algorithmes gloutons</li>
@@ -682,87 +730,65 @@ Ces TD sont corrigés dans la mesure du possible (soit directement sur le site s
 </ul>
 </div>
 </div>
-</div>
+</input></input></input></input></input></input></input></div>
 </div>
 <h2 id="comment-calculer-sa-note-au-bac-2023-et-repartition-des-notes">Comment calculer sa note au BAC 2023 et Répartition des notes :<a class="headerlink" href="#comment-calculer-sa-note-au-bac-2023-et-repartition-des-notes" title="Permanent link">⚓︎</a></h2>
-<p><a href="divers/data/el-ve-de-premiere-comment-calculer-note-bac-2022-94490.pdf" target="_blank">Fiche pour calculer sa note au BAC 2023</a> </p>
-<p><img alt="" src="r-partition-de-la-note-finale.jpg" /></p>
-
-              
-    <script src="./js/ide.js"></script> 
-
-            </article>
-          </div>
-        </div>
-        
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+<p><a href="Divers/data/el-ve-de-premiere-comment-calculer-note-bac-2022-94490.pdf" target="_blank">Fiche pour calculer sa note au BAC 2023</a> </p>
+<p><img alt="" src="images/calculer_sa_note_BAC.png"/></p>
+<p><img alt="" class="center" src="Divers/r-partition-de-la-note-finale.jpg" width="75%"/></p>
+<script src="./js/ide.js"></script>
+<a class="md-content__icon pdf-download-btn" download href="pandoc/index.pdf" title="Download"><i class="fa fas fa-download"></i><small> index.pdf </small></a></article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             Retour en haut de la page
           </a>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
-      
-      
-        
-        <a href="T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-footer__link md-footer__link--next" aria-label="Suivant: TP 00 - Introduction Python" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
+</main>
+<footer class="md-footer">
+<nav aria-label="Pied de page" class="md-footer__inner md-grid">
+<a aria-label="Suivant: Rep. des données" class="md-footer__link md-footer__link--next" href="T01_TypesBase/index_typebases/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                 Suivant
               </span>
-              TP 00 - Introduction Python
+              Rep. des données
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
       2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
-    </div>
+</div>
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>
-  
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
-    
-    
-      <script src="assets/javascripts/bundle.a6c66575.min.js"></script>
-      
-        <script src="xtra/javascripts/config.js"></script>
-      
-        <script src="xtra/javascripts/interpreter.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+<script src="assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script src="xtra/javascripts/config.js"></script>
+<script src="xtra/javascripts/perso.js"></script>
+<script src="xtra/javascripts/interpreter.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+</body>
 </html>

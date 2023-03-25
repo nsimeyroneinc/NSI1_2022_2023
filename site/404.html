@@ -13,7 +13,7 @@
       
       
       <link rel="icon" href="/assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
@@ -21,12 +21,14 @@
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="/assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="/assets/stylesheets/palette.2505c338.min.css">
         
       
+      
+
     
     
     
@@ -47,10 +49,13 @@
     
       <link rel="stylesheet" href="/xtra/stylesheets/pyoditeur.css">
     
-    <script>__md_scope=new URL("/",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -87,7 +92,7 @@
     <a href="/." title="Site NSI 1ére" class="md-header__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -114,6 +119,7 @@
         
           
           
+          
           <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
@@ -121,6 +127,7 @@
             </label>
           
         
+          
           
           
           <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
@@ -148,7 +155,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -203,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers/" class="md-tabs__link">
+      <a href="/T01_TypesBase/index_typebases/" class="md-tabs__link">
         T1 Types et valeurs de base
       </a>
     </li>
@@ -219,8 +226,104 @@
   
   
     <li class="md-tabs__item">
-      <a href="/T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-tabs__link">
-        T6 Prog.
+      <a href="/T02_TypesConstruits/index_typeconstruits/" class="md-tabs__link">
+        T2 Types construits
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/T04_IHMWeb/index_web/" class="md-tabs__link">
+        T4 I.H.M.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/T05_Architectures/index_archi/" class="md-tabs__link">
+        T5 Arch. Matérielle
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/T06_Python/index_prog/" class="md-tabs__link">
+        T6 Programmation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/T07_Algorithmes/index_algo/" class="md-tabs__link">
+        T7 Algo.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/T08_Extras/5MiniProjet/logo/" class="md-tabs__link">
+        T8 Extras
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/T09_Evaluations/DS_portes_logiques/" class="md-tabs__link">
+        Devoirs
       </a>
     </li>
   
@@ -266,7 +369,7 @@
     <a href="/." title="Site NSI 1ére" class="md-nav__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
 
     </a>
     Site NSI 1ére
@@ -313,6 +416,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2">
@@ -326,6 +433,20 @@
           T1 Types et valeurs de base
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T01_TypesBase/index_typebases/" class="md-nav__link">
+        Rep. des données
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -375,8 +496,22 @@
   
   
     <li class="md-nav__item">
-      <a href="/T01_TypesBases/T1.3_Flottants/T1_3_Flottants.md" class="md-nav__link">
+      <a href="/T01_TypesBase/T1.3_Flottants/T1_3_Flottants/" class="md-nav__link">
         T1_3 Codage des flottants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T01_TypesBase/T1.4_Booleens/T1_4_Booleens/" class="md-nav__link">
+        T1_4 Les Booléens
       </a>
     </li>
   
@@ -409,23 +544,265 @@
         
           
         
-          
-        
-          
-        
       
       
         <label class="md-nav__link" for="__nav_3">
-          T6 Prog.
+          T2 Types construits
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="T6 Prog." data-md-level="1">
+      <nav class="md-nav" aria-label="T2 Types construits" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          T6 Prog.
+          T2 Types construits
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T02_TypesConstruits/index_typeconstruits/" class="md-nav__link">
+        Types construits
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux/" class="md-nav__link">
+        Tableaux (Listes) en Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          T4 I.H.M.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T4 I.H.M." data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          T4 I.H.M.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T04_IHMWeb/index_web/" class="md-nav__link">
+        I.H.M
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS/" class="md-nav__link">
+        HTML - CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T04_IHMWeb/T4.2_Interactions/T4.2_Js/" class="md-nav__link">
+        JS - Interaction dans une page web
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          T5 Arch. Matérielle
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T5 Arch. Matérielle" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          T5 Arch. Matérielle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T05_Architectures/index_archi/" class="md-nav__link">
+        Architecture matérielle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T05_Architectures/T5.3_Reseaux/T5.1_Architecture/" class="md-nav__link">
+        Architecture d'un réseau
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          T6 Programmation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T6 Programmation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          T6 Programmation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T06_Python/index_prog/" class="md-nav__link">
+        Programmation
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -483,6 +860,48 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T06_Python/T6.1_Python/T6_1_4_WHILE/" class="md-nav__link">
+        TP 04 - Les boucles (2) en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles/" class="md-nav__link">
+        TP 05 - Les Conditions en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases/" class="md-nav__link">
+        TP 06 - Exercices Bilan Les bases
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -500,7 +919,91 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          T7 Algo.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T7 Algo." data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          T7 Algo.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T07_Algorithmes/index_algo/" class="md-nav__link">
+        Algorithmique
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T07_Algorithmes/T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau/" class="md-nav__link">
+        TP Parcours séquentiel d'un tableau
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T07_Algorithmes/T7_1_Gloutons/algo_glouton/" class="md-nav__link">
+        TP algorithme Glouton
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
       
       
@@ -511,13 +1014,151 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_8">
+          T8 Extras
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T8 Extras" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          T8 Extras
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T08_Extras/5MiniProjet/logo/" class="md-nav__link">
+        Mini-Projet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T08_Extras/5MiniProjet/dessine_ta_rue/" class="md-nav__link">
+        Dessine ta rue
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Devoirs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Devoirs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Devoirs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T09_Evaluations/DS_portes_logiques/" class="md-nav__link">
+        Portes logiques
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/T09_Evaluations/logic/" class="md-nav__link">
+        logic
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
           Divers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Divers" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           Divers
         </label>
@@ -545,6 +1186,20 @@
     <li class="md-nav__item">
       <a href="/Divers/Liens_utiles/" class="md-nav__link">
         Liens utiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Divers/instal_python/" class="md-nav__link">
+        Installation Python
       </a>
     </li>
   
@@ -581,16 +1236,19 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
   <h1>404 - Not found</h1>
 
-            </article>
-          </div>
+              </article>
+            </div>
+          
+          
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Retour en haut de la page
           </a>
@@ -623,12 +1281,15 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "/assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "/assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="/assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
         <script src="/xtra/javascripts/config.js"></script>
+      
+        <script src="/xtra/javascripts/perso.js"></script>
       
         <script src="/xtra/javascripts/interpreter.js"></script>
       
@@ -638,6 +1299,9 @@
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
       
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
     
   </body>
 </html>

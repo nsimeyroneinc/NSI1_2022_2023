@@ -52,6 +52,37 @@ margin-bottom:-10px;
   width: 640px;
 }
 
+
+
+.vert {
+  color : teal;
+}
+
+.rouge {
+  color : orangered;
+}
+
+
+.objet {
+  color: blue;
+  font-size : larger;
+}
+
+.numchapitre {
+  color : rgb(255, 166, 0);
+  background-color: rgb(55, 55, 144);
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 2px;
+  text-align: left;
+}
+
+
+# light theme:
+  --correction-color: #f82e2e;
+# dark theme:
+  --correction-color: #ffcecc;
+
 :root {
 --md-admonition-icon--fabquestion: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 448c-110.532 0-200-89.431-200-200 0-110.495 89.472-200 200-200 110.491 0 200 89.471 200 200 0 110.53-89.431 200-200 200zm107.244-255.2c0 67.052-72.421 68.084-72.421 92.863V300c0 6.627-5.373 12-12 12h-45.647c-6.627 0-12-5.373-12-12v-8.659c0-35.745 27.1-50.034 47.579-61.516 17.561-9.845 28.324-16.541 28.324-29.579 0-17.246-21.999-28.693-39.784-28.693-23.189 0-33.894 10.977-48.942 29.969-4.057 5.12-11.46 6.071-16.666 2.124l-27.824-21.098c-5.107-3.872-6.251-11.066-2.644-16.363C184.846 131.491 214.94 112 261.794 112c49.071 0 101.45 38.304 101.45 88.8zM298 368c0 23.159-18.841 42-42 42s-42-18.841-42-42 18.841-42 42-42 42 18.841 42 42z"/></svg>')
 }
@@ -406,12 +437,58 @@ body {
    counter-reset: h1 h2 h3;
 }
 
+.md-typeset h1 {
+  color: teal;
+  font-weight: bold;
+}
+/*
+.md-typeset h2 {
+  font-weight: 500;
+}
+
+.md-typeset h3 {
+  color: darkblue;
+}
+*/
+.numchapitre {
+color : rgb(228, 162, 40);
+background-color: teal;
+font-weight: bold;
+padding-left: 5px;
+padding-right: 2px;
+text-align: left;
+}
+/*
+.md-typeset h2 {
+  color: darkred;
+}
+*/
+
+.histoire {
+  color : maroon
+}
+
+.projet {
+  color : forestgreen
+}
+
+.python {
+  color : #306998
+}
+
+.typesconstruits {
+  color : rebeccapurple
+}
+
+
+/*
 h1 {
-  background-color: #627686;
-  color:rgb(255,255,255);
+  background-color: teal;
+  color:white;
   font-family: @@font_name@@;
   font-size: 12pt;
 }
+*/
 h2 {
   background-color: rgb(70, 70, 77);
   color:white;
@@ -419,10 +496,15 @@ h2 {
   font-size: 12pt;
 }
 h3 {
-    color: rgb(199, 90, 27);
+    color: rgb(13, 112, 17);
 }
+
+h4 {
+  color: rgba(220, 73, 19, 0.636);
+}
+
 h1:before {
-  content: "   ";
+  content:  "    ";
   counter-increment: h1;
 }
 h2:before {
@@ -430,34 +512,36 @@ h2:before {
   counter-increment: h2;
 }
 h3:before {
-  content:  counter(h2) "."counter(h3) ".  ";
+  content: counter(h2)"."counter(h3) ".  ";
   counter-increment: h3;
 }
+
+h4:before {
+  content: counter(h2)"."counter(h3) "."counter(h4) ".  ";
+  counter-increment: h4;
+}
+
 h1 {
   counter-reset: h2;
 }
 h2 {
   counter-reset: h3;
 }
-h1.unnumbered, h2.unnumbered, h3.unnumbered {
+h3 {
+  counter-reset: h4;
+}
+h1.unnumbered, h2.unnumbered, h3.unnumbered,h4.unnumbered {
   counter-reset: none;
 }
-h1.unnumbered:before, h2.unnumbered:before, h3.unnumbered:before {
+h1.unnumbered:before, h2.unnumbered:before, h3.unnumbered:before,h4.unnumbered:before {
   content: none;
   counter-increment: none;
 }
 */
 
-table {
-  border-collapse: collapse;
-  width: 65%;
-  border: 1px solid #ddd;
-}
-
-/*Theme 2 : Types construits*/
 table.blueTable {
   border: 1px solid #151616;
-  background-color: #3232B2;
+  background-color: #318CE7;
   width: 100%;
   color: black;
   text-align: center;
@@ -465,7 +549,8 @@ table.blueTable {
   font-size: 18px;
 }
 
-/*Theme 6 : programmation */
+/* T2 Bases de données*/
+
 table.yellowTable {
   border: 1px solid #151616;
   background-color: #c5ca27;
@@ -476,6 +561,7 @@ table.yellowTable {
   font-size: 18px;
 }
 
+/* T3 Architecture matérielle*/
 
 table.redTable {
   border: 1px solid #151616;
@@ -487,10 +573,11 @@ table.redTable {
   font-size: 18px;
 }
 
-/*Theme 1 : Représentation types et valeurs de bases*/
+/* T4 Langage et programmation*/
+
 table.greenTable {
   border: 1px solid #151616;
-  background-color: #21B852;
+  background-color: #87A96B;
   width: 100%;
   color: black;
   text-align: center;
@@ -498,6 +585,15 @@ table.greenTable {
   font-size: 18px;
 }
 
+th.blueTh {
+  border: 1px solid #151616;
+  background-color: #318CE7;
+  width: 100%;
+  color: black;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 18px;
+}
 
 th.yellowTh {
   border: 1px solid #151616;
@@ -532,20 +628,21 @@ td {
 }
 
 .md-typeset__table table:not([class]) {
-  font-size: .7rem;
+  font-size: .74rem;
   border-right: none;
 }
 
 
 .md-typeset__table table:not([class]) td,
 .md-typeset__table table:not([class]) th {
-  padding: 5px;
+  padding: 9px;
 }
 
-/* light mode alternating table bg colors */
+/* light mode alternating table bg colors 
 .md-typeset__table tr:nth-child(2n) {
-  background-color: #777975;
+  background-color: #252725;
 }
+*/
 /*
 table.greenTable td, table.greenTable th {
   border: 1px solid #AAAAAA;
@@ -595,3 +692,60 @@ Orange : rgb(255, 145, 0)
 Violet : rgb(124, 77, 255)
 Gray : rgb(158, 158, 158)
 */
+
+
+/*
+table.greenTable td, table.greenTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+
+table.greenTable tbody td {
+  font-size: 16px;
+}
+
+table.greenTable tr:nth-child(even) {
+  background: #D0E4F5;
+}
+
+table.greenTable tfoot td {
+  font-size: 14px;
+}
+
+table.greenTable tfoot .links {
+  text-align: right;
+}
+
+table.greenTable tfoot .links a {
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+em {
+  color: var(--red);
+}
+*/
+/*
+python blue : 006699
+python yellow : FFCC33
+python gray : 666666
+
+
+
+Green : rgb(0, 200, 83)
+Blue : rgb(68, 138, 255)
+Red : rgb(255, 82, 82)
+Orange : rgb(255, 145, 0)
+Violet : rgb(124, 77, 255)
+Gray : rgb(158, 158, 158)
+*/
+
+
+.cle_primaire {
+  text-decoration-line: underline;
+  text-underline-offset: 0.37em;
+  text-decoration-thickness: 1.5px; 
+}

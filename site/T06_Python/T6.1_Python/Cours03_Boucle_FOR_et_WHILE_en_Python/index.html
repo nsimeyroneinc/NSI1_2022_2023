@@ -1,610 +1,558 @@
 
-<!doctype html>
-<html lang="fr" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="Cours et TD de l'année en cours">
-      
-      
-        <meta name="author" content="Première NSI">
-      
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
-    
-    
-      
-        <title>Les Fonctions en Python - Site NSI 1ére</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.c382b1dc.min.css">
-      
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-      
-    
-    
-    
-    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+<!DOCTYPE html>
 
-    
-      
-    
-    
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
-    
-      <link rel="stylesheet" href="../../../xtra/stylesheets/pyoditeur.css">
-    
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber">
-  
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#theme-6-langages-et-programmation" class="md-skip">
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Cours et TD de l'année en cours" name="description"/>
+<meta content="Première NSI" name="author"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<title>Les Fonctions en Python - Site NSI 1ére</title>
+<link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript"></script>
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet"/>
+<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../../../xtra/stylesheets/pyoditeur.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="amber" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#theme-6-langages-et-programmation">
           Aller au contenu
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../../.." title="Site NSI 1ére" class="md-header__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="En-tête" class="md-header__inner md-grid">
+<a aria-label="Site NSI 1ére" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Site NSI 1ére">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             Site NSI 1ére
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               Les Fonctions en Python
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      <form class="md-header__option" data-md-component="palette">
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
-          
-            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
-            </label>
-          
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
-            </label>
-          
-        
-      </form>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Basculer en mode sombre" class="md-option" data-md-color-accent="amber" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Basculer en mode sombre">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"></path></svg>
+</label>
+<input aria-label="Basculer en mode clair" class="md-option" data-md-color-accent="lime" data-md-color-media="" data-md-color-primary="amber" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Basculer en mode clair">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Effacer" class="md-search__icon md-icon" tabindex="-1" title="Effacer" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Initialisation de la recherche
           </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list"></ol>
 </div>
-    
-    
-  </nav>
-  
+</div>
+</div>
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-            
-<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+<div class="md-container" data-md-component="container">
+<nav aria-label="Onglets" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
       Accueil
     </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../T6_1_0_Introduction/" class="md-tabs__link">
-        T6 Prog.
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T01_TypesBase/index_typebases/">
+        T1 Types et valeurs de base
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../Divers/conseil/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T02_TypesConstruits/index_typeconstruits/">
+        T2 Types construits
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T04_IHMWeb/index_web/">
+        T4 I.H.M.
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T05_Architectures/index_archi/">
+        T5 Arch. Matérielle
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../index_prog/">
+        T6 Programmation
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T07_Algorithmes/index_algo/">
+        T7 Algo.
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T08_Extras/5MiniProjet/logo/">
+        T8 Extras
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../T09_Evaluations/DS_portes_logiques/">
+        Devoirs
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../Divers/conseil/">
         Divers
       </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
+</li>
+</ul>
+</div>
 </nav>
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Site NSI 1ére" class="md-nav__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m414.8 40.79-128 448.01c-4.9 17-22.6 26.8-39.6 22-17-4.9-26.8-22.6-22-39.6l128-447.99c4.9-16.994 22.6-26.834 39.6-21.978 17 4.855 26.8 22.568 22 39.558zm103.8 80.61 112 112c12.5 12.5 12.5 32.7 0 45.2l-112 112c-12.5 12.5-32.7 12.5-45.2 0s-12.5-32.7 0-45.2l89.3-89.4-89.3-89.4c-12.5-12.5-12.5-32.7 0-45.2s32.7-12.5 45.2 0zm-352 45.2L77.25 256l89.35 89.4c12.5 12.5 12.5 32.7 0 45.2s-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2l112.028-112c12.5-12.5 32.7-12.5 45.2 0s12.5 32.7 0 45.2z"/></svg>
-
-    </a>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Site NSI 1ére" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Site NSI 1ére">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg>
+</a>
     Site NSI 1ére
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
         Accueil
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
-      
-      
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_2">
-          T6 Prog.
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+          T1 Types et valeurs de base
           <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T1 Types et valeurs de base" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          T1 Types et valeurs de base
         </label>
-      
-      <nav class="md-nav" aria-label="T6 Prog." data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T01_TypesBase/index_typebases/">
+        Rep. des données
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers/">
+        T1_1 Codages des entiers positifs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T01_TypesBase/T1.1_Bases/T1_Perseverance/">
+        TP Perseverance
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs/">
+        T1_2 Codages des entiers relatifs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T01_TypesBase/T1.3_Flottants/T1_3_Flottants/">
+        T1_3 Codage des flottants
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T01_TypesBase/T1.4_Booleens/T1_4_Booleens/">
+        T1_4 Les Booléens
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+          T2 Types construits
           <span class="md-nav__icon md-icon"></span>
-          T6 Prog.
+</label>
+<nav aria-label="T2 Types construits" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          T2 Types construits
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../T6_1_0_Introduction/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T02_TypesConstruits/index_typeconstruits/">
+        Types construits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux/">
+        Tableaux (Listes) en Python
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+          T4 I.H.M.
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T4 I.H.M." class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          T4 I.H.M.
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T04_IHMWeb/index_web/">
+        I.H.M
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS/">
+        HTML - CSS
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T04_IHMWeb/T4.2_Interactions/T4.2_Js/">
+        JS - Interaction dans une page web
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+          T5 Arch. Matérielle
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T5 Arch. Matérielle" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          T5 Arch. Matérielle
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T05_Architectures/index_archi/">
+        Architecture matérielle
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T05_Architectures/T5.3_Reseaux/T5.1_Architecture/">
+        Architecture d'un réseau
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+          T6 Programmation
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T6 Programmation" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          T6 Programmation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../index_prog/">
+        Programmation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../T6_1_0_Introduction/">
         TP 00 - Introduction Python
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../T6_1_1_Les_Variables_en_Python/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../T6_1_1_Les_Variables_en_Python/">
         TP 01 - Les Variables en Python
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../T6_1_2_Les_fonctions_en_Python/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../T6_1_2_Les_fonctions_en_Python/">
         TP 02 - Les Fonctions en Python
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../T6_1_3_Boucle_FOR_en_Python/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../T6_1_3_Boucle_FOR_en_Python/">
         TP 03 - Les boucles (1) en Python
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../T6_1_4_Boucle_WHILE_en_Python/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../T6_1_4_WHILE/">
         TP 04 - Les boucles (2) en Python
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../T6_1_5_Instructions_conditionnelles_en_Python/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../T6_1_5_Instructions_conditionnelles/">
         TP 05 - Les Conditions en Python
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_3">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../T6_1_6_Exercices_Bilan_Bases/">
+        TP 06 - Exercices Bilan Les bases
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
+          T7 Algo.
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T7 Algo." class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          T7 Algo.
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T07_Algorithmes/index_algo/">
+        Algorithmique
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T07_Algorithmes/T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau/">
+        TP Parcours séquentiel d'un tableau
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T07_Algorithmes/T7_1_Gloutons/algo_glouton/">
+        TP algorithme Glouton
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8">
+          T8 Extras
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="T8 Extras" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+          T8 Extras
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T08_Extras/5MiniProjet/logo/">
+        Mini-Projet
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T08_Extras/5MiniProjet/dessine_ta_rue/">
+        Dessine ta rue
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9">
+          Devoirs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Devoirs" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+          Devoirs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T09_Evaluations/DS_portes_logiques/">
+        Portes logiques
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../T09_Evaluations/logic/">
+        logic
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10">
           Divers
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Divers" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Divers" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
           Divers
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Divers/conseil/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Divers/conseil/">
         Conseil
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Divers/Liens_utiles/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Divers/Liens_utiles/">
         Liens utiles
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-  </ul>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Divers/instal_python/">
+        Installation Python
+      </a>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table des matières
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#les-enumerables-ou-iterables" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#les-enumerables-ou-iterables">
     Les énumérables ou itérables
   </a>
-  
-    <nav class="md-nav" aria-label="Les énumérables ou itérables">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#iterer-sur-les-iterables-la-boucle-for" class="md-nav__link">
-    &#x2712; Itérer sur les itérables : la boucle for
+<nav aria-label="Les énumérables ou itérables" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#iterer-sur-les-iterables-la-boucle-for">
+    ✒ Itérer sur les itérables : la boucle for
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#comment-repeter-n-fois-la-meme-action" class="md-nav__link">
-    &#x2712; Comment répéter n fois la même action ?
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comment-repeter-n-fois-la-meme-action">
+    ✒ Comment répéter n fois la même action ?
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#une-situation-classique-la-double-boucle" class="md-nav__link">
-    &#x2712; Une situation classique : la double boucle
+<li class="md-nav__item">
+<a class="md-nav__link" href="#une-situation-classique-la-double-boucle">
+    ✒ Une situation classique : la double boucle
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#exercices" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
     Exercices
   </a>
-  
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#boucle-while" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boucle-while">
     Boucle WHILE
   </a>
-  
-    <nav class="md-nav" aria-label="Boucle WHILE">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#premiers-exemples" class="md-nav__link">
-    &#x2712;  Premiers exemples
+<nav aria-label="Boucle WHILE" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#premiers-exemples">
+    ✒  Premiers exemples
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#syntaxe-generale" class="md-nav__link">
-    &#x2712; Syntaxe générale
+<li class="md-nav__item">
+<a class="md-nav__link" href="#syntaxe-generale">
+    ✒ Syntaxe générale
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#les-pieges" class="md-nav__link">
-    &#x2712;  Les pièges ...
+<li class="md-nav__item">
+<a class="md-nav__link" href="#les-pieges">
+    ✒  Les pièges ...
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="Cours03_Boucle_FOR_et_WHILE_en_Python.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
-              
-    
-                
-
-
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
 <h1 id="theme-6-langages-et-programmation">Thème 6 - Langages et programmation<a class="headerlink" href="#theme-6-langages-et-programmation" title="Permanent link">⚓︎</a></h1>
-<table  class="yellowTable">
-        <tr >
-            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+<table class="yellowTable">
+<tr>
+<th ;="" style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;" width="20%">
             03
             </th>
-            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Les Boucles (FOR et WHILE) en Python</th>
-        </tr>
+<th ;="" style="text-align:center;border:none;font-size:25pt;" width="80%">Les Boucles (FOR et WHILE) en Python</th>
+</tr>
 </table>
-<p><br></p>
-<p><img alt="python_logo1.png" class="center" src="../data/python_logo1.png" /></p>
+<p><br/></p>
+<p><img alt="python_logo1.png" class="center" src="../data/python_logo1.png"/></p>
 <h2 id="les-enumerables-ou-iterables">Les énumérables ou itérables<a class="headerlink" href="#les-enumerables-ou-iterables" title="Permanent link">⚓︎</a></h2>
 <p>En mathématiques, on dit qu'un ensemble est <em>dénombrable</em> lorsqu'on peut associer à chaque élément de l'ensemble un nombre (traditionnellement 1, 2, 3 ...)</p>
 <ul>
@@ -617,25 +565,25 @@
 <li>la variable <code>[4, 3, 17]</code>  (qui est de type <code>List</code>) est énumérable : on peut la décomposer en  <code>4</code>,  <code>3</code>, <code>17</code>.</li>
 <li>la variable <code>5</code>  (qui est de type <code>Int</code>) n'est PAS énumérable : on ne peut pas la décomposer. </li>
 </ul>
-<h3 id="iterer-sur-les-iterables-la-boucle-for">&#x2712; Itérer sur les itérables : la boucle <code>for</code><a class="headerlink" href="#iterer-sur-les-iterables-la-boucle-for" title="Permanent link">⚓︎</a></h3>
+<h3 id="iterer-sur-les-iterables-la-boucle-for">✒ Itérer sur les itérables : la boucle <code>for</code><a class="headerlink" href="#iterer-sur-les-iterables-la-boucle-for" title="Permanent link">⚓︎</a></h3>
 <h4 id="iterer-sur-une-chaine-de-caracteres">Itérer sur une chaîne de caractères<a class="headerlink" href="#iterer-sur-une-chaine-de-caracteres" title="Permanent link">⚓︎</a></h4>
 <p>Il existe donc une instruction permettant de faire une (ou plusieurs) action(s) à chaque itération sur un élément énumérable.</p>
-<p><strong>Exemple :</strong><br />
+<p><strong>Exemple :</strong><br>
 Le programme suivant :
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="s1">&#39;NSI&#39;</span><span class="p">:</span>
+<div class="highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="s1">'NSI'</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 va donner ceci :
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">N</span>
 <span class="n">S</span>
 <span class="n">I</span>
-</code></pre></div></p>
+</code></pre></div></br></p>
 <p><strong>Analyse grâce à PythonTutor</strong>
 Étudions, grâce à PythonTutor, le détail de cette exécution.</p>
 <p>Cliquez sur Next et observez bien l'évolution de la variable <code>k</code>. </p>
 <div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>from tutor import tutor
-for k in &#39;NSI&#39;:
+for k in 'NSI':
     print(k)
 tutor()
 </code></pre></div>
@@ -643,34 +591,33 @@ tutor()
 S
 I
 </code></pre></div>
-<iframe id="basthon-pythontutor-iframe-0" style="width: 100%; height: 400px;" frameborder="0" src="data:text/html;charset=utf-8,%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%20%20%3Chead%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//capytale2.ac-paris.fr/basthon/notebook/assets/0.41.11/modules/extern/pytutor-main.min.css%22/%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//capytale2.ac-paris.fr/basthon/notebook/assets/0.41.11/modules/extern/pytutor-main.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20let%20sent_height%3B%0A%20%20%20%20%20%20%24%28document%29.ready%28function%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20//%20managing%20iframe%20resize%0A%20%20%20%20%20%20%20%20%20%20const%20send%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20new_height%20%3D%20document.body.offsetHeight%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28sent_height%20%3D%3D%3D%20new_height%29%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20sent_height%20%3D%20new_height%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.parent.postMessage%28%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20%22pytutor-iframe-resize%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20target%3A%20%22basthon-pythontutor-iframe-0%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20height%3A%20sent_height%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%20%27%2A%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%20%20%20%20%20%20const%20o%20%3D%20new%20ResizeObserver%28send%29%3B%0A%20%20%20%20%20%20%20%20%20%20o.observe%28document.body%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20const%20t%20%3D%20%7B%22code%22%3A%20%22for%20k%20in%20%27NSI%27%3A%5Cn%20%20%20%20print%28k%29%22%2C%20%22trace%22%3A%20%5B%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%7D%2C%20%22ordered_globals%22%3A%20%5B%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22N%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22N%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22N%5Cn%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22S%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22N%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22S%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22N%5CnS%5Cn%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22I%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22N%5CnS%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22I%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22N%5CnS%5CnI%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22return%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22I%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22N%5CnS%5CnI%5Cn%22%7D%5D%7D%3B%0A%20%20%20%20%20%20%20%20%20%20function%20redraw%28%29%20%7B%20if%20%28window.v%29%20window.v.redrawConnectors%28%29%3B%20%7D%0A%20%20%20%20%20%20%20%20%20%20window.v%20%3D%20new%20ExecutionVisualizer%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%27main%27%2C%20t%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7BembeddedMode%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20heightChangeCallback%3A%20redraw%7D%0A%20%20%20%20%20%20%20%20%20%20%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20//%20message%20of%20type%20%27redraw%27%20from%20parent%20triggers%20a%20full%20redraw%0A%20%20%20%20%20%20%20%20%20%20//%20%28usefull%20when%20iframe%20is%20added%20to%20a%20non%20visible%20parent%29%0A%20%20%20%20%20%20%20%20%20%20window.addEventListener%28%27message%27%2C%20function%20%28event%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20data%20%3D%20event.data%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%28%20data.type%20%3D%3D%3D%20%27redraw%27%20%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.v.updateOutput%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%24%28window%29.resize%28redraw%29%3B%0A%20%20%20%20%20%20%20%20%20%20redraw%28%29%3B%0A%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%3C/script%3E%0A%20%20%3C/head%3E%0A%20%20%3Cbody%20style%3D%22overflow-y%3A%20hidden%3B%22%3E%0A%20%20%20%20%3Cdiv%20id%3D%22main%22%3E%3C/div%3E%0A%20%20%3C/body%3E%0A%3C/html%3E%0A"></iframe>
-
+<iframe frameborder="0" id="basthon-pythontutor-iframe-0" src="data:text/html;charset=utf-8,%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%20%20%3Chead%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//capytale2.ac-paris.fr/basthon/notebook/assets/0.41.11/modules/extern/pytutor-main.min.css%22/%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//capytale2.ac-paris.fr/basthon/notebook/assets/0.41.11/modules/extern/pytutor-main.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20let%20sent_height%3B%0A%20%20%20%20%20%20%24%28document%29.ready%28function%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20//%20managing%20iframe%20resize%0A%20%20%20%20%20%20%20%20%20%20const%20send%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20new_height%20%3D%20document.body.offsetHeight%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28sent_height%20%3D%3D%3D%20new_height%29%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20sent_height%20%3D%20new_height%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.parent.postMessage%28%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20%22pytutor-iframe-resize%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20target%3A%20%22basthon-pythontutor-iframe-0%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20height%3A%20sent_height%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%20%27%2A%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%20%20%20%20%20%20const%20o%20%3D%20new%20ResizeObserver%28send%29%3B%0A%20%20%20%20%20%20%20%20%20%20o.observe%28document.body%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20const%20t%20%3D%20%7B%22code%22%3A%20%22for%20k%20in%20%27NSI%27%3A%5Cn%20%20%20%20print%28k%29%22%2C%20%22trace%22%3A%20%5B%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%7D%2C%20%22ordered_globals%22%3A%20%5B%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22N%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22N%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22N%5Cn%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22S%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22N%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22S%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22N%5CnS%5Cn%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22I%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22N%5CnS%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22I%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22N%5CnS%5CnI%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22return%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22k%22%3A%20%22I%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22k%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22N%5CnS%5CnI%5Cn%22%7D%5D%7D%3B%0A%20%20%20%20%20%20%20%20%20%20function%20redraw%28%29%20%7B%20if%20%28window.v%29%20window.v.redrawConnectors%28%29%3B%20%7D%0A%20%20%20%20%20%20%20%20%20%20window.v%20%3D%20new%20ExecutionVisualizer%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%27main%27%2C%20t%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7BembeddedMode%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20heightChangeCallback%3A%20redraw%7D%0A%20%20%20%20%20%20%20%20%20%20%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20//%20message%20of%20type%20%27redraw%27%20from%20parent%20triggers%20a%20full%20redraw%0A%20%20%20%20%20%20%20%20%20%20//%20%28usefull%20when%20iframe%20is%20added%20to%20a%20non%20visible%20parent%29%0A%20%20%20%20%20%20%20%20%20%20window.addEventListener%28%27message%27%2C%20function%20%28event%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20data%20%3D%20event.data%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%28%20data.type%20%3D%3D%3D%20%27redraw%27%20%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.v.updateOutput%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%24%28window%29.resize%28redraw%29%3B%0A%20%20%20%20%20%20%20%20%20%20redraw%28%29%3B%0A%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%3C/script%3E%0A%20%20%3C/head%3E%0A%20%20%3Cbody%20style%3D%22overflow-y%3A%20hidden%3B%22%3E%0A%20%20%20%20%3Cdiv%20id%3D%22main%22%3E%3C/div%3E%0A%20%20%3C/body%3E%0A%3C/html%3E%0A" style="width: 100%; height: 400px;"></iframe>
 <p>La variable <code>k</code> prend donc <strong>successivement</strong> toutes les lettre de la chaîne de caractère <code>"NSI"</code>. </p>
 <p>Pour chaque valeur de <code>k</code>, la ou les instruction(s) situées <strong>de manière indentée</strong> sous la ligne du <code>for</code> seront exécutées. </p>
 <p>Ici, il y a simplement un <code>print(k)</code>, donc chaque lettre de <code>"NSI"</code> s'affiche l'une après l'autre.</p>
 <div class="admonition exo">
 <p class="admonition-title">Exercice 1 :</p>
 <p>Que donne le script suivant ?
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="s1">&#39;NASA&#39;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bonjour&quot;</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="s1">'NASA'</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"bonjour"</span><span class="p">)</span>
 </code></pre></div></p>
 </div>
 <p>Dans cet exercice, la <strong>variable de boucle</strong> <code>m</code> est <strong>muette</strong> : elle n'apparaît dans les instructions indentées sous le <code>for</code>. </p>
 <p>La variable <code>m</code> prend successivement les valeurs <code>'N</code>, <code>'A'</code>, <code>'S'</code> et <code>'A'</code>, mais on ne le voit pas.</p>
 <div class="admonition savoir">
-<p class="admonition-title">&#x1F4DA;  A retenir :</p>
-<p><strong>&#x26A0; Comment éviter les erreurs classiques</strong><br />
+<p class="admonition-title">📚  A retenir :</p>
+<p><strong>⚠ Comment éviter les erreurs classiques</strong><br/>
 Quand vous écrivez une boucle <code>for</code>, veillez bien à :</p>
 <ul>
-<li>finir la ligne du <code>for</code> par les deux points <code>:</code>  </li>
+<li>finir la ligne du <code>for</code> par les deux points <code>:</code> </li>
 <li>indenter sous le <code>for</code> les instructions qui doivent être répétées. </li>
 </ul>
 </div>
 <h4 id="iterer-sur-une-liste">Itérer sur une liste<a class="headerlink" href="#iterer-sur-une-liste" title="Permanent link">⚓︎</a></h4>
 <p><strong>Exemple :</strong>
 Le programme suivant :
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">jour</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span> <span class="s2">&quot;mardi&quot;</span><span class="p">,</span> <span class="s2">&quot;mercredi&quot;</span><span class="p">,</span> <span class="s2">&quot;jeudi&quot;</span><span class="p">,</span> <span class="s2">&quot;vendredi&quot;</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;je vais au lycée le </span><span class="si">{</span><span class="n">jour</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">jour</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"lundi"</span><span class="p">,</span> <span class="s2">"mardi"</span><span class="p">,</span> <span class="s2">"mercredi"</span><span class="p">,</span> <span class="s2">"jeudi"</span><span class="p">,</span> <span class="s2">"vendredi"</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"je vais au lycée le </span><span class="si">{</span><span class="n">jour</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 va donner ceci :
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">je</span> <span class="n">vais</span> <span class="n">au</span> <span class="n">lycée</span> <span class="n">le</span> <span class="n">lundi</span>
@@ -680,8 +627,8 @@ va donner ceci :
 <span class="n">je</span> <span class="n">vais</span> <span class="n">au</span> <span class="n">lycée</span> <span class="n">le</span> <span class="n">vendredi</span>
 </code></pre></div></p>
 <div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>from tutor import tutor
-for jour in [&quot;lundi&quot;, &quot;mardi&quot;, &quot;mercredi&quot;, &quot;jeudi&quot;, &quot;vendredi&quot;]:
-    print(f&quot;je vais au lycée le {jour}&quot;)
+for jour in ["lundi", "mardi", "mercredi", "jeudi", "vendredi"]:
+    print(f"je vais au lycée le {jour}")
 tutor()
 </code></pre></div>
 <div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>je vais au lycée le lundi
@@ -690,23 +637,22 @@ je vais au lycée le mercredi
 je vais au lycée le jeudi
 je vais au lycée le vendredi
 </code></pre></div>
-<iframe id="basthon-pythontutor-iframe-1" style="width: 100%; height: 400px;" frameborder="0" src="data:text/html;charset=utf-8,%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%20%20%3Chead%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//capytale2.ac-paris.fr/basthon/notebook/assets/0.41.11/modules/extern/pytutor-main.min.css%22/%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//capytale2.ac-paris.fr/basthon/notebook/assets/0.41.11/modules/extern/pytutor-main.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20let%20sent_height%3B%0A%20%20%20%20%20%20%24%28document%29.ready%28function%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20//%20managing%20iframe%20resize%0A%20%20%20%20%20%20%20%20%20%20const%20send%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20new_height%20%3D%20document.body.offsetHeight%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28sent_height%20%3D%3D%3D%20new_height%29%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20sent_height%20%3D%20new_height%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.parent.postMessage%28%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20%22pytutor-iframe-resize%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20target%3A%20%22basthon-pythontutor-iframe-1%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20height%3A%20sent_height%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%20%27%2A%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%20%20%20%20%20%20const%20o%20%3D%20new%20ResizeObserver%28send%29%3B%0A%20%20%20%20%20%20%20%20%20%20o.observe%28document.body%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20const%20t%20%3D%20%7B%22code%22%3A%20%22for%20jour%20in%20%5B%5C%22lundi%5C%22%2C%20%5C%22mardi%5C%22%2C%20%5C%22mercredi%5C%22%2C%20%5C%22jeudi%5C%22%2C%20%5C%22vendredi%5C%22%5D%3A%5Cn%20%20%20%20print%28f%5C%22je%20vais%20au%20lyc%5Cu00e9e%20le%20%7Bjour%7D%5C%22%29%22%2C%20%22trace%22%3A%20%5B%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%7D%2C%20%22ordered_globals%22%3A%20%5B%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22lundi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22lundi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cn%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22mardi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22mardi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cn%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22mercredi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22mercredi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mercredi%5Cn%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22jeudi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mercredi%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22jeudi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mercredi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20jeudi%5Cn%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22vendredi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mercredi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20jeudi%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22vendredi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mercredi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20jeudi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20vendredi%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22return%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22vendredi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mercredi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20jeudi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20vendredi%5Cn%22%7D%5D%7D%3B%0A%20%20%20%20%20%20%20%20%20%20function%20redraw%28%29%20%7B%20if%20%28window.v%29%20window.v.redrawConnectors%28%29%3B%20%7D%0A%20%20%20%20%20%20%20%20%20%20window.v%20%3D%20new%20ExecutionVisualizer%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%27main%27%2C%20t%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7BembeddedMode%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20heightChangeCallback%3A%20redraw%7D%0A%20%20%20%20%20%20%20%20%20%20%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20//%20message%20of%20type%20%27redraw%27%20from%20parent%20triggers%20a%20full%20redraw%0A%20%20%20%20%20%20%20%20%20%20//%20%28usefull%20when%20iframe%20is%20added%20to%20a%20non%20visible%20parent%29%0A%20%20%20%20%20%20%20%20%20%20window.addEventListener%28%27message%27%2C%20function%20%28event%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20data%20%3D%20event.data%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%28%20data.type%20%3D%3D%3D%20%27redraw%27%20%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.v.updateOutput%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%24%28window%29.resize%28redraw%29%3B%0A%20%20%20%20%20%20%20%20%20%20redraw%28%29%3B%0A%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%3C/script%3E%0A%20%20%3C/head%3E%0A%20%20%3Cbody%20style%3D%22overflow-y%3A%20hidden%3B%22%3E%0A%20%20%20%20%3Cdiv%20id%3D%22main%22%3E%3C/div%3E%0A%20%20%3C/body%3E%0A%3C/html%3E%0A"></iframe>
-
+<iframe frameborder="0" id="basthon-pythontutor-iframe-1" src="data:text/html;charset=utf-8,%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%20%20%3Chead%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//capytale2.ac-paris.fr/basthon/notebook/assets/0.41.11/modules/extern/pytutor-main.min.css%22/%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//capytale2.ac-paris.fr/basthon/notebook/assets/0.41.11/modules/extern/pytutor-main.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20let%20sent_height%3B%0A%20%20%20%20%20%20%24%28document%29.ready%28function%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20//%20managing%20iframe%20resize%0A%20%20%20%20%20%20%20%20%20%20const%20send%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20new_height%20%3D%20document.body.offsetHeight%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28sent_height%20%3D%3D%3D%20new_height%29%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20sent_height%20%3D%20new_height%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.parent.postMessage%28%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20%22pytutor-iframe-resize%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20target%3A%20%22basthon-pythontutor-iframe-1%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20height%3A%20sent_height%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%20%27%2A%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%20%20%20%20%20%20const%20o%20%3D%20new%20ResizeObserver%28send%29%3B%0A%20%20%20%20%20%20%20%20%20%20o.observe%28document.body%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20const%20t%20%3D%20%7B%22code%22%3A%20%22for%20jour%20in%20%5B%5C%22lundi%5C%22%2C%20%5C%22mardi%5C%22%2C%20%5C%22mercredi%5C%22%2C%20%5C%22jeudi%5C%22%2C%20%5C%22vendredi%5C%22%5D%3A%5Cn%20%20%20%20print%28f%5C%22je%20vais%20au%20lyc%5Cu00e9e%20le%20%7Bjour%7D%5C%22%29%22%2C%20%22trace%22%3A%20%5B%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%7D%2C%20%22ordered_globals%22%3A%20%5B%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22lundi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22lundi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cn%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22mardi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22mardi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cn%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22mercredi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22mercredi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mercredi%5Cn%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22jeudi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mercredi%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22jeudi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mercredi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20jeudi%5Cn%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22vendredi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mercredi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20jeudi%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22vendredi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mercredi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20jeudi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20vendredi%5Cn%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22return%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22jour%22%3A%20%22vendredi%22%7D%2C%20%22ordered_globals%22%3A%20%5B%22jour%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22je%20vais%20au%20lyc%5Cu00e9e%20le%20lundi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mardi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20mercredi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20jeudi%5Cnje%20vais%20au%20lyc%5Cu00e9e%20le%20vendredi%5Cn%22%7D%5D%7D%3B%0A%20%20%20%20%20%20%20%20%20%20function%20redraw%28%29%20%7B%20if%20%28window.v%29%20window.v.redrawConnectors%28%29%3B%20%7D%0A%20%20%20%20%20%20%20%20%20%20window.v%20%3D%20new%20ExecutionVisualizer%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%27main%27%2C%20t%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7BembeddedMode%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20heightChangeCallback%3A%20redraw%7D%0A%20%20%20%20%20%20%20%20%20%20%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20//%20message%20of%20type%20%27redraw%27%20from%20parent%20triggers%20a%20full%20redraw%0A%20%20%20%20%20%20%20%20%20%20//%20%28usefull%20when%20iframe%20is%20added%20to%20a%20non%20visible%20parent%29%0A%20%20%20%20%20%20%20%20%20%20window.addEventListener%28%27message%27%2C%20function%20%28event%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20data%20%3D%20event.data%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%28%20data.type%20%3D%3D%3D%20%27redraw%27%20%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.v.updateOutput%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%24%28window%29.resize%28redraw%29%3B%0A%20%20%20%20%20%20%20%20%20%20redraw%28%29%3B%0A%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%3C/script%3E%0A%20%20%3C/head%3E%0A%20%20%3Cbody%20style%3D%22overflow-y%3A%20hidden%3B%22%3E%0A%20%20%20%20%3Cdiv%20id%3D%22main%22%3E%3C/div%3E%0A%20%20%3C/body%3E%0A%3C/html%3E%0A" style="width: 100%; height: 400px;"></iframe>
 <div class="admonition warning">
-<p class="admonition-title"><strong>&#x26A0; Attention:</strong></p>
+<p class="admonition-title"><strong>⚠ Attention:</strong></p>
 <p>Très souvent, l'objet itérable que la boucle va parcourir aura été <strong>au préalable</strong> stocké dans une variable :</p>
 </div>
 <p><strong>Exemple :</strong>
 Le programme précédent est équivalent à :
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">semaine</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span> <span class="s2">&quot;mardi&quot;</span><span class="p">,</span> <span class="s2">&quot;mercredi&quot;</span><span class="p">,</span> <span class="s2">&quot;jeudi&quot;</span><span class="p">,</span> <span class="s2">&quot;vendredi&quot;</span><span class="p">]</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">semaine</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"lundi"</span><span class="p">,</span> <span class="s2">"mardi"</span><span class="p">,</span> <span class="s2">"mercredi"</span><span class="p">,</span> <span class="s2">"jeudi"</span><span class="p">,</span> <span class="s2">"vendredi"</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">jour</span> <span class="ow">in</span> <span class="n">semaine</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;je vais au lycée le&quot;</span><span class="p">,</span> <span class="n">jour</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"je vais au lycée le"</span><span class="p">,</span> <span class="n">jour</span><span class="p">)</span>
 </code></pre></div></p>
 <p>Notez l'importance d'avoir choisi des noms de variables explicites : ils aident grandement à la lisibilité du code.</p>
 <p><em>Trailer : Dans le cours spécifique sur les listes, nous verrons une toute autre manière de parcourir une liste.</em></p>
-<div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>semaine = [&quot;lundi&quot;, &quot;mardi&quot;, &quot;mercredi&quot;, &quot;jeudi&quot;, &quot;vendredi&quot;]
+<div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>semaine = ["lundi", "mardi", "mercredi", "jeudi", "vendredi"]
 for jour in semaine:
-    print(&quot;je vais au lycée le&quot;, jour)
+    print("je vais au lycée le", jour)
 </code></pre></div>
 <div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>je vais au lycée le lundi
 je vais au lycée le mardi
@@ -714,14 +660,14 @@ je vais au lycée le mercredi
 je vais au lycée le jeudi
 je vais au lycée le vendredi
 </code></pre></div>
-<h3 id="comment-repeter-n-fois-la-meme-action">&#x2712; Comment répéter <code>n</code> fois la même action ?<a class="headerlink" href="#comment-repeter-n-fois-la-meme-action" title="Permanent link">⚓︎</a></h3>
+<h3 id="comment-repeter-n-fois-la-meme-action">✒ Comment répéter <code>n</code> fois la même action ?<a class="headerlink" href="#comment-repeter-n-fois-la-meme-action" title="Permanent link">⚓︎</a></h3>
 <p>Comment répéter 10 fois la phrase <code>"Hasta la vista, baby"</code> ?</p>
 <div class="admonition note">
-<p class="admonition-title">&#x1F4CC; Note :</p>
-<p>L'ensemble <code>range</code> :<br />
+<p class="admonition-title">📌 Note :</p>
+<p>L'ensemble <code>range</code> :<br/>
 Le programme suivant :
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasta la vista, baby&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hasta la vista, baby"</span><span class="p">)</span>
 </code></pre></div></p>
 </div>
 <p>va donner ceci :  </p>
@@ -733,7 +679,7 @@ Le programme suivant :
 </code></pre></div>
 <p>Là encore, le <code>i</code> est une variable muette.</p>
 <div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>for i in range(5):
-    print(&quot;Hasta la vista, baby&quot;)
+    print("Hasta la vista, baby")
 </code></pre></div>
 <div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>Hasta la vista, baby
 Hasta la vista, baby
@@ -779,18 +725,18 @@ va donner ceci :
 <li>l'objet <code>range(5)</code> n'est pas «techniquement» égal à la liste <code>[0, 1, 2, 3, 4]</code>, car ce n'est pas un objet de type <code>List</code>:</li>
 </ul>
 <div class="admonition exo">
-<p class="admonition-title">&#x1F4BB;   Exercice 1 :</p>
+<p class="admonition-title">💻   Exercice 1 :</p>
 <p>Faire afficher les séries de nombres suivantes.</p>
 <p>On utilisera la syntaxe <code>print(k, end = ' ')</code> ) pour afficher les nombres horizontalement.</p>
-<p>A. <code>0 1 2 3 4 5</code> <br />
-B. <code>10 11 12 13 14 15</code><br />
-C. <code>3 6 9 12</code><br />
+<p>A. <code>0 1 2 3 4 5</code> <br/>
+B. <code>10 11 12 13 14 15</code><br/>
+C. <code>3 6 9 12</code><br/>
 D. <code>10 9 8 7 6 5 4 3 2 1 0</code> </p>
 </div>
-<h3 id="une-situation-classique-la-double-boucle">&#x2712; Une situation classique : la double boucle<a class="headerlink" href="#une-situation-classique-la-double-boucle" title="Permanent link">⚓︎</a></h3>
+<h3 id="une-situation-classique-la-double-boucle">✒ Une situation classique : la double boucle<a class="headerlink" href="#une-situation-classique-la-double-boucle" title="Permanent link">⚓︎</a></h3>
 <p>Il est très souvent utile d'imbriquer une boucle dans une autre, notamment lors du parcours de tous les pixels d'une image. Prenons pour l'instant un exemple numérique.</p>
 <div class="admonition exo">
-<p class="admonition-title">&#x1F4BB;  Exercice 2 :</p>
+<p class="admonition-title">💻  Exercice 2 :</p>
 <p>Ecrire un script permettant d'afficher</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="mi">1</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="mi">1</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">2</span>
@@ -807,7 +753,7 @@ D. <code>10 9 8 7 6 5 4 3 2 1 0</code> </p>
 </code></pre></div>
 </div>
 <div class="admonition savoir">
-<p class="admonition-title">&#x1F4DA; A retenir :</p>
+<p class="admonition-title">📚 A retenir :</p>
 <ul>
 <li>La boucle <code>for</code> s'utilise lorsque :  <ul>
 <li>on veut parcourir un à un les éléments d'un objet itérable (une chaîne de caractère, une liste...)  </li>
@@ -821,7 +767,7 @@ D. <code>10 9 8 7 6 5 4 3 2 1 0</code> </p>
 </div>
 <h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">⚓︎</a></h2>
 <div class="admonition exo">
-<p class="admonition-title">&#x1F4BB;  Exercice 3 :</p>
+<p class="admonition-title">💻  Exercice 3 :</p>
 <p>Dans l'extrait de code suivant:</p>
 <ul>
 <li><code>chaine</code> est une variable initialisée avec un <code>str</code> vide : <code>""</code>;  </li>
@@ -829,62 +775,62 @@ D. <code>10 9 8 7 6 5 4 3 2 1 0</code> </p>
 </ul>
 <p>L'idée est d'ajouter une par une les lettres à la variable <code>chaine</code>.</p>
 <p>Compléter le code.</p>
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">chaine</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="k">for</span> <span class="o">...</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">]:</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">chaine</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="k">for</span> <span class="o">...</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'v'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">]:</span>
     <span class="o">...</span>
 </code></pre></div>
 </div>
 <p>Cette variable <code>chaine</code> est appelée un <strong>accumulateur</strong>.</p>
 <div class="admonition exo">
-<p class="admonition-title">&#x1F4BB; Exercice 4 :</p>
+<p class="admonition-title">💻 Exercice 4 :</p>
 <p>En Python, la fonction <code>ord</code> renvoie le code Unicode d'un caractère et la fonction <code>chr</code> le contraire: elle renvoie le caractère correspondant à un code Unicode.</p>
 <p>Par exemple:
-<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">'a'</span><span class="p">)</span>
 <span class="mi">97</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span>
-<span class="s1">&#39;a&#39;</span>
+<span class="s1">'a'</span>
 </code></pre></div></p>
-<p>Voici une liste contenant les codes Unicode des lettres d'un mot secret...<br />
+<p>Voici une liste contenant les codes Unicode des lettres d'un mot secret...<br/>
 À vous d'écrire un programme où en sortie, la variable <code>mot_secret</code> contiendra la chaîne de caractères de ce mot.   </p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">mystere</span> <span class="o">=</span> <span class="p">[</span><span class="mi">111</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">233</span><span class="p">]</span>
-<span class="n">mot_secret</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">mot_secret</span> <span class="o">=</span> <span class="s2">""</span>
 </code></pre></div>
 <p>ok, bien joué</p>
 </div>
 <div class="admonition exo">
-<p class="admonition-title">&#x1F4BB; Exercice 5 :</p>
+<p class="admonition-title">💻 Exercice 5 :</p>
 <p>On souhaite calculer la somme des 1000 premiers nombres entiers naturels, c'est-à-dire:</p>
 <p><span class="arithmatex">\(1+2+3+4+5+ \dots +999+1000\)</span></p>
 <p>Écrire un programme avec une variable <code>somme</code> <strong>accumulateur</strong> (comme à l'exercice 3) qui contiendra la valeur souhaitée en fin de programme.</p>
 </div>
 <div class="admonition exo">
-<p class="admonition-title">&#x1F4BB; Exercice 6 :</p>
+<p class="admonition-title">💻 Exercice 6 :</p>
 <p>Ecrire un programme permettant de calculer </p>
 <p><span class="arithmatex">\(1\times 2 \times 3 \times \dots 99 \times 100\)</span>.</p>
 </div>
 <div class="admonition exo">
-<p class="admonition-title">&#x1F4BB; Exercice 7 :</p>
+<p class="admonition-title">💻 Exercice 7 :</p>
 <p>Proposer un code qui écrit la <strong>table de multiplication</strong> de 7, de 8 et de 9.</p>
 </div>
 <p><a class="anchor" id="section3"></a></p>
 <h2 id="boucle-while">Boucle WHILE<a class="headerlink" href="#boucle-while" title="Permanent link">⚓︎</a></h2>
-<h3 id="premiers-exemples">&#x2712;  Premiers exemples<a class="headerlink" href="#premiers-exemples" title="Permanent link">⚓︎</a></h3>
+<h3 id="premiers-exemples">✒  Premiers exemples<a class="headerlink" href="#premiers-exemples" title="Permanent link">⚓︎</a></h3>
 <p>À la différence essentielle des boucles <code>for</code>, dont on peut savoir à l'avance combien de fois elles vont être exécutées, les boucles <code>while</code> sont des boucles dont on ne sort que lorsqu'une condition n'est plus satisfaite. </p>
 <p>Avec donc le risque de rester infiniment bloqué à l'intérieur !  </p>
 <div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>a = 0
 while a &lt; 3:
-    print(&quot;ok&quot;)
+    print("ok")
     a = a + 1
-print(&quot;fini&quot;)
+print("fini")
 </code></pre></div>
 <div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>ok
 ok
 ok
 fini
 </code></pre></div>
-<h3 id="syntaxe-generale">&#x2712; Syntaxe générale<a class="headerlink" href="#syntaxe-generale" title="Permanent link">⚓︎</a></h3>
+<h3 id="syntaxe-generale">✒ Syntaxe générale<a class="headerlink" href="#syntaxe-generale" title="Permanent link">⚓︎</a></h3>
 <div class="admonition savoir">
-<p class="admonition-title">&#x1F4DA; A retenir :</p>
+<p class="admonition-title">📚 A retenir :</p>
 <p><strong>Écriture d'une boucle <code>while</code></strong>
 ```python
 while condition:
@@ -894,7 +840,7 @@ while condition:
     instructionN
 ````</p>
 </div>
-<p><img alt="while.jpg" src="../data/while.jpg" /></p>
+<p><img alt="while.jpg" src="../data/while.jpg"/></p>
 <h4 id="la-condition">La condition<a class="headerlink" href="#la-condition" title="Permanent link">⚓︎</a></h4>
 <p>La <code>condition</code> est un booléen, c'est-à-dire une expression que Python évaluera à <code>True</code> ou à <code>False</code>.</p>
 <p>Exemple de booléens résultant d'une évaluation :
@@ -906,16 +852,16 @@ while condition:
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">8</span>
 <span class="kc">True</span>
 </code></pre></div></p>
-<h3 id="les-pieges">&#x2712;  Les pièges ...<a class="headerlink" href="#les-pieges" title="Permanent link">⚓︎</a></h3>
+<h3 id="les-pieges">✒  Les pièges ...<a class="headerlink" href="#les-pieges" title="Permanent link">⚓︎</a></h3>
 <h4 id="piege-n1-ne-jamais-sortir-de-la-boucle">piège n°1 : ne JAMAIS SORTIR de la boucle<a class="headerlink" href="#piege-n1-ne-jamais-sortir-de-la-boucle" title="Permanent link">⚓︎</a></h4>
 <p><strong>Exemple :</strong>
 Le programme suivant :
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"ok"</span><span class="p">)</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">0</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ce texte ne s&#39;écrira jamais&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ce texte ne s'écrira jamais"</span><span class="p">)</span>
 </code></pre></div>
 va écrire une suite infinie de <code>ok</code> et ne <strong>jamais s'arrêter</strong></p>
 <h4 id="piege-n2-ne-jamais-entrer-dans-la-boucle">piège n°2 : ne JAMAIS ENTRER dans la boucle<a class="headerlink" href="#piege-n2-ne-jamais-entrer-dans-la-boucle" title="Permanent link">⚓︎</a></h4>
@@ -923,106 +869,88 @@ va écrire une suite infinie de <code>ok</code> et ne <strong>jamais s'arrêter<
 Le programme suivant :
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ce texte non plus ne s&#39;écrira jamais&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"ce texte non plus ne s'écrira jamais"</span><span class="p">)</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fini&quot;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">"fini"</span><span class="p">)</span> 
 </code></pre></div>
 va écrire <code>fini</code> et s'arrêter.</p>
 <div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>a = 0
 while a &gt; 10:
-    print(&quot;ce texte non plus ne s&#39;écrira jamais&quot;)
+    print("ce texte non plus ne s'écrira jamais")
     a = a + 1
 
-print(&quot;fini&quot;)
+print("fini")
 </code></pre></div>
 <p>fini</p>
-<p>!!! exo "&#x1F4BB; Exercice 8 :
+<p>!!! exo "💻 Exercice 8 :
     Trouver le plus petit nombre entier <span class="arithmatex">\(n\)</span> tel que <span class="arithmatex">\(2^n\)</span> soit supérieur à 1 milliard.</p>
 <div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>```python
 n = 1
 while 2**n...:
     ...
-    print(&quot;trop petit&quot;)
-print(&quot;trouvé : &quot;,n)
+    print("trop petit")
+print("trouvé : ",n)
 ```
 </code></pre></div>
 <p>La boucle infinie a été présentée comme un danger qu'il faut éviter. </p>
 <p>Pourtant, dans quelques situations, il est d'usage d'enfermer <em>volontairement</em> l'utilisateur dans une boucle infinie.</p>
-<p>C'est notamment le cas des codes p5 où la fonction <code>draw()</code> est une boucle infinie dont on ne sort que lorsqu'un évènement est intercepté (par exemple, le clic sur la fermeture de la fenêtre d'affichage).<br />
+<p>C'est notamment le cas des codes p5 où la fonction <code>draw()</code> est une boucle infinie dont on ne sort que lorsqu'un évènement est intercepté (par exemple, le clic sur la fermeture de la fenêtre d'affichage).<br/>
 Ou lors de la création d'un jeu....</p>
 <p>Observez et exécutez le code suivant :</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">while</span> <span class="kc">True</span> <span class="p">:</span>
-    <span class="n">reponse</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;tapez sur la lettre S du clavier pour me sortir de cet enfer : &quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">reponse</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span> <span class="ow">or</span> <span class="n">reponse</span> <span class="o">==</span> <span class="s1">&#39;s&#39;</span><span class="p">:</span>
+    <span class="n">reponse</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"tapez sur la lettre S du clavier pour me sortir de cet enfer : "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">reponse</span> <span class="o">==</span> <span class="s1">'S'</span> <span class="ow">or</span> <span class="n">reponse</span> <span class="o">==</span> <span class="s1">'s'</span><span class="p">:</span>
         <span class="k">break</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;merci, j&#39;étais bloqué dans une boucle infinie&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"merci, j'étais bloqué dans une boucle infinie"</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><span class="filename">📋 Algo</span><pre><span></span><code>tapez sur la lettre S du clavier pour me sortir de cet enfer : E
 tapez sur la lettre S du clavier pour me sortir de cet enfer : S
-merci, j&#39;étais bloqué dans une boucle infinie
+merci, j'étais bloqué dans une boucle infinie
 </code></pre></div>
 <ul>
 <li>le début du code : <code>while True</code> est typique des boucles infinies volontaires. On aurait tout aussi bien pu écrire <code>while 3 &gt; 2</code> (on rencontre même parfois des <code>while 1</code>)</li>
 <li>vous avez découvert l'expression <code>break</code> qui comme son nom l'indique permet de casser la boucle (cela marche pour <code>while</code> comme pour <code>for</code>) et donc d'en sortir. Son emploi est controversé parmi les puristes de la programmation. Nous dirons juste que c'est une instruction bien pratique.</li>
 </ul>
-
-              
-    <script src="../../../js/ide.js"></script> 
-
-            </article>
-          </div>
-        </div>
-        
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+<script src="../../../js/ide.js"></script>
+<a class="md-content__icon pdf-download-btn" download href="../../../pandoc/T06_Python/T6.1_Python/Cours03_Boucle_FOR_et_WHILE_en_Python/Cours03_Boucle_FOR_et_WHILE_en_Python.pdf" title="Download"><i class="fa fas fa-download"></i><small> Cours03_Boucle_FOR_et_WHILE_en_Python.pdf </small></a></article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             Retour en haut de la page
           </a>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
       2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
-    </div>
+</div>
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>
-  
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
-    
-    
-      <script src="../../../assets/javascripts/bundle.a6c66575.min.js"></script>
-      
-        <script src="../../../xtra/javascripts/config.js"></script>
-      
-        <script src="../../../xtra/javascripts/interpreter.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+<script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script src="../../../xtra/javascripts/config.js"></script>
+<script src="../../../xtra/javascripts/perso.js"></script>
+<script src="../../../xtra/javascripts/interpreter.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+</body>
 </html>

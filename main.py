@@ -331,7 +331,7 @@ Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de c
         # Traitement si image
         limg = env.variables.qcm[num]["image"]
         if limg!='':
-            lenonce+=f'\n \t ![illustration](../../images/C{env.variables.qcm[num]["chapitre"]}/{limg})'
+            lenonce+=f'\n \t ![illustration](./images/C{env.variables.qcm[num]["chapitre"]}/{limg})'
             lenonce+='{: .imgcentre}\n'
         modele = f'''
 !!! fabquestion "**{index}.** {lenonce}

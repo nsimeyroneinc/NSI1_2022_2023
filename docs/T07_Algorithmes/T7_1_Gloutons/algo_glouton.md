@@ -142,19 +142,21 @@ L'objectif est d'aider le héros à effectuer cette optimisation.
     
 Le problème est de rendre la monnaie en un minimum de pièces.  
 La solution dépend évidemment du système de monnaie utilisé.  
-Considérons le système monétaire européen simplifié où les pièces prennent les valeurs 500, 200, 100, 50, 20, 10, 5, 2 , 1 euros.  Rendre 49 euros avec un minimum de pièces est un problème d’optimisation. En pratique, sans s’en rendre compte généralement, tout individu met en œuvre un algorithme glouton.  
+Considérons le système monétaire européen simplifié où les pièces prennent les valeurs 500, 200, 100, 50, 20, 10, 5, 2 , 1 euros.  
+Rendre 49 euros avec un minimum de pièces est un problème d’optimisation.  
+En pratique, sans s’en rendre compte généralement, tout individu met en œuvre un algorithme glouton.  
 Il choisit d’abord la plus grandeur valeur de monnaie, parmi 1, 2, 5, 10, contenue dans 49 euros. En l’occurrence, quatre fois un pièce de 10 euros. La somme de 9 euros restant à rendre, il choisit une pièce de 5 euros, puis deux pièces de 2 euros.  
 Mais cette stratégie gagnante pour la somme de 49 euros l’est-elle pour n’importe quelle somme à rendre ? 
 
 !!! info "Application du paradigme glouton"  
 
 
-!!!exo "Exercice 1"
+!!! exo
     1. On considère le système monétaire européen systeme = [1, 2, 5, 10, 20, 50, 100, 200, 500]. 
     Quelle est la solution gloutonne pour un rendu de monnaie de 34 euros?   
     de 47 euros ?  
     
-    2. On considèrele système monétaire systeme = [1, 3, 6, 12, 24, 30]. Quelle est la solution gloutonne pour un rendu de monnaie de 49 euros ? Est-elle optimale ? 
+    2. On considère le système monétaire systeme = [1, 3, 6, 12, 24, 30]. Quelle est la solution gloutonne pour un rendu de monnaie de 49 euros ? Est-elle optimale ? 
     
     
 !!! note "Remarque :" 
@@ -164,3 +166,93 @@ Mais cette stratégie gagnante pour la somme de 49 euros l’est-elle pour n’i
 
 **Activité Capytale :** {{capytale("5726-1484553")}}
 
+## Exercices 
+
+!!! exo "Coloriage de carte"
+    On veut colorier une carte en s’assurant que deux zones limitrophes n’ont pas la même couleur avec le minimum de couleurs possible. On choisit de trier les zones par nombres de zones limitrophes, par ordre décroissant. utilisez pour cela le tableau ci-dessous. La méthode gloutonne est le choix de colorier la zone ayant le plus d’adjacent, puis la zone ayant le plus d’adjacent non limitrophe à cette zone et ainsi de suite.
+
+    ![](data/coloriage.png){:.center width:250px}
+
+    Effectuer le coloriage de cette carte avec cette méthode.
+
+!!! exo "Rendu de monnaie"
+    Donner une somme avec le moins de pièces possibles. On veut donner la somme de 14 euros dans les systèmes de pièce suivant :  
+    - s1={1; 2; 5; 10} ;   
+    - s2={1; 2; 7; 10 } ;  
+    - s3={3; 5;7;10 }  
+    
+    On commence par ordonner les pièces dans l’ordre décroissant: il suffira de choisir les pièces dans l’ordre pour faire un choix optimum local. Compléter les tableaux avec ce choix optimum local. 
+    
+    - Système 1 
+    
+    |Pièce |nombre |
+    |:---:|:---:|
+    |10 | |
+    |5 | |
+    |2 | |
+    |1 | |
+    
+    
+    - Système 2 
+    
+    |Pièce |nombre |
+    |:---:|:---:|
+    |10 | |
+    |7 | |
+    |2 | |
+    |1 | |
+    
+    - Système 3  
+    
+    |Pièce |nombre |
+    |:---:|:---:|
+    |10 | |
+    |7 | |
+    |5 | |
+    |3 | |
+    
+    
+    1. Comparer les résultats et commenter.  
+    
+    2. Ecrire en pseudo-code un algorithme de rendu de monnaie.  
+    
+    3. Implémenter une fonction rendu monnaie(m, systeme) et la tester pour le système de pièce européen (le billet de plus forte valeur est 500) et pour un montant m donné.   
+    
+    4. Modifier le code de la fonction `rendu monnaie` pour qu’elle renvoie un dictionnaire où les clés sont les valeurs des pièces rendues et les valeurs le nombre de pièces à rendre.  
+    
+    Exemple  
+    ```python
+    >>>rendu_monnaie(14, [10, 5, 2, 1]) 
+    {1:0, 2:2,5:0, 10:1}
+    ```
+
+!!! exo "Ranger ses affaires"
+    On dispose de n objets $x_1,x_2,.....x_n$ ayant chacun une valeur $v_i_ et une masse $m_i$.  
+    On possède un sac à dos dans lequel on ne peut mettre qu’une masse maximale M. On veut remplir le sac de fa¸con à ce que la valeur des objets emportés soit maximale.  
+    
+    **Optimiser le rangement**  
+    On prend M=10 kg. Il s’agit de choisir les objets à emporter dans le sac afin maximiser la valeur totale tout en respectant la contrainte du poids maximal. C’est un problème d’optimisation avec contrainte.  
+    Considérons les objets suivants et un sac de capacité maximale 10 kg. Quels objets faut-il prendre ? 
+    
+    |Objet |A |B |C |D | E | F|
+    |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+    |masse en kg| 7| 6| 4| 3| 2| 1|
+    |valeur en euros |9100 |7200| 4800| 2700|2600|200|
+    
+    Il y a plusieurs choix possibles :  
+    
+    - **Stratégie 1** : prendre toujours l’objet de plus grande valeur n’excédant pas la capacité restante (il faut trier préalablement par valeur décroissante)  
+    - **Stratégie 2** : prendre toujours l’objet de plus faible masse (il faut trier préalablement par masse croissante)  
+    - **Stratégie 3** : prendre toujours l’objet de plus grand rapport $\dfrac{valeur}{masse}$ n’excédant pas la capacité restante (il faut trier préalablement en suivant ce rapport de façon décroissante). 
+    
+    **Q1.** Tester ces trois stratégies et donner la valeur emportée dans les trois cas.  
+    **Q2.** On dispose d’une liste d’objets de masses m = [9, 10, 12, 14, 11, 5, 7, 5, 6, 2] ainsi que de leurs valeurs associées v = [10, 8, 7, 7, 5, 4, 3, 2, 2, 1]. 
+    Par exemple, le premier objet d’indice 0 a pour masse 9 kg et pour valeur 10 euros.  
+    Programmer un algorithme pour le knapsack problem. Tester le programme pour une masse maximale de 22 kg. 
+    
+    Bien sûr, pour manipuler plus finement les objets, il faudrait changer les structures de données utilisées en utilisant une seule liste, un dictionnaire ou de la programmation objet pour représenter l’ensemble des objets considérés.
+
+
+## Approfondissement 
+
+A venir
