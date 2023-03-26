@@ -106,14 +106,12 @@ Un cambrioleur ne peut emporter que 40 kg sur son dos dans son sac. Il a le choi
 
 |         | Poids (masse en kg) | Valeur (prix de revente) |
 |---------|:-----:|:------:|
-| objet A |   15  |   500  |
-| objet B |   24  |   400  |
-| objet C |   9   |   350  |
-| objet D |   25  |   750  |
-| objet E |   5   |   400  |
-| objet F |   12  |   800  |
-| objet G |   2   |  1400  |
-| objet H |   18  |   550  |
+| objet A |   13  |   700  |
+| objet B |   12  |   500  |
+| objet C |   8   |   200  |
+| objet D |   10  |   300  |
+| objet E |   14  |   600  |
+| objet F |   18  |   800  |
 
 Il va se demander quels objets choisir pour obtenir une valeur totale maximale tout en ne dépassant pas 40 kg.
 
