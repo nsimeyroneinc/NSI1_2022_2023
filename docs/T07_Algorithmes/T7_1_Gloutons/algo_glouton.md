@@ -102,16 +102,20 @@ Les algorithmes gloutons s'appliquent lorsque de plus :
 
 {{ titre_activite("Le problème du sac à dos",[],) }}
 
-Dans un jeu vidéo, le héros dispose d'un sac à dos lui permettant de porter les objets collectés au fil du jeu, avec une capacité maximale de 10 kg.  
-Le héros souhaite maximiser la valeur en pièces d'or des objets contenus dans le sac à dos, qui varie de 3 à 30 pièces d'or selon l'objet.  
-L'objectif est d'aider le héros à effectuer cette optimisation.
+Un cambrioleur ne peut emporter que 40 kg sur son dos dans son sac. Il a le choix d'emporter certains des objets suivants :
 
-|Objet|Antidote|Baguette magique|Cape d'invisibilité|Diadème|Epée|Horloge|Miroir|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|Numéro objet|1|2|3|4|5|6|7|
-|Valeur (pièces d'or)|3|5|12|15|9|10|12|
-|Masse (kg)|0.5|1|1|5|6|5|3|
-|Valeur massique||||||||
+|         | Poids (masse en kg) | Valeur (prix de revente) |
+|---------|:-----:|:------:|
+| objet A |   15  |   500  |
+| objet B |   24  |   400  |
+| objet C |   9   |   350  |
+| objet D |   25  |   750  |
+| objet E |   5   |   400  |
+| objet F |   12  |   800  |
+| objet G |   2   |  1400  |
+| objet H |   18  |   550  |
+
+Il va se demander quels objets choisir pour obtenir une valeur totale maximale tout en ne dépassant pas 40 kg.
 
 !!! question "Q1"
     Classer ces objets par valeur décroissante et donner la solution de l'algorithme glouton avec ce critère de classement.
@@ -120,10 +124,12 @@ L'objectif est d'aider le héros à effectuer cette optimisation.
     Même question avec un classement par poids croissant.
 
 !!! question "Q3"  
-    Même question avec un classement par valeur/poids (valeur massique) croissant.
+    Même question avec un classement par valeur/poids (valeur massique) décroissant.
 
 !!! question "Q4"  
     A-t-on obtenu la solution optimale ?
+
+### Activité Capytale 
 
 **Activité Capytale :** {{capytale("cd2e-1484556")}}
 

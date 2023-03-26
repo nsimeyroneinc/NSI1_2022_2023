@@ -1,952 +1,1931 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Michael Meyroneinc-condy">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>T1_4 Les Booléens - Site NSI 1ére</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
 
-<html class="no-js" lang="fr">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="Cours et TD de l'année en cours" name="description"/>
-<meta content="Michael Meyroneinc-condy" name="author"/>
-<link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>T1_4 Les Booléens - Site NSI 1ére</title>
-<link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
-<!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
-<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript"></script>
-<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
-<script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet"/>
-<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
-<link href="../../../xtra/stylesheets/pyoditeur.css" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
-<body data-md-color-accent="amber" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
-<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#c13-les-booleens">
+    
+    
+    
+    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../xtra/stylesheets/pyoditeur.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c13-les-booleens" class="md-skip">
           Aller au contenu
         </a>
-</div>
-<div data-md-component="announce">
-</div>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
 <header class="md-header" data-md-component="header">
-<nav aria-label="En-tête" class="md-header__inner md-grid">
-<a aria-label="Site NSI 1ére" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Site NSI 1ére">
-<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg>
-</a>
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
-</label>
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Site NSI 1ére" class="md-header__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Site NSI 1ére
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               T1_4 Les Booléens
             
           </span>
-</div>
-</div>
-</div>
-<form class="md-header__option" data-md-component="palette">
-<input aria-label="Basculer en mode sombre" class="md-option" data-md-color-accent="amber" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Basculer en mode sombre">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"></path></svg>
-</label>
-<input aria-label="Basculer en mode clair" class="md-option" data-md-color-accent="lime" data-md-color-media="" data-md-color-primary="amber" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Basculer en mode clair">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
-</label>
-</form>
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-</label>
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</label>
-<nav aria-label="Search" class="md-search__options">
-<button aria-label="Effacer" class="md-search__icon md-icon" tabindex="-1" title="Effacer" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
-</button>
-</nav>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initialisation de la recherche
           </div>
-<ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</nav>
+    
+    
+  </nav>
+  
 </header>
-<div class="md-container" data-md-component="container">
-<nav aria-label="Onglets" class="md-tabs" data-md-component="tabs">
-<div class="md-tabs__inner md-grid">
-<ul class="md-tabs__list">
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../..">
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
       Accueil
     </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../index_typebases/">
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index_typebases/" class="md-tabs__link md-tabs__link--active">
         T1 Types et valeurs de base
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../T02_TypesConstruits/index_typeconstruits/">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../T02_TypesConstruits/index_typeconstruits/" class="md-tabs__link">
         T2 Types construits
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../T04_IHMWeb/index_web/">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../T04_IHMWeb/index_web/" class="md-tabs__link">
         T4 I.H.M.
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../T05_Architectures/index_archi/">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../T05_Architectures/index_archi/" class="md-tabs__link">
         T5 Arch. Matérielle
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../T06_Python/index_prog/">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../T06_Python/index_prog/" class="md-tabs__link">
         T6 Programmation
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../T07_Algorithmes/index_algo/">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../T07_Algorithmes/index_algo/" class="md-tabs__link">
         T7 Algo.
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../T08_Extras/5MiniProjet/logo/">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../T08_Extras/5MiniProjet/logo/" class="md-tabs__link">
         T8 Extras
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../T09_Evaluations/DS_portes_logiques/">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../T09_Evaluations/DS_portes_logiques/" class="md-tabs__link">
         Devoirs
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../Divers/conseil/">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Divers/conseil/" class="md-tabs__link">
         Divers
       </a>
-</li>
-</ul>
-</div>
+    </li>
+  
+
+      
+    </ul>
+  </div>
 </nav>
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="Site NSI 1ére" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Site NSI 1ére">
-<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg>
-</a>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Site NSI 1ére" class="md-nav__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
     Site NSI 1ére
   </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         Accueil
       </a>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2">
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
           T1 Types et valeurs de base
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="T1 Types et valeurs de base" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T1 Types et valeurs de base" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
           T1 Types et valeurs de base
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../index_typebases/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index_typebases/" class="md-nav__link">
         Rep. des données
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../T1.1_Bases/T1_1_Codage_Entiers/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T1.1_Bases/T1_1_Codage_Entiers/" class="md-nav__link">
         T1_1 Codages des entiers positifs
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../T1.1_Bases/T1_Perseverance/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T1.1_Bases/T1_Perseverance/" class="md-nav__link">
         TP Perseverance
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../T1.2_Relatifs/T1_2_Relatifs/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T1.2_Relatifs/T1_2_Relatifs/" class="md-nav__link">
         T1_2 Codages des entiers relatifs
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../T1.3_Flottants/T1_3_Flottants/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T1.3_Flottants/T1_3_Flottants/" class="md-nav__link">
         T1_3 Codage des flottants
       </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
           T1_4 Les Booléens
           <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         T1_4 Les Booléens
       </a>
-<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table des matières
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reperes-historiques">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reperes-historiques" class="md-nav__link">
     Repères historiques
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#algebre-de-boole">
+      
+        <li class="md-nav__item">
+  <a href="#algebre-de-boole" class="md-nav__link">
     Algèbre de Boole
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#operateurs-booleens-operandes">
+      
+        <li class="md-nav__item">
+  <a href="#operateurs-booleens-operandes" class="md-nav__link">
     Opérateurs Booléens &amp; Opérandes
   </a>
-<nav aria-label="Opérateurs Booléens &amp; Opérandes" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#quest-ce-quun-operateur">
+  
+    <nav class="md-nav" aria-label="Opérateurs Booléens &amp; Opérandes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quest-ce-quun-operateur" class="md-nav__link">
     Qu'est-ce qu'un Opérateur ?
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#operateurs-booleens">
+        
+          <li class="md-nav__item">
+  <a href="#operateurs-booleens" class="md-nav__link">
     Opérateurs Booléens
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fonctions-booleenneslogiques-tables-de-verite">
+      
+        <li class="md-nav__item">
+  <a href="#fonctions-booleenneslogiques-tables-de-verite" class="md-nav__link">
     Fonctions Booléennes/Logiques &amp; Tables de Vérité
   </a>
-<nav aria-label="Fonctions Booléennes/Logiques &amp; Tables de Vérité" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition">
+  
+    <nav class="md-nav" aria-label="Fonctions Booléennes/Logiques &amp; Tables de Vérité">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#exemples">
+        
+          <li class="md-nav__item">
+  <a href="#exemples" class="md-nav__link">
     Exemples
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#portes-logiques">
+      
+        <li class="md-nav__item">
+  <a href="#portes-logiques" class="md-nav__link">
     Portes Logiques
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#porte-not-non-inverseur">
+      
+        <li class="md-nav__item">
+  <a href="#porte-not-non-inverseur" class="md-nav__link">
     Porte NOT ( NON ) / Inverseur
   </a>
-<nav aria-label="Porte NOT ( NON ) / Inverseur" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition_1">
+  
+    <nav class="md-nav" aria-label="Porte NOT ( NON ) / Inverseur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#circuits-et-schemas">
+        
+          <li class="md-nav__item">
+  <a href="#circuits-et-schemas" class="md-nav__link">
     Circuits et Schémas
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-de-verite">
+        
+          <li class="md-nav__item">
+  <a href="#table-de-verite" class="md-nav__link">
     Table de Vérité
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#porte-and-et-conjonction">
+      
+        <li class="md-nav__item">
+  <a href="#porte-and-et-conjonction" class="md-nav__link">
     Porte AND ( ET ) / Conjonction
   </a>
-<nav aria-label="Porte AND ( ET ) / Conjonction" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition_2">
+  
+    <nav class="md-nav" aria-label="Porte AND ( ET ) / Conjonction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_2" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#circuits-et-schemas_1">
+        
+          <li class="md-nav__item">
+  <a href="#circuits-et-schemas_1" class="md-nav__link">
     Circuits et Schémas
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-de-verite_1">
+        
+          <li class="md-nav__item">
+  <a href="#table-de-verite_1" class="md-nav__link">
     Table de Vérité
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#porte-or-ou-disjonction">
+      
+        <li class="md-nav__item">
+  <a href="#porte-or-ou-disjonction" class="md-nav__link">
     Porte OR ( OU ) / Disjonction
   </a>
-<nav aria-label="Porte OR ( OU ) / Disjonction" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition_3">
+  
+    <nav class="md-nav" aria-label="Porte OR ( OU ) / Disjonction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_3" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#circuits-et-schemas_2">
+        
+          <li class="md-nav__item">
+  <a href="#circuits-et-schemas_2" class="md-nav__link">
     Circuits et Schémas
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-de-verite_2">
+        
+          <li class="md-nav__item">
+  <a href="#table-de-verite_2" class="md-nav__link">
     Table de Vérité
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#porte-nand-non-et">
+      
+        <li class="md-nav__item">
+  <a href="#porte-nand-non-et" class="md-nav__link">
     Porte NAND ( NON-ET )
   </a>
-<nav aria-label="Porte NAND ( NON-ET )" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition_4">
+  
+    <nav class="md-nav" aria-label="Porte NAND ( NON-ET )">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_4" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#circuits-et-schemas_3">
+        
+          <li class="md-nav__item">
+  <a href="#circuits-et-schemas_3" class="md-nav__link">
     Circuits et Schémas
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-de-verite_3">
+        
+          <li class="md-nav__item">
+  <a href="#table-de-verite_3" class="md-nav__link">
     Table de Vérité
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#universalite">
+        
+          <li class="md-nav__item">
+  <a href="#universalite" class="md-nav__link">
     Universalité
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#porte-nor-non-ou">
+      
+        <li class="md-nav__item">
+  <a href="#porte-nor-non-ou" class="md-nav__link">
     Porte NOR ( NON-OU )
   </a>
-<nav aria-label="Porte NOR ( NON-OU )" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition_5">
+  
+    <nav class="md-nav" aria-label="Porte NOR ( NON-OU )">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_5" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#circuits-et-schemas_4">
+        
+          <li class="md-nav__item">
+  <a href="#circuits-et-schemas_4" class="md-nav__link">
     Circuits et Schémas
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-de-verite_4">
+        
+          <li class="md-nav__item">
+  <a href="#table-de-verite_4" class="md-nav__link">
     Table de Vérité
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#universalite_1">
+        
+          <li class="md-nav__item">
+  <a href="#universalite_1" class="md-nav__link">
     Universalité
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#porte-xor-ou-exclusif-difference">
+      
+        <li class="md-nav__item">
+  <a href="#porte-xor-ou-exclusif-difference" class="md-nav__link">
     Porte XOR (OU EXCLUSIF) / Différence
   </a>
-<nav aria-label="Porte XOR (OU EXCLUSIF) / Différence" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition_6">
+  
+    <nav class="md-nav" aria-label="Porte XOR (OU EXCLUSIF) / Différence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_6" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#circuits-et-schema">
+        
+          <li class="md-nav__item">
+  <a href="#circuits-et-schema" class="md-nav__link">
     Circuits et Schéma
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-de-verite_5">
+        
+          <li class="md-nav__item">
+  <a href="#table-de-verite_5" class="md-nav__link">
     Table de Vérité
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#proprietes">
+        
+          <li class="md-nav__item">
+  <a href="#proprietes" class="md-nav__link">
     Propriétés
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#applications-du-xor">
+        
+          <li class="md-nav__item">
+  <a href="#applications-du-xor" class="md-nav__link">
     Applications du XOR
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#exercices">
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
     EXERCICES
   </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3">
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
           T2 Types construits
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="T2 Types construits" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T2 Types construits" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
           T2 Types construits
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T02_TypesConstruits/index_typeconstruits/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T02_TypesConstruits/index_typeconstruits/" class="md-nav__link">
         Types construits
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux/" class="md-nav__link">
         Tableaux (Listes) en Python
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
           T4 I.H.M.
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="T4 I.H.M." class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T4 I.H.M." data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
           T4 I.H.M.
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T04_IHMWeb/index_web/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T04_IHMWeb/index_web/" class="md-nav__link">
         I.H.M
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS/" class="md-nav__link">
         HTML - CSS
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T04_IHMWeb/T4.2_Interactions/T4.2_Js/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T04_IHMWeb/T4.2_Interactions/T4.2_Js/" class="md-nav__link">
         JS - Interaction dans une page web
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
           T5 Arch. Matérielle
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="T5 Arch. Matérielle" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T5 Arch. Matérielle" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
           T5 Arch. Matérielle
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T05_Architectures/index_archi/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T05_Architectures/index_archi/" class="md-nav__link">
         Architecture matérielle
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T05_Architectures/T5.3_Reseaux/T5.1_Architecture/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T05_Architectures/T5.3_Reseaux/T5.1_Architecture/" class="md-nav__link">
         Architecture d'un réseau
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
           T6 Programmation
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="T6 Programmation" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T6 Programmation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
           T6 Programmation
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T06_Python/index_prog/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/index_prog/" class="md-nav__link">
         Programmation
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_0_Introduction/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-nav__link">
         TP 00 - Introduction Python
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python/" class="md-nav__link">
         TP 01 - Les Variables en Python
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python/" class="md-nav__link">
         TP 02 - Les Fonctions en Python
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python/" class="md-nav__link">
         TP 03 - Les boucles (1) en Python
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_4_WHILE/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_4_WHILE/" class="md-nav__link">
         TP 04 - Les boucles (2) en Python
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles/" class="md-nav__link">
         TP 05 - Les Conditions en Python
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases/" class="md-nav__link">
         TP 06 - Exercices Bilan Les bases
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
           T7 Algo.
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="T7 Algo." class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_7">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T7 Algo." data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
           T7 Algo.
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T07_Algorithmes/index_algo/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T07_Algorithmes/index_algo/" class="md-nav__link">
         Algorithmique
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T07_Algorithmes/T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T07_Algorithmes/T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau/" class="md-nav__link">
         TP Parcours séquentiel d'un tableau
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T07_Algorithmes/T7_1_Gloutons/algo_glouton/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T07_Algorithmes/T7_1_Gloutons/algo_glouton/" class="md-nav__link">
         TP algorithme Glouton
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_8">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
           T8 Extras
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="T8 Extras" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_8">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T8 Extras" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
           T8 Extras
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T08_Extras/5MiniProjet/logo/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T08_Extras/5MiniProjet/logo/" class="md-nav__link">
         Mini-Projet
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T08_Extras/5MiniProjet/dessine_ta_rue/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T08_Extras/5MiniProjet/dessine_ta_rue/" class="md-nav__link">
         Dessine ta rue
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
           Devoirs
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Devoirs" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_9">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Devoirs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
           Devoirs
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T09_Evaluations/DS_portes_logiques/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T09_Evaluations/DS_portes_logiques/" class="md-nav__link">
         Portes logiques
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../T09_Evaluations/logic/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T09_Evaluations/logic/" class="md-nav__link">
         logic
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
-<label class="md-nav__link" for="__nav_10">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
           Divers
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Divers" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_10">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Divers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
           Divers
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Divers/conseil/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Divers/conseil/" class="md-nav__link">
         Conseil
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Divers/Liens_utiles/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Divers/Liens_utiles/" class="md-nav__link">
         Liens utiles
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Divers/instal_python/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Divers/instal_python/" class="md-nav__link">
         Installation Python
       </a>
-</li>
-</ul>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table des matières
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reperes-historiques">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reperes-historiques" class="md-nav__link">
     Repères historiques
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#algebre-de-boole">
+      
+        <li class="md-nav__item">
+  <a href="#algebre-de-boole" class="md-nav__link">
     Algèbre de Boole
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#operateurs-booleens-operandes">
+      
+        <li class="md-nav__item">
+  <a href="#operateurs-booleens-operandes" class="md-nav__link">
     Opérateurs Booléens &amp; Opérandes
   </a>
-<nav aria-label="Opérateurs Booléens &amp; Opérandes" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#quest-ce-quun-operateur">
+  
+    <nav class="md-nav" aria-label="Opérateurs Booléens &amp; Opérandes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quest-ce-quun-operateur" class="md-nav__link">
     Qu'est-ce qu'un Opérateur ?
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#operateurs-booleens">
+        
+          <li class="md-nav__item">
+  <a href="#operateurs-booleens" class="md-nav__link">
     Opérateurs Booléens
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fonctions-booleenneslogiques-tables-de-verite">
+      
+        <li class="md-nav__item">
+  <a href="#fonctions-booleenneslogiques-tables-de-verite" class="md-nav__link">
     Fonctions Booléennes/Logiques &amp; Tables de Vérité
   </a>
-<nav aria-label="Fonctions Booléennes/Logiques &amp; Tables de Vérité" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition">
+  
+    <nav class="md-nav" aria-label="Fonctions Booléennes/Logiques &amp; Tables de Vérité">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#exemples">
+        
+          <li class="md-nav__item">
+  <a href="#exemples" class="md-nav__link">
     Exemples
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#portes-logiques">
+      
+        <li class="md-nav__item">
+  <a href="#portes-logiques" class="md-nav__link">
     Portes Logiques
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#porte-not-non-inverseur">
+      
+        <li class="md-nav__item">
+  <a href="#porte-not-non-inverseur" class="md-nav__link">
     Porte NOT ( NON ) / Inverseur
   </a>
-<nav aria-label="Porte NOT ( NON ) / Inverseur" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition_1">
+  
+    <nav class="md-nav" aria-label="Porte NOT ( NON ) / Inverseur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#circuits-et-schemas">
+        
+          <li class="md-nav__item">
+  <a href="#circuits-et-schemas" class="md-nav__link">
     Circuits et Schémas
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-de-verite">
+        
+          <li class="md-nav__item">
+  <a href="#table-de-verite" class="md-nav__link">
     Table de Vérité
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#porte-and-et-conjonction">
+      
+        <li class="md-nav__item">
+  <a href="#porte-and-et-conjonction" class="md-nav__link">
     Porte AND ( ET ) / Conjonction
   </a>
-<nav aria-label="Porte AND ( ET ) / Conjonction" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition_2">
+  
+    <nav class="md-nav" aria-label="Porte AND ( ET ) / Conjonction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_2" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#circuits-et-schemas_1">
+        
+          <li class="md-nav__item">
+  <a href="#circuits-et-schemas_1" class="md-nav__link">
     Circuits et Schémas
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-de-verite_1">
+        
+          <li class="md-nav__item">
+  <a href="#table-de-verite_1" class="md-nav__link">
     Table de Vérité
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#porte-or-ou-disjonction">
+      
+        <li class="md-nav__item">
+  <a href="#porte-or-ou-disjonction" class="md-nav__link">
     Porte OR ( OU ) / Disjonction
   </a>
-<nav aria-label="Porte OR ( OU ) / Disjonction" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition_3">
+  
+    <nav class="md-nav" aria-label="Porte OR ( OU ) / Disjonction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_3" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#circuits-et-schemas_2">
+        
+          <li class="md-nav__item">
+  <a href="#circuits-et-schemas_2" class="md-nav__link">
     Circuits et Schémas
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-de-verite_2">
+        
+          <li class="md-nav__item">
+  <a href="#table-de-verite_2" class="md-nav__link">
     Table de Vérité
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#porte-nand-non-et">
+      
+        <li class="md-nav__item">
+  <a href="#porte-nand-non-et" class="md-nav__link">
     Porte NAND ( NON-ET )
   </a>
-<nav aria-label="Porte NAND ( NON-ET )" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition_4">
+  
+    <nav class="md-nav" aria-label="Porte NAND ( NON-ET )">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_4" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#circuits-et-schemas_3">
+        
+          <li class="md-nav__item">
+  <a href="#circuits-et-schemas_3" class="md-nav__link">
     Circuits et Schémas
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-de-verite_3">
+        
+          <li class="md-nav__item">
+  <a href="#table-de-verite_3" class="md-nav__link">
     Table de Vérité
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#universalite">
+        
+          <li class="md-nav__item">
+  <a href="#universalite" class="md-nav__link">
     Universalité
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#porte-nor-non-ou">
+      
+        <li class="md-nav__item">
+  <a href="#porte-nor-non-ou" class="md-nav__link">
     Porte NOR ( NON-OU )
   </a>
-<nav aria-label="Porte NOR ( NON-OU )" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition_5">
+  
+    <nav class="md-nav" aria-label="Porte NOR ( NON-OU )">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_5" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#circuits-et-schemas_4">
+        
+          <li class="md-nav__item">
+  <a href="#circuits-et-schemas_4" class="md-nav__link">
     Circuits et Schémas
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-de-verite_4">
+        
+          <li class="md-nav__item">
+  <a href="#table-de-verite_4" class="md-nav__link">
     Table de Vérité
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#universalite_1">
+        
+          <li class="md-nav__item">
+  <a href="#universalite_1" class="md-nav__link">
     Universalité
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#porte-xor-ou-exclusif-difference">
+      
+        <li class="md-nav__item">
+  <a href="#porte-xor-ou-exclusif-difference" class="md-nav__link">
     Porte XOR (OU EXCLUSIF) / Différence
   </a>
-<nav aria-label="Porte XOR (OU EXCLUSIF) / Différence" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definition_6">
+  
+    <nav class="md-nav" aria-label="Porte XOR (OU EXCLUSIF) / Différence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_6" class="md-nav__link">
     Définition
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#circuits-et-schema">
+        
+          <li class="md-nav__item">
+  <a href="#circuits-et-schema" class="md-nav__link">
     Circuits et Schéma
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-de-verite_5">
+        
+          <li class="md-nav__item">
+  <a href="#table-de-verite_5" class="md-nav__link">
     Table de Vérité
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#proprietes">
+        
+          <li class="md-nav__item">
+  <a href="#proprietes" class="md-nav__link">
     Propriétés
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#applications-du-xor">
+        
+          <li class="md-nav__item">
+  <a href="#applications-du-xor" class="md-nav__link">
     Applications du XOR
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#exercices">
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
     EXERCICES
   </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
-<h1 id="c13-les-booleens"><span class="numchapitre">C13</span> Les Booleens <span style="float:right;"><span class="twemoji" title="Types de base"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M234.5 5.7c13.9-5 29.1-5 43.1 0l192 68.6c25.4 9.1 42.4 33.2 42.4 60.3v242.8c0 27-17 51.2-42.5 60.3l-192 68.6c-13.9 5-29.1 5-43.1 0l-192-68.6C17 428.6 0 404.5 0 377.4V134.6c0-27 17-51.2 42.5-60.3l192-68.6zM256 66 82.3 128 256 190l173.7-62L256 66zm32 368.6 160-57.1v-188l-160 57.1v188z"></path></svg></span></span><a class="headerlink" href="#c13-les-booleens" title="Permanent link">⚓︎</a></h1>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="T1_4_Booleens.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+                
+    
+                  
+
+
+<h1 id="c13-les-booleens"><span class='numchapitre'>C13</span> Les Booleens <span style='float:right;'><span class="twemoji" title="Types de base"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M234.5 5.7c13.9-5 29.1-5 43.1 0l192 68.6c25.4 9.1 42.4 33.2 42.4 60.3v242.8c0 27-17 51.2-42.5 60.3l-192 68.6c-13.9 5-29.1 5-43.1 0l-192-68.6C17 428.6 0 404.5 0 377.4V134.6c0-27 17-51.2 42.5-60.3l192-68.6zM256 66 82.3 128 256 190l173.7-62L256 66zm32 368.6 160-57.1v-188l-160 57.1v188z"/></svg></span></span><a class="headerlink" href="#c13-les-booleens" title="Permanent link">⚓︎</a></h1>
 <table>
 <thead>
 <tr>
@@ -964,9 +1943,9 @@
 </tbody>
 </table>
 <h2 id="reperes-historiques">Repères historiques<a class="headerlink" href="#reperes-historiques" title="Permanent link">⚓︎</a></h2>
-<p><img alt="" class="center" src="../data/portrait_boole.jpg"/></p>
-<p>En 1847, le  britannique  <em>George BOOLE</em> <img alt="🇬🇧" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" title=":gb:"/> inventa un formalisme permettant d'écrire des raisonnements logiques : l'algèbre de Boole. La notion même d'informatique n'existait pas à l'époque, même si les calculs étaient déjà automatisés (penser à la Pascaline de 1642).</p>
-<p>Bien plus tard, en  1938, les travaux de l'américain <em>Claude  SHANNON</em> <img alt="🇺🇸" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg" title=":us:"/> prouva  que des  circuits  électriques peuvent  résoudre tous  les  problèmes  que l'algèbre  de  Boole peut elle-même résoudre.  Pendant la deuxième guerre mondiale, les travaux  d'<em>Alan  TURING</em> <img alt="🇬🇧" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" title=":gb:"/> puis de <em>John VON NEUMANN</em> <img alt="🇺🇸" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg" title=":us:"/> <img alt="🇭🇺" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ed-1f1fa.svg" title=":hu:"/> poseront définitivement les bases de l'informatique moderne.</p>
+<p><img alt="" class="center" src="../data/portrait_boole.jpg" /></p>
+<p>En 1847, le  britannique  <em>George BOOLE</em> <img alt="🇬🇧" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" title=":gb:" /> inventa un formalisme permettant d'écrire des raisonnements logiques : l'algèbre de Boole. La notion même d'informatique n'existait pas à l'époque, même si les calculs étaient déjà automatisés (penser à la Pascaline de 1642).</p>
+<p>Bien plus tard, en  1938, les travaux de l'américain <em>Claude  SHANNON</em> <img alt="🇺🇸" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg" title=":us:" /> prouva  que des  circuits  électriques peuvent  résoudre tous  les  problèmes  que l'algèbre  de  Boole peut elle-même résoudre.  Pendant la deuxième guerre mondiale, les travaux  d'<em>Alan  TURING</em> <img alt="🇬🇧" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" title=":gb:" /> puis de <em>John VON NEUMANN</em> <img alt="🇺🇸" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg" title=":us:" /> <img alt="🇭🇺" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ed-1f1fa.svg" title=":hu:" /> poseront définitivement les bases de l'informatique moderne.</p>
 <h2 id="algebre-de-boole">Algèbre de Boole<a class="headerlink" href="#algebre-de-boole" title="Permanent link">⚓︎</a></h2>
 <p>L'algèbre de Boole définit des opérations dans un ensemble
 qui ne contient que <strong>deux éléments</strong> notés <strong>0 et 1</strong>, ou bien <strong>FAUX et VRAI</strong> ,ou encore <strong>False</strong> et <strong>True</strong> (en Python)</p>
@@ -978,10 +1957,10 @@ qui ne contient que <strong>deux éléments</strong> notés <strong>0 et 1</stro
 </ul>
 <p>Dans  toute la  suite,  <code>x</code> et  <code>y</code> désigneront  des  <em>Booléens</em> (éléments  d'une
 algèbre de Boole) quelconques, <code>F</code> désignera FAUX et <code>V</code> désignera VRAI.</p>
-<hr/>
+<hr />
 <h2 id="operateurs-booleens-operandes">Opérateurs Booléens &amp; Opérandes<a class="headerlink" href="#operateurs-booleens-operandes" title="Permanent link">⚓︎</a></h2>
 <h3 id="quest-ce-quun-operateur">Qu'est-ce qu'un Opérateur ?<a class="headerlink" href="#quest-ce-quun-operateur" title="Permanent link">⚓︎</a></h3>
-<p>De manière générale et intuitive, un <strong>Opérateur</strong> est un concept (plutôt mathématique) qui <strong>opère</strong>/agit sur des données en entrée, appelées <strong>Opérandes</strong>, et qui renvoie en sortie un (unique) résultat (dépendant usuellement des données en entrée).<br/>
+<p>De manière générale et intuitive, un <strong>Opérateur</strong> est un concept (plutôt mathématique) qui <strong>opère</strong>/agit sur des données en entrée, appelées <strong>Opérandes</strong>, et qui renvoie en sortie un (unique) résultat (dépendant usuellement des données en entrée).<br />
 Au sens mathématique, un <strong>Opérateur</strong> <span class="arithmatex">\(\otimes\)</span> (par exemple) peut donc être vu comme une <strong>fonction</strong> <span class="arithmatex">\(f\)</span> (par exemple) <strong>mais les notations pour la valeur de sortie ne sont pas exactement les mêmes</strong>.  </p>
 <h3 id="operateurs-booleens">Opérateurs Booléens<a class="headerlink" href="#operateurs-booleens" title="Permanent link">⚓︎</a></h3>
 <p>Dans ce contexte, Un <strong>Opérateur Booléen</strong> ou <strong>Opérateur Logique</strong>, correspond au cas particulier où :</p>
@@ -1014,7 +1993,7 @@ Au sens mathématique, un <strong>Opérateur</strong> <span class="arithmatex">\
 </div>
 <h3 id="exemples">Exemples<a class="headerlink" href="#exemples" title="Permanent link">⚓︎</a></h3>
 <h4 id="fonction-booleenne-a-2-entrees">Fonction Booléenne à 2 entrées<a class="headerlink" href="#fonction-booleenne-a-2-entrees" title="Permanent link">⚓︎</a></h4>
-<p>Une fonction booléenne <span class="arithmatex">\(f\)</span> avec <span class="arithmatex">\(2\)</span> entrées <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span>, sera entièrement définie par une <strong>Table de Vérité</strong> de <span class="arithmatex">\(2^2=4\)</span> lignes. En effet, il existe <span class="arithmatex">\(4\)</span> manières d'arranger deux variables <span class="arithmatex">\(x\)</span> et <span class="arithmatex">\(y\)</span> prenant chacune des valeurs booléennes (<span class="arithmatex">\(0\)</span> ou <span class="arithmatex">\(1\)</span>) données en entrée :<br/>
+<p>Une fonction booléenne <span class="arithmatex">\(f\)</span> avec <span class="arithmatex">\(2\)</span> entrées <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span>, sera entièrement définie par une <strong>Table de Vérité</strong> de <span class="arithmatex">\(2^2=4\)</span> lignes. En effet, il existe <span class="arithmatex">\(4\)</span> manières d'arranger deux variables <span class="arithmatex">\(x\)</span> et <span class="arithmatex">\(y\)</span> prenant chacune des valeurs booléennes (<span class="arithmatex">\(0\)</span> ou <span class="arithmatex">\(1\)</span>) données en entrée :<br />
 <center><span class="arithmatex">\(00\)</span>, <span class="arithmatex">\(01\)</span>, <span class="arithmatex">\(10\)</span> ou bien <span class="arithmatex">\(11\)</span></center>
 Chaque valeur <span class="arithmatex">\(f(x,y)\)</span> étant ou bien un <span class="arithmatex">\(0\)</span>, ou bien un <span class="arithmatex">\(1\)</span>.</p>
 <table>
@@ -1200,7 +2179,7 @@ Chaque valeur <span class="arithmatex">\(f(x,y)\)</span> étant ou bien un <span
 </ol>
 </div>
 <h4 id="fonction-booleenne-a-3-entrees">Fonction Booléenne à 3 entrées<a class="headerlink" href="#fonction-booleenne-a-3-entrees" title="Permanent link">⚓︎</a></h4>
-<p>Une fonction booléenne <span class="arithmatex">\(f\)</span> avec 3 entrées <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span> et <span class="arithmatex">\(z\)</span>, sera entièrement définie par une <strong>Table de Vérité</strong> de <span class="arithmatex">\(2^3=8\)</span> lignes. En effet, il existe <span class="arithmatex">\(8\)</span> manières d'arranger trois variables <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span> et <span class="arithmatex">\(z\)</span> prenant chacune des valeurs booléennes (<span class="arithmatex">\(0\)</span> ou <span class="arithmatex">\(1\)</span>) données en entrée :<br/>
+<p>Une fonction booléenne <span class="arithmatex">\(f\)</span> avec 3 entrées <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span> et <span class="arithmatex">\(z\)</span>, sera entièrement définie par une <strong>Table de Vérité</strong> de <span class="arithmatex">\(2^3=8\)</span> lignes. En effet, il existe <span class="arithmatex">\(8\)</span> manières d'arranger trois variables <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span> et <span class="arithmatex">\(z\)</span> prenant chacune des valeurs booléennes (<span class="arithmatex">\(0\)</span> ou <span class="arithmatex">\(1\)</span>) données en entrée :<br />
 <center><span class="arithmatex">\(000\)</span>, <span class="arithmatex">\(001\)</span>, <span class="arithmatex">\(010\)</span>, <span class="arithmatex">\(011\)</span>, <span class="arithmatex">\(100\)</span>, <span class="arithmatex">\(101\)</span>, <span class="arithmatex">\(110\)</span> ou bien <span class="arithmatex">\(111\)</span></center>
 Chaque valeur <span class="arithmatex">\(f(x,y,z)\)</span> étant ou bien un <span class="arithmatex">\(0\)</span>, ou bien un <span class="arithmatex">\(1\)</span>.</p>
 <table>
@@ -1539,7 +2518,7 @@ Chaque valeur <span class="arithmatex">\(f(x,y,z)\)</span> étant ou bien un <sp
 <h2 id="portes-logiques">Portes Logiques<a class="headerlink" href="#portes-logiques" title="Permanent link">⚓︎</a></h2>
 <div class="admonition def">
 <p class="admonition-title">Def</p>
-<p>Une <strong>Porte Logique</strong> <img alt="🇫🇷" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg" title=":fr:"/> / <strong>Logic Gate</strong> <img alt="🇬🇧" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" title=":gb:"/> est une implémentation matérielle d'un <strong>Opérateur Booléen</strong>, càd un <strong>circuit électronique élémentaire</strong> implémentant la même fonctionnalité précise et distincte, que l'opérateur booléen correspondant.</p>
+<p>Une <strong>Porte Logique</strong> <img alt="🇫🇷" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg" title=":fr:" /> / <strong>Logic Gate</strong> <img alt="🇬🇧" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" title=":gb:" /> est une implémentation matérielle d'un <strong>Opérateur Booléen</strong>, càd un <strong>circuit électronique élémentaire</strong> implémentant la même fonctionnalité précise et distincte, que l'opérateur booléen correspondant.</p>
 </div>
 <p>Il existe plusieurs Portes Logiques, chacune d'entre elles ayant des fonctionnalités basiques, précises et distinctes. Ces Portes Logiques sont donc des circuits (électroniques) qui :</p>
 <ul>
@@ -1565,21 +2544,21 @@ Chaque valeur <span class="arithmatex">\(f(x,y,z)\)</span> étant ou bien un <sp
 </div>
 <h3 id="circuits-et-schemas">Circuits et Schémas<a class="headerlink" href="#circuits-et-schemas" title="Permanent link">⚓︎</a></h3>
 <p>La Porte NOT est implantée par un simple transistor : c'est la plus simple de toutes les portes, et c'est la seule <strong>porte logique unaire</strong> (avec une seule entrée/opérande)</p>
-<p><img alt="circuit et Schémas d'une Porte NOT" class="center" src="../data/porteNOT_USA_Europe.png" width="250px"/></p>
+<p><img alt="circuit et Schémas d'une Porte NOT" class="center" src="../data/porteNOT_USA_Europe.png" width="250px" /></p>
 <div class="admonition not">
 <p class="admonition-title">NOT</p>
 <ul>
 <li>symbole usuel : ~  </li>
 <li>français : NON  </li>
-<li>anglais (et Python) : <code>not</code> </li>
-<li>notation logique :  <span class="arithmatex">\(\neg\)</span> </li>
-<li>notation mathématique :  <span class="arithmatex">\(\overline{x}\)</span> </li>
+<li>anglais (et Python) : <code>not</code>  </li>
+<li>notation logique :  <span class="arithmatex">\(\neg\)</span>  </li>
+<li>notation mathématique :  <span class="arithmatex">\(\overline{x}\)</span>  </li>
 </ul>
 </div>
 <h3 id="table-de-verite">Table de Vérité<a class="headerlink" href="#table-de-verite" title="Permanent link">⚓︎</a></h3>
 <p>La Porte NOT n'admet qu'un seul bit en entrée (A) et les résultats de son unique sortie (S) sont résumés dans sa <strong>Table de Vérité:</strong></p>
 <div class="admonition jeretiens">
-<p class="admonition-title">Table de vérité de NOT <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:"/></p>
+<p class="admonition-title">Table de vérité de NOT <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /></p>
 <table>
 <thead>
 <tr>
@@ -1609,25 +2588,25 @@ Chaque valeur <span class="arithmatex">\(f(x,y,z)\)</span> étant ou bien un <sp
 <div class="admonition def">
 <p class="admonition-title">Def</p>
 <p>La Porte Logique <strong>AND (ET)</strong>, ou Opérateur de <strong>Conjonction</strong>, est défini par la phrase suivante :</p>
-<p><center><enc>La sortie est VRAI si et seulement si l'une ET l'autre entrées sont VRAI (simultanément)<br/>
+<p><center><enc>La sortie est VRAI si et seulement si l'une ET l'autre entrées sont VRAI (simultanément)<br />
 <span class="arithmatex">\(\Leftrightarrow\)</span> les deux entrées sont VRAI (simultanément)</enc></center></p>
 </div>
 <h3 id="circuits-et-schemas_1">Circuits et Schémas<a class="headerlink" href="#circuits-et-schemas_1" title="Permanent link">⚓︎</a></h3>
-<p><img alt="circuit et Schémas Porte AND" class="center" src="../data/porteAND_USA_europe.png" width="250px"/></p>
+<p><img alt="circuit et Schémas Porte AND" class="center" src="../data/porteAND_USA_europe.png" width="250px" /></p>
 <div class="admonition not">
 <p class="admonition-title">AND</p>
 <ul>
 <li>symbole usuel : &amp; (appelé <em>esperluette</em> en français et <em>ampersand</em> en anglais)  </li>
 <li>français : ET  </li>
-<li>anglais (et Python) : <code>and</code> </li>
-<li>notation logique : <span class="arithmatex">\(\wedge\)</span> </li>
-<li>notation mathématique :  <code>.</code> </li>
+<li>anglais (et Python) : <code>and</code>  </li>
+<li>notation logique : <span class="arithmatex">\(\wedge\)</span>  </li>
+<li>notation mathématique :  <code>.</code>  </li>
 </ul>
 </div>
 <h3 id="table-de-verite_1">Table de Vérité<a class="headerlink" href="#table-de-verite_1" title="Permanent link">⚓︎</a></h3>
 <p>La Porte AND (ET) admet deux valeurs en entrée (notées <span class="arithmatex">\(A\)</span> et <span class="arithmatex">\(B\)</span>), et une unique valeur de Sortie (<span class="arithmatex">\(S\)</span>).</p>
 <div class="admonition jeretiens">
-<p class="admonition-title">Table de vérité de AND <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:"/></p>
+<p class="admonition-title">Table de vérité de AND <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /></p>
 <table>
 <thead>
 <tr>
@@ -1660,7 +2639,8 @@ Chaque valeur <span class="arithmatex">\(f(x,y,z)\)</span> étant ou bien un <sp
 </tbody>
 </table>
 </div>
-<iframe src="https://logic.modulo-info.ch/?mode=tryout&amp;data=N4IgbiBcAsA0IHMCGAXApgZygbVCgngA5pQgCCAcgCIjyED2Wk2AzCwAywCMArOwLrwAlgDscAJk7iugkPQCuKKOPEBfWaJygGTbOI7dJGgCbKW8MEgA2UdqtjbGEg1wAcA4acji44a7fV4BSVmR11odk5eDxAhL3EeQJAAdyEAJ0wcPXMjWD04aUE9cVgE-n5VIA" style="width: 100%; height: 300px; border: 0"></iframe>
+<iframe style="width: 100%; height: 300px; border: 0" src="https://logic.modulo-info.ch/?mode=tryout&data=N4IgbiBcAsA0IHMCGAXApgZygbVCgngA5pQgCCAcgCIjyED2Wk2AzCwAywCMArOwLrwAlgDscAJk7iugkPQCuKKOPEBfWaJygGTbOI7dJGgCbKW8MEgA2UdqtjbGEg1wAcA4acji44a7fV4BSVmR11odk5eDxAhL3EeQJAAdyEAJ0wcPXMjWD04aUE9cVgE-n5VIA"></iframe>
+
 <h4 id="exemples-en-python_1">Exemples en Python<a class="headerlink" href="#exemples-en-python_1" title="Permanent link">⚓︎</a></h4>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
@@ -1681,7 +2661,7 @@ Chaque valeur <span class="arithmatex">\(f(x,y,z)\)</span> étant ou bien un <sp
 
     <span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="n">integer</span> <span class="n">division</span> <span class="ow">or</span> <span class="n">modulo</span> <span class="n">by</span> <span class="n">zero</span>
 </code></pre></div>
-<p>Évidemment, la division par 0 provoque une erreur.<br/>
+<p>Évidemment, la division par 0 provoque une erreur.<br />
 Mais observez maintenant ce code :</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">0</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
 <span class="kc">False</span>
@@ -1692,25 +2672,25 @@ Mais observez maintenant ce code :</p>
 <div class="admonition def">
 <p class="admonition-title">Def</p>
 <p>La Porte Logique <strong>OR (OU)</strong>, ou Opérateur de <strong>Disjonction</strong>, est défini par la phrase suivante :</p>
-<p><center><enc>La sortie est VRAI si et seulement si l'une OU l'autre des entrées est VRAI<br/>
+<p><center><enc>La sortie est VRAI si et seulement si l'une OU l'autre des entrées est VRAI<br />
 <span class="arithmatex">\(\Leftrightarrow\)</span> au moins l'une des entrées est VRAI</enc></center></p>
 </div>
 <h3 id="circuits-et-schemas_2">Circuits et Schémas<a class="headerlink" href="#circuits-et-schemas_2" title="Permanent link">⚓︎</a></h3>
-<p><img alt="circuit et Schémas Porte OR" class="center" src="../data/porteOR_USA_Europe.png" width="250px"/></p>
+<p><img alt="circuit et Schémas Porte OR" class="center" src="../data/porteOR_USA_Europe.png" width="250px" /></p>
 <div class="admonition not">
 <p class="admonition-title">OR</p>
 <ul>
 <li>symbole usuel : | appelé <em>pipe</em> en anglais  </li>
 <li>français : OU  </li>
-<li>anglais (et Python) : <code>or</code> </li>
-<li>notation logique : <span class="arithmatex">\(\vee\)</span> </li>
-<li>notation mathématique :  <span class="arithmatex">\(+\)</span> </li>
+<li>anglais (et Python) : <code>or</code>  </li>
+<li>notation logique : <span class="arithmatex">\(\vee\)</span>  </li>
+<li>notation mathématique :  <span class="arithmatex">\(+\)</span>  </li>
 </ul>
 </div>
 <h3 id="table-de-verite_2">Table de Vérité<a class="headerlink" href="#table-de-verite_2" title="Permanent link">⚓︎</a></h3>
 <p>La Porte OR (OU) admet deux valeurs en entrée (notées <span class="arithmatex">\(A\)</span> et <span class="arithmatex">\(B\)</span>), et une unique valeur de Sortie (<span class="arithmatex">\(S\)</span>).</p>
 <div class="admonition jeretiens">
-<p class="admonition-title">Table de vérité de OR <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:"/></p>
+<p class="admonition-title">Table de vérité de OR <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /></p>
 <table>
 <thead>
 <tr>
@@ -1743,7 +2723,8 @@ Mais observez maintenant ce code :</p>
 </tbody>
 </table>
 </div>
-<iframe src="https://logic.modulo-info.ch/?mode=tryout&amp;data=N4IgbiBcAsA0IEsB2UDaoAOB7AzmgTAMwAMsAjPsQLrwIAmUR8YAhgDZTEC+smuBJcgA5qtBpHxxw7TlxogsAVwAuaPnkipoxUmQCsoxOPx658AOYtlAUw3oQygJ4ZrUEAHkASiHjY7hQX1DZAIANlh8AHZ5JVUJITMQAHcEACdbNFR8IQi9GizCCND8yQjoqi4gA" style="width: 100%; height: 300px; border: 0"></iframe>
+<iframe style="width: 100%; height: 300px; border: 0" src="https://logic.modulo-info.ch/?mode=tryout&data=N4IgbiBcAsA0IEsB2UDaoAOB7AzmgTAMwAMsAjPsQLrwIAmUR8YAhgDZTEC+smuBJcgA5qtBpHxxw7TlxogsAVwAuaPnkipoxUmQCsoxOPx658AOYtlAUw3oQygJ4ZrUEAHkASiHjY7hQX1DZAIANlh8AHZ5JVUJITMQAHcEACdbNFR8IQi9GizCCND8yQjoqi4gA"></iframe>
+
 <h4 id="exemples-en-python_2">Exemples en Python<a class="headerlink" href="#exemples-en-python_2" title="Permanent link">⚓︎</a></h4>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
@@ -1762,13 +2743,13 @@ Mais observez maintenant ce code :</p>
 <div class="admonition def">
 <p class="admonition-title">Def</p>
 <p>La Porte Logique <strong>NAND (NOT-AND / NON-ET)</strong>, ou Opérateur de <strong>Négation de la Conjonction</strong>, est défini par la phrase suivante :</p>
-<p><center><enc>La sortie est VRAI si et seulement si PAS TOUTES les entrées ne sont VRAI (simultanément)<br/>
-<span class="arithmatex">\(\Leftrightarrow\)</span> au plus une des entrées est VRAI<br/>
+<p><center><enc>La sortie est VRAI si et seulement si PAS TOUTES les entrées ne sont VRAI (simultanément)<br />
+<span class="arithmatex">\(\Leftrightarrow\)</span> au plus une des entrées est VRAI<br />
 <span class="arithmatex">\(\Leftrightarrow\)</span> au moins une des entrées est FAUX</enc></center></p>
 </div>
 <h3 id="circuits-et-schemas_3">Circuits et Schémas<a class="headerlink" href="#circuits-et-schemas_3" title="Permanent link">⚓︎</a></h3>
 <p>Deux transistors en série constituent une porte NAND / NOT-AND / NON-ET.</p>
-<p><img alt="circuit et Schémas Porte NAND" class="center" src="../data/porteNAND_USA_Europe.png" width="250px"/></p>
+<p><img alt="circuit et Schémas Porte NAND" class="center" src="../data/porteNAND_USA_Europe.png" width="250px" /></p>
 <div class="admonition not">
 <p class="admonition-title">NAND</p>
 <p>On note <span class="arithmatex">\(S=A\)</span> <span class="arithmatex">\(nand\)</span> <span class="arithmatex">\(B=\overline{A\land B}=\overline{A.B}=\)</span> ~ <span class="arithmatex">\((A\)</span> &amp; <span class="arithmatex">\(B)=A \uparrow B\)</span></p>
@@ -1776,7 +2757,7 @@ Mais observez maintenant ce code :</p>
 <h3 id="table-de-verite_3">Table de Vérité<a class="headerlink" href="#table-de-verite_3" title="Permanent link">⚓︎</a></h3>
 <p>La Porte NAND (NON-ET) admet deux valeurs en entrée (notées <span class="arithmatex">\(A\)</span> et <span class="arithmatex">\(B\)</span>), et une unique valeur de Sortie (<span class="arithmatex">\(S\)</span>).</p>
 <div class="admonition abstract">
-<p class="admonition-title">Table de vérité de NAND <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:"/></p>
+<p class="admonition-title">Table de vérité de NAND <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /></p>
 <table>
 <thead>
 <tr>
@@ -1809,7 +2790,8 @@ Mais observez maintenant ce code :</p>
 </tbody>
 </table>
 </div>
-<iframe src="https://logic.modulo-info.ch/?mode=tryout&amp;data=N4IgbiBcAsA0IHMCGAXApgZygbVCgngA5pQgByAgmQCIjyED2Wk2ATAJwAMsAjAMycAuvACWAOxwdYA4SAYBXFFD48AvrPE5QjZth5denIaIAmy1vDBIANlE6rY2pjn3ceANmMgRZyHz6WNnbq8ApKLE66fJ68MqbK0CEgAO4iAE6YONh8FhzC2QFx2TzS0IKCqkA" style="width: 100%; height: 260px; border: 0"></iframe>
+<iframe style="width: 100%; height: 260px; border: 0" src="https://logic.modulo-info.ch/?mode=tryout&data=N4IgbiBcAsA0IHMCGAXApgZygbVCgngA5pQgByAgmQCIjyED2Wk2ATAJwAMsAjAMycAuvACWAOxwdYA4SAYBXFFD48AvrPE5QjZth5denIaIAmy1vDBIANlE6rY2pjn3ceANmMgRZyHz6WNnbq8ApKLE66fJ68MqbK0CEgAO4iAE6YONh8FhzC2QFx2TzS0IKCqkA"></iframe>
+
 <h3 id="universalite">Universalité<a class="headerlink" href="#universalite" title="Permanent link">⚓︎</a></h3>
 <div class="admonition pte">
 <p class="admonition-title">NAND est Universelle</p>
@@ -1843,13 +2825,13 @@ Mais observez maintenant ce code :</p>
 <div class="admonition def">
 <p class="admonition-title">Def</p>
 <p>La Porte Logique <strong>NOR (NOT-OR / NON-OU)</strong>, ou Opérateur de <strong>Négation de la Disjonction</strong>, ou <em>NI/NI</em>, est défini par la phrase suivante :</p>
-<p><center><enc>La sortie est VRAI si et seulement si AUCUNE des entrées n'est VRAI<br/>
-<span class="arithmatex">\(\Leftrightarrow\)</span> les deux entrées sont FAUX<br/>
+<p><center><enc>La sortie est VRAI si et seulement si AUCUNE des entrées n'est VRAI<br />
+<span class="arithmatex">\(\Leftrightarrow\)</span> les deux entrées sont FAUX<br />
 <span class="arithmatex">\(\Leftrightarrow\)</span> NI l'une NI l'autre des entrées n'est VRAI</enc></center></p>
 </div>
 <h3 id="circuits-et-schemas_4">Circuits et Schémas<a class="headerlink" href="#circuits-et-schemas_4" title="Permanent link">⚓︎</a></h3>
 <p>Deux transistors en parallèles constituent une porte NOR / NOT-OR / NON-OU.</p>
-<p><img alt="circuit et Schémas Porte NOR" class="center" src="../data/porteNOR_USA_Europe.png" width="250px"/></p>
+<p><img alt="circuit et Schémas Porte NOR" class="center" src="../data/porteNOR_USA_Europe.png" width="250px" /></p>
 <div class="admonition not">
 <p class="admonition-title">NOR</p>
 <p>On note <span class="arithmatex">\(S =  A\)</span> <span class="arithmatex">\(nor\)</span> <span class="arithmatex">\(B=A \downarrow B\)</span></p>
@@ -1857,7 +2839,7 @@ Mais observez maintenant ce code :</p>
 <h3 id="table-de-verite_4">Table de Vérité<a class="headerlink" href="#table-de-verite_4" title="Permanent link">⚓︎</a></h3>
 <p>La Porte NOR (NON-OU) admet deux valeurs en entrée (notées <span class="arithmatex">\(A\)</span> et <span class="arithmatex">\(B\)</span>), et une unique valeur de Sortie (<span class="arithmatex">\(S\)</span>).</p>
 <div class="admonition abstract">
-<p class="admonition-title">Table de vérité de NOR <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:"/></p>
+<p class="admonition-title">Table de vérité de NOR <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /></p>
 <table>
 <thead>
 <tr>
@@ -1890,7 +2872,8 @@ Mais observez maintenant ce code :</p>
 </tbody>
 </table>
 </div>
-<iframe src="https://logic.modulo-info.ch/?mode=tryout&amp;data=N4IgbiBcAsA0IHMCGAXApgZygbVCgngA5pQgByA8gEojyED2Wk200ADLAIwBsbAuvACWAOxzROsaACYBIegFcUUaAGYAvrIVLmoBk2wBWThx78hAE2XQNQ0TpB6cK9lwCcZkIMswD8MEgAbKDY1WF1GJxdOKQ8vZW4-QOCbEAB3QQAnTBwWFUloARZfaULoBPE+PjUgA" style="width: 100%; height: 310px; border: 0"></iframe>
+<iframe style="width: 100%; height: 310px; border: 0" src="https://logic.modulo-info.ch/?mode=tryout&data=N4IgbiBcAsA0IHMCGAXApgZygbVCgngA5pQgByA8gEojyED2Wk200ADLAIwBsbAuvACWAOxzROsaACYBIegFcUUaAGYAvrIVLmoBk2wBWThx78hAE2XQNQ0TpB6cK9lwCcZkIMswD8MEgAbKDY1WF1GJxdOKQ8vZW4-QOCbEAB3QQAnTBwWFUloARZfaULoBPE+PjUgA"></iframe>
+
 <h3 id="universalite_1">Universalité<a class="headerlink" href="#universalite_1" title="Permanent link">⚓︎</a></h3>
 <div class="admonition pte">
 <p class="admonition-title">NOR est Universelle</p>
@@ -1901,11 +2884,11 @@ Mais observez maintenant ce code :</p>
 <div class="admonition def">
 <p class="admonition-title">Def</p>
 <p>La Porte Logique <strong>XOR (Exclusive OR / OU EXCLUSIF)</strong>, ou Opérateur de <strong>Différence</strong>, ou Opérateur de <strong>Disjonction Exclusive</strong>, est défini par la phrase suivante :</p>
-<p><center><enc>La sortie est VRAI si et seulement si les entrées NE sont PAS égales entre elles<br/>
+<p><center><enc>La sortie est VRAI si et seulement si les entrées NE sont PAS égales entre elles<br />
 <span class="arithmatex">\(\Leftrightarrow\)</span> L'une des entrées EXCLUSIVEMENT est VRAI (pas les deux)</enc></center></p>
 </div>
 <h3 id="circuits-et-schema">Circuits et Schéma<a class="headerlink" href="#circuits-et-schema" title="Permanent link">⚓︎</a></h3>
-<p><img alt="circuit et Schémas Porte XOR" class="center" src="../data/porteXOR_USA_Europe.png" width="250px"/></p>
+<p><img alt="circuit et Schémas Porte XOR" class="center" src="../data/porteXOR_USA_Europe.png" width="250px" /></p>
 <div class="admonition not">
 <p class="admonition-title">XOR</p>
 <p>On note <span class="arithmatex">\(S= A\)</span> <span class="arithmatex">\(xor\)</span> <span class="arithmatex">\(B = A\oplus B\)</span> = <span class="arithmatex">\(A\)</span> ^ <span class="arithmatex">\(B\)</span></p>
@@ -1913,7 +2896,7 @@ Mais observez maintenant ce code :</p>
 <h3 id="table-de-verite_5">Table de Vérité<a class="headerlink" href="#table-de-verite_5" title="Permanent link">⚓︎</a></h3>
 <p>La Porte XOR (OU EXCLUSIF) admet deux valeurs en entrée (notées <span class="arithmatex">\(A\)</span> et <span class="arithmatex">\(B\)</span>), et une unique valeur de Sortie (<span class="arithmatex">\(S\)</span>).</p>
 <div class="admonition abstract">
-<p class="admonition-title">Table de vérité de XOR <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:"/></p>
+<p class="admonition-title">Table de vérité de XOR <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /></p>
 <table>
 <thead>
 <tr>
@@ -1946,11 +2929,12 @@ Mais observez maintenant ce code :</p>
 </tbody>
 </table>
 </div>
-<iframe src="https://logic.modulo-info.ch/?mode=tryout&amp;data=N4IgbiBcAsA0IHMCGAXApgZygbVCgngA5pQgAaA8gEojyED2Wk20ATAAywCMAbOwLrwAlgDscAZgCsscT0Eh6AVxRRxAdgC+8pSuagGTFgE5OvAcIAmqgBxbhYvSAMSupjvKFXI4o-DBIAGyh2DVh9RhdTEw8vaE5wQOC7EAB3IQAnTBxsdRlrQRzfKQK4mTl+DSA" style="width: 100%; height: 310px; border: 0"></iframe>
+<iframe style="width: 100%; height: 310px; border: 0" src="https://logic.modulo-info.ch/?mode=tryout&data=N4IgbiBcAsA0IHMCGAXApgZygbVCgngA5pQgAaA8gEojyED2Wk20ATAAywCMAbOwLrwAlgDscAZgCsscT0Eh6AVxRRxAdgC+8pSuagGTFgE5OvAcIAmqgBxbhYvSAMSupjvKFXI4o-DBIAGyh2DVh9RhdTEw8vaE5wQOC7EAB3IQAnTBxsdRlrQRzfKQK4mTl+DSA"></iframe>
+
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <ol>
-<li>Écrire la table de vérité de la loi définie par :<br/>
+<li>Écrire la table de vérité de la loi définie par :<br />
 <span class="arithmatex">\(f(A,B) =\)</span> (not A and B ) or (A and not B )  </li>
 </ol>
 <p>Table de vérité   </p>
@@ -2009,7 +2993,8 @@ Mais observez maintenant ce code :</p>
 <li>Concevoir un circuit qui, étant données deux entrées A et B, donne en sortie la valeur A xor B , en utilisant seulement des portes Non, Et, Ou.</li>
 </ol>
 </div>
-<iframe src="https://logic.modulo-info.ch/?mode=design&amp;data=N4IgbiBcAsC+Q" style="width: 100%; height: 550px; border: 0"></iframe>
+<iframe style="width: 100%; height: 550px; border: 0" src="https://logic.modulo-info.ch/?mode=design&data=N4IgbiBcAsC+Q"></iframe>
+
 <div class="admonition info">
 <p class="admonition-title">Application en électricité domestique.</p>
 <p>Une application utilisée de l’opérateur logique XOR en électricité domestique est dans les salles où une ampoule peut être allumée ou éteinte par deux interrupteurs placés près de deux entrées. Chacun des deux interrupteurs peut soit allumer ou éteindre l’ampoule quelle que soit la position de l’autre interrupteur. Pour obtenir une telle fonctionnalité, on doit brancher les deux interrupteurs afin de former un opérateur XOR. C’est le montage dit « va-et-vient ».</p>
@@ -2068,7 +3053,8 @@ Mais observez maintenant ce code :</p>
 </ol>
 </div>
 <p>Construire les circuits correpondants pour tester vos réponses :   </p>
-<iframe src="https://logic.modulo-info.ch/?mode=design&amp;data=N4IgbiBcAsC+Q" style="width: 100%; height: 550px; border: 0"></iframe>
+<iframe style="width: 100%; height: 550px; border: 0" src="https://logic.modulo-info.ch/?mode=design&data=N4IgbiBcAsC+Q"></iframe>
+
 <h3 id="applications-du-xor">Applications du XOR<a class="headerlink" href="#applications-du-xor" title="Permanent link">⚓︎</a></h3>
 <h4 id="en-cryptographie">En Cryptographie<a class="headerlink" href="#en-cryptographie" title="Permanent link">⚓︎</a></h4>
 <p>Le XOR joue un rôle fondamental en Cryptographie car il possède une propriété très intéressante : 
@@ -2077,7 +3063,7 @@ Mais observez maintenant ce code :</p>
 Mais en refaisant un XOR du message chiffré avec la clé <span class="arithmatex">\(y\)</span>, on retrouve donc le message <span class="arithmatex">\(x\)</span> initial.
 En pratique, cette méthode est souvent utilisée avec une clé <span class="arithmatex">\(y\)</span> à usage unique, càd avec la <strong>technique du masque jetable</strong>.</p>
 <p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :</p>
-<p><span class="centre"><a class="md-button" href="../../../pdf/C13/C13-cours.pdf" target="_blank">Diaporama de cours <span class="twemoji"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"></path></svg></span></a></span></p>
+<p><span class='centre'><a class="md-button" href="../../../pdf/C13/C13-cours.pdf" target="_blank">Diaporama de cours <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"/></svg></span></a></span></p>
 <div class="admonition warning">
 <p class="admonition-title">Attention</p>
 <p>Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos <strong>propres</strong> notes de cours et par une révision approfondie des exercices.</p>
@@ -2085,7 +3071,7 @@ En pratique, cette méthode est souvent utilisée avec une clé <span class="ari
 <h2 id="exercices">EXERCICES<a class="headerlink" href="#exercices" title="Permanent link">⚓︎</a></h2>
 <div class="admonition exo">
 <p class="admonition-title">Établir des tables de vérité</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Enoncé</label><label for="__tabbed_1_2">Solution 1</label><label for="__tabbed_1_3">Solution 2</label><label for="__tabbed_1_4">Solution 3</label><label for="__tabbed_1_5">Solution 4</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Enoncé</label><label for="__tabbed_1_2">Solution 1</label><label for="__tabbed_1_3">Solution 2</label><label for="__tabbed_1_4">Solution 3</label><label for="__tabbed_1_5">Solution 4</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Écrire les tables de vérité des expressions booléennes suivantes :</p>
@@ -2300,13 +3286,14 @@ En pratique, cette méthode est souvent utilisée avec une clé <span class="ari
 </table>
 </div>
 </div>
-</input></input></input></input></input></div>
+</div>
 </div>
 <p>Construire les circuits correpondants pour tester vos réponses :   </p>
-<iframe src="https://logic.modulo-info.ch/?mode=design&amp;data=N4IgbiBcAsC+Q" style="width: 100%; height: 550px; border: 0"></iframe>
+<iframe style="width: 100%; height: 550px; border: 0" src="https://logic.modulo-info.ch/?mode=design&data=N4IgbiBcAsC+Q"></iframe>
+
 <div class="admonition exo">
 <p class="admonition-title">Équivalence d'expressions booléennes</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Enoncé</label><label for="__tabbed_2_2">Solution 1</label><label for="__tabbed_2_3">Solution 2</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Enoncé</label><label for="__tabbed_2_2">Solution 1</label><label for="__tabbed_2_3">Solution 2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
@@ -2423,12 +3410,12 @@ En pratique, cette méthode est souvent utilisée avec une clé <span class="ari
 </table>
 </div>
 </div>
-</input></input></input></div>
+</div>
 </div>
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <p>On considère le circuit logique ci-dessous.  </p>
-<p><img alt="" src="../portes_logiques/exo.png"/></p>
+<p><img alt="" src="../portes_logiques/exo.png" /></p>
 <ol>
 <li>Donner l’expression booléenne de S (la sortie) en fonction des variables A, B et C (dans cet ordre sur le schéma).   </li>
 <li>Compléter la table de vérité ci-dessous.</li>
@@ -2497,7 +3484,7 @@ En pratique, cette méthode est souvent utilisée avec une clé <span class="ari
 <div class="admonition exo">
 <p class="admonition-title">Exo</p>
 <p>On considère le circuit logique suivant.  </p>
-<p><img alt="" src="../portes_logiques/MUX2.png"/> </p>
+<p><img alt="" src="../portes_logiques/MUX2.png" />  </p>
 <ol>
 <li>Donner l’expression de Out en fonction de E1, E2 et C.  </li>
 <li>Compléter le tableau de vérité de ce circuit.</li>
@@ -2564,21 +3551,21 @@ En pratique, cette méthode est souvent utilisée avec une clé <span class="ari
 </table>
 <div class="admonition info">
 <p class="admonition-title">Remarque</p>
-<p>Le circuit étudié est appelé multiplexeur à 2 entrées.<br/>
-Selon la valeur de la commande (C ), il permet de reproduire en sortie (Out) :<br/>
-- le signal E 1 si C est à 0.<br/>
+<p>Le circuit étudié est appelé multiplexeur à 2 entrées.<br />
+Selon la valeur de la commande (C ), il permet de reproduire en sortie (Out) :<br />
+- le signal E 1 si C est à 0.<br />
 - le signal E 2 si C est à 1.  </p>
 </div>
 </div>
 <div class="admonition exo">
 <p class="admonition-title">Circuit MUX-4 (difficile)</p>
 <p>On considère un multiplexeur à 4 entrées, dont le circuit est représenté ci-dessous.  </p>
-<p><img alt="" src="../portes_logiques/MUX4.png"/> </p>
+<p><img alt="" src="../portes_logiques/MUX4.png" />   </p>
 <ol>
-<li>Par analyse du circuit, déterminer l’expression booléenne de Out en fonction des entrées E1, E2, E3, E4 et des commandes C0 et C1.<br/>
+<li>Par analyse du circuit, déterminer l’expression booléenne de Out en fonction des entrées E1, E2, E3, E4 et des commandes C0 et C1.<br />
 On peut par exemple ci-dessous vérifier quelle est la l’entrée reproduite en sortie selon les valeurs de C0 et C1.   </li>
 </ol>
-<p><iframe src="https://logic.modulo-info.ch/?mode=design&amp;data=N4IgbiBcAsC+Q" style="width: 100%; height: 550px; border: 0"></iframe></p>
+<p><iframe style="width: 100%; height: 550px; border: 0" src="https://logic.modulo-info.ch/?mode=design&data=N4IgbiBcAsC+Q"></iframe></p>
 <ol>
 <li>Quelles sont les valeurs des commandes C0 et C1 qui permettent de sélectionner en sortie (Out) :  </li>
 <li>l’entrée E 1 ?  </li>
@@ -2594,9 +3581,9 @@ Selon la valeur des commandes C0 et C1, il permet de reproduire en sortie (Out) 
 </div>
 <div class="admonition exo">
 <p class="admonition-title">Le demi-additionneur (half adder)</p>
-<p>Le circuit étudié, appelé demi-additionneur, permet d’additionner deux bits A et B.<br/>
+<p>Le circuit étudié, appelé demi-additionneur, permet d’additionner deux bits A et B.<br />
 Il comporte deux sorties C et S qui représentent deux expressions booléennes.  </p>
-<p><img alt="" src="../portes_logiques/demi_addit.png" width="350px"/></p>
+<p><img alt="" src="../portes_logiques/demi_addit.png" width="350px" /></p>
 <ol>
 <li>Donner les expressions booléennes de C et S en fonction de A et B .  </li>
 <li>Compléter la table de vérité de C et S.  </li>
@@ -2675,13 +3662,13 @@ Il comporte deux sorties C et S qui représentent deux expressions booléennes. 
 </div>
 <div class="admonition exo">
 <p class="admonition-title">additionneur</p>
-<p>En pratique, une addition binaire est une suite d’additions sur 1 bit. Néanmoins, il faut connaître la retenue pour enchaîner ces additions. On réalise alors le circuit ci-dessous, appelé additionneur complet.<br/>
+<p>En pratique, une addition binaire est une suite d’additions sur 1 bit. Néanmoins, il faut connaître la retenue pour enchaîner ces additions. On réalise alors le circuit ci-dessous, appelé additionneur complet.<br />
 Il comporte deux sorties Cout , S et trois entrées, le bit A, le bit B et la retenue précédente Cin  </p>
-<p><img alt="" src="../portes_logiques/additionneur.png" width="550px"/></p>
+<p><img alt="" src="../portes_logiques/additionneur.png" width="550px" /></p>
 <ol>
 <li>Réaliser ce circuit ci-dessous.   </li>
 </ol>
-<p><iframe src="https://logic.modulo-info.ch/?mode=design&amp;data=N4IgbiBcAsC+Q" style="width: 100%; height: 550px; border: 0"></iframe> </p>
+<p><iframe style="width: 100%; height: 550px; border: 0" src="https://logic.modulo-info.ch/?mode=design&data=N4IgbiBcAsC+Q"></iframe>  </p>
 <ol>
 <li>Compléter la table de vérité ci-dessous.  </li>
 </ol>
@@ -2809,10 +3796,10 @@ Testez-les syntaxes suivantes et vérifier les résultats :</p>
 </code></pre></div>
 <details class="- corr">
 <summary>-</summary>
-<p>Pour comprendre ces résultats, il faut travailler en binaire. Voici les mêmes calculs :<br/>
+<p>Pour comprendre ces résultats, il faut travailler en binaire. Voici les mêmes calculs :<br />
 calcul A  </p>
-<p>12 -&gt; 1100<br/>
-7 -&gt; 0111<br/>
+<p>12 -&gt; 1100<br />
+7 -&gt; 0111<br />
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code>  <span class="mi">1100</span>
 <span class="o">&amp;</span> <span class="mi">0111</span>
 <span class="o">----------</span>
@@ -2821,33 +3808,33 @@ calcul A  </p>
 <p>0100 -&gt; 4</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># calcul A</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="mb">0b1100</span> <span class="o">&amp;</span> <span class="mb">0b111</span><span class="p">)</span>
-    <span class="s1">'0b100'</span>
+    <span class="s1">&#39;0b100&#39;</span>
 </code></pre></div>
 <p>calcul B  </p>
-<p>12 -&gt; 1100<br/>
-7 -&gt; 0111<br/>
+<p>12 -&gt; 1100<br />
+7 -&gt; 0111<br />
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code>  <span class="mi">1100</span>
 <span class="o">|</span> <span class="mi">0111</span>
 <span class="o">----------</span>
   <span class="mi">1111</span>  
 </code></pre></div></p>
-<p>1111 -&gt; 15<br/>
+<p>1111 -&gt; 15<br />
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># calcul B</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="mb">0b1100</span> <span class="o">|</span> <span class="mb">0b111</span><span class="p">)</span>
-<span class="s1">'0b1111'</span>
+<span class="s1">&#39;0b1111&#39;</span>
 </code></pre></div></p>
 <p>calcul C  </p>
-<p>12 -&gt; 1100<br/>
-5 -&gt; 0101<br/>
+<p>12 -&gt; 1100<br />
+5 -&gt; 0101<br />
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code>  <span class="mi">1100</span>
 <span class="o">^</span> <span class="mi">0101</span>
 <span class="o">----------</span>
   <span class="mi">1001</span>  
 </code></pre></div></p>
-<p>1001 -&gt; 9  <br/>
+<p>1001 -&gt; 9  <br />
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># calcul C</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="mb">0b1100</span> <span class="o">^</span> <span class="mb">0b111</span><span class="p">)</span>
-    <span class="s1">'0b1011'</span>
+    <span class="s1">&#39;0b1011&#39;</span>
 </code></pre></div></p>
 </details>
 </div>
@@ -2863,7 +3850,7 @@ calcul A  </p>
 <p>Et le message à déchiffrer est le suivant :</p>
 <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">msg</span> <span class="o">=</span> <span class="p">[</span><span class="mi">160</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">222</span><span class="p">,</span><span class="mi">209</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">242</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">206</span><span class="p">,</span><span class="mi">141</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">170</span><span class="p">,</span><span class="mi">129</span><span class="p">,</span><span class="mi">122</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">207</span><span class="p">,</span><span class="mi">169</span><span class="p">,</span><span class="mi">145</span><span class="p">,</span><span class="mi">242</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">141</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">235</span><span class="p">,</span><span class="mi">189</span><span class="p">,</span><span class="mi">239</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">197</span><span class="p">,</span><span class="mi">191</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">154</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">154</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">242</span><span class="p">,</span><span class="mi">251</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">81</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">207</span><span class="p">,</span><span class="mi">62</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">118</span><span class="p">,</span><span class="mi">221</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">151</span><span class="p">,</span><span class="mi">158</span><span class="p">,</span><span class="mi">146</span><span class="p">,</span> <span class="mi">198</span><span class="p">,</span><span class="mi">236</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">231</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">215</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">148</span><span class="p">,</span><span class="mi">238</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">211</span><span class="p">,</span><span class="mi">214</span><span class="p">,</span><span class="mi">148</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="mi">92</span><span class="p">,</span><span class="mi">81</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="mi">214</span><span class="p">,</span><span class="mi">254</span><span class="p">,</span><span class="mi">146</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">38</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">131</span><span class="p">,</span><span class="mi">57</span><span class="p">,</span><span class="mi">225</span><span class="p">,</span><span class="mi">173</span><span class="p">,</span><span class="mi">107</span><span class="p">,</span><span class="mi">159</span><span class="p">,</span><span class="mi">151</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mi">253</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">38</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">228</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">232</span><span class="p">,</span><span class="mi">109</span><span class="p">,</span><span class="mi">158</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">238</span><span class="p">,</span><span class="mi">161</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">236</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">183</span><span class="p">,</span><span class="mi">246</span><span class="p">,</span><span class="mi">235</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">213</span><span class="p">,</span><span class="mi">232</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="mi">210</span><span class="p">,</span><span class="mi">189</span><span class="p">,</span><span class="mi">113</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">118</span><span class="p">,</span><span class="mi">232</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">134</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">225</span><span class="p">,</span><span class="mi">226</span><span class="p">,</span><span class="mi">184</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">118</span><span class="p">,</span><span class="mi">114</span><span class="p">,</span><span class="mi">182</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">134</span><span class="p">,</span><span class="mi">92</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">63</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">234</span><span class="p">,</span><span class="mi">193</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">238</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">236</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">208</span><span class="p">,</span><span class="mi">106</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">114</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">228</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">237</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">172</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">149</span><span class="p">,</span><span class="mi">210</span><span class="p">,</span><span class="mi">142</span><span class="p">,</span><span class="mi">235</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">243</span><span class="p">,</span><span class="mi">143</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">251</span><span class="p">,</span><span class="mi">159</span><span class="p">,</span><span class="mi">234</span><span class="p">,</span><span class="mi">209</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="mi">232</span><span class="p">,</span><span class="mi">245</span><span class="p">,</span><span class="mi">187</span><span class="p">,</span><span class="mi">245</span><span class="p">,</span><span class="mi">210</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">132</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">198</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">214</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">227</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">243</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">147</span><span class="p">,</span><span class="mi">239</span><span class="p">,</span><span class="mi">207</span><span class="p">,</span><span class="mi">82</span><span class="p">,</span><span class="mi">228</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">146</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">135</span><span class="p">,</span><span class="mi">119</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">165</span><span class="p">,</span><span class="mi">238</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">126</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">129</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">202</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="mi">232</span><span class="p">,</span><span class="mi">235</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">131</span><span class="p">,</span><span class="mi">172</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">79</span><span class="p">,</span><span class="mi">236</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">225</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">187</span><span class="p">,</span><span class="mi">147</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">182</span><span class="p">,</span><span class="mi">73</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">182</span><span class="p">,</span><span class="mi">148</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">199</span><span class="p">,</span><span class="mi">171</span><span class="p">,</span><span class="mi">114</span><span class="p">,</span><span class="mi">189</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">225</span><span class="p">,</span><span class="mi">198</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">151</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">218</span><span class="p">,</span><span class="mi">148</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">201</span><span class="p">,</span><span class="mi">213</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">158</span><span class="p">,</span><span class="mi">91</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">193</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">244</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">228</span><span class="p">,</span><span class="mi">183</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">119</span><span class="p">,</span><span class="mi">49</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">226</span><span class="p">,</span><span class="mi">206</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">229</span><span class="p">,</span><span class="mi">58</span><span class="p">,</span><span class="mi">239</span><span class="p">,</span><span class="mi">106</span><span class="p">,</span><span class="mi">187</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">242</span><span class="p">,</span><span class="mi">181</span><span class="p">,</span><span class="mi">161</span><span class="p">,</span><span class="mi">235</span><span class="p">,</span><span class="mi">254</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">132</span><span class="p">,</span><span class="mi">117</span><span class="p">,</span><span class="mi">212</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">178</span><span class="p">,</span><span class="mi">179</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">214</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">141</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">148</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">141</span><span class="p">,</span><span class="mi">134</span><span class="p">,</span><span class="mi">187</span><span class="p">,</span><span class="mi">134</span><span class="p">,</span><span class="mi">222</span><span class="p">,</span><span class="mi">166</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">57</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">191</span><span class="p">,</span><span class="mi">229</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">179</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">205</span><span class="p">,</span><span class="mi">172</span><span class="p">,</span><span class="mi">201</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">210</span><span class="p">,</span><span class="mi">172</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">135</span><span class="p">,</span><span class="mi">247</span><span class="p">,</span><span class="mi">63</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">207</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">222</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">95</span><span class="p">,</span><span class="mi">193</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">49</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">93</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">91</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">186</span><span class="p">,</span><span class="mi">245</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="mi">227</span><span class="p">,</span><span class="mi">38</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">133</span><span class="p">,</span><span class="mi">141</span><span class="p">,</span><span class="mi">202</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">203</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">155</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">58</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">161</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">231</span><span class="p">,</span><span class="mi">156</span><span class="p">,</span><span class="mi">226</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">151</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">163</span><span class="p">,</span><span class="mi">227</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">71</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">132</span><span class="p">,</span><span class="mi">202</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">38</span><span class="p">,</span><span class="mi">156</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">182</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">92</span><span class="p">,</span><span class="mi">211</span><span class="p">,</span><span class="mi">172</span><span class="p">,</span><span class="mi">251</span><span class="p">,</span><span class="mi">218</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">132</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="mi">165</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">106</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">253</span><span class="p">,</span><span class="mi">109</span><span class="p">,</span><span class="mi">239</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">93</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">203</span><span class="p">,</span><span class="mi">251</span><span class="p">,</span><span class="mi">142</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">62</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">144</span><span class="p">,</span><span class="mi">191</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">117</span><span class="p">,</span><span class="mi">239</span><span class="p">,</span><span class="mi">82</span><span class="p">,</span><span class="mi">222</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">133</span><span class="p">,</span><span class="mi">208</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">134</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">243</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">205</span><span class="p">,</span><span class="mi">145</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">170</span><span class="p">,</span><span class="mi">213</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">193</span><span class="p">,</span><span class="mi">209</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">142</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">143</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">246</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">218</span><span class="p">,</span><span class="mi">62</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">189</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">106</span><span class="p">,</span><span class="mi">158</span><span class="p">,</span><span class="mi">208</span><span class="p">,</span><span class="mi">218</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">234</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">107</span><span class="p">,</span><span class="mi">156</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">144</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">231</span><span class="p">,</span><span class="mi">199</span><span class="p">,</span><span class="mi">187</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">58</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">186</span><span class="p">,</span><span class="mi">69</span><span class="p">,</span><span class="mi">201</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">126</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">177</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">177</span><span class="p">,</span><span class="mi">191</span><span class="p">,</span><span class="mi">244</span><span class="p">,</span><span class="mi">142</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">133</span><span class="p">,</span><span class="mi">144</span><span class="p">,</span><span class="mi">149</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">173</span><span class="p">,</span><span class="mi">173</span><span class="p">,</span><span class="mi">205</span><span class="p">,</span><span class="mi">121</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">208</span><span class="p">,</span><span class="mi">225</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">118</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">133</span><span class="p">,</span><span class="mi">112</span><span class="p">,</span><span class="mi">69</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">169</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">137</span><span class="p">,</span><span class="mi">155</span><span class="p">,</span><span class="mi">147</span><span class="p">,</span><span class="mi">131</span><span class="p">,</span><span class="mi">62</span><span class="p">,</span><span class="mi">211</span><span class="p">,</span><span class="mi">131</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">246</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">158</span><span class="p">,</span><span class="mi">117</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">249</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">185</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">251</span><span class="p">,</span><span class="mi">191</span><span class="p">,</span><span class="mi">165</span><span class="p">,</span><span class="mi">61</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">129</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="mi">178</span><span class="p">,</span><span class="mi">116</span><span class="p">,</span><span class="mi">247</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">241</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">218</span><span class="p">,</span><span class="mi">171</span><span class="p">,</span><span class="mi">81</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">212</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="mi">186</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">173</span><span class="p">,</span><span class="mi">145</span><span class="p">,</span><span class="mi">118</span><span class="p">,</span><span class="mi">61</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">208</span><span class="p">,</span><span class="mi">143</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">149</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">121</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">225</span><span class="p">,</span><span class="mi">112</span><span class="p">,</span><span class="mi">82</span><span class="p">,</span><span class="mi">137</span><span class="p">,</span><span class="mi">189</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">227</span><span class="p">,</span><span class="mi">106</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">209</span><span class="p">,</span><span class="mi">239</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">173</span><span class="p">,</span><span class="mi">216</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">159</span><span class="p">,</span><span class="mi">109</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">121</span><span class="p">,</span><span class="mi">177</span><span class="p">,</span><span class="mi">69</span><span class="p">,</span><span class="mi">239</span><span class="p">,</span><span class="mi">253</span><span class="p">,</span><span class="mi">161</span><span class="p">,</span><span class="mi">194</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">154</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">145</span><span class="p">,</span><span class="mi">82</span><span class="p">,</span><span class="mi">184</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">232</span><span class="p">,</span><span class="mi">159</span><span class="p">,</span><span class="mi">93</span><span class="p">,</span><span class="mi">176</span><span class="p">,</span><span class="mi">233</span><span class="p">,</span><span class="mi">254</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">246</span><span class="p">,</span><span class="mi">106</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">225</span><span class="p">,</span><span class="mi">93</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">222</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">69</span><span class="p">,</span><span class="mi">252</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">116</span><span class="p">,</span><span class="mi">158</span><span class="p">,</span><span class="mi">58</span><span class="p">,</span><span class="mi">116</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">209</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">253</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">144</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="mi">147</span><span class="p">,</span><span class="mi">217</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">185</span><span class="p">,</span><span class="mi">242</span><span class="p">,</span><span class="mi">61</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">117</span><span class="p">,</span><span class="mi">141</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">227</span><span class="p">,</span><span class="mi">147</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">246</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">155</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="mi">166</span><span class="p">,</span><span class="mi">171</span><span class="p">,</span><span class="mi">225</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">197</span><span class="p">,</span><span class="mi">61</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">166</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">181</span><span class="p">,</span><span class="mi">58</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">148</span><span class="p">,</span><span class="mi">187</span><span class="p">,</span><span class="mi">254</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">221</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">131</span><span class="p">,</span><span class="mi">241</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">170</span><span class="p">,</span><span class="mi">247</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="mi">184</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">158</span><span class="p">,</span><span class="mi">116</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">199</span><span class="p">,</span><span class="mi">146</span><span class="p">,</span><span class="mi">161</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">159</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">63</span><span class="p">,</span><span class="mi">131</span><span class="p">,</span><span class="mi">114</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="mi">221</span><span class="p">,</span><span class="mi">194</span><span class="p">,</span><span class="mi">178</span><span class="p">,</span><span class="mi">238</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">208</span><span class="p">,</span><span class="mi">106</span><span class="p">,</span><span class="mi">197</span><span class="p">,</span><span class="mi">204</span><span class="p">]</span>
 </code></pre></div>
-<p>Vous avez donc à votre disposition une portion de clé notée <code>cle</code>, et l'intégralité du message chiffré noté <code>msg</code>, qui vous est donné en entrée du problème.<br/>
+<p>Vous avez donc à votre disposition une portion de clé notée <code>cle</code>, et l'intégralité du message chiffré noté <code>msg</code>, qui vous est donné en entrée du problème.<br />
 Avec ces éléments, saurez-vous déterminer le lieu du rendez-vous fixé par votre ami ? </p>
 </div>
 <div class="admonition exo">
@@ -2872,12 +3859,12 @@ Avec ces éléments, saurez-vous déterminer le lieu du rendez-vous fixé par vo
 <p>L’objectif de l’exercice est d’étudier une méthode de cryptage d’une chaîne de caractères à l’aide du codage ASCII et de la fonction logique XOR. </p>
 <div class="admonition question">
 <p class="admonition-title">Question 1</p>
-<p>Le nombre 65, donné ici en écriture décimale, s’écrit 01000001 en notation binaire.<br/>
+<p>Le nombre 65, donné ici en écriture décimale, s’écrit 01000001 en notation binaire.<br />
 En détaillant la méthode utilisée, donner l’écriture binaire du nombre 89.  </p>
 </div>
 <div class="admonition question">
 <p class="admonition-title">Question 2</p>
-<p>La fonction logique OU EXCLUSIF, appelée XOR et représentée par le symbole  <span class="arithmatex">\(\oplus\)</span>, fournit une sortie égale à 1 si l’une ou l’autre des deux entrées vaut 1 mais pas les deux.<br/>
+<p>La fonction logique OU EXCLUSIF, appelée XOR et représentée par le symbole  <span class="arithmatex">\(\oplus\)</span>, fournit une sortie égale à 1 si l’une ou l’autre des deux entrées vaut 1 mais pas les deux.<br />
 On donne ci-dessous la table de vérité de la fonction XOR.  </p>
 <table>
 <thead>
@@ -2910,17 +3897,17 @@ On donne ci-dessous la table de vérité de la fonction XOR.  </p>
 </tr>
 </tbody>
 </table>
-<p>Si on applique cette fonction à un nombre codé en binaire, elle opère bit à bit. <span class="arithmatex">\(1100 \oplus 1010 = 0110\)</span>.<br/>
-<strong>Poser et calculer</strong> l’opération : <span class="arithmatex">\(11001110 \oplus 01101011\)</span> </p>
+<p>Si on applique cette fonction à un nombre codé en binaire, elle opère bit à bit. <span class="arithmatex">\(1100 \oplus 1010 = 0110\)</span>.<br />
+<strong>Poser et calculer</strong> l’opération : <span class="arithmatex">\(11001110 \oplus 01101011\)</span>  </p>
 </div>
 <div class="admonition question">
 <p class="admonition-title">Question 3</p>
-<p>On donne, ci-dessous, un extrait de la table ASCII qui permet d’encoder les caractères de A à Z.  On peut alors considérer l’opération XOR entre deux caractères en effectuant le XOR entre les codes ASCII des deux caractères.<br/>
+<p>On donne, ci-dessous, un extrait de la table ASCII qui permet d’encoder les caractères de A à Z.  On peut alors considérer l’opération XOR entre deux caractères en effectuant le XOR entre les codes ASCII des deux caractères.<br />
 Par exemple : 'F'  XOR 'S' sera le résultat de <span class="arithmatex">\(01000110 \oplus 01010011\)</span>.   </p>
-<p><img alt="" src="../data/ascii_table.png"/></p>
+<p><img alt="" src="../data/ascii_table.png" /></p>
 <p>On souhaite mettre au point une méthode de cryptage à l’aide de la fonction XOR. Pour cela, on dispose d’un message à crypter et d’une clé de cryptage de même longueur que ce message. Le message et la clé sont composés uniquement des caractères du tableau ci-dessus et on applique la fonction XOR caractère par caractère entre les lettres du message à crypter et les lettres de la clé de cryptage.   </p>
 <p>Par exemple, voici le cryptage du mot ALPHA à l’aide de la clé YAKYA : </p>
-<p><img alt="" src="../data/CEJ2.png"/></p>
+<p><img alt="" src="../data/CEJ2.png" /></p>
 <p><strong>Ecrire</strong> une fonction <code>xor_crypt(message, cle)</code> qui prend en paramètres deux chaînes de caractères et qui renvoie la liste des entiers correspondant au message crypté.    </p>
 <details class="tip">
 <summary>Aide</summary>
@@ -2944,9 +3931,9 @@ Par exemple : 'F'  XOR 'S' sera le résultat de <span class="arithmatex">\(01000
 </div>
 <div class="admonition question">
 <p class="admonition-title">Question 4</p>
-<p>On souhaite maintenant générer une clé de la taille du message à partir d’un mot quelconque.<br/>
-On considère que le mot choisi est plus court que le message, il faut donc le reproduire un certain nombre de fois pour créer une clé de la même longueur que le message. <br/>
-Par exemple, si le mot choisi est YAK pour crypter le message ALPHABET, la clé sera YAKYAKYA.<br/>
+<p>On souhaite maintenant générer une clé de la taille du message à partir d’un mot quelconque.<br />
+On considère que le mot choisi est plus court que le message, il faut donc le reproduire un certain nombre de fois pour créer une clé de la même longueur que le message. <br />
+Par exemple, si le mot choisi est YAK pour crypter le message ALPHABET, la clé sera YAKYAKYA.<br />
 Créer une fonction <code>generer_cle(mot,n)</code> qui renvoie la clé de longueur <code>n</code> à partir de la chaîne de caractères <code>mot</code>. </p>
 <details class="tip">
 <summary>aide</summary>
@@ -3001,72 +3988,110 @@ Créer une fonction <code>generer_cle(mot,n)</code> qui renvoie la clé de longu
 </table>
 <p>A l’aide de ce résultat, proposer une démarche pour décrypter un message crypté.  </p>
 </div>
-<script src="../../../js/ide.js"></script>
-<a class="md-content__icon pdf-download-btn" download href="../../../pandoc/T01_TypesBase/T1.4_Booleens/T1_4_Booleens/T1_4_Booleens.pdf" title="Download"><i class="fa fas fa-download"></i><small> T1_4_Booleens.pdf </small></a></article>
-</div>
-</div>
-<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+
+
+
+
+
+                
+    <script src="../../../js/ide.js"></script> 
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Retour en haut de la page
           </a>
-</main>
-<footer class="md-footer">
-<nav aria-label="Pied de page" class="md-footer__inner md-grid">
-<a aria-label="Précédent: T1_3 Codage des flottants" class="md-footer__link md-footer__link--prev" href="../../T1.3_Flottants/T1_3_Flottants/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+        
+        <a href="../../T1.3_Flottants/T1_3_Flottants/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: T1_3 Codage des flottants" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
                 Précédent
               </span>
               T1_3 Codage des flottants
             </div>
-</div>
-</a>
-<a aria-label="Suivant: Types construits" class="md-footer__link md-footer__link--next" href="../../../T02_TypesConstruits/index_typeconstruits/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../T02_TypesConstruits/index_typeconstruits/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Types construits" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
                 Suivant
               </span>
               Types construits
             </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-copyright">
-<div class="md-copyright__highlight">
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
       2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
-</div>
+    </div>
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
     </a>
+  
 </div>
-</div>
-</div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
-<script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
-<script src="../../../xtra/javascripts/config.js"></script>
-<script src="../../../xtra/javascripts/perso.js"></script>
-<script src="../../../xtra/javascripts/interpreter.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
-</body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../../../xtra/javascripts/config.js"></script>
+      
+        <script src="../../../xtra/javascripts/perso.js"></script>
+      
+        <script src="../../../xtra/javascripts/interpreter.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
+    
+  </body>
 </html>
