@@ -181,6 +181,9 @@ Mais cette stratégie gagnante pour la somme de 49 euros l’est-elle pour n’i
 
 !!! exo "Minimiser somme sur une grille"
     Sur la grille ci-dessous, on part de la case tout à gauche marquée de la lettre D. On souhaite atteindre les cases vides sur la partie droite en se déplaçant de case en case.  
+
+    ![grille](data/grille_glouton.png){:.center width:250px}
+
     Lorsqu’on est sur une case on peut se déplacer sur une des deux cases voisines situées sur la droite. On note S la somme de toutes les cases traversées.  
     Par exemple on peut effectuer la trajectoire suivante :  
     D – 7 – 5 – 3 – 5 – 7 – 9 – 8 – 9 – 6  qui conduit à S = 59.  
