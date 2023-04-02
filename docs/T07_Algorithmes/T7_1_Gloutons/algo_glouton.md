@@ -179,6 +179,21 @@ Mais cette stratégie gagnante pour la somme de 49 euros l’est-elle pour n’i
 
     Effectuer le coloriage de cette carte avec cette méthode.
 
+!!! exo "Minimiser somme sur une grille"
+    Sur la grille ci-dessous, on part de la case tout à gauche marquée de la lettre D. On souhaite atteindre les cases vides sur la partie droite en se déplaçant de case en case.  
+    Lorsqu’on est sur une case on peut se déplacer sur une des deux cases voisines situées sur la droite. On note S la somme de toutes les cases traversées.  
+    Par exemple on peut effectuer la trajectoire suivante :  
+    D – 7 – 5 – 3 – 5 – 7 – 9 – 8 – 9 – 6  qui conduit à S = 59.  
+    On cherche à effectuer la trajectoire qui rend la somme S la plus petite possible.  
+    
+    - Définir une règle de choix qui vous donne une solution respectant les contraintes. Quelle trajectoire et quelle somme S obtenez-vous avec cette règle ?  
+    - Est-il optimal ?  
+    Sur cette grille, en cherchant bien, la trajectoire optimale donne une somme S=23. Votre algorithme glouton a-t-il trouvé cette trajectoire optimale ?  
+
+    -  Pour obtenir la solution optimale de façon certaine on souhaite trouver toutes les trajectoires possibles et calculer pour chacune d’elles la somme associée.  
+    Quel est le nombre de trajectoires au total ?
+    
+
 !!! exo "Rendu de monnaie"
     Donner une somme avec le moins de pièces possibles. On veut donner la somme de 14 euros dans les systèmes de pièce suivant :  
     - s1={1; 2; 5; 10} ;   
