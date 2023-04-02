@@ -249,7 +249,7 @@ Mais cette stratégie gagnante pour la somme de 49 euros l’est-elle pour n’i
     ```
 
 !!! exo "Ranger ses affaires"
-    On dispose de n objets $x_1,x_2,.....x_n$ ayant chacun une valeur $v_i_ et une masse $m_i$.  
+    On dispose de n objets $x_1,x_2,.....x_n$ ayant chacun une valeur $v_i$ et une masse $m_i$.  
     On possède un sac à dos dans lequel on ne peut mettre qu’une masse maximale M. On veut remplir le sac de fa¸con à ce que la valeur des objets emportés soit maximale.  
     
     **Optimiser le rangement**  
