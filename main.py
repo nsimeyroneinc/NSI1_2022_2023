@@ -81,7 +81,8 @@ def define_env(env):
         12 : ["typesconstruits","Les tableaux en Python",1,"T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux.md"],
         13 : ["typesbase","Les Booleens",1,"T01_TypesBase/T1.4_Booleens/T1_4_Booleens.md"],
         14 : ["os","Architecture d'un réseau",1,"T05_Architectures/T5.3_Reseaux/T5.1_Architecture.md"],
-        15 : ["python","Algorithme glouton",1,"T07_Algorithmes/T7_1_Gloutons/algo_glouton.md"]
+        15 : ["python","Algorithme glouton",1,"T07_Algorithmes/T7_1_Gloutons/algo_glouton.md"],
+        16 : ["algorithmique","Dichotomie",1,"T07_Algorithmes/T7_3_Dichotomie/T7_3_Dichotomie.md"]
         #9 : ["algorithmique","Algorithmes de tri",2,"algostri.md"],
         #10 : ["typesbase","Représentation des entiers négatifs",1,"negatifs.md"],
         #11: ["os","Réseau",1,"reseau.md"],
