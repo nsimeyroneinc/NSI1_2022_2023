@@ -1,4 +1,17 @@
-# Animation simple (sans événements)
+{% set num = 4 %}
+{% set titre = "Pygame : Animation simple" %}
+{% set theme = "projet" %}
+{% set niveau = "premiere" %}
+
+
+{{ titre_chapitre(num,titre,theme,niveau)}}
+
+{{ initexo(0) }}
+
+
+
+
+
 
 ![](images/Capture_balle.gif){: .center} 
 

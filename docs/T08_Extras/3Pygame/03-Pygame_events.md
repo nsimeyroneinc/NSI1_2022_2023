@@ -1,4 +1,14 @@
-# Gestion des événements
+{% set num = 5 %}
+{% set titre = "Pygame : Gestion des événements" %}
+{% set theme = "projet" %}
+{% set niveau = "premiere" %}
+
+
+{{ titre_chapitre(num,titre,theme,niveau)}}
+
+{{ initexo(0) }}
+
+
 
 Lorsqu'un programme ```pygame``` est lancé, la variable interne ```pygame.event.get()``` reçoit en continu les évènements des périphériques gérés par le système d'exploitation.  
 

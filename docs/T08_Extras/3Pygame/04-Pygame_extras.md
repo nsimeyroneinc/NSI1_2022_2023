@@ -1,4 +1,14 @@
-# Texte, dessins, fenêtres
+{% set num = 6 %}
+{% set titre = "Pygame : Texte, dessins, fenêtres" %}
+{% set theme = "projet" %}
+{% set niveau = "premiere" %}
+
+
+{{ titre_chapitre(num,titre,theme,niveau)}}
+
+{{ initexo(0) }}
+
+
 
 ## 1. Écrire du texte
 

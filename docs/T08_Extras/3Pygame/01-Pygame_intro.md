@@ -1,4 +1,14 @@
-# Introduction à Pygame
+{% set num = 3 %}
+{% set titre = "Pygame : Introduction" %}
+{% set theme = "projet" %}
+{% set niveau = "premiere" %}
+
+
+{{ titre_chapitre(num,titre,theme,niveau)}}
+
+{{ initexo(0) }}
+
+
 
 !!! info "Ressources"
 

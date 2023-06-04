@@ -67,6 +67,10 @@ nav:
     - T8 Extras :
       - Mini-Projet : T08_Extras/5MiniProjet/logo.md
       - Dessine ta rue : T08_Extras/5MiniProjet/dessine_ta_rue.md
+      - Pygame - Introduction : T08_Extras/3Pygame/01-Pygame_intro.md
+      - Pygame - Animation simple : T08_Extras/3Pygame/02-Pygame_image.md
+      - Pygame - Gestion des évènements : T08_Extras/3Pygame/03-Pygame_events.md
+      - Pygame - Textes, dessins, fenêtres : T08_Extras/3Pygame/04-Pygame_extras.md
     
     #- Transversal : 
 
@@ -179,8 +183,8 @@ plugins:
   - search # Inclure une barre de recherche
   - mkdocs-jupyter: # Convertir les fichiers .ipynb et .py en pages du site https://github.com/danielfrg/mkdocs-jupyter
       kernel_name: python3
-      execute: False
-      include_source: False
+  #    execute: False
+  #    include_source: False
   - awesome-pages:
       collapse_single_pages: true
   - macros
