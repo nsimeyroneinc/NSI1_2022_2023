@@ -57,7 +57,7 @@ Chaque enregistrement contient ce qu'on appellera pour la suite :
 Les valeurs des descripteurs `'defense'`  et `'vitesse'` sont de type `str` dans l'enregistrement. IL faut donc les convertir en type `int` ou `float` pour placer le point dans un repère. En pratique les enregistrements sont extraits de fichiers textes , comme des fichiers [CSV](https://fr.wikipedia.org/wiki/Comma-separated_values), et les descripteurs peuvent représenter des catégories ('mâle', 'femelle' ...) tout autant que des valeurs numériques. On a donc choisi de garder toutes les valeurs en type `str` et de les convertir selon les besoins de traitement.
 
 ??? warning "Exemples du cours sur Capytale"
-    <https://capytale2.ac-paris.fr/web/c/ccb8-603938>
+    <https://capytale2.ac-paris.fr/web/c/b5ae-1726451>
 
 
 !!! note "Point de cours 1"
@@ -105,7 +105,7 @@ Les valeurs des descripteurs `'defense'`  et `'vitesse'` sont de type `str` dans
 !!! example "Exemple 1"
 
     ??? warning "Exemples du cours sur Capytale"
-        <https://capytale2.ac-paris.fr/web/c/ccb8-603938>
+        <https://capytale2.ac-paris.fr/web/c/b5ae-1726451>
 
 
     Détaillons les différentes étapes  de _l'algorithme des k plus proches voisins_  sur notre exemple de Pokemons.
@@ -114,7 +114,7 @@ Les valeurs des descripteurs `'defense'`  et `'vitesse'` sont de type `str` dans
       
     On charge le fichier [CSV](https://fr.wikipedia.org/wiki/Comma-separated_values) contenant le jeu de données dans une table (un tableau d'enregistrements qui sont des dictionnaires).
       
-    ~~~python
+    ```python
     In [1]: table_pokemons = charger_fichier_entete('./datas/pokemons.csv')
     
     In [2]: table_pokemons[0]
@@ -122,23 +122,23 @@ Les valeurs des descripteurs `'defense'`  et `'vitesse'` sont de type `str` dans
     {'nom': 'Rattata', 'vie': '30',
      'attaque': '56',  'defense': '35',
      'vitesse': '72',  'type': 'Normal'}
-    ~~~
+    ```
     
     On filtre la table pour extraire les Pokemons de type Feu et Roche. Une étape de traitement des données est souvent nécessaire.
     
-    ~~~python
+    ```python
     In [3]: table_pokemons_feu_roche = [pok for pok in table_pokemons 
        ...:                    if pok['type'] in ['Roche', 'Feu']]
     
     In [4]: len(table_pokemons_feu_roche)
     Out[4]: 37
-    ~~~
+    ```
     
     * __Étape 1 : calcul des distances__ 
     
     On calcule les distances entre le nouveau Pokemon et tous les Pokemons de la table `table_pokemons_feu_roche`.
     
-    ~~~python
+    ```python
     In [5]: nouveau_pokemon = {'vitesse':58, 'attaque' : 120 , 'defense' : 65, 'vie' : 100 }
     
     In [6]: table_pokemons_feu_roche[0] #premier Pokemon de la table
@@ -156,44 +156,44 @@ Les valeurs des descripteurs `'defense'`  et `'vitesse'` sont de type `str` dans
     
     In [10]: tab_distance[:4]
     Out[10]: [(18.385, 'Feu'), (22.091, 'Feu'), (21.19, 'Feu'), (44.598, 'Feu')]
-    ~~~
+    ```
     
     * __Étapes 2 et 3 : tri et sélection des k plus proches voisins__  
     
     On fixe le paramètre `k`, on trie dans l'ordre croissant le tableau `tab_distance` suivant le critère de distance et on extrait les `k` plus proches voisins.
     
-    ~~~python
+    ```python
     In [11]: k_voisins = trier_puis_extraire(tab_distance, 5)
     
     In [12]: k_voisins
     Out[12]: ['Roche', 'Feu', 'Feu', 'Feu', 'Feu']
-    ~~~
+    ```
     
     * __Étape  4 : sélection de l'étiquette majoritaire parmi les k plus proches voisins__
     
-    ~~~python
+    ```python
     In [19]: element_majoritaire(k_voisins)
     Out[19]: 'Feu'
-    ~~~
+    ```
 
     On peut rassembler toutes les fonctions précédentes en une seule qui renvoie l'étiquette majoritaire parmi les `k` plus proches voisins.    
 
-    ~~~python
+    ```python
     def etiquetage_knn(table, nouveau, etiquette, tab_descripteur, k,
                        distance = distance_euclidienne):    
         tab_distance = table_distance_nouveau(table, nouveau, distance, etiquette, tab_descripteur)
         k_voisins = trier_puis_extraire(tab_distance, k)
         voisin_majoritaire = element_majoritaire(k_voisins)
         return voisin_majoritaire
-    ~~~    
+    ```    
 
 
     On peut vérifier que cela donne le même résultat. 
 
-    ~~~python
+    ```python
     In [20]: etiquetage_knn(table_pokemons_feu_roche, nouveau_pokemon, 'type', ['vitesse', 'defense'], 5)
     Out[20]: 'Feu'
-    ~~~
+    ```
 
 # Choix des paramètres et limites de l'algorithme
 
@@ -208,12 +208,12 @@ Les valeurs des descripteurs `'defense'`  et `'vitesse'` sont de type `str` dans
 !!! note "Point de cours 3"
 
     ??? warning "Exemples du cours sur Capytale"
-        <https://capytale2.ac-paris.fr/web/c/ccb8-603938>
+        <https://capytale2.ac-paris.fr/web/c/b5ae-1726451>
 
 
     Considérons un nouveau Pokemon et un Pokemon déjà connu  dans une table :
     
-    ~~~python
+    ```python
     In [3]: nouveau_pokemon
     Out[3]: {'vitesse': 58, 'attaque': 120, 'defense': 65, 'vie': 100}
     
@@ -221,7 +221,7 @@ Les valeurs des descripteurs `'defense'`  et `'vitesse'` sont de type `str` dans
     Out[4]: 
     {'nom': 'Reptincel', 'vie': '58',  'attaque': '64',  'defense': '58',  'vitesse': '80',
      'type': 'Feu'}
-    ~~~
+    ```
     
     * Si on caractérise chaque Pokemon par deux descripteurs `'vitesse'` et `'defense'`, on peut les représenter dans le plan par les points A de coordonnées $(58, 65)$  et B de coordonnées $(80, 58)$. On peut calculer la distance AB de plusieurs façons, comme par exemple :
        * La __distance euclidienne__ qui correspond à celle de la règle graduée :  
@@ -286,7 +286,7 @@ _Graphique 3 : Pokemons Feu ou Roche avec trois descripteurs_
 !!! note "Point de cours 4"
 
     ??? warning "Exemples du cours sur Capytale"
-        <https://capytale2.ac-paris.fr/web/c/ccb8-603938>
+        <https://capytale2.ac-paris.fr/web/c/b5ae-1726451>
 
 
     On reprend l'exemple initial du jeu de données de 37 Pokemons _Roche_ et _Feu_ caractérisés par les deux descripteurs `'vitesse'` et  `'defense'` et d'un nouveau Pokemon de `'vitesse' : 58` et `'defense' : 65` représentés sur le graphique 1.
@@ -299,7 +299,7 @@ _Graphique 3 : Pokemons Feu ou Roche avec trois descripteurs_
     
     En général, on choisit une valeur de k entre 3 et 10 et plutôt un entier impair (pourquoi d'après vous ?)
     
-    ~~~python
+    ```python
     In [30]: nouveau_pokemon = {'vitesse':58, 'attaque' : 120 , 'defense' : 65, 'vie' : 100 }
         ...: for k in range(1, 11):
         ...:     print(f"k = {k}, etiquette = {etiquetage_knn(table_pokemons_feu_roche, nouveau_pokemon, 'type', ['vitesse', 'defense'], k)}")
@@ -314,7 +314,7 @@ _Graphique 3 : Pokemons Feu ou Roche avec trois descripteurs_
     k = 8, etiquette = Feu
     k = 9, etiquette = Feu
     k = 10, etiquette = Feu
-    ~~~
+    ```
 
 ## Les limites de l'algorithme
 
