@@ -74,6 +74,7 @@ nav:
       - Pygame - Animation simple : T08_Extras/3Pygame/02-Pygame_image.md
       - Pygame - Gestion des évènements : T08_Extras/3Pygame/03-Pygame_events.md
       - Pygame - Textes, dessins, fenêtres : T08_Extras/3Pygame/04-Pygame_extras.md
+      - Pygame - exemples de jeux : T08_Extras/3Pygame/pygame.md
     
     #- Transversal : 
 
