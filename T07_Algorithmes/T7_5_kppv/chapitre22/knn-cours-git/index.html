@@ -1,0 +1,1805 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Michael Meyroneinc-condy">
+      
+      
+      
+        <link rel="prev" href="../../../T7_3_Dichotomie/T7_3_Dichotomie/">
+      
+      
+        <link rel="next" href="../TP/knn-tp-git/">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+    
+    
+      
+        <title>kppv - Cours - Site NSI 1ére</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../xtra/stylesheets/pyoditeur.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#credits" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../../.." title="Site NSI 1ére" class="md-header__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Site NSI 1ére
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              kppv - Cours
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../T01_TypesBase/index_typebases/" class="md-tabs__link">
+        T1 Types et valeurs de base
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../T02_TypesConstruits/index_typeconstruits/" class="md-tabs__link">
+        T2 Types construits
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../T04_IHMWeb/index_web/" class="md-tabs__link">
+        T4 I.H.M.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../T05_Architectures/index_archi/" class="md-tabs__link">
+        T5 Arch. Matérielle
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../T06_Python/index_prog/" class="md-tabs__link">
+        T6 Programmation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../index_algo/" class="md-tabs__link md-tabs__link--active">
+        T7 Algo.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../T08_Extras/5MiniProjet/logo/" class="md-tabs__link">
+        T8 Extras
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../T09_Evaluations/DS_portes_logiques/" class="md-tabs__link">
+        Devoirs
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Divers/conseil/" class="md-tabs__link">
+        Divers
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Site NSI 1ére" class="md-nav__button md-logo" aria-label="Site NSI 1ére" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    Site NSI 1ére
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          T1 Types et valeurs de base
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T1 Types et valeurs de base
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T01_TypesBase/index_typebases/" class="md-nav__link">
+        Rep. des données
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T01_TypesBase/T1.1_Bases/T1_1_Codage_Entiers/" class="md-nav__link">
+        T1_1 Codages des entiers positifs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T01_TypesBase/T1.1_Bases/T1_Perseverance/" class="md-nav__link">
+        TP Perseverance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T01_TypesBase/T1.2_Relatifs/T1_2_Relatifs/" class="md-nav__link">
+        T1_2 Codages des entiers relatifs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T01_TypesBase/T1.3_Flottants/T1_3_Flottants/" class="md-nav__link">
+        T1_3 Codage des flottants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T01_TypesBase/T1.4_Booleens/T1_4_Booleens/" class="md-nav__link">
+        T1_4 Les Booléens
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          T2 Types construits
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          T2 Types construits
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T02_TypesConstruits/index_typeconstruits/" class="md-nav__link">
+        Types construits
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T02_TypesConstruits/T2.1_Listes/T2_1_Les_tableaux/" class="md-nav__link">
+        Tableaux (Listes) en Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          T4 I.H.M.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          T4 I.H.M.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T04_IHMWeb/index_web/" class="md-nav__link">
+        I.H.M
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T04_IHMWeb/T4.1_HTML_CSS/T4.1_HTML_CSS/" class="md-nav__link">
+        HTML - CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T04_IHMWeb/T4.2_Interactions/T4.2_Js/" class="md-nav__link">
+        JS - Interaction dans une page web
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          T5 Arch. Matérielle
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          T5 Arch. Matérielle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T05_Architectures/index_archi/" class="md-nav__link">
+        Architecture matérielle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T05_Architectures/T5.3_Reseaux/T5.1_Architecture/" class="md-nav__link">
+        Architecture d'un réseau
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          T6 Programmation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          T6 Programmation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T06_Python/index_prog/" class="md-nav__link">
+        Programmation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T06_Python/T6.1_Python/T6_1_0_Introduction/" class="md-nav__link">
+        TP 00 - Introduction Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T06_Python/T6.1_Python/T6_1_1_Les_Variables_en_Python/" class="md-nav__link">
+        TP 01 - Les Variables en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T06_Python/T6.1_Python/T6_1_2_Les_fonctions_en_Python/" class="md-nav__link">
+        TP 02 - Les Fonctions en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T06_Python/T6.1_Python/T6_1_3_Boucle_FOR_en_Python/" class="md-nav__link">
+        TP 03 - Les boucles (1) en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T06_Python/T6.1_Python/T6_1_4_WHILE/" class="md-nav__link">
+        TP 04 - Les boucles (2) en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T06_Python/T6.1_Python/T6_1_5_Instructions_conditionnelles/" class="md-nav__link">
+        TP 05 - Les Conditions en Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T06_Python/T6.1_Python/T6_1_6_Exercices_Bilan_Bases/" class="md-nav__link">
+        TP 06 - Exercices Bilan Les bases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          T7 Algo.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          T7 Algo.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index_algo/" class="md-nav__link">
+        Algorithmique
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T7.1_Tableaux/T7_1_Parcours_sequentiel_d_un_tableau/" class="md-nav__link">
+        TP Parcours séquentiel d'un tableau
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T7_1_Gloutons/algo_glouton/" class="md-nav__link">
+        TP algorithme Glouton
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T7_3_Dichotomie/T7_3_Dichotomie/" class="md-nav__link">
+        Dichotomie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        kppv - Cours
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP/knn-tp-git/" class="md-nav__link">
+        kppv - TP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          T8 Extras
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          T8 Extras
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T08_Extras/5MiniProjet/logo/" class="md-nav__link">
+        Mini-Projet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T08_Extras/5MiniProjet/dessine_ta_rue/" class="md-nav__link">
+        Dessine ta rue
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T08_Extras/3Pygame/01-Pygame_intro/" class="md-nav__link">
+        Pygame - Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T08_Extras/3Pygame/02-Pygame_image/" class="md-nav__link">
+        Pygame - Animation simple
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T08_Extras/3Pygame/03-Pygame_events/" class="md-nav__link">
+        Pygame - Gestion des évènements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T08_Extras/3Pygame/04-Pygame_extras/" class="md-nav__link">
+        Pygame - Textes, dessins, fenêtres
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T08_Extras/3Pygame/pygame/" class="md-nav__link">
+        Pygame - exemples de jeux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Devoirs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Devoirs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T09_Evaluations/DS_portes_logiques/" class="md-nav__link">
+        Portes logiques
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../T09_Evaluations/logic/" class="md-nav__link">
+        logic
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Divers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Divers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Divers/conseil/" class="md-nav__link">
+        Conseil
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Divers/Liens_utiles/" class="md-nav__link">
+        Liens utiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Divers/instal_python/" class="md-nav__link">
+        Installation Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+    
+                  
+
+
+<ul>
+<li><a href="#crédits">Crédits</a></li>
+<li><a href="#présentation-du-problème-de-classification">Présentation du problème de
+    classification</a></li>
+<li><a href="#algorithme-des-k-plus-proches-voisins">Algorithme des k plus proches
+    voisins</a></li>
+<li><a href="#choix-des-paramètres-et-limites-de-lalgorithme">Choix des paramètres et limites de
+    l'algorithme</a><ul>
+<li><a href="#le-choix-de-la-distance">Le choix de la distance</a></li>
+<li><a href="#le-choix-du-paramètre-k">Le choix du paramètre <code>k</code></a></li>
+<li><a href="#les-limites-de-lalgorithme">Les limites de l'algorithme</a></li>
+</ul>
+</li>
+<li><a href="#histoire-de-lintelligence-artificielle-et-des-algorithmes-dapprentissage">Histoire de l'intelligence artificielle et des algorithmes
+    d'apprentissage</a></li>
+<li><a href="#synthèse">Synthèse</a></li>
+</ul>
+<!-- Définition des hyperliens  -->
+
+<h1 id="credits">Crédits<a class="headerlink" href="#credits" title="Permanent link">⚓︎</a></h1>
+<p><em>Ce cours a été construit à partir de plusieurs sources : l'excellent cours de Julien de Villèle dont sont extraits certains passages ; le chapitre 13 du manuel NSI de la collection Tortue chez Ellipse, auteurs : Ballabonski, Conchon, Filliatre, N'Guyen ; les fiches de cours 37 et 38 du Prepabac Première NSI chez Hatier, auteurs : Laurent Signac et Guillaume Connan ; un QCM sur <a href="https://doctools.dgpad.net">https://doctools.dgpad.net</a> réalisé par Alain Busser.</em></p>
+<!-- Définition des hyperliens  -->
+
+<h1 id="presentation-du-probleme-de-classification">Présentation du problème de classification<a class="headerlink" href="#presentation-du-probleme-de-classification" title="Permanent link">⚓︎</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Activité 1</p>
+<p>En guise d'introduction au problème de classification par <em>l'algorithme des k plus proches voisins</em>, répondez au QCM réalisé par Alain Busser, qui est proposé à l'adresse <a href="https://link.dgpad.net/dsFN">https://link.dgpad.net/dsFN</a>.</p>
+</div>
+<p>Dans ce cours, on considère un exemple modèle constitué de 37 Pokemons
+dont on donne ci-dessous une représentation graphique avec :</p>
+<ul>
+<li>en abscisse leur vitesse</li>
+<li>en ordonnée leur défense</li>
+<li>en couleur leur type : <em>Feu</em> ou <em>Roche</em></li>
+</ul>
+<p><img alt="graphique pokemon feu
+roche" src="../images/pokemon-feu-roche-vitesse-defense.png" />  </p>
+<p><em>Graphique 1 : Pokemons Feu ou Roche avec deux descripteurs</em></p>
+<p>Les données peuvent être représentées sous forme d'une table contenant
+37 enregistrements ayant cette forme :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="p">{</span><span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Salameche&#39;</span><span class="p">,</span>   <span class="s1">&#39;defense&#39;</span><span class="p">:</span> <span class="s1">&#39;43&#39;</span><span class="p">,</span>  <span class="s1">&#39;vitesse&#39;</span><span class="p">:</span> <span class="s1">&#39;65&#39;</span><span class="p">,</span>  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;Feu&#39;</span><span class="p">}</span>
+</code></pre></div>
+<p>Chaque enregistrement contient ce qu'on appellera pour la suite :</p>
+<ul>
+<li>deux <strong>descripteurs</strong> <code>'defense'</code> et <code>'vitesse'</code> qui donnent la
+    position du point,</li>
+<li>une unique <strong>étiquette</strong> <code>'type'</code> qui donne la couleur du point.</li>
+</ul>
+<!-- end list -->
+
+<p>Les valeurs des descripteurs <code>'defense'</code>  et <code>'vitesse'</code> sont de type <code>str</code> dans l'enregistrement. IL faut donc les convertir en type <code>int</code> ou <code>float</code> pour placer le point dans un repère. En pratique les enregistrements sont extraits de fichiers textes , comme des fichiers <a href="https://fr.wikipedia.org/wiki/Comma-separated_values">CSV</a>, et les descripteurs peuvent représenter des catégories ('mâle', 'femelle' ...) tout autant que des valeurs numériques. On a donc choisi de garder toutes les valeurs en type <code>str</code> et de les convertir selon les besoins de traitement.</p>
+<details class="warning">
+<summary>Exemples du cours sur Capytale</summary>
+<p><a href="https://capytale2.ac-paris.fr/web/c/b5ae-1726451">https://capytale2.ac-paris.fr/web/c/b5ae-1726451</a></p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Point de cours 1</p>
+<p>Le <strong>problème de classification</strong> auquel <em>l'algorithme des k plus proches voisins</em> tente d'apporter une réponse est le suivant (les trois formulations sont équivalentes) :</p>
+<ul>
+<li>Un nouveau Pokemon a pour <code>'vitesse'</code> 58 et pour <code>'defense'</code>  65, quel est son type ?</li>
+<li>Un nouveau point a pour coordonnées (58 ; 65). Quelle est sa couleur ?</li>
+<li>Un nouvel enregistrement a pour descripteurs <code>'vitesse' : 58</code> et <code>'defense' : 65</code>. Quelle est son étiquette ?</li>
+</ul>
+<p>Sur le graphique, si on ne considère que le point vert le plus proche (en mesurant à la règle), on peut attribuer l'étiquette 'vert' (type <em>Roche</em>)  au nouveau point. Mais si on considère les trois voisins les plus proches , deux sur trois sont rouges et dans ce cas on attribue l'étiquette 'rouge' (type <em>Feu</em>). On voit que le nombre de voisins à considérer est important, de plus la distance doit être définie précisément. </p>
+<p>Le paramétrage de l'algorithme peut être  effectué par un humain mais son exécution par un ordinateur   permet  :</p>
+<ul>
+<li>d'automatiser la réponse,</li>
+<li>de répondre rapidement à des milliers ou millions de questions du même type,</li>
+<li>de généraliser à des cas avec plus de deux descripteurs</li>
+</ul>
+</div>
+<h1 id="algorithme-des-k-plus-proches-voisins">Algorithme des k plus proches voisins<a class="headerlink" href="#algorithme-des-k-plus-proches-voisins" title="Permanent link">⚓︎</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Activité 2</p>
+<p>Regardez la petite video accessible depuis ce lien : <a href="../algo_1_sur_2.gif">algo_1_sur_2.gif</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Point de cours 2</p>
+<p>Les données sur lesquelles on applique <em>l'algorithme des k plus proches voisins</em> sont :</p>
+<ul>
+<li>une table d'enregistrements (dictionnaires Python) d'objets dont on connait <strong>l'étiquette / la classification</strong>, nommons la <code>table_pokemon</code>. On peut remplacer enregistrement par : point, donnée ou Pokemon dans notre exemple.</li>
+<li>l'enregistrement   d'une nouvelle donnée dont on cherche <strong>l'étiquette / la classification</strong>, nommons le  <code>nouveau_pokemon</code></li>
+</ul>
+<p>Les paramètres de <em>l'algorithme des k plus proches voisins</em> sont :</p>
+<ul>
+<li>Un <strong>entier naturel <code>k</code></strong>, généralement impair et compris entre 3 et 10, qui correspond au nombre de voisins les plus proches qui seront examinés.</li>
+<li>Une <strong>fonction de distance</strong> pour mesurer la proximité entre la nouvelle donnée et toutes les  données déjà étiquetées de la table ce qui permettra de sélectionner les <code>k</code> plus proches. Cette distance est mesurée  à partir des valeurs de certains descripteurs présents dans les enregistrements, comme <code>'vitesse'</code> et <code>'defense'</code> dans l'exemple du cours.</li>
+</ul>
+<p><em>L'algorithme des k plus proches voisins</em> se déroule ainsi :</p>
+<ol>
+<li>Pour chaque enregistrement / pokemon dans <code>table_pokemon</code>  on calcule la distance entre cet enregistrement et celui de <code>nouveau_pokemon</code>. On stocke au fur et à mesure les couples <code>(distance avec chaque  nouveau_pokemon, étiquette de l'enregistrement / pokemon)</code> dans un tableau <code>tab_distance</code>.</li>
+<li>On trie le tableau  <code>tab_distance</code> (qui contient des <code>tuple</code> <code>(distance, étiquette)</code>) dans l'ordre croissant selon le critère de distance.</li>
+<li>On extrait les <code>k</code> plus petits éléments de <code>tab_distance</code> qui correspondent aux <code>k</code> plus proches voisins de <code>nouveau_pokemon</code> dans un tableau <code>k_voisins</code>.</li>
+<li>On sélectionne l'étiquette majoritaire dans le tableau <code>k_voisins</code> et on l'attribue à <code>nouveau_pokemon</code> parce que c'est le choix majoritaire parmi les <code>k</code> plus proches voisins.</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exemple 1</p>
+<details class="warning">
+<summary>Exemples du cours sur Capytale</summary>
+<p><a href="https://capytale2.ac-paris.fr/web/c/b5ae-1726451">https://capytale2.ac-paris.fr/web/c/b5ae-1726451</a></p>
+</details>
+<p>Détaillons les différentes étapes  de <em>l'algorithme des k plus proches voisins</em>  sur notre exemple de Pokemons.</p>
+<ul>
+<li><strong>Initialisation : chargement et traitement du jeu de données</strong></li>
+</ul>
+<p>On charge le fichier <a href="https://fr.wikipedia.org/wiki/Comma-separated_values">CSV</a> contenant le jeu de données dans une table (un tableau d'enregistrements qui sont des dictionnaires).</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">table_pokemons</span> <span class="o">=</span> <span class="n">charger_fichier_entete</span><span class="p">(</span><span class="s1">&#39;./datas/pokemons.csv&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">table_pokemons</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> 
+<span class="p">{</span><span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Rattata&#39;</span><span class="p">,</span> <span class="s1">&#39;vie&#39;</span><span class="p">:</span> <span class="s1">&#39;30&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;attaque&#39;</span><span class="p">:</span> <span class="s1">&#39;56&#39;</span><span class="p">,</span>  <span class="s1">&#39;defense&#39;</span><span class="p">:</span> <span class="s1">&#39;35&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;vitesse&#39;</span><span class="p">:</span> <span class="s1">&#39;72&#39;</span><span class="p">,</span>  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;Normal&#39;</span><span class="p">}</span>
+</code></pre></div>
+<p>On filtre la table pour extraire les Pokemons de type Feu et Roche. Une étape de traitement des données est souvent nécessaire.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">table_pokemons_feu_roche</span> <span class="o">=</span> <span class="p">[</span><span class="n">pok</span> <span class="k">for</span> <span class="n">pok</span> <span class="ow">in</span> <span class="n">table_pokemons</span> 
+   <span class="o">...</span><span class="p">:</span>                    <span class="k">if</span> <span class="n">pok</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Roche&#39;</span><span class="p">,</span> <span class="s1">&#39;Feu&#39;</span><span class="p">]]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="nb">len</span><span class="p">(</span><span class="n">table_pokemons_feu_roche</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="mi">37</span>
+</code></pre></div>
+<ul>
+<li><strong>Étape 1 : calcul des distances</strong> </li>
+</ul>
+<p>On calcule les distances entre le nouveau Pokemon et tous les Pokemons de la table <code>table_pokemons_feu_roche</code>.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">nouveau_pokemon</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;vitesse&#39;</span><span class="p">:</span><span class="mi">58</span><span class="p">,</span> <span class="s1">&#39;attaque&#39;</span> <span class="p">:</span> <span class="mi">120</span> <span class="p">,</span> <span class="s1">&#39;defense&#39;</span> <span class="p">:</span> <span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;vie&#39;</span> <span class="p">:</span> <span class="mi">100</span> <span class="p">}</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">table_pokemons_feu_roche</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#premier Pokemon de la table</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> 
+<span class="p">{</span><span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Salameche&#39;</span><span class="p">,</span> <span class="s1">&#39;vie&#39;</span><span class="p">:</span> <span class="s1">&#39;39&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;attaque&#39;</span><span class="p">:</span> <span class="s1">&#39;52&#39;</span><span class="p">,</span>  <span class="s1">&#39;defense&#39;</span><span class="p">:</span> <span class="s1">&#39;43&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;vitesse&#39;</span><span class="p">:</span> <span class="s1">&#39;65&#39;</span><span class="p">,</span>  <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;Feu&#39;</span><span class="p">}</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">salameche</span> <span class="o">=</span> <span class="n">table_pokemons_feu_roche</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">distance_euclidienne</span><span class="p">(</span><span class="n">nouveau_pokemon</span><span class="p">,</span> <span class="n">salameche</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;vitesse&#39;</span><span class="p">,</span> <span class="s1">&#39;defense&#39;</span><span class="p">])</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="mf">23.087</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">tab_distance</span> <span class="o">=</span> <span class="n">table_distance_nouveau</span><span class="p">(</span><span class="n">table_pokemons_feu_roche</span><span class="p">,</span> <span class="n">nouveau_pokemon</span><span class="p">,</span> <span class="n">distance_euclidienne</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span>                                      <span class="p">[</span><span class="s1">&#39;vitesse&#39;</span><span class="p">,</span> <span class="s1">&#39;defense&#39;</span><span class="p">])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">tab_distance</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="p">[(</span><span class="mf">18.385</span><span class="p">,</span> <span class="s1">&#39;Feu&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mf">22.091</span><span class="p">,</span> <span class="s1">&#39;Feu&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mf">21.19</span><span class="p">,</span> <span class="s1">&#39;Feu&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mf">44.598</span><span class="p">,</span> <span class="s1">&#39;Feu&#39;</span><span class="p">)]</span>
+</code></pre></div>
+<ul>
+<li><strong>Étapes 2 et 3 : tri et sélection des k plus proches voisins</strong>  </li>
+</ul>
+<p>On fixe le paramètre <code>k</code>, on trie dans l'ordre croissant le tableau <code>tab_distance</code> suivant le critère de distance et on extrait les <code>k</code> plus proches voisins.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">k_voisins</span> <span class="o">=</span> <span class="n">trier_puis_extraire</span><span class="p">(</span><span class="n">tab_distance</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">k_voisins</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;Roche&#39;</span><span class="p">,</span> <span class="s1">&#39;Feu&#39;</span><span class="p">,</span> <span class="s1">&#39;Feu&#39;</span><span class="p">,</span> <span class="s1">&#39;Feu&#39;</span><span class="p">,</span> <span class="s1">&#39;Feu&#39;</span><span class="p">]</span>
+</code></pre></div>
+<ul>
+<li><strong>Étape  4 : sélection de l'étiquette majoritaire parmi les k plus proches voisins</strong></li>
+</ul>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">element_majoritaire</span><span class="p">(</span><span class="n">k_voisins</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="s1">&#39;Feu&#39;</span>
+</code></pre></div>
+<p>On peut rassembler toutes les fonctions précédentes en une seule qui renvoie l'étiquette majoritaire parmi les <code>k</code> plus proches voisins.    </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">etiquetage_knn</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">nouveau</span><span class="p">,</span> <span class="n">etiquette</span><span class="p">,</span> <span class="n">tab_descripteur</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span>
+                   <span class="n">distance</span> <span class="o">=</span> <span class="n">distance_euclidienne</span><span class="p">):</span>    
+    <span class="n">tab_distance</span> <span class="o">=</span> <span class="n">table_distance_nouveau</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">nouveau</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="n">etiquette</span><span class="p">,</span> <span class="n">tab_descripteur</span><span class="p">)</span>
+    <span class="n">k_voisins</span> <span class="o">=</span> <span class="n">trier_puis_extraire</span><span class="p">(</span><span class="n">tab_distance</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">voisin_majoritaire</span> <span class="o">=</span> <span class="n">element_majoritaire</span><span class="p">(</span><span class="n">k_voisins</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">voisin_majoritaire</span>
+</code></pre></div>
+<p>On peut vérifier que cela donne le même résultat. </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">etiquetage_knn</span><span class="p">(</span><span class="n">table_pokemons_feu_roche</span><span class="p">,</span> <span class="n">nouveau_pokemon</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;vitesse&#39;</span><span class="p">,</span> <span class="s1">&#39;defense&#39;</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="s1">&#39;Feu&#39;</span>
+</code></pre></div>
+</div>
+<h1 id="choix-des-parametres-et-limites-de-lalgorithme">Choix des paramètres et limites de l'algorithme<a class="headerlink" href="#choix-des-parametres-et-limites-de-lalgorithme" title="Permanent link">⚓︎</a></h1>
+<h2 id="le-choix-de-la-distance">Le choix de la distance<a class="headerlink" href="#le-choix-de-la-distance" title="Permanent link">⚓︎</a></h2>
+<p><img alt="Distance euclidienne dans le plan" src="../images/distance-euclidienne-plan.png" />\</p>
+<p><img alt="Distance de Manhattan dans le plan" src="../images/distance-manhattan-plan.png" />\</p>
+<p><em>Graphique 2 : distances dans le plan</em></p>
+<div class="admonition note">
+<p class="admonition-title">Point de cours 3</p>
+<details class="warning">
+<summary>Exemples du cours sur Capytale</summary>
+<p><a href="https://capytale2.ac-paris.fr/web/c/b5ae-1726451">https://capytale2.ac-paris.fr/web/c/b5ae-1726451</a></p>
+</details>
+<p>Considérons un nouveau Pokemon et un Pokemon déjà connu  dans une table :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">nouveau_pokemon</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="p">{</span><span class="s1">&#39;vitesse&#39;</span><span class="p">:</span> <span class="mi">58</span><span class="p">,</span> <span class="s1">&#39;attaque&#39;</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span> <span class="s1">&#39;defense&#39;</span><span class="p">:</span> <span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;vie&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">table_pokemons_feu_roche</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> 
+<span class="p">{</span><span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Reptincel&#39;</span><span class="p">,</span> <span class="s1">&#39;vie&#39;</span><span class="p">:</span> <span class="s1">&#39;58&#39;</span><span class="p">,</span>  <span class="s1">&#39;attaque&#39;</span><span class="p">:</span> <span class="s1">&#39;64&#39;</span><span class="p">,</span>  <span class="s1">&#39;defense&#39;</span><span class="p">:</span> <span class="s1">&#39;58&#39;</span><span class="p">,</span>  <span class="s1">&#39;vitesse&#39;</span><span class="p">:</span> <span class="s1">&#39;80&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;Feu&#39;</span><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Si on caractérise chaque Pokemon par deux descripteurs <code>'vitesse'</code> et <code>'defense'</code>, on peut les représenter dans le plan par les points A de coordonnées <span class="arithmatex">\((58, 65)\)</span>  et B de coordonnées <span class="arithmatex">\((80, 58)\)</span>. On peut calculer la distance AB de plusieurs façons, comme par exemple :</li>
+<li>La <strong>distance euclidienne</strong> qui correspond à celle de la règle graduée :<br />
+<span class="arithmatex">\(AB=\sqrt{(x_{B}-x_{A})^{2}+(y_{B}-y_{A})^{2}}=\sqrt{(80-58)^{2}+(58-65)^{2}} \approx 23,087\)</span></li>
+<li>
+<p>La <strong>distance de Manhattan</strong> qui correspond à la longueur du chemin parcouru pour aller de <span class="arithmatex">\(A\)</span> à <span class="arithmatex">\(B\)</span> en se déplaçant le long des arêtes d'un quadrillage généré par un repère orthonormé du plan, comme dans le plan d'une ville où les rues se coupent à angle droit :
+       <span class="arithmatex">\(AB=\vert x_{B}-x_{A} \vert + \vert y_{B}-y_{A} \vert =\vert 80 - 58 \vert + \vert 58 - 65 \vert = 22 + 7 = 29\)</span></p>
+</li>
+<li>
+<p>Si on caractérise chaque Pokemon par trois descripteurs <code>'vitesse'</code>, <code>'defense'</code> et <code>'attaque'</code> on peut les représenter dans l'espace  par les points A de coordonnées <span class="arithmatex">\((58, 65, 120)\)</span>  et B de coordonnées <span class="arithmatex">\((80, 58, 64)\)</span>. On peut calculer la distance AB de plusieurs façons, comme par exemple en notant <span class="arithmatex">\(z\)</span> la troisième coordonnée :</p>
+</li>
+<li>La <strong>distance euclidienne</strong> qui correspond à celle de la règle graduée :<br />
+<span class="arithmatex">\(AB=\sqrt{(x_{B}-x_{A})^{2}+(y_{B}-y_{A})^{2} + (z_{B}-z_{A})^{2}}=\sqrt{(80-58)^{2}+ (58-65)^{2} +   (120 - 64)^{2}} \approx 60,572\)</span></li>
+<li>
+<p>La <a href="https://fr.wikipedia.org/wiki/Distance_de_Manhattan">distance de Manhattan</a> qui correspond à la longueur du chemin parcouru pour aller de <span class="arithmatex">\(A\)</span> à <span class="arithmatex">\(B\)</span> en se déplaçant le long des arêtes d'un quadrillage généré par un repère orthonormé de l'espace  :
+       <span class="arithmatex">\(AB=\vert x_{B}-x_{A} \vert + \vert y_{B}-y_{A} \vert + \vert z_{B}-z_{A} \vert =\vert 80 - 58 \vert + \vert 58 - 60 \vert  + \vert  120 - 64  \vert = 22 + 7 + 56 = 85\)</span></p>
+</li>
+<li>
+<p>On peut généraliser les calculs de distances précédents à 4, 5 ou <span class="arithmatex">\(n\)</span> descripteurs.</p>
+</li>
+</ul>
+<p>L'ensemble des k plus proches voisins dépend du choix de la distance qui s'effectue en fonction du jeu de données. </p>
+<p>De plus, il faut prêter attention aux différences d'échelles entre les descripteurs : un écart de 50 n'a pas le même sens sur  une <code>'vitesse'</code>   mesurée sur une échelle de 0 à 1000 et sur une <code>'defense'</code>  mesurée sur une échelle de 0 à 100. Il peut être intéressant, dans la phase de traitement des données, de les normaliser en ramenant chaque valeur de descripteur dans l'intervalle [0;1] avec le rapport <span class="arithmatex">\(\frac{\text{valeur}-\text{valeurMin}}{\text{valeurMax}-\text{valeurMin}}\)</span>.</p>
+</div>
+<p>Voici une représentation dans l'espace du jeu de données des 37 Pokemons
+<em>Roche</em> et <em>Feu</em> avec trois descripteurs <code>'vitesse'</code>, <code>'defense'</code> et
+<code>'attaque'</code>. L'ajout d'un descripteur peut permettre d'améliorer la
+classification en séparant plus nettement les familles de points selon
+leur étiquette.</p>
+<p><img alt="graphique pokemon feu roche" src="../images/pokemon-feu-roche-vitesse-defense-attaque.png" width="100%" />\</p>
+<p><em>Graphique 3 : Pokemons Feu ou Roche avec trois descripteurs</em></p>
+<div class="admonition tip">
+<p class="admonition-title">Exercice 1</p>
+<p>Dans le plan muni d'un repère orthonormé on a représenté cinq points d'un jeu de données étiquetés :</p>
+<ul>
+<li>trois points d'étiquette 'rond' : A, B et C</li>
+<li>deux points d'étiquette 'croix' : E et F</li>
+</ul>
+<p>On  considère un nouveau point  D sans étiquette.</p>
+<ol>
+<li>Déterminer les trois points les plus proches de D avec la <strong>distance euclidienne</strong>.</li>
+<li>Déterminer les trois points les plus proches de D avec la <strong>distance de Manhattan</strong>.</li>
+<li>Quelle est l'étiquette de D si on applique l'algorithme des k plus proches voisins avec k = 3 et la <strong>distance euclidienne</strong> ? et avec k = 3 et la <strong>distance de Manhattan</strong> ?</li>
+</ol>
+<p><img alt="exercice distances" src="../images/distances.png" width="70%" />\</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Exercice 2</p>
+<p>Les distances euclidienne ou de Manhattan s'appliquent à des  descripteurs qui prennent des valeurs numériques continues.</p>
+<p>La <a href="https://fr.wikipedia.org/wiki/Distance_de_Hamming">distance de Hammming</a> s'applique à des descripteurs qui sont  des séquences de symboles comme des chaînes de caractères ou des suites de bits 0 ou 1 et prend pour valeur le nombre de symboles différents entre deux séquences.</p>
+<p>Par exemple, on a  <code>distance_hamming('rat', 'raz') = 1</code> ,  <code>distance_hamming('rat', 'rater') = 2</code>,  <code>distance_hamming('101', '011') = 2</code> et <code>distance_hamming('1010', '101') = 1</code>.</p>
+<p>Écrire en Python une fonction d'en-tête <code>distance_hamming(chaine1, chaine2)</code> qui renvoie la distance de Hamming entre deux chaînes de caractères.</p>
+</div>
+<h2 id="le-choix-du-parametre-k">Le choix du paramètre <code>k</code><a class="headerlink" href="#le-choix-du-parametre-k" title="Permanent link">⚓︎</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Activité 3</p>
+<p>Regardez la petite video accessible depuis ce lien : <a href="../algo_2_sur_2.gif">algo_2_sur_2.gif</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Point de cours 4</p>
+<details class="warning">
+<summary>Exemples du cours sur Capytale</summary>
+<p><a href="https://capytale2.ac-paris.fr/web/c/b5ae-1726451">https://capytale2.ac-paris.fr/web/c/b5ae-1726451</a></p>
+</details>
+<p>On reprend l'exemple initial du jeu de données de 37 Pokemons <em>Roche</em> et <em>Feu</em> caractérisés par les deux descripteurs <code>'vitesse'</code> et  <code>'defense'</code> et d'un nouveau Pokemon de <code>'vitesse' : 58</code> et <code>'defense' : 65</code> représentés sur le graphique 1.</p>
+<p>On donne ci-dessous  les étiquettes attribués par  <em>l'algorithme des k plus proches voisins</em> avec k variant entre 1 et 9.</p>
+<p>On observe la sensibilité aux perturbations locales pour les petites valeurs de k : les des deux points  les plus proches sont verts, de type <em>Roche</em> , mais les points dans un voisinage plus large sont majoritairement rouges, de type <em>Feu</em>.  </p>
+<p>D'un autre côté, une valeur de k trop grande prend en compte des points éloignés et la classe majoritaire globalement finit par s'imposer.</p>
+<p>En général, on choisit une valeur de k entre 3 et 10 et plutôt un entier impair (pourquoi d'après vous ?)</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="n">nouveau_pokemon</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;vitesse&#39;</span><span class="p">:</span><span class="mi">58</span><span class="p">,</span> <span class="s1">&#39;attaque&#39;</span> <span class="p">:</span> <span class="mi">120</span> <span class="p">,</span> <span class="s1">&#39;defense&#39;</span> <span class="p">:</span> <span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;vie&#39;</span> <span class="p">:</span> <span class="mi">100</span> <span class="p">}</span>
+    <span class="o">...</span><span class="p">:</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;k = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">, etiquette = </span><span class="si">{</span><span class="n">etiquetage_knn</span><span class="p">(</span><span class="n">table_pokemons_feu_roche</span><span class="p">,</span><span class="w"> </span><span class="n">nouveau_pokemon</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;vitesse&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;defense&#39;</span><span class="p">],</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="o">...</span><span class="p">:</span>     
+<span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">etiquette</span> <span class="o">=</span> <span class="n">Roche</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">etiquette</span> <span class="o">=</span> <span class="n">Roche</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">etiquette</span> <span class="o">=</span> <span class="n">Feu</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">etiquette</span> <span class="o">=</span> <span class="n">Feu</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">etiquette</span> <span class="o">=</span> <span class="n">Feu</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">etiquette</span> <span class="o">=</span> <span class="n">Feu</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="n">etiquette</span> <span class="o">=</span> <span class="n">Feu</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">etiquette</span> <span class="o">=</span> <span class="n">Feu</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">9</span><span class="p">,</span> <span class="n">etiquette</span> <span class="o">=</span> <span class="n">Feu</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">etiquette</span> <span class="o">=</span> <span class="n">Feu</span>
+</code></pre></div>
+</div>
+<h2 id="les-limites-de-lalgorithme">Les limites de l'algorithme<a class="headerlink" href="#les-limites-de-lalgorithme" title="Permanent link">⚓︎</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Point de cours 5</p>
+<p><em>L'algorithme des k plus proches voisins</em> permet de répondre à un <strong>problème de classification</strong> pour tout type de données mais il faut être conscient de ses limites :</p>
+<ul>
+<li>il faut calculer les distances entre une nouvelle donnée et toutes celles du jeu de données ce qui implique une complexité au moins linéaire en temps, ce qui n'est pas tolérable pour des jeux de données de grande taille ou des applications en temps réel</li>
+<li>la qualité de la prédiction repose sur l'hypothèse que les données proches pour la distance choisie sont similaires à la nouvelle donnée</li>
+<li>la qualité du jeu de données est cruciale comme pour tout algorithme de classification.</li>
+</ul>
+</div>
+<h1 id="histoire-de-lintelligence-artificielle-et-des-algorithmes-dapprentissage">Histoire de l'intelligence artificielle et des algorithmes d'apprentissage<a class="headerlink" href="#histoire-de-lintelligence-artificielle-et-des-algorithmes-dapprentissage" title="Permanent link">⚓︎</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Point de cours 6</p>
+<p><em>L'algorithme des k plus proches voisins</em> est un exemple simple d'algorithme de classification par apprentissage (<em>machine learning</em>): il exploite un jeu de données connu pour apporter une information, plausible mais pas forcément exacte sur une nouvelle donnée. </p>
+<p>Cette famille d'algorithmes est rattachée à la branche de l'informatique dénommée <strong>intelligence artificielle</strong> qui peut être définie comme <em>la conception des agents rationnels, autonomes et adaptatifs pour résoudre des problèmes « comme ou mieux » que
+ne le ferait un être humain</em>.</p>
+<p>L'<strong>intelligence artificielle</strong>  est apparue dès les débuts de l'informatique dans les années 1950, le mythe d'une créature artificielle intelligente étant un classique de la littérature (Golem, Frankenstein ...). Après avoir connu, un <em>hiver</em> pendant les années 1980-1990, un renouveau important a lieu depuis les années 2000. Le développement d'idées anciennes comme les réseaux de neurones a été favorisé par une accélération des performances matérielles (GPU) et des volumes de données disponibles (essor du web). Les réseaux de neurones profonds  (<em>deep learning</em>) rendent possibles des applications proches de certaines aptitudes considérées auparavant comme caractéristiques de l'humain: reconnaissance d'image, du langage, prise de décision ...</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Exercice 3</p>
+<p>Compléter la frise ci-dessous avec ces événements marquants de l'histoire de <strong>l'intelligence artificielle</strong>  qui sont donnés dans le désordre :</p>
+<ul>
+<li>test de Turing </li>
+<li>victoire d'Alpha-Go sur le meilleur joueur humain de jeu de Go</li>
+<li>premier neurone artificiel imaginé par Mc Culloch et Pitts</li>
+<li>victoire de Watson (IBM) sur les meilleurs joueurs humains au jeu Jeopardy</li>
+<li>victoire de Deep Blue (IBM) sur le champion du monde d'échec Gary Kasparov</li>
+<li>invention du perceptron par Frank Rosenblatt</li>
+<li>conférence de Darmouth</li>
+<li>prix Turing décerné à Yann Le Cun pour ses travaux sur le Deep Learning</li>
+</ul>
+<p><img alt="frise" src="../images/timeline_knn_timeline.png" width="100%" />\
+<em>Graphique 4 : histoire de l'intelligence artificielle</em></p>
+</div>
+<h1 id="synthese">Synthèse<a class="headerlink" href="#synthese" title="Permanent link">⚓︎</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Synthèse </p>
+<p><em>L'algorithme des k plus proches voisins</em> a pour but de  classifier une nouvelle donnée en lui attribuant une étiquette à partir des étiquettes  déjà connues d'un jeu de données similaires.</p>
+<p>L'algorithme n'apporte pas une réponse exacte mais une prédiction dont la qualité dépend du jeu de données, de la distance utilisée pour mesurer  la similarité entre deux données et du nombre k de voisins les plus proches parmi lesquels l'étiquette  majoritaire sera choisie.</p>
+<p>La dernière décennie a connu un essor spectaculaire d'algorithmes de classification par apprentissage bien plus performants et perfectionnés qui s'appuient sur des jeux de données gigantesques et apportent des réponses à des questions comme :</p>
+<ul>
+<li>Quelle est la classe de cet objet sur cette photo ? une voiture ? une moto ? une poussette ?</li>
+<li>Quel est, au vu de ses données médicales, le diagnostic que l'on peut faire sur ce patient ? malade ou pas ?</li>
+<li>Quel est, au vu de sa  consommation précédente, le profil de ce consommateur de streaming video ? quelles séries peut-on lui suggérer  ?</li>
+<li>Quel est, au vu de son dossier administratif, le profil de ce contribuable ? fraudeur ou pas ?</li>
+</ul>
+</div>
+
+
+
+
+
+                
+    <script src="../../../../js/ide.js"></script> 
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+        <script src="../../../../xtra/javascripts/config.js"></script>
+      
+        <script src="../../../../xtra/javascripts/perso.js"></script>
+      
+        <script src="../../../../xtra/javascripts/interpreter.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
+  </body>
+</html>

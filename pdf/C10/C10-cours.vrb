@@ -1,0 +1,19 @@
+\mframe{\Web}
+	\begin{alertblock}{Définir un style en css}
+		\onslide<1-> Pour indiquer les éléments auxquels le style s'applique on utilise les \textcolor{red}{sélecteurs}. Sans entrer dans les détails, un sélecteur peut notamment être :
+		\begin{itemize}[label=\textbullet]
+			\item<2-> une balise html, par exemple pour avoir les titres de niveau 1 de son document en rouge, on peut taper dans le fichier de style :
+			      \begin{lstlisting}
+h1 {color:red;}
+\end{lstlisting}
+			      Le sélecteur est ici \textcolor{blue}{\tt h1}, et toutes les balises {\tt <h1>} seront rouges.
+			\item<3-> un nom quelconque précédé du caractère \textcolor{red}{\tt .}, par exemple on peut avoir dans le fichier de style :
+			      \begin{lstlisting}
+.encadre {border :  1pt solid;}
+\end{lstlisting}
+			      Le sélecteur est ici \textcolor{blue}{\tt .encadre}, et toutes les balises html ayant {\tt encadre} dans leur attribut {\tt class} apparaitront avec une bordure.
+			      \begin{lstlisting}
+<p class="encadre"> ce paragraphe sera encadré</p>
+\end{lstlisting}
+		\end{itemize}
+	\end{alertblock}

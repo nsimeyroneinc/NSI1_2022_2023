@@ -1,0 +1,260 @@
+\PassOptionsToPackage{dvipsnames,table}{xcolor}
+\documentclass[10pt]{beamer}
+\usetheme[options]{Madrid} 
+%\usetheme{Luebeck}
+\usepackage{../../../latex/Cours}
+\setbeamertemplate{items}[ball]
+\begin{document}
+	\input{\detokenize{../../../latex/MacrosCours.tex}}
+	\setcounter{numchap}{13}
+
+
+\newcommand{\Arch}{\cnum Les Booléens}
+
+% Transistor et booléens
+\begin{frame}
+	\mframe{\Arch}
+	\begin{block}{Remarques :}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> Le composant de base des ordinateurs est le \textit{transistor}, un composant électronique ne pouvant être que dans deux états. Soit il laisse passer le courant (état \textcolor{red}{1}), soit il ne le laisse pas passer (état \textcolor{red}{0}).
+			\item<2-> Toutes les données représentées dans un ordinateur le sont donc sous forme de 0 et de 1.
+			\item<3-> Dès les années 1850, dans des travaux sur la logique, le mathématicien britannique Georges Boole avait travaillé sur des variables ne pouvant prendre que deux valeurs 0  ou 1.
+			\item<4-> On appelle, ces variables des \textcolor{red}{booléens}. On définit trois opérations de base que nous allons détailler sur les booléens : le \textcolor{red}{non}, le \textcolor{red}{et} et le \textcolor{red}{ou}.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+
+% Opérateur non
+\begin{frame}
+	\mframe{\Arch}
+	\begin{alertblock}{Opérateur \textbf{non}}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> Inverse la valeur de l'entrée
+			\item<2-> Symbole électronique
+			      \begin{center}
+				     \includegraphics[scale=0.25]{../../T01_TypesBase/T1.4_Booleens/data/porteNOT_USA_europe}
+			      \end{center}
+			\item<3-> Table de vérité
+			      \begin{center}
+				      \begin{tabular}{|>{\color{blue}}c|>{\color{red}}c|}
+					      \hline
+					      Entrée & Sortie \\
+					      \hline
+					      0      & 1      \\
+					      \hline
+					      1      & 0      \\
+					      \hline
+				      \end{tabular}
+			      \end{center}
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+
+% Opérateur et
+\begin{frame}
+	\mframe{\Arch}
+	\begin{alertblock}{Opérateur \textbf{et}}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> Vaut 1 lorsque les \textit{deux} entrées valent un
+			\item<2-> Symbole électronique
+			      \begin{center}
+				      \begin{tabularx}{0.8\textwidth}{Y|Y}
+					      \begin{circuitikz} \draw
+						      node[american and port](t1) {}
+						      ;\end{circuitikz} &
+					      \begin{circuitikz} \draw
+						      node[european and port](t1) {}
+						      ;\end{circuitikz}            \\
+					      Américain                 & Européen \\
+				      \end{tabularx}
+			      \end{center}
+			\item<3-> Table de vérité
+			      \begin{center}
+				      \begin{tabular}{|>{\color{blue}}c|>{\color{blue}}c|>{\color{red}}c|}
+					      \hline
+					      Entrée 1 & Entrée 2 & Sortie \\
+					      \hline
+					      0        & 0        & 0      \\
+					      \hline
+					      1        & 0        & 0      \\
+					      \hline
+					      0        & 1        & 0      \\
+					      \hline
+					      1        & 1        & 1      \\
+					      \hline
+				      \end{tabular}
+			      \end{center}
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+
+% Opérateur NAD
+\begin{frame}
+	\mframe{\Arch}
+	\begin{alertblock}{Opérateur \textbf{NAD}}
+	Deux autres portes logiques sont fondamentales et bien que pouvant être 
+	construire à partir de OR, AND et NOT ont leur propre symbole :
+		\begin{itemize}[label=\textbullet]
+			\item<1-> La porte NAND qui vaut 0 seulement lorsque les deux 
+			entrées valent 1. C'est la porte "\textbf{NON ET}"
+			\item<2-> Symbole électronique
+			      \begin{center}
+\includegraphics[scale=0.2]{../../T01_TypesBase/T1.4_Booleens/data/porteNAND_USA_Europe}
+			      \end{center}
+			\item<3-> Table de vérité
+			      \begin{center}
+				      \begin{tabular}{|>{\color{blue}}c|>{\color{blue}}c|>{\color{red}}c|}
+					      \hline
+					      Entrée 1 & Entrée 2 & Sortie \\
+					      \hline
+					      0        & 0        & 1      \\
+					      \hline
+					      0        & 1        & 1      \\
+					      \hline
+					      1        & 0        & 1      \\
+					      \hline
+					      1        & 1        & 0      \\
+					      \hline
+				      \end{tabular}
+			      \end{center}
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+% Autres portes : NAND et XOR
+\begin{frame}
+	\mframe{\Arch}
+	\begin{block}{Opérateur XOR}
+		\begin{itemize}[label=\textbullet]
+			\item<2-> La porte \textbf{XOR} qui vaut 1 lorsque l'une des 
+			entrées vaut un 
+			mais pas les deux à la fois. C'est \textbf{le ou exclusif}.
+			\item<3-> Symbole électronique
+			\begin{center}
+				\includegraphics[scale=0.15]{../../T01_TypesBase/T1.4_Booleens/data/porteXOR_USA_Europe}
+			\end{center}
+			\item<4-> Table de vérité
+			\begin{center}
+				\begin{tabular}{|>{\color{blue}}c|>{\color{blue}}c|>{\color{red}}c|}
+					\hline
+					Entrée 1 & Entrée 2 & Sortie \\
+					\hline
+					0        & 0        & 0      \\
+					\hline
+					0        & 1        & 1      \\
+					\hline
+					1        & 0        & 1      \\
+					\hline
+					1        & 1        & 0      \\
+					\hline
+				\end{tabular}
+			\end{center}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+% Autres portes : NAND et XOR
+\begin{frame}
+	\mframe{\Arch}
+	\begin{block}{Autres portes logiques}
+		Deux autres portes logiques sont fondamentales et bien que pouvant être construire à partir de OR, AND et NOT ont leur propre symbole :
+		\begin{itemize}[label=\textbullet]
+			\item<1-> La porte \textbf{XOR} qui vaut 1 lorsque l'une des 
+			entrées vaut un 
+			mais pas les deux à la fois. C'est \textbf{le ou exclusif}.
+			\item<2-> Symbole électronique
+			\begin{center}
+				\includegraphics[scale=0.15]{../../T01_TypesBase/T1.4_Booleens/data/porteXOR_USA_Europe}
+			\end{center}
+			\item<3-> Table de vérité
+			\begin{center}
+				\begin{tabular}{|>{\color{blue}}c|>{\color{blue}}c|>{\color{red}}c|}
+					\hline
+					Entrée 1 & Entrée 2 & Sortie \\
+					\hline
+					0        & 0        & 0      \\
+					\hline
+					1        & 0        & 1      \\
+					\hline
+					0        & 1        & 1      \\
+					\hline
+					1        & 1        & 0      \\
+					\hline
+				\end{tabular}
+			\end{center}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+% Autres portes : NOR
+\begin{frame}
+	\mframe{\Arch}
+	\begin{block}{Opérateur NOR}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> La porte NOR qui vaut 1 seulement lorsque les deux 
+			entrées valent 0. C'est la porte "NON OU"
+			\item<2-> Symbole électronique
+			\begin{center}
+				\includegraphics[scale=0.15]{../../T01_TypesBase/T1.4_Booleens/data/porteNOR_USA_Europe}
+			\end{center}
+			\item<3-> Table de vérité
+			\begin{center}
+				\begin{tabular}{|>{\color{blue}}c|>{\color{blue}}c|>{\color{red}}c|}
+					\hline
+					Entrée 1 & Entrée 2 & Sortie \\
+					\hline
+					0        & 0        & 1      \\
+					\hline
+					0        & 1        & 0      \\
+					\hline
+					1        & 0        & 0      \\
+					\hline
+					1        & 1        & 0      \\
+					\hline
+				\end{tabular}
+			\end{center}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+%Python et les booléens
+\begin{frame}
+	\mframe{\Arch}
+	\begin{block}{Python et les booléens}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> Python possède le type de variable booléen, les deux valeurs possibles sont : \texttt{True} et \texttt{False}.
+			\item<2-> L'opération \textbf{non} s'obtient à l'aide de \texttt{not}
+			\item<3-> L'opération \textbf{et} s'obtient à l'aide de \texttt{and}
+			\item<4-> L'opération \textbf{ou} s'obtient à l'aide de \texttt{or}
+			\item<5-> Les booléens de python peuvent donc être notamment des résultats de test de condition.
+		\end{itemize}
+	\end{block}
+	\onslide<6->{
+		\begin{exampleblock}{Exemple}
+			\texttt{\# Définit une variable booléen ok  qui vaut vrai} \\
+			\texttt{\# lorsque au moins 2 des 3 variables a,b et c sont égales}\\
+			\onslide<7->{\texttt{ok=(a==b) or (a==c) or (b==c)}}
+		\end{exampleblock}}
+\end{frame}
+
+% Combinaison et réalisation d'opérations
+\begin{frame}
+	\mframe{\Arch}
+	\begin{alertblock}{Circuit logique}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> En combinant ces portes logiques, on réalise des circuits 
+			logiques permettant d'effectuer des opérations (additions, 
+			soustractions, comparaison, ...) sur les données stockées dans 
+			l'ordinateur.
+			\item<2-> Exemple : additionneur
+			\includegraphics[scale=0.15]{../../T01_TypesBase/T1.4_Booleens/portes_logiques/additionneur3.png}
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+
+\end{document}
